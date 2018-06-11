@@ -13,4 +13,8 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+    <include package=".content" />
+    <include package=".portlets" />
+    <include package=".browser" />
+    
 </configure>
