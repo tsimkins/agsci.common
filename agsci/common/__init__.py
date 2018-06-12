@@ -1,5 +1,5 @@
 from zope.i18nmessageid import MessageFactory
-commonMessageFactory = MessageFactory('agsci.common')
+AgsciMessageFactory = MessageFactory('agsci.common')
 
 def initialize(context):
     pass

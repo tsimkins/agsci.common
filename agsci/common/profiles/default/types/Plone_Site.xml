@@ -13,7 +13,7 @@
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types" purge="False">
         <element value="Folder" />
-        <element value="Page" />
+        <element value="Document" />
         <element value="Link" />
         <element value="Collection" />
         <element value="agsci_blog" />

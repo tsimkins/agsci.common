@@ -1,6 +1,78 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:five="http://namespaces.zope.org/five"
+           xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="agsci.common">
+
+    <include package="plone.behavior" file="meta.zcml" />
+
+    <!-- Lead Image behavior with additional fields -->
+    
+    <plone:behavior
+        title="Lead Image (AgSci)"
+        description="Customized Lead Image behavior"
+        provides=".leadimage.ILeadImage"
+    />
+
+    <!-- Behaviors for public (non-Plone) tags -->
+    <plone:behavior
+        title="Public Tags Behaviors"
+        description="Enables public tags on content"
+        provides=".tags.ITags"
+    />
+
+    <plone:behavior
+        title="Public Tags Root"
+        description="Designates that something is a 'Tag Root' object"
+        provides=".tags.ITagsRoot"
+    />
+
+    <!-- Research Areas -->
+    
+    <plone:behavior
+        title="Research Areas Behaviors"
+        description="Behaviors used to categorize content types by the research areas"
+        provides=".IResearchAreas"
+    />
+
+    <!-- Behaviors to adjust behavior for SEO -->
+
+    <plone:behavior
+        title="SEO Behaviors"
+        description=""
+        provides=".ISEO"
+    />
+
+    <!-- Behaviors per content-type -->
+    
+    <plone:behavior
+        title="Collection Behaviors"
+        description=""
+        provides=".ICollectionFields"
+    />
+
+    <plone:behavior
+        title="News Item Behaviors"
+        description=""
+        provides=".INewsItemFields"
+    />
+
+    <plone:behavior
+        title="Folder Behaviors"
+        description=""
+        provides=".IFolderFields"
+    />
+
+    <plone:behavior
+        title="Homepage Behaviors"
+        description=""
+        provides=".IHomepageFields"
+    />
+
+    <plone:behavior
+        title="Event Behaviors"
+        description=""
+        provides=".IEventFields"
+    />
 
   
 </configure>

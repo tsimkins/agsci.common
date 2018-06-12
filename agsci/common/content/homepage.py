@@ -5,8 +5,8 @@ from zope import schema
 from zope.interface import provider
 
 @provider(IFormFieldProvider)
-class IHomePage(model.Schema):
+class IHomepage(model.Schema):
     pass
 
-class HomePage(Item):
+class Homepage(Item):
     pass

@@ -11,7 +11,7 @@
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
         <element value="Folder" />
-        <element value="Page" />
+        <element value="Document" />
         <element value="Link" />
         <element value="Collection" />
     </property>
@@ -29,6 +29,9 @@
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
+        <element value="agsci.common.content.behaviors.IFolderFields" />
+        <element value="agsci.common.content.behaviors.ISEOFields" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
     </property>
     <property name="schema" />
     <property name="schema_policy">dexterity</property>

@@ -24,7 +24,6 @@
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
     </property>
     <property name="schema" />
     <property name="schema_policy">dexterity</property>
