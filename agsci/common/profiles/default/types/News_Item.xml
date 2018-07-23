@@ -29,7 +29,8 @@
         <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
         <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
-        <element value="agsci.common.content.behaviors.INewsItemFields" />        
+        <element value="agsci.common.content.behaviors.INewsItemFields" /> 
+        <element value="agsci.common.content.behaviors.tags.ITags" />       
     </property>
     <property name="schema" />
     <property name="model_source" />

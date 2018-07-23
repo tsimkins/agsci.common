@@ -2,4 +2,10 @@
            xmlns:five="http://namespaces.zope.org/five"
            i18n_domain="agsci.common">
 
+    <utility
+        name="agsci.common.available_public_tags"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".PublicTagsVocabularyFactory"
+    />
+
 </configure>

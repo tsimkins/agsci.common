@@ -14,6 +14,7 @@ class IResearchAreas(model.Schema):
     department_research_areas = schema.List(
         title=_(u"Research Areas"),
         description=_(u""),
+        value_type=schema.TextLine(required=True),
         required=False,
     )
 
@@ -40,12 +41,14 @@ class ICollectionFields(model.Schema):
     order_by_id = schema.List(
         title=_(u"Order by id"),
         description=_(u"The content will show items with the listed ids first, and then sort by the default sort order.  One per line."),
+        value_type=schema.TextLine(required=True),
         required=False,
     )
 
     order_by_title = schema.List(
         title=_(u"Order by Title"),
         description=_(u"The content will show items matching the specified regex patterns first, and then sort by the default sort order.  One per line."),
+        value_type=schema.TextLine(required=True),
         required=False,
     )
 
@@ -92,13 +95,6 @@ class IFolderFields(model.Schema):
         description=_(u"This will show the lead image for each item in the folder listing."),
         required=False,
     )
-
-    show_read_more = schema.Bool(
-        title=_(u"Show 'Read More'"),
-        description=_(u"This will show the 'Read More' for each item in the folder listing when using the Summary View."),
-        required=False,
-    )
-
 
 @provider(IFormFieldProvider)
 class IHomepageFields(model.Schema):
