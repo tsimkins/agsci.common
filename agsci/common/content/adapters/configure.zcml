@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agsci.common">
+
+    <!-- Adapter for ITagsRoot -->
+    <adapter
+        factory=".TagsRootAdapter"
+        provides="agsci.common.interfaces.ITagsRootAdapter"
+        for="..behaviors.tags.ITagsRoot"
+    />
+
+    <!-- Adapter for ITags -->
+    <adapter
+        factory=".TagsRootAdapter"
+        provides="agsci.common.interfaces.ITagsRootAdapter"
+        for="..behaviors.tags.ITags"
+    />
+
+</configure>

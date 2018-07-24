@@ -2,7 +2,8 @@
            xmlns:five="http://namespaces.zope.org/five"
            i18n_domain="agsci.common">
 
+    <include package=".adapters" />
     <include package=".behaviors" />
     <include package=".vocabulary" />
-    
+
 </configure>

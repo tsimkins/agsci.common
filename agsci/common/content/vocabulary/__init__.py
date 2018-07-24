@@ -8,6 +8,8 @@ from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implements
 
+from agsci.common.interfaces import ITagsRootAdapter
+
 from ..behaviors.tags import ITagsRoot
 
 class BaseVocabulary(object):
@@ -56,32 +58,13 @@ class KeyValueVocabulary(BaseVocabulary):
 # Public Tags
 class PublicTagsVocabulary(BaseVocabulary):
 
-    def tag_parent(self, context):
-
-        for o in aq_chain(context):
-    
-            if ITagsRoot.providedBy(o):
-                return context
-    
-            elif IPloneSiteRoot.providedBy(o):
-                return
-    
     def items(self, context):
-
-        p = self.tag_parent(context)
-        
-        if p:
-            v = getattr(p, 'available_public_tags', [])
-            
-            if v:
-                return sorted(v)
-        
-        return []
+        return ITagsRootAdapter(context).available_tags
 
     def __call__(self, context):
-    
+
         items = self.items(context)
-        
+
         return SimpleVocabulary(
             [
                 SimpleTerm(x, title=x) for x in items

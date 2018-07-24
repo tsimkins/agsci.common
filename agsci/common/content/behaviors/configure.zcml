@@ -6,7 +6,7 @@
     <include package="plone.behavior" file="meta.zcml" />
 
     <!-- Lead Image behavior with additional fields -->
-    
+
     <plone:behavior
         title="Lead Image (AgSci)"
         description="Customized Lead Image behavior"
@@ -27,7 +27,7 @@
     />
 
     <!-- Research Areas -->
-    
+
     <plone:behavior
         title="Research Areas Behaviors"
         description="Behaviors used to categorize content types by the research areas"
@@ -43,7 +43,7 @@
     />
 
     <!-- Behaviors per content-type -->
-    
+
     <plone:behavior
         title="Collection Behaviors"
         description=""
@@ -74,5 +74,5 @@
         provides=".IEventFields"
     />
 
-  
+
 </configure>
