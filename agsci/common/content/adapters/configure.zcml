@@ -5,18 +5,11 @@
     xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="agsci.common">
 
-    <!-- Adapter for ITagsRoot -->
+    <!-- Adapter for IDexterityContent -->
     <adapter
-        factory=".TagsRootAdapter"
-        provides="agsci.common.interfaces.ITagsRootAdapter"
-        for="..behaviors.tags.ITagsRoot"
-    />
-
-    <!-- Adapter for ITags -->
-    <adapter
-        factory=".TagsRootAdapter"
-        provides="agsci.common.interfaces.ITagsRootAdapter"
-        for="..behaviors.tags.ITags"
+        factory=".TagsAdapter"
+        provides="agsci.common.interfaces.ITagsAdapter"
+        for="*"
     />
 
 </configure>

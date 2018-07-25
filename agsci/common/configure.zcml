@@ -13,6 +13,14 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+    <!-- Register the import step -->
+    <genericsetup:importStep
+        name="agsci.common"
+        title="agsci.common: setuphanders.import_various"
+        description=""
+        handler="agsci.common.setuphandlers.import_various"
+        />
+
     <include package=".content" />
     <include package=".portlets" />
     <include package=".browser" />

@@ -8,7 +8,7 @@ from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implements
 
-from agsci.common.interfaces import ITagsRootAdapter
+from agsci.common.interfaces import ITagsAdapter
 
 from ..behaviors.tags import ITagsRoot
 
@@ -59,7 +59,7 @@ class KeyValueVocabulary(BaseVocabulary):
 class PublicTagsVocabulary(BaseVocabulary):
 
     def items(self, context):
-        return ITagsRootAdapter(context).available_tags
+        return ITagsAdapter(context).available_tags
 
     def __call__(self, context):
 

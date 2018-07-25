@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<portlets purge="False">
+
+    <portlet
+        addview="agsci.common.tags"
+        title="Tags Portlet"
+    />
+      
+</portlets>

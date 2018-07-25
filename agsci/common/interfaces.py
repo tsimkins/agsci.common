@@ -1,4 +1,4 @@
 from zope.interface import Interface
 
-class ITagsRootAdapter(Interface):
+class ITagsAdapter(Interface):
     pass
