@@ -1,9 +1,15 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="agsci.common">
 
     <five:registerPackage package="." initialize=".initialize" />
+
+    <include package=".content" />
+    <include package=".portlets" />
+    <include package=".browser" />
+    <include package=".tiles" />
 
     <genericsetup:registerProfile
         name="default"
@@ -21,8 +27,9 @@
         handler="agsci.common.setuphandlers.import_various"
         />
 
-    <include package=".content" />
-    <include package=".portlets" />
-    <include package=".browser" />
+    <!-- Resource Directory -->
+    <browser:resourceDirectory
+        name="agsci.common"
+        directory="resources" />
     
 </configure>

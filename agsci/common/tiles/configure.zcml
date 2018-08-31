@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="agsci.common">
+
+    <includeDependencies package="." />
+    <include package="plone.app.tiles" />
+
+    <plone:tile
+        name="agsci.common.tiles.test_tile"
+        title="Test AgSci Tile"
+        description="A tile that shows collection results"
+        schema=".interfaces.ITestTile"
+        class=".TestTile"
+        template="templates/test_tile.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
+</configure>

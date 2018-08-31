@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+    <tal:block tal:define="tile_id view/id;
+                plone_view context/@@plone;
+                toLocalizedTime nocall:plone_view/toLocalizedTime;
+                viewActions python:context.portal_registry.get('plone.types_use_view_action_in_listings', []);">
+        <div class="test-tile"
+            tal:attributes="data-tileid tile_id">
+            <h2 tal:content="view/data/title" tal:condition="view/data/title|nothing" />
+            <p tal:content="view/data/description" tal:condition="view/data/description|nothing" />
+            <ul tal:define="klass view/klass">
+                <li tal:attributes="class klass"
+                    tal:repeat="i view/values">
+                    <div class="outer">
+                        <div class="inner">
+                            <span class="title" tal:content="i/title|nothing" />
+                            <span class="description" tal:content="i/description|nothing" />
+                        </div>
+                    </div>
+                </li>    
+            </ul>
+            <div class="visualClear"><!-- --></div>
+        </div>
+    </tal:block>
+  </body>
+</html>

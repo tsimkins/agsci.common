@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<registry>
+    <record name="plone.app.tiles">
+    <value purge="false">
+        <element>agsci.common.tiles.test_tile</element>
+    </value>
+    </record>
+    <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_tableofcontents"
+             interface="plone.app.mosaic.interfaces.ITile"
+             remove="True">
+    </records>
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_test_tile"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.test_tile</value>
+        <value key="label">Test Tile</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+    <records prefix="plone.bundles/agsci.common"
+             interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="csscompilation">++resource++agsci.common/css/agsci.common.css</value>
+        <value key="last_compilation">2018-08-05 00:00:00</value>
+        <value key="compile">False</value>
+        <value key="merge_with">default</value>
+        <value key="enabled">True</value>
+        <value key="depends">*</value>
+    </records>
+
+</registry>

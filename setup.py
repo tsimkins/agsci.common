@@ -25,9 +25,23 @@ setup(name='agsci.common',
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-      'setuptools',
-      # -*- Extra requirements: -*-
-      ],
+        'setuptools',
+        'plone.app.dexterity',
+        'plone.app.lockingbehavior',
+        'plone.app.theming',
+        'plone.behavior',
+        'zope.schema',
+        'zope.interface',
+        'zope.component',
+        'plone.app.relationfield',
+        'requests',
+        'plone.app.contenttypes',
+        'collective.autopermission',
+        'collective.z3cform.datagridfield',
+        'collective.dexteritytextindexer',
+        'Products.WebServerAuth',
+        'eea.facetednavigation',
+    ],
     entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
