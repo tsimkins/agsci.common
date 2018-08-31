@@ -19,6 +19,7 @@
         <element value="listing_view" />
         <element value="summary_view" />
         <element value="tabular_view" />
+        <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addFolder</property>
@@ -34,6 +35,8 @@
         <element value="plone.app.dexterity.behaviors.nextprevious.INextPreviousToggle" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="plone.layoutaware"/>
+        <element value="plone.draftable"/>
     </property>
     <property name="schema" />
     <property name="model_source" />

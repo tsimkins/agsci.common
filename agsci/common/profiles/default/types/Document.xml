@@ -14,6 +14,7 @@
     <property name="default_view">document_view</property>
     <property name="view_methods">
         <element value="document_view" />
+        <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addDocument</property>
@@ -30,6 +31,8 @@
         <element value="plone.app.contenttypes.behaviors.tableofcontents.ITableOfContents" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="plone.layoutaware"/>
+        <element value="plone.draftable"/>
     </property>
     <property name="schema" />
     <property name="model_source" />
