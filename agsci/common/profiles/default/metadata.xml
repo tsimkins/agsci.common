@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <version>1</version>
+  <version>2</version>
   <dependencies>
     <dependency>profile-plone.app.mosaic:default</dependency>
     <dependency>profile-plone.app.tiles:default</dependency>
@@ -12,6 +12,7 @@
     <dependency>profile-plone.app.event:default</dependency>
     <dependency>profile-plone.app.relationfield:default</dependency>
     <dependency>profile-plone.app.theming:default</dependency>
-<dependency>profile-plone.app.relationfield:default</dependency>
+    <dependency>profile-plone.app.relationfield:default</dependency>
+    <dependency>profile-eea.facetednavigation:default</dependency>
   </dependencies>
 </metadata>

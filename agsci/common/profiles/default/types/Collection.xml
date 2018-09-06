@@ -19,6 +19,9 @@
         <element value="listing_view" />
         <element value="summary_view" />
         <element value="tabular_view" />
+        <element value="layout_view"/>
+        <element value="plone.layoutaware"/>
+        <element value="plone.draftable"/>
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addCollection</property>
