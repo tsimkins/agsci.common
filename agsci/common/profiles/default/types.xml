@@ -10,7 +10,7 @@
     <object name="agsci_section" meta_type="Dexterity FTI" />
     <object name="agsci_subsite" meta_type="Dexterity FTI" />
     <object name="Collection" meta_type="Dexterity FTI" />
-    <object name="Page" meta_type="Dexterity FTI" />
+    <object name="Document" meta_type="Dexterity FTI" />
     <object name="Event" meta_type="Dexterity FTI" />
     <object name="File" meta_type="Dexterity FTI" />
     <object name="Folder" meta_type="Dexterity FTI" />
