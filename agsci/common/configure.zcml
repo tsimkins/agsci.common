@@ -11,6 +11,7 @@
     <include package=".browser" />
     <include package=".layouts" />
     <include package=".tiles" />
+    <include package=".load" />
 
     <genericsetup:registerProfile
         name="default"
