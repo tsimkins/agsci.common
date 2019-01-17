@@ -13,4 +13,10 @@
         editview=".tags.EditForm"
         />
 
+    <plone:portletRenderer
+        portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
+        template="templates/navigation.pt"
+        layer="..browser.interfaces.IThemeSpecific"
+    />
+
 </configure>

@@ -41,4 +41,7 @@
 .visualClear {
   clear: both !important; }
 
+#content header {
+  z-index: auto; }
+
 /*# sourceMappingURL=agsci.common.css.map */

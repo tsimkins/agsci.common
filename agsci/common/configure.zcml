@@ -2,7 +2,10 @@
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:five="http://namespaces.zope.org/five"
            xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="agsci.common">
+
+    <plone:static name="agsci_common_theme" directory="theme" type="theme" />
 
     <five:registerPackage package="." initialize=".initialize" />
 
@@ -32,6 +35,6 @@
     <!-- Resource Directory -->
     <browser:resourceDirectory
         name="agsci.common"
-        directory="resources" />
+        directory="theme" />
 
 </configure>

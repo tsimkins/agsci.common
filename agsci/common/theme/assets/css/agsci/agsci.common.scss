@@ -65,3 +65,9 @@
 .visualClear {
     clear: both !important;
 }
+
+#content {
+    header {
+        z-index: auto;
+    }
+}

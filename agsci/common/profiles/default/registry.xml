@@ -22,7 +22,7 @@
 
     <records prefix="plone.bundles/agsci.common"
              interface='Products.CMFPlone.interfaces.IBundleRegistry'>
-        <value key="csscompilation">++resource++agsci.common/css/agsci.common.css</value>
+        <value key="csscompilation">++resource++agsci.common/assets/css/agsci/agsci.common.css</value>
         <value key="last_compilation">2018-08-05 00:00:00</value>
         <value key="compile">False</value>
         <value key="merge_with">default</value>

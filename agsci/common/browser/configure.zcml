@@ -4,5 +4,11 @@
 
     <include package=".views" />
     <include package=".viewlets" />
-    
+
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="agsci.common"
+        />
+
 </configure>
