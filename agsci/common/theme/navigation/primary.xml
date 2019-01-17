@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nav>
+    <items>
+        <!-- Resources Dropdown -->
+        <item>
+            <title>Resources For</title>
+            <hidden>True</hidden>
+            <items>
+                <group>
+                    <item>
+                        <title>Students</title>
+                    </item>
+                    <item>
+                        <title>Industry</title>
+                    </item>
+                    <item>
+                        <title>Alumni</title>
+                    </item>
+                    <item>
+                        <title>Faculty &amp; Staff</title>
+                    </item>
+                    <item>
+                        <title>Visitor &amp; Public</title>
+                    </item>
+                </group>
+            </items>
+        </item>
+        <!-- Programs Dropdown -->
+        <item>
+            <title>Degrees &amp; Programs</title>
+            <items>
+                <group>
+                    <item>
+                        <title>Undergraduate Degrees</title>
+                        <items>
+                            <item>
+                                <title>Majors</title>
+                            </item>
+                            <item>
+                                <title>Minors</title>
+                            </item>
+                            <item>
+                                <title>Associate Degrees</title>
+                            </item>
+                            <item>
+                                <title>Certificates</title>
+                            </item>
+                            <item>
+                                <title>Undecided</title>
+                            </item>
+                            <item>
+                                <title>Online Degree</title>
+                            </item>
+                            <item>
+                                <title>Study Abroad</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Graduate Degree Programs</title>
+                        <items>
+                            <item>
+                                <title>Inter-College Degree Programs</title>
+                            </item>
+                            <item>
+                                <title>Dual-Title Degree Programs</title>
+                            </item>
+                            <item>
+                                <title>Study Abroad</title>
+                            </item>
+                        </items>
+                    </item>
+                    <item>
+                        <title>International Programs</title>
+                        <items />
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Departments</title>
+                        <items>
+                            <item>
+                                <title>Agricultural and Biological Engineering</title>
+                            </item>
+                            <item>
+                                <title>Agricultural Economics, Sociology, and Education</title>
+                            </item>
+                            <item>
+                                <title>Animal Science</title>
+                            </item>
+                            <item>
+                                <title>Ecosystem Science and Management</title>
+                            </item>
+                            <item>
+                                <title>Entomology</title>
+                            </item>
+                            <item>
+                                <title>Food Science</title>
+                            </item>
+                            <item>
+                                <title>Plant Pathology and Environmental Microbiology</title>
+                            </item>
+                            <item>
+                                <title>Plant Science</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+            </items>
+        </item>
+        <!-- Admissions Dropdown -->
+        <item>
+            <title>Admissions</title>
+            <items>
+                <group>
+                    <item>
+                        <title>Undergraduate</title>
+                        <items>
+                            <item>
+                                <title>Schedule a Visit</title>
+                            </item>
+                            <item>
+                                <title>Request More Information</title>
+                            </item>
+                            <item>
+                                <title>Application Procedures</title>
+                            </item>
+                            <item>
+                                <title>Why Penn State?</title>
+                            </item>
+                            <item>
+                                <title>Transfer Information</title>
+                            </item>
+                            <item>
+                                <title>Commonwealth Campuses</title>
+                            </item>
+                            <item>
+                                <title>Tuition and Financial Aid</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Graduate</title>
+                        <items>
+                            <item>
+                                <title>How to Apply to a Graduate Program</title>
+                            </item>
+                            <item>
+                                <title>Funding Opportunities</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Links</title>
+                        <hide-title>True</hide-title>
+                        <items>
+                            <item>
+                                <title>Request Information</title>
+                                <description>Explore Majors and Career Pathways</description>
+                                <icon>fa-info-circle</icon>
+                            </item>
+                            <item>
+                                <title>Schedule a Visit</title>
+                                <description>Come to University Park</description>
+                                <icon>fa-map-marked-alt</icon>
+                            </item>
+                            <item>
+                                <title>Application Procedures</title>
+                                <description>Learn More about How to Apply</description>
+                                <icon>fa-list-alt</icon>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+            </items>
+        </item>
+        <!-- Research Dropdown -->
+        <item>
+            <title>Research</title>
+            <items>
+                <group>
+                    <item>
+                        <title>Research Areas</title>
+                        <items>
+                            <item>
+                                <title>Advanced Agricultural and Food Systems</title>
+                            </item>
+                            <item>
+                                <title>Biologically-Based Materials and Products</title>
+                            </item>
+                            <item>
+                                <title>Community Resilience and Capacity</title>
+                            </item>
+                            <item>
+                                <title>Environmental Resilience</title>
+                            </item>
+                            <item>
+                                <title>Global Engagement</title>
+                            </item>
+                            <item>
+                                <title>Integrated Health Solutions</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Ag Experiment Stations</title>
+                        <items>
+                            <item>
+                                <title>Fruit Research and Extension Center (FREC)</title>
+                            </item>
+                            <item>
+                                <title>Lake Erie Regional Grape Research and Extension Center</title>
+                            </item>
+                            <item>
+                                <title>Russell E. Larson Agricultural Research Center</title>
+                            </item>
+                            <item>
+                                <title>Southeast Agricultural Research and Extension Center</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+            </items>
+        </item>
+        <!-- Extension Dropdown -->
+        <item>
+            <title>Extension</title>
+            <items>
+                <group>
+                    <item>
+                        <title>Extension Section</title>
+                        <items>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Extension Section</title>
+                        <items>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                            <item>
+                                <title>Extension Links</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+            </items>
+        </item>
+        <!-- About Dropdown -->
+        <item>
+            <title>About</title>
+            <items>
+                <group>
+                    <item>
+                        <title>About the College</title>
+                        <items>
+                            <item>
+                                <title>Leadership</title>
+                            </item>
+                            <item>
+                                <title>Mission &amp; Strategic Plan</title>
+                            </item>
+                            <item>
+                                <title>History of the College</title>
+                            </item>
+                            <item>
+                                <title>Diversity</title>
+                            </item>
+                            <item>
+                                <title>Multicultural Programs</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>Development</title>
+                        <items>
+                            <item>
+                                <title>Make a Gift</title>
+                            </item>
+                            <item>
+                                <title>Impact Opportunities</title>
+                            </item>
+                            <item>
+                                <title>Scholarship and Awards Banquet</title>
+                            </item>
+                        </items>
+                    </item>
+                    <item>
+                        <title>Industry Relations</title>
+                        <items>
+                            <item>
+                                <title>Penn State Ag Business Council</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+                <group>
+                    <item>
+                        <title>News &amp; Events</title>
+                        <items>
+                            <item>
+                                <title>Latest News</title>
+                            </item>
+                            <item>
+                                <title>Upcoming Events</title>
+                            </item>
+                        </items>
+                    </item>
+                </group>
+            </items>
+        </item>
+    </items>
+</nav>

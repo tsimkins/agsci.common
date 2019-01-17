@@ -1,38 +1,38 @@
 var jq3 = $.noConflict(true);
 
-/* replacement for old Bootstrap 3 affi */
-  jq3(document).ready(function() {
+/* replacement for old Bootstrap 3 affix */
+jq3(document).ready(function() {
 
-  var toggleAffix = function(affixElement, scrollElement, wrapper) {
-  
-    var height = affixElement.outerHeight()/3, /* added /3 so the white space gap is not huge */
-        top = wrapper.offset().top + 1; 
-    
-    if (scrollElement.scrollTop() >= top){
-        wrapper.height(height);
-        affixElement.addClass("affix");
-    }
-    else {
-        affixElement.removeClass("affix");
-        wrapper.height('auto');
-    }
-      
-  };
+    var toggleAffix = function(affixElement, scrollElement, wrapper) {
+
+        var height = affixElement.outerHeight() / 3,
+            /* added /3 so the white space gap is not huge */
+            top = wrapper.offset().top + 1;
+
+        if (scrollElement.scrollTop() >= top) {
+            wrapper.height(height);
+            affixElement.addClass("affix");
+        } else {
+            affixElement.removeClass("affix");
+            wrapper.height('auto');
+        }
+
+    };
 
 
-  jq3('[data-toggle="affix"]').each(function() {
-    var ele = jq3(this),
-        wrapper = jq3('<div class="affix-placeholder"></div>');
-    
-    ele.before(wrapper);
-    jq3(window).on('scroll resize', function() {
-        toggleAffix(ele, jq3(this), wrapper);
+    jq3('body.userrole-anonymous [data-toggle="affix"]').each(function() {
+        var ele = jq3(this),
+            wrapper = jq3('<div class="affix-placeholder"></div>');
+
+        ele.before(wrapper);
+        jq3(window).on('scroll resize', function() {
+            toggleAffix(ele, jq3(this), wrapper);
+        });
+
+        // init
+        toggleAffix(ele, jq3(window), wrapper);
     });
-    
-    // init
-    toggleAffix(ele, jq3(window), wrapper);
-  });
-  
+
 });
 
 // need this for tabs on mobile view so that they don't go behind top sticky nav 	
@@ -76,7 +76,7 @@ window.addEventListener('resize', function(event) {
 });
 
 window.sr = ScrollReveal({
-        reset: false
+    reset: false
 }); /* reset to false - otherwise things get weird after launching modal */
 sr.reveal('.slide-down', {
     duration: 750,

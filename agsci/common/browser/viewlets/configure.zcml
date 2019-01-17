@@ -1,5 +1,18 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:five="http://namespaces.zope.org/five"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="agsci.common">
-    
+
+    <!-- Primary Navigation -->
+
+    <browser:viewlet
+        name="agsci.common.navigation.primary"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".PrimaryNavigationViewlet"
+        permission="zope2.View"
+        template="templates/navigation-primary.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>

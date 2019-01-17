@@ -41,6 +41,7 @@ setup(name='agsci.common',
         'collective.dexteritytextindexer',
         'Products.WebServerAuth',
         'eea.facetednavigation',
+        'untangle',
     ],
     entry_points="""
       # -*- Entry points: -*-

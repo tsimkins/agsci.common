@@ -47,6 +47,8 @@
         <replace css:content="#viewlet-above-content" css:theme="#above-content" />
     
         <!-- Navigation -->
+        <replace css:content-children="#nav-viewlet" css:theme="#nav-viewlet" />
+        
         <replace css:content-children="aside.portletNavigationTree" css:theme-children="#navbarSectionNav" />
         
         <!-- Central column -->
