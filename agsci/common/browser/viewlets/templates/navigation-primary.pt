@@ -78,7 +78,7 @@
                                                     <a 
                                                         tal:content="l2/title/cdata"
                                                         class="nav-link section-header" 
-                                                        href=""></a>
+                                                        href="" />
                                                 </li>     
                                 	            <li tal:repeat="link l2/items/item|nothing"
                                 	                class="nav-item">

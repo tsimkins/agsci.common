@@ -14,7 +14,7 @@ class ViewletBase(_ViewletBase):
 class NavigationViewlet(ViewletBase):
     
     def label(self, title=''):
-        return ploneify(title)
+        return "-".join([ploneify(self.nav_id), ploneify(title)])
     
     @property
     def config(self):
