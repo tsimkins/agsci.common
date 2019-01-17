@@ -11,14 +11,29 @@ class ViewletBase(_ViewletBase):
     def site(self):
         return getSite()
     
-class PrimaryNavigationViewlet(ViewletBase):
+class NavigationViewlet(ViewletBase):
     
     def label(self, title=''):
         return ploneify(title)
     
     @property
+    def config(self):
+
+        resource = self.site.restrictedTraverse('++resource++agsci.common/navigation/navigation.xml')
+        xml = untangle.parse(resource.context.path)
+        return xml.config
+
+    @property
     def nav(self):
 
-        resource = self.site.restrictedTraverse('++resource++agsci.common/navigation/primary.xml')
-        xml = untangle.parse(resource.context.path)
-        return xml.nav
+        for nav in self.config.nav:
+            if nav['id'] == self.nav_id:
+                return nav
+      
+class PrimaryNavigationViewlet(NavigationViewlet):
+    
+    nav_id = 'primary'
+
+class AudienceNavigationViewlet(NavigationViewlet):
+    
+    nav_id = 'audience'

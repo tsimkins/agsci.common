@@ -4,6 +4,17 @@
            xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="agsci.common">
 
+    <!-- Audience Navigation -->
+
+    <browser:viewlet
+        name="agsci.common.navigation.audience"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".AudienceNavigationViewlet"
+        permission="zope2.View"
+        template="templates/navigation-audience.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Primary Navigation -->
 
     <browser:viewlet

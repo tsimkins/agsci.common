@@ -1,0 +1,64 @@
+<div id="audience-nav-viewlet"
+    tal:define="nav view/nav|nothing">
+
+    <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar">
+
+        <div class="row mx-0 align-items-center">
+    	
+            <div class="col-3">
+                <a 
+                    class="navbar-brand" 
+                    href=""><img 
+                        src="++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" alt="Penn State College of Agricultural Science Logo" 
+                        class="agsci-logo pl-3"></a>
+        	</div>
+    
+            <div class="col-9 text-right">
+
+                <ul class="audience-dropdowns dropdown-selectors justify-content-end">
+
+                    <tal:li
+                        tal:repeat="l1 nav/item/items/group/item">
+
+                    	<li 
+                    	   class="dropdown"
+                    	   tal:define="item_id python:view.label(l1.title.cdata)">
+
+                        	<a tal:attributes="id item_id"
+                        	   tal:content="l1/title/cdata"
+                        	   class="dropdown-toggle" 
+                        	   href="https://google.com" 
+                        	   role="button" 
+                        	   data-toggle="dropdown" 
+                        	   aria-haspopup="true" 
+                        	   data-click-behavior="default" 
+                        	   aria-expanded="false" />
+            
+                    		<div 
+                              tal:attributes="aria-labelledby item_id"
+                    		  class="dropdown-menu dropdown-menu-right">
+        
+                	           	<div class="container px-0">
+        
+                            		<div class="row justify-content-center">
+                	            
+                                		<div class="col-12">
+                                            <ul class="nav flex-column">
+                                	            <li tal:repeat="link l1/items/item|nothing"
+                                	                class="nav-item">
+                                                    <a class="nav-link"
+                                                        tal:content="link/title/cdata|nothing" 
+                                                        href="" />
+                                                </li>     
+                                            </ul>
+                                		</div>
+                            		</div>
+                    	       	</div>
+                    		</div>
+                    	</li>
+                	</tal:li>
+                </ul>
+        	</div>
+        </div>
+    </div>
+</div>

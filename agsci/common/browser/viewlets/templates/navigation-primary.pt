@@ -1,6 +1,7 @@
-<div id="nav-viewlet">
-    <nav class="navbar navbar-expand-lg"
-        tal:define="nav view/nav|nothing">
+<div id="primary-nav-viewlet"
+    tal:define="nav view/nav|nothing">
+
+    <nav class="navbar navbar-expand-lg">
 
         <a 
             class="navbar-brand d-lg-none" 
