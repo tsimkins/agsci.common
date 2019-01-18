@@ -44,4 +44,8 @@
 #content header {
   z-index: auto; }
 
+#viewlet-above-content #audience-nav-viewlet,
+#viewlet-above-content #primary-nav-viewlet {
+  display: none; }
+
 /*# sourceMappingURL=agsci.common.css.map */

@@ -71,3 +71,10 @@
         z-index: auto;
     }
 }
+
+#viewlet-above-content {
+    #audience-nav-viewlet,
+    #primary-nav-viewlet {
+        display: none;
+    }
+}

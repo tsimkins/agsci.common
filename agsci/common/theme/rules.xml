@@ -5,12 +5,12 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
-      <!-- Include barceloneta's backend.xml for backend theming. -->
-      <rules css:if-content=".userrole-authenticated">
+    <!-- Include barceloneta's backend.xml for backend theming. -->
+    <rules css:if-content=".userrole-authenticated">
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
-      </rules>
+    </rules>
 
     <rules>
 

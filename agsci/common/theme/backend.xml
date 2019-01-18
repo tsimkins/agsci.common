@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules xmlns="http://namespaces.plone.org/diazo" xmlns:css="http://namespaces.plone.org/diazo/css" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
     <!--
     You can include this rules file in your own theme as follows:
 
@@ -18,6 +19,7 @@
     This will include the toolbar in your theme and use Barceloneta to theme
     all your backend pages such as site setup and edit.
     -->
+
     <rules css:if-content=".userrole-authenticated">
 
         <!-- CSS -->
@@ -29,18 +31,26 @@
 
         <!-- Toolbar -->
         <before css:theme-children="body" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
+
         <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
+
         <!-- We don't want overlays -->
         <drop attributes="class" css:content="#edit-bar a.pat-plone-modal" />
+
         <!-- Cut down barceloneta without just for backend UI -->
         <rules css:if-not-content="body.viewpermission-view, body.viewpermission-none">
+
             <theme href="../++theme++barceloneta/index.html" />
+
             <notheme css:if-not-content="#visual-portal-wrapper" />
+
             <!-- We can't control the bundle from here due to include. Just hard code -->
             <after css:theme-children="head">
                 <link rel="stylesheet" href="/++theme++barceloneta/less/barceloneta-compiled.css" />
             </after>
+
             <rules css:if-content="#portal-top">
+
                 <!-- Attributes -->
                 <copy attributes="*" css:theme="html" css:content="html" />
                 <!-- Base tag -->
@@ -52,17 +62,23 @@
                 <!-- Don't use Plone icons, use the theme's -->
                 <drop css:content="head link[rel='apple-touch-icon']" />
                 <drop css:content="head link[rel='shortcut icon']" />
+
             </rules>
+
             <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
             <copy attributes="*" css:content="body" css:theme="body" />
+
             <!-- CSS -->
             <drop css:content="head link[data-bundle='diazo']" />
             <after css:theme-children="head" css:content="head link" />
+
             <!-- Script -->
             <drop css:content="head script[data-bundle='diazo']" />
             <after css:theme-children="head" css:content="head script" />
+
             <!-- We don't need global nav -->
             <drop css:theme="#mainnavigation-wrapper" />
+
             <!-- Hero unit on homepage only -->
             <drop css:theme="div.principal" css:if-not-content="body.template-document_view.section-front-page" />
             <!-- Full-width breadcrumb -->
@@ -70,6 +86,7 @@
             <after css:theme-children="head">
                 <style>.plone-breadcrumb {margin-top: 0;}</style>
             </after>
+
             <!-- Central column -->
             <replace css:theme="#content-container" method="raw">
                 <xsl:variable name="central">
@@ -92,8 +109,10 @@
                 </div>
                 <!--/row-->
             </replace>
+            
             <!-- Alert message -->
             <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+
             <!-- Left column -->
             <rules css:if-content="#portal-column-one">
                 <replace css:theme="#column1-container">
@@ -104,6 +123,7 @@
                     </div>
                 </replace>
             </rules>
+
             <!-- Right column -->
             <rules css:if-content="#portal-column-two">
                 <replace css:theme="#column2-container">
@@ -114,6 +134,7 @@
                     </div>
                 </replace>
             </rules>
+
             <!-- Content header -->
             <drop css:theme="#portal-top" />
             <drop css:theme="#portal-footer-wrapper" />
