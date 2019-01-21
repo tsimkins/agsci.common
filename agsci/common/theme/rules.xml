@@ -10,6 +10,11 @@
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
+        <rules css:if-content="body.viewpermission-modify-portal-content, body.viewpermission-portlets-manage-portlets">
+            <drop css:theme="#theme-javascript" />
+            <drop css:theme="[data-theme='agsci.common']" />
+        </rules>
+
     </rules>
 
     <rules>
