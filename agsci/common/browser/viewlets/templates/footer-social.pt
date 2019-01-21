@@ -1,0 +1,15 @@
+<div id="footer-social">
+
+    <ul class="list-inline list-inline-social">
+        <li tal:repeat="i view/nav/item|nothing">
+            <a tal:attributes="href i/link/cdata">
+                <span class="fa-stack">
+                    <em tal:condition="not: i/inverse/cdata|nothing" class="fas fa-lg fa-square fa-fw fa-stack-1x fa-inverse"></em>
+                    <em tal:attributes="class string:title fab fa-lg fa-fw ${i/icon/cdata} fa-stack-1x"></em>
+                </span>
+                <span tal:content="i/title/cdata" class="hiddenStructure" />
+            </a>
+        </li>
+
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <nav id="social">
+        <item>
+            <title>Facebook</title>
+            <icon>fa-facebook-square</icon>
+            <link>https://www.facebook.com/agsciences</link>
+        </item>
+        <item>
+            <title>Twitter</title>
+            <icon>fa-twitter-square</icon>
+            <link>http://twitter.com/agsciences</link>
+        </item>
+        <item>
+            <title>Instagram</title>
+            <icon>fa-instagram</icon>
+            <link>http://instagram.com/agsciences</link>
+            <inverse>True</inverse>
+        </item>
+        <item>
+            <title>LinkedIn</title>
+            <icon>fa-linkedin</icon>
+            <link>https://www.linkedin.com/company/penn-state-college-of-agricultural-sciences</link>
+        </item>
+        <item>
+            <title>YouTube</title>
+            <icon>fa-youtube-square</icon>
+            <link>http://www.youtube.com/c/PennStateAgSciences</link>
+        </item>
+    </nav>
+    
+</config>

@@ -66,6 +66,13 @@
     clear: both !important;
 }
 
+.hiddenStructure {
+  margin: -1px 0 0 -1px !important;
+  padding: 0 !important;
+  position: absolute;
+  margin-left: -10000px !important;
+}
+
 #content {
     header {
         z-index: auto;

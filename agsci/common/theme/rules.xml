@@ -112,6 +112,8 @@
         <!-- Footer -->
         <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 
+        <replace css:theme="#footer-social" css:content-children="#footer-social" />
+
     </rules>
 
 </rules>

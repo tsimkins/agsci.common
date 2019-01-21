@@ -26,4 +26,15 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Social Footer -->
+
+    <browser:viewlet
+        name="agsci.common.footer.social"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".SocialFooterViewlet"
+        permission="zope2.View"
+        template="templates/footer-social.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>
