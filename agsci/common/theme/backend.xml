@@ -40,8 +40,6 @@
         <!-- Cut down barceloneta without just for backend UI -->
         <rules css:if-not-content="body.viewpermission-view, body.viewpermission-none">
 
-            <theme href="../++theme++barceloneta/index.html" />
-
             <notheme css:if-not-content="#visual-portal-wrapper" />
 
             <!-- We can't control the bundle from here due to include. Just hard code -->
