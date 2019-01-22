@@ -54,31 +54,32 @@
         <!-- Navigation -->
         <replace css:content-children="#audience-nav-viewlet" css:theme="#audience-nav-viewlet" />
         <replace css:content-children="#primary-nav-viewlet" css:theme="#primary-nav-viewlet" />
-        
+
         <replace css:content-children="aside.portletNavigationTree" css:theme-children="#navbarSectionNav" />
+
+        <!-- Portlets -->
+        <rules css:if-not-content="#portal-column-one, #portal-column-two">
+            <drop css:theme="[data-component='portlets']" />
+        </rules>
         
         <!-- Central column -->
         <replace css:theme="#content-container" method="raw">
     
-        <xsl:variable name="central">
-            <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
-            <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
-            <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
-            <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
-        </xsl:variable>
-    
-        <div class="{$central}">
-            <div class="row">
-            <div class="col-xs-12 col-sm-12">
-                <xsl:apply-templates css:select="#content" />
+            <xsl:variable name="central">
+
+                <xsl:if test="//aside[@id='portal-column-one'] or //aside[@id='portal-column-two']">col-lg-8 </xsl:if>
+                <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-lg-12</xsl:if>
+                
+            </xsl:variable>
+        
+            <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
+                <div class="row">
+                <div class="container">
+                    <xsl:apply-templates css:select="#content" />
+                </div>
+                </div>
             </div>
-            </div>
-            <footer class="row">
-            <div class="col-xs-12 col-sm-12">
-                <xsl:copy-of css:select="#viewlet-below-content" />
-            </div>
-            </footer>
-        </div>
+
         </replace>
     
         <!-- Alert message -->
