@@ -14,7 +14,7 @@ class ViewletBase(_ViewletBase):
 
 class NavigationViewlet(ViewletBase):
 
-    xml_file = '++resource++agsci.common/navigation/navigation.xml'
+    xml_file = '++resource++agsci.common/configuration/navigation.xml'
 
     def label(self, title=''):
         return "-".join([ploneify(self.nav_id), ploneify(title)])
@@ -43,6 +43,12 @@ class AudienceNavigationViewlet(NavigationViewlet):
 
 class SocialFooterViewlet(NavigationViewlet):
 
-    xml_file = '++resource++agsci.common/navigation/social.xml'
+    xml_file = '++resource++agsci.common/configuration/social.xml'
 
     nav_id = 'social'
+
+class FooterLinksViewlet(NavigationViewlet):
+
+    xml_file = '++resource++agsci.common/configuration/footer.xml'
+
+    nav_id = 'links'

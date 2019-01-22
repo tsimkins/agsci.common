@@ -36,5 +36,16 @@
         template="templates/footer-social.pt"
         layer="..interfaces.IThemeSpecific"
     />
+    
+    <!-- Lilnks Footer -->
+
+    <browser:viewlet
+        name="agsci.common.footer.links"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".FooterLinksViewlet"
+        permission="zope2.View"
+        template="templates/footer-links.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
 
 </configure>

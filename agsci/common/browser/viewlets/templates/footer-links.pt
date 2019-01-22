@@ -1,0 +1,18 @@
+<div id="footer-links">
+
+    <p class="footerLinks">
+    
+        <tal:links tal:repeat="i view/nav/item|nothing">
+            <a tal:attributes="href i/link/cdata"
+               tal:content="i/title/cdata" />
+
+            <span class="footerSeparator">—</span>
+
+        </tal:links>
+
+        <abbr title="Copyright">&copy;</abbr>
+        2019 The Pennsylvania State University
+
+    </p>
+
+</div>
