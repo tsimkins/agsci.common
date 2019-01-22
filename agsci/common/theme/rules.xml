@@ -10,10 +10,16 @@
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
-        <rules css:if-content="body.viewpermission-modify-portal-content, body.viewpermission-portlets-manage-portlets">
+        <rules css:if-content="body.viewpermission-plone-site-setup-site, body.viewpermission-modify-portal-content, body.viewpermission-portlets-manage-portlets, body.viewpermission-plone-site-setup-overview">
+            <drop css:theme="header, footer" />
             <drop css:theme="#theme-javascript" />
+            <drop css:theme="a.back-to-top" />
+            <drop css:theme="[data-component='portlets']" />
             <drop css:theme="[data-theme='agsci.common']" />
         </rules>
+
+        <drop css:content="#audience-nav-viewlet" />
+        <drop css:content="#primary-nav-viewlet" />
 
     </rules>
 
@@ -41,7 +47,18 @@
             <drop css:content="head link[rel='shortcut icon']" />
 
         </rules>
-    
+
+        <rules css:if-not-content=".userrole-authenticated">
+        
+            <drop css:theme="[data-theme='agsci.common.base']" />
+
+            <after css:theme-children="head" css:content="head link[data-bundle='mosaic-grid']" />
+            <after css:theme-children="head" css:content="head link[data-bundle='mosaic-styles']" />
+            <after css:theme-children="head" css:content="head link[data-bundle='mosaic']" />
+
+            <after css:theme-children="head" css:content="head link[data-bundle='production']" />
+        </rules>
+
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
         <copy attributes="*" css:content="body" css:theme="body" />
     

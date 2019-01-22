@@ -50,13 +50,4 @@
 #content header {
   z-index: auto; }
 
-body.userrole-authenticated #viewlet-above-content #audience-nav-viewlet,
-body.userrole-authenticated #viewlet-above-content #primary-nav-viewlet {
-  display: none; }
-
-body.viewpermission-modify-portal-content header, body.viewpermission-modify-portal-content footer,
-body.viewpermission-portlets-manage-portlets header,
-body.viewpermission-portlets-manage-portlets footer {
-  display: none; }
-
-/*# sourceMappingURL=agsci.common.css.map */
+/*# sourceMappingURL=agsci.common.base.css.map */

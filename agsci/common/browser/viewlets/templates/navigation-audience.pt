@@ -9,7 +9,8 @@
                 <a 
                     class="navbar-brand" 
                     href=""><img 
-                        src="++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" alt="Penn State College of Agricultural Science Logo" 
+                        tal:attributes="src string:${view/site/absolute_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" 
+                        alt="Penn State College of Agricultural Sciences Logo" 
                         class="agsci-logo pl-3"></a>
         	</div>
     

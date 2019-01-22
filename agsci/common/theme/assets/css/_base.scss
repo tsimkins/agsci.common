@@ -78,21 +78,3 @@
         z-index: auto;
     }
 }
-
-body.userrole-authenticated {
-
-    #viewlet-above-content {
-        #audience-nav-viewlet,
-        #primary-nav-viewlet {
-            display: none;
-        }
-    }
-
-}
-
-body.viewpermission-modify-portal-content,
-body.viewpermission-portlets-manage-portlets {
-    header, footer {
-        display: none;
-    }
-}
