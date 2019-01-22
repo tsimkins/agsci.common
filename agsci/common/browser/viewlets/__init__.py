@@ -52,3 +52,7 @@ class FooterLinksViewlet(NavigationViewlet):
     xml_file = '++resource++agsci.common/configuration/footer.xml'
 
     nav_id = 'links'
+    
+class FooterContactViewlet(FooterLinksViewlet):
+
+    nav_id = 'contact'

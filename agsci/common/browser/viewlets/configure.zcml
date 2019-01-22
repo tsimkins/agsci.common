@@ -36,8 +36,19 @@
         template="templates/footer-social.pt"
         layer="..interfaces.IThemeSpecific"
     />
-    
-    <!-- Lilnks Footer -->
+
+    <!-- Contact Footer -->
+
+    <browser:viewlet
+        name="agsci.common.footer.contact"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".FooterContactViewlet"
+        permission="zope2.View"
+        template="templates/footer-contact.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
+    <!-- Links Footer -->
 
     <browser:viewlet
         name="agsci.common.footer.links"

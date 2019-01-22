@@ -16,4 +16,15 @@
         </item>
     </nav>
     
+    <nav id="contact">
+        <item>
+            <title>Directory</title>
+            <link>https://agsci.psu.edu/directory</link>
+        </item>
+        <item>
+            <title>Contact Us</title>
+            <link>https://agsci.psu.edu/contact</link>
+        </item>
+    </nav>
+    
 </config>
