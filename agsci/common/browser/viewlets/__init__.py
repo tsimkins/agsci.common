@@ -1,5 +1,7 @@
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from zope.component.hooks import getSite
+from zope.component import queryUtility
 
 import untangle
 
@@ -11,6 +13,14 @@ class ViewletBase(_ViewletBase):
     @property
     def site(self):
         return getSite()
+
+    @property
+    def portal_url(self):
+        return self.context.portal_url()
+    
+    def normalize(self, _):
+        normalizer = queryUtility(IIDNormalizer)
+        return normalizer.normalize(_)
 
 class NavigationViewlet(ViewletBase):
 
@@ -56,3 +66,35 @@ class FooterLinksViewlet(NavigationViewlet):
 class FooterContactViewlet(FooterLinksViewlet):
 
     nav_id = 'contact'
+
+class CSSViewlet(ViewletBase):
+
+    edit_permissions = [
+        'plone-site-setup-site', 
+        'modify-portal-content', 
+        'portlets-manage-portlets', 
+        'plone-site-setup-overview',
+        'plone-site-setup-users-and-groups',
+    ]
+
+    @property
+    def permissions(self):
+
+        # permissions required. Useful to theme frontend and backend
+        # differently
+
+        view = self.view
+
+        permissions = []
+
+        if not getattr(view, '__ac_permissions__', tuple()):
+            permissions = ['none']
+
+        for permission, roles in getattr(view, '__ac_permissions__', tuple()):
+            permissions.append(self.normalize(permission))
+
+        return permissions
+            
+    @property
+    def editing(self):
+        return any([x in self.permissions for x in self.edit_permissions])

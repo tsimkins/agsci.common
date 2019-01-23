@@ -3,10 +3,9 @@
 
     <nav class="navbar navbar-expand-lg">
 
-        <a 
-            class="navbar-brand d-lg-none" 
-            href=""><img 
-                tal:attributes="src string:${view/site/absolute_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" 
+        <a tal:attributes="href view/portal_url"
+           class="navbar-brand d-lg-none"><img 
+                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" 
                 alt="Penn State College of Agricultural Science Logo" 
                 class="agsci-logo pl-3"></a>
 

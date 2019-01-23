@@ -4,6 +4,16 @@
            xmlns:plone="http://namespaces.plone.org/plone"
            i18n_domain="agsci.common">
 
+    <!-- CSS Viewlets -->
+    <browser:viewlet
+        name="agsci.common.css"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+        class=".CSSViewlet"
+        permission="zope2.View"
+        template="templates/css.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Audience Navigation -->
 
     <browser:viewlet

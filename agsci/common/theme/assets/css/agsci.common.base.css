@@ -49,5 +49,12 @@
 
 #content header {
   z-index: auto; }
+#content #plone-document-byline {
+  font-size: 0.75em;
+  margin: 1em 0;
+  color: #575757; }
+#content .documentDescription {
+  font-size: 1.25em;
+  margin-bottom: 1.5em; }
 
 /*# sourceMappingURL=agsci.common.base.css.map */
