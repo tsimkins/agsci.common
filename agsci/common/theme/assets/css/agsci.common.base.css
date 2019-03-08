@@ -57,4 +57,12 @@
   font-size: 1.25em;
   margin-bottom: 1.5em; }
 
+body.mosaic-layout-customized #portal-top,
+body.mosaic-layout-customized #portal-mainnavigation,
+body.mosaic-layout-customized #portal-breadcrumbs,
+body.mosaic-layout-customized .mosaic-blur {
+  display: none; }
+body.mosaic-layout-customized #portal-column-content {
+  margin: 1em 20%; }
+
 /*# sourceMappingURL=agsci.common.base.css.map */

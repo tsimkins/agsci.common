@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+    <section class="container-fluid jumbotron jumbotron-img-based jumbotron-mid d-flex align-items-end position-relative">
+     
+        <div 
+            tal:define="background_style view/background_style|nothing"
+            tal:attributes="style background_style"
+            class="jumbotron-img bg-center-center fix-img-right"></div>
+
+        <div class="opacity-dimmer-bottom"></div>
+
+        <div class="container mb-4">
+        	<div class="row align-items-end">
+            	<div class="col-11 col-lg-9">
+            				
+            		<div id="portal-breadcrumbs"
+            		  tal:replace="view/breadcrumbs|nothing" />
+           				
+            		<div class="affix-placeholder" style="height: auto;"></div>
+            		
+            		<h1 data-toggle="affix" class=""
+            		  tal:content="context/Title|nothing">
+            				
+            	</div>
+            	
+            </div>
+        </div>
+
+    </section>
+  </body>
+</html>

@@ -9,11 +9,12 @@
                 plone_view context/@@plone;
                 toLocalizedTime nocall:plone_view/toLocalizedTime;
                 viewActions python:context.portal_registry.get('plone.types_use_view_action_in_listings', []);">
-        <div class="test-tile"
-            tal:attributes="data-tileid tile_id">
+        <div tal:define="tile_klass view/klass|nothign"
+             tal:attributes="data-tileid tile_id;
+                             class string:agsci-tile ${tile_klass}">
             <h2 tal:content="view/data/title" tal:condition="view/data/title|nothing" />
             <p tal:content="view/data/description" tal:condition="view/data/description|nothing" />
-            <ul tal:define="klass view/klass">
+            <ul tal:define="klass view/item_klass">
                 <li tal:attributes="class klass"
                     tal:repeat="i view/values">
                     <div class="outer">

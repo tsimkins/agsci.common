@@ -90,3 +90,16 @@
     }
 }
 
+
+body.mosaic-layout-customized {
+    #portal-top,
+    #portal-mainnavigation,
+    #portal-breadcrumbs,
+    .mosaic-blur {
+        display: none;
+    }
+    
+    #portal-column-content {
+        margin: 1em 20%;
+    }
+}

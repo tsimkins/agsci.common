@@ -9,12 +9,25 @@
     <include package="plone.app.tiles" />
 
     <plone:tile
-        name="agsci.common.tiles.test_tile"
-        title="Test AgSci Tile"
-        description="A tile that shows collection results"
-        schema=".interfaces.ITestTile"
-        class=".TestTile"
-        template="templates/test_tile.pt"
+        name="agsci.common.tiles.jumbotron"
+        title="Jumbotron"
+        description=""
+        schema=".interfaces.IJumbotronTile"
+        class=".JumbotronTile"
+        template="templates/jumbotron.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
+    <plone:tile
+        name="agsci.common.tiles.callout_block"
+        title="Callout Block"
+        description=""
+        schema=".interfaces.ICalloutBlockTile"
+        class=".CalloutBlockTile"
+        template="templates/callout_block.pt"
         add_permission="cmf.ModifyPortalContent"
         permission="zope2.View"
         layer=".interfaces.IAgsciTilesLayer"

@@ -1,9 +1,17 @@
 from plone import api
 from plone import tiles
 
+from base64 import b64encode
+from zope.component import queryMultiAdapter
+from zope.viewlet.interfaces import IViewletManager
+from Products.Five.browser import BrowserView
+
+
 from .. import object_factory
 
-class TestTile(tiles.PersistentTile):
+class BaseTile(tiles.PersistentTile):
+
+    klass = 'base-tile'
 
     def can_edit(self):
         if api.user.is_anonymous():
@@ -14,7 +22,30 @@ class TestTile(tiles.PersistentTile):
             username=current.id,
             obj=self.context)
 
-    def klass(self):
+class JumbotronTile(BaseTile):
+    
+    def breadcrumbs(self):
+        view = BrowserView(self.context, self.request)
+        manager_name = 'plone.app.layout.viewlets.interfaces.IAboveContent'
+        manager = queryMultiAdapter((self.context, self.request, view), IViewletManager, manager_name, default=None)
+        #plone.path_bar
+        import pdb; pdb.set_trace()
+    
+    def background_style(self):
+        return "background-image: url(%s);" % self.img_src
+
+    @property
+    def img_src(self):
+        img = self.data.get('image', None)
+        return 'data:image/jpeg;base64,%s' % b64encode(img.data)
+        #import pdb; pdb.set_trace()
+
+class CalloutBlockTile(BaseTile):
+    pass
+
+class TestTile(BaseTile):
+
+    def item_klass(self):
     
         _ = [
             (4, 'mosaic-width-quarter'),
