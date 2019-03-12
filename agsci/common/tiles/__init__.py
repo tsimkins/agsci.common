@@ -2,10 +2,8 @@ from plone import api
 from plone import tiles
 
 from base64 import b64encode
-from zope.component import queryMultiAdapter
-from zope.viewlet.interfaces import IViewletManager
+from plone.app.layout.viewlets.common import PathBarViewlet
 from Products.Five.browser import BrowserView
-
 
 from .. import object_factory
 
@@ -26,10 +24,9 @@ class JumbotronTile(BaseTile):
     
     def breadcrumbs(self):
         view = BrowserView(self.context, self.request)
-        manager_name = 'plone.app.layout.viewlets.interfaces.IAboveContent'
-        manager = queryMultiAdapter((self.context, self.request, view), IViewletManager, manager_name, default=None)
-        #plone.path_bar
-        import pdb; pdb.set_trace()
+        viewlet = PathBarViewlet(self.context, self.request, view)
+        viewlet.update()
+        return viewlet.render()
     
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
