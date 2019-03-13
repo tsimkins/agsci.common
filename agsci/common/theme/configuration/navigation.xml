@@ -16,13 +16,13 @@
                                 <title>Advising</title>
                             </item>
                             <item>
-                                <title>Careers &amp; Internships</title>
+                                <title>Careers and Internships</title>
                             </item>
                             <item>
-                                <title>Clubs &amp; Organizations</title>
+                                <title>Clubs and Organizations</title>
                             </item>
                             <item>
-                                <title>Student Stories</title>
+                                <title>Student Life</title>
                             </item>
                         </items>
                     </item>
@@ -33,7 +33,7 @@
                                 <title>Industry Recruitment &amp; Employer Relations</title>
                             </item>
                             <item>
-                                <title>Student Careers &amp; Internships</title>
+                                <title>Student Careers and Internships</title>
                             </item>
                             <item>
                                 <title>Collaborating with the College</title>
@@ -53,7 +53,7 @@
                                 <title>Volunteer on an Alumni Committee</title>
                             </item>  
                             <item>
-                                <title>Alumni Awards &amp; Recognition</title>
+                                <title>Alumni Awards and Recognition</title>
                             </item>  
                             <item>
                                 <title>Alumni Groups</title>
@@ -68,10 +68,10 @@
                         <title>Faculty &amp; Staff</title>
                         <items>
             	            <item>
-                                <title>Contacts</title>
+                                <title>Faculty and Staff Contacts</title>
                             </item>     
                             <item>
-                                <title>Resources</title>
+                                <title>Faculty and Staff Resources</title>
                             </item>  
                         </items>
                     </item>
@@ -81,29 +81,18 @@
                         <title>Visitors &amp; Public</title>
                         <items>
             	            <item>
-                                <title>Schedule a Visit</title>
+                                <title>Places to Visit</title>
                             </item>     
-                            <item>
-                                <title>The Arboretum</title>
-                            </item>  
-                            <item>
-                                <title>Berkey Creamery</title>
-                            </item>  
-                                 
-                            <item>
-                                <title>Museums</title>
-                            </item>  
-                                 
                             <item>
                                 <title>Service Laboratories</title>
                             </item>  
                             <item>
-                                <title>Penn State Extension</title>
-                            </item>                             
-            
+                                <title>Programs and Events</title>
+                            </item>  
                             <item>
                                 <title>Youth Opportunities</title>
-                            </item>               
+                            </item>  
+           
                         </items>
                     </item>    
                 
@@ -175,6 +164,9 @@
                             <title>Graduate Degree Programs</title>
                             <items>
                                 <item>
+                                    <title>Our Graduate Degree Programs</title>
+                                </item>
+                                <item>
                                     <title>Inter-College Degree Programs</title>
                                 </item>
                                 <item>
@@ -187,12 +179,16 @@
                         </item>
                         <item>
                             <title>International Programs</title>
-                            <items />
+                            <items>
+                                <item>
+                                    <title>International Program 1</title>
+                                </item>
+                            </items>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Departments</title>
+                            <title>Academic Departments</title>
                             <items>
                                 <item>
                                     <title>Agricultural and Biological Engineering</title>
@@ -268,29 +264,6 @@
                             </items>
                         </item>
                     </group>
-                    <group>
-                        <item>
-                            <title>Links</title>
-                            <hide-title>True</hide-title>
-                            <items>
-                                <item>
-                                    <title>Request Information</title>
-                                    <description>Explore Majors and Career Pathways</description>
-                                    <icon>fa-info-circle</icon>
-                                </item>
-                                <item>
-                                    <title>Schedule a Visit</title>
-                                    <description>Come to University Park</description>
-                                    <icon>fa-map-marked-alt</icon>
-                                </item>
-                                <item>
-                                    <title>Application Procedures</title>
-                                    <description>Learn More about How to Apply</description>
-                                    <icon>fa-list-alt</icon>
-                                </item>
-                            </items>
-                        </item>
-                    </group>
                 </items>
             </item>
             <!-- Research Dropdown -->
@@ -318,6 +291,41 @@
                                 </item>
                                 <item>
                                     <title>Integrated Health Solutions</title>
+                                </item>
+                            </items>
+                        </item>
+                        <item>
+                            <title>Research Highlights</title>
+                            <items>
+                                <item>
+                                    <title>Highlight 1</title>
+                                </item>
+                                <item>
+                                    <title>Highlight 2</title>
+                                </item>
+                            </items>
+                        </item>
+                    </group>
+                    <group>
+                        <item>
+                            <title>Opportunities for Research</title>
+                            <items>
+                                <item>
+                                    <title>Opportunity 1</title>
+                                </item>
+                                <item>
+                                    <title>Opportunity 2</title>
+                                </item>
+                            </items>
+                        </item>
+                        <item>
+                            <title>Research Centers and Institutes</title>
+                            <items>
+                                <item>
+                                    <title>Center 1</title>
+                                </item>
+                                <item>
+                                    <title>Institute 2</title>
                                 </item>
                             </items>
                         </item>
@@ -349,32 +357,32 @@
                 <items>
                     <group>
                         <item>
-                            <title>Extension Section</title>
+                            <title>Educational Programming</title>
                             <items>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Programming 1</title>
                                 </item>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Programming 2</title>
                                 </item>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Programming 3</title>
                                 </item>
                             </items>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Extension Section</title>
+                            <title>Major Initiatives</title>
                             <items>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Initiative 1</title>
                                 </item>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Initiative 2</title>
                                 </item>
                                 <item>
-                                    <title>Extension Links</title>
+                                    <title>Initiative 3</title>
                                 </item>
                             </items>
                         </item>
@@ -387,19 +395,39 @@
                 <items>
                     <group>
                         <item>
-                            <title>About the College</title>
+                            <title>Leadership</title>
                             <items>
                                 <item>
-                                    <title>Leadership</title>
+                                    <title>Leadership 1</title>
                                 </item>
-                                <item>
-                                    <title>Mission &amp; Strategic Plan</title>
-                                </item>
+                            </items>
+                        </item>
+
+                        <item>
+                            <title>Mission and Strategic Plan</title>
+                            <items>
                                 <item>
                                     <title>History of the College</title>
                                 </item>
+                            </items>
+                        </item>
+
+                    </group>
+                    <group>
+                        <item>
+                            <title>Industry Relations</title>
+                            <items>
                                 <item>
-                                    <title>Diversity</title>
+                                    <title>Penn State Ag Business Council</title>
+                                </item>
+                            </items>
+                        </item>
+                        
+                        <item>
+                            <title>Diversity</title>
+                            <items>
+                                <item>
+                                    <title>Mission and Awareness</title>
                                 </item>
                                 <item>
                                     <title>Multicultural Programs</title>
@@ -407,6 +435,7 @@
                             </items>
                         </item>
                     </group>
+                    
                     <group>
                         <item>
                             <title>Development</title>
@@ -419,27 +448,6 @@
                                 </item>
                                 <item>
                                     <title>Scholarship and Awards Banquet</title>
-                                </item>
-                            </items>
-                        </item>
-                        <item>
-                            <title>Industry Relations</title>
-                            <items>
-                                <item>
-                                    <title>Penn State Ag Business Council</title>
-                                </item>
-                            </items>
-                        </item>
-                    </group>
-                    <group>
-                        <item>
-                            <title>News &amp; Events</title>
-                            <items>
-                                <item>
-                                    <title>Latest News</title>
-                                </item>
-                                <item>
-                                    <title>Upcoming Events</title>
                                 </item>
                             </items>
                         </item>
