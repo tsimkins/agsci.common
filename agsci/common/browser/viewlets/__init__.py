@@ -29,6 +29,18 @@ class NavigationViewlet(ViewletBase):
     def label(self, title=''):
         return "-".join([ploneify(self.nav_id), ploneify(title)])
 
+    def hidden(self, item):
+        _ = item['hidden']
+        return _ and isinstance(_, (str, unicode)) and _.lower().strip() == 'true'
+
+    def type(self, item):
+        _ = item['type']
+
+        if _ and isinstance(_, (str, unicode)):
+            return _.lower().strip()
+
+        return 'nav'
+
     @property
     def config(self):
 
@@ -70,8 +82,11 @@ class FooterContactViewlet(FooterLinksViewlet):
 class CSSViewlet(ViewletBase):
 
     edit_permissions = [
+        'manage-portal',
+        'manage-schemata',
         'plone-site-setup-site', 
-        'modify-portal-content', 
+        'modify-portal-content',
+        'add-portal-content',
         'portlets-manage-portlets', 
         'plone-site-setup-overview',
         'plone-site-setup-users-and-groups',

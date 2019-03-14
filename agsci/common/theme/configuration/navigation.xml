@@ -110,7 +110,7 @@
                 <items>
                     <group>
                         <item>
-                            <title>Students</title>
+                            <title hidden="True">Students</title>
                         </item>
                         <item>
                             <title>Industry</title>
@@ -130,6 +130,14 @@
             <!-- Programs Dropdown -->
             <item>
                 <title>Degrees &amp; Programs</title>
+                <image>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/research.jpg
+                    </src>
+                    <title>
+                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                    </title>
+                </image>
                 <items>
                     <group>
                         <item>
@@ -179,40 +187,29 @@
                         </item>
                         <item>
                             <title>International Programs</title>
-                            <items>
-                                <item>
-                                    <title>International Program 1</title>
-                                </item>
-                            </items>
+                        </item>
+                        <item>
+                            <title>Academic Departments</title>
                         </item>
                     </group>
                     <group>
-                        <item>
-                            <title>Academic Departments</title>
+                        <item type="cta">
+                            <title hidden="True">Links</title>
                             <items>
                                 <item>
-                                    <title>Agricultural and Biological Engineering</title>
+                                    <title>Request Information</title>
+                                    <description>Explore Majors and Career Pathways</description>
+                                    <icon>fa-info-circle</icon>
                                 </item>
                                 <item>
-                                    <title>Agricultural Economics, Sociology, and Education</title>
+                                    <title>Schedule a Visit</title>
+                                    <description>Come to University Park</description>
+                                    <icon>fa-map-marked-alt</icon>
                                 </item>
                                 <item>
-                                    <title>Animal Science</title>
-                                </item>
-                                <item>
-                                    <title>Ecosystem Science and Management</title>
-                                </item>
-                                <item>
-                                    <title>Entomology</title>
-                                </item>
-                                <item>
-                                    <title>Food Science</title>
-                                </item>
-                                <item>
-                                    <title>Plant Pathology and Environmental Microbiology</title>
-                                </item>
-                                <item>
-                                    <title>Plant Science</title>
+                                    <title>Application Procedures</title>
+                                    <description>Learn More about How to Apply</description>
+                                    <icon>fa-list-alt</icon>
                                 </item>
                             </items>
                         </item>
@@ -222,6 +219,14 @@
             <!-- Admissions Dropdown -->
             <item>
                 <title>Admissions</title>
+                <image>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/admissions.jpg
+                    </src>
+                    <title>
+                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                    </title>
+                </image>
                 <items>
                     <group>
                         <item>
@@ -264,89 +269,61 @@
                             </items>
                         </item>
                     </group>
+                    <group>
+                        <item type="cta">
+                            <title hidden="True">Links</title>
+                            <items>
+                                <item>
+                                    <title>Request Information</title>
+                                    <description>Explore Majors and Career Pathways</description>
+                                    <icon>fa-info-circle</icon>
+                                </item>
+                                <item>
+                                    <title>Schedule a Visit</title>
+                                    <description>Come to University Park</description>
+                                    <icon>fa-map-marked-alt</icon>
+                                </item>
+                                <item>
+                                    <title>Application Procedures</title>
+                                    <description>Learn More about How to Apply</description>
+                                    <icon>fa-list-alt</icon>
+                                </item>
+                            </items>
+                        </item>
+                    </group>
                 </items>
             </item>
             <!-- Research Dropdown -->
             <item>
                 <title>Research</title>
+                <image>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/research.jpg
+                    </src>
+                    <title>
+                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                    </title>
+                </image>
                 <items>
                     <group>
                         <item>
                             <title>Research Areas</title>
-                            <items>
-                                <item>
-                                    <title>Advanced Agricultural and Food Systems</title>
-                                </item>
-                                <item>
-                                    <title>Biologically-Based Materials and Products</title>
-                                </item>
-                                <item>
-                                    <title>Community Resilience and Capacity</title>
-                                </item>
-                                <item>
-                                    <title>Environmental Resilience</title>
-                                </item>
-                                <item>
-                                    <title>Global Engagement</title>
-                                </item>
-                                <item>
-                                    <title>Integrated Health Solutions</title>
-                                </item>
-                            </items>
                         </item>
                         <item>
                             <title>Research Highlights</title>
-                            <items>
-                                <item>
-                                    <title>Highlight 1</title>
-                                </item>
-                                <item>
-                                    <title>Highlight 2</title>
-                                </item>
-                            </items>
                         </item>
                     </group>
                     <group>
                         <item>
                             <title>Opportunities for Research</title>
-                            <items>
-                                <item>
-                                    <title>Opportunity 1</title>
-                                </item>
-                                <item>
-                                    <title>Opportunity 2</title>
-                                </item>
-                            </items>
                         </item>
                         <item>
                             <title>Research Centers and Institutes</title>
-                            <items>
-                                <item>
-                                    <title>Center 1</title>
-                                </item>
-                                <item>
-                                    <title>Institute 2</title>
-                                </item>
-                            </items>
                         </item>
                     </group>
                     <group>
                         <item>
                             <title>Ag Experiment Stations</title>
-                            <items>
-                                <item>
-                                    <title>Fruit Research and Extension Center (FREC)</title>
-                                </item>
-                                <item>
-                                    <title>Lake Erie Regional Grape Research and Extension Center</title>
-                                </item>
-                                <item>
-                                    <title>Russell E. Larson Agricultural Research Center</title>
-                                </item>
-                                <item>
-                                    <title>Southeast Agricultural Research and Extension Center</title>
-                                </item>
-                            </items>
                         </item>
                     </group>
                 </items>
@@ -354,37 +331,23 @@
             <!-- Extension Dropdown -->
             <item>
                 <title>Extension</title>
+                <image>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/research.jpg
+                    </src>
+                    <title>
+                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                    </title>
+                </image>
                 <items>
                     <group>
                         <item>
                             <title>Educational Programming</title>
-                            <items>
-                                <item>
-                                    <title>Programming 1</title>
-                                </item>
-                                <item>
-                                    <title>Programming 2</title>
-                                </item>
-                                <item>
-                                    <title>Programming 3</title>
-                                </item>
-                            </items>
                         </item>
                     </group>
                     <group>
                         <item>
                             <title>Major Initiatives</title>
-                            <items>
-                                <item>
-                                    <title>Initiative 1</title>
-                                </item>
-                                <item>
-                                    <title>Initiative 2</title>
-                                </item>
-                                <item>
-                                    <title>Initiative 3</title>
-                                </item>
-                            </items>
                         </item>
                     </group>
                 </items>
@@ -392,15 +355,18 @@
             <!-- About Dropdown -->
             <item>
                 <title>About</title>
+                <image>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/about.jpg
+                    </src>
+                    <title>
+                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                    </title>
+                </image>
                 <items>
                     <group>
                         <item>
                             <title>Leadership</title>
-                            <items>
-                                <item>
-                                    <title>Leadership 1</title>
-                                </item>
-                            </items>
                         </item>
 
                         <item>

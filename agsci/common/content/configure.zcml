@@ -4,6 +4,7 @@
 
     <include package=".adapters" />
     <include package=".behaviors" />
+    <include package=".degrees" />
     <include package=".vocabulary" />
 
 </configure>

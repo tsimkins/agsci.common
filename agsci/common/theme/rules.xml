@@ -10,7 +10,11 @@
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
+        <!-- Also update these in agsci.common.browser.viewlets.CSSViewlet.edit_permissions -->
+
         <rules css:if-content="
+            body.viewpermission-manage-portal,
+            body.viewpermission-add-portal-content,
             body.viewpermission-manage-schemata,
             body.viewpermission-plone-site-setup-site, 
             body.viewpermission-modify-portal-content, 
@@ -37,7 +41,7 @@
         <!-- Don't theme in Mosaic editor. -->
         <notheme css:if-content="textarea.pat-layout" />
             
-        <rules css:if-content="#portal-top">
+        <rules css:if-content="#portal-top, #content-header">
             <!-- Attributes -->
             <copy attributes="*" css:theme="html" css:content="html" />
 
@@ -67,6 +71,9 @@
             <after css:theme-children="head" css:content="head link[data-bundle='mosaic']" />
 
             <after css:theme-children="head" css:content="head link[data-bundle='production']" />
+
+            <after css:theme-children="head" css:content="head link[data-bundle='faceted-jquery']" />
+            <after css:theme-children="head" css:content="head link[data-bundle='faceted-view']" />
         </rules>
 
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->

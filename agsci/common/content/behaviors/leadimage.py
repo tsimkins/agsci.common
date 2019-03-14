@@ -1,4 +1,4 @@
-from plone.app.contenttypes.behaviors.leadimage import ILeadImage as _ILeadImage
+from plone.app.contenttypes.behaviors.leadimage import ILeadImageBehavior as _ILeadImage
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.interfaces import IDexterityContent

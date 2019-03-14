@@ -9,6 +9,8 @@
     <object name="agsci_photofolder" meta_type="Dexterity FTI" />
     <object name="agsci_section" meta_type="Dexterity FTI" />
     <object name="agsci_subsite" meta_type="Dexterity FTI" />
+    <object name="agsci_degree_container" meta_type="Dexterity FTI" />
+    <object name="agsci_degree" meta_type="Dexterity FTI" />    
     <object name="Collection" meta_type="Dexterity FTI" />
     <object name="Document" meta_type="Dexterity FTI" />
     <object name="Event" meta_type="Dexterity FTI" />

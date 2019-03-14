@@ -38,6 +38,12 @@ def add_catalog_indexes(context, logger=None):
     # Specify the indexes you want, with ('index_name', 'index_type')
     wanted = [
                 ('Tags', 'KeywordIndex'),
+                ('DegreeInterestArea', 'KeywordIndex'),
+                ('DegreeCareer', 'KeywordIndex'),
+                ('DegreeEmployer', 'KeywordIndex'),
+                ('DegreeClub', 'KeywordIndex'),
+                ('DegreeFacility', 'KeywordIndex'),
+                ('DegreeScholarship', 'KeywordIndex'),
              ]
 
     indexables = []
@@ -58,6 +64,6 @@ def import_various(context):
     # Only run step if a flag file is present
     if context.readDataFile('agsci.common.marker.txt') is None:
         return
-    logger = context.getLogger('agsci.atlas')
+    logger = context.getLogger('agsci.common')
     site = context.getSite()
     add_catalog_indexes(site, logger)

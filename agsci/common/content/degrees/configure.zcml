@@ -1,0 +1,44 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           i18n_domain="agsci.common">
+
+    <!-- Vocabularies -->
+
+    <utility
+        name="agsci.common.degree.interest_area"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.InterestAreaVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.degree.career"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.CareerVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.degree.employer"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.EmployerVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.degree.club"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.ClubVocabularyFactory"
+    />
+    
+    <utility
+        name="agsci.common.degree.facility"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.FacilityVocabularyFactory"
+    />
+    
+    <utility
+        name="agsci.common.degree.scholarship"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.ScholarshipVocabularyFactory"
+    />
+
+</configure>
