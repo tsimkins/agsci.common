@@ -63,19 +63,20 @@
                                         class="main-nav-section-head" />
 
                                     <div tal:condition="l1/image|nothing">
-                                        
+
                                         <a class="nav-img-preview"
                                             tal:attributes="href l1/image/href/cdata|nothing">
 
                                             <div>
-                                                <img 
-                                                    tal:attributes="src l1/image/src/cdata|nothing"
-                                                    alt="" 
+                                                <img tal:define="src l1/image/src/cdata/strip|nothing"
+
+                                                    tal:attributes="src string:${view/portal_url}/${src}"
+                                                    alt=""
                                                     class="w-100" />
                                             </div>
                                             <p tal:content="l1/image/title/cdata|nothing" />
                                         </a>
-                                        
+
                                     </div>
 
                                 </div>

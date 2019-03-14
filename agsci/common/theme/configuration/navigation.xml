@@ -220,9 +220,7 @@
             <item>
                 <title>Admissions</title>
                 <image>
-                    <src>
-                        ++resource++agsci.common/assets/images/navigation/admissions.jpg
-                    </src>
+                    <src>++resource++agsci.common/assets/images/navigation/admissions.jpg</src>
                     <title>
                         Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
                     </title>
@@ -297,9 +295,7 @@
             <item>
                 <title>Research</title>
                 <image>
-                    <src>
-                        ++resource++agsci.common/assets/images/navigation/research.jpg
-                    </src>
+                    <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
                     <title>
                         Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
                     </title>
@@ -332,9 +328,7 @@
             <item>
                 <title>Extension</title>
                 <image>
-                    <src>
-                        ++resource++agsci.common/assets/images/navigation/research.jpg
-                    </src>
+                    <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
                     <title>
                         Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
                     </title>
@@ -356,9 +350,7 @@
             <item>
                 <title>About</title>
                 <image>
-                    <src>
-                        ++resource++agsci.common/assets/images/navigation/about.jpg
-                    </src>
+                    <src>++resource++agsci.common/assets/images/navigation/about.jpg</src>
                     <title>
                         Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
                     </title>
