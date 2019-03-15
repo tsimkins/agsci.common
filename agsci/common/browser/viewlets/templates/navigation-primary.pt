@@ -31,9 +31,9 @@
                                 klass python: hidden and 'nav-item dropdown d-lg-none' or 'nav-item dropdown'">
 
                     <a tal:content="l1/title/cdata"
-                       tal:attributes="id item_id"
+                       tal:attributes="id item_id;
+                                       href python: view.link(l1)"
                        class="nav-link dropdown-toggle nav-external-link"
-                       href="https://google.com"
                        role="button"
                        data-toggle="dropdown"
                        aria-haspopup="true"
@@ -65,16 +65,19 @@
                                     <div tal:condition="l1/image|nothing">
 
                                         <a class="nav-img-preview"
-                                            tal:attributes="href l1/image/href/cdata|nothing">
+                                            tal:define="image l1/image|nothing"
+                                            tal:attributes="href python: view.link(image)">
 
                                             <div>
-                                                <img tal:define="src l1/image/src/cdata/strip|nothing"
+                                                <img tal:define="src image/src/cdata/strip|nothing"
 
                                                     tal:attributes="src string:${view/portal_url}/${src}"
                                                     alt=""
                                                     class="w-100" />
                                             </div>
-                                            <p tal:content="l1/image/title/cdata|nothing" />
+                                            <!--
+                                            <p tal:content="image/title/cdata|nothing" />
+                                            -->
                                         </a>
 
                                     </div>
@@ -105,15 +108,15 @@
                     <a
                         tal:content="l2/title/cdata"
                         class="nav-link section-header"
-                        href="" />
+                        tal:attributes="href python: view.link(l2)" />
                 </li>
 
-                <li tal:repeat="link l2/items/item|nothing"
+                <li tal:repeat="l3 l2/items/item|nothing"
                     class="nav-item">
                     <a
-                        tal:content="link/title/cdata"
+                        tal:content="l3/title/cdata"
                         class="nav-link"
-                        href=""></a>
+                        tal:attributes="href python: view.link(l3)" />
                 </li>
             </ul>
 
@@ -123,15 +126,14 @@
             tal:condition="python: item_type == 'cta'">
 
 <div class="cta-block">
-    <a tal:repeat="link l2/items/item|nothing"
-        class="nav-cta cta d-flex align-items-center">
+    <a tal:repeat="l3 l2/items/item|nothing"
+       tal:attributes="href python: view.link(l3)"
+       class="nav-cta cta d-flex align-items-center">
 
         <i
-            tal:attributes="class string:fas fa-lg ${link/icon/cdata} fa-fw" />
+            tal:attributes="class string:fas fa-lg ${l3/icon/cdata} fa-fw" />
 
-        <div
-            tal:content="link/title/cdata"
-            href="" />
+        <div tal:content="l3/title/cdata" />
     </a>
 </div>
         </tal:item>
