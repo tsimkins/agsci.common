@@ -1,11 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<object xmlns:i18n="http://xml.zope.org/namespaces/i18n" name="Document" meta_type="Dexterity FTI" i18n:domain="plone">
+<?xml version="1.0"?>
+<object name="Document" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
     <property name="title" i18n:translate="">Page</property>
-    <property name="description" i18n:translate="" />
-    <property name="icon_expr" />
+    <property name="description" i18n:translate=""></property>
+    <property name="icon_expr"></property>
     <property name="factory">Document</property>
-    <property name="add_view_expr">string:${folder_url}/++add++Document</property>
-    <property name="link_target" />
+    <property
+        name="add_view_expr">string:${folder_url}/++add++Document</property>
+    <property name="link_target"></property>
     <property name="immediate_view">view</property>
     <property name="global_allow">True</property>
     <property name="filter_content_types">True</property>
@@ -25,7 +27,7 @@
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichText" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
         <element value="plone.app.relationfield.behavior.IRelatedItems" />
         <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.app.contenttypes.behaviors.tableofcontents.ITableOfContents" />
@@ -34,8 +36,8 @@
         <element value="plone.layoutaware"/>
         <element value="plone.draftable"/>
     </property>
-    <property name="schema" />
-    <property name="model_source" />
+    <property name="schema"></property>
+    <property name="model_source"></property>
     <property name="model_file">plone.app.contenttypes.schema:document.xml</property>
     <property name="schema_policy">dexterity</property>
     <alias from="(Default)" to="(dynamic view)" />

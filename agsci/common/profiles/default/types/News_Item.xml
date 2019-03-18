@@ -21,7 +21,7 @@
     <property name="klass">plone.app.contenttypes.content.NewsItem</property>
     <property name="behaviors">
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichText" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />

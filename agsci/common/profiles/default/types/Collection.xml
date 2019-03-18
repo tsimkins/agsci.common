@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object xmlns:i18n="http://xml.zope.org/namespaces/i18n" name="Collection" meta_type="Dexterity FTI" i18n:domain="plone">
+<object name="Collection" meta_type="Dexterity FTI" i18n:domain="plone"
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
     <property name="title" i18n:translate="">Collection</property>
     <property name="description" i18n:translate="" />
     <property name="icon_expr" />
@@ -33,7 +34,7 @@
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichText" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
         <element value="plone.app.relationfield.behavior.IRelatedItems" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
         <element value="agsci.common.content.behaviors.ICollectionFields" />
