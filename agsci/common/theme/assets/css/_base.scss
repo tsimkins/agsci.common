@@ -1,59 +1,70 @@
-.mosaic-tile-content {
-    
-    h1.documentFirstHeading {
-        border-bottom: none;
-        font-size: 64px;
-    }
-    
-    .test-tile {
+body.mosaic-grid {
+
+    .mosaic-tile-content {
         
-        margin: 1em 0;
-        padding: 1em;
-        background-color: #4A7729;
-        
-        h2, p {
-            color: #FFFFFF;
+        .cta-bar .btn {
+            margin-top: 0.5rem;
         }
         
-        ul {
-            display: block;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
+        h1.documentFirstHeading {
+            border-bottom: none;
+            font-size: 64px;
+        }
+        
+        .hero-test {
+            background-image: url(../../../images/hero-test);
+        }
+        
+        .test-tile {
             
-            li {
-                margin: 2em auto;
+            margin: 1em 0;
+            padding: 1em;
+            background-color: #4A7729;
+            
+            h2, p {
+                color: #FFFFFF;
+            }
+            
+            ul {
                 display: block;
-
-                div.outer {
-
-                    background-color: #1e407c;
-                    color: white;
-                    padding: 1em;
-                    min-height: 15em;
-                    position: relative;
-                    text-align: center;
-                    
-                    div.inner {
-
-                        position: absolute;
-                        top: 50%;
-                        left: 0;
-                        right: 0;
-
-                        transform: translateY(-50%);
-                        margin: 0 auto;
-
-                        .title, .description {
-                            text-align: center;
-                            display: block;
-                            font-size: 2em;
-                        }
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+                text-align: center;
+                
+                li {
+                    margin: 2em auto;
+                    display: block;
     
-                        .title {
-                            font-size: 4em;
-                            font-weight: bold;
+                    div.outer {
+    
+                        background-color: #1e407c;
+                        color: white;
+                        padding: 1em;
+                        min-height: 15em;
+                        position: relative;
+                        text-align: center;
+                        
+                        div.inner {
+    
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            right: 0;
+    
+                            transform: translateY(-50%);
+                            margin: 0 auto;
+    
+                            .title, .description {
+                                text-align: center;
+                                display: block;
+                                font-size: 2em;
+                            }
+        
+                            .title {
+                                font-size: 4em;
+                                font-weight: bold;
+                            }
                         }
                     }
                 }

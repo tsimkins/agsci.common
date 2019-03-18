@@ -97,25 +97,32 @@
         </rules>
         
         <!-- Central column -->
-        <replace css:theme="#content-container" method="raw">
-    
-            <xsl:variable name="central">
 
-                <xsl:if test="//aside[@id='portal-column-one'] or //aside[@id='portal-column-two']">col-lg-8 </xsl:if>
-                <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-lg-12</xsl:if>
-                
-            </xsl:variable>
-        
-            <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
-                <div class="row">
-                <div class="container">
-                    <xsl:apply-templates css:select="#content" />
-                </div>
-                </div>
-            </div>
+        <rules css:if-content="body.mosaic-grid">
+            <replace css:theme="#content" css:content-children="#content" />
+        </rules>
 
-        </replace>
+        <rules css:if-not-content="body.mosaic-grid">
+            <replace css:theme="#content-container" method="raw">
     
+                <xsl:variable name="central">
+    
+                    <xsl:if test="//aside[@id='portal-column-one'] or //aside[@id='portal-column-two']">col-lg-8 </xsl:if>
+                    <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-lg-12</xsl:if>
+                    
+                </xsl:variable>
+            
+                <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
+                    <div class="row">
+                    <div class="container">
+                        <xsl:apply-templates css:select="#content" />
+                    </div>
+                    </div>
+                </div>
+    
+            </replace>
+        </rules>
+
         <!-- Alert message -->
         <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
     
