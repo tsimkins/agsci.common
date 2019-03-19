@@ -44,6 +44,7 @@ def add_catalog_indexes(context, logger=None):
                 ('DegreeClub', 'KeywordIndex'),
                 ('DegreeFacility', 'KeywordIndex'),
                 ('DegreeScholarship', 'KeywordIndex'),
+                ('hasLeadImage', 'BooleanIndex'),
              ]
 
     indexables = []

@@ -1,5 +1,45 @@
-<configure xmlns="http://namespaces.zope.org/zope"
-           xmlns:five="http://namespaces.zope.org/five"
-           i18n_domain="agsci.common">
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    i18n_domain="agsci.common">
+    
+    <faceted:view
+        name="faceted-preview-items"
+        template="templates/faceted_degrees.pt"
+        title="Faceted items preview"
+        layer="..interfaces.IThemeSpecific"
+        permission="zope2.View"
+        class=".DegreeListingView"
+        for="agsci.common.content.degrees.IDegreeContainer"
+    />
+
+    <!-- Product Listing View -->
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="degree_listing"
+        class=".DegreeListingView"
+        permission="zope2.View"
+        template="templates/degree_listing.pt"
+    />
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="view"
+        class=".DegreeListingView"
+        permission="zope2.View"
+        template="templates/degree_listing.pt"
+    />
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="faceted_query"
+        class=".faceted.DegreeExplorerFacetedQueryHandler"
+        template="templates/faceted_query.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
     
 </configure>

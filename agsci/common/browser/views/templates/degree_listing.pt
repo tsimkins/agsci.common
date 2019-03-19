@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="agsci.common">
+<body>
+
+    <tal:contents
+         tal:define="folderContents view/getFolderContents|nothing">
+
+        <metal:product-listing
+                define-macro="degree-listing">
+
+            <div class="degree-listing"
+                 tal:attributes="data-sort-on sort_field"
+                 tal:condition="batch"
+                 tal:define="default_limit_display python: int(30);
+                             limit_display limit_display|default_limit_display;
+                             contentFilter contentFilter|request/contentFilter|nothing;
+                             contentFilter python:contentFilter and dict(contentFilter) or {};
+                             limit_display limit_display|request/limit_display|nothing;
+                             limit_display python:limit_display and int(limit_display) or None;
+                             more_url more_url|request/more_url|string:folder_contents;
+                             is_a_topic python:context.portal_type=='Topic';
+                             folderContents folderContents|nothing;
+                             folderContents python:folderContents or view.getFolderContents(**contentFilter);
+                             site_properties context/portal_properties/site_properties;
+                             use_view_action site_properties/typesUseViewActionInListings|python:();
+                             Batch python:modules['Products.CMFPlone'].Batch;
+                             b_start python:request.get('b_start', 0);
+                             batch python:isinstance(folderContents, Batch) and folderContents or Batch(folderContents, limit_display or 100, int(b_start), orphan=1);
+                             isAnon context/@@plone_portal_state/anonymous;
+                             normalizeString nocall: context/plone_utils/normalizeString;
+                             toLocalizedTime nocall: context/@@plone/toLocalizedTime;
+                             show_about python:False;
+                             navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                             pas_member context/@@pas_member;
+                             plone_view context/@@plone;
+                             sort_field view/getSortField|nothing">
+
+                <!-- Card Deck -->
+                <div class="card-deck card-deck-3up agsci-visual-cards">
+                    <tal:entry tal:repeat="item batch">
+                        <tal:item
+                            tal:define="item_url python:view.getItemURL(item);
+                                        item_id item/getId|item/id;
+                                        item_title_or_id item/pretty_title_or_id;
+                                        item_description item/Description;
+                                        item_type item/portal_type;
+                                        item_type_title item/Type;
+                                        item_modified item/ModificationDate;
+                                        item_created item/CreationDate;
+                                        item_effective item/EffectiveDate;
+                                        item_type_class python:'contenttype-' + normalizeString(item_type);
+                                        item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
+                                        item_wf_state_class python:'state-' + normalizeString(item_wf_state);">
+                
+                <a class="card card-visual"
+                    tal:attributes="href item_url">
+                
+                    <div class="card-image-top contentLeadImageContainer">
+                        <div class="opacity-dimmer-bottom-left"></div>
+                
+                        <img 
+                            class="w-100"
+                            tal:condition="item/hasLeadImage"
+                            tal:attributes="src python:view.getItemLeadImage(item)" />
+                
+                        <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+                        
+                            <h3 class="card-title" tal:content="item/Title" />
+                
+                        </div>
+                
+                    </div>
+                
+                    <div class="card-body">
+                
+                        <p tal:condition="item_description"
+                            tal:content="item_description" />
+                
+                    </div>
+                </a>
+                        </tal:item>
+                    </tal:entry>
+                
+                </div>
+
+            </div>
+
+            <metal:empty metal:define-slot="no_items_in_listing">
+                <p class="discreet"
+                    tal:condition="not: folderContents">
+                    No degrees found.
+                </p>
+            </metal:empty>
+
+            <div class="visualClear"><!-- --></div>
+
+            <div
+                tal:define="sku_regex nocall: view/sku_regex|nothing;
+                            is_analytics view/is_analytics|nothing"
+                tal:condition="python: is_analytics and sku_regex"
+                id="sku_regex">
+
+                <h2>SKU Regex</h2>
+                <textarea rows="10" tal:content="python:sku_regex(folderContents)" />
+            </div>
+
+        </metal:product-listing>
+
+    </tal:contents>
+
+</body>
+</html>
