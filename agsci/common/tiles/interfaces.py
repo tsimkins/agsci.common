@@ -1,5 +1,6 @@
 from agsci.common import AgsciMessageFactory as _
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from plone.app.textfield import RichText
 from plone.supermodel import model
 from zope import schema
 from zope.interface import Interface
@@ -64,5 +65,10 @@ class ICalloutBlockTile(model.Schema):
     
     description = schema.TextLine(
         title=_(u'Description'),
+        required=False,
+    )
+
+    text = RichText(
+        title=_(u'Text'),
         required=False,
     )

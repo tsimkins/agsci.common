@@ -15,6 +15,16 @@ body.mosaic-grid {
             background-image: url(../../../images/hero-test);
         }
         
+        h2.slide-down {
+            text-align: center;
+        }
+        
+        h2.slide-down:after {
+            margin: auto;
+            left: 0;
+            right: 0;
+        }
+        
         .test-tile {
             
             margin: 1em 0;
@@ -103,6 +113,9 @@ body.mosaic-grid {
 
 
 body.mosaic-layout-customized {
+    
+    padding-top: 25px;
+
     #portal-top,
     #portal-mainnavigation,
     #portal-breadcrumbs,
@@ -235,3 +248,16 @@ body.userrole-authenticated {
 
 
         
+body.viewpermission-manage-portal,
+body.viewpermission-add-portal-content,
+body.viewpermission-manage-schemata,
+body.viewpermission-plone-site-setup-site, 
+body.viewpermission-modify-portal-content, 
+body.viewpermission-portlets-manage-portlets, 
+body.viewpermission-plone-site-setup-overview,
+body.viewpermission-plone-site-setup-users-and-groups,
+body.viewpermission-list-folder-contents {
+    #content {
+        margin-top: 2em;
+    }
+}

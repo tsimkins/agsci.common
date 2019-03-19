@@ -1,3 +1,4 @@
+from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from urlparse import urlparse
@@ -25,7 +26,7 @@ class ViewletBase(_ViewletBase):
 
 class NavigationViewlet(ViewletBase):
 
-    default_url = '/landing-page'
+    default_url = '/'
 
     xml_file = '++resource++agsci.common/configuration/navigation.xml'
 
@@ -124,6 +125,7 @@ class CSSViewlet(ViewletBase):
         'portlets-manage-portlets',
         'plone-site-setup-overview',
         'plone-site-setup-users-and-groups',
+        'list-folder-contents'
     ]
 
     @property
@@ -147,3 +149,9 @@ class CSSViewlet(ViewletBase):
     @property
     def editing(self):
         return any([x in self.permissions for x in self.edit_permissions])
+
+class JavaScriptViewlet(ViewletBase):
+
+    @property
+    def faceted_enabled(self):
+        return IFacetedNavigable.providedBy(self.context)

@@ -10,7 +10,11 @@
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
-        <!-- Also update these in agsci.common.browser.viewlets.CSSViewlet.edit_permissions -->
+        <!-- 
+            Also update these in:
+             *  agsci.common.browser.viewlets.CSSViewlet.edit_permissions
+             *  agsci.common.theme.assets.css._base.css
+         -->
 
         <rules css:if-content="
             body.viewpermission-manage-portal,
@@ -20,7 +24,8 @@
             body.viewpermission-modify-portal-content, 
             body.viewpermission-portlets-manage-portlets, 
             body.viewpermission-plone-site-setup-overview,
-            body.viewpermission-plone-site-setup-users-and-groups">
+            body.viewpermission-plone-site-setup-users-and-groups,
+            body.viewpermission-list-folder-contents">
             <drop css:theme="header, footer" />
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />
@@ -74,7 +79,7 @@
 
             <after css:theme-children="head" css:content="head script[data-bundle='faceted-jquery']" />
             <after css:theme-children="head" css:content="head script[data-bundle='faceted-view']" />
-            <after css:theme-children="head" css:content="head script:not(src)" />
+
         </rules>
 
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->

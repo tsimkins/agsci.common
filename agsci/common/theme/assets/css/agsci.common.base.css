@@ -5,6 +5,12 @@ body.mosaic-grid .mosaic-tile-content h1.documentFirstHeading {
   font-size: 64px; }
 body.mosaic-grid .mosaic-tile-content .hero-test {
   background-image: url(../../../images/hero-test); }
+body.mosaic-grid .mosaic-tile-content h2.slide-down {
+  text-align: center; }
+body.mosaic-grid .mosaic-tile-content h2.slide-down:after {
+  margin: auto;
+  left: 0;
+  right: 0; }
 body.mosaic-grid .mosaic-tile-content .test-tile {
   margin: 1em 0;
   padding: 1em;
@@ -61,13 +67,15 @@ body.mosaic-grid .mosaic-tile-content .test-tile {
   font-size: 1.25em;
   margin-bottom: 1.5em; }
 
-body.mosaic-layout-customized #portal-top,
-body.mosaic-layout-customized #portal-mainnavigation,
-body.mosaic-layout-customized #portal-breadcrumbs,
-body.mosaic-layout-customized .mosaic-blur {
-  display: none; }
-body.mosaic-layout-customized #portal-column-content {
-  margin: 1em 20%; }
+body.mosaic-layout-customized {
+  padding-top: 25px; }
+  body.mosaic-layout-customized #portal-top,
+  body.mosaic-layout-customized #portal-mainnavigation,
+  body.mosaic-layout-customized #portal-breadcrumbs,
+  body.mosaic-layout-customized .mosaic-blur {
+    display: none; }
+  body.mosaic-layout-customized #portal-column-content {
+    margin: 1em 20%; }
 
 body.userrole-authenticated footer {
   z-index: 0; }
@@ -155,5 +163,16 @@ body.userrole-authenticated footer {
     margin: 0.375em 0 0 0;
     float: none;
     font-size: 0.875em; }
+
+body.viewpermission-manage-portal #content,
+body.viewpermission-add-portal-content #content,
+body.viewpermission-manage-schemata #content,
+body.viewpermission-plone-site-setup-site #content,
+body.viewpermission-modify-portal-content #content,
+body.viewpermission-portlets-manage-portlets #content,
+body.viewpermission-plone-site-setup-overview #content,
+body.viewpermission-plone-site-setup-users-and-groups #content,
+body.viewpermission-list-folder-contents #content {
+  margin-top: 2em; }
 
 /*# sourceMappingURL=agsci.common.base.css.map */

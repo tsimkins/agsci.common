@@ -5,15 +5,25 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="agsci.common">
   <body>
-    <div class="row">
-		<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-    	   <h2 class="agsci-opener-header slide-down"
-               tal:condition="view/data/title|nothing"
-    	       tal:content="view/data/title|nothing" />
-    	   <p class="lead fade-up"
-              tal:condition="view/data/description|nothing"
-              tal:content="view/data/description|nothing" />
-		</div>
-	</div>
+    <section class="my-4">
+    	<div class="container container-text">
+            <div class="row">
+        		<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+            	   <h2 class="slide-down"
+                       tal:condition="view/data/title|nothing"
+            	       tal:content="view/data/title|nothing" />
+
+            	   <p class="lead fade-up"
+                      tal:condition="view/data/description|nothing"
+                      tal:content="view/data/description|nothing" />
+
+            	   <div class="lead fade-up"
+                      tal:condition="view/data/text/raw|nothing"
+                      tal:content="structure view/data/text/raw|nothing" />
+
+        		</div>
+        	</div>
+    	</div>
+	</section>
   </body>
 </html>
