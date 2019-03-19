@@ -5,6 +5,7 @@ from plone.namedfile.file import NamedBlobFile
 from zope.component import provideAdapter
 
 from .content.behaviors.tags import ITags
+from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.degrees import IDegree
 
 from .interfaces import ITagsAdapter
@@ -24,6 +25,13 @@ def Tags(context):
     return ITagsAdapter(context).tags
 
 provideAdapter(Tags, name='Tags')
+
+# Lead Image
+@indexer(ILeadImage)
+def hasLeadImage(context):
+    return LeadImage(context).has_image
+
+provideAdapter(hasLeadImage, name='hasLeadImage')
 
 # Degree fields
 degree_index_field =[

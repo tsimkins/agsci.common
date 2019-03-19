@@ -15,6 +15,16 @@ from .indexer import degree_index_field
 @implementer(ICriteria)
 class DegreeContainerCriteria(_Criteria):
 
+    def idx(self, f):
+        return {
+            'interest_area' : 'DegreeInterestArea',
+            'career' : 'DegreeCareer',
+            'employer' : 'DegreeEmployer',
+            'club' : 'DegreeClub',
+            'facility' : 'DegreeFacility',
+            'scholarship' : 'DegreeScholarship',
+        }.get(f, f)
+
     def getFields(self):
 
         fields = [x[1] for x in degree_index_field]
@@ -44,7 +54,7 @@ class DegreeContainerCriteria(_Criteria):
                     _cid_=cid,
                     widget="checkbox",
                     title=title,
-                    index=key,
+                    index=self.idx(key),
                     operator="or",
                     operator_visible=False,
                     vocabulary=vocabulary_name,

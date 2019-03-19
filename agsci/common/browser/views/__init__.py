@@ -1,4 +1,4 @@
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_base
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -29,17 +29,20 @@ except ImportError:
 
 class BaseView(BrowserView):
 
+    def getItemLeadImage(self, item):
+        return '%s/@@images/image/large' % item.getURL()
+
     @property
     def show_date(self):
-        return getContextConfig(self.context, 'show_date', False)
+        return getattr(aq_base(self.context), 'show_date', False)
 
     @property
     def show_image(self):
-        return getContextConfig(self.context, 'show_image', False)
+        return getattr(aq_base(self.context), 'show_image', False)
 
     @property
     def show_read_more(self):
-        return getContextConfig(self.context, 'show_read_more', False)
+        return getattr(aq_base(self.context), 'show_read_more', False)
 
     @property
     def portal_state(self):
@@ -237,3 +240,11 @@ class BaseView(BrowserView):
             return False
 
         return (self.context.getId() == self.context.aq_parent.getDefaultPage())
+
+class DegreeListingView(BaseView):
+    
+    def getQuery(self):
+        return {'Type' : 'Degree', 'sort_on' : 'sortable_title'}
+    
+    def getFolderContents(self):
+        return self.portal_catalog.queryCatalog(self.getQuery())
