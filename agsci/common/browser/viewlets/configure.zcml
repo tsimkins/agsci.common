@@ -14,15 +14,6 @@
         layer="..interfaces.IThemeSpecific"
     />
 
-    <browser:viewlet
-        name="agsci.common.js"
-        manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
-        class=".JavaScriptViewlet"
-        permission="zope2.View"
-        template="templates/js.pt"
-        layer="..interfaces.IThemeSpecific"
-    />
-
     <!-- Audience Navigation -->
 
     <browser:viewlet

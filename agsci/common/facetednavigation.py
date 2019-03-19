@@ -28,8 +28,18 @@ class DegreeContainerCriteria(_Criteria):
     def getFields(self):
 
         fields = [x[1] for x in degree_index_field]
+        
+        def sort_order(x):
+            try:
+                return fields.index(x)
+            except ValueError:
+                return 99999
+            
+        
 
-        for (key, field) in IDegree.namesAndDescriptions():
+        sorted_fields = sorted(IDegree.namesAndDescriptions(), key=lambda x: sort_order(x[0]))
+
+        for (key, field) in sorted_fields:
 
             if key in fields:
 

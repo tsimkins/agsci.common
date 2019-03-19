@@ -69,17 +69,10 @@
 
         </rules>
 
-        <rules css:if-not-content=".userrole-authenticated">
-        
-            <after css:theme-children="head" css:content="head link[data-bundle='mosaic-grid']" />
-            <after css:theme-children="head" css:content="head link[data-bundle='mosaic-styles']" />
-            <after css:theme-children="head" css:content="head link[data-bundle='mosaic']" />
+<!-- pasteme -->
 
-            <after css:theme-children="head" css:content="head link[data-bundle='production']" />
-
-            <after css:theme-children="head" css:content="head script[data-bundle='faceted-jquery']" />
-            <after css:theme-children="head" css:content="head script[data-bundle='faceted-view']" />
-
+        <rules css:if-content=".template-facetednavigation_view">
+            <after css:theme-children="#theme-javascript" css:content="head script" />
         </rules>
 
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
