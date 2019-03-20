@@ -16,12 +16,33 @@
         for="agsci.common.content.degrees.IDegreeContainer"
     />
 
-    <!-- Product Listing View -->
+    <!-- Degree View -->
+    <browser:page
+        for="agsci.common.content.degrees.IDegree"
+        name="view"
+        class=".DegreeView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/degree.pt"
+    />
+
+    <!-- Degree View -->
+    <browser:page
+        for="agsci.common.content.degrees.IDegree"
+        name="lightbox"
+        class=".DegreeView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/degree_lightbox.pt"
+    />
+
+    <!-- Degree Listing View -->
     <browser:page
         for="agsci.common.content.degrees.IDegreeContainer"
         name="degree_listing"
         class=".DegreeListingView"
         permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
         template="templates/degree_listing.pt"
     />
 
@@ -30,6 +51,7 @@
         name="view"
         class=".DegreeListingView"
         permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
         template="templates/degree_listing.pt"
     />
 

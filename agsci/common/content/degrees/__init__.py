@@ -17,6 +17,19 @@ class IDegreeContainer(model.Schema):
 @provider(IFormFieldProvider)
 class IDegree(model.Schema):
 
+    model.fieldset(
+        'categorization',
+        label=_(u'Categorization'),
+        fields=(
+            'interest_area',
+            'career',
+            'employer',
+            'club',
+            'facility',
+            'scholarship',
+        ),
+    )
+
     interest_area = schema.List(
         title=_(u"Interest Areas"),
         description=_(u""),

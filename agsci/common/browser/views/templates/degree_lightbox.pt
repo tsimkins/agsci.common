@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="agsci.common">
+<body>
+
+    <h1 class="documentFirstHeading"
+        tal:content="context/Title|nothing" />
+
+    <p class="documentDescription"
+        tal:content="context/Description|nothing" />
+
+
+    <metal:lightbox
+        metal:use-macro="context/view/macros/lightbox" />
+
+</body>
+</html>

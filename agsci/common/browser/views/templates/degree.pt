@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="agsci.common">
+<body>
+    <metal:content-core fill-slot="content-core">
+
+        <metal:lightbox
+            define-macro="lightbox">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 pl-0 ">
+                        <table class="table table-bordered">
+                            <tal:row 
+                                tal:repeat="i view/fields">
+                                <tr tal:condition="v"
+                                    tal:define="title i/title|nothing;
+                                                v python: i.get(context);">
+                                    <th class="table-secondary" scope="row" tal:content="title" />
+                                    <td>
+                                        <ul>
+                                            <li tal:repeat="j v" tal:content="j" />
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tal:row>
+                        </table>
+                    </div>
+                    <div class="col-6 pr-3 mt-3">
+                        <img class="image-fluid w-100" alt="" 
+                             tal:attributes="src view/image|nothing" />
+                    </div>
+                </div>
+            </div>
+
+        </metal:lightbox>
+    </metal:content-core>    
+
+</body>
+</html>

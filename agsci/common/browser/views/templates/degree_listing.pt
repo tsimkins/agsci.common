@@ -57,7 +57,8 @@
                                         item_wf_state_class python:'state-' + normalizeString(item_wf_state);">
                 
                 <a class="card card-visual"
-                    tal:attributes="href item_url">
+                    tal:attributes="href item_url;
+                                    data-featherlight string:${item_url}/lightbox">
                 
                     <div class="card-image-top contentLeadImageContainer">
                         <div class="opacity-dimmer-bottom-left"></div>

@@ -1,6 +1,9 @@
 <tal:css 
     tal:define="portal_url view/portal_url|none;
                 editing view/editing|nothing">
+
+    <link rel="stylesheet"
+        tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/featherlight/featherlight.min.css" />
     
     <link rel="stylesheet"
         tal:condition="editing"
@@ -14,5 +17,4 @@
         tal:condition="not: editing"
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.css" />
 
-    
 </tal:css>

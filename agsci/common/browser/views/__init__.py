@@ -16,21 +16,34 @@ from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
 import urlparse
 
+from agsci.common.content.degrees import IDegree
+from agsci.common.indexer import degree_index_field
+
 try:
     from zope.app.component.hooks import getSite
 except ImportError:
     from zope.component.hooks import getSite
 
-try:
-    from pyPdf import PdfFileReader
-except ImportError:
-    def PdfFileReader(*args, **kwargs):
-        return None
 
 class BaseView(BrowserView):
 
-    def getItemLeadImage(self, item):
-        return '%s/@@images/image/large' % item.getURL()
+    def getItemLeadImage(self, item=None, size='large'):
+    
+        if not item:
+            item = self.context
+        
+        
+        if hasattr(item, 'getURL'):
+            url = item.getURL()
+        elif hasattr(item, 'absolute_url'):
+            url = item.absolute_url()
+        else:
+            url = self.context.absolute_url()
+    
+        if size:
+            return '%s/@@images/image/%s' % (url, size)
+
+        return '%s/@@images/image' % (url,)
 
     @property
     def show_date(self):
@@ -248,3 +261,24 @@ class DegreeListingView(BaseView):
     
     def getFolderContents(self):
         return self.portal_catalog.queryCatalog(self.getQuery())
+
+class DegreeView(BaseView):
+
+    @property
+    def fields(self):
+    
+        fields = [x[1] for x in degree_index_field]
+        
+        def sort_order(x):
+            try:
+                return fields.index(x)
+            except ValueError:
+                return 99999
+
+        sorted_fields = sorted(IDegree.namesAndDescriptions(), key=lambda x: sort_order(x[0]))
+
+        return [x[1] for x in sorted_fields]
+
+    @property
+    def image(self):
+        return self.getItemLeadImage(size=None)

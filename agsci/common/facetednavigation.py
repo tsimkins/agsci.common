@@ -34,8 +34,6 @@ class DegreeContainerCriteria(_Criteria):
                 return fields.index(x)
             except ValueError:
                 return 99999
-            
-        
 
         sorted_fields = sorted(IDegree.namesAndDescriptions(), key=lambda x: sort_order(x[0]))
 
