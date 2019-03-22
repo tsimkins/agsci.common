@@ -14250,6 +14250,19 @@ FOR REMOVAL ???
   background: #eff0f1;
   border-radius: 0.25rem; }
 
+body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs {
+  color: #ffffff; }
+  body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs > .container {
+    padding-left: 0; }
+  body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs ol {
+    padding: 0;
+    margin: 0; }
+    body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs ol > li {
+      display: inline-block;
+      list-style-type: none; }
+body.mosaic-grid .mosaic-tile-content .jumbotron p {
+  color: #ffffff;
+  font-size: 1.25em; }
 body.mosaic-grid .mosaic-tile-content .cta-bar .btn {
   margin-top: 0.5rem; }
 body.mosaic-grid .mosaic-tile-content h1.documentFirstHeading {

@@ -56,6 +56,27 @@ class IJumbotronTile(model.Schema):
         required=False,
     )
 
+    show_title = schema.Bool(
+        title=_(u"Show Title?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+    
+    show_description = schema.Bool(
+        title=_(u"Show Description?"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+    show_breadcrumbs = schema.Bool(
+        title=_(u"Show Breadcrumbs?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+
 class ICalloutBlockTile(model.Schema):
 
     title = schema.TextLine(

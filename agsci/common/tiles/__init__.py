@@ -2,10 +2,10 @@ from plone import api
 from plone import tiles
 
 from base64 import b64encode
-from plone.app.layout.viewlets.common import PathBarViewlet
 from Products.Five.browser import BrowserView
 
 from .. import object_factory
+from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(tiles.PersistentTile):
 
@@ -35,7 +35,6 @@ class JumbotronTile(BaseTile):
     def img_src(self):
         img = self.data.get('image', None)
         return 'data:image/jpeg;base64,%s' % b64encode(img.data)
-        #import pdb; pdb.set_trace()
 
 class CalloutBlockTile(BaseTile):
     pass

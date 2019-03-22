@@ -2,6 +2,32 @@ body.mosaic-grid {
 
     .mosaic-tile-content {
         
+        .jumbotron {
+            #portal-breadcrumbs {
+
+                color: #ffffff;
+                
+                > .container {
+                    padding-left: 0;
+                }
+
+                ol {
+                    padding: 0;
+                    margin: 0;
+                    
+                    > li {
+                        display: inline-block;
+                        list-style-type: none;
+                    }
+                }
+            }
+            
+            p {
+                color: #ffffff;
+                font-size: 1.25em;
+            }
+        }
+        
         .cta-bar .btn {
             margin-top: 0.5rem;
         }
@@ -246,8 +272,6 @@ body.userrole-authenticated {
     }
 }
 
-
-        
 body.viewpermission-manage-portal,
 body.viewpermission-add-portal-content,
 body.viewpermission-manage-schemata,
