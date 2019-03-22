@@ -32,11 +32,12 @@ class BaseView(BrowserView):
         if not item:
             item = self.context
         
-        
         if hasattr(item, 'getURL'):
             url = item.getURL()
+
         elif hasattr(item, 'absolute_url'):
             url = item.absolute_url()
+
         else:
             url = self.context.absolute_url()
     
@@ -282,3 +283,18 @@ class DegreeView(BaseView):
     @property
     def image(self):
         return self.getItemLeadImage(size=None)
+
+class DegreeCompareView(DegreeView):
+
+    @property
+    def degrees(self):
+    
+        _ids = self.request.form.get('degree_id', [])
+
+        results = self.portal_catalog.searchResults({
+            'Type' : 'Degree',
+            'sort_on' : 'sortable_title',
+            'getId' : _ids,
+        })
+
+        return [x.getObject() for x in results]

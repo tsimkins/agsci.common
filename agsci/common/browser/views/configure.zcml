@@ -36,6 +36,26 @@
         template="templates/degree_lightbox.pt"
     />
 
+    <!-- Degree Compare View -->
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="degree_compare"
+        class=".DegreeCompareView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/degree_compare.pt"
+    />
+    
+    <!-- Degree Compare Lightbox View -->
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="degree_compare_lightbox"
+        class=".DegreeCompareView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/degree_compare_lightbox.pt"
+    />
+
     <!-- Degree Listing View -->
     <browser:page
         for="agsci.common.content.degrees.IDegreeContainer"

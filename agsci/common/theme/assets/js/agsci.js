@@ -111,3 +111,54 @@ jq3(document).ready(function() {
 jq3('.popover-dismiss').popover({
     trigger: 'focus'
 })
+
+// Faceted load
+jq3(document).ready(function() {
+
+    jQuery(Faceted.Events).bind(Faceted.Events.AJAX_QUERY_SUCCESS , function() {
+
+        jQuery('body.portaltype-agsci_degree_container form.degree-explorer').each(
+
+            function() {
+    
+                console.log('setting stuff');
+                // Don't submit when clicking Compare
+                jQuery(this).attr('onsubmit', 'return false;');
+                
+                jQuery(this).children('input[type="submit"]').click(
+                    function () {
+                        console.log('Compare!');
+                    }
+                );
+
+                jQuery(this).find('input[type="checkbox"]').change(
+                    function () {
+                        console.log('Checked: ' + jQuery(this).attr('value'));
+
+                        jQuery(this).parents('form').each(
+                            function () {
+                                var degree_ids = [];
+
+                                jQuery(this).find('input[type="checkbox"]:checked').each(
+                                    function () {
+                                            
+                                        degree_ids.push(jQuery(this).attr('value'));
+                                    }
+                                );
+                                
+                                var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
+                                
+                                console.log(compare_view);
+                                
+                                jQuery(this).children('input[type="submit"]').attr('data-featherlight', compare_view)
+                            }
+                        );
+                    }
+                );
+        });
+        
+        //jq3('body.portaltype-agsci_degree_container form.degree-explorer input[type="submit"]').featherlight(window.location.pathname + '/@@degree_compare_lightbox');
+
+    });
+    
+});

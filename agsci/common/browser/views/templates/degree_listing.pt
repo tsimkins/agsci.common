@@ -14,7 +14,8 @@
 
             <form
                 method="post"
-                tal:attributes="action string:${context/absolute_url}/compare">
+                class="degree-explorer"
+                tal:attributes="action string:${context/absolute_url}/@@degree_compare_lightbox">
 
                 <input type="submit" value="Compare" />
 
@@ -87,7 +88,9 @@
                         <div class="card-footer">
 
                             <p>
-                                <input type="checkbox" value="hi" /> Compare
+                                <input type="checkbox"
+                                    name="degree_id"
+                                    tal:attributes="value item/getId" /> Compare
                             </p>
 
                         </div>

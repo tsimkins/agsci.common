@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="agsci.common">
+<body>
+    <metal:content-core fill-slot="content-core">
+
+        <metal:lightbox
+            define-macro="lightbox">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 pl-0 ">
+                        <table class="table table-bordered"
+                            tal:define="degrees view/degrees|nothing"
+                            tal:condition="degrees">
+
+                            <tr>
+
+                                <td></td>
+
+                                <tal:item
+                                    tal:repeat="i view/degrees">
+                                    <th scope="col" class="px-3">
+                                        <div                                         class="card mb-0">
+                                            <div class="card-image-top">
+                                                <div class="card-body p-0">
+                                                    <img class="image-fluid w-100"
+                                                         alt=""
+                                                         tal:attributes="src python:view.getItemLeadImage(item=i);" />
+    
+                                                    <div class="d-flex align-items-end justify-content-start text-black p-1">
+                    
+                                                        <p style="font-weight: bold" class="small" class="card-title" tal:content="i/Title" />
+                    
+                                                    </div>
+                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th>
+                                </tal:item>
+
+                            </tr>
+
+                            <tal:row 
+                                tal:repeat="f view/fields|nothing">
+                                <tr>
+
+                                    <th class="table-secondary" 
+                                        scope="row" 
+                                        tal:define="title f/title|nothing;"
+                                        tal:content="title" />
+    
+                                    <tal:item
+                                        tal:repeat="i view/degrees"> 
+                                    
+                                        <td tal:define="v python: f.get(i);">
+                                            <ul>
+                                                <li tal:repeat="j v" tal:content="j" />
+                                            </ul>
+                                        </td>
+
+                                    </tal:item>
+                                </tr>
+                            </tal:row>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </metal:lightbox>
+    </metal:content-core>    
+
+</body>
+</html>
