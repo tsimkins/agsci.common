@@ -25,14 +25,24 @@
         <value key="weight">100</value>
     </records>
 
-    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_foo"
-        remove="True"
-             interface="plone.app.mosaic.interfaces.ITile" />
-
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_callout_block"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.callout_block</value>
         <value key="label">Callout Block</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_cta"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.cta</value>
+        <value key="label">Call to Action</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>

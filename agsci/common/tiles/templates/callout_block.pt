@@ -5,7 +5,8 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="agsci.common">
   <body>
-    <section class="my-5">
+    <section class="my-5"
+        tal:attributes="data-tile-type view/tile_type|nothing">
     	<div class="container container-text">
             <div class="row">
         		<div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">

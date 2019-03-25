@@ -1,3 +1,12 @@
+body.mosaic-grid .mosaic-tile-content section[data-tile-type]:hover:before {
+  content: attr(data-tile-type);
+  position: absolute;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-size: 0.875em;
+  margin: 0 0.25em;
+  padding: 0.375em;
+  font-family: Arial, sans-serif; }
 body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs {
   color: #ffffff; }
   body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs > .container {

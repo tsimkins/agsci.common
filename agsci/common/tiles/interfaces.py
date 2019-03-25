@@ -8,20 +8,13 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 
-class ITestTileRowSchema(Interface):
+class IAgsciTilesLayer(IDefaultBrowserLayer):
+    """Marker interface that defines a browser layer."""
 
-    value = schema.TextLine(
-        title=_(u"Value"),
-        required=False
-    )
+class ICTATileRowSchema(Interface):
 
     title = schema.TextLine(
         title=_(u"Title"),
-        required=False
-    )
-
-    value = schema.TextLine(
-        title=_(u"Description"),
         required=False
     )
 
@@ -29,14 +22,15 @@ class ITestTileRowSchema(Interface):
         title=_(u"URL"),
         required=False
     )
+    
+    color = schema.Choice(
+        title=_(u"Button Color"),
+        description=_(u"Frequency that reports will be emailed."),
+        values=[u'orange', u'purple', u'green'],
+        default=u'orange',
+        required=False,
+    )
 
-
-class ICollectionTileRenderer(Interface):
-    """
-    """
-
-class IAgsciTilesLayer(IDefaultBrowserLayer):
-    """Marker interface that defines a browser layer."""
 
 class IJumbotronTile(model.Schema):
 
@@ -92,4 +86,20 @@ class ICalloutBlockTile(model.Schema):
     text = RichText(
         title=_(u'Text'),
         required=False,
+    )
+
+class ICTATile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    value = schema.List(
+        title=u"Buttons",
+        value_type=DictRow(title=u"Button", schema=ICTATileRowSchema),
+        #value_type=schema.TextLine(required=True),
+        required=False
     )

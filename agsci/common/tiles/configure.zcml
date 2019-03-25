@@ -34,4 +34,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.cta"
+        title="Call to Action"
+        description=""
+        schema=".interfaces.ICTATile"
+        class=".CTATile"
+        template="templates/cta.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

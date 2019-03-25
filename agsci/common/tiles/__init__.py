@@ -9,7 +9,13 @@ from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(tiles.PersistentTile):
 
+    __type__ = "Base Tile"
+
     klass = 'base-tile'
+
+    @property
+    def tile_type(self):
+        return self.__type__
 
     def can_edit(self):
         if api.user.is_anonymous():
@@ -21,13 +27,15 @@ class BaseTile(tiles.PersistentTile):
             obj=self.context)
 
 class JumbotronTile(BaseTile):
-    
+
+    __type__ = "Jumbotron"
+
     def breadcrumbs(self):
         view = BrowserView(self.context, self.request)
         viewlet = PathBarViewlet(self.context, self.request, view)
         viewlet.update()
         return viewlet.render()
-    
+
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
 
@@ -37,43 +45,12 @@ class JumbotronTile(BaseTile):
         return 'data:image/jpeg;base64,%s' % b64encode(img.data)
 
 class CalloutBlockTile(BaseTile):
-    pass
+    __type__ = "Callout Block"
 
-class TestTile(BaseTile):
-
-    def item_klass(self):
+class CTATile(BaseTile):
+    __type__ = "Call To Action"
     
-        _ = [
-            (4, 'mosaic-width-quarter'),
-            (3, 'mosaic-width-third'),
-            (2, 'mosaic-width-half'),
-        ]
-    
-        values = [x for x in self.values]
-        
-        if values:
-
-            value_count = len(values)
-            
-            for (v,k) in _:
-                if not value_count % v:
-                    return k
-
-            # Default largest
-            if value_count > _[0][0]:
-                return _[0][1]
-                
-        return 'mosaic-width-full'
-        
     @property
-    def values(self):
-        headings = ['title', 'description', 'link'] 
-
-        values = self.data.get('values', [])
-        
-        if values:
-
-            for _ in values:
-                values = [x.strip() for x in _.split('|')]
-                kwargs = dict(zip(headings, values))
-                yield object_factory(**kwargs)
+    def buttons(self):
+        v = self.data.get('value', [])
+        return [object_factory(**x) for x in v]

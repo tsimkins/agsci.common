@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+<section class="cta-bar cta-bar-light"
+    tal:attributes="data-tile-type view/tile_type|nothing">
+    <div class="container">
+        <div class="row d-flex justify-content-center overflow-hidden">
+
+        <tal:buttons tal:repeat="button view/buttons|nothing">
+            <a tal:attributes="href button/url;
+                               class string:btn btn-test-${button/color|nothing}"
+               tal:content="button/title|nothing" />
+        </tal:buttons>
+        
+        </div>
+    </div>
+</section>
+  </body>
+</html>
