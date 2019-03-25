@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container-fluid border-top py-5"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+	
+    <div class="container container-text position-relative">
+
+        <div class="row">
+	
+            <div class="col-12 col-lg-7 drop-cap order-12 order-lg-1">
+	
+                <h2 class="h2-divider"><span tal:content="view/data/title|nothing" /></h2>
+	
+                <p tal:condition="view/data/description|nothing"
+                   tal:content="view/data/description|nothing" />
+
+                <div tal:replace="structure view/data/text/raw|nothing" />
+
+            </div>
+
+            <div class="col-12 col-lg-5 order-1 order-lg-12"
+                 tal:define="images view/@@images;
+                             img_src python:view.img_src_url(images);">
+
+                <img alt=""
+                     class="w-100"
+                     tal:attributes="src img_src" />
+
+        	</div>
+	
+        </div>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

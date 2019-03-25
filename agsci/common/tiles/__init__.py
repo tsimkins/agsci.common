@@ -68,3 +68,6 @@ class CTATile(BaseTile):
 
 class KermitTile(CTATile):
     __type__ = "Kermit"
+
+class MissPiggyTile(BaseTile):
+    __type__ = "Miss Piggy"

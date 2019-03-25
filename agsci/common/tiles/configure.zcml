@@ -60,4 +60,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.misspiggy"
+        title="Miss Piggy"
+        description=""
+        schema=".interfaces.IMissPiggyTile"
+        class=".MissPiggyTile"
+        template="templates/misspiggy.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

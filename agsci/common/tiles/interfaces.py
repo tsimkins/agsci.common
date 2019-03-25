@@ -145,3 +145,26 @@ class IKermitTile(Interface):
         value_type=DictRow(title=u"Button", schema=IButtonBlockTileRowSchema),
         required=False
     )
+
+class IMissPiggyTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
+    description = schema.TextLine(
+        title=_(u'Description'),
+        required=False,
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
