@@ -30,6 +30,7 @@
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />
             <drop css:theme="[data-component='portlets']" />
+            
         </rules>
 
         <drop css:content="#audience-nav-viewlet" />
@@ -37,15 +38,16 @@
 
     </rules>
 
-    <rules>
+    <rules css:if-content="body[class]">
 
         <theme href="theme.html" />
 
         <notheme css:if-not-content="#visual-portal-wrapper" />
-        
+
         <!-- Don't theme in Mosaic editor. -->
         <notheme css:if-content="textarea.pat-layout" />
-            
+        <notheme css:if-not-content="body[class]" />
+        
         <rules css:if-content="#portal-top, #content-header">
             <!-- Attributes -->
             <copy attributes="*" css:theme="html" css:content="html" />

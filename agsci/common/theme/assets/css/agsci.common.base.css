@@ -96,7 +96,7 @@ body.mosaic-layout-customized {
   body.mosaic-layout-customized #portal-breadcrumbs,
   body.mosaic-layout-customized .mosaic-blur {
     display: none; }
-  body.mosaic-layout-customized #portal-column-content {
+  body.mosaic-layout-customized #portal-column-content, body.mosaic-layout-customized main {
     margin: 1em 20%; }
 
 body.userrole-authenticated footer {

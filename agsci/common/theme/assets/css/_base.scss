@@ -160,9 +160,10 @@ body.mosaic-layout-customized {
         display: none;
     }
     
-    #portal-column-content {
+    #portal-column-content, main {
         margin: 1em 20%;
     }
+        
 }
 
 body.userrole-authenticated {

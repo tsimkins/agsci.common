@@ -1,3 +1,5 @@
+from plone.app.tiles.imagescaling import ImageScale
+
 from plone import api
 from plone import tiles
 
@@ -39,10 +41,16 @@ class JumbotronTile(BaseTile):
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
 
+    def img_src_url(self, images):
+        return images.scale('image').url
+
     @property
     def img_src(self):
         img = self.data.get('image', None)
-        return 'data:image/jpeg;base64,%s' % b64encode(img.data)
+
+        if img and img.data:
+            scale = ImageScale(self, self.request, data=img, fieldname='image')
+            return scale.url
 
 class CalloutBlockTile(BaseTile):
     __type__ = "Callout Block"
