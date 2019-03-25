@@ -32,7 +32,7 @@
 
         	<div class="row position-relative pb-2 mt-3">
 
-                <tal:buttons tal:repeat="button view/buttons|nothing">
+                <tal:buttons tal:repeat="button view/values|nothing">
 
                     <div class="col-12 col-md-6">
     

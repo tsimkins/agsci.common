@@ -45,6 +45,11 @@ class BaseTile(tiles.PersistentTile):
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
 
+    @property
+    def values(self):
+        v = self.data.get('value', [])
+        return [object_factory(**x) for x in v]
+
 class JumbotronTile(BaseTile):
 
     __type__ = "Jumbotron"
@@ -61,13 +66,11 @@ class CalloutBlockTile(BaseTile):
 class CTATile(BaseTile):
     __type__ = "Call To Action"
     
-    @property
-    def buttons(self):
-        v = self.data.get('value', [])
-        return [object_factory(**x) for x in v]
-
-class KermitTile(CTATile):
+class KermitTile(BaseTile):
     __type__ = "Kermit"
 
 class MissPiggyTile(BaseTile):
     __type__ = "Miss Piggy"
+
+class FozzieBearTile(BaseTile):
+    __type__ = "FozzieBear"

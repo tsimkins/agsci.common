@@ -73,4 +73,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.fozziebear"
+        title="Fozzie Bear"
+        description=""
+        schema=".interfaces.IFozzieBearTile"
+        class=".FozzieBearTile"
+        template="templates/fozziebear.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

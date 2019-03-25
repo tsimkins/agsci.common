@@ -27,7 +27,6 @@ class IButtonTileRowSchema(Interface):
     
     color = schema.Choice(
         title=_(u"Button Color"),
-        description=_(u"Frequency that reports will be emailed."),
         values=button_colors,
         default=u'orange',
         required=False,
@@ -52,12 +51,22 @@ class IButtonBlockTileRowSchema(Interface):
     
     color = schema.Choice(
         title=_(u"Button Color"),
-        description=_(u"Frequency that reports will be emailed."),
         values=button_colors,
         default=u'orange',
         required=False,
     )
 
+class IItemBlockTileRowSchema(Interface):
+
+    value = schema.TextLine(
+        title=_(u"Value"),
+        required=False
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
 
 class IJumbotronTile(model.Schema):
 
@@ -167,4 +176,19 @@ class IMissPiggyTile(Interface):
     text = RichText(
         title=_(u'Text'),
         required=False,
+    )
+
+class IFozzieBearTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    value = schema.List(
+        title=u"Items",
+        value_type=DictRow(title=u"Items", schema=IItemBlockTileRowSchema),
+        required=False
     )

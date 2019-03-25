@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center overflow-hidden">
 
-        <tal:buttons tal:repeat="button view/buttons|nothing">
+        <tal:buttons tal:repeat="button view/values|nothing">
             <a tal:attributes="href button/url;
                                class string:btn btn-test-${button/color|nothing}"
                tal:content="button/title|nothing" />

@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container-fluid py-5 border-bottom"
+    tal:attributes="data-tile-type view/tile_type|nothing">
+    <div class="container">
+
+        <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights">
+
+            <tal:items tal:repeat="item view/values|nothing">
+
+                <div class="card card-portable-highlight reveal">
+
+                	<div class="card-body">
+
+                        <p>
+                            <span tal:content="item/value|nothing" />
+                            <span tal:replace="item/label|nothing" />
+                        </p>
+
+                	</div>
+
+                </div>
+
+            </tal:items>
+
+    	</div>
+
+    </div>
+</section>
+
+
+  </body>
+</html>
