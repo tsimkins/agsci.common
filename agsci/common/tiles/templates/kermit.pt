@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container-fluid bg-creek"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+	
+    <div class="d-block d-lg-flex big-image justify-content-center"
+         tal:define="images view/@@images;
+                     img_src python:view.img_src_url(images);">
+        <img alt=""
+             tal:attributes="src img_src" />
+
+    </div>
+
+    <div class="container documentText position-relative pb-5">
+
+    <div class="row offset-top">
+        <div class="col-12 col-md-4 px-0">
+			
+        <h2 class="h1 creek-offset"><span tal:content="view/data/title" /></h2>
+
+    </div>
+
+    <div class="col-12 col-md-8 bg-white agsci-box-shadow mb-0">
+	
+	   <div class="container">
+
+        	<div class="row position-relative pb-2 mt-3">
+
+                <tal:buttons tal:repeat="button view/buttons|nothing">
+
+                    <div class="col-12 col-md-6">
+    
+                        <a tal:attributes="href button/url;
+                                           class string:card card-cta bg-dark-${button/color|nothing} px-0 reveal text-center">
+    	
+                    		<div class="card-body text-white">
+                        		<p class="h4 mt-0" tal:content="button/title|nothing" />
+                        		<div class="btn" tal:content="button/label|nothing" />		
+                    		</div>
+    
+                    	</a>
+    
+                    </div>
+                </tal:buttons>
+        	</div>
+        </div>
+    </div>
+</section>
+
+
+  </body>
+</html>

@@ -28,6 +28,23 @@ class BaseTile(tiles.PersistentTile):
             username=current.id,
             obj=self.context)
 
+    def img_src_url(self, images):
+        try:
+            return images.scale('image').url
+        except AttributeError:
+            return ''
+
+    @property
+    def img_src(self):
+        img = self.data.get('image', None)
+
+        if img and img.data:
+            scale = ImageScale(self, self.request, data=img, fieldname='image')
+            return scale.url
+
+    def background_style(self):
+        return "background-image: url(%s);" % self.img_src
+
 class JumbotronTile(BaseTile):
 
     __type__ = "Jumbotron"
@@ -37,20 +54,6 @@ class JumbotronTile(BaseTile):
         viewlet = PathBarViewlet(self.context, self.request, view)
         viewlet.update()
         return viewlet.render()
-
-    def background_style(self):
-        return "background-image: url(%s);" % self.img_src
-
-    def img_src_url(self, images):
-        return images.scale('image').url
-
-    @property
-    def img_src(self):
-        img = self.data.get('image', None)
-
-        if img and img.data:
-            scale = ImageScale(self, self.request, data=img, fieldname='image')
-            return scale.url
 
 class CalloutBlockTile(BaseTile):
     __type__ = "Callout Block"
@@ -62,3 +65,6 @@ class CTATile(BaseTile):
     def buttons(self):
         v = self.data.get('value', [])
         return [object_factory(**x) for x in v]
+
+class KermitTile(CTATile):
+    __type__ = "Kermit"

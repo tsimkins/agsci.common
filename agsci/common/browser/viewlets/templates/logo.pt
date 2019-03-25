@@ -1,0 +1,12 @@
+<div id="logo-viewlet">
+
+    <a tal:attributes="href view/portal_url"
+       class="navbar-brand">
+    
+        <img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png"
+             alt="Penn State College of Agricultural Science Logo" 
+             class="agsci-logo">
+    
+    </a>
+
+</div>

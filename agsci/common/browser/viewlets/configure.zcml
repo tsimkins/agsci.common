@@ -14,6 +14,17 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Logo -->
+
+    <browser:viewlet
+        name="agsci.common.logo"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".LogoViewlet"
+        permission="zope2.View"
+        template="templates/logo.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Audience Navigation -->
 
     <browser:viewlet

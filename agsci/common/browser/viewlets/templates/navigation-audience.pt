@@ -5,15 +5,7 @@
 
         <div class="row mx-0 align-items-center">
     	
-            <div class="col-3">
-                <a tal:attributes="href view/portal_url"
-                   class="navbar-brand"><img 
-                        tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png" 
-                        alt="Penn State College of Agricultural Sciences Logo" 
-                        class="agsci-logo pl-3"></a>
-        	</div>
-    
-            <div class="col-9 text-right">
+            <div class="col-9 offset-3 text-right">
 
                 <ul class="audience-dropdowns dropdown-selectors justify-content-end">
 

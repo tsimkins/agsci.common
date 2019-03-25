@@ -25,6 +25,9 @@ class ViewletBase(_ViewletBase):
         normalizer = queryUtility(IIDNormalizer)
         return normalizer.normalize(_)
 
+class LogoViewlet(ViewletBase):
+    pass
+
 class NavigationViewlet(ViewletBase):
 
     default_url = '/'

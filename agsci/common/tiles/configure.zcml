@@ -47,4 +47,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.kermit"
+        title="Kermit"
+        description=""
+        schema=".interfaces.IKermitTile"
+        class=".KermitTile"
+        template="templates/kermit.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

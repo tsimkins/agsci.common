@@ -8,10 +8,12 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 
+button_colors = [u'orange', u'purple', u'green']
+
 class IAgsciTilesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
-class ICTATileRowSchema(Interface):
+class IButtonTileRowSchema(Interface):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -26,7 +28,32 @@ class ICTATileRowSchema(Interface):
     color = schema.Choice(
         title=_(u"Button Color"),
         description=_(u"Frequency that reports will be emailed."),
-        values=[u'orange', u'purple', u'green'],
+        values=button_colors,
+        default=u'orange',
+        required=False,
+    )
+
+class IButtonBlockTileRowSchema(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+    
+    color = schema.Choice(
+        title=_(u"Button Color"),
+        description=_(u"Frequency that reports will be emailed."),
+        values=button_colors,
         default=u'orange',
         required=False,
     )
@@ -92,14 +119,29 @@ class ICTATile(Interface):
 
     form.widget(value=DataGridFieldFactory)
 
+    value = schema.List(
+        title=u"Buttons",
+        value_type=DictRow(title=u"Button", schema=IButtonTileRowSchema),
+        required=False
+    )
+
+class IKermitTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
     title = schema.TextLine(
         title=_(u"Title"),
         required=False
     )
 
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
     value = schema.List(
         title=u"Buttons",
-        value_type=DictRow(title=u"Button", schema=ICTATileRowSchema),
-        #value_type=schema.TextLine(required=True),
+        value_type=DictRow(title=u"Button", schema=IButtonBlockTileRowSchema),
         required=False
     )

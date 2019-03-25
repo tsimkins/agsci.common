@@ -78,7 +78,7 @@
         </rules>
 
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
-        <copy attributes="*" css:content="body" css:theme="body" />
+        <append attributes="*" css:content="body" css:theme="body" />
     
         <!-- move global nav -->
         <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" />
@@ -87,6 +87,8 @@
         <replace css:content="#viewlet-above-content" css:theme="#above-content" />
     
         <!-- Navigation -->
+        <replace css:content-children="#logo-viewlet" css:theme="#logo-viewlet" />
+        
         <replace css:content-children="#audience-nav-viewlet" css:theme="#audience-nav-viewlet" />
         <replace css:content-children="#primary-nav-viewlet" css:theme="#primary-nav-viewlet" />
 
