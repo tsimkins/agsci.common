@@ -4,6 +4,7 @@ from plone import api
 from plone import tiles
 
 from base64 import b64encode
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
@@ -17,6 +18,10 @@ class BaseTile(tiles.PersistentTile):
     klass = 'base-tile'
 
     @property
+    def portal_catalog(self):
+        return getToolByName(self.context, 'portal_catalog')
+
+    @property
     def tile_type(self):
         return self.__type__
 
@@ -28,12 +33,6 @@ class BaseTile(tiles.PersistentTile):
             'Edit',
             username=current.id,
             obj=self.context)
-
-    def img_src_url(self, images):
-        try:
-            return images.scale('image').url
-        except AttributeError:
-            return ''
 
     @property
     def img_src(self):
@@ -103,3 +102,13 @@ class GonzoTile(BaseTile):
 
 class RowlfTile(BaseTile):
     __type__ = "Rowlf"
+
+class ScooterTile(BaseTile):
+    __type__ = "Scooter"
+    
+    @property
+    def items(self):
+        return self.portal_catalog.searchResults({
+            'Type' : 'Degree',
+            'sort_on' : 'sortable_title',
+        })

@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="mb-5"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 tal:content="view/data/title|nothing" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div tal:attributes="class string:card-deck card-deck-${view/data/count}up agsci-visual-cards">
+
+            <tal:items
+                tal:repeat="i view/items|nothing">
+       
+                <a tal:attributes="href i/getURL|nothing"
+                   class="card card-visual">
+    
+                    <div class="card-image-top">
+                        <div class="opacity-dimmer"></div>
+    
+                        <img tal:attributes="src string:${i/getURL}/@@images/image/large" 
+                             alt="" 
+                             title="" 
+                             class="w-100" />
+    
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                            <h3 class="card-title text-center"
+                                tal:content="i/Title|nothing">
+    
+                        </div>
+    
+                    </div>
+                 </a>
+            </tal:items>
+
+        </div>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

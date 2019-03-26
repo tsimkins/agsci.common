@@ -260,3 +260,21 @@ class IRowlfTile(Interface):
         title=_(u"URL"),
         required=False
     )
+
+class IScooterTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    value = schema.TextLine(
+        title=_(u"Items"),
+        required=False
+    )
+
+    count = schema.Choice(
+        title=_(u"Count"),
+        values=[2,3,4],
+        required=False,
+    )

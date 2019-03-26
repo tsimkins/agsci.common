@@ -111,4 +111,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.scooter"
+        title="Scooter"
+        description=""
+        schema=".interfaces.IScooterTile"
+        class=".ScooterTile"
+        template="templates/scooter.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>
