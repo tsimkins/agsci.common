@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+
+<section class="offset-previews"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <!-- Dummy div to force nth-of-type(2) CSS -->
+    <div></div>
+		     
+	<div class="container-fluid px-0">
+
+		<div class="row align-items-center mx-0">
+			<div class="col-12 col-lg-7 col-xl-8 px-0 offset-image"
+			     tal:define="images view/@@images;
+                             img_src python:view.img_src_url(images);">
+                <img alt=""
+                     class="w-100"
+                     tal:attributes="src img_src" />
+			</div>
+			
+			<div class="col-12 col-lg-5 col-xl-4 order-12 px-0 mt-0">
+
+				<div class="agsci-box-shadow offset-content">
+					<h2 class="h2-no-divider mt-0"
+					    tal:content="view/data/title|nothing" />
+
+                    <div tal:condition="view/data/text/output|nothing"
+                       tal:replace="structure view/data/text/output|nothing" />
+                                           
+                    <a class="btn btn-test-creek"
+                       tal:attributes="href view/data/url|nothing"
+                       tal:content="view/data/label|nothing" />
+				</div>
+			</div>          
+	
+		</div>
+	</div>
+
+</section>
+
+
+  </body>
+</html>

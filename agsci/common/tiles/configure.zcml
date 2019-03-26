@@ -86,4 +86,16 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.gonzo"
+        title="Gonzo"
+        description=""
+        schema=".interfaces.IGonzoTile"
+        class=".GonzoTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+    
 </configure>

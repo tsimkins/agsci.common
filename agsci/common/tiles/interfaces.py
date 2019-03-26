@@ -192,3 +192,39 @@ class IFozzieBearTile(Interface):
         value_type=DictRow(title=u"Items", schema=IItemBlockTileRowSchema),
         required=False
     )
+
+class IGonzoTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_align = schema.Choice(
+        title=_(u"Image Align"),
+        values=['left', 'right'],
+        default=u'right',
+        required=False,
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+    

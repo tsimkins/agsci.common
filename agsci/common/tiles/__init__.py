@@ -5,6 +5,7 @@ from plone import tiles
 
 from base64 import b64encode
 from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from .. import object_factory
 from ..browser.viewlets import PathBarViewlet
@@ -73,4 +74,23 @@ class MissPiggyTile(BaseTile):
     __type__ = "Miss Piggy"
 
 class FozzieBearTile(BaseTile):
-    __type__ = "FozzieBear"
+    __type__ = "Fozzie Bear"
+
+class GonzoTile(BaseTile):
+    __type__ = "Gonzo"
+    
+    @property
+    def align(self):
+        _ = self.data.get('image_align')
+        
+        if _ == 'left':
+            return _
+        
+        return 'right'
+
+    def __call__(self, *args, **kwargs):
+        return self.template(self, *args, **kwargs)
+
+    @property    
+    def template(self):
+        return ViewPageTemplateFile('templates/gonzo-%s.pt' % self.align)

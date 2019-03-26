@@ -1,4 +1,4 @@
-body.mosaic-grid .mosaic-tile-content section[data-tile-type]:hover:before {
+.mosaic-grid-row .mosaic-tile-content section[data-tile-type]:hover:before {
   content: attr(data-tile-type);
   position: absolute;
   color: #FFFFFF;
@@ -7,66 +7,66 @@ body.mosaic-grid .mosaic-tile-content section[data-tile-type]:hover:before {
   margin: 0 0.25em;
   padding: 0.375em;
   font-family: Arial, sans-serif; }
-body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs {
+.mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs {
   color: #ffffff; }
-  body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs > .container {
+  .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs > .container {
     padding-left: 0; }
-  body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs ol {
+  .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs ol {
     padding: 0;
     margin: 0; }
-    body.mosaic-grid .mosaic-tile-content .jumbotron #portal-breadcrumbs ol > li {
+    .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs ol > li {
       display: inline-block;
       list-style-type: none; }
-body.mosaic-grid .mosaic-tile-content .jumbotron p {
+.mosaic-grid-row .mosaic-tile-content .jumbotron p {
   color: #ffffff;
   font-size: 1.25em; }
-body.mosaic-grid .mosaic-tile-content .cta-bar .btn {
+.mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
   margin-top: 0.5rem; }
-body.mosaic-grid .mosaic-tile-content h1.documentFirstHeading {
+.mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
   border-bottom: none;
   font-size: 64px; }
-body.mosaic-grid .mosaic-tile-content .hero-test {
+.mosaic-grid-row .mosaic-tile-content .hero-test {
   background-image: url(../../../images/hero-test); }
-body.mosaic-grid .mosaic-tile-content h2.slide-down {
+.mosaic-grid-row .mosaic-tile-content h2.slide-down {
   text-align: center; }
-body.mosaic-grid .mosaic-tile-content h2.slide-down:after {
+.mosaic-grid-row .mosaic-tile-content h2.slide-down:after {
   margin: auto;
   left: 0;
   right: 0; }
-body.mosaic-grid .mosaic-tile-content .test-tile {
+.mosaic-grid-row .mosaic-tile-content .test-tile {
   margin: 1em 0;
   padding: 1em;
   background-color: #4A7729; }
-  body.mosaic-grid .mosaic-tile-content .test-tile h2, body.mosaic-grid .mosaic-tile-content .test-tile p {
+  .mosaic-grid-row .mosaic-tile-content .test-tile h2, .mosaic-grid-row .mosaic-tile-content .test-tile p {
     color: #FFFFFF; }
-  body.mosaic-grid .mosaic-tile-content .test-tile ul {
+  .mosaic-grid-row .mosaic-tile-content .test-tile ul {
     display: block;
     list-style-type: none;
     padding: 0;
     margin: 0;
     text-align: center; }
-    body.mosaic-grid .mosaic-tile-content .test-tile ul li {
+    .mosaic-grid-row .mosaic-tile-content .test-tile ul li {
       margin: 2em auto;
       display: block; }
-      body.mosaic-grid .mosaic-tile-content .test-tile ul li div.outer {
+      .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer {
         background-color: #1e407c;
         color: white;
         padding: 1em;
         min-height: 15em;
         position: relative;
         text-align: center; }
-        body.mosaic-grid .mosaic-tile-content .test-tile ul li div.outer div.inner {
+        .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner {
           position: absolute;
           top: 50%;
           left: 0;
           right: 0;
           transform: translateY(-50%);
           margin: 0 auto; }
-          body.mosaic-grid .mosaic-tile-content .test-tile ul li div.outer div.inner .title, body.mosaic-grid .mosaic-tile-content .test-tile ul li div.outer div.inner .description {
+          .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .title, .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .description {
             text-align: center;
             display: block;
             font-size: 2em; }
-          body.mosaic-grid .mosaic-tile-content .test-tile ul li div.outer div.inner .title {
+          .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .title {
             font-size: 4em;
             font-weight: bold; }
 
