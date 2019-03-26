@@ -9,11 +9,10 @@
 <section class="container-fluid bg-creek"
          tal:attributes="data-tile-type view/tile_type|nothing">
 	
-    <div class="d-block d-lg-flex big-image justify-content-center"
-         tal:define="images view/@@images;
-                     img_src python:view.img_src_url(images);">
+    <div class="d-block d-lg-flex big-image justify-content-center">
+
         <img alt=""
-             tal:attributes="src img_src" />
+             tal:attributes="src view/img_src|nothing" />
 
     </div>
 

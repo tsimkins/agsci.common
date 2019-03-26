@@ -24,13 +24,11 @@
 
             </div>
 
-            <div class="col-12 col-lg-5 order-1 order-lg-12"
-                 tal:define="images view/@@images;
-                             img_src python:view.img_src_url(images);">
+            <div class="col-12 col-lg-5 order-1 order-lg-12">
 
                 <img alt=""
                      class="w-100"
-                     tal:attributes="src img_src" />
+                     tal:attributes="src view/img_src|nothing" />
 
         	</div>
 	

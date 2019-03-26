@@ -97,5 +97,18 @@
         layer=".interfaces.IAgsciTilesLayer"
         for="*"
     />
-    
+
+    <plone:tile
+        name="agsci.common.tiles.rowlf"
+        title="Rowlf"
+        description=""
+        schema=".interfaces.IRowlfTile"
+        class=".RowlfTile"
+        template="templates/rowlf.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

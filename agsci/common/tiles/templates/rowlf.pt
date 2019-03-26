@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="journey-preview mt-0 py-5 border-top border-bottom"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <div class="container">
+
+        <div class="row align-items-center mx-0">
+
+            <div class="col-11 offset-1 col-md-5 pl-0 order-12">
+
+                <p class="agsci-journeys ag-journeys-preview"
+                   tal:content="view/data/title|nothing" />
+
+                <h2 tal:content="view/data/description|nothing" />
+
+                <p class="journey-quote-cite"
+                   tal:content="view/data/caption|nothing" />
+        
+                <div class="mx-auto w-100 text-center">
+                    <a class="btn btn-large btn-test-creek mx-auto" 
+                       tal:attributes="href view/data/url|nothing"
+                       tal:content="view/data/label|nothing" />
+
+                </div>
+            </div>
+            <div class="col-10 offset-1 offset-md-0 col-md-6 px-0 order-1">
+
+                <img alt=""
+                     class="w-100"
+                     tal:attributes="src view/img_src|nothing" />
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+  </body>
+</html>

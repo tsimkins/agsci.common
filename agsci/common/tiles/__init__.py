@@ -40,8 +40,14 @@ class BaseTile(tiles.PersistentTile):
         img = self.data.get('image', None)
 
         if img and img.data:
-            scale = ImageScale(self, self.request, data=img, fieldname='image')
-            return scale.url
+            images = self.publishTraverse(self.request, '@@images')
+
+            try:
+                return images.scale('image').url
+            except AttributeError:
+                pass
+
+        return ''
 
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
@@ -94,3 +100,6 @@ class GonzoTile(BaseTile):
     @property    
     def template(self):
         return ViewPageTemplateFile('templates/gonzo-%s.pt' % self.align)
+
+class RowlfTile(BaseTile):
+    __type__ = "Rowlf"

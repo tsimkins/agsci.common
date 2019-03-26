@@ -71,7 +71,7 @@ class IItemBlockTileRowSchema(Interface):
 class IJumbotronTile(model.Schema):
 
     title = schema.TextLine(
-        title=_(u'Tile title'),
+        title=_(u'Title'),
         required=False,
     )
 
@@ -227,4 +227,36 @@ class IGonzoTile(Interface):
         title=_(u"URL"),
         required=False
     )
-    
+
+class IRowlfTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    caption = schema.TextLine(
+        title=_(u"Caption"),
+        required=False
+    )
+
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )

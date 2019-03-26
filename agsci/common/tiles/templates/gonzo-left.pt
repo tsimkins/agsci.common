@@ -16,12 +16,10 @@
 	<div class="container-fluid px-0">
 
 		<div class="row align-items-center mx-0">
-			<div class="col-12 col-lg-7 col-xl-8 px-0 offset-image"
-			     tal:define="images view/@@images;
-                             img_src python:view.img_src_url(images);">
+			<div class="col-12 col-lg-7 col-xl-8 px-0 offset-image">
                 <img alt=""
                      class="w-100"
-                     tal:attributes="src img_src" />
+                     tal:attributes="src view/img_src|nothing" />
 			</div>
 			
 			<div class="col-12 col-lg-5 col-xl-4 order-12 px-0 mt-0">

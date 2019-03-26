@@ -9,12 +9,8 @@
     <section class="container-fluid jumbotron jumbotron-img-based jumbotron-mid d-flex align-items-end position-relative"
         tal:attributes="data-tile-type view/tile_type|nothing">
      
-        <div 
-            tal:define="images view/@@images;
-                        img_src python:view.img_src_url(images);
-                        background_style string:background-image: url(${img_src});"
-            tal:attributes="style background_style"
-            class="jumbotron-img bg-center-center fix-img-right"></div>
+        <div tal:attributes="style string:background-image: url(${view/img_src|nothing}"
+             class="jumbotron-img bg-center-center fix-img-right"></div>
 
         <div class="opacity-dimmer-bottom"></div>
 
