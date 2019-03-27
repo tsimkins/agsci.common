@@ -278,3 +278,43 @@ class IScooterTile(Interface):
         values=[2,3,4],
         required=False,
     )
+
+    show_description = schema.Bool(
+        title=_(u"Show Item Description?"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+    
+class ISkeeterTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    value = schema.TextLine(
+        title=_(u"Items"),
+        required=False
+    )
+
+    show_description = schema.Bool(
+        title=_(u"Show Item Description?"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+    featured_id = schema.TextLine(
+        title=_(u"Featured Item Id"),
+        description=_(u"Short name of featured item"),
+        required=False
+    )
+
+
+class IAnimalTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )

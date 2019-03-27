@@ -1,7 +1,11 @@
 .mosaic-grid-row {
 
     .mosaic-tile-content {
-        
+
+        .btn-link a, a.btn-link {
+            margin-top: 0.5rem !important;
+        }
+
         section[data-tile-type]:hover:before {
             content: attr(data-tile-type);
             position: absolute;

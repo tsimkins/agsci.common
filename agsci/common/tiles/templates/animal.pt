@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section>
+
+<div class="container">
+<h2>Contact Block</h2>
+		
+
+<div class="card-deck card-deck-4up-directory card-deck-agsci-directory">
+
+
+
+ <!-- CARD -->   		
+<div class="card agsci-box-shadow tileItem tileSummary tileItemLeadImage facultyStaffDirectory test-sq-img">
+<div class="card-body">
+	
+	<div class="row mx-0">
+	<div class="col-5 col-sm-12 px-0">
+	<div class="card-img-crop">
+	<img src="https://agsci.psu.edu/directory/moa5300/image_normal" alt="" title="" class="tileImage w-100">
+	</div>
+	</div>
+	
+		<div class="col-7 col-sm-12 pl-3 px-sm-0 pr-0">
+
+	<div class="row mx-0">
+	<div class="col-12 p-0 pt-2">
+	
+		<div class="card-title tileHeadline">
+		<a href="https://agsci.psu.edu/directory/moa5300?utm_source=agsci.psu.edu&amp;utm_medium=below%20content" class=" summary url state-active">Marra Baker</a>
+		</div>
+	
+		<div class="facultyStaffDirectory">
+		<p class="jobTitle">Director of Student Recruitment and Activities</p>
+		<address class="d-inline-flex flex-column">
+		<a title="Email jdb48@psu.edu" href="mailto:moa5300@psu.edu" class="email"><i class="fas fa-fw fa-envelope"></i> moa5300@psu.edu</a>                            
+		<a class="phone" href="tel:+814-865-7521"><i class="fas fa-fw fa-phone"></i> 814-865-7521</a>
+		</address>
+		</div>
+
+	</div>
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+
+
+
+
+ <!-- CARD -->      
+        
+<div class="card agsci-box-shadow tileItem tileSummary tileItemLeadImage facultyStaffDirectory test-sq-img">
+<div class="card-body">
+	
+	<div class="row mx-0">
+	<div class="col-5 col-sm-12 px-0">
+	<div class="card-img-crop">
+		<img src="https://agsci.psu.edu/directory/jdb48/image_normal" alt="" title="" class="tileImage w-100" data-href="https://agsci.psu.edu/directory/jdb48">
+		</div>
+	</div>
+	
+	
+		<div class="col-7 col-sm-12 pl-3 px-sm-0 pr-0">
+
+	<div class="row mx-0">
+	<div class="col-12 p-0 pt-2">
+	
+		<div class="card-title tileHeadline">
+		<a href="https://agsci.psu.edu/directory/jdb48" class=" summary url state-active">Jennifer Bair</a>
+		</div>
+	
+	
+		<div class="facultyStaffDirectory">
+		<p class="jobTitle">Creative Design Specialist</p>
+		
+		<address class="d-inline-flex flex-column">
+		<a title="Email jdb48@psu.edu" href="mailto:jdb48@psu.edu" class="email"><i class="fas fa-fw fa-envelope"></i> jdb48@psu.edu</a>                            
+		<a class="phone" href="tel:+814-863-2718"><i class="fas fa-fw fa-phone"></i> 814-863-2718</a>
+		
+		<ul class="list-inline list-inline-social">			    
+			<li><a href="http://twitter.com/agsciences?utm_source=agsci.psu.edu&amp;utm_medium=footer%20navigation">
+			<em class="title fab fa-2x fa-fw fa-twitter-square"></em></a></li>
+		           
+			<li><a href="http://www.linkedin.com/company/penn-state-college-of-agricultural-sciences?utm_source=agsci.psu.edu&amp;utm_medium=footer%20navigation">
+			<em class="title fab fa-2x fa-fw fa-linkedin"></em></a></li>
+		</ul>		
+		</address>
+	</div>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+
+
+</div>
+		
+
+</div></div>
+
+</div>
+
+</section>
+
+  </body>
+</html>

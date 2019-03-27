@@ -137,4 +137,33 @@
         <value key="weight">100</value>
     </records>
 
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_skeeter"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.skeeter</value>
+        <value key="label">Skeeter</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_animal"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.animal</value>
+        <value key="label">Animal</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
 </registry>

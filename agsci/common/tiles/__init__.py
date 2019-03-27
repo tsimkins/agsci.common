@@ -17,6 +17,15 @@ class BaseTile(tiles.PersistentTile):
 
     klass = 'base-tile'
 
+    def date_format(self, _date, fmt='%Y-%m-%d'):
+        if hasattr(_date, 'strftime'):
+            try:
+                return _date.strftime(fmt)
+            except:
+                pass
+        
+        return 'INVALID DATE OR FORMAT'
+    
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
@@ -55,6 +64,13 @@ class BaseTile(tiles.PersistentTile):
     def values(self):
         v = self.data.get('value', [])
         return [object_factory(**x) for x in v]
+
+    @property
+    def items(self):
+        return self.portal_catalog.searchResults({
+            'Type' : 'Degree',
+            'sort_on' : 'sortable_title',
+        })
 
 class JumbotronTile(BaseTile):
 
@@ -107,8 +123,55 @@ class ScooterTile(BaseTile):
     __type__ = "Scooter"
     
     @property
+    def show_description(self):
+        return not not self.data.get('show_description')
+
+    def __call__(self, *args, **kwargs):
+        return self.template(self, *args, **kwargs)
+
+    @property    
+    def template(self):
+
+        if self.show_description:
+            return ViewPageTemplateFile('templates/scooter-description.pt')
+
+        return ViewPageTemplateFile('templates/scooter.pt')
+
+class SkeeterTile(BaseTile):
+    __type__ = "Skeeter"
+
+    max_items = 4
+
+    # Calculates a featured item, otherwise uses the first one.
+    # Returns a brain
+    @property
+    def featured(self):
+        items = super(SkeeterTile, self).items
+
+        featured_id = self.data['featured_id']
+        
+        if featured_id:
+            featured_id = featured_id.strip()
+            
+            _ = [x for x in items if x.getId ==  featured_id]
+            
+            if _:
+                return _[0]
+        
+        if items:
+            return items[0]
+
+    @property
     def items(self):
-        return self.portal_catalog.searchResults({
-            'Type' : 'Degree',
-            'sort_on' : 'sortable_title',
-        })
+        featured = self.featured
+
+        items = super(SkeeterTile, self).items
+        
+        if featured:
+            items = [x for x in items if x.UID != featured.UID]
+        
+        return items[:(self.max_items-1)]
+
+
+class AnimalTile(BaseTile):
+    __type__ = "Animal"

@@ -9184,44 +9184,25 @@ a.btn-link:hover {
   background: #3EA39E;
   color: #ffffff; }
 
-.btn.btn-test-creek-outline {
-  border: 1px solid #307e7a;
-  position: relative;
-  padding: 0.5rem 1rem;
-  color: #307e7a;
-  margin-left: 1rem; }
-
-.btn.btn-test-creek-outline.btn-large {
-  padding: 1rem 3rem; }
-
-.btn.btn-test-creek-outline span {
-  z-index: 9;
-  position: relative; }
-
-.btn.btn-test-creek-outline:hover {
-  transition: all 0.2s ease-in-out;
-  background: #3EA39E;
-  color: #ffffff; }
-
-.btn.btn-test-creek {
+.btn.btn-creek {
   background: #307e7a;
   border: transparent;
   position: relative;
   padding: 0.5rem 1rem;
   color: #ffffff; }
 
-.btn.btn-test-creek.btn-large {
+.btn.btn-creek.btn-large {
   padding: 1rem 3rem; }
 
-.btn.btn-test-creek span {
+.btn.btn-creek span {
   z-index: 9;
   position: relative; }
 
-.btn.btn-test-creek:hover {
+.btn.btn-creek:hover {
   transition: all 0.2s ease-in-out;
   background: #3EA39E; }
 
-.form-inline .btn.btn-test-creek {
+.form-inline .btn.btn-creek {
   box-shadow: none; }
 
 .btn.btn-cta {
@@ -9252,7 +9233,7 @@ a.btn-link:hover {
 .btn.btn-cta:hover span {
   color: #231e20; }
 
-.btn.btn-test-orange {
+.btn.btn-orange {
   background: #b66600;
   border: transparent;
   position: relative;
@@ -9262,19 +9243,19 @@ a.btn-link:hover {
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-.btn.btn-test-orange.bg-orange {
+.btn.btn-orange.bg-orange {
   background: #ff9c1d;
   color: #231e20; }
 
-.btn.btn-test-orange span {
+.btn.btn-orange span {
   z-index: 9;
   position: relative; }
 
-.btn.btn-test-orange:hover {
+.btn.btn-orange:hover {
   transition: all 0.2s ease-in-out;
   background: #E98300; }
 
-.btn.btn-test-green {
+.btn.btn-green {
   background: #739900;
   border: transparent;
   position: relative;
@@ -9284,19 +9265,19 @@ a.btn-link:hover {
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-.btn.btn-test-green.bg-light-green {
+.btn.btn-green.bg-light-green {
   background: #99CC00;
   color: #231e20; }
 
-.btn.btn-test-green span {
+.btn.btn-green span {
   z-index: 9;
   position: relative; }
 
-.btn.btn-test-green:hover {
+.btn.btn-green:hover {
   transition: all 0.2s ease-in-out;
   background: #99CC00; }
 
-.btn.btn-test-purple {
+.btn.btn-purple {
   background: #632799;
   border: transparent;
   position: relative;
@@ -9306,15 +9287,15 @@ a.btn-link:hover {
   margin-left: 0.5rem;
   margin-right: 0.5rem; }
 
-.btn.btn-test-purple.bg-light-purple {
+.btn.btn-purple.bg-light-purple {
   background: #AF7CDD;
   color: #231e20; }
 
-.btn.btn-test-purple span {
+.btn.btn-purple span {
   z-index: 9;
   position: relative; }
 
-.btn.btn-test-purple:hover {
+.btn.btn-purple:hover {
   transition: all 0.2s ease-in-out;
   background: #7e32c1; }
 
@@ -9593,8 +9574,10 @@ section.offset-previews .container:nth-of-type(2) .row {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.75rem; }
 
-.audience-modal-bar span,
-.audience-modal-bar a {
+.audience-modal-bar {
+  margin-bottom: 2rem; }
+
+.audience-modal-bar span, .audience-modal-bar a {
   color: #ffffff;
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.75rem;
@@ -9642,8 +9625,9 @@ header {
 
 @media (min-width: 992px) {
   header {
-    height: auto; } }
-@media (min-width: 992px) {
+    height: auto;
+    position: relative; }
+
   header.affix {
     position: fixed;
     top: 0;
@@ -9707,13 +9691,27 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
   font-family: "Nunito Sans", sans-serif;
   color: #ffffff; }
 
+.affix .audience-bar {
+  padding: 0 0 0.5rem 0; }
+
 @media (min-width: 992px) {
   .audience-bar a {
     font-size: 0.825rem; } }
+.audience-dropdowns {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+  /* needed to make vertical alignment with logo "look" centered */ }
+
 .audience-bar .audience-dropdowns a.nav-link {
   color: #6d7274;
   border-top: 1px solid rgba(62, 163, 158, 0.25);
-  font-size: 0.75rem; }
+  font-size: 0.75rem;
+  text-transform: none;
+  margin-right: 0;
+  transition: all 0.2s ease-in-out; }
 
 .audience-bar .audience-dropdowns a.nav-link:hover {
   background: #eff0f1;
@@ -9741,25 +9739,6 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 
   .audience-bar .nav-link:hover {
     background-color: #ffffff; } }
-.affix .audience-bar {
-  padding: 0 0 0.5rem 0; }
-
-.audience-dropdowns {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0;
-  margin-top: 0.5rem;
-  /* needed to make vertical alignment with logo "look" centered */ }
-
-.audience-dropdowns a.nav-link {
-  text-transform: none;
-  margin-right: 0;
-  transition: all 0.2s ease-in-out; }
-
-.audience-dropdowns a.nav-link:hover {
-  background-color: #ffffff; }
-
 .audience-dropdowns .dropdown-toggle {
   background: transparent;
   padding: 0.5rem 0;
@@ -9825,7 +9804,9 @@ header .navbar {
   background-color: #001E44;
   position: relative;
   border-bottom: 1px solid rgba(62, 163, 158, 0.25);
-  min-height: 4.75rem; }
+  min-height: 4.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0; }
 
 header .navbar .navbar-collapse {
   background-color: #ffffff; }
@@ -9833,23 +9814,12 @@ header .navbar .navbar-collapse {
 @media (min-width: 992px) {
   header .navbar {
     background-color: #ffffff;
-    min-height: auto; }
-
-  header .navbar .navbar-collapse {
-    margin-top: 0; } }
-.navbar {
-  padding-top: 0.5rem;
-  padding-bottom: 0; }
-
-@media (min-width: 992px) {
-  /* override for multiple nav level in new design */
-  .navbar {
+    min-height: auto;
     padding-top: 0;
     padding-bottom: 0; }
 
-  .nav-universal {
-    background: linear-gradient(135deg, white 25%, rgba(125, 185, 232, 0.5) 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+  header .navbar .navbar-collapse {
+    margin-top: 0; }
 
   .navbar-expand-lg {
     flex-flow: row;
@@ -9882,7 +9852,7 @@ button.dropdown-toggle-button[aria-expanded="true"] i.fas-search {
 @media (min-width: 992px) {
   button.dropdown-toggle-button {
     display: none; } }
-/* Audience Dropdowns
+/* Mega Menu Dropdowns
 --------------------------------------------- */
 .nav-img-preview {
   display: block;
@@ -9933,10 +9903,7 @@ header .btn[type="submit"] {
   .navbar-collapse {
     padding-bottom: 1rem;
     padding-left: 2rem;
-    padding-right: 2rem; }
-
-  header.mega .container .row div:nth-of-type(odd) {
-    border-right: 1px solid #96BEE6; } }
+    padding-right: 2rem; } }
 p.main-nav-section-head {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
@@ -9956,9 +9923,6 @@ p.main-nav-section-head {
   outline: none; }
 
 @media (min-width: 992px) {
-  header {
-    position: relative; }
-
   header .btn[data-toggle="collapse"] {
     display: none; }
 
@@ -10091,15 +10055,23 @@ p.main-nav-section-head {
   font-size: 1rem;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
-  color: #001E44; }
+  color: #001E44;
+  margin-top: 0.75rem; }
 
 /* display for main dropdown in mobile view */
 .dropdown-menu {
   display: none; }
 
 .dropdown-menu.show {
-  display: block; }
+  diplay: block; }
 
+@media (min-width: 768px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 0.825rem; }
+
+  .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
+    font-size: 0.75rem;
+    /* mega menu link size */ } }
 @media (min-width: 992px) {
   /* delay hover on navigation so that you can't just activate on pass over */
   .dropdown-menu {
@@ -10110,8 +10082,8 @@ p.main-nav-section-head {
   .dropdown-menu.show {
     transition-delay: 0.375s;
     visibility: visible;
-    opacity: 1; } }
-@media (min-width: 992px) {
+    opacity: 1; }
+
   .dropdown-menu div.col-lg-3 {
     padding-top: 0.5rem; }
 
@@ -10174,23 +10146,16 @@ p.main-nav-section-head {
   .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
     font-size: 0.75rem;
     /* mega menu link size */ } }
-@media (min-width: 768px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    font-size: 0.825rem; }
-
-  .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
-    font-size: 0.75rem;
-    /* mega menu link size */ } }
 /* Search Box
 --------------------------------------------- */
 header .form-control,
 header form .btn.btn-primary {
   padding: 0.25rem 0.5rem;
-  border-radius: 0; }
+  border-radius: 0;
+  font-size: 0.75rem; }
 
 header .form-control {
   border: 1px solid rgba(49, 77, 100, 0.25);
-  font-size: 0.75rem;
   line-height: 1.2;
   background: rgba(255, 255, 255, 0.75);
   margin-left: 0.5rem; }
@@ -10207,222 +10172,114 @@ header .form-inline .form-control {
   header .form-inline .form-control {
     margin-left: 1.75rem;
     width: auto; } }
-ul.list-inline.list-inline-divided {
-  font-size: 0.75rem;
-  margin-bottom: 0;
-  display: flex; }
+/* .dept-level-college-options
+	Universal Top Bar with College Options
+--------------------------------------------- */
+.department-level ul.dept-level-college-options {
+  position: relative;
+  top: 0;
+  right: 0;
+  background: #00132b;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  width: 100%;
+  text-align: right;
+  z-index: 99;
+  display: flex;
+  margin-bottom: 0; }
 
-ul.list-inline.list-inline-divided li {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem; }
+.department-level ul.dept-level-college-options li {
+  margin: 0;
+  font-size: 0.675rem; }
 
-ul.list-inline.list-inline-divided li a, ul.list-inline.list-inline-divided li button {
+.department-level ul.dept-level-college-options li::after {
+  color: #ffffff; }
+
+.department-level ul.dept-level-college-options li:last-of-type {
+  border-right: transparent; }
+
+.department-level ul.dept-level-college-options a, .department-level ul.dept-level-college-options button {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-right: 1px solid #ffffff; }
 
-ul.list-inline.list-inline-divided li:last-of-type {
-  border-right: transparent; }
-
-.department-level header ul {
-  font-size: 0.9rem;
-  font-family: "Nunito Sans", sans-serif;
-  width: 100%; }
-
-.department-level header ul li {
-  line-height: 1.2; }
-
-.department-level header ul li.dropdown {
-  margin-bottom: 0.25rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
-  display: block;
-  position: relative; }
-
-.department-level header ul li.dropdown:last-of-type {
-  border-bottom: transparent !important; }
-
-@media (min-width: 992px) {
-  .department-level header ul li.dropdown {
-    border-bottom: none !important; } }
-.department-level header .btn {
-  font-size: 0.75rem; }
-
-.department-level header .navbar {
-  background: #00132b; }
-
-.department-level header img.agsci-logo {
-  width: 300px;
-  height: 54px;
-  margin-left: 1rem; }
-
-.department-level header .navbar-collapse {
-  margin-top: 0;
-  background: #307e7a; }
-
-@media (min-width: 992px) {
-  .department-level header.affix img.agsci-logo {
-    /* px required for svg, specific ht required for smoother transition */
-    width: 260px;
-    height: 47px; } }
-.department-level header .navbar-brand {
-  position: relative;
-  display: inline-block;
-  margin-right: 0;
-  top: 0;
-  left: 0; }
-
-.department-level header .navbar {
-  border-bottom: none; }
-
-@media (min-width: 992px) {
-  /* override for multiple nav level in new design */
-  .department-level header ul li.dropdown {
-    margin-bottom: 0;
-    border-bottom: transparent; }
-
-  .department-level header .navbar-brand {
-    position: relative;
-    top: 0;
-    left: 0; } }
-.department-bar.department-bar-test {
-  padding: 1.5rem 0;
-  background: #00132b;
-  transition: all 0.2s ease-in-out; }
-
-.department-bar.department-bar-test a {
-  font-size: 0.675rem; }
-
-.department-bar.department-bar-test ul.list-inline li:last-of-type a {
-  font-style: italic; }
-
-.department-bar .btn {
-  padding: 0.25rem 0.5rem;
-  margin-left: 0.125rem;
-  margin-right: 0.125rem;
-  font-size: 0.675rem; }
-
-.department-bar.department-bar-test a.department-brand {
-  color: #3EA39E;
-  font-size: 1.25rem; }
-
-/* TEST OF DIFFERENT COLOR FOR DEPARTMENT LEVEL */
-.department-bar.department-bar-test {
-  padding: 0; }
-
-.department-bar.department-bar-test a.department-brand {
-  color: #ffffff;
-  position: relative;
-  top: -.25rem;
-  padding-left: 1rem;
-  border-left: 2px solid #3EA39E;
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
-
-.affix .department-bar.department-bar-test a.department-brand {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.1rem; }
-
-.modal-update .department-bar.department-bar-test a.department-brand {
-  top: 0; }
-
-.department-bar-test ul.list-inline {
-  position: absolute;
-  top: 0;
-  right: 0;
-  /* background: #1e3350; */
-  /* rgba creek .125 over nittany navy equivalent */
-  padding: 0.25rem 0.5rem;
-  width: 100%;
-  text-align: right; }
-
-.department-bar-test ul.list-inline li {
-  margin: 0; }
-
-.department-bar-test ul.list-inline button {
+.department-level ul.dept-level-college-options button {
+  /* college modal */
   background: transparent;
   border: transparent;
   color: #ffffff;
   font-size: 0.675rem;
   cursor: pointer; }
 
-.affix .department-bar-test ul.list-inline {
+@media (min-width: 768px) {
+  .department-level ul.dept-level-college-options {
+    padding: 0.5rem 0.5rem 0 0.5rem; } }
+/* 	Header
+--------------------------------------------- */
+.department-level header {
+  background: #00132b; }
+
+/* 	.department-bar
+	Department Bar - hold all branding 
+	and navigation
+--------------------------------------------- */
+.department-bar .btn {
+  padding: 0.25rem 0.5rem;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  font-size: 0.675rem; }
+
+.department-bar {
+  padding: 0;
+  transition: all 0.2s ease-in-out; }
+
+.department-bar a.department-brand {
+  color: #ffffff;
+  position: relative;
+  top: 0;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  line-height: 1.2; }
+
+.affix .department-bar a.department-brand {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.1rem; }
+
+@media (min-width: 992px) {
+  .department-bar a.department-brand {
+    font-size: 1.25rem;
+    border-left: 2px solid #3EA39E;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem; } }
+.department-bar ul.list-inline {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+  text-align: right; }
+
+.department-bar ul.list-inline li {
+  margin: 0; }
+
+.department-bar ul.list-inline button {
+  background: transparent;
+  border: transparent;
+  color: #ffffff;
+  font-size: 0.675rem;
+  cursor: pointer; }
+
+.affix .department-bar ul.list-inline {
   display: none; }
 
-.department-level .college-logo-block {
-  padding: 1.5rem 0 0 0;
-  /* no bottom padding on mobile so department level title tucks under college logo */
-  position: relative;
-  width: 100%; }
-
-.department-brand-mobile {
-  margin-left: 4.5rem; }
-
-.department-brand-block {
-  padding: 0.5rem 0 1rem 3rem;
-  /* decrease top padding on mobile to tuck title up under college logo */ }
-
-@media (min-width: 992px) {
-  .department-bar-test .department-brand-block.department-brand-block-dark {
-    padding: 2rem 0; }
-
-  .department-bar-test .department-brand-block.department-brand-block-dark a {
-    color: #3EA39E;
-    margin-left: 3rem; } }
-.affix .department-bar-test .department-brand-block.department-brand-block-dark {
-  padding: 1rem 0; }
-
-a.department-brand.department-brand-mobile {
-  margin-left: 0;
-  padding: 0.5rem 2.5rem 1rem 4rem;
-  width: 100%;
-  margin-bottom: 0;
-  font-weight: 300;
-  color: #ffffff; }
-
-@media (min-width: 992px) {
-  .department-brand-block {
-    padding: 1rem 0; } }
-.department-nav-container {
-  background: #eff0f1;
-  padding-left: 1rem;
-  padding-bottom: 0.5rem; }
-
-@media (min-width: 992px) {
-  .department-nav-container {
-    background: transparent;
-    padding-left: 0;
-    padding-bottom: 0; }
-
-  .department-level .affix .college-logo-block,
-  .affix .department-brand-block {
-    padding: 0.25rem 0; }
-
-  .department-level .college-logo-block {
-    width: auto;
-    padding: 0 0 1rem 0; }
-
-  .modal-update .department-level .college-logo-block {
-    width: auto;
-    padding: 0 0 1rem 0; }
-
-  .modal-update .affix .department-level .college-logo-block {
-    width: auto;
-    padding: 0.5rem 0; }
-
-  .department-brand-block {
-    padding: 0 0 1rem 0; } }
-/* TEST OF DIFFERENT COLOR FOR DEPARTMENT LEVEL */
 .affix .department-bar {
   padding: 0; }
 
-.audience-modal-bar {
-  margin-bottom: 2rem; }
-
-.department-bar span,
-.department-bar a {
+.department-bar span, .department-bar a {
   color: #ffffff;
-  font-size: 0.75rem;
   font-weight: 300; }
 
 .department-bar a.navbar-brand::after {
@@ -10435,33 +10292,78 @@ a.department-brand.department-brand-mobile {
 .department-bar span:after {
   content: none; }
 
-/* Universal Top Bar */
-.department-level ul.list-inline.list-inline-divided.dept-level-college-options {
+/* Mobile Department Hamburger Button
+--------------------------------------------- */
+.department-level header .btn.btn-primary.btn-toggle-mobile-nav {
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 9; }
+
+/* .college-logo-block, .navbar-brand
+	College Logo
+--------------------------------------------- */
+.department-level .navbar-brand {
   position: relative;
+  display: inline-block;
+  margin-right: 0;
   top: 0;
-  right: 0;
-  background: #00132b;
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-  width: 100%;
-  text-align: right; }
+  left: 0;
+  padding-top: 0;
+  padding-bottom: 0; }
 
-.department-level ul.list-inline.list-inline-divided.dept-level-college-options li {
-  margin: 0;
-  font-size: 0.675rem; }
+.department-level .college-logo-block {
+  padding: 0;
+  position: relative;
+  width: 100%; }
 
-.department-level ul.list-inline.list-inline-divided.dept-level-college-options li::after {
-  color: #ffffff; }
+.department-level img.agsci-logo {
+  width: 300px;
+  height: 54px;
+  margin-left: 1rem; }
 
-.department-level ul.list-inline.list-inline-divided.dept-level-college-options button {
-  background: transparent;
-  border: transparent;
-  color: #ffffff;
-  font-size: 0.675rem;
-  cursor: pointer; }
+@media (min-width: 992px) {
+  .department-level .college-logo-block {
+    width: auto;
+    padding: 0 0 1rem 0; }
 
-@media (min-width: 768px) {
-  .department-level ul.list-inline.list-inline-divided.dept-level-college-options {
-    padding: 0.5rem 0.5rem 0 0.5rem; } }
+  .department-level .affix img.agsci-logo {
+    /* px required for svg, specific ht required for smoother transition */
+    width: 260px;
+    height: 47px; }
+
+  .department-level .affix .college-logo-block {
+    padding: 0.25rem 0; } }
+/* .department-brand-block, a.department-brand
+	Department Name
+--------------------------------------------- */
+.department-brand-block {
+  padding: 0 0 0 2rem;
+  /* decrease top padding on mobile to tuck title up under college logo */ }
+
+@media (min-width: 992px) {
+  .department-brand-block {
+    padding: 0 0 1rem 0; }
+
+  .affix .department-brand-block {
+    padding: 0.25rem 0; } }
+/* .navbar, .navbar-collapse
+	.department-dropdowns, .dropdown-selectors,
+	.dropdown, .dropdown-toggle, 
+	.dropdown-toggle-button
+--------------------------------------------- */
+.department-level header .navbar {
+  min-height: auto;
+  border-bottom: none;
+  padding-top: 0; }
+
+.department-level header .navbar-collapse {
+  margin-top: 0;
+  background: #307e7a; }
+
+@media (min-width: 992px) {
+  .department-level header ul li.dropdown {
+    margin-bottom: 0;
+    border-bottom: transparent; } }
 /* Department Dropdown Main Menu Options
 --------------------------------------------- */
 .department-dropdowns {
@@ -10471,6 +10373,9 @@ a.department-brand.department-brand-mobile {
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0; }
+
+.department-dropdowns .btn {
+  font-size: 0.75rem; }
 
 .department-dropdowns a.nav-link {
   text-transform: none;
@@ -10488,13 +10393,8 @@ a.department-brand.department-brand-mobile {
   transition: all 0.2s ease-in-out;
   border-top: 0.25rem solid transparent;
   color: #ffffff;
-  font-size: 1rem;
   font-weight: 600; }
 
-@media (min-width: 1200px) {
-  .department-dropdowns .dropdown-toggle {
-    padding: 0.5rem 1.75rem 0.75rem 1.75rem;
-    /* .25 less on top for hover border */ } }
 @media (min-width: 992px) {
   .department-dropdowns {
     flex-direction: row;
@@ -10509,6 +10409,30 @@ a.department-brand.department-brand-mobile {
   .department-dropdowns .dropdown-toggle:hover {
     border-top: 0.25rem solid #3EA39E;
     outline: transparent; } }
+@media (min-width: 1200px) {
+  .department-dropdown .dropdown-toggle {
+    padding: 0.5rem 1.75rem 0.75rem 1.75rem;
+    /* .25 less on top for hover border */ } }
+.department-level header ul {
+  font-size: 0.9rem;
+  font-family: "Nunito Sans", sans-serif;
+  width: 100%; }
+
+.department-level header ul li {
+  line-height: 1.2; }
+
+.department-level header ul li.dropdown {
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  display: block;
+  position: relative; }
+
+.department-level header ul li.dropdown:last-of-type {
+  border-bottom: transparent !important; }
+
+@media (min-width: 992px) {
+  .department-level header ul li.dropdown {
+    border-bottom: none !important; } }
 /* Department Dropdown Menus - UNDER Toggle
 --------------------------------------------- */
 .navbar .department-dropdowns a.nav-link {
@@ -10530,10 +10454,20 @@ a.department-brand.department-brand-mobile {
 .navbar .department-dropdowns .dropdown-menu ul {
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 1rem; }
+  margin-left: 1rem;
+  font-size: 0.825rem; }
 
 .navbar .department-dropdowns li.dropdown {
   margin-right: 0; }
+
+/* Mobile Dropdown Carat Toggles
+--------------------------------------------- */
+.department-level button.dropdown-toggle-button {
+  top: 0.75rem;
+  color: #ffffff; }
+
+.department-level button.dropdown-toggle-button[aria-expanded="true"] i {
+  color: #ffffff; }
 
 @media (min-width: 992px) {
   .navbar .department-dropdowns .dropdown-menu {
@@ -10569,10 +10503,6 @@ a.department-brand.department-brand-mobile {
   .navbar .department-dropdowns a.nav-link:hover {
     background: #eff0f1;
     color: black; } }
-.department-level button.dropdown-toggle-button {
-  top: 0.75rem;
-  color: #ffffff; }
-
 /* List Group Tab Panel - 
 	Make this component responsive. 
 	It's not in the default Bootstrap setup.
@@ -10905,14 +10835,6 @@ JUMBOTRON HOME STYLE
   color: #ffffff;
   margin-bottom: 0; }
 
-.jumbotron.jumbotron-short {
-  height: 55vh;
-  padding: 0; }
-
-.jumbotron.jumbotron-mid {
-  height: 60vh;
-  padding: 0; }
-
 .jumbotron p {
   margin-bottom: 0.5rem;
   font-weight: 300;
@@ -10939,11 +10861,12 @@ JUMBOTRON HOME STYLE
 .jumbotron.jumbotron-full-height .jumbotron-header {
   height: 75vh; }
 
+.jumbotron.jumbotron-mid {
+  height: 60vh;
+  padding: 0; }
+
 .jumbotron.jumbotron-short-header {
   height: 40vh; }
-
-.jumbotron .home-jumbotron-text {
-  margin-top: 25vh; }
 
 .jumbotron.jumbotron-variable-height {
   height: auto; }
@@ -10977,40 +10900,11 @@ JUMBOTRON HOME STYLE
   font-size: 0.875rem;
   color: #c8cacc; }
 
-.jumbotron.jumbotron-img-fixed {
-  padding-top: 0;
-  width: 100%;
-  height: 100vh; }
-
-.jumbotron.jumbotron-img-fixed .jumbotron-img {
-  width: 100%;
-  height: 100vh;
-  background-attachment: fixed; }
-
-@media (min-width: 992px) {
-  min-height: 40vh; }
 .article .jumbotron,
 .article .jumbotron .row,
 .article.jumbotron.jumbotron-img-based {
   min-height: 60vh; }
 
-.jumbotron-header {
-  height: 60vh; }
-
-.jumbotron.jumbotron-no-image {
-  background-color: #307e7a; }
-
-.jumbotron.jumbotron-no-image,
-.jumbotron.jumbotron-no-image .jumbotron-header {
-  height: 50vh; }
-
-.jumbotron.jumbotron-no-image.jumbotron-full-height {
-  height: 75vh; }
-
-@media screen and (min-aspect-ratio: 15 / 8) {
-  .jumbotron.jumbotron-no-image,
-  .jumbotron.jumbotron-no-image .jumbotron-header {
-    height: 50vh; } }
 .jumbotron-img {
   position: absolute;
   opacity: 1;
@@ -11034,11 +10928,6 @@ JUMBOTRON HOME STYLE
 
 .jumbotron-img.bg-center-top {
   background-position: center top; }
-
-.jumbotron-short .jumbotron-img {
-  height: 55vh;
-  opacity: 1.0;
-  background-position: center 40%; }
 
 .jumbotron-mid .jumbotron-img {
   height: 60vh;
@@ -11693,9 +11582,7 @@ CARD DECK GENERAL CONFIG
 .card:hover a {
   text-decoration: none; }
 
-.tileTitle,
-.tileHeadline,
-.card-body p.card-title {
+.card-title p {
   font-family: "Nunito Sans", sans-serif;
   margin-bottom: 0.75rem;
   font-size: 1rem;
@@ -11703,30 +11590,26 @@ CARD DECK GENERAL CONFIG
   position: relative;
   font-weight: 400; }
 
-.tileTitle::after,
-.tileHeadline::after,
-.card-body p.card-title::after {
+.card-title p::after {
   content: "";
   position: absolute;
   bottom: -0.375rem;
   left: 0;
   width: 4rem;
   height: 1px;
-  border-bottom: 2px solid transparent; }
+  border-bottom: 2px solid rgba(62, 163, 158, 0.25); }
 
-.card:hover .tileTitle::after,
-.card:hover .tileHeadline::after,
-.card:hover p.card-title::after {
+.card:hover .card-title p::after {
   border-bottom: 2px solid #3EA39E; }
 
-.card-body p {
+.card-text p {
   line-height: 1.6;
   font-weight: 300;
   font-size: 0.825rem;
   margin-bottom: 0; }
 
 @media (min-width: 768px) {
-  .card-body p {
+  .card-text p {
     font-size: 0.75rem; } }
 /* ----------------------------------------------------------
 
@@ -11743,10 +11626,10 @@ CARD DECK - EVENTS
   overflow: visible;
   margin-bottom: 1rem; }
 
-.card.card-event .tileTitle {
+.card.card-event .card-title p {
   font-weight: 600; }
 
-.card.card-event .tileDescription p {
+.card.card-event .card-text p {
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.4; }
 
@@ -11815,7 +11698,7 @@ CARD DECK - EVENTS
   line-height: 1;
   width: 100%; }
 
-.tileDescription p {
+.event-details p {
   font-size: 0.75rem;
   line-height: 1.4;
   font-weight: 300;
@@ -11843,23 +11726,17 @@ PORTABLE HIGHLIGHTS
 
 .card.card-portable-highlight {
   background: url(../images/hex-stat-block-bg.svg), #307e7a;
-  background-position: -65px -115px, center center;
+  background-position: -65px -120px, center center;
   background-size: 400px auto;
   background-repeat: no-repeat;
   padding: 3rem 1rem 3rem 1rem;
   text-align: center; }
 
 .card.card-portable-highlight:nth-of-type(2) {
-  background: url(../images/hex-stat-block-bg.svg), #314D64;
-  background-position: -65px -120px, center center;
-  background-size: 400px auto;
-  background-repeat: no-repeat; }
+  background: url(../images/hex-stat-block-bg.svg), #314D64; }
 
 .card.card-portable-highlight:nth-of-type(3) {
-  background: url(../images/hex-stat-block-bg.svg), #3b3e40;
-  background-position: -65px -120px, center center;
-  background-size: 400px auto;
-  background-repeat: no-repeat; }
+  background: url(../images/hex-stat-block-bg.svg), #3b3e40; }
 
 .bg-slate .card-deck.card-deck-portable-highlights .card,
 .bg-slate .card-deck.card-deck-portable-highlights .card:nth-of-type(2),
@@ -11998,7 +11875,7 @@ CARDS
 .card-deck-text-only {
   position: relative; }
 
-.card-deck-text-only .card {
+.card.card-text-only {
   background: #f6f6f7;
   transition: all 0.2s ease-in-out;
   padding: 1rem;
@@ -12006,11 +11883,11 @@ CARDS
   margin-top: 1rem;
   box-shadow: 0 0.25rem 0.75rem rgba(49, 77, 100, 0.25); }
 
-.card-deck-text-only .card:hover {
+.card.card-text-only:hover {
   background: #ffffff;
   box-shadow: 0 0.25rem 0.75rem rgba(49, 77, 100, 0.5); }
 
-.card-deck-text-only .card-body {
+.card.card-text-only .card-body {
   padding: 0;
   background: transparent; }
 
@@ -12183,6 +12060,14 @@ ACCORDION - MAJOR OPTIONS
 BIO -- body class .template-person_view
 
 ---------------------------------------------------------- */
+a.email .fas,
+a.phone .fas,
+a.pdf .fas,
+a.full-bio .fas,
+span.fax .fas {
+  color: #949798;
+  margin-right: 0.125rem; }
+
 .card-deck-agsci-directory .card .card-body {
   padding: 1rem; }
 
@@ -12239,13 +12124,6 @@ BIO -- body class .template-person_view
   .bio a.pdf,
   .bio span.fax {
     display: inline-block; } }
-.bio a.email .fas,
-.bio a.phone .fas,
-.bio a.pdf .fas,
-.bio a.full-bio .fas,
-.bio span.fax .fas {
-  color: #949798; }
-
 .bio {
   padding: 1rem 0; }
 
@@ -12571,6 +12449,7 @@ p.agsci-bio-position::after {
 .section-highlight .btn {
   margin-top: 0.5rem; }
 
+/* testing offset preview blocks on department landing page - not final - under review 3/24 */
 /* ----------------------------------------------------------
 
 PHOTO STRIP OWL SLIDER CUSTOMIZATIONS
@@ -13517,6 +13396,154 @@ button.filter {
   width: 100%;
   cursor: pointer; }
 
+.modal-dialog.modal-dialog-slideout {
+  width: 80%; }
+
+.modal-dialog-slideout {
+  min-height: 100%;
+  margin: 0 auto 0 0;
+  background: #fff; }
+
+.modal.fade .modal-dialog.modal-dialog-slideout {
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0); }
+
+.modal.fade.show .modal-dialog.modal-dialog-slideout {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  flex-flow: column; }
+
+.modal-dialog-slideout .modal-content {
+  border: 0; }
+
+.degree-explorer {
+  position: relative; }
+
+#degree-explorer-filters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999; }
+
+/* -------------------------------- 
+
+Slide In Panel - by CodyHouse.co
+
+-------------------------------- */
+.cd-main-content {
+  text-align: center; }
+
+.cd-main-content h1 {
+  font-size: 2rem;
+  color: #64788c;
+  padding: 4em 0; }
+
+.cd-btn {
+  position: relative;
+  display: inline-block; }
+
+@media only screen and (min-width: 1170px) {
+  .cd-main-content h1 {
+    font-size: 3.2rem; } }
+.cd-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.6s;
+  transition: visibility 0s 0.6s;
+  z-index: 99; }
+
+.cd-panel::after {
+  /* overlay layer */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s; }
+
+.cd-panel.cd-panel--is-visible {
+  visibility: visible;
+  -webkit-transition: visibility 0s 0s;
+  transition: visibility 0s 0s; }
+
+.cd-panel.cd-panel--is-visible::after {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background 0.3s 0s;
+  transition: background 0.3s 0s; }
+
+.panel-close-container {
+  display: block;
+  width: 100%; }
+
+.cd-panel__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 100%;
+  /* image replacement */
+  display: inline-block;
+  content: 'Close Filter X';
+  z-index: 9999; }
+
+.cd-panel__container {
+  position: fixed;
+  width: 90%;
+  height: 100%;
+  top: 0;
+  background: #dbe2e9;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
+
+.cd-panel--from-right .cd-panel__container {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); }
+
+.cd-panel--from-left .cd-panel__container {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.cd-panel--is-visible .cd-panel__container {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s; }
+
+@media only screen and (min-width: 768px) {
+  .cd-panel__container {
+    width: 70%; } }
+@media only screen and (min-width: 1170px) {
+  .cd-panel__container {
+    width: 33.33%; } }
+.cd-panel__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  padding: 70px 5%;
+  overflow: auto;
+  /* smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch; }
+
+.close-comparison-bar {
+  position: fixed;
+  height: 3rem;
+  width: 100%;
+  z-index: 9999999; }
+
 .sidebar-contact {
   /* need div to hold contact card to prevent collapsing on mobile */
   width: 100%;
@@ -13873,6 +13900,8 @@ table th {
 table td p {
   font-family: "Nunito Sans", sans-serif; }
 
+.mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
+  margin-top: 0.5rem !important; }
 .mosaic-grid-row .mosaic-tile-content section[data-tile-type]:hover:before {
   content: attr(data-tile-type);
   position: absolute;
