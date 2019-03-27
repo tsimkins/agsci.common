@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container-fluid m-0 mb-5 mt-5"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <div class="container pb-5"
+         tal:define="i view/featured|nothing"
+         tal:condition="i|nothing">
+
+        <div class="row align-items-center">
+        
+            <div class="col-12 col-md-6 order-12"
+                 tal:define="start i/start|nothing;
+                             end i/end|nothing">
+                <p class="h2"
+                   tal:content="i/Title|nothing" />
+        
+                <p>
+                    <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
+                    <span tal:replace="i/location|nothing" />
+                </p>
+        
+                <p tal:content="i/Description|nothing" />
+        
+                <p><a class="btn btn-test-creek"
+                      tal:attributes="href i/getURL"><span>Read More</span></a></p>
+            </div>    
+            
+            <div class="col-12 col-md-6 profile-img order-1">
+            
+                <img alt=""
+                        class="w-100"
+                        tal:attributes="src string:${i/getURL}/@@images/image/large" />
+            </div>
+        
+        </div>
+
+
+
+    </div>
+
+    <div class="container">
+
+        <div class="card-deck card-deck-4up card-deck-events justify-content-center">
+
+            <tal:items tal:repeat="i view/items|nothing">
+
+                <a class="card card-event"
+                    tal:define="start i/start|nothing;
+                                end i/end|nothing"
+                    tal:attributes="href i/getURL|nothing">
+    
+                    <div class="card-image d-flex">
+                        <div class="event-date-block">
+                            <div class="event-day"
+                                 tal:content="python: view.date_format(start, format='%a')" />
+                            <div class="event-month"
+                                 tal:content="python: view.date_format(start, format='%b')" />
+                            <div class="event-date"
+                                 tal:content="python: view.date_format(start, format='%d')" />
+                        </div>
+    
+                        <div>
+                            <img alt=""
+                                 tal:attributes="src string:${i/getURL}/@@images/image/mini" />    
+                        </div>
+    
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="tileTitle"
+                             tal:content="i/Title|nothing" />
+
+                        <div class="tileDescription">
+                            <p>
+                                <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
+                                <span tal:replace="i/location|nothing" />
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </tal:items>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-right">
+                <a class="btn btn-sm btn-link mb-0" href="">More Events</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+  </body>
+</html>

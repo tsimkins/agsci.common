@@ -34,7 +34,7 @@
                                 <div class="col-11 col-lg-9">
     
                                     <p class="section-crumb"
-                                       tal:content="python: view.date_format(feature.effective, '%B %d, %Y')" />
+                                       tal:content="python: view.date_format(feature.effective, format='%B %d, %Y')" />
     
                                     <h3 class="h1 no-underline" tal:content="feature/Title|nothing" />
         
@@ -57,7 +57,7 @@
         
                                     <div class="col-9 col-md-8 profile-copy order-12 mt-0">
                                         <p class="section-crumb"
-                                           tal:content="python: view.date_format(i.effective, '%B %d, %Y')" />
+                                           tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
                                         <p class="h3"
                                            tal:content="i/Title|nothing" />
         

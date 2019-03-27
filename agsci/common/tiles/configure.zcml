@@ -129,7 +129,6 @@
         description=""
         schema=".interfaces.ISkeeterTile"
         class=".SkeeterTile"
-        template="templates/skeeter.pt"
         add_permission="cmf.ModifyPortalContent"
         permission="zope2.View"
         layer=".interfaces.IAgsciTilesLayer"

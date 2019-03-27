@@ -311,6 +311,12 @@ class ISkeeterTile(Interface):
         required=False
     )
 
+    style = schema.Choice(
+        title=_(u"Style"),
+        values=['news', 'events', 'pages'],
+        default=u'news',
+        required=False,
+    )
 
 class IAnimalTile(Interface):
 

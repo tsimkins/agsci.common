@@ -9,22 +9,26 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from .. import object_factory
+from ..utilities import toLocalizedTime
 from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(tiles.PersistentTile):
 
     __type__ = "Base Tile"
 
+    query = {
+        'Type' : 'Degree',
+        'sort_on' : 'sortable_title',
+        'sort_order' : 'ascending',
+    }
+
     klass = 'base-tile'
 
-    def date_format(self, _date, fmt='%Y-%m-%d'):
-        if hasattr(_date, 'strftime'):
-            try:
-                return _date.strftime(fmt)
-            except:
-                pass
-        
-        return 'INVALID DATE OR FORMAT'
+    def date_format(self, time, **kwargs):
+        try:
+            return toLocalizedTime(time, **kwargs)
+        except:
+            return 'INVALID DATE OR FORMAT'
     
     @property
     def portal_catalog(self):
@@ -67,10 +71,17 @@ class BaseTile(tiles.PersistentTile):
 
     @property
     def items(self):
-        return self.portal_catalog.searchResults({
-            'Type' : 'Degree',
-            'sort_on' : 'sortable_title',
-        })
+        return self.portal_catalog.searchResults(self.query)
+
+class ConditionalTemplateTile(BaseTile):
+
+    def __call__(self, *args, **kwargs):
+        return self.render_template(self, *args, **kwargs)
+
+    @property    
+    def render_template(self):
+        return ViewPageTemplateFile('templates/%s' % self.template)
+
 
 class JumbotronTile(BaseTile):
 
@@ -97,7 +108,7 @@ class MissPiggyTile(BaseTile):
 class FozzieBearTile(BaseTile):
     __type__ = "Fozzie Bear"
 
-class GonzoTile(BaseTile):
+class GonzoTile(ConditionalTemplateTile):
     __type__ = "Gonzo"
     
     @property
@@ -109,38 +120,49 @@ class GonzoTile(BaseTile):
         
         return 'right'
 
-    def __call__(self, *args, **kwargs):
-        return self.template(self, *args, **kwargs)
-
-    @property    
+    @property
     def template(self):
-        return ViewPageTemplateFile('templates/gonzo-%s.pt' % self.align)
+        return 'gonzo-%s.pt' % self.align
 
 class RowlfTile(BaseTile):
     __type__ = "Rowlf"
 
-class ScooterTile(BaseTile):
+class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
     
     @property
     def show_description(self):
         return not not self.data.get('show_description')
 
-    def __call__(self, *args, **kwargs):
-        return self.template(self, *args, **kwargs)
-
     @property    
     def template(self):
 
         if self.show_description:
-            return ViewPageTemplateFile('templates/scooter-description.pt')
+            return 'scooter-description.pt'
 
-        return ViewPageTemplateFile('templates/scooter.pt')
+        return 'scooter.pt'
 
-class SkeeterTile(BaseTile):
+class SkeeterTile(ConditionalTemplateTile):
     __type__ = "Skeeter"
 
-    max_items = 4
+    @property
+    def max_items(self):
+        return {
+            'pages' : 3,
+        }.get(self.style, 4)
+
+    @property
+    def query(self):
+        _ = self.style
+
+        if _ in ('events'):
+            return {
+                'Type' : 'Event',
+                'sort_on' : 'start',
+                'sort_order' : 'ascending',
+            }
+
+        return super(SkeeterTile, self).query
 
     # Calculates a featured item, otherwise uses the first one.
     # Returns a brain
@@ -172,6 +194,20 @@ class SkeeterTile(BaseTile):
         
         return items[:(self.max_items-1)]
 
+    @property
+    def style(self):
+        _ = self.data['style']
+
+        valid = ['news', 'events', 'pages']
+        
+        if _ in valid:
+            return _
+        
+        return valid[0]
+
+    @property    
+    def template(self):
+        return 'skeeter-%s.pt' % self.style
 
 class AnimalTile(BaseTile):
     __type__ = "Animal"
