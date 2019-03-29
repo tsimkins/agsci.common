@@ -1,0 +1,110 @@
+/* ----------------------------------------------------------
+
+CARD DECK - EVENTS
+
+---------------------------------------------------------- */
+
+.card-deck.card-deck-events {
+	margin-bottom: 0;
+	}
+
+.card.card-event {
+	border: none;
+	background: none;
+	padding: 0;
+	overflow: visible;
+	margin-bottom: 1rem;
+	
+	.card-title p {
+		font-weight: $font-weight-bold; 
+		}
+
+	.card-text p {
+		font-family: $font-family-sans-serif;
+		line-height: $line-height-md;
+		}
+	
+	&:hover {
+		border: none;
+		background: none;
+		box-shadow: 0.25rem 0.25rem 0.75rem rgba(49, 77, 100, 0.25);
+			
+		.card-body-right {
+			background: $white;
+			border-top: 0.5rem solid rgba($color-ps-creek,0.75);
+			}
+		}
+	
+	.event-date-block {
+		margin-right: 0;
+		}
+	
+	.card-body-left {
+		background: $color-ps-creek;
+		}
+	
+	.card-body-right {
+		padding: 1rem;
+		background: lighten($color-ps-coaly-gray,62.5%);
+		border-top: 0.5rem solid rgba($color-ps-creek,0.5);
+		}
+	
+	img {
+		height: 5.5rem;
+		width: auto;
+		}
+			
+	.card-image {
+		overflow: hidden;
+		height: 5.5rem;
+		}
+	}
+
+.event-date-block {
+	padding: 0.5rem;
+	display: block;
+	text-align: center;
+	float: left;
+	margin-right: 1rem;
+	font-family: $font-family-sans-serif;
+	background: #b7dddb;
+	color: $color-ps-nittany-navy;
+	box-shadow: none;
+	margin-top: 0;
+	width: 5.5rem;
+	height: 5.5rem;
+	max-width: 5.5rem;
+	
+	div {
+		display: inline-block;
+		}
+	}
+
+.event-day {
+	font-size: $small3-size;
+	line-height: 1;
+	border-bottom: 1px solid $color-ps-creek;
+	margin-bottom: 0.25rem;
+	padding-bottom: 0.25rem;
+	}
+
+.event-month {
+	font-size: $small1-size;
+	text-transform: uppercase;
+	line-height: 1;
+	width: 100%;
+	}
+
+.event-date {
+	font-size: $h2-font-size;
+	font-weight: $font-weight-boldest;
+	line-height: 1;
+	width: 100%;
+	}
+
+.event-details p {
+	font-size: $small3-size;
+	line-height: $line-height-md;
+	font-weight: $font-weight-light;
+	margin-bottom: 0;
+	}

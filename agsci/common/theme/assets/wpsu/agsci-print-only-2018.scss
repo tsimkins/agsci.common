@@ -1,0 +1,301 @@
+/* ----------------------------------------------------------
+
+PRINT ONLY
+
+---------------------------------------------------------- */
+
+header, nav, .navbar {
+	display: block;
+	}
+
+header img.smeal-logo {
+	width: 300px;
+	}
+
+a.navbar-brand {
+	display: block;
+	}
+
+.opacity-dimmer {
+	display: none;
+	}
+
+.jumbotron,
+.jumbotron.jumbotron-short,
+.jumbotron-header,
+.jumbotron.jumbotron-full-height,
+.jumbotron.jumbotron-full-height .jumbotron-img,
+.jumbotron.jumbotron-full-height .jumbotron-header {
+	height: auto;
+	}
+
+.jumbotron .home-jumbotron-text {
+	margin-top: 0;
+	}
+
+.topic-block {
+	padding-top: 0;
+	}
+
+.for-you-block {
+	position: relative;
+	bottom: 0;
+	}
+	
+#synopsis.affix {
+	position: relative;
+
+	.col-md-4,
+	.col-lg-4,
+	.col-lg-3 {
+		max-width: 33.3333%;
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+		}
+	
+	.hide-affix {
+		display: block;
+		}
+	}
+
+
+.row-synopsis .col-lg-5 {
+	flex: 0 0 42%;
+	max-width: 42%;
+	}	
+
+.col-md-8,
+#content .col-md-4,
+.col-md-7,
+.col-xl-9 {
+	flex: 0 0 83.33333%;
+	max-width: 83.33333%;
+	margin-left: 8.33333%
+	}
+	
+.container,
+.container-fluid { /* remove margins so container fills printable width */
+	margin: 0;
+	}
+
+.py-3 {
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+
+.container-synopsis {
+	padding: 1rem 0 0 0;
+	}
+
+h2 {
+	margin-top: 0;;
+	}
+
+p.callout {
+	margin-left: 0;
+	margin-right: 0;
+	}
+
+blockquote {
+	border: transparent;
+	}
+
+.navbar-collapse,
+.navbar-nav,
+header .btn,
+.jumbotron-img,
+.opacity-dimmer,
+.btn.back-to-top.affix,
+.footer-links,
+.row-synopsis a.file-download,
+.btn,
+.col-share,
+p.learn-more,
+.embed-responsive {
+	display: none;
+	}
+
+table.table-certificate {
+	border-collapse: collapse;
+	}
+
+table.table-certificate td {
+	border: 1px solid #efefef;
+	}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	border-bottom: transparent;
+	}
+	
+.text-white {
+	color: #000000;
+	}
+
+.collapse:not(.show) {
+	display: block;
+	}
+
+.reveal,
+.slide-down,
+.fade-up {
+	opacity: 1 !important;
+	transform: none !important;
+	}
+
+
+.jumbotron p.program-type {
+	margin-bottom: 0.75rem;	
+	}
+
+.row-synopsis .register-options strong {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 0;
+	display: block;
+	color: #000000;
+	}
+
+.row-synopsis p.start-end {
+	margin-left: 0;
+	}
+
+.accordion {
+	
+	.btn.btn-link[data-toggle="collapse"] {
+		display: block;
+		font-size: 1.4rem;
+		padding: 0;
+		}
+	}
+
+.btn.btn-link[data-toggle="collapse"] .fa-angle-up,
+.btn.btn-link[data-toggle="collapse"].collapsed .fa-angle-down  {
+	display: none;
+	}
+		
+	
+.accordion ul.psep-list {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	}
+
+.collapse {
+    display: block !important;
+    height: auto !important;
+	}
+
+p.lead::first-letter {
+	font-family: 'Roboto Slab';
+	color: #000;
+	float: none;
+	font-size: 1rem;
+	line-height: 1.4;
+	margin-right: 0;
+	padding: 0;
+	text-shadow: none;	
+	}
+
+.universal-footer,
+footer .partnership-bar {
+	padding-top: 0;
+	padding-bottom: 0;
+	}
+
+.partnership-bar {
+	
+	.card:nth-of-type(1) {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	
+	.card:nth-of-type(2),
+	.card:nth-of-type(3) {
+		display: none;
+		}
+	}
+
+body,
+.text-white {
+
+	h1, h2, h3, h4, h5, h6, ul, li, p, .jumbotron p.program-type span {
+		color: #000000;
+		}
+	}
+
+.bg-highlight-blockquote {
+	padding-top: 0;
+	padding-bottom: 0;
+	
+	.col-md-6  {
+		flex: 0 0 83.33333%;
+		max-width: 83.33333%;
+		margin-left: 8.33333%
+		}	
+	
+	img {
+		display:none;
+		}	
+	}
+
+.program-schedule.new-workshop-layout .col-details {
+	border: 0;
+	border-left: 1px solid #efefef;
+	}
+
+
+.short-course-listings.col-xl-9 {
+	margin-left: 0;
+	width: 100%;
+	}
+	
+.card-deck-workshops {
+	
+	.row {
+		border: 1px solid #efefef;
+		}
+	
+	.col-md-8 {
+		flex: 0 0 66.66%;
+		max-width: 66.66%;
+		margin-left: 0;
+		}
+	
+	.col-md-4 {
+		flex: 0 0 33.33%;
+		max-width: 33.33%;
+		}
+	}
+
+.card-deck-3up {
+	
+	.card {
+		flex: 0 0 42%;
+		max-width: 42%;
+		}
+	}
+
+#program-nav.d-block.portfolio-filters {
+	display: none !important;
+	}
+
+#content .schedule-day .col-md-4 {
+	margin-left: 0;
+	margin-bottom: 5px;
+}
+
+.row.schedule-day {
+	padding: 0;
+	margin: 0;
+	}
+
+.schedule-day time {
+	padding: 0 0 0.5rem 0;
+	color: #000000;
+	margin-left: 0;
+	display: block;
+	text-align: left;
+	}

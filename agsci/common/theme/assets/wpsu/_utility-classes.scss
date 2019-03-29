@@ -1,0 +1,112 @@
+/* Element Invisible - 
+	Replacement for Bootstrap "invisible" which
+	hides element but takes up space and 
+	is not off canvas
+--------------------------------------------- */
+
+.element-invisible,
+.pfgHidden,
+.icons-social-media span {
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    overflow: hidden;
+    width: 0px;
+    height: 0px;
+    margin: 0;
+    
+	&:active,
+	&:focus {
+	    position: absolute;
+	    z-index: 999999;
+	    top: 0;
+	    left: 0;
+	    overflow: visible;
+	    clip: auto;
+	    width: auto;
+	    height: auto;
+		}
+	}
+
+a.element-invisible:focus {
+	background-color: $color-ps-keystone;
+	color: $black;
+	}
+	
+/* Fade In - 
+	Replace stock Bootstrap fade and scale
+--------------------------------------------- */
+
+.fade-in {
+	transition: opacity 0.25s linear; 
+	}
+
+@media screen and (prefers-reduced-motion: reduce) { /* for users with vestibular disoreders */
+
+	.fade-in {
+	    	transition: none; 
+	    	} 
+    }
+  
+.fade-in:not(.show) {
+    opacity: 0; 
+    }
+    
+/* Border - 
+	Top and Bottom Utility Class
+--------------------------------------------- */
+
+.border-top {
+	border-top: $border-base;
+	}
+
+.border-bottom {
+	border-bottom: $border-base;
+	}
+
+/* Overflow - 
+	Hidden Utility
+--------------------------------------------- */
+
+ .overflow-hidden {
+	overflow: hidden; 
+ 	}
+
+/* Border Overlay -
+	Semi-transparent creek border inset
+	image overlay
+--------------------------------------------- */
+.img-border-overlay {
+		position: relative;
+		outline: 0.25rem solid rgba($color-ps-creek,0.5);
+		outline-offset: -1rem;
+	
+	img::before {
+		content: " ";
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 1;
+		border: 0.5rem solid rgba($color-ps-creek,0.5);
+		}
+	}
+
+/* Box Shadow
+	General Box Shadow 
+	and boxh shadow hover state for links
+--------------------------------------------- */
+.agsci-box-shadow {
+		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+		margin-bottom: $card-group-margin;
+		}
+		
+a.agsci-box-shadow {
+		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+		
+		&:hover { /* change body on hover only if wrapped in a */ 
+			box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.5);
+			}
+		}
+				

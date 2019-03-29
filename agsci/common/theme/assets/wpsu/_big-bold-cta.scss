@@ -1,0 +1,25 @@
+.big-bold-cta {
+	background: #86c6c2;
+	padding-top: 5rem;
+	padding-bottom: 6rem;
+	
+	p {
+		margin-bottom: 0.5rem;
+		}
+	
+	h2 {
+		font-family: $font-family-base;
+		font-weight: $font-weight-base;
+		font-size: 3rem;
+		display: inline-block;
+		padding-bottom: 0.5rem;
+		margin-bottom: 0.5rem;
+		border-bottom: 1px solid $color-ps-creek;
+		
+		&::after {
+			content: none;
+			}
+		
+		}
+	}
+

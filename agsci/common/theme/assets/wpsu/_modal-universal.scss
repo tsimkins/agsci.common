@@ -1,0 +1,46 @@
+.modal {
+	
+	.section-modal-nav {
+		
+		p.modal-nav-section {
+			margin-bottom: 0;
+			padding-bottom: 0.25rem;
+			border-bottom: $border-base;
+			}
+		
+		p a {
+			color: $white;
+			}
+		
+		li a {
+			color: $white;
+			font-family: $font-family-sans-serif;
+			font-size: $small3-size;
+			}
+		}
+	}	
+
+.audience-modal-bar {	
+	margin-bottom: 2rem;
+	
+	span, a {
+		color: $white;
+		font-family: $font-family-sans-serif;
+		font-size: $small3-size;
+		font-weight: $font-weight-base;
+		}
+	
+	a.navbar-brand::after {
+		content: none;
+		}
+	
+	span {
+		color: $white;
+		text-transform: none;
+		
+		&:after {
+			content: none;
+			}
+		}
+	}
+	

@@ -1,0 +1,147 @@
+/* ----------------------------------------------------------
+
+FOOTER
+
+---------------------------------------------------------- */
+
+footer { /* relative and high z-index to mask any affixed nav */
+	background-color: $color-ps-nittany-navy;
+	position: relative;
+	z-index: 9;
+
+	img.agsci-logo {
+		width: 300px;
+		height: auto;
+		}
+		
+	.fa-stack {
+		text-align: center;
+		}
+	
+	li.footer-list-head {
+		display: block;
+		font-weight: $font-weight-base;
+		font-family: $font-family-base;
+		font-size: $font-size-sm;
+		}
+
+	.footer-details-block {
+		padding-bottom: 0.5rem;
+		}
+	
+	p.footerLinks {
+		font-family: $font-family-sans-serif;
+		font-size: $small4-size;
+		margin-bottom: 0.25rem;
+		line-height: $line-height-md;
+		}
+		
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+		font-size: $font-size-base;
+		font-family: $font-family-sans-serif;
+		margin-bottom: 0;
+			
+		li {
+			margin-left: 0.25rem;
+			margin-right: 0.25rem;
+			padding-bottom: 0.25rem;
+			padding-top: 0.25rem;
+			}
+		}
+	
+	ul.list-inline li {
+		margin-left: 0;
+		margin-right: 0;
+		}
+	
+	ul.list-inline.list-inline-contact {
+		font-size: $small3-size;
+		margin-bottom: 0;
+		}
+		
+	abbr[title] {
+		text-decoration: none;
+		}
+			
+	abbr:hover{
+		cursor: default;
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	
+	footer ul.list-inline-social {
+		border-left: transparent;
+		}
+	}
+
+li.li-separator::after {
+		content: '|';
+		margin-left: 0.5rem;
+		margin-right: 0.25rem;
+		color: $color-ps-creek;
+		font-size: $font-size-base;
+		vertical-align: baseline;
+		font-weight: $font-weight-light;
+		}
+		
+/* Footer - Department Level
+--------------------------------------------- */
+
+.department-level {
+	footer {
+		background-color: darken($color-ps-nittany-navy,5%);
+		}
+	}
+
+.footer-department-level {
+	padding: 1rem 0;
+	background-color: darken($color-ps-nittany-navy,5%);
+	
+	p.department-name {
+		font-family: $font-family-base;
+		font-weight: $font-weight-light;
+		color: $white;
+		font-size: $font-size-lg;
+		margin-bottom: 0.25rem;
+		border-bottom: $border-base;
+		display: inline-block;
+		line-height: $line-height-md;
+		padding-bottom: 0.25rem;
+		}
+	
+	ul li {
+		padding-top: 0;
+		}
+	
+	ul.list-inline-dept-links {
+		font-size: $small2-size;
+		
+		li {
+			margin: 0 0 0.5rem 0;
+			}
+		
+	/*	li:first-of-type {
+			font-family: $font-family-base;
+			font-weight: $font-weight-light;
+			font-size: $font-size-base;
+			padding-bottom: 0.75rem;
+			display: block;
+			
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 0;
+			display: inline-block;
+			} 
+			
+			a {
+				color: $color-ps-creek;
+				}
+			} */
+		}
+	}
+
+
+
+

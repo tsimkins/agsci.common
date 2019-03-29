@@ -1,0 +1,22 @@
+.card-deck-text-only {
+	position: relative;
+	}
+	
+.card.card-text-only {
+		background: lighten($color-ps-coaly-gray,62.5%);
+		transition: $transition-base;
+		padding: 1rem;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+
+		&:hover {
+			background: $white;
+			box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.5);
+			}
+	
+	.card-body {
+		padding: 0;
+		background: transparent;
+		}
+	}

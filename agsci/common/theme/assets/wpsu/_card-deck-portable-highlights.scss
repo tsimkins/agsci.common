@@ -1,0 +1,84 @@
+/* ----------------------------------------------------------
+
+PORTABLE HIGHLIGHTS
+
+---------------------------------------------------------- */
+			
+.card-deck.card-deck-portable-highlights {
+	flex-flow: row wrap; /* override single column for mobile */
+	margin-bottom: 0;
+	}
+
+.card.card-portable-highlight {
+	min-height: 20vh;
+
+	&:last-of-type {
+		border-right: transparent;
+		}	
+	
+	.card-body {
+		padding: 1rem;
+		background: transparent;
+		}
+	}
+
+.card.card-portable-highlight {
+	background: url(../images/hex-stat-block-bg.svg), darken($color-ps-creek, 10%);
+	background-position: -65px -120px, center center;
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+	padding: 3rem 1rem 3rem 1rem;
+	text-align: center;
+	}
+
+.card.card-portable-highlight:nth-of-type(2) {
+	background: url(../images/hex-stat-block-bg.svg), $color-ps-slate-gray;
+	}
+
+.card.card-portable-highlight:nth-of-type(3) {
+	background: url(../images/hex-stat-block-bg.svg), darken($color-ps-coaly-gray,10%);
+	}
+
+
+.bg-slate .card-deck.card-deck-portable-highlights {
+	
+	.card,
+	.card:nth-of-type(2),
+	.card:nth-of-type(3) {
+		background: darken($color-ps-slate-gray,5%);
+		padding: 1rem;
+		}
+	}
+		
+.card.card-portable-highlight .card-body {
+	padding: 0;
+	
+	p {
+		font-size: $font-size-lg;
+		line-height: $line-height-sm;
+		font-family: $font-family-sans-serif;
+		color: $white;
+		position: relative;
+		text-align: center;
+		z-index: 9;
+		margin-bottom: 0;
+	
+		span {
+			font-size: 3.2rem;			
+			display: block;
+			text-transform: uppercase;
+			letter-spacing: -.05em;
+			margin-top: 0.125vw;
+			font-weight: $font-weight-bolder;
+			line-height: 1;
+			
+			sup {
+				display: inline-block;
+				font-size: 66.6666%;
+				top: -.625rem;
+				position: relative;
+				vertical-align: baseline;
+				}
+			}
+		}
+	}

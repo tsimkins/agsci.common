@@ -1,0 +1,437 @@
+/* .dept-level-college-options
+	Universal Top Bar with College Options
+--------------------------------------------- */
+
+.department-level ul.dept-level-college-options {
+	position: relative;
+	top: 0;
+	right: 0;
+	background: #00132b;
+	padding: 0.5rem 0.5rem 1rem 0.5rem;
+	width: 100%;
+	text-align: right;
+	z-index: 99;
+	display: flex;
+	margin-bottom: 0;
+	
+	li {
+		margin: 0;
+		font-size: $small4-size;
+	
+		&::after {
+			color: $white;
+			}	
+		
+		&:last-of-type {
+			border-right: transparent;
+			}
+		}
+	
+	a, button {
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+			border-right: 1px solid $white;
+			}
+			
+	button { /* college modal */
+		background: transparent; 
+		border: transparent;
+		color: $white;
+		font-size: $small4-size;
+		cursor: pointer;
+		}
+	}
+
+@include media-breakpoint-up(md) {
+	.department-level ul.dept-level-college-options {
+		padding: 0.5rem 0.5rem 0 0.5rem;
+		}
+	}
+
+/* 	Header
+--------------------------------------------- */
+.department-level header {
+	background: #00132b;
+	}
+	
+/* 	.department-bar
+	Department Bar - hold all branding 
+	and navigation
+--------------------------------------------- */
+
+.department-bar .btn {
+	padding: 0.25rem 0.5rem;
+	margin-left: 0.125rem;
+	margin-right: 0.125rem;
+	font-size: $small4-size;
+	}
+
+.department-bar {
+	padding: 0;
+	transition: $transition-base;
+	
+	a.department-brand {
+		color: $white;
+		position: relative;
+		top: 0;
+		padding-left: 2rem;
+		font-size: $h4-font-size;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		line-height: 1.2;
+		}		
+	}
+
+	.affix .department-bar a.department-brand {
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		font-size: $h4-font-size;
+		}
+	
+@include media-breakpoint-up(lg) {
+	.department-bar a.department-brand {
+		font-size: $h3-font-size;
+		border-left: 2px solid $color-ps-creek;
+		padding-left: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		}
+	}	
+
+.department-bar ul.list-inline {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.25rem 0.5rem;
+	width: 100%;
+	text-align: right;
+	
+	li {
+		margin: 0;
+		}
+	
+	button {
+		background: transparent;
+		border: transparent;
+		color: $white;
+		font-size: $small4-size;
+		cursor: pointer;
+		}
+	}
+
+.affix .department-bar ul.list-inline {
+	display: none;
+	}
+
+.affix .department-bar {
+	padding: 0;
+	}	
+
+.department-bar {	
+	span, a {
+		color: $white;
+		font-weight: $font-weight-light;
+		}
+	
+	a.navbar-brand::after {
+		content: none;
+		}
+	
+	span {
+		color: $white;
+		text-transform: none;
+		
+		&:after {
+			content: none;
+			}
+		}
+	}
+
+		
+/* Mobile Department Hamburger Button
+--------------------------------------------- */	
+
+.department-level header .btn.btn-primary.btn-toggle-mobile-nav {
+	top: 0.5rem;
+	right: 1rem;
+	z-index: 9;
+	}
+
+
+/* .college-logo-block, .navbar-brand
+	College Logo
+--------------------------------------------- */	
+
+.department-level {
+
+	.navbar-brand {
+		position: relative;
+		display: inline-block;
+		margin-right: 0;
+		top: 0;
+		left: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		}
+	
+	.college-logo-block {
+		padding: 0;
+		position:relative;
+		width: 100%;		
+		}
+	
+	img.agsci-logo {
+		width: 300px;
+		height: 54px;
+		margin-left: 1rem;
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	
+	.department-level .college-logo-block {
+		width: auto;
+		padding:0 0 1rem 0;
+		}
+	
+	.department-level .affix img.agsci-logo { /* px required for svg, specific ht required for smoother transition */
+		width: 260px;
+		height: 47px;
+		}
+	
+	.department-level .affix .college-logo-block {
+		padding: 0.25rem 0;
+		}
+	}
+	
+
+/* .department-brand-block, a.department-brand
+	Department Name
+--------------------------------------------- */	
+
+.department-brand-block {
+	padding: 0 0 0 2rem; /* decrease top padding on mobile to tuck title up under college logo */
+	}
+	
+@include media-breakpoint-up(lg) {
+	
+
+	.department-brand-block {
+		padding: 0 0 1rem 0;
+		}
+			
+	.affix .department-brand-block {
+		padding: 0.25rem 0;
+		}
+	}
+	
+/* .navbar, .navbar-collapse
+	.department-dropdowns, .dropdown-selectors,
+	.dropdown, .dropdown-toggle, 
+	.dropdown-toggle-button
+--------------------------------------------- */	
+		
+.department-level header {
+	
+	.navbar {
+		min-height: auto;
+		border-bottom: none;
+		padding-top: 0;
+		}
+		
+	.navbar-collapse {
+		margin-top: 0;
+		background: darken($color-ps-creek,10%);
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	
+	.department-level header 	ul li.dropdown {
+		margin-bottom: 0;
+		border-bottom: transparent;
+		}
+	}
+
+/* Department Dropdown Main Menu Options
+--------------------------------------------- */
+
+.department-dropdowns {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-left: 0;
+	
+	.btn {
+		font-size: $small3-size;
+		}
+		
+	a.nav-link {
+		text-transform: none;
+		margin-right: 0;
+		transition: $transition-base;
+		
+		&:hover {
+			background-color: $white;
+			}
+		}
+	
+	.dropdown-toggle {
+		background: transparent;
+		padding: 0.5rem 1rem 0.75rem 1rem;/* .25 less on top for hover border */
+		display: block;
+		transition: $transition-base;
+		border-top: 0.25rem solid transparent;
+		color: $white;
+		font-weight: $font-weight-bold;
+		}
+	}
+
+@include media-breakpoint-up(lg) { 
+	.department-dropdowns {
+		flex-direction: row; /* swap to horizontal layout for larger screen width */
+		
+		.dropdown-toggle {
+			display: inline-block;
+			font-size: $small1-size;
+			font-weight: $font-weight-base;
+			}
+		
+		.dropdown-toggle:focus,
+		.dropdown-toggle:hover  {
+			border-top: 0.25rem solid $color-ps-creek;
+			outline: transparent;
+			}
+		}
+	}
+
+@include media-breakpoint-up(xl) {
+	.department-dropdown .dropdown-toggle {
+		padding: 0.5rem 1.75rem 0.75rem 1.75rem; /* .25 less on top for hover border */
+		}
+	}
+		
+.department-level header ul {
+	font-size: $small1-size;
+	font-family: $font-family-sans-serif;
+	width: 100%;
+	
+	li {
+		line-height: $line-height-sm;
+		}
+	
+	li.dropdown {
+		margin-bottom:0;
+		border-bottom: 1px solid rgba($white,0.5) !important;
+		display: block;
+		position: relative;
+		
+		&:last-of-type {
+			border-bottom: transparent !important;
+			}
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	.department-level header ul li.dropdown {
+		border-bottom: none !important;
+		}
+	}
+	
+
+/* Department Dropdown Menus - UNDER Toggle
+--------------------------------------------- */
+
+.navbar .department-dropdowns {
+	
+	a.nav-link {
+		color: rgba($white,0.8);
+		
+		&:hover {
+			color: $white;
+			background-color: transparent;
+			}
+		}
+			
+	.dropdown-menu {
+		padding: 0;
+		border-radius: 0;
+		margin-top: 0;
+		width: 100%;
+		border: none;
+		position: relative;
+		background-color: transparent !important;
+		 
+		ul {
+			margin-top: 0;
+			margin-bottom: 0;
+			margin-left: 1rem;
+			font-size: $small2-size;
+			}
+		}
+	
+	li.dropdown {
+		margin-right: 0;
+		}
+	}
+	
+/* Mobile Dropdown Carat Toggles
+--------------------------------------------- */	
+.department-level button.dropdown-toggle-button {
+	top: 0.75rem;
+	color: $white;
+	}
+
+.department-level button.dropdown-toggle-button[aria-expanded="true"] i {
+	color: $white;
+	}
+	
+@include media-breakpoint-up(lg) { 
+	
+	.navbar .department-dropdowns {
+		
+		.dropdown-menu {
+			min-width: 280px;
+			top: 2.525rem;
+			box-shadow: 4px 4px 12px rgba($black,0.5);
+			background-color: $white !important;
+			position: absolute;
+			
+			ul {
+				margin-left: 0;
+				}
+			
+			&::before {
+				content:"";
+			    position: absolute;
+			    left: 3rem;
+			    top: -10px;
+			    width: 0;
+			    height: 0;
+			    border-style: solid;
+			    border-width: 0 10px 10px 10px;
+			    border-color: transparent transparent lighten($white,60%) transparent;
+			    z-index:9999;
+			    }
+			}
+			
+		.nav-item:first-of-type a.nav-link {
+			border-top: transparent;
+			}
+	
+		a.nav-link {
+			color: lighten($color-ps-coaly-gray,10%);
+			border-top: $border-base;
+			display: block;
+			
+			&:hover {
+				background: lighten($color-ps-coaly-gray,60%);
+				color: darken($color-ps-coaly-gray,35%);
+				}
+			}
+		
+		}
+	}
+		

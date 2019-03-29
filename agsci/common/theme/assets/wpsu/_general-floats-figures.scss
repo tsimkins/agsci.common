@@ -1,0 +1,73 @@
+
+/* ----------------------------------------------------------
+
+FIGURES
+
+---------------------------------------------------------- */
+
+figure img {
+		width: 100%;
+		height: auto;
+		}
+
+figcaption {
+	font-family: $font-family-sans-serif;
+	font-size: $small4-size;
+	color: $black-accessible-gray;
+	}
+
+.float-half,
+.float-third {
+	width: 100%;
+	}
+
+.float-left,
+.float-right {
+	float: none;
+	}
+			
+@include media-breakpoint-up(sm) {	
+
+	.float-left {
+		margin-right: 1.5rem;
+		float: left;
+		}
+	
+	.float-right {
+		margin-left: 1.5rem;
+		float: right;
+		}
+	
+	section.float-left,
+	section.float-right { /* required for generic content page with visual header and sidenav - need to float in order to insert side nav after header */
+		margin-left: 0;
+		margin-right: 0;
+		}
+					
+	figure.float-left figcaption {
+		text-align: left;
+		}
+		
+	figure.float-right figcaption {
+		text-align: right;
+		}
+			
+	.float-half,
+	.float-third {
+		width: 50%;
+		}
+	
+	.float-half.float-with-columns {
+		width: 100%;
+		}
+	}
+
+@include media-breakpoint-up(xl) {	
+	.float-third {
+		width: 33.3333%;
+		}
+	
+	.float-half.float-with-columns {
+		width: 50%;
+		}
+	}

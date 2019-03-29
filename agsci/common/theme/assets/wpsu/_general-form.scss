@@ -1,0 +1,101 @@
+
+/* ----------------------------------------------------------
+
+FORM - BASIC
+
+---------------------------------------------------------- */
+
+.pfg-form {
+	padding: 1rem;
+	background: lighten($color-ps-coaly-gray,60%);
+	
+	fieldset {
+		background-color: lighten($color-ps-coaly-gray,65%);
+		padding: 1rem;
+		margin-right: 0;
+		border: 1px solid rgba($color-ps-coaly-gray,.5);
+		margin-bottom: 2rem;
+		width: 100%;
+		}
+	
+	legend {
+		margin: 0 0 1rem 0;
+		font-weight: $font-weight-light;
+		letter-spacing: $letter-spacing-sm;
+		font-family: $font-family-sans-serif;
+		font-weight: $font-weight-bold;
+		position: relative;
+		display: block;
+		font-size: $font-size-lg;
+		font-weight: $font-weight-bolder;
+		
+		font-weight: bold;
+		float: left;
+		width: 100%;
+		}
+	
+	.formHelp {
+		font-family: $font-family-sans-serif;
+		font-style: italic;
+		}
+	
+	.formQuestion {
+		margin-bottom: 0.5rem;
+		font-size: $font-size-sm;
+		margin-top: 1.5rem;
+		}
+	
+	.ArchetypesMultiSelectionValue {
+		display: flex;
+		align-items: baseline;
+		margin-bottom: 0.5rem;
+		
+		input {
+			margin-left: 0.5rem;
+			margin-right: 0.25rem;
+			}
+		
+		label {
+			margin-bottom: 0;
+			}
+		}
+	
+	label {
+		font-family: $font-family-sans-serif;
+		color: $black-accessible-gray;
+		font-size: $small2-size;
+		margin-bottom: 0.25rem;
+		display: block;
+		}
+	
+	input[type=checkbox] + label {
+		display: inline-block;
+		}
+	
+	div.field {
+		margin-top: 1rem;
+		}
+	
+	input[type=text],
+	textarea {
+		border: 1px solid lighten($color-ps-coaly-gray,50%);
+		font-family: $font-family-sans-serif;
+		font-size: $small3-size;
+		color: $black;
+		padding: 0.25rem;
+		}
+		
+	textarea {
+		width: 100%;
+		}
+	
+	select {
+		font-size: $small2-size;
+		font-family: $font-family-sans-serif;
+		}
+	
+	.btn {
+		margin-top: 1rem;
+		}
+	}
+

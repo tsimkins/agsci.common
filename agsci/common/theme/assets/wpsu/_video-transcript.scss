@@ -1,0 +1,30 @@
+.accordion.accordion-transcript {	
+	margin-bottom: 1.5rem;
+	
+	.btn {
+		margin: 0;
+		border-radius: 0;
+		}
+	}
+
+.btn-transcript {
+	width: 100%;
+	background-color: lighten($color-ps-coaly-gray,55%);
+	text-align: left;
+	}
+
+.accordion-transcript .accordion-content {
+	padding: 1rem;
+	background-color: lighten($color-ps-coaly-gray,60%);
+	
+	p {
+		font-size: $small3-size;
+		}
+	}
+
+.btn-transcript[aria-expanded="true"] {
+	
+	.fas {
+		transform: rotate(180deg);
+		}
+	}

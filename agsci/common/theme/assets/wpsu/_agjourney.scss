@@ -1,0 +1,634 @@
+
+
+/* ----------------------------------------------------------
+
+AgSci Journeys
+
+---------------------------------------------------------- */
+
+
+.jumbotron-journey {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+	height: 70vh;
+	
+	
+	img {
+		flex-shrink: 0;
+	    width: auto;
+	    height: 70vh;
+    	vertical-align: none;
+		}
+	}
+
+@media screen and (min-aspect-ratio: 1800/1714) { /* desired height 70vh (70%) = 100/70 times height of image = 1800/1714 */
+	.jumbotron-journey img {
+		width: 100%;
+	    height: auto;
+		}
+	}
+
+.jumbotron.center-top {
+	img {
+		left: 50%;
+	    top: 0;
+	    transform: translate(-50%,0);  
+		}
+	}
+
+.jumbotron.center-bottom {
+	img {
+		left: 50%;
+	    top: 100%;
+	     transform: translate(-50%,-100%);
+		}
+	}
+
+.jumbotron.left-bottom {
+	img {
+		left: 0;
+	    top: 100%;
+	    transform: translate(0,-100%);
+		}
+	}
+
+.jumbotron.right-bottom {
+	img {
+		left: 100%;
+	    top: 100%;
+	    transform: translate(-100%,-100%);
+	}
+	}
+
+.jumbotron-journey.left-top {
+	justify-content: flex-start;
+    align-items: flex-start;
+	}
+
+.jumbotron.right-top {
+	img {
+		left: 100%;
+	    top: 0;
+	    transform: translate(-100%,0);
+		}
+	}
+	
+.jumbotron p.agsci-journeys {
+	position: absolute;
+	top: 3rem;
+	right: 1.5rem;
+	z-index: 9;
+	}
+	
+p.agsci-journeys {
+	font-family: 'Born Ready'; 
+	font-weight: 100; 
+	font-size: 12vw;
+	line-height: 1.0;
+	color: $color-ps-creek;
+	display: inline-block;
+	transform: rotate(-4deg);
+	text-shadow: 3px 3px 6px rgba($black,0.75);
+	}
+
+p.agsci-journeys.ag-journeys-preview {
+	font-size: $display4-size;
+	text-shadow: none;
+	text-align: left;
+	position: relative;
+	left: -2.5rem;
+	top: 1.875rem;
+	opacity: 0.5;
+	
+	+ h2 {
+		margin-top: 0;
+		}
+	
+	}
+
+
+	
+p.agsci-journeys-v2 {
+	font-family: 'Born Ready'; 
+	font-weight: 100; 
+	font-size: 12vw;
+	line-height: 1.0;
+	color: $color-ps-creek;
+	display: block;
+	transform: rotate(-4deg);
+	text-shadow: 3px 3px 6px rgba($black,0.75);
+	}
+
+
+@include media-breakpoint-up(md) {
+
+	p.agsci-journeys {
+		font-size: 8vw;
+		}
+	}
+	
+@include media-breakpoint-up(xl) {
+	p.agsci-journeys {
+		font-size: 8vw;
+		}
+	}
+
+.agsci-journeys-overlay.agsci-journeys-overlay2 {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	max-width: 75%;
+	z-index: 2;
+	}
+
+h2.agsci-journeys-intro-quote-v2 {
+	margin-top: 0;
+	}
+
+@include media-breakpoint-up(md) {
+	h2.agsci-journeys-intro-quote-v2 {
+		margin-top: 5rem;
+		}
+	}
+	
+.agsci-journeys-overlay {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	max-width: 75%;
+		
+p.agsci-journeys-intro-quote {
+	text-align: right;
+	font-family: $font-family-base;
+	font-size: $h2-font-size;
+	color: $white;
+	font-weight: $font-weight-base;
+	line-height: $line-height-xs;
+	text-shadow: 4px 4px 8px rgba($black,0.75);
+	}
+	
+	h1 {
+		margin-top: 1rem;
+		float: right;
+		display: inline-block;
+		text-transform: uppercase;
+		text-shadow: none;
+		color: $color-ps-slate-gray;
+		font-weight: $font-weight-light;
+		font-size: $h3-font-size;
+		background: rgba($white,0.5);
+		padding: 0.25rem 0.5rem 0.125rem 0.5rem;
+		z-index: 11;
+		
+		span {
+			font-weight: $font-weight-boldest;
+			color: $color-ps-slate-gray;
+			}	
+		}
+	}
+
+.agsci-journeys-overlay-v2 {
+	max-width: 60%;
+	top: 12vh;
+	bottom: initial;
+	right: 3rem;
+	position: absolute;
+	}
+
+p.quote-angle-script,
+p.quote-angle-script-sm,
+p.quote-angle-script-polaroid {
+	font-family: 'Born Ready';
+	font-size: 3.75rem;
+	font-weight: 100;
+	transform: rotate(-4deg);
+	position: relative;
+	line-height: 1;
+	text-shadow: 1px 1px 3px rgba($black,0.75);
+	margin-bottom: 0;
+	z-index: 9;
+	}
+
+p.quote-angle-script-polaroid {
+	font-size: 1.75rem;
+	text-shadow: none;
+	color: $color-ps-slate-gray;
+	top: 0.75rem;
+	margin-bottom: 0.5rem;
+	}
+	
+.smaller-script-quote p.quote-angle-script,
+p.quote-angle-script-sm {
+	font-size: 3.25rem;
+	text-shadow: none;
+	color: $color-ps-slate-gray;
+	top: -1.5rem
+	}
+
+@include media-breakpoint-up(md) {
+	p.quote-angle-script {
+		left: -3rem;
+		font-size: 5rem;
+		}
+	
+	p.quote-angle-script.quote-left {
+		text-align: right;
+		}
+	
+	}
+
+p.journey-quote-cite {
+	text-align: right;
+	margin-right: 1rem;
+	line-height: $line-height-md;
+	font-family: $font-family-sans-serif;
+	font-weight: $font-weight-boldest;
+	color: $color-ps-slate-gray;
+	text-transform: uppercase;	
+	}
+
+/* journey preview w/ inset image */
+
+.card-columns .card.journey-preview {
+	column-break-inside: avoid
+	}
+
+.journey-preview {
+	
+	&.float-half {
+		p.agsci-journeys.ag-journeys-preview {
+			margin-top: 0;
+			}
+		}
+
+
+	
+
+	h2 {
+		text-align: left;
+		font-family: $font-family-base;
+		color: $color-ps-slate-gray;
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
+		}
+	
+	p.agsci-journeys.ag-journeys-preview {
+		font-size: 1.5rem;
+		top: 0.25rem;
+		margin-bottom: 0;
+		margin-top: 0.5rem;
+		left: -.5rem;
+		}
+	
+	p.journey-quote-cite {
+		font-size: $small3-size;
+		margin-right: 0;
+		line-height: $line-height-sm;
+		
+		em {
+			font-weight: $font-weight-light;
+			}
+		
+		}
+	}
+	
+	
+img.inset-sq-photo {
+	position: absolute;
+	right: -12vw;
+	bottom: -12vw;
+	width: 24vw;
+	height: auto;
+	}
+
+@include media-breakpoint-up(md) {
+	img.inset-sq-photo {
+		right: -6vw;
+		bottom: -6vw;
+		width: 12vw;
+		}
+	}
+
+h1.journey-name {
+	font-size: $h2-font-size;
+	margin-top: 1rem;
+	display: block;
+	text-shadow: none;
+	color: $color-ps-slate-gray;
+	font-weight: $font-weight-light;
+	background: rgba($color-ps-coaly-gray,0.15);
+	padding: 0.25rem 0.5rem 0.125rem 0.5rem;
+	z-index: 11;
+	margin-bottom: 0;
+	display: inline-block;
+	
+	span {
+		font-weight: $font-weight-boldest;
+		color: $color-ps-slate-gray;
+		}
+	}
+
+.bio-box {
+	margin-bottom: 0;
+	padding: 1.5rem 1.5rem 1rem 1.5rem;
+	border: 1px solid rgba($color-ps-coaly-gray,0.15);
+	
+	p {
+		margin-bottom: 0.5rem;
+		font-family: $font-family-sans-serif;
+		
+		strong {
+			color: darken($color-ps-creek,10%);
+		}
+		
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	.bio-box {
+		margin: 0 0 0 1.5rem;
+		}
+	}
+	
+		
+.overlay-content-block {
+	position: relative;
+	display: block;
+	
+	h2 {
+		font-size: $h2-font-size;
+		text-align: left;
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+		}
+	
+	p:last-of-type {
+		margin-bottom: 0;
+		}
+	
+	div {
+		padding: 1.5rem;
+		}
+	
+	}
+
+@include media-breakpoint-up(md) {
+
+.overlay-content-block {
+	position: absolute;
+	left: 2.5vw;
+	width: 35vw;
+
+	&.overlay-right {
+		right: 2.5vw;
+		left: auto;
+		}
+	}
+
+	.agsci-journeys-overlay {
+		max-width: 50%;
+		top: 12vh;
+		bottom: initial;
+		right: 3rem;
+		
+		p.agsci-journeys-intro-quote {
+			font-size: $display3-size;
+			}
+		}
+	
+	.agsci-journeys-overlay-v2 {
+		max-width: 75%;
+		}
+	
+	.agsci-journeys-overlay.agsci-journeys-overlay2 {
+		position: absolute;
+		top: initial;
+		bottom: 1.5rem;
+		right: 1.5rem;
+		max-width: 75%;
+		}
+	}
+
+@include media-breakpoint-up(xxl) {
+	.agsci-journey .overlay-content-block {
+		position: absolute;
+		left: 10vw;
+		width: 25vw;
+		
+		&.overlay-right {
+			right: 10vw;
+			left: auto;
+			}	
+		}
+	}
+
+/* using on journey for holding column space instead of image */
+.honey-comb-corner::before {
+	content: "";
+	background: url(../images/honey-comb-corner-pattern.svg);
+	background-size: 600px auto;
+	background-repeat: no-repeat;
+	opacity: 0.25;
+	position: absolute;
+	z-index: 0; 
+	}
+		
+.angle-corner {
+ 	background: url(../images/honey-comb-corner-pattern.svg), rgba($color-ps-coaly-gray,0.125);
+	background-repeat: no-repeat, repeat;
+	background-position: -10px -10px, center center;
+	background-size: 240%, 100%;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	
+	&::after {
+		content: url(../images/hexagonal-right-side-cover.svg);
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		right: -1px;
+		left: 0;
+		z-index: 1;
+		}
+	}
+	
+.journey-divider {
+		
+		margin-top: -0.5rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		text-align: center;
+		width: 100%;
+	
+	img {
+		height: 15px;
+		width: auto;
+		}
+	
+	span {
+		padding: 0.5rem;
+		}
+		
+	&:before, &:after {
+		background-color: rgba($color-ps-coaly-gray,0.25);
+		content: '';
+		flex-grow: 1;
+		height: 1px;
+		position: relative;
+		top: 1.1rem;
+		}	
+		
+	}
+	
+.agsci-journey .feature-content {
+	
+	p:first-of-type,
+	p.creek-callout {
+		font-size: 120%;
+		color: $color-ps-creek;
+		font-weight: $font-weight-bold;
+		line-height: $line-height-md;
+		margin-bottom: 0.5rem;
+		}
+	
+	}
+
+/*  INDENT B/C Quote Marks look weird on journey page . . .
+	
+	@include media-breakpoint-up(lg) {
+	 .agsci-journey .feature-content  h2 {
+		text-indent: -.7625rem;
+		}
+	 }
+	 */
+
+.aj-offset {
+	margin-top: -4rem;
+	}
+		
+ .agsci-journey {
+	
+	  h2 {
+		font-family: $font-family-base;
+		font-size: $h2-font-size;
+		margin-bottom: 0.5rem;
+		color: $color-ps-slate-gray;
+		margin-top: 1rem;
+		font-weight: $font-weight-bold;
+	 	}
+ 	
+ 	.text-white h2 {
+	 	color: $white;
+ 		}
+	}
+ 
+ .overlay-content-block {
+	 
+	 h2 {
+	 font-family: $font-family-base;
+		font-size: $h2-font-size;
+		margin-bottom: 1rem;
+		color: $color-ps-creek;
+		text-align: left;
+		text-indent: -0.5rem;
+		}
+ 	}
+ 	
+ .agsci-journey .overlay-content-block h2 {
+	 margin-bottom: 1rem;
+	 text-align: left;
+ 	}
+ 
+ @include media-breakpoint-up(sm) {
+
+ 	.agsci-journey h2 {
+		 font-size: $h1-font-size;
+		 }
+	
+	.hexagon-stack {
+		align-items: center;
+		}
+	
+	.hex-pusher.clip-hexagonal {
+		display: flex;
+		}
+	
+	  .hexagon-wrap {
+	    position: relative;
+		}
+	 }
+ 
+.img-fill {
+	width: 100%;
+	height: auto;
+	}
+	
+ @include media-breakpoint-up(md) {
+	.img-fill {
+		max-height: 400px;
+		width: auto;
+		}
+	}
+	
+.agsci-polaroid {
+	padding: 0.75rem;
+	background-color: $white;
+	position: relative;
+	z-index: 9;
+	width: 50%;
+	height: auto;
+	box-shadow: 0.25rem 0.25rem 1rem rgba($color-ps-slate-gray, 0.5);
+		
+	&:nth-of-type(1) {
+		transform: rotate(-6deg);
+		top: 2.5rem;
+		left: -1.5rem;
+		}
+		
+	&:nth-of-type(2) {
+		position: absolute;
+		transform: rotate(6deg);
+		top: 3rem;
+		right: 0;
+		width: 50%;
+		}
+	}
+
+ @include media-breakpoint-up(md) {
+	 
+	.agsci-polaroid:nth-of-type(1) {
+		position: absolute;
+		width: 27.5%;
+		transform: rotate(-6deg);
+		top: -2rem;
+		left: -1.5rem;
+		}
+		
+	.agsci-polaroid:nth-of-type(2) {
+		position: absolute;
+		transform: rotate(6deg);
+		bottom: -1rem;
+		left: -1.5rem;
+		width: 27.5%;
+		top: initial;
+		}
+		
+	 }
+	 	
+ @include media-breakpoint-up(lg) {
+	 
+	 .agsci-polaroid {
+		 padding: 1rem 1rem 1.5rem 1rem;
+		 }
+	 
+	 .agsci-polaroid:nth-of-type(2) {
+		bottom: 1rem;
+		left: initial;
+		right: 0;
+		}
+	 
+	 }

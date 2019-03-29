@@ -1,0 +1,43 @@
+/* ----------------------------------------------------------
+
+CARDS
+
+---------------------------------------------------------- */
+
+.card.card-news {
+	box-shadow: none;
+	background-color: transparent;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 1rem;
+	border-bottom: $border-base;
+	
+	&:last-of-type {
+		border-bottom: transparent;	
+		}
+	
+	img {
+		padding-bottom: 1rem;
+		}
+	
+	p.h3 {
+		font-size: $font-size-sm;
+		}
+	
+	&:hover p.h3 {
+		color: #307e7a;
+		text-decoration: underline $color-ps-creek;
+		}
+	}
+
+@include media-breakpoint-up(sm) {
+	
+	.card.card-news .card-image-top,
+	.card.card-news .card-body {
+		width: 100%;
+		}
+		
+	.card.card-news {
+		flex-direction: column;
+		}
+	}

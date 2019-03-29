@@ -1,0 +1,47 @@
+.section-highlight {
+	
+	.container-fluid {
+		background-color: #e4e5e6;
+		}
+	
+	.container-fluid:nth-of-type(even) {
+		background-color: #d6d7da
+		}
+	
+	p.section-crumb {
+		margin-bottom: 0.75rem;
+		font-size: $font-size-base;
+		font-weight: $font-weight-base;
+		text-transform: none;
+		
+		padding-bottom: 0;
+		font-style: italic;
+		
+		a {
+			color: darken($color-ps-creek,10%);
+			}
+		
+		a:hover {
+			color: $color-ps-creek;
+			border-bottom: 1px solid darken($color-ps-creek,10%);
+			}
+		}
+	
+	p.section-highlight-text {
+		color: $color-ps-slate-gray;
+		font-size: $h5-font-size;
+		line-height: $line-height-md;	
+		}	
+	
+	@include media-breakpoint-up(lg) {
+		
+		p.section-highlight-text {
+			font-size: $h4-font-size;
+			}
+		}
+	
+	.btn {
+		margin-top: 0.5rem;
+		}
+	
+	}

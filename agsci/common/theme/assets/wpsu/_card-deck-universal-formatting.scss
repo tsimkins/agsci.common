@@ -1,0 +1,94 @@
+.card-deck {
+	margin-bottom: 1.5rem;
+	
+	&.no-margin {
+		margin: 0;
+		}
+	
+	.card {
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: $card-group-margin*2;
+		}
+	}
+
+.card-body {
+	background: $white;
+	}
+	
+@include media-breakpoint-up(sm) {
+	
+	.card-deck .card {
+		margin-left: $card-group-margin;
+		margin-right: $card-group-margin;
+		}
+	
+	.card-deck.no-margin .card {
+		margin-left: 0;
+		margin-right: 0;
+		}
+	}
+
+.card {
+	overflow: hidden;
+	
+	h3 {
+		margin-top: 0;
+		margin-bottom: $spacer/2;
+		transition: $transition-long;
+		}
+	
+	img {
+		transition: $transition-long;
+		transform-origin: top right;
+		}
+	
+	.card-body {
+		transition: $transition-long;
+		}
+		
+	&:hover {
+		
+		a {
+			text-decoration: none;
+			}
+		}
+	}
+	
+.card-title p {
+	font-family: $font-family-sans-serif;
+	margin-bottom: 0.75rem;
+	font-size: $font-size-base;
+	line-height: $line-height-sm;
+	position: relative;
+	font-weight: $font-weight-base;
+	
+	&::after {
+	    content: "";
+	    position: absolute;
+	    bottom: -0.375rem;
+	    left: 0;
+	    width: 4rem;
+	    height: 1px;
+	    border-bottom: 2px solid $border-color;
+	    }
+	}
+
+.card:hover .card-title p::after {
+	border-bottom: 2px solid $color-ps-creek;
+	}
+	
+.card-text p {
+	line-height: $line-height-base;
+	font-weight: 300;
+	font-size: $small2-size;
+	margin-bottom: 0;
+	}
+
+@include media-breakpoint-up(md) {
+	.card-text p {
+		font-size: $small3-size;
+		}
+	}
+
+

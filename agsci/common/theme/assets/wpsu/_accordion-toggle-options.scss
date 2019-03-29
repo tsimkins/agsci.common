@@ -1,0 +1,52 @@
+/* ----------------------------------------------------------
+
+ACCORDION - MAJOR OPTIONS
+
+---------------------------------------------------------- */	
+
+.accordion.accordion-options {
+	
+	margin-bottom: 0;
+	
+	.btn {
+		position: relative;
+		text-transform: none;
+		line-height: 1.2;
+		margin-left: 1.5rem;
+
+		&::after {
+			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    right: -3rem;
+		    width: 3rem;
+		    background-color: lighten($color-ps-creek,15%);
+			line-height: 2.5;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			font-family: 'Font Awesome 5 Free';
+			content: "\f107";
+			font-weight: 900;  
+			color: rgba($white,0.75);
+			font-size: $h3-font-size;	
+			display: block;
+			border-left: 1px solid $white;
+			}
+		
+		&[aria-expanded="true"] {
+			
+			&::after {
+				transform: rotate(180deg);
+				}
+			}
+		
+		&:hover {
+			
+			&::after {
+				color: $white;
+				}	
+			}
+		}
+	}

@@ -1,0 +1,17 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           i18n_domain="agsci.common">
+
+    <utility
+        name="agsci.common.tiles.button_colors"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ButtonColorsVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.tiles.cta_background"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".CTABackgroundVocabularyFactory"
+    />
+
+</configure>

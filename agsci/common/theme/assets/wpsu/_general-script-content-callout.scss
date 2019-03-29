@@ -1,0 +1,34 @@
+p.script-content-callout {
+	font-family: $font-family-cursive;
+	font-size: $h2-font-size;
+	line-height: $line-height-sm;
+	color: $black-accessible-gray;
+	transform: rotate(-6deg);
+	float: right;
+	display: inline-block;
+	width: 40%;
+	margin-left: 1rem;
+	text-align: left;
+	
+	 span {
+		color: $color-ps-creek;
+	 	}
+	}
+
+@include media-breakpoint-up(sm) {
+	
+	p.script-content-callout {
+		width: 33.3333%;
+		}
+	}
+
+
+@include media-breakpoint-up(lg) {
+	
+	p.script-content-callout {
+		position: absolute;
+		width: 27.5%;
+		right: -27.5%;
+		z-index: 9;	
+		}
+	}

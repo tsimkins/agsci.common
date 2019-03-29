@@ -8,8 +8,6 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 
-button_colors = [u'orange', u'purple', u'green']
-
 class IAgsciTilesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
@@ -27,7 +25,7 @@ class IButtonTileRowSchema(Interface):
     
     color = schema.Choice(
         title=_(u"Button Color"),
-        values=button_colors,
+        vocabulary='agsci.common.tiles.button_colors',
         default=u'orange',
         required=False,
     )
@@ -51,7 +49,7 @@ class IButtonBlockTileRowSchema(Interface):
     
     color = schema.Choice(
         title=_(u"Button Color"),
-        values=button_colors,
+        vocabulary='agsci.common.tiles.button_colors',
         default=u'orange',
         required=False,
     )
@@ -128,8 +126,16 @@ class ICTATile(Interface):
 
     form.widget(value=DataGridFieldFactory)
 
+    background = schema.Choice(
+        title=_(u"Background"),
+        vocabulary='agsci.common.tiles.cta_background',
+        default=u'light',
+        required=True,
+    )
+
     value = schema.List(
         title=u"Buttons",
+        description=u"Default order: Orange, Green, Purple",
         value_type=DictRow(title=u"Button", schema=IButtonTileRowSchema),
         required=False
     )

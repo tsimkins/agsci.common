@@ -1,0 +1,47 @@
+#portal-breadcrumbs {
+	font-family: $font-family-sans-serif;
+	font-size: $small3-size;
+	text-align: left;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+	
+	a {
+		color: $white;
+		margin-right: 0.375rem;
+		padding: 0;
+		position: relative;
+		font-weight: $font-weight-base;
+		
+		&::after {
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			font-family: 'Font Awesome 5 Free';
+			content: "\f054";
+			font-weight: 900;  
+			content: '\f054';
+			position: relative;
+			right: -0.275rem;
+			top: -0.05rem;
+			vertical-align: middle;
+			color: $white;
+		    font-size: 0.625rem;
+			}
+		}
+	
+	span:last-of-type a::after {
+		content: none;
+		}
+	}
+
+#portal-breadcrumbs {
+	
+	a {
+		color: $black-accessible-gray;
+		
+		&::after {
+			color: $black-accessible-gray;
+			}
+		}
+	}

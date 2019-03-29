@@ -1,0 +1,102 @@
+/* ----------------------------------------------------------
+
+OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+---------------------------------------------------------- */
+
+
+.offset-content {
+	padding: 1.5rem;
+	position: relative;
+	z-index: 9;
+	background-color: $white;
+	margin: -3rem 1rem 1rem 1rem;
+	}
+
+.offset-content h2 {
+	margin-bottom: 0.5rem;
+	}
+
+
+.offset-content h2  {
+	
+	&:after {
+		content: none;
+		}
+	}
+
+
+.offset-content a:not(.btn),
+.offset-content a:visited:not(.btn) {
+	text-decoration: none;
+	color: #307e7a;
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		border-bottom: 1px solid $color-ps-creek;
+		}
+	}
+	
+section.offset-previews {
+	
+	.container-fluid:nth-of-type(1),
+	.container:nth-of-type(1) {
+		
+		.row {
+			background: $color-ps-slate-gray;
+			}
+			
+	@include media-breakpoint-up(lg) {
+		.offset-content {
+			left: 3rem;
+			order: 1;
+			margin: 0;
+			}
+		
+		.offset-image {
+			order: 12;
+			}
+			}
+		}
+	
+	.container-fluid:nth-of-type(2),
+	.container:nth-of-type(2) {
+		
+		.row {
+			background: $color-ps-creek;
+			}
+		
+		@include media-breakpoint-up(lg) {	
+			
+			.offset-content {
+				left: -3rem;
+				order: 12;
+				margin: 0;
+				}
+			}
+		}
+	}
+
+@include media-breakpoint-up(lg) {	
+	
+section.offset-full-image {
+
+	.position-absolute-bottom-left {
+		position: absolute;
+		bottom: 1.5rem;
+		left: 1.5rem;
+		right: unset;
+		top: unset;
+		}
+	
+	.position-absolute-bottom-right {
+		position: absolute;
+		bottom: 1.5rem;
+		right: 1.5rem;
+		left: unset;
+		top: unset;
+		}
+
+	}
+}
+

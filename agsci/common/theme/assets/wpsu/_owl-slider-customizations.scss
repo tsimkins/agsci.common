@@ -1,0 +1,59 @@
+/* ----------------------------------------------------------
+
+PHOTO STRIP OWL SLIDER CUSTOMIZATIONS
+
+---------------------------------------------------------- */
+
+.photo-strip {
+	z-index: 99;
+	height: 20vh;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	
+	img {
+		height: 100%;
+		width: auto;
+		margin-right: 1px;
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	.photo-strip {
+		height: 35vh;
+		overflow: hidden;
+		justify-content: center; /* center photostrip - but not for mobile as it won't scroll left */
+		}
+	}
+
+.owl-carousel.owl-photo-strip {
+	height: 25vh;
+	
+	.owl-item.active,
+	.item {
+		height: 25vh;
+		}
+	
+	.owl-item img {
+		height: 25vh;
+		width: auto;
+		}
+	}
+
+@include media-breakpoint-up(lg) {
+	
+	.owl-carousel.owl-photo-strip {
+		height: 35vh;
+		
+		.owl-item.active,
+		.item {
+			height: 35vh;
+			}
+		
+		.owl-item img {
+			height: 35vh;
+			width: auto;
+			}
+		}
+	}
