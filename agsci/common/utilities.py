@@ -1,6 +1,8 @@
+from DateTime import DateTime
 from Products.CMFPlone.utils import safe_unicode
 from plone.i18n.normalizer import idnormalizer, filenamenormalizer
-from DateTime import DateTime
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 import re
 import unicodedata
@@ -70,10 +72,10 @@ def toLocalizedTime(time, long_format=None, time_only=None, end_time=None, forma
         return ''
 
     def fmt(t, long_format=None, time_only=None, format=None):
-    
+
         if format:
             return friendly(t.strftime(format))
-            
+
         if time_only:
             return friendly(t.strftime('%I:%M %p'))
 
@@ -81,7 +83,7 @@ def toLocalizedTime(time, long_format=None, time_only=None, end_time=None, forma
             return friendly(t.strftime('%B %d, %Y %I:%M %p'))
 
         return friendly(t.strftime('%B %d, %Y'))
-        
+
     # Handle error when converting invalid times.
 
     try:
@@ -117,8 +119,8 @@ def toLocalizedTime(time, long_format=None, time_only=None, end_time=None, forma
                     return start_full_fmt
                 else:
                     return '%s, %s - %s' % (
-                        toLocalizedTime(time), 
-                        toLocalizedTime(time, time_only=1), 
+                        toLocalizedTime(time),
+                        toLocalizedTime(time, time_only=1),
                         toLocalizedTime(end_time, time_only=1)
                     )
 
@@ -172,3 +174,7 @@ def toLocalizedTime(time, long_format=None, time_only=None, end_time=None, forma
         except ValueError:
             return ''
 
+def getVocabularyTerms(context, vocabulary_name):
+    factory = getUtility(IVocabularyFactory, vocabulary_name)
+    vocab = factory(context)
+    return [x.value for x in vocab._terms]

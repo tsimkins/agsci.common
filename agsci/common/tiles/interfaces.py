@@ -22,7 +22,7 @@ class IButtonTileRowSchema(Interface):
         title=_(u"URL"),
         required=False
     )
-    
+
     color = schema.Choice(
         title=_(u"Button Color"),
         vocabulary='agsci.common.tiles.button_colors',
@@ -46,7 +46,7 @@ class IButtonBlockTileRowSchema(Interface):
         title=_(u"URL"),
         required=False
     )
-    
+
     color = schema.Choice(
         title=_(u"Button Color"),
         vocabulary='agsci.common.tiles.button_colors',
@@ -77,7 +77,7 @@ class IJumbotronTile(model.Schema):
         title=_(u'Description'),
         required=False,
     )
-    
+
     image = NamedBlobImage(
         title=_(u"Image"),
         description=_(u""),
@@ -90,7 +90,7 @@ class IJumbotronTile(model.Schema):
         required=False,
         default=True,
     )
-    
+
     show_description = schema.Bool(
         title=_(u"Show Description?"),
         description=_(u""),
@@ -111,7 +111,7 @@ class ICalloutBlockTile(model.Schema):
         title=_(u'Tile title'),
         required=False,
     )
-    
+
     description = schema.TextLine(
         title=_(u'Description'),
         required=False,
@@ -219,7 +219,7 @@ class IGonzoTile(Interface):
 
     image_align = schema.Choice(
         title=_(u"Image Align"),
-        values=['left', 'right'],
+        vocabulary='agsci.common.tiles.lr_align',
         default=u'right',
         required=False,
     )
@@ -291,7 +291,7 @@ class IScooterTile(Interface):
         required=False,
         default=False,
     )
-    
+
 class ISkeeterTile(Interface):
 
     title = schema.TextLine(
@@ -319,7 +319,7 @@ class ISkeeterTile(Interface):
 
     style = schema.Choice(
         title=_(u"Style"),
-        values=['news', 'events', 'pages'],
+        vocabulary='agsci.common.tiles.card_style',
         default=u'news',
         required=False,
     )

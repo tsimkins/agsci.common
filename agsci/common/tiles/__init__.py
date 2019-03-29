@@ -1,20 +1,50 @@
 from plone.app.tiles.imagescaling import ImageScale
 
 from plone import api
-from plone import tiles
+from plone.tiles.tile import PersistentTile
+
+from plone.tiles.interfaces import ITileDataManager
 
 from base64 import b64encode
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.schema import getFields
 
 from .. import object_factory
-from ..utilities import toLocalizedTime
+from ..utilities import toLocalizedTime, getVocabularyTerms
 from ..browser.viewlets import PathBarViewlet
 
-class BaseTile(tiles.PersistentTile):
+class BaseTile(PersistentTile):
 
     __type__ = "Base Tile"
+
+    @property
+    def schema(self):
+        ITileDataManager(self).tileType.schema
+
+    def get_valid_value(self, field_name):
+
+        schema = self.schema
+        value = self.data[field_name]
+
+        if schema:
+            field = getFields(schema).get(field_name, None)
+
+            if field:
+                if hasattr(field, 'vocabularyName'):
+                    vocabulary_name = field.vocabularyName
+
+                    if vocabulary_name:
+                        values = getVocabularyTerms(self.context, vocabulary_name)
+
+                        if values:
+                            if value in values:
+                                return value
+
+                            return field.default
+
+        return value
 
     query = {
         'Type' : 'Degree',
@@ -29,7 +59,7 @@ class BaseTile(tiles.PersistentTile):
             return toLocalizedTime(time, **kwargs)
         except:
             return 'INVALID DATE OR FORMAT'
-    
+
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
@@ -78,7 +108,7 @@ class ConditionalTemplateTile(BaseTile):
     def __call__(self, *args, **kwargs):
         return self.render_template(self, *args, **kwargs)
 
-    @property    
+    @property
     def render_template(self):
         return ViewPageTemplateFile('templates/%s' % self.template)
 
@@ -98,7 +128,7 @@ class CalloutBlockTile(BaseTile):
 
 class CTATile(BaseTile):
     __type__ = "Call To Action"
-    
+
 class KermitTile(BaseTile):
     __type__ = "Kermit"
 
@@ -110,15 +140,10 @@ class FozzieBearTile(BaseTile):
 
 class GonzoTile(ConditionalTemplateTile):
     __type__ = "Gonzo"
-    
+
     @property
     def align(self):
-        _ = self.data.get('image_align')
-        
-        if _ == 'left':
-            return _
-        
-        return 'right'
+        return self.get_valid_value('image_align')
 
     @property
     def template(self):
@@ -129,12 +154,12 @@ class RowlfTile(BaseTile):
 
 class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
-    
+
     @property
     def show_description(self):
         return not not self.data.get('show_description')
 
-    @property    
+    @property
     def template(self):
 
         if self.show_description:
@@ -171,15 +196,15 @@ class SkeeterTile(ConditionalTemplateTile):
         items = super(SkeeterTile, self).items
 
         featured_id = self.data['featured_id']
-        
+
         if featured_id:
             featured_id = featured_id.strip()
-            
+
             _ = [x for x in items if x.getId ==  featured_id]
-            
+
             if _:
                 return _[0]
-        
+
         if items:
             return items[0]
 
@@ -188,24 +213,18 @@ class SkeeterTile(ConditionalTemplateTile):
         featured = self.featured
 
         items = super(SkeeterTile, self).items
-        
+
         if featured:
             items = [x for x in items if x.UID != featured.UID]
-        
+
         return items[:(self.max_items-1)]
 
     @property
     def style(self):
-        _ = self.data['style']
+        return self.get_valid_value('style')
 
-        valid = ['news', 'events', 'pages']
-        
-        if _ in valid:
-            return _
-        
-        return valid[0]
 
-    @property    
+    @property
     def template(self):
         return 'skeeter-%s.pt' % self.style
 
