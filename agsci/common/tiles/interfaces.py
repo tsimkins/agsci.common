@@ -56,6 +56,11 @@ class IButtonBlockTileRowSchema(Interface):
 
 class IItemBlockTileRowSchema(Interface):
 
+    pre = schema.TextLine(
+        title=_(u"Pre-value Text"),
+        required=False
+    )
+
     value = schema.TextLine(
         title=_(u"Value"),
         required=False
@@ -109,11 +114,6 @@ class ICalloutBlockTile(model.Schema):
 
     title = schema.TextLine(
         title=_(u'Tile title'),
-        required=False,
-    )
-
-    description = schema.TextLine(
-        title=_(u'Description'),
         required=False,
     )
 
@@ -191,6 +191,13 @@ class IFozzieBearTile(Interface):
     title = schema.TextLine(
         title=_(u"Title"),
         required=False
+    )
+
+    style = schema.Choice(
+        title=_(u"Style"),
+        vocabulary='agsci.common.tiles.cta_background',
+        default=u'light',
+        required=True,
     )
 
     value = schema.List(

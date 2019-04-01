@@ -14,31 +14,31 @@
          tal:condition="i|nothing">
 
         <div class="row align-items-center">
-        
+
             <div class="col-12 col-md-6 order-12"
                  tal:define="start i/start|nothing;
                              end i/end|nothing">
                 <p class="h2"
                    tal:content="i/Title|nothing" />
-        
+
                 <p>
                     <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
                     <span tal:replace="i/location|nothing" />
                 </p>
-        
+
                 <p tal:content="i/Description|nothing" />
-        
-                <p><a class="btn btn-test-creek"
+
+                <p><a class="btn btn-creek"
                       tal:attributes="href i/getURL"><span>Read More</span></a></p>
-            </div>    
-            
+            </div>
+
             <div class="col-12 col-md-6 profile-img order-1">
-            
+
                 <img alt=""
                         class="w-100"
                         tal:attributes="src string:${i/getURL}/@@images/image/large" />
             </div>
-        
+
         </div>
 
 
@@ -55,7 +55,7 @@
                     tal:define="start i/start|nothing;
                                 end i/end|nothing"
                     tal:attributes="href i/getURL|nothing">
-    
+
                     <div class="card-image d-flex">
                         <div class="event-date-block">
                             <div class="event-day"
@@ -65,19 +65,20 @@
                             <div class="event-date"
                                  tal:content="python: view.date_format(start, format='%d')" />
                         </div>
-    
+
                         <div>
                             <img alt=""
-                                 tal:attributes="src string:${i/getURL}/@@images/image/mini" />    
+                                 tal:attributes="src string:${i/getURL}/@@images/image/mini" />
                         </div>
-    
-                    </div>
-                    
-                    <div class="card-body">
-                        <div class="tileTitle"
-                             tal:content="i/Title|nothing" />
 
-                        <div class="tileDescription">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card-title">
+                            <p tal:content="i/Title|nothing" />
+                        </div>
+
+                        <div class="card-text">
                             <p>
                                 <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
                                 <span tal:replace="i/location|nothing" />

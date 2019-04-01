@@ -19,15 +19,15 @@
 
                 <p class="h2"
                    tal:content="i/Title|nothing" />
-        
+
                 <p tal:content="i/Description|nothing" />
-        
-                <p><a class="btn btn-test-creek"
+
+                <p><a class="btn btn-creek"
                       tal:attributes="href i/getURL"><span>Read More</span></a></p>
-            </div>    
-    
+            </div>
+
             <div class="col-12 col-md-6 profile-img order-1">
-            
+
                 <img alt=""
                         class="w-100"
                         tal:attributes="src string:${i/getURL}/@@images/image/large" />
@@ -47,10 +47,10 @@
                                 <div class="col-12 col-md-6 profile-copy order-12 mt-3">
                                     <p class="h3" tal:content="i/Title|nothing" />
                                     <p></p>
-                                    <p><a class="btn btn-test-creek" 
+                                    <p><a class="btn btn-creek"
                                           tal:attributes="href i/getURL"><span>Read More</span></a></p>
-                                </div>    
-        
+                                </div>
+
                                 <div class="col-12 col-md-6 profile-img order-1">
                                     <img alt=""
                                             class="w-100"

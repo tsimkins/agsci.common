@@ -135,8 +135,16 @@ class KermitTile(BaseTile):
 class MissPiggyTile(BaseTile):
     __type__ = "Miss Piggy"
 
-class FozzieBearTile(BaseTile):
+class FozzieBearTile(ConditionalTemplateTile):
     __type__ = "Fozzie Bear"
+
+    @property
+    def style(self):
+        return self.get_valid_value('style')
+
+    @property
+    def template(self):
+        return 'fozziebear-%s.pt' % self.style
 
 class GonzoTile(ConditionalTemplateTile):
     __type__ = "Gonzo"

@@ -22,9 +22,9 @@
 
                 <p class="journey-quote-cite"
                    tal:content="view/data/caption|nothing" />
-        
+
                 <div class="mx-auto w-100 text-center">
-                    <a class="btn btn-large btn-test-creek mx-auto" 
+                    <a class="btn btn-large btn-creek mx-auto"
                        tal:attributes="href view/data/url|nothing"
                        tal:content="view/data/label|nothing" />
 

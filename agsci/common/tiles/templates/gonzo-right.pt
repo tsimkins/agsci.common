@@ -29,11 +29,11 @@
 
                     <div tal:condition="view/data/text/output|nothing"
                        tal:replace="structure view/data/text/output|nothing" />
-                                           
-                    <a class="btn btn-test-creek"
+
+                    <a class="btn btn-creek"
                        tal:attributes="href view/data/url|nothing"
                        tal:content="view/data/label|nothing" />
-    			</div>          
+    			</div>
 			</div>
 		</div>
 	</div>

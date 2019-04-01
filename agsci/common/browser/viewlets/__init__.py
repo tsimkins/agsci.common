@@ -1,3 +1,4 @@
+from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
@@ -113,6 +114,10 @@ class FooterLinksViewlet(NavigationViewlet):
     xml_file = '++resource++agsci.common/configuration/footer.xml'
 
     nav_id = 'links'
+
+    @property
+    def year(self):
+        return datetime.now().year
 
 class FooterContactViewlet(FooterLinksViewlet):
 

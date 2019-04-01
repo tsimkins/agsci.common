@@ -8,6 +8,7 @@
 
 <section class="container-fluid py-5 border-bottom"
     tal:attributes="data-tile-type view/tile_type|nothing">
+
     <div class="container">
 
         <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights">
@@ -19,8 +20,14 @@
                 	<div class="card-body">
 
                         <p>
-                            <span tal:content="item/value|nothing" />
-                            <span tal:replace="item/label|nothing" />
+                            <span tal:replace="item/pre|nothing"
+                                  tal:condition="item/pre|nothing" />
+
+                            <span tal:content="item/value|nothing"
+                                  tal:condition="item/value|nothing" />
+
+                            <span tal:replace="item/label|nothing"
+                                  tal:condition="item/label|nothing" />
                         </p>
 
                 	</div>
@@ -33,7 +40,6 @@
 
     </div>
 </section>
-
 
   </body>
 </html>
