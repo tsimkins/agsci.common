@@ -12,7 +12,7 @@
                tal:content="view/title"
                i18n:translate="">Navigation</a>
         </p>
-    
+
         <ul>
             <li tal:define="selectedClass view/root_item_class;
                             li_class python:selectedClass and ' navTreeCurrentNode' or '';

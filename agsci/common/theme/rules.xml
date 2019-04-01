@@ -20,12 +20,24 @@
             body.viewpermission-manage-portal,
             body.viewpermission-add-portal-content,
             body.viewpermission-manage-schemata,
-            body.viewpermission-plone-site-setup-site, 
             body.viewpermission-modify-portal-content, 
             body.viewpermission-portlets-manage-portlets, 
+            body.viewpermission-list-folder-contents,
+            body.viewpermission-plone-site-setup-editing,
+            body.viewpermission-plone-site-setup-filtering,
+            body.viewpermission-plone-site-setup-imaging,
+            body.viewpermission-plone-site-setup-language,
+            body.viewpermission-plone-site-setup-mail,
+            body.viewpermission-plone-site-setup-markup,
+            body.viewpermission-plone-site-setup-navigation,
             body.viewpermission-plone-site-setup-overview,
-            body.viewpermission-plone-site-setup-users-and-groups,
-            body.viewpermission-list-folder-contents">
+            body.viewpermission-plone-site-setup-search,
+            body.viewpermission-plone-site-setup-security,
+            body.viewpermission-plone-site-setup-site,
+            body.viewpermission-plone-site-setup-themes,
+            body.viewpermission-plone-site-setup-tinymce,
+            body.viewpermission-plone-site-setup-types,
+            body.viewpermission-plone-site-setup-users-and-groups">
             <drop css:theme="header, footer" />
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />
@@ -33,9 +45,28 @@
             
         </rules>
 
+        <rules css:if-content="body.viewpermission-portlets-manage-portlets">
+
+            <append css:theme="#manage-portlets #column-one">
+                <h2>Left Column Portlets</h2>
+            </append>
+            
+            <append css:theme="#manage-portlets #column-two">
+                <h2>Right Column Portlets</h2>
+            </append>
+            
+            <append css:theme="#manage-portlets #column-one" css:content-children="#portal-column-one" />
+            <append css:theme="#manage-portlets #column-two" css:content-children="#portal-column-two" />
+        </rules>
+
         <drop css:content="#audience-nav-viewlet" />
         <drop css:content="#primary-nav-viewlet" />
 
+    </rules>
+
+    <!-- Drop portlet manager div -->
+    <rules css:if-not-content="body.viewpermission-portlets-manage-portlets">
+        <drop css:theme="#manage-portlets" />
     </rules>
 
     <rules css:if-content="body[class]">
@@ -47,7 +78,7 @@
         <!-- Don't theme in Mosaic editor. -->
         <notheme css:if-content="textarea.pat-layout" />
         <notheme css:if-not-content="body[class]" />
-        
+
         <rules css:if-content="#portal-top, #content-header">
             <!-- Attributes -->
             <copy attributes="*" css:theme="html" css:content="html" />

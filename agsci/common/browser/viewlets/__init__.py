@@ -123,13 +123,25 @@ class CSSViewlet(ViewletBase):
     edit_permissions = [
         'manage-portal',
         'manage-schemata',
-        'plone-site-setup-site',
         'modify-portal-content',
         'add-portal-content',
         'portlets-manage-portlets',
+        'list-folder-contents',
+        'plone-site-setup-editing',
+        'plone-site-setup-filtering',
+        'plone-site-setup-imaging',
+        'plone-site-setup-language',
+        'plone-site-setup-mail',
+        'plone-site-setup-markup',
+        'plone-site-setup-navigation',
         'plone-site-setup-overview',
+        'plone-site-setup-search',
+        'plone-site-setup-security',
+        'plone-site-setup-site',
+        'plone-site-setup-themes',
+        'plone-site-setup-tinymce',
+        'plone-site-setup-types',
         'plone-site-setup-users-and-groups',
-        'list-folder-contents'
     ]
 
     @property

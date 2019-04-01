@@ -166,4 +166,18 @@
         <value key="weight">100</value>
     </records>
 
+    <record 
+        name="plone.displayed_types"
+        interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+        field="displayed_types">
+        <value>
+            <element>agsci_blog</element>
+            <element>Collection</element>
+            <element>Folder</element>
+            <element>Document</element>
+            <element>agsci_section</element>
+            <element>agsci_subsite</element>      
+        </value>
+    </record>
+
 </registry>
