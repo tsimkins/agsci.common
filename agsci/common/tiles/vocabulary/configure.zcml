@@ -26,4 +26,10 @@
         component=".CardStyleVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.feature_card_style"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".FeatureCardStyleVocabularyFactory"
+    />
+
 </configure>

@@ -21,6 +21,13 @@ class LRAlignVocabulary(KeyValueVocabulary):
 
 class CardStyleVocabulary(KeyValueVocabulary):
     items = [
+        ('image', 'Image'),
+        ('image_description', 'Image and Description'),
+        ('plain', 'Plain'),
+    ]
+
+class FeatureCardStyleVocabulary(KeyValueVocabulary):
+    items = [
         ('news', 'News Items'),
         ('events', 'Events'),
         ('pages', 'Pages'),
@@ -30,3 +37,4 @@ ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
+FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()

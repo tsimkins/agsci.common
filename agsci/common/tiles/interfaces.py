@@ -292,11 +292,11 @@ class IScooterTile(Interface):
         required=False,
     )
 
-    show_description = schema.Bool(
-        title=_(u"Show Item Description?"),
-        description=_(u""),
+    style = schema.Choice(
+        title=_(u"Card Style"),
+        vocabulary='agsci.common.tiles.card_style',
+        default=u'image',
         required=False,
-        default=False,
     )
 
 class ISkeeterTile(Interface):
@@ -326,7 +326,7 @@ class ISkeeterTile(Interface):
 
     style = schema.Choice(
         title=_(u"Style"),
-        vocabulary='agsci.common.tiles.card_style',
+        vocabulary='agsci.common.tiles.feature_card_style',
         default=u'news',
         required=False,
     )

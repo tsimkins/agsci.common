@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container mt-3"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+	
+    <h2 tal:content="view/data/title|nothing" />
+
+    <div tal:attributes="class string:card-deck card-deck-${view/data/count}up card-deck-text-only">
+
+        <tal:items
+            tal:repeat="i view/items|nothing">
+
+            <a tal:attributes="href i/getURL|nothing"
+               class="card card-text-only">
+                <div class="card-body">
+                	<div class="card-title">
+                        <p tal:content="i/Title|nothing">
+                	</div>
+                    <div class="card-text">
+                        <p tal:content="i/Description|nothing">
+                    </div>
+                </div>
+            </a>
+
+        </tal:items>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

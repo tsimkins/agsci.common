@@ -19,13 +19,9 @@ class BaseTile(PersistentTile):
 
     __type__ = "Base Tile"
 
-    @property
-    def schema(self):
-        ITileDataManager(self).tileType.schema
-
     def get_valid_value(self, field_name):
 
-        schema = self.schema
+        schema = ITileDataManager(self).tileType.schema
         value = self.data[field_name]
 
         if schema:
@@ -164,16 +160,12 @@ class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
 
     @property
-    def show_description(self):
-        return not not self.data.get('show_description')
+    def style(self):
+        return self.get_valid_value('style')
 
     @property
     def template(self):
-
-        if self.show_description:
-            return 'scooter-description.pt'
-
-        return 'scooter.pt'
+        return 'scooter-%s.pt' % self.style
 
 class SkeeterTile(ConditionalTemplateTile):
     __type__ = "Skeeter"
