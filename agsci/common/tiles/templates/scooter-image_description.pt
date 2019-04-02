@@ -44,7 +44,9 @@
                     </div>
 
                     <div class="card-body">
-                        <p tal:content="i/Description|nothing" />
+                        <div class="card-text">                    
+                            <p tal:content="i/Description|nothing" />
+                        </div>
                     </div>
                  </a>
 
