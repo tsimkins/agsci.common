@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section style="background-color: #CCC">
+
+    <div class="container-fluid section-highlight py-4">
+
+        <div class="container">
+
+            <div class="row align-items-center mx-0 bg-white">
+
+                <div class="col-12 col-lg-6 p-4 order-12 order-lg-1 section-highlight-text">
+
+                    <h2>
+                       <a tal:content="view/data/title|nothing"
+                          tal:attributes="href view/data/url|nothing" />
+                    </h2>
+
+                    <div tal:condition="view/data/text/output|nothing"
+                       tal:replace="structure view/data/text/output|nothing" />
+
+                    <a class="btn btn-creek"
+                       tal:attributes="href view/data/url|nothing"
+                       tal:content="view/data/label|nothing" />
+            
+                </div>
+
+                <div class="col-12 col-lg-6 px-0 order-1 order-lg-12">
+                    <img tal:attributes="src view/img_src|nothing" class="w-100" />
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</section>
+
+  </body>
+</html>

@@ -3,7 +3,7 @@
     <record name="plone.app.tiles">
         <value purge="false">
             <element>agsci.common.tiles.jumbotron</element>
-            <element>agsci.common.tiles.callout_block</element>            
+            <element>agsci.common.tiles.callout_block</element>
         </value>
     </record>
 
@@ -151,7 +151,6 @@
         <value key="weight">100</value>
     </records>
 
-
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_animal"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.animal</value>
@@ -166,7 +165,22 @@
         <value key="weight">100</value>
     </records>
 
-    <record 
+
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_pepe_the_king_prawn"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.pepe_the_king_prawn</value>
+        <value key="label">Pepe the King Prawn</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+    <record
         name="plone.displayed_types"
         interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
         field="displayed_types">
@@ -176,7 +190,7 @@
             <element>Folder</element>
             <element>Document</element>
             <element>agsci_section</element>
-            <element>agsci_subsite</element>      
+            <element>agsci_subsite</element>
         </value>
     </record>
 

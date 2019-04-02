@@ -230,3 +230,10 @@ class SkeeterTile(ConditionalTemplateTile):
 
 class AnimalTile(BaseTile):
     __type__ = "Animal"
+
+class PepeTheKingPrawnTile(GonzoTile):
+    __type__ = "Pepe the King Prawn"
+
+    @property
+    def template(self):
+        return 'pepe_the_king_prawn-%s.pt' % self.align

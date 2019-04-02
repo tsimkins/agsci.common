@@ -337,3 +337,6 @@ class IAnimalTile(Interface):
         title=_(u"Title"),
         required=False
     )
+
+class IPepeTheKingPrawnTile(IGonzoTile):
+    pass

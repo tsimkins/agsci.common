@@ -149,4 +149,16 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.pepe_the_king_prawn"
+        title="Pepe the King Prawn"
+        description=""
+        schema=".interfaces.IPepeTheKingPrawnTile"
+        class=".PepeTheKingPrawnTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>
