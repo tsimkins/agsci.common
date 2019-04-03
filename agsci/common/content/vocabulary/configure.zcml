@@ -8,4 +8,16 @@
         component=".PublicTagsVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.states"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".StatesVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.person.classifications"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".PersonClassificationsVocabularyFactory"
+    />
+
 </configure>

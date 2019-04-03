@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agsci.person">
+
+    <!-- Adapters -->
+
+    <adapter
+        for=".person.IPerson"
+        provides=".person.ITitleFromPersonUserId"
+        factory=".person.TitleFromPersonUserId"
+    />
+
+    <adapter
+         factory=".person.PersonDefaultRoles"
+         provides="Products.membrane.interfaces.IMembraneUserRoles"
+    />
+
+</configure>

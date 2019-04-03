@@ -164,3 +164,68 @@ class IEventFields(model.Schema):
     )
 
 
+class ISocialMediaBase(model.Schema):
+
+    __doc__ = "Social Media"
+
+    twitter_url = schema.TextLine(
+        title=_(u"Twitter URL"),
+        required=False,
+    )
+
+    facebook_url = schema.TextLine(
+        title=_(u"Facebook URL"),
+        required=False,
+    )
+
+    linkedin_url = schema.TextLine(
+        title=_(u"LinkedIn URL"),
+        required=False,
+    )
+
+@provider(IFormFieldProvider)
+class ILocation(model.Schema):
+
+    __doc__ = "Location Data"
+
+    venue = schema.TextLine(
+        title=_(u"Venue/Building Name"),
+        required=False,
+    )
+
+    street_address = schema.List(
+        title=_(u"Street Address"),
+        required=False,
+        value_type=schema.TextLine(required=False),
+    )
+
+    city = schema.TextLine(
+        title=_(u"City"),
+        required=False,
+    )
+
+    state = schema.Choice(
+        title=_(u"State"),
+        vocabulary="agsci.common.states",
+        required=False,
+    )
+
+    zip_code = schema.TextLine(
+        title=_(u"ZIP Code"),
+        required=False,
+    )
+
+@provider(IFormFieldProvider)
+class IContact(ILocation):
+
+    __doc__ = "Contact Information"
+
+    phone_number = schema.TextLine(
+        title=_(u"Phone Number"),
+        required=False,
+    )
+
+    fax_number = schema.TextLine(
+        title=_(u"Fax Number"),
+        required=False,
+)

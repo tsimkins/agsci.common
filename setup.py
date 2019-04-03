@@ -43,6 +43,8 @@ setup(name='agsci.common',
         'Products.WebServerAuth',
         'eea.facetednavigation',
         'untangle',
+        'dexterity.membrane',
+        'python-ldap',
     ],
     entry_points="""
       # -*- Entry points: -*-
