@@ -1,30 +1,33 @@
 <?xml version="1.0"?>
-<object name="Person" meta_type="Dexterity FTI" i18n:domain="plone"
+<object name="Directory" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title" i18n:translate="">Person</property>
+ <property name="title" i18n:translate="">Directory</property>
  <property name="description" i18n:translate="">None</property>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
- <property name="factory">agsci_person</property>
+ <property name="factory">agsci_directory</property>
  <property
-    name="add_view_expr">string:${folder_url}/++add++agsci_person</property>
+    name="add_view_expr">string:${folder_url}/++add++agsci_directory</property>
  <property name="link_target"></property>
  <property name="immediate_view">view</property>
- <property name="global_allow">False</property>
+ <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
- <property name="allowed_content_types"> </property>
+ <property name="allowed_content_types" purge="False">
+  <element value="agsci_person"/>
+ </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">view</property>
  <property name="view_methods">
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">plone.app.contenttypes.addFolder</property>
- <property name="klass">agsci.common.content.person.person.Person</property>
+ <property name="add_permission">cmf.ManagePortal</property>
+ <property name="klass">agsci.common.content.person.directory.Directory</property>
  <property name="behaviors">
-  <element value="dexterity.membrane.behavior.user.IMembraneUser" />
+    <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
+    <element value="plone.app.content.interfaces.INameFromTitle" />
  </property>
 
-  <property name="schema">agsci.common.content.person.person.IPerson</property>
+  <property name="schema">agsci.common.content.person.directory.IDirectory</property>
 
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
@@ -41,5 +44,4 @@
     url_expr="string:${object_url}/edit" visible="True">
   <permission value="Modify portal content"/>
  </action>
-
 </object>

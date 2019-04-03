@@ -21,6 +21,7 @@
         <element value="agsci_section" />
         <element value="agsci_subsite" />
         <element value="agsci_degree_container" />
+        <element value="agsci_directory" />
     </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">view</property>
