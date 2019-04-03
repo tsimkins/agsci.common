@@ -15,6 +15,7 @@ from zope.interface import implements, provider, implementer, Interface
 from ..behaviors import IContact, ILocation, ISocialMediaBase
 
 from agsci.common import AgsciMessageFactory as _
+from agsci.common import object_factory
 
 ACTIVE_REVIEW_STATES = ('published',)
 AGSCI_DIRECTORY_EDITOR = 'agsci.directory.editor'
@@ -24,7 +25,7 @@ social_media_fields = [
 ]
 
 contact_fields = [
-    'email', 'venue', 'street_address', 'city', 'state',
+    'email', 'street_address', 'city', 'state',
     'zip_code', 'phone_number',
     'fax_number', 'primary_profile_url',
 ]
@@ -32,8 +33,38 @@ contact_fields = [
 professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
     'hr_department', 'all_emails', 'sso_principal_name', 'bio',
-    'education', 'areas_expertise',
+    'education', 'websites', 'areas_expertise', 
 ]
+
+class ILinkRowSchema(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
+class ILinkDescriptionRowSchema(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
 
 @provider(IFormFieldProvider)
 class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
@@ -64,6 +95,9 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         'homepage', 'hr_job_title', 'hr_admin_area',
         'hr_department', 'all_emails', 'sso_principal_name'
     )
+
+    # Grid Fields
+    form.widget(websites=DataGridFieldFactory)
 
     # Only allow Directory Editors to write to these fields
     form.write_permission(username=AGSCI_DIRECTORY_EDITOR)
@@ -106,7 +140,7 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     job_titles = schema.List(
         title=_(u"Job Titles"),
         value_type=schema.TextLine(required=True),
-        required=True,
+        required=False,
     )
 
     hr_job_title = schema.TextLine(
@@ -139,6 +173,13 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         title=_(u"Education"),
         value_type=schema.TextLine(required=True),
         required=False,
+    )
+
+    websites = schema.List(
+        title=u"Websites",
+        description=u"",
+        value_type=DictRow(title=u"Website", schema=ILinkRowSchema),
+        required=False
     )
 
     areas_expertise = schema.List(
@@ -188,11 +229,18 @@ class PersonDefaultRoles(DxUserObject):
 
 class Person(Item):
 
+    name_fields = ['first_name', 'middle_name', 'last_name', 'suffix']
+
+    @property
+    def name_data(self):
+        names = dict([(x, getattr(self, x, '')) for x in self.name_fields])
+        names['title'] = self.title
+        return object_factory(**names)
+        
     @property
     def title(self):
 
-        fields = ['first_name', 'middle_name', 'last_name']
-        names = [getattr(self, x, '') for x in fields]
+        names = [getattr(self, x, '') for x in self.name_fields[:-1]] # Not suffix
 
         v = " ".join([x.strip() for x in names if x])
 

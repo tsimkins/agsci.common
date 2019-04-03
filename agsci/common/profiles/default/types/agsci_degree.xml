@@ -23,7 +23,7 @@
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     </property>
     <property name="schema">agsci.common.content.degrees.IDegree</property>
     <property name="schema_policy">dexterity</property>

@@ -29,7 +29,7 @@
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     </property>
     <property name="schema" />
     <property name="schema_policy">dexterity</property>

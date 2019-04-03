@@ -1,5 +1,7 @@
 from DateTime import DateTime
 from Products.CMFPlone.utils import safe_unicode
+from plone.behavior.interfaces import IBehavior
+from plone.dexterity.interfaces import IDexterityFTI
 from plone.i18n.normalizer import idnormalizer, filenamenormalizer
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
@@ -178,3 +180,14 @@ def getVocabularyTerms(context, vocabulary_name):
     factory = getUtility(IVocabularyFactory, vocabulary_name)
     vocab = factory(context)
     return [x.value for x in vocab._terms]
+
+# https://stackoverflow.com/questions/12178669/list-the-fields-of-a-dexterity-object
+def get_fields_by_type(portal_type):
+    fti = getUtility(IDexterityFTI, name=portal_type)
+    schema = fti.lookupSchema()
+    fields = schema.namesAndDescriptions()
+    for bname in fti.behaviors:
+        factory = getUtility(IBehavior, bname)
+        behavior = factory.interface
+        fields += behavior.namesAndDescriptions()
+    return dict(fields)

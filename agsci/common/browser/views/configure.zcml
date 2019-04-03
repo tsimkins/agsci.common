@@ -83,5 +83,15 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
     />
-    
+
+    <!-- Person View -->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="view"
+        class=".PersonView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person.pt"
+    />
+
 </configure>

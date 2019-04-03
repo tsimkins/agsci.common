@@ -27,7 +27,7 @@
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.relationfield.behavior.IRelatedItems" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
         <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
         <element value="agsci.common.content.behaviors.INewsItemFields" /> 

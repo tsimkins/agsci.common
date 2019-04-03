@@ -8,9 +8,15 @@
     <!-- Lead Image behavior with additional fields -->
 
     <plone:behavior
-        title="Lead Image (AgSci)"
-        description="Customized Lead Image behavior"
-        provides=".leadimage.ILeadImage"
+        title="Lead Image (Extra Fields)"
+        description="Customized Lead Image behavior (Extra Fields)"
+        provides=".leadimage.ILeadImageExtra"
+    />
+    
+    <plone:behavior
+        title="Lead Image (No Caption)"
+        description="Customized Lead Image behavior (No Caption)"
+        provides=".leadimage.ILeadImageNoCaption"
     />
 
     <!-- Behaviors for public (non-Plone) tags -->

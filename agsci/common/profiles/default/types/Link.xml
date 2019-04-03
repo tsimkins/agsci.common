@@ -25,7 +25,7 @@
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     </property>
     <property name="schema" />
     <property name="model_source" />

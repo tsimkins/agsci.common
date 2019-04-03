@@ -34,7 +34,7 @@
         <element value="plone.app.relationfield.behavior.IRelatedItems" />
         <element value="plone.app.dexterity.behaviors.nextprevious.INextPreviousToggle" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImage" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
         <element value="plone.layoutaware"/>
         <element value="plone.draftable"/>
     </property>

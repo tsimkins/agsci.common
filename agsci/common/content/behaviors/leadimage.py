@@ -13,6 +13,14 @@ from agsci.common.constants import IMAGE_FORMATS
 
 @provider(IFormFieldProvider)
 class ILeadImage(_ILeadImage):
+    pass
+
+@provider(IFormFieldProvider)
+class ILeadImageNoCaption(ILeadImage):
+    form.omitted('image_caption')
+    
+@provider(IFormFieldProvider)
+class ILeadImageExtra(ILeadImage):
 
     model.fieldset(
         'settings',

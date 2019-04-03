@@ -8,16 +8,23 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from RestrictedPython.Utilities import same_type as _same_type
 from RestrictedPython.Utilities import test as _test
 from StringIO import StringIO 
+from plone.app.textfield.value import RichTextValue
 from plone.app.workflow.browser.sharing import SharingView, AUTH_GROUP
+from plone.autoform.interfaces import IFormFieldProvider
 from plone.memoize.instance import memoize
 from urllib import quote_plus
-from zope.component import getUtility, getMultiAdapter
+from zope import schema
+from zope.component import getUtility, getMultiAdapter, getAdapters
 from zope.component.interfaces import ComponentLookupError
 from zope.interface import implements, Interface
+from zope.interface.interfaces import IMethod
+from collective.z3cform.datagridfield import DictRow
 import urlparse
 
 from agsci.common.content.degrees import IDegree
 from agsci.common.indexer import degree_index_field
+from agsci.common.utilities import get_fields_by_type
+from agsci.common import object_factory
 
 try:
     from zope.app.component.hooks import getSite
@@ -26,6 +33,11 @@ except ImportError:
 
 
 class BaseView(BrowserView):
+
+    @property
+    def object_fields(self):
+        portal_type = self.context.portal_type
+        return get_fields_by_type(portal_type)
 
     def getItemLeadImage(self, item=None, size='large'):
     
@@ -298,3 +310,76 @@ class DegreeCompareView(DegreeView):
         })
 
         return [x.getObject() for x in results]
+
+class PersonView(BaseView):
+    
+    @property
+    def name(self):
+        return self.context.name_data
+    
+    @property
+    def street_address(self):
+        _ = getattr(self.context, 'street_address', [])
+        
+        if _ and isinstance(_, (tuple, list)):
+            _ = [x for x in _ if x]
+            return '<br />'.join(_)
+
+    @property
+    def bio_fields(self):
+        _ = []
+
+        field_names = ['areas_expertise', 'websites', 'education', 'bio']
+        fields = self.object_fields
+        
+        for i in field_names:
+            f = fields.get(i, None)
+
+            if f:
+
+                value_type = None
+
+                if hasattr(f, 'value_type'):
+                    value_type = f.value_type
+
+                is_grid = isinstance(value_type, DictRow)
+
+                value = getattr(self.context, i, None)
+                
+                if is_grid and isinstance(f, (schema.List, schema.Tuple)):
+                    value = [object_factory(**x) for x in value]
+
+                __ = {
+                    'name' : i,
+                    'title' : f.title,
+                    'list' : isinstance(f, (schema.List, schema.Tuple)) and not is_grid,
+                    'html' : False,
+                    'grid' : is_grid,
+                    'value' : value,
+                }
+
+                __['string'] = not any([
+                    __['html'], 
+                    __['list'],
+                    __['grid'],
+                ])
+
+                _.append(__)
+
+        bio = getattr(self.context, 'bio', None)
+        
+        if bio:
+            
+            _.append({
+                'name' : 'bio',
+                'title' : 'Biography',
+                'list' : False,
+                'string' : False,                    
+                'html' : True,
+                'value' : RichTextValue(
+                            raw=bio,
+                            mimeType=u'text/html',
+                            outputMimeType='text/x-html-safe'),
+            })
+
+        return [object_factory(**x) for x in _]

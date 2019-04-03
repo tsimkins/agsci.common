@@ -188,11 +188,6 @@ class ILocation(model.Schema):
 
     __doc__ = "Location Data"
 
-    venue = schema.TextLine(
-        title=_(u"Venue/Building Name"),
-        required=False,
-    )
-
     street_address = schema.List(
         title=_(u"Street Address"),
         required=False,

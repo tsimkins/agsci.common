@@ -42,7 +42,7 @@
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />
             <drop css:theme="[data-component='portlets']" />
-            
+
         </rules>
 
         <rules css:if-content="body.viewpermission-portlets-manage-portlets">
