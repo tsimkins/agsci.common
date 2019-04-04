@@ -4,17 +4,21 @@
 	is not off canvas
 --------------------------------------------- */
 
-.element-invisible,
-.pfgHidden,
-.icons-social-media span {
-    position: absolute;
+@mixin offscreen {
+	position: absolute;
     top: auto;
     left: -10000px;
     overflow: hidden;
     width: 0px;
     height: 0px;
     margin: 0;
-    
+	}
+	
+.element-invisible,
+.pfgHidden,
+.icons-social-media span {
+   @include offscreen;
+   
 	&:active,
 	&:focus {
 	    position: absolute;
@@ -32,6 +36,36 @@ a.element-invisible:focus {
 	background-color: $color-ps-keystone;
 	color: $black;
 	}
+
+
+@include media-breakpoint-up(sm) {
+	
+	.d-invisible-sm {
+		@include offscreen;
+		}
+	}
+	
+@include media-breakpoint-up(md) {
+	
+	.d-invisible-md {
+		@include offscreen;
+		}
+	}
+	
+@include media-breakpoint-up(lg) {
+	
+	.d-invisible-lg {
+		@include offscreen;
+		}
+	}
+
+@include media-breakpoint-up(xl) {
+	
+	.d-invisible-xl {
+		@include offscreen;
+		}
+	}
+	
 	
 /* Fade In - 
 	Replace stock Bootstrap fade and scale

@@ -92,6 +92,7 @@ FORM - BASIC
 	select {
 		font-size: $small2-size;
 		font-family: $font-family-sans-serif;
+		max-width: 100%; /* prevent scroll on moblie with wide select menu */
 		}
 	
 	.btn {

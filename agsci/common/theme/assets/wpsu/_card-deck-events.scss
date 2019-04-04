@@ -15,6 +15,10 @@ CARD DECK - EVENTS
 	overflow: visible;
 	margin-bottom: 1rem;
 	
+	.card-body {
+		padding: 1rem;	
+		}
+	
 	.card-title p {
 		font-weight: $font-weight-bold; 
 		}
@@ -37,16 +41,6 @@ CARD DECK - EVENTS
 	
 	.event-date-block {
 		margin-right: 0;
-		}
-	
-	.card-body-left {
-		background: $color-ps-creek;
-		}
-	
-	.card-body-right {
-		padding: 1rem;
-		background: lighten($color-ps-coaly-gray,62.5%);
-		border-top: 0.5rem solid rgba($color-ps-creek,0.5);
 		}
 	
 	img {

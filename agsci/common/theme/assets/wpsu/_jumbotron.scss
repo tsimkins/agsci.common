@@ -35,10 +35,6 @@ JUMBOTRON HOME STYLE
 		}
 	
 	&.jumbotron-img-based {
-		background-position-y: top;
-		background-size: 100%;
-		background-size: cover;
-		background-repeat: no-repeat;
 		overflow: hidden;
 		}
 
@@ -50,7 +46,6 @@ JUMBOTRON HOME STYLE
 	
 	&.jumbotron-mid {
 		height: 60vh;
-		padding: 0;
 		}
 	
 	&.jumbotron-short-header {
@@ -116,33 +111,25 @@ JUMBOTRON HOME STYLE
 	height: 60vh;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;	
+	background-position: top center;	
 
-	&.jumbotron-img.fix-img-right {
+	&.fix-img-right {
 		background-position-x: right;
+		background-position-x: 80%;
 		}
 	
-	&.jumbotron-img.fix-img-left {
+	&.fix-img-left {
 		background-position-x: left;
-		}
-	
-	&.bg-center-bottom {
-		background-position: center bottom;
-		}
-
-	&.bg-center-center {
-		background-position: center center;
-		}
-	
-	&.bg-center-top {
-		background-position: center top
+		background-position-x: 20%;
 		}
 	}
 
-.jumbotron-mid .jumbotron-img {
-	height: 60vh;
-	opacity: 1.0;
-	background-position: center middle;
+@media (min-aspect-ratio: 6/5) {
+	
+	.jumbotron-img.fix-img-right,
+	.jumbotron-img.fix-img-left {
+		background-position-x: initial;
+		}
 	}	
 
 .jumbotron p.section-callout {

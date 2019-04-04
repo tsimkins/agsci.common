@@ -1,5 +1,5 @@
 .card.card-cta {
-	
+	transition: $transition-base;
 	margin-bottom: 0.5rem;
 		
 	.card-body {
@@ -24,15 +24,9 @@
 			position: relative;
 			padding: 0.5rem 1rem;
 			}
-		
-		span {
-			z-index: 9;
-			position: relative;
-			}
 	
 		&:hover {
-		    transition: $transition-base;
-
+		    
 		    .btn {
 				background: $white;
 				border: 1px solid transparent;
@@ -53,7 +47,7 @@
 					}
 
 				.btn {
-					color:  $color-ps-perpetual-purple;	;
+					color:  $color-ps-perpetual-purple;
 					}
 				}
 			}
@@ -85,7 +79,7 @@
 			&:hover {
 				
 				.card-body {
-					background: $color-ps-future-green;	
+					background: darken($color-ps-future-green,5%);
 					}
 
 				.btn {

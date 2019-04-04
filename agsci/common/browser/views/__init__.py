@@ -363,3 +363,18 @@ class PersonView(BaseView):
         if _ and isinstance(_, (tuple, list)):
             _ = [x for x in _ if x]
             return '<br />'.join(_)
+
+class DirectoryView(BaseView):
+
+    @property
+    def people(self):
+
+        results = self.portal_catalog.searchResults({
+            'Type' : 'Person',
+            'sort_on' : 'sortable_title',
+        })
+
+        return [x.getObject() for x in results]
+
+    def person_view(self, o):
+        return o.restrictedTraverse('view')

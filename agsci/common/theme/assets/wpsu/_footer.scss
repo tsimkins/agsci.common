@@ -70,6 +70,16 @@ footer { /* relative and high z-index to mask any affixed nav */
 		}
 	}
 
+	footer ul.list-inline-social {
+		text-align: center;
+		}
+
+@include media-breakpoint-up(sm) {
+	footer ul.list-inline-social {
+		text-align: left;
+		}
+	}
+	
 @include media-breakpoint-up(lg) {
 	
 	footer ul.list-inline-social {
@@ -93,6 +103,12 @@ li.li-separator::after {
 .department-level {
 	footer {
 		background-color: darken($color-ps-nittany-navy,5%);
+		
+		img.agsci-logo {
+			width: 280px;
+			height: 50px;
+			}
+		
 		}
 	}
 
@@ -122,23 +138,6 @@ li.li-separator::after {
 		li {
 			margin: 0 0 0.5rem 0;
 			}
-		
-	/*	li:first-of-type {
-			font-family: $font-family-base;
-			font-weight: $font-weight-light;
-			font-size: $font-size-base;
-			padding-bottom: 0.75rem;
-			display: block;
-			
-		@include media-breakpoint-up(lg) {
-			padding-bottom: 0;
-			display: inline-block;
-			} 
-			
-			a {
-				color: $color-ps-creek;
-				}
-			} */
 		}
 	}
 

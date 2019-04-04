@@ -1,23 +1,26 @@
+button {
+	cursor: pointer;
+	}
+	
 .btn {
 	font-family: $font-family-sans-serif;
 	font-weight: $font-weight-normal;
 	font-size: $small2-size;
+	padding: 0.5rem 1rem;
+	transition: $transition-base;
 	}
 	
 .btn {
 	white-space: normal; /* override bootstrap default so button text can break - otherwise it can fix width and add scrollbars */
 	}
-	
-.btn-big,
-p.btn-big {
-	margin: 1rem 0.25rem;
-	padding: 0.625rem 1rem;
-	font-size: $small2-size;
-	white-space: normal;
-	}
+
+.btn-large {
+	padding: 1rem 3rem;	
+	}	 
 
 .btn.btn-sm {
 	font-size: $small3-size;
+	padding: 0.25rem 0.75rem;
 	}
 
 .btn.btn-primary {
@@ -44,13 +47,13 @@ p.btn-big {
 .btn.btn-college-nav {
 	font-size: $small3-size;
 	}
-	
+
+button.btn-link,	
 .btn-link a,
 a.btn-link {
 	padding: 0;
 	color: darken($color-ps-creek,10%);
-	border-bottom: 1px solid transparent;
-	margin-top: 0.5rem;
+	border: 1px solid transparent;
 	
 	&::after {
 		display: inline-block;
@@ -66,50 +69,30 @@ a.btn-link {
 		}
 	}
 
+button.btn-link:hover,
 a:hover .btn-link,
 a.btn-link:hover {
 	border-bottom: 1px solid darken($color-ps-creek,10%);
 	}
 
 .btn.btn-light-gray {
-	background: lighten($color-ps-limestone-gray,35%);
+	background: lighten($color-ps-limestone-gray,30%);
 	border: transparent;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: $black;
 	
-	&.btn-large {
-		padding: 1rem 3rem;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
-	
 	&:hover {
-	    transition: $transition-base;
-	    background: lighten($color-ps-limestone-gray,40%);
+	    background: lighten($color-ps-limestone-gray,35%);
 	    }
     }
 
 .btn.btn-light-creek-outline {
 	border: 1px solid #cfe8e7;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: darken($color-ps-creek,10%);
-	
-	&.btn-large {
-		padding: 1rem 3rem;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
+	background: $white;
 	
 	&:hover {
-	    transition: $transition-base;
 	    background: $color-ps-creek;
 	    color: $white;
 	    }
@@ -119,20 +102,9 @@ a.btn-link:hover {
 	background: darken($color-ps-creek,10%);
 	border: transparent;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: $white;
 	
-	&.btn-large {
-		padding: 1rem 3rem;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
-	
 	&:hover {
-	    transition: $transition-base;
 	    background: $color-ps-creek;
 	    }
     }
@@ -144,57 +116,20 @@ a.btn-link:hover {
 .btn.btn-cta {
 	background: $color-ps-nittany-navy;
 	position: relative;
-	padding: 0.5rem 1rem;
 	margin-bottom: 0.5rem;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	word-break: normal;
 	display: block;
-	
-	span {
-		z-index: 9;
-		position: relative;
-		color: lighten($color-ps-slate-gray,50%);
-		}
-	
-	&::after {
-		content: '';
-	    position: absolute;
-	    z-index: 0;
-	    transition: all 0.35s;
-		width: 0%;
-	    height: 100%;
-	    top: 0;
-	    left: 0;
-	    }
-	
-	&:hover span {
-		color: $black;
-		}   
 	}
   
 .btn.btn-orange {
 	background: darken($color-ps-invent-orange,10%);
 	border: transparent;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: $white;
-	margin-bottom: 1rem;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-	
-	&.bg-orange {
-		background: lighten($color-ps-invent-orange,10%);
-		color: $black;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
 	
 	&:hover{
-		transition: $transition-base;
 	    background: $color-ps-invent-orange;
 	    }
     }
@@ -203,25 +138,10 @@ a.btn-link:hover {
 	background: darken($color-ps-future-green,10%);
 	border: transparent;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: $white;
-	margin-bottom: 1rem;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-	
-	&.bg-light-green {
-		background: $color-ps-future-green;
-		color: $black;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
 	
 	&:hover{
-	   transition: $transition-base;
-	    background: $color-ps-future-green;
+	    background: darken($color-ps-future-green,5%)
 	    }
     }
     
@@ -229,24 +149,9 @@ a.btn-link:hover {
 	background: lighten($color-ps-perpetual-purple,10%);
 	border: transparent;
 	position: relative;
-	padding: 0.5rem 1rem;
 	color: $white;
-	margin-bottom: 1rem;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-	
-	&.bg-light-purple {
-		background:	#AF7CDD;
-		color: $black;
-		}
-	
-	span {
-		z-index: 9;
-		position: relative;
-		}
 	
 	&:hover{
-	    transition: $transition-base;
 	    background: lighten($color-ps-perpetual-purple,20%);
 	    }
     }

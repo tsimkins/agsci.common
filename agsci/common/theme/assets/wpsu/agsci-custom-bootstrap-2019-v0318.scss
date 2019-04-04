@@ -373,7 +373,7 @@ a.skip-to-main {
 --------------------------------------------- */
 
 html {
-	font-size: 1rem;
+	 	font-size: 1.083333rem;
 	}
 
 @include media-breakpoint-up(sm) {
@@ -447,7 +447,6 @@ h2.no-underline,
 		}
 	}
 
-.agsci-opener h2::after, 
 .explore-options h2::after,
 h2.text-center::after,
 .text-center h2::after {
@@ -466,17 +465,7 @@ h2.text-center::after,
 		font-size: 1.875rem;
 		}
 	}
-	
-.agsci-opener {
-	text-align: center;
-	padding-bottom: 1.5rem;
-	
-	p.lead {
-		font-size: $font-size-base;
-		font-weight: $font-weight-base;
-		}
-	}
-			
+		
 h2.h1::after {
 	content: none;
 	}
@@ -517,7 +506,6 @@ h4, .h5 {
 p {
 	font-family: $font-family-sans-serif;
 	font-size: $small1-size;
-	
 	font-weight: $font-weight-base;
 	line-height: $line-height-xl;
 	}
@@ -667,7 +655,7 @@ PARTIALS
 @import "_offset-content-previews";
 @import "_video-transcript";
 
-@import "_modal-universal";
+
 @import "_header-college-level";
 @import "_header-department-level";
 
@@ -679,6 +667,8 @@ PARTIALS
 @import "_opacity-dimmers";
 @import "_breadcrumbs";
 
+@import "_centered-callout";
+
 @import "_card-deck-config";
 @import "_card-deck-universal-formatting";
 @import "_card-deck-events";
@@ -687,6 +677,7 @@ PARTIALS
 @import "_cards-news";
 @import "_card-deck-text-only";
 @import "_card-deck-visual";
+@import "_card-deck-short-bio";
 
 @import "_cta-bar";
 
@@ -712,15 +703,7 @@ PARTIALS
 @import "_nav-sidenav";
 
 
-
-
-
-
-
-
-
-
-
+@import "_modal-universal";
 
 
 

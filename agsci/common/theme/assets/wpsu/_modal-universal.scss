@@ -1,11 +1,43 @@
-.modal {
+.department-level .modal {
 	
-	.section-modal-nav {
+	-webkit-overflow-scrolling: touch; /* smooth mobile scroll */
+	
+		button.close {
+		
+			position: fixed;
+			top: 0;
+			right: 1rem;
+			float: none;
+				opacity: 1;
+				z-index: 99;
+			
+			span {
+				 color: white; 
+				 font-size: 3rem;
+				 
+				}
+			}
+			
+		.modal-body {
+			padding: 0 1rem 0.5rem 1rem;
+			}
+		
+		img.agsci-logo {
+			width: 260px;
+			height: 47px;
+			}
+		
+		.navbar-brand {
+			margin-bottom: 0.5rem;
+			}
 		
 		p.modal-nav-section {
 			margin-bottom: 0;
-			padding-bottom: 0.25rem;
-			border-bottom: $border-base;
+			padding-bottom: 0;
+			line-height: $line-height-xs;
+			font-size: 1.1rem;
+			margin-top: 0.25rem;
+			color: lighten($color-ps-limestone-gray,15%);
 			}
 		
 		p a {
@@ -15,32 +47,71 @@
 		li a {
 			color: $white;
 			font-family: $font-family-sans-serif;
-			font-size: $small3-size;
+			font-size: $small2-size;
 			}
+		
+		.nav-link {
+			display: block;
+			padding: 0.375rem 0.75rem;
+			}
+		
+		.modal-cta-btns {
+			margin-top: 1rem;
+			justify-content: center;
+			}
+		
+		.btn {
+			margin: 0.5rem;
+			padding: 0.5rem 0.75rem;
+			}
+		
 		}
-	}	
+	
+@include media-breakpoint-up(sm) {
+	
+	.department-level .modal {
+		
+		p.modal-nav-section {
+			padding-bottom: 0.5rem;
+			margin-top: 0.5rem;
+			}
+		
+		.nav-link {
+			display: block;
+			padding: 0.5rem 0.75rem;
+			}
+			
+	.modal-cta-btns {
+			margin-top: 2rem;
+			}
+		.btn {
+			padding: 0.75rem 3rem;
+			}
+	
+	}
+	}
 
+@include media-breakpoint-up(md) {
+		.department-level .modal	img.agsci-logo {
+			width: 300px;
+			height: 57px;
+			}
+		
+	}
+	
+	
 .audience-modal-bar {	
 	margin-bottom: 2rem;
 	
 	span, a {
 		color: $white;
 		font-family: $font-family-sans-serif;
-		font-size: $small3-size;
+		font-size: $small2-size;
 		font-weight: $font-weight-base;
 		}
 	
-	a.navbar-brand::after {
-		content: none;
-		}
-	
-	span {
-		color: $white;
-		text-transform: none;
-		
-		&:after {
-			content: none;
-			}
-		}
 	}
-	
+
+.department-level .modal img.agsci-logo {
+	margin-left: 0;
+	}

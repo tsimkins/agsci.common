@@ -7,6 +7,7 @@ from zope.component import provideAdapter
 from .content.behaviors.tags import ITags
 from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.degrees import IDegree
+from .content.person.person import IPerson
 
 from .interfaces import ITagsAdapter
 
@@ -60,3 +61,13 @@ def degree_indexer(i):
 for (_idx, _field) in degree_index_field:
     f = degree_indexer(_field)
     provideAdapter(f, name=_idx)
+
+# Person Sortable Title
+@indexer(IPerson)
+def PersonTitle(context):
+    try:
+        return context.getSortableName()
+    except:
+        return ('Z', 'Z')
+
+provideAdapter(PersonTitle, name='sortable_title')

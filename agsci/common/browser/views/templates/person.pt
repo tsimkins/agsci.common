@@ -20,13 +20,15 @@
 
         <div class="row">
 
-            <div class="col-6 col-sm-4 order-sm-12">
+            <div class="col-6 col-sm-4 order-sm-12"
+                 tal:define="leadimage view/getItemLeadImage|nothing"
+                 tal:condition="leadimage">
 
                 <div class="headshot">
 
-                    <img tal:attributes="alt view/name|nothing;
-                                         title view/name|nothing;
-                                         src view/getItemLeadImage"
+                    <img tal:attributes="alt view/name/title|nothing;
+                                         title view/name/title|nothing;
+                                         src leadimage"
                          class="w-100 photo" />
 
                 </div>
@@ -98,30 +100,31 @@
                                           tal:content="context/zip_code" />
 
                                 </div>
-
-                                <ul class="list-inline list-inline-not-mobile list-bio-contact">
-                                    <li tal:define="email context/email|nothing"
-                                        tal:condition="email">
-                                        <span>Email</span>
-                                        <a tal:attributes="href string:mailto:${email}"
-                                           tal:content="email" />
-                                    </li>
-                                    <li tal:define="phone_number context/phone_number|nothing"
-                                        tal:condition="phone_number">
-                                        <span>Office</span>
-                                        <a tal:attributes="href string:tel:${phone_number}"
-                                           tal:content="phone_number" />
-                                    </li>
-                                    <li tal:define="fax_number context/fax_number|nothing"
-                                        tal:condition="fax_number">
-                                        <span>Fax</span>
-                                        <span tal:replace="fax_number" />
-                                    </li>
-                                    <li>
-                                        <span>PDF</span>
-                                        <a href="">Curriculum Vitae</a>
-                                    </li>
-                                </ul>
+                                <div>
+                                    <ul class="list-inline list-inline-not-mobile list-bio-contact">
+                                        <li tal:define="email context/email|nothing"
+                                            tal:condition="email">
+                                            <span>Email</span>
+                                            <a tal:attributes="href string:mailto:${email}"
+                                               tal:content="email" />
+                                        </li>
+                                        <li tal:define="phone_number context/phone_number|nothing"
+                                            tal:condition="phone_number">
+                                            <span>Office</span>
+                                            <a tal:attributes="href string:tel:${phone_number}"
+                                               tal:content="phone_number" />
+                                        </li>
+                                        <li tal:define="fax_number context/fax_number|nothing"
+                                            tal:condition="fax_number">
+                                            <span>Fax</span>
+                                            <span tal:replace="fax_number" />
+                                        </li>
+                                        <li>
+                                            <span>PDF</span>
+                                            <a href="">Curriculum Vitae</a>
+                                        </li>
+                                    </ul>
+                                </div>
 
                             </address>
 

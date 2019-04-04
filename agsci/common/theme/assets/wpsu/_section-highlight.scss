@@ -1,22 +1,38 @@
-.section-highlight {
+
 	
-	.container-fluid {
+	.container-fluid.section-highlight {
 		background-color: #e4e5e6;
 		}
 	
-	.container-fluid:nth-of-type(even) {
+	.container-fluid.section-highlight:nth-of-type(even) {
 		background-color: #d6d7da
+		}
+		
+		.section-highlight {
+			img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+	
+		}
+
+.section-highlight-text {
+	
+	
+	
+	h2 {
+		font-size: 1.5rem;
+		margin-top: 1rem;
 		}
 	
 	p.section-crumb {
 		margin-bottom: 0.75rem;
-		font-size: $font-size-base;
-		font-weight: $font-weight-base;
+		font-size: $h2-font-size;
+		font-weight: $font-weight-bold;
 		text-transform: none;
-		
 		padding-bottom: 0;
-		font-style: italic;
-		
+	
 		a {
 			color: darken($color-ps-creek,10%);
 			}
@@ -27,21 +43,24 @@
 			}
 		}
 	
-	p.section-highlight-text {
+	p {
 		color: $color-ps-slate-gray;
-		font-size: $h5-font-size;
-		line-height: $line-height-md;	
+		font-size: $small3-size;
+		line-height: $line-height-base;	
 		}	
-	
-	@include media-breakpoint-up(lg) {
+	}
 		
-		p.section-highlight-text {
-			font-size: $h4-font-size;
+			
+	@include media-breakpoint-up(xl) {
+		
+		.section-highlight-text {
+			
+		p {
+			font-size: $font-size-sm;
+			}
+	
+		.btn {
+			margin-top: 0.5rem;
 			}
 		}
-	
-	.btn {
-		margin-top: 0.5rem;
-		}
-	
 	}

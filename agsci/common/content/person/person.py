@@ -15,7 +15,7 @@ from zope.interface import implements, provider, implementer, Interface
 from ..behaviors import IContact, ILocation, ISocialMediaBase
 
 from agsci.common import AgsciMessageFactory as _
-from agsci.common import object_factory
+
 
 ACTIVE_REVIEW_STATES = ('published',)
 AGSCI_DIRECTORY_EDITOR = 'agsci.directory.editor'
@@ -233,6 +233,7 @@ class Person(Item):
 
     @property
     def name_data(self):
+        from agsci.common import object_factory
         names = dict([(x, getattr(self, x, '')) for x in self.name_fields])
         names['title'] = self.title
         return object_factory(**names)

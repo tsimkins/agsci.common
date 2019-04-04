@@ -59,3 +59,14 @@ PAGINATION
 			}
 		}
 	}
+
+.pagination .btn {
+	padding: 0.5rem;
+	}
+
+@include media-breakpoint-up(sm) {
+	
+	.pagination .btn {
+		padding: 0.5rem 1rem;
+		}
+	}

@@ -39,8 +39,8 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 	
 section.offset-previews {
 	
-	.container-fluid:nth-of-type(1),
-	.container:nth-of-type(1) {
+	.container-fluid:nth-of-type(odd),
+	.container:nth-of-type(odd) {
 		
 		.row {
 			background: $color-ps-slate-gray;
@@ -59,8 +59,8 @@ section.offset-previews {
 			}
 		}
 	
-	.container-fluid:nth-of-type(2),
-	.container:nth-of-type(2) {
+	.container-fluid:nth-of-type(even),
+	.container:nth-of-type(even) {
 		
 		.row {
 			background: $color-ps-creek;

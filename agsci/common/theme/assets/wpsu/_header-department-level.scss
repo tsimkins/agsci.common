@@ -7,16 +7,21 @@
 	top: 0;
 	right: 0;
 	background: #00132b;
-	padding: 0.5rem 0.5rem 1rem 0.5rem;
+	padding: 1rem 0.5rem 1rem 0.5rem;
 	width: 100%;
 	text-align: right;
 	z-index: 99;
 	display: flex;
 	margin-bottom: 0;
+	justify-content: flex-end;
 	
 	li {
 		margin: 0;
-		font-size: $small4-size;
+		font-size: $small3-size;
+	
+		span {
+			display: none;
+			}
 	
 		&::after {
 			color: $white;
@@ -37,12 +42,29 @@
 		background: transparent; 
 		border: transparent;
 		color: $white;
-		font-size: $small4-size;
+		font-size: $small3-size;
 		cursor: pointer;
+		
+		&:hover {
+			color: lighten($color-ps-creek,35%);
+			}
+		
 		}
 	}
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(sm) {
+	.department-level ul.dept-level-college-options {
+		justify-content: flex-end;
+		
+		li span {
+			display: inline;
+			}
+	}
+	}
+	
+	
+@include media-breakpoint-up(lg) {
+	
 	.department-level ul.dept-level-college-options {
 		padding: 0.5rem 0.5rem 0 0.5rem;
 		}
@@ -82,13 +104,10 @@
 		}		
 	}
 
-	.affix .department-bar a.department-brand {
-		padding-top: 0.5rem;
-		padding-bottom: 0.5rem;
-		font-size: $h4-font-size;
-		}
+
 	
 @include media-breakpoint-up(lg) {
+	
 	.department-bar a.department-brand {
 		font-size: $h3-font-size;
 		border-left: 2px solid $color-ps-creek;
@@ -119,18 +138,9 @@
 		}
 	}
 
-.affix .department-bar ul.list-inline {
-	display: none;
-	}
-
-.affix .department-bar {
-	padding: 0;
-	}	
-
 .department-bar {	
 	span, a {
 		color: $white;
-		font-weight: $font-weight-light;
 		}
 	
 	a.navbar-brand::after {
@@ -147,16 +157,15 @@
 		}
 	}
 
-		
+	
 /* Mobile Department Hamburger Button
 --------------------------------------------- */	
 
 .department-level header .btn.btn-primary.btn-toggle-mobile-nav {
-	top: 0.5rem;
-	right: 1rem;
+	top: 0;
+	right: 0.75rem;
 	z-index: 9;
 	}
-
 
 /* .college-logo-block, .navbar-brand
 	College Logo
@@ -181,26 +190,23 @@
 		}
 	
 	img.agsci-logo {
-		width: 300px;
-		height: 54px;
+		width: 280px;
+		height: 50px;
 		margin-left: 1rem;
 		}
 	}
 
 @include media-breakpoint-up(lg) {
 	
+	.department-level img.agsci-logo {
+		width: 300px;
+		height: 54px;
+		margin-left: 1rem;
+		}
+		
 	.department-level .college-logo-block {
 		width: auto;
 		padding:0 0 1rem 0;
-		}
-	
-	.department-level .affix img.agsci-logo { /* px required for svg, specific ht required for smoother transition */
-		width: 260px;
-		height: 47px;
-		}
-	
-	.department-level .affix .college-logo-block {
-		padding: 0.25rem 0;
 		}
 	}
 	
@@ -215,16 +221,66 @@
 	
 @include media-breakpoint-up(lg) {
 	
-
 	.department-brand-block {
 		padding: 0 0 1rem 0;
 		}
-			
+	}
+
+/* .affix States
+--------------------------------------------- */
+
+.department-level header.affix {
+		
+	.btn.btn-primary.btn-toggle-mobile-nav {
+	margin-top: 0.75rem;
+	}
+}
+
+.affix .department-bar a.department-brand {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	font-size: $h4-font-size;
+	}
+
+.department-level .affix .college-logo-block {
+	display: none;	
+	}
+
+.affix .department-bar {
+	padding: 0;
+	
+	ul.list-inline {
+		display: none;
+		}
+	}	
+		
+@include media-breakpoint-up(lg) {
+	
+	.affix .department-bar a.department-brand {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	}
+	
+	.department-level header.affix {
+	padding-bottom: 0;
+	}
+	
+	.department-level .affix img.agsci-logo { /* px required for svg, specific ht required for smoother transition */
+		width: 260px;
+		height: 47px;
+		}
+	
+	.department-level .affix .college-logo-block {
+		padding: 0.25rem 0;
+		display: block;
+		}
+	
 	.affix .department-brand-block {
 		padding: 0.25rem 0;
 		}
-	}
-	
+		
+	}		
+			
 /* .navbar, .navbar-collapse
 	.department-dropdowns, .dropdown-selectors,
 	.dropdown, .dropdown-toggle, 
@@ -280,7 +336,7 @@
 	
 	.dropdown-toggle {
 		background: transparent;
-		padding: 0.5rem 1rem 0.75rem 1rem;/* .25 less on top for hover border */
+		padding: 1rem 0.75rem 1.25rem 0.75rem;/* .25 less on top for hover border */
 		display: block;
 		transition: $transition-base;
 		border-top: 0.25rem solid transparent;
@@ -294,8 +350,9 @@
 		flex-direction: row; /* swap to horizontal layout for larger screen width */
 		
 		.dropdown-toggle {
+			padding: 0.5rem 0.875rem 0.75rem 0.875rem;/* .25 less on top for hover border */
 			display: inline-block;
-			font-size: $small1-size;
+			font-size: $small2-size;
 			font-weight: $font-weight-base;
 			}
 		
@@ -308,13 +365,19 @@
 	}
 
 @include media-breakpoint-up(xl) {
-	.department-dropdown .dropdown-toggle {
+	.department-dropdowns .dropdown-toggle {
+		padding: 0.5rem 1.25rem 0.75rem 1.25rem; /* .25 less on top for hover border */
+		}
+	}
+	
+@include media-breakpoint-up(xxl) {
+	.department-dropdowns .dropdown-toggle {
 		padding: 0.5rem 1.75rem 0.75rem 1.75rem; /* .25 less on top for hover border */
 		}
 	}
 		
 .department-level header ul {
-	font-size: $small1-size;
+	font-size: $font-size-base;
 	font-family: $font-family-sans-serif;
 	width: 100%;
 	
@@ -335,6 +398,11 @@
 	}
 
 @include media-breakpoint-up(lg) {
+	
+	.department-level header ul {
+		font-size: $small1-size;
+		}
+	
 	.department-level header ul li.dropdown {
 		border-bottom: none !important;
 		}
@@ -347,10 +415,8 @@
 .navbar .department-dropdowns {
 	
 	a.nav-link {
-		color: rgba($white,0.8);
 		
 		&:hover {
-			color: $white;
 			background-color: transparent;
 			}
 		}
@@ -366,9 +432,9 @@
 		 
 		ul {
 			margin-top: 0;
-			margin-bottom: 0;
+			margin-bottom: 1rem;
 			margin-left: 1rem;
-			font-size: $small2-size;
+			font-size: $small1-size;
 			}
 		}
 	
@@ -376,11 +442,20 @@
 		margin-right: 0;
 		}
 	}
+
+@include media-breakpoint-up(lg) { 
+	
+	.navbar .department-dropdowns .dropdown-menu ul {
+		font-size: $small2-size;
+		margin-bottom: 0;
+		}
+	}
+	
 	
 /* Mobile Dropdown Carat Toggles
 --------------------------------------------- */	
 .department-level button.dropdown-toggle-button {
-	top: 0.75rem;
+	top: 1.35rem;
 	color: $white;
 	}
 
@@ -406,7 +481,7 @@
 			&::before {
 				content:"";
 			    position: absolute;
-			    left: 3rem;
+			    left: 1rem;
 			    top: -10px;
 			    width: 0;
 			    height: 0;
@@ -434,4 +509,11 @@
 		
 		}
 	}
-		
+
+@include media-breakpoint-up(xl) { 
+	
+	.navbar .department-dropdowns .dropdown-menu::before {
+			 left: 1.5rem;
+			 }
+			 }
+

@@ -28,11 +28,27 @@
 --------------------------------------------- */
 
 .list-inline {
+	margin-bottom: 0;
 	
 	li {
 		display: inline-block;
 		}
 	}
+
+.list-inline-not-mobile {
+	
+	li {
+		display: block;
+		}
+	}
+	
+@include media-breakpoint-up(lg) {
+		
+		.list-inline-not-mobile li {
+			display: inline-block;
+			}
+		
+		}
 
 /* General UL/OL
 --------------------------------------------- */	

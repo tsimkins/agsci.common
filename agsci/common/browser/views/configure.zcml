@@ -94,4 +94,15 @@
         template="templates/person.pt"
     />
 
+    <!-- Directory View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IDirectory"
+        name="view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory.pt"
+    />
+
+
 </configure>

@@ -4,6 +4,7 @@
 		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
 		margin-bottom: $card-group-margin;
 		margin-top: $card-group-margin;
+		position: relative;
 			
 		.card-image-top {
 			background: $black;	
@@ -31,10 +32,6 @@
 				background-color: $white;
 				}
 			}
-		}
-	
-	
-.card.card-visual {
 	
 	p.section-crumb {
 		margin-top: 0;
@@ -54,10 +51,6 @@
 			}
 		}
 	
-	}
-
-.card.card-visual {
-	
 	h3.card-title::after {
 	    content: "";
 	    position: absolute;
@@ -72,10 +65,6 @@
 	&:hover h3.card-title::after {
 	    border-bottom: 2px solid $color-ps-creek;
 	    }	
-	}	
-	
-.card.card-visual {
-	position: relative;
 	
 	h3.text-center.card-title::after {
 	    content: "";
@@ -93,6 +82,17 @@
     &:hover h3.text-center.card-title::after {
     	border-bottom: 2px solid $color-ps-creek;
 		}	
+	
+	a { /* when full card is not a link, option for links inside text */
+		text-decoration: none;
+		color: #307e7a;
+		border-bottom: 1px solid $color-ps-creek;
+
+		&:hover {
+			border-bottom: 1px solid $color-ps-creek;
+			}
+		}
+		
 	}
 
 .visual-cards-imgs-cropped .card-image-top {
