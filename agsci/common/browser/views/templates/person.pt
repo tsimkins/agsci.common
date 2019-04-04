@@ -13,7 +13,7 @@
 
     <metal:content-core fill-slot="content-core">
 
-<section class="col-12 px-0 col-lg-8 col-xl-9 pr-lg-3 pb-4 order-12 order-lg-1 bio">
+<section class="col-12 px-0 col-lg-8 col-xl-12 pr-lg-3 pb-4 order-12 order-lg-1 bio">
 
     <!-- BIO -->
     <div class="container border-bottom">
@@ -24,9 +24,9 @@
 
                 <div class="headshot">
 
-                    <img src="https://plantpath.psu.edu/directory/thb15/image" 
-                         alt="Terrence H. Bell, Ph.D." 
-                         title="Terrence H. Bell, Ph.D." 
+                    <img tal:attributes="alt view/name|nothing;
+                                         title view/name|nothing;
+                                         src view/getItemLeadImage"
                          class="w-100 photo" />
 
                 </div>
@@ -42,24 +42,24 @@
                                     last_name view/name/last_name|nothing;
                                     suffix view/name/suffix|nothing;">
 
-                        <span class="given-name" 
+                        <span class="given-name"
                               tal:content="first_name"
                               tal:condition="first_name" />
 
-                        <span class="additional-name" 
+                        <span class="additional-name"
                               tal:content="middle_name"
                               tal:condition="middle_name" />
 
-                        <span class="family-name" 
+                        <span class="family-name"
                               tal:content="last_name"
                               tal:condition="last_name" /><tal:suffix
-                              tal:condition="suffix">, 
-                            
+                              tal:condition="suffix">,
+
                         <span class="honorific-suffix"
                               tal:content="suffix" />
-                            
+
                         </tal:suffix>
-                            
+
                     </h1>
 
                     <ul class="title jobTitle"
@@ -85,20 +85,20 @@
                                           tal:condition="street_address"
                                           tal:content="structure street_address" />
                                     <br>
-                                    <span class="locality" 
+                                    <span class="locality"
                                           tal:condition="context/city|nothing"
                                           tal:content="context/city" />,
 
-                                    <span class="region" 
+                                    <span class="region"
                                           tal:condition="context/state|nothing"
                                           tal:content="context/state" />
 
-                                    <span class="postal-code" 
+                                    <span class="postal-code"
                                           tal:condition="context/zip_code|nothing"
                                           tal:content="context/zip_code" />
 
                                 </div>
-                                
+
                                 <ul class="list-inline list-inline-not-mobile list-bio-contact">
                                     <li tal:define="email context/email|nothing"
                                         tal:condition="email">
@@ -122,7 +122,7 @@
                                         <a href="">Curriculum Vitae</a>
                                     </li>
                                 </ul>
-                                
+
                             </address>
 
                         </div>
@@ -130,84 +130,131 @@
                     </div>
 
                 </div>
-                
+
             </div>
-                
-                
+
+
         </div>
     </div>
 
 
-    <div class="container bio-side-by-side container-text">
+    <div class="container bio-side-by-side container-text"
+         tal:define="data view/data"
+         tal:condition="data">
 
-        <tal:bio repeat="i view/bio_fields">
+            <-- Areas of Expertise -->
+            <div class="row align-items-start"
+                 tal:define="i data/areas_expertise|nothing"
+                 tal:condition="i/value|nothing">
 
-            <div class="row align-items-start">
-    
                 <div class="col-12 col-md-3">
                      <h3 tal:content="i/title" />
                 </div>
+
                 <div class="col-12 col-md-9">
 
-                    <ul tal:condition="i/list|nothing">
+                    <ul>
                         <li tal:repeat="j i/value" tal:content="j"/>
                     </ul>
 
-                    <p tal:condition="i/string|nothing"
-                       tal:content="i/value" />
-
-                    <div tal:condition="i/html|nothing"
-                       tal:replace="structure i/value/output" />
-
-                    <tal:websites
-                        tal:condition="python: i.name == 'websites'">
-
-                        <ul tal:condition="i/value">
-                            <li tal:repeat="j i/value">
-                                <a tal:attributes="href j/url|nothing"
-                                   tal:content="j/title|j/url|nothing" />
-                            </li>
-                        </ul>
-
-                        <ul class="list-inline list-inline-social"
-                            tal:define="twitter_url context/twitter_url|nothing;
-                                        facebook_url context/facebook_url|nothing;
-                                        youtube_url context/youtube_url|nothing;
-                                        linkedin_url context/linkedin_url|nothing;"
-                            tal:condition="python: any([twitter_url, facebook_url, youtube_url, linkedin_url])">
-
-                            <li tal:condition="facebook_url">
-                                <a tal:attributes="href facebook_url">
-                                    <em class="title fab fa-2x fa-fw fa-facebook-square"></em>
-                                </a>
-                            </li>
-
-                            <li tal:condition="twitter_url">
-                                <a tal:attributes="href twitter_url">
-                                    <em class="title fab fa-2x fa-fw fa-twitter-square"></em>
-                                </a>
-                            </li>
-
-                            <li tal:condition="youtube_url">
-                                <a tal:attributes="href youtube_url">
-                                    <em class="title fab fa-2x fa-fw fa-youtube-square"></em>
-                                </a>
-                            </li>
-
-                            <li tal:condition="linkedin_url">
-                                <a tal:attributes="href linkedin_url">
-                                    <em class="title fab fa-2x fa-fw fa-linkedin"></em>
-                                </a>
-                            </li>
-
-                        </ul>
-
-                    </tal:websites>
-
                 </div>
+
             </div>
 
-        </tal:bio>
+            <-- Websites/Social Media -->
+
+            <div class="row align-items-start"
+                 tal:define="i data/websites|nothing;
+                             twitter_url context/twitter_url|nothing;
+                             facebook_url context/facebook_url|nothing;
+                             youtube_url context/youtube_url|nothing;
+                             linkedin_url context/linkedin_url|nothing;
+                             social_media python: any([twitter_url, facebook_url, youtube_url, linkedin_url]);
+                             websites i/value|nothing;"
+                 tal:condition="websites|social_media|nothing">
+
+                <div class="col-12 col-md-3">
+                     <h3 tal:content="i/title" />
+                </div>
+
+                <div class="col-12 col-md-9">
+
+                    <ul tal:condition="i/value">
+                        <li tal:repeat="j i/value">
+                            <a tal:attributes="href j/url|nothing"
+                                tal:content="j/title|j/url|nothing" />
+                        </li>
+                    </ul>
+
+                    <ul class="list-inline list-inline-social"
+                        tal:define="twitter_url context/twitter_url|nothing;
+                                    facebook_url context/facebook_url|nothing;
+                                    youtube_url context/youtube_url|nothing;
+                                    linkedin_url context/linkedin_url|nothing;"
+                        tal:condition="python: any([twitter_url, facebook_url, youtube_url, linkedin_url])">
+
+                        <li tal:condition="facebook_url">
+                            <a tal:attributes="href facebook_url">
+                                <em class="title fab fa-2x fa-fw fa-facebook-square"></em>
+                            </a>
+                        </li>
+
+                        <li tal:condition="twitter_url">
+                            <a tal:attributes="href twitter_url">
+                                <em class="title fab fa-2x fa-fw fa-twitter-square"></em>
+                            </a>
+                        </li>
+
+                        <li tal:condition="youtube_url">
+                            <a tal:attributes="href youtube_url">
+                                <em class="title fab fa-2x fa-fw fa-youtube-square"></em>
+                            </a>
+                        </li>
+
+                        <li tal:condition="linkedin_url">
+                            <a tal:attributes="href linkedin_url">
+                                <em class="title fab fa-2x fa-fw fa-linkedin"></em>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Education -->
+            <div class="row align-items-start"
+                 tal:define="i data/education|nothing"
+                 tal:condition="i/value|nothing">
+
+                <div class="col-12 col-md-3">
+                     <h3 tal:content="i/title" />
+                </div>
+
+                <div class="col-12 col-md-9">
+
+                    <ul>
+                        <li tal:repeat="j i/value" tal:content="j"/>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Bio -->
+            <div class="row align-items-start"
+                 tal:define="i context/bio|nothing"
+                 tal:condition="i/value|nothing">
+
+                <div class="col-12 col-md-3">
+                     <h3 tal:content="i/title" />
+                </div>
+
+                <div class="col-12 col-md-9"
+                     tal:content="structure context/bio|nothing" />
+
+        </div>
 
     </div>
 

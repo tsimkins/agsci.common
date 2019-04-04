@@ -7,7 +7,7 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from RestrictedPython.Utilities import same_type as _same_type
 from RestrictedPython.Utilities import test as _test
-from StringIO import StringIO 
+from StringIO import StringIO
 from plone.app.textfield.value import RichTextValue
 from plone.app.workflow.browser.sharing import SharingView, AUTH_GROUP
 from plone.autoform.interfaces import IFormFieldProvider
@@ -39,20 +39,59 @@ class BaseView(BrowserView):
         portal_type = self.context.portal_type
         return get_fields_by_type(portal_type)
 
+    @property
+    def data(self):
+
+        _ = {}
+
+        fields = self.object_fields
+
+        for (i,f) in fields.iteritems():
+
+            if f:
+
+                value = getattr(self.context, i, None)
+
+                value_type = None
+
+                if hasattr(f, 'value_type'):
+                    value_type = f.value_type
+
+                is_grid = isinstance(value_type, DictRow)
+
+                if is_grid and isinstance(f, (schema.List, schema.Tuple)):
+                    value = [object_factory(**x) for x in value]
+
+                __ = {
+                    'name' : i,
+                    'title' : f.title,
+                    'value' : value,
+                }
+
+                _[i] = object_factory(**__)
+
+        return object_factory(**_)
+
     def getItemLeadImage(self, item=None, size='large'):
-    
+
+        hasLeadImage = False
+
         if not item:
             item = self.context
-        
+            from agsci.common.indexer import hasLeadImage as _hasLeadImage
+            hasLeadImage = _hasLeadImage(self.context)()
+
+        # Is a brain
         if hasattr(item, 'getURL'):
             url = item.getURL()
+            hasLeadImage = item.hasLeadImage
 
         elif hasattr(item, 'absolute_url'):
             url = item.absolute_url()
 
         else:
             url = self.context.absolute_url()
-    
+
         if size:
             return '%s/@@images/image/%s' % (url, size)
 
@@ -124,7 +163,7 @@ class BaseView(BrowserView):
     def getItemURL(self, item):
 
         item_type = item.portal_type
-        
+
         if hasattr(item, 'getURL'):
             item_url = item.getURL()
         else:
@@ -157,7 +196,7 @@ class BaseView(BrowserView):
 
     def fileExtensionIcons(self):
         ms_data = ['xls', 'doc', 'ppt']
-    
+
         data = {
             'xls' : u'Microsoft Excel',
             'ppt' : u'Microsoft PowerPoint',
@@ -169,18 +208,18 @@ class BaseView(BrowserView):
             'txt' : u'Plain Text',
             'zip' : u'ZIP Archive',
         }
-        
+
         for ms in ms_data:
             ms_type = data.get(ms, '')
             if ms_type:
                 data['%sx' % ms] = ms_type
-        
+
         return data
-        
+
     def getFileType(self, item):
 
         icon = self.getIcon(item)
-        
+
         if icon:
             icon = icon.split('.')[0]
 
@@ -191,7 +230,7 @@ class BaseView(BrowserView):
         if '.' in url:
             icon = url.strip().lower().split('.')[-1]
             return self.fileExtensionIcons().get(icon, None)
-        
+
         return None
 
     def getItemSize(self, item):
@@ -214,7 +253,7 @@ class BaseView(BrowserView):
         if item.portal_type in ['File',]:
             obj_size = self.getItemSize(item)
             file_type = self.getFileType(item)
-            
+
             if file_type:
                 if obj_size:
                     return u'%s, %s' % (file_type, obj_size)
@@ -246,7 +285,7 @@ class BaseView(BrowserView):
     @property
     def portal(self):
         return getToolByName(self.context, 'portal_url').getPortalObject()
-        
+
     @property
     def portal_url(self):
         return self.portal.absolute_url()
@@ -268,10 +307,10 @@ class BaseView(BrowserView):
         return (self.context.getId() == self.context.aq_parent.getDefaultPage())
 
 class DegreeListingView(BaseView):
-    
+
     def getQuery(self):
         return {'Type' : 'Degree', 'sort_on' : 'sortable_title'}
-    
+
     def getFolderContents(self):
         return self.portal_catalog.queryCatalog(self.getQuery())
 
@@ -279,9 +318,9 @@ class DegreeView(BaseView):
 
     @property
     def fields(self):
-    
+
         fields = [x[1] for x in degree_index_field]
-        
+
         def sort_order(x):
             try:
                 return fields.index(x)
@@ -300,7 +339,7 @@ class DegreeCompareView(DegreeView):
 
     @property
     def degrees(self):
-    
+
         _ids = self.request.form.get('degree_id', [])
 
         results = self.portal_catalog.searchResults({
@@ -312,74 +351,15 @@ class DegreeCompareView(DegreeView):
         return [x.getObject() for x in results]
 
 class PersonView(BaseView):
-    
+
     @property
     def name(self):
         return self.context.name_data
-    
+
     @property
     def street_address(self):
         _ = getattr(self.context, 'street_address', [])
-        
+
         if _ and isinstance(_, (tuple, list)):
             _ = [x for x in _ if x]
             return '<br />'.join(_)
-
-    @property
-    def bio_fields(self):
-        _ = []
-
-        field_names = ['areas_expertise', 'websites', 'education', 'bio']
-        fields = self.object_fields
-        
-        for i in field_names:
-            f = fields.get(i, None)
-
-            if f:
-
-                value_type = None
-
-                if hasattr(f, 'value_type'):
-                    value_type = f.value_type
-
-                is_grid = isinstance(value_type, DictRow)
-
-                value = getattr(self.context, i, None)
-                
-                if is_grid and isinstance(f, (schema.List, schema.Tuple)):
-                    value = [object_factory(**x) for x in value]
-
-                __ = {
-                    'name' : i,
-                    'title' : f.title,
-                    'list' : isinstance(f, (schema.List, schema.Tuple)) and not is_grid,
-                    'html' : False,
-                    'grid' : is_grid,
-                    'value' : value,
-                }
-
-                __['string'] = not any([
-                    __['html'], 
-                    __['list'],
-                    __['grid'],
-                ])
-
-                _.append(__)
-
-        bio = getattr(self.context, 'bio', None)
-        
-        if bio:
-            
-            _.append({
-                'name' : 'bio',
-                'title' : 'Biography',
-                'list' : False,
-                'string' : False,                    
-                'html' : True,
-                'value' : RichTextValue(
-                            raw=bio,
-                            mimeType=u'text/html',
-                            outputMimeType='text/x-html-safe'),
-            })
-
-        return [object_factory(**x) for x in _]
