@@ -126,6 +126,21 @@
         <replace css:content-children="aside.portletNavigationTree" css:theme-children="#navbarSectionNav" />
 
         <!-- Portlets -->
+
+        <replace css:content="#portal-column-one" 
+                css:theme="#portal-column-one" />
+
+        <replace css:content="#portal-column-two" 
+                css:theme="#portal-column-two" />
+
+        <rules css:if-not-content="#portal-column-one">
+            <drop css:theme="#portal-column-one" />
+        </rules>
+
+        <rules css:if-not-content="#portal-column-two">
+            <drop css:theme="#portal-column-two" />
+        </rules>
+
         <rules css:if-not-content="#portal-column-one, #portal-column-two">
             <drop css:theme="[data-component='portlets']" />
         </rules>
