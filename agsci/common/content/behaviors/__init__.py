@@ -9,6 +9,10 @@ from zope.interface import provider
 from agsci.common import AgsciMessageFactory as _
 
 @provider(IFormFieldProvider)
+class IAlwaysExcludeFromNavigation(model.Schema):
+    pass
+
+@provider(IFormFieldProvider)
 class IResearchAreas(model.Schema):
 
     department_research_areas = schema.List(

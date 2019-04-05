@@ -191,6 +191,7 @@
             <element>Document</element>
             <element>agsci_section</element>
             <element>agsci_subsite</element>
+            <element>agsci_directory_classification</element>
         </value>
     </record>
 

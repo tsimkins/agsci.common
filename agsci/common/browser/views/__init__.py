@@ -364,17 +364,19 @@ class PersonView(BaseView):
             _ = [x for x in _ if x]
             return '<br />'.join(_)
 
+    @property
+    def has_address(self):
+        return all([
+            getattr(self.context, 'city', None),
+            getattr(self.context, 'state', None),
+            getattr(self.context, 'zip_code', None),
+        ])
+
 class DirectoryView(BaseView):
 
     @property
     def people(self):
-
-        results = self.portal_catalog.searchResults({
-            'Type' : 'Person',
-            'sort_on' : 'sortable_title',
-        })
-
-        return [x.getObject() for x in results]
+        return self.context.people()
 
     def person_view(self, o):
         return o.restrictedTraverse('view')

@@ -4,6 +4,7 @@ from plone.indexer import indexer
 from plone.namedfile.file import NamedBlobFile
 from zope.component import provideAdapter
 
+from .content.behaviors import IAlwaysExcludeFromNavigation
 from .content.behaviors.tags import ITags
 from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.degrees import IDegree
@@ -64,10 +65,26 @@ for (_idx, _field) in degree_index_field:
 
 # Person Sortable Title
 @indexer(IPerson)
-def PersonTitle(context):
+def PersonSortableTitle(context):
     try:
         return context.getSortableName()
     except:
         return ('Z', 'Z')
 
-provideAdapter(PersonTitle, name='sortable_title')
+provideAdapter(PersonSortableTitle, name='sortable_title')
+
+# Person Directory Classification
+@indexer(IPerson)
+def PersonDirectoryClassification(context):
+    try:
+        return getattr(context.aq_base, 'classifications', [])
+    except:
+        return []
+
+provideAdapter(PersonDirectoryClassification, name='DirectoryClassification')
+
+@indexer(IAlwaysExcludeFromNavigation)
+def AlwaysExcludeFromNavigation(context):
+    return True
+
+provideAdapter(AlwaysExcludeFromNavigation, name='exclude_from_nav')

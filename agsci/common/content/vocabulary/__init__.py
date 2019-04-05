@@ -15,6 +15,14 @@ from ..behaviors.tags import ITagsRoot
 class BaseVocabulary(object):
 
     implements(IVocabularyFactory)
+    
+    @property
+    def site(self):
+        return getSite()
+    
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.site, 'portal_catalog')
 
 class StaticVocabulary(BaseVocabulary):
 
@@ -76,12 +84,10 @@ class PublicTagsVocabulary(BaseVocabulary):
 # Directory classifications for people
 class PersonClassificationsVocabulary(StaticVocabulary):
 
-    items = [
-        'Faculty',
-        'Educator',
-        'Staff',
-        'Graduate Student',
-    ]
+    @property
+    def items(self):
+        results = self.portal_catalog.searchResults({'Type' : 'Classification'})
+        return [x.Title for x in results]
 
 # US States
 class StatesVocabulary(KeyValueVocabulary):

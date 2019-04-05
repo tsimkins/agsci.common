@@ -81,23 +81,30 @@
 
                             <address>
 
-                                <div class="mb-4">
+                                <div class="mb-4"
+                                    tal:define="street_address view/street_address|nothing;
+                                                city context/city|nothing;
+                                                state context/state|nothing;
+                                                zip_code context/zip_code|nothing;"                                                
+                                    tal:condition="view/has_address|nothing">
+
                                     <span class="street-address"
-                                          tal:define="street_address view/street_address|nothing"
                                           tal:condition="street_address"
                                           tal:content="structure street_address" />
-                                    <br>
+
+                                    <br tal:condition="street_address">
+
                                     <span class="locality"
-                                          tal:condition="context/city|nothing"
-                                          tal:content="context/city" />,
+                                          tal:condition="city"
+                                          tal:content="city" />,
 
                                     <span class="region"
-                                          tal:condition="context/state|nothing"
-                                          tal:content="context/state" />
+                                          tal:condition="state"
+                                          tal:content="state" />
 
                                     <span class="postal-code"
-                                          tal:condition="context/zip_code|nothing"
-                                          tal:content="context/zip_code" />
+                                          tal:condition="zip_code"
+                                          tal:content="zip_code" />
 
                                 </div>
                                 <div>

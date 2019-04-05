@@ -9,6 +9,7 @@ from zope.component import getMultiAdapter
 class Renderer(_Renderer):
 
     _template = ViewPageTemplateFile('templates/navigation.pt')
+    recurse = ViewPageTemplateFile('templates/navigation_recurse.pt')
 
     def getNavTree(self, _marker=None):
         if _marker is None:

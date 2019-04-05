@@ -19,6 +19,13 @@
         provides=".leadimage.ILeadImageNoCaption"
     />
 
+    <!-- Exclude from nav hardcode -->
+    <plone:behavior
+        title="Exclude from Navigation (Always)"
+        description="Always exclude items from nav."
+        provides=".IAlwaysExcludeFromNavigation"
+    />
+
     <!-- Behaviors for public (non-Plone) tags -->
     <plone:behavior
         title="Public Tags Behaviors"
