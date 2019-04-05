@@ -104,5 +104,14 @@
         template="templates/directory.pt"
     />
 
+    <!-- Social Media Icons -->
+    <browser:page
+        for="*"
+        name="social-media"
+        class=".SocialMediaView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/social_media.pt"
+    />
 
 </configure>

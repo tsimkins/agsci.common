@@ -12,6 +12,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from zope.schema import getFields
 
 from .. import object_factory
+from ..content.adapters import LocationAdapter
 from ..utilities import toLocalizedTime, getVocabularyTerms
 from ..browser.viewlets import PathBarViewlet
 
@@ -251,3 +252,20 @@ class PepeTheKingPrawnTile(GonzoTile):
     @property
     def template(self):
         return 'pepe_the_king_prawn-%s.pt' % self.align
+
+class RizzoTheRatTile(BaseTile):
+    __type__ = "Rizzo the Rat"
+
+    @property
+    def adapted(self):
+        # Tricky.  Making the data into an object, and then calling the adapter
+        # class directly against it.
+        return LocationAdapter(object_factory(**self.data))
+
+    @property
+    def street_address(self):
+        return self.adapted.street_address
+
+    @property
+    def has_address(self):
+        return self.adapted.has_address

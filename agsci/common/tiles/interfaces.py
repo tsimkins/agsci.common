@@ -8,6 +8,8 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 
+from ..content.behaviors import ISocialContact
+
 class IAgsciTilesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
@@ -29,7 +31,7 @@ class IButtonTileRowSchema(Interface):
         default=u'orange',
         required=False,
     )
-    
+
 class IPersonTileRowSchema(Interface):
 
     username = schema.Choice(
@@ -347,7 +349,7 @@ class IAnimalTile(Interface):
         title=_(u"Title"),
         required=False
     )
-    
+
     value = schema.List(
         title=u"People",
         description=u"",
@@ -357,3 +359,12 @@ class IAnimalTile(Interface):
 
 class IPepeTheKingPrawnTile(IGonzoTile):
     pass
+
+class IRizzoTheRatTile(ISocialContact, Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    form.order_before(title='*')

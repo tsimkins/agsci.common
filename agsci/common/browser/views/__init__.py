@@ -25,6 +25,7 @@ from agsci.common.content.degrees import IDegree
 from agsci.common.indexer import degree_index_field
 from agsci.common.utilities import get_fields_by_type
 from agsci.common import object_factory
+from agsci.common.interfaces import ILocationAdapter
 
 try:
     from zope.app.component.hooks import getSite
@@ -353,6 +354,10 @@ class DegreeCompareView(DegreeView):
 class PersonView(BaseView):
 
     @property
+    def adapted(self):
+        return ILocationAdapter(self.context)
+
+    @property
     def name(self):
         return self.context.name_data
 
@@ -365,19 +370,11 @@ class PersonView(BaseView):
 
     @property
     def street_address(self):
-        _ = getattr(self.context, 'street_address', [])
-
-        if _ and isinstance(_, (tuple, list)):
-            _ = [x for x in _ if x]
-            return '<br />'.join(_)
+        return self.adapted.street_address
 
     @property
     def has_address(self):
-        return all([
-            getattr(self.context, 'city', None),
-            getattr(self.context, 'state', None),
-            getattr(self.context, 'zip_code', None),
-        ])
+        return self.adapted.has_address
 
 class DirectoryView(BaseView):
 
@@ -387,3 +384,6 @@ class DirectoryView(BaseView):
 
     def person_view(self, o):
         return o.restrictedTraverse('view')
+
+class SocialMediaView(BaseView):
+    pass

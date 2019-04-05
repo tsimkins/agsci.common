@@ -12,4 +12,10 @@
         for="*"
     />
 
+    <!-- Adapter for IDexterityContent -->
+    <adapter
+        factory=".LocationAdapter"
+        provides="agsci.common.interfaces.ILocationAdapter"
+        for="..behaviors.ILocation"
+    />
 </configure>

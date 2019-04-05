@@ -55,9 +55,7 @@
 
                                     <address class="d-inline-flex flex-column"
                                         tal:define="email context/email|nothing;
-                                                    phone_number context/phone_number|nothing;
-                                                    
-                                        ">
+                                                    phone_number context/phone_number|nothing;">
                                         <div>
                                             <ul class="list-inline list-inline-not-mobile list-bio-contact">
                                                 <li tal:condition="email">
@@ -72,6 +70,16 @@
                                                       tal:content="phone_number" />
                                                 </li>
                                             </ul>
+                                            
+                                            <tal:social-media
+                                                tal:define="twitter_url context/twitter_url|nothing;
+                                                            facebook_url context/facebook_url|nothing;
+                                                            youtube_url context/youtube_url|nothing;
+                                                            linkedin_url context/linkedin_url|nothing;">
+                                                            
+                                                <metal:social-media
+                                                    metal:use-macro="context/social-media/macros/social-media" />
+                                            </tal:social-media>
                                         </div>
                                     </address>
 
@@ -84,7 +92,6 @@
 
         </tal:people>
     </div>
-
 
 </section>
 

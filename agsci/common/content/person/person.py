@@ -12,7 +12,7 @@ from zope import schema
 from zope.component import adapter
 from zope.interface import implements, provider, implementer, Interface
 
-from ..behaviors import IContact, ILocation, ISocialMediaBase
+from ..behaviors import IContact, ISocialMediaBase
 
 from agsci.common import AgsciMessageFactory as _
 
@@ -21,7 +21,7 @@ ACTIVE_REVIEW_STATES = ('published',)
 AGSCI_DIRECTORY_EDITOR = 'agsci.directory.editor'
 
 social_media_fields = [
-    'twitter_url', 'facebook_url', 'linkedin_url',
+    'twitter_url', 'facebook_url', 'youtube_url', 'linkedin_url',
 ]
 
 contact_fields = [

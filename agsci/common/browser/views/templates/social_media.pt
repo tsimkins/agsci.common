@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="agsci.common">
+<body>
+
+    <tal:social-media
+        tal:define="twitter_url string:https://www.twitter.com;
+                    facebook_url string:https://www.facebook.com;
+                    youtube_url string:https://www.youtube.com;
+                    linkedin_url string:https://www.linkedin.com;">
+
+        
+            <metal:social-media
+                metal:define-macro="social-media">
+
+                <ul class="list-inline list-inline-social"
+                    tal:define="social_media python: any([twitter_url, facebook_url, youtube_url, linkedin_url]);"
+                    tal:condition="social_media">
+
+                    <li tal:condition="facebook_url">
+                        <a tal:attributes="href facebook_url">
+                            <em class="title fab fa-2x fa-fw fa-facebook-square"></em>
+                        </a>
+                    </li>
+
+                    <li tal:condition="twitter_url">
+                        <a tal:attributes="href twitter_url">
+                            <em class="title fab fa-2x fa-fw fa-twitter-square"></em>
+                        </a>
+                    </li>
+
+                    <li tal:condition="youtube_url">
+                        <a tal:attributes="href youtube_url">
+                            <em class="title fab fa-2x fa-fw fa-youtube-square"></em>
+                        </a>
+                    </li>
+
+                    <li tal:condition="linkedin_url">
+                        <a tal:attributes="href linkedin_url">
+                            <em class="title fab fa-2x fa-fw fa-linkedin"></em>
+                        </a>
+                    </li>
+
+                </ul>
+            </metal:social-media>
+
+    </tal:social-media>
+
+</body>
+</html>

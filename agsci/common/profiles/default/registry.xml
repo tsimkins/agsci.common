@@ -7,6 +7,21 @@
         </value>
     </record>
 
+    <record
+        name="plone.displayed_types"
+        interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+        field="displayed_types">
+        <value>
+            <element>agsci_blog</element>
+            <element>Collection</element>
+            <element>Folder</element>
+            <element>Document</element>
+            <element>agsci_section</element>
+            <element>agsci_subsite</element>
+            <element>agsci_directory_classification</element>
+        </value>
+    </record>
+
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_test_tile"
              interface="plone.app.mosaic.interfaces.ITile"
              remove="True" />
@@ -165,7 +180,6 @@
         <value key="weight">100</value>
     </records>
 
-
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_pepe_the_king_prawn"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.pepe_the_king_prawn</value>
@@ -180,19 +194,18 @@
         <value key="weight">100</value>
     </records>
 
-    <record
-        name="plone.displayed_types"
-        interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
-        field="displayed_types">
-        <value>
-            <element>agsci_blog</element>
-            <element>Collection</element>
-            <element>Folder</element>
-            <element>Document</element>
-            <element>agsci_section</element>
-            <element>agsci_subsite</element>
-            <element>agsci_directory_classification</element>
-        </value>
-    </record>
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_rizzo_the_rat"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.rizzo_the_rat</value>
+        <value key="label">Rizzo the Rat</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
 
 </registry>

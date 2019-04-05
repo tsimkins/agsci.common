@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <div class="container">
+        <div class="row px-0 mx-0 align-items-start justify-content-center">
+            <div class="col-12 px-0">
+    
+                <div class="address-generic card agsci-box-shadow">
+
+                    <div class="card-title"
+                         tal:define="title view/data/title|nothing"
+                         tal:condition="title">
+
+                        <p tal:content="title" />
+
+                    </div>
+
+                    <address
+                        tal:define="email view/data/email|nothing;
+                                    phone_number view/data/phone_number|nothing;
+                                    fax_number view/data/fax_number|nothing;
+                                    street_address view/street_address|nothing;
+                                    city view/data/city|nothing;
+                                    state view/data/state|nothing;
+                                    zip_code view/data/zip_code|nothing;
+                                    has_address view/street_address">
+                                    
+                        <div class="mb-4"
+                             tal:condition="has_address">
+
+                            <span class="street-address"
+                                    tal:condition="street_address"
+                                    tal:content="structure street_address" />
+
+                            <br tal:condition="street_address">
+
+                            <span class="locality"
+                                    tal:condition="city"
+                                    tal:content="city" />,
+
+                            <span class="region"
+                                    tal:condition="state"
+                                    tal:content="state" />
+
+                            <span class="postal-code"
+                                    tal:condition="zip_code"
+                                    tal:content="zip_code" />
+                        </div>
+                                    
+                        <div>
+                            <ul class="list-inline list-inline-not-mobile list-bio-contact">
+                                <li tal:condition="email">
+                                    <span>Email</span> 
+                                    <a tal:attributes="href string:mailto:${email}"
+                                        tal:content="email" />
+                                </li>
+
+                                <li tal:condition="phone_number">
+                                    <span>Office</span> 
+                                    <a tal:attributes="href string:tel:${phone_number}"
+                                        tal:content="phone_number" />
+                                </li>
+
+                                <li tal:condition="fax_number">
+                                    <span>Fax</span> 
+                                    <a tal:attributes="href string:tel:${fax_number}"
+                                        tal:content="fax_number" />
+                                </li>
+                            </ul>
+
+                            <tal:social-media
+                                tal:define="twitter_url view/data/twitter_url|nothing;
+                                            facebook_url view/data/facebook_url|nothing;
+                                            youtube_url view/data/youtube_url|nothing;
+                                            linkedin_url view/data/linkedin_url|nothing;">
+                                            
+                                <metal:social-media
+                                    metal:use-macro="context/social-media/macros/social-media" />
+                            </tal:social-media>
+
+
+                        </div>
+                    </address>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+  </body>
+</html>

@@ -118,3 +118,21 @@ class TagsAdapter(BaseAdapter):
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
+
+class LocationAdapter(BaseAdapter):
+
+    @property
+    def street_address(self):
+        _ = getattr(self.context, 'street_address', [])
+
+        if _ and isinstance(_, (tuple, list)):
+            _ = [x for x in _ if x]
+            return '<br />'.join(_)
+
+    @property
+    def has_address(self):
+        return all([
+            getattr(self.context, 'city', None),
+            getattr(self.context, 'state', None),
+            getattr(self.context, 'zip_code', None),
+        ])

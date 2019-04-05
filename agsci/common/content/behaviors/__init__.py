@@ -1,3 +1,4 @@
+from dexterity.membrane.content.member import is_email
 from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
@@ -172,13 +173,18 @@ class ISocialMediaBase(model.Schema):
 
     __doc__ = "Social Media"
 
+    facebook_url = schema.TextLine(
+        title=_(u"Facebook URL"),
+        required=False,
+    )
+    
     twitter_url = schema.TextLine(
         title=_(u"Twitter URL"),
         required=False,
     )
 
-    facebook_url = schema.TextLine(
-        title=_(u"Facebook URL"),
+    youtube_url = schema.TextLine(
+        title=_(u"YouTube URL"),
         required=False,
     )
 
@@ -227,4 +233,18 @@ class IContact(ILocation):
     fax_number = schema.TextLine(
         title=_(u"Fax Number"),
         required=False,
-)
+    )
+
+    email = schema.TextLine(
+        title=_(u'E-mail Address'),
+        required=False,
+        constraint=is_email,
+    )
+
+class ISocialContact(ISocialMediaBase, IContact):
+
+    form.order_after(email='zip_code')
+    form.order_after(facebook_url='fax_number')
+    form.order_after(twitter_url='facebook_url')
+    form.order_after(youtube_url='twitter_url')    
+    form.order_after(linkedin_url='youtube_url')    

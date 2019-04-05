@@ -161,4 +161,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.rizzo_the_rat"
+        title="Rizzo the Rat"
+        description=""
+        schema=".interfaces.IRizzoTheRatTile"
+        class=".RizzoTheRatTile"
+        template="templates/rizzo_the_rat.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>
