@@ -357,6 +357,13 @@ class PersonView(BaseView):
         return self.context.name_data
 
     @property
+    def job_title(self):
+        _ = getattr(self.context, 'job_titles', [])
+
+        if _:
+            return _[0]
+
+    @property
     def street_address(self):
         _ = getattr(self.context, 'street_address', [])
 

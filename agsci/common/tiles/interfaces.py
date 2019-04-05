@@ -29,6 +29,14 @@ class IButtonTileRowSchema(Interface):
         default=u'orange',
         required=False,
     )
+    
+class IPersonTileRowSchema(Interface):
+
+    username = schema.Choice(
+        title=_(u"Name"),
+        vocabulary='agsci.common.tiles.people',
+        required=False,
+    )
 
 class IButtonBlockTileRowSchema(Interface):
 
@@ -333,8 +341,17 @@ class ISkeeterTile(Interface):
 
 class IAnimalTile(Interface):
 
+    form.widget(value=DataGridFieldFactory)
+
     title = schema.TextLine(
         title=_(u"Title"),
+        required=False
+    )
+    
+    value = schema.List(
+        title=u"People",
+        description=u"",
+        value_type=DictRow(title=u"Person", schema=IPersonTileRowSchema),
         required=False
     )
 

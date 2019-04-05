@@ -33,8 +33,24 @@ class FeatureCardStyleVocabulary(KeyValueVocabulary):
         ('pages', 'Pages'),
     ]
 
+class PeopleVocabulary(KeyValueVocabulary):
+
+    preserve_order = True
+
+    @property
+    def items(self):
+        results = self.portal_catalog.searchResults({
+            'Type' : 'Person',
+            'sort_on' : 'sortable_title',
+        })
+        
+        return [
+            (x.getId, x.Title) for x in results
+        ]
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
+PeopleVocabularyFactory = PeopleVocabulary()

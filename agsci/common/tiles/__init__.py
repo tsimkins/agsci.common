@@ -231,6 +231,20 @@ class SkeeterTile(ConditionalTemplateTile):
 class AnimalTile(BaseTile):
     __type__ = "Animal"
 
+    def person_view(self, o):
+        return o.restrictedTraverse('view')
+
+    @property
+    def people(self):
+        _ids = [x.get('username', None) for x in self.data['value']]
+
+        results = self.portal_catalog.searchResults({
+            'Type' : 'Person',
+            'getId' : _ids
+        })
+
+        return [x.getObject() for x in results]
+
 class PepeTheKingPrawnTile(GonzoTile):
     __type__ = "Pepe the King Prawn"
 
