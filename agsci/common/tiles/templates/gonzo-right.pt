@@ -8,7 +8,8 @@
 
 
 <section class="offset-previews"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+         tal:attributes="data-tile-type view/tile_type|nothing;
+                         data-container-width view/container_width;">
 	
 	<div class="container-fluid px-0">
 

@@ -171,6 +171,13 @@ class IKermitTile(Interface):
         required=False
     )
 
+    full_width = schema.Bool(
+        title=_(u"Full Width?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+
 class IMissPiggyTile(Interface):
 
     title = schema.TextLine(
@@ -249,6 +256,13 @@ class IGonzoTile(Interface):
     url = schema.TextLine(
         title=_(u"URL"),
         required=False
+    )
+
+    full_width = schema.Bool(
+        title=_(u"Full Width?"),
+        description=_(u""),
+        required=False,
+        default=True,
     )
 
 class IRowlfTile(Interface):

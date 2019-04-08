@@ -162,3 +162,14 @@ jq3(document).ready(function() {
     });
     
 });
+
+// Add a class of .container to any mosiac-tile-row that has a child of .container
+// This fixes multi-column mosaic layout issues
+
+jq3(document).ready(function() {
+    jq3('.mosaic-grid-row:not(:has(section[data-container-width="full"]))').each(
+        function () {
+            jq3(this).addClass('container');
+        }
+    );
+});

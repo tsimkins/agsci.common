@@ -19,11 +19,20 @@ from ..browser.viewlets import PathBarViewlet
 class BaseTile(PersistentTile):
 
     __type__ = "Base Tile"
+    __full_width__ = False
+
+    @property
+    def container_width(self):
+        
+        if self.__full_width__ or self.get_valid_value('full_width'):
+            return 'full'
+        
+        return ''
 
     def get_valid_value(self, field_name):
 
         schema = ITileDataManager(self).tileType.schema
-        value = self.data[field_name]
+        value = self.data.get(field_name)
 
         if schema:
             field = getFields(schema).get(field_name, None)
@@ -117,7 +126,8 @@ class ConditionalTemplateTile(BaseTile):
 class JumbotronTile(BaseTile):
 
     __type__ = "Jumbotron"
-
+    __full_width__ = True
+    
     def breadcrumbs(self):
         view = BrowserView(self.context, self.request)
         viewlet = PathBarViewlet(self.context, self.request, view)
@@ -129,6 +139,7 @@ class CalloutBlockTile(BaseTile):
 
 class CTATile(BaseTile):
     __type__ = "Call To Action"
+    __full_width__ = True    
 
 class KermitTile(BaseTile):
     __type__ = "Kermit"
@@ -138,6 +149,7 @@ class MissPiggyTile(BaseTile):
 
 class FozzieBearTile(ConditionalTemplateTile):
     __type__ = "Fozzie Bear"
+    __full_width__ = False
 
     @property
     def style(self):
@@ -200,7 +212,7 @@ class SkeeterTile(ConditionalTemplateTile):
     def featured(self):
         items = super(SkeeterTile, self).items
 
-        featured_id = self.data['featured_id']
+        featured_id = self.data.get('featured_id')
 
         if featured_id:
             featured_id = featured_id.strip()
@@ -228,7 +240,6 @@ class SkeeterTile(ConditionalTemplateTile):
     def style(self):
         return self.get_valid_value('style')
 
-
     @property
     def template(self):
         return 'skeeter-%s.pt' % self.style
@@ -241,7 +252,7 @@ class AnimalTile(BaseTile):
 
     @property
     def people(self):
-        _ids = [x.get('username', None) for x in self.data['value']]
+        _ids = [x.get('username', None) for x in self.data.get('value')]
 
         results = self.portal_catalog.searchResults({
             'Type' : 'Person',
