@@ -375,3 +375,33 @@ class IRizzoTheRatTile(ISocialContact, Interface):
     )
 
     form.order_before(title='*')
+
+
+class IStatlerTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    show_title = schema.Bool(
+        title=_(u"Show Title?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+
+    value = schema.List(
+        title=u"Buttons",
+        value_type=DictRow(title=u"Cards", schema=IButtonBlockTileRowSchema),
+        required=False
+    )
+
+    count = schema.Choice(
+        title=_(u"Count"),
+        values=[1,2,3,4],
+        default=1,
+        required=True,
+    )

@@ -174,4 +174,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.statler"
+        title="Statler"
+        description=""
+        schema=".interfaces.IStatlerTile"
+        class=".StatlerTile"
+        template="templates/statler.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

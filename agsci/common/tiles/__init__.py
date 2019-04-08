@@ -97,6 +97,10 @@ class BaseTile(PersistentTile):
         return [object_factory(**x) for x in v]
 
     @property
+    def count(self):
+        return self.get_valid_value('count')
+
+    @property
     def items(self):
         return self.portal_catalog.searchResults(self.query)
 
@@ -246,10 +250,6 @@ class AnimalTile(BaseTile):
 
         return [x.getObject() for x in results]
 
-    @property
-    def count(self):
-        return self.get_valid_value('count')
-
 class PepeTheKingPrawnTile(GonzoTile):
     __type__ = "Pepe the King Prawn"
 
@@ -273,3 +273,7 @@ class RizzoTheRatTile(BaseTile):
     @property
     def has_address(self):
         return self.adapted.has_address
+
+
+class StatlerTile(BaseTile):
+    __type__ = "Statler"
