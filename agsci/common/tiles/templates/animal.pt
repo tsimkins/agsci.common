@@ -15,7 +15,8 @@
         tal:content="title"
         tal:condition="title" />
 
-    <div class="card-deck card-deck-4up">
+    <div tal:define="count view/count|nothing"
+         tal:attributes="class string:card-deck card-deck-${count}up">
 
         <tal:people
             tal:repeat="context view/people|nothing">

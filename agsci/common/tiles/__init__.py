@@ -246,6 +246,10 @@ class AnimalTile(BaseTile):
 
         return [x.getObject() for x in results]
 
+    @property
+    def count(self):
+        return self.get_valid_value('count')
+
 class PepeTheKingPrawnTile(GonzoTile):
     __type__ = "Pepe the King Prawn"
 

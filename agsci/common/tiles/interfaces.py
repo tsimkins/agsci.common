@@ -357,6 +357,13 @@ class IAnimalTile(Interface):
         required=False
     )
 
+    count = schema.Choice(
+        title=_(u"Count"),
+        values=[1,2,3,4],
+        default=1,
+        required=True,
+    )
+
 class IPepeTheKingPrawnTile(IGonzoTile):
     pass
 
