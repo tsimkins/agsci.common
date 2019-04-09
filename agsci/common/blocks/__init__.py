@@ -15,7 +15,7 @@ class BaseBlock(object):
 
     def __init__(self, context):
         self.context = context
-    
+
     def __call__(self, el, **kwargs):
         rendered = self.render(el, **kwargs)
         soup = BeautifulSoup(rendered, features="lxml")
@@ -27,7 +27,7 @@ class BaseBlock(object):
         resource = self.site.restrictedTraverse(self.template_base)
 
         loader = FileSystemLoader(resource.context.path)
-        
+
         env = Environment(
             loader=loader,
             trim_blocks=True,
@@ -46,7 +46,15 @@ class BaseBlock(object):
 
 class StatBlock(BaseBlock):
     template = 'stat.j2'
-    
+
     defaults = {
         'align' : 'left'
+    }
+
+class CTABlock(BaseBlock):
+    template = 'cta.j2'
+
+    defaults = {
+        'align' : 'left',
+        'color' : 'purple',
     }

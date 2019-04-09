@@ -39,6 +39,12 @@
         for="*"
     />
 
+    <adapter
+        name="cta"
+        factory=".CTABlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
     <!-- Resource Directory -->
     <browser:resourceDirectory
         name="agsci.common.blocks"
