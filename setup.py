@@ -45,6 +45,9 @@ setup(name='agsci.common',
         'untangle',
         'dexterity.membrane',
         'python-ldap',
+        'collective.monkeypatcher',
+        'beautifulsoup4',
+        'Jinja2',
     ],
     entry_points="""
       # -*- Entry points: -*-

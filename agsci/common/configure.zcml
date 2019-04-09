@@ -10,6 +10,7 @@
     <five:registerPackage package="." initialize=".initialize" />
 
     <include package=".content" />
+    <include package=".blocks" />
     <include package=".portlets" />
     <include package=".browser" />
     <include package=".layouts" />

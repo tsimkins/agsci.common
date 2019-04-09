@@ -1,5 +1,16 @@
 <?xml version="1.0"?>
 <registry>
+
+    <!-- CSS file for TinyMCE -->
+    <record name="plone.content_css"
+            interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+            field="content_css">
+        <value>
+            <element>++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/content.min.css</element>
+            <element>++resource++agsci.common/assets/css/tinymce.css</element>
+        </value>
+    </record>
+  
     <record name="plone.app.tiles">
         <value purge="false">
             <element>agsci.common.tiles.jumbotron</element>

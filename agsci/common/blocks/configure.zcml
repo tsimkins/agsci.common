@@ -1,0 +1,47 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.monkeypatcher">
+
+    <!-- Monkey Patches to hook into the HTML rendering code -->
+
+    <include package="collective.monkeypatcher" />
+
+    <monkey:patch
+        description="This adds the blocks into the RichTextValue field"
+        class="plone.app.textfield.value.RichTextValue"
+        original="add_blocks"
+        replacement=".patch.add_blocks"
+        ignoreOriginal="True"
+    />
+
+    <monkey:patch
+        description="This adds the blocks into the RichTextValue field"
+        class="plone.app.textfield.value.RichTextValue"
+        original="output"
+        replacement=".patch.output"
+    />
+
+    <!-- Define adapters for blocks -->
+
+    <adapter
+        name="base"
+        factory=".BaseBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
+    <adapter
+        name="stat"
+        factory=".StatBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
+    <!-- Resource Directory -->
+    <browser:resourceDirectory
+        name="agsci.common.blocks"
+        directory="templates" />
+
+</configure>
