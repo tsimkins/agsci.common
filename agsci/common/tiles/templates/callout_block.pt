@@ -15,8 +15,8 @@
             	       tal:content="view/data/title|nothing" />
 
             	   <p class="lead fade-up"
-                      tal:condition="view/data/text/raw|nothing"
-                      tal:content="structure view/data/text/raw|nothing" />
+                      tal:condition="view/data/text/output|nothing"
+                      tal:content="structure view/data/text/output|nothing" />
 
         		</div>
         	</div>

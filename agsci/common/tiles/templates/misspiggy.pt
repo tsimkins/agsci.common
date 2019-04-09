@@ -20,7 +20,7 @@
                 <p tal:condition="view/data/description|nothing"
                    tal:content="view/data/description|nothing" />
 
-                <div tal:replace="structure view/data/text/raw|nothing" />
+                <div tal:replace="structure view/data/text/output|nothing" />
 
             </div>
 
