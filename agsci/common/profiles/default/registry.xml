@@ -10,7 +10,57 @@
             <element>++resource++agsci.common/assets/css/tinymce.css</element>
         </value>
     </record>
-  
+
+    <!-- JSON config for TinyMCE to make the <object> tags work. -->
+    <record name="plone.other_settings"
+            interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+            field="other_settings">
+
+        <value>
+            {
+                "forced_root_block" : ""
+            }
+        </value>
+
+    </record>
+
+    <!-- Heading styles -->
+    <record name="plone.header_styles"
+            interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+            field="header_styles">
+
+        <value>
+            <element>Header 1|h2</element>
+            <element>Header 2|h3</element>
+            <element>Header 3|h4</element>
+            <element>Header 4|h5</element>
+        </value>
+
+    </record>
+
+    <!-- Inline styles -->
+    <record
+        name="plone.inline_styles"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="inline_styles">
+        <value>
+            <element>Bold|bold|bold</element>
+            <element>Italic|italic|italic</element>
+            <element>Code|code|code</element>
+        </value>
+    </record>
+
+    <!-- Alignment Styles -->
+
+    <record name="plone.alignment_styles"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="alignment_styles">
+        <value>
+            <element>Left|alignleft|alignleft</element>
+            <element>Right|alignright|alignright</element>
+        </value>
+    </record>
+
     <record name="plone.app.tiles">
         <value purge="false">
             <element>agsci.common.tiles.jumbotron</element>

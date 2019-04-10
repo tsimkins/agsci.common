@@ -4,12 +4,27 @@ from zope.component.hooks import getSite
 
 from .interfaces import IBlock
 
+def getParams(_el):
+    _ = {}
+
+    for _param in _el.findAll('param'):
+        _name = _param.get('name', None)
+        _value = _param.get('value', None)
+        if _name is not None and _value is not None:
+            _[_name] = _value
+
+    return _
+
 def output(self):
     site = getSite()
     _ = self.output_relative_to(site)
     return self.add_blocks(_)
 
 def add_blocks(self, html):
+
+    # Just return value if we're not string or unicode.
+    if not isinstance(html, (str, unicode)):
+        return html
 
     # Get the Beautiful Soup object
     soup = BeautifulSoup(html, features="lxml")
@@ -20,11 +35,9 @@ def add_blocks(self, html):
 
     found = False
 
-    for _el in soup.findAll('aside'):
+    for _el in soup.findAll('object', attrs={'type' : 'block'}):
 
-        kwargs = dict([(k.replace('data-', '', 1), v) for (k,v) in _el.attrs.iteritems() if k.startswith('data-')])
-
-        _name = kwargs.get('name', None)
+        _name = _el.get('name', None)
 
         if _name:
 
@@ -33,6 +46,9 @@ def add_blocks(self, html):
             except:
                 pass
             else:
+
+                kwargs = getParams(_el)
+
                 __ = block(_el, **kwargs)
 
                 if __:
