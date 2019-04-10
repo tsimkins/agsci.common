@@ -21,6 +21,9 @@ class BaseTile(PersistentTile):
     __type__ = "Base Tile"
     __full_width__ = False
 
+    def set_data(self, data):
+        self._Tile__cachedData = data
+
     @property
     def container_width(self):
         
@@ -252,6 +255,7 @@ class AnimalTile(BaseTile):
 
     @property
     def people(self):
+
         _ids = [x.get('username', None) for x in self.data.get('value')]
 
         results = self.portal_catalog.searchResults({

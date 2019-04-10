@@ -23,6 +23,11 @@
         replacement=".patch.output"
     />
 
+    <!-- Resource Directory -->
+    <browser:resourceDirectory
+        name="agsci.common.blocks"
+        directory="templates" />
+
     <!-- Define adapters for blocks -->
 
     <adapter
@@ -45,9 +50,13 @@
         provides=".interfaces.IBlock"
         for="*"
     />
-    <!-- Resource Directory -->
-    <browser:resourceDirectory
-        name="agsci.common.blocks"
-        directory="templates" />
+
+    <adapter
+        name="person"
+        factory=".PersonBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
 
 </configure>
