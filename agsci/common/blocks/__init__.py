@@ -31,11 +31,18 @@ class BaseBlock(object):
 
     def __call__(self, el, **kwargs):
         rendered = self.render(el, **kwargs)
+
         if rendered:
             soup = BeautifulSoup(rendered, features="lxml")
             soup.html.hidden = True
             soup.body.hidden = True
+
+            # Remove tile wrapper sections
+            for section in soup.findAll('section', attrs={'data-tile-type' : True}):
+                section.hidden = True
+
             return soup
+
         return "<h2>NOTHING HERE</h2>"
 
     def render(self, el, **kwargs):
@@ -55,7 +62,7 @@ class BaseBlock(object):
 
         data = self.get_data(**kwargs)
 
-        return template.render(html=el.encode_contents(), **data)
+        return template.render(html=el.encode_contents(), view=self, **data)
 
 class TileBlock(BaseBlock):
 
@@ -105,3 +112,17 @@ class PersonBlock(TileBlock):
         _ = super(PersonBlock, self).get_data(**kwargs)
         _['value'] = [{'username' : x.strip()} for x in kwargs.get('users', '').split(',')]
         return _
+
+class ShadowBoxBlock(BaseBlock):
+    template = 'shadow-box.j2'
+
+    defaults = {
+        'align' : 'right',
+    }
+
+class YouTubeBlock(TileBlock):
+    tile_name = 'agsci.common.tiles.youtube'
+
+    defaults = {
+        'aspect' : '16:9',
+    }

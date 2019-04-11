@@ -1,13 +1,4 @@
-aside[data-name] {
-    border: 1px solid #333333;
-    padding: 1em;
-    background-color: #EEEEEE;
-    margin: 1em;
-}
-
-aside[data-name]:before {
-    content: "Generated Block: " attr(data-name);
-    display: block;
-    padding-bottom: 0.25em;
-    margin-bottom: 0.25em;
+img.mce-object[data-mce-p-type="block"] {
+    background-color: #3EA39E;
+    background: #3EA39E url(../images/content-block.png) no-repeat center;
 }

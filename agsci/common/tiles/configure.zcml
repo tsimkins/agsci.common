@@ -187,4 +187,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.youtube"
+        title="YouTube"
+        description=""
+        schema=".interfaces.IYouTubeTile"
+        class=".YouTubeTile"
+        template="templates/youtube.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

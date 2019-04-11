@@ -38,4 +38,10 @@
         component=".PeopleVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.video_aspect_ratio"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".VideoAspectRatioVocabularyFactory"
+    />
+
 </configure>

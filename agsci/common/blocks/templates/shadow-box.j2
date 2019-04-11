@@ -1,0 +1,12 @@
+
+<div class="{% if not align == 'full' %}float-third float-{{ align }}{% endif %}">
+    <div class="mt-3 more-block more-block-content agsci-box-shadow">
+
+        {% if title %}
+            <p class="more-header">{{ title }}</p>
+        {% endif %}
+
+        {{ html|safe }}
+
+    </div>
+</div>

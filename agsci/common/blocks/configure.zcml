@@ -58,5 +58,18 @@
         for="*"
     />
 
+    <adapter
+        name="shadow-box"
+        factory=".ShadowBoxBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
+    <adapter
+        name="youtube"
+        factory=".YouTubeBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
 
 </configure>

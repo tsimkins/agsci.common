@@ -9,6 +9,7 @@ from base64 import b64encode
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from urlparse import urlparse, parse_qs
 from zope.schema import getFields
 
 from .. import object_factory
@@ -292,3 +293,60 @@ class RizzoTheRatTile(BaseTile):
 
 class StatlerTile(BaseTile):
     __type__ = "Statler"
+
+
+class YouTubeTile(BaseTile):
+    __type__ = "YouTube"
+    
+    @property
+    def video_id(self):
+
+        url = self.data.get('url', None)
+
+        if url:
+
+            url_object = urlparse(url)
+            url_site = url_object.netloc
+
+            # YouTube - grab the 'v' parameter
+
+            if url_site.endswith('youtube.com'):
+
+                params = parse_qs(url_object.query)
+
+                v = params.get('v', None)
+
+                if v:
+                    if isinstance(v, list):
+                        return v[0]
+                    else:
+                        return v
+
+            elif url_site.endswith('youtu.be'):
+
+                # URL shortener.  Grabbing the first segment in path
+                # as the video id.  Path starts with '/', so we're
+                # ignoring the first character.
+                v = url_object.path
+                return v[1:].split('/')[0]
+
+        return None
+
+    @property
+    def wrapper_klass(self):
+        _ = ['youtube-video-embed']
+
+        aspect_ratio = self.data.get('video_aspect_ratio', None)
+
+        if aspect_ratio:
+            _.append('aspect-%s' % aspect_ratio.replace(':', '-'))
+
+        return " ".join(_)
+
+    @property
+    def iframe_url(self):
+        video_id = self.video_id
+
+        if video_id:
+            return "https://www.youtube.com/embed/%s" % video_id
+

@@ -13168,4 +13168,30 @@ body.viewpermission-plone-site-setup-users-and-groups #content,
 body.viewpermission-list-folder-contents #content {
   margin-top: 2em; }
 
+/* YouTube CSS */
+body .youtube-video-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 1em 0;
+  clear: both; }
+  body .youtube-video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: none;
+    width: 100%;
+    height: 100%; }
+body .youtube-video-embed {
+  width: 100%;
+  padding-bottom: 56.25%; }
+body .youtube-video-embed.aspect-16-9 {
+  padding-bottom: 56.25%; }
+body .youtube-video-embed.aspect-4-3 {
+  padding-bottom: 75%; }
+body .youtube-video-embed.aspect-3-2 {
+  padding-bottom: 66.6666666667%; }
+
 /*# sourceMappingURL=agsci.common.css.map */

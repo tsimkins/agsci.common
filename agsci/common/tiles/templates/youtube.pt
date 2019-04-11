@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container"
+         tal:define="iframe_url view/iframe_url|nothing"
+         tal:condition="not:iframe_url"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+    <p>No valid video.</p>
+</section>
+
+<section class="container"
+         tal:define="iframe_url view/iframe_url|nothing"
+         tal:condition="iframe_url"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <h2 tal:condition="view/data/title|nothing"
+        tal:content="view/data/title" />
+
+    <div class="col-12 col-lg-10 offset-lg-1">
+    
+        <div
+            tal:attributes="class view/wrapper_klass|nothing">
+    
+            <iframe
+                tal:attributes="src iframe_url" />
+        </div>    
+    </div>
+
+</section>
+
+
+  </body>
+</html>

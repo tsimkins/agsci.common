@@ -419,3 +419,23 @@ class IStatlerTile(Interface):
         default=1,
         required=True,
     )
+
+
+class IYouTubeTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"Video URL"),
+        required=True,
+    )
+
+    video_aspect_ratio = schema.Choice(
+        title=_(u"Video Aspect Ratio"),
+        vocabulary="agsci.common.tiles.video_aspect_ratio",
+        required=True,
+        default=u"16:9",
+    )

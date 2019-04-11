@@ -1,4 +1,4 @@
-from agsci.common.content.vocabulary import KeyValueVocabulary
+from agsci.common.content.vocabulary import StaticVocabulary, KeyValueVocabulary
 
 class ButtonColorsVocabulary(KeyValueVocabulary):
     items = [
@@ -48,9 +48,18 @@ class PeopleVocabulary(KeyValueVocabulary):
             (x.getId, x.Title) for x in results
         ]
 
+class VideoAspectRatioVocabulary(StaticVocabulary):
+
+    items = [
+        u'16:9',
+        u'3:2',
+        u'4:3',
+    ]
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
+VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
