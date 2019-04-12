@@ -7,6 +7,7 @@
   <body>
 
 <section class="bg-slate text-white"
+    data-container-width="full"
     tal:attributes="data-tile-type view/tile_type|nothing">
 
     <div class="container-fluid px-0 pt-5 pb-3">

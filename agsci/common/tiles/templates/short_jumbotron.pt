@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+    <body>
+
+<section class="container-fluid jumbotron jumbotron-img-based jumbotron-short-header jumbotron-new-overlay d-flex align-items-end position-relative"
+         tal:attributes="data-tile-type view/tile_type|nothing;
+                         data-container-width view/container_width;">
+
+    <div class="jumbotron-img jumbotron-fix-left" tal:attributes="style string:background-image: url(${view/img_src|nothing}"></div>
+
+</section>
+
+<section class="container-fluid position-relative px-3 my-2 jumbotron-short-title">
+    <div class="container px-0">
+        <div class="row py-1 py-lg-3 mx-0 border-bottom">
+            <div class="col-12 px-0 col-lg-10">
+    
+                <div id="portal-breadcrumbs"
+                     tal:condition="view/data/show_breadcrumbs|nothing"
+                      tal:replace="structure view/breadcrumbs|nothing" />
+            
+                <h1 tal:condition="view/data/show_title|nothing"                    
+                    tal:content="view/data/title|context/Title|nothing">
+
+                <p tal:condition="view/data/show_description|nothing"                    
+                   tal:content="view/data/description|context/Description|nothing">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+  </body>
+</html>

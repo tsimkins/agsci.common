@@ -138,6 +138,9 @@ class JumbotronTile(BaseTile):
         viewlet.update()
         return viewlet.render()
 
+class ShortJumbotronTile(JumbotronTile):
+    __type__ = "Short Jumbotron"
+
 class CalloutBlockTile(BaseTile):
     __type__ = "Callout Block"
 

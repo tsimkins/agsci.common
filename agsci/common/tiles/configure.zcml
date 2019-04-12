@@ -23,6 +23,19 @@
     />
 
     <plone:tile
+        name="agsci.common.tiles.short_jumbotron"
+        title="Short Jumbotron"
+        description=""
+        schema=".interfaces.IJumbotronTile"
+        class=".ShortJumbotronTile"
+        template="templates/short_jumbotron.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
+    <plone:tile
         name="agsci.common.tiles.callout_block"
         title="Callout Block"
         description=""

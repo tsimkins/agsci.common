@@ -1,5 +1,11 @@
 .mosaic-grid-row {
 
+    margin: 0 auto;
+
+    .mosaic-grid-cell {
+        padding: 0;
+    }
+
     .mosaic-tile-content {
 
         .btn-link a, a.btn-link {
@@ -17,7 +23,7 @@
             font-family: Arial, sans-serif; 
         }
         
-        .jumbotron {
+        .jumbotron, .jumbotron-short-title {
             #portal-breadcrumbs {
 
                 color: #ffffff;
@@ -40,6 +46,12 @@
             p {
                 color: #ffffff;
                 font-size: 1.25em;
+            }
+        }
+        
+        .jumbotron-short-title {
+            #portal-breadcrumbs, p {
+                color: #4D565B;
             }
         }
         
@@ -341,4 +353,10 @@ body {
         padding-bottom: 100%*(2/3);
     }
 
+}
+
+/* Pending updates to CSS from Steve */
+.dropdown-menu-right {
+    right: 0;
+    left: auto;
 }
