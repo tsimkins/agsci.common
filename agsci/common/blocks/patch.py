@@ -15,11 +15,6 @@ def getParams(_el):
 
     return _
 
-def output(self):
-    site = getSite()
-    _ = self.output_relative_to(site)
-    return self.add_blocks(_)
-
 def add_blocks(self, html):
 
     # Just return value if we're not string or unicode.

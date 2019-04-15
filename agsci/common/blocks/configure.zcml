@@ -2,7 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:browser="http://namespaces.zope.org/browser"
-    i18n_domain="collective.monkeypatcher">
+    i18n_domain="agsci.common">
 
     <!-- Monkey Patches to hook into the HTML rendering code -->
 
@@ -14,13 +14,6 @@
         original="add_blocks"
         replacement=".patch.add_blocks"
         ignoreOriginal="True"
-    />
-
-    <monkey:patch
-        description="This adds the blocks into the RichTextValue field"
-        class="plone.app.textfield.value.RichTextValue"
-        original="output"
-        replacement=".patch.output"
     />
 
     <!-- Resource Directory -->

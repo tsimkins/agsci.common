@@ -11,15 +11,21 @@
         provides="eea.facetednavigation.criteria.interfaces.ICriteria"
         factory=".facetednavigation.DegreeContainerCriteria" />
 
+    <!-- Chain in a pre-adapting adapter that transforms object blocks to
+         HTML code -->
 
     <adapter
-        factory=".blocks.transform.PortalTransformsTransformer"
+        factory="plone.app.textfield.transform.PortalTransformsTransformer
+                 .blocks.transform.BlockTransformer"
         for="Products.CMFCore.interfaces.IContentish"
+        provides="plone.app.textfield.interfaces.ITransformer"
       />
 
     <adapter
-        factory=".blocks.transform.PortalTransformsTransformer"
+        factory="plone.app.textfield.transform.PortalTransformsTransformer
+                 .blocks.transform.BlockTransformer"
         for="Products.CMFCore.interfaces.ISiteRoot"
+        provides="plone.app.textfield.interfaces.ITransformer"
       />
 
 </configure>
