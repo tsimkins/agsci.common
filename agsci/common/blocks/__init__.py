@@ -74,7 +74,7 @@ class TileBlock(BaseBlock):
 
     def render(self, el, **kwargs):
         tile = self.tile
-        
+
         if tile:
 
             # Push data into our custom tiles
@@ -84,8 +84,8 @@ class TileBlock(BaseBlock):
                 pass
 
             return tile()
-    
-        
+
+
 class StatBlock(BaseBlock):
     template = 'stat.j2'
 
@@ -106,12 +106,24 @@ class PersonBlock(TileBlock):
 
     defaults = {
         'count' : 3,
+        'style' : 'vertical',
     }
 
     def get_data(self, **kwargs):
+
         _ = super(PersonBlock, self).get_data(**kwargs)
-        _['value'] = [{'username' : x.strip()} for x in kwargs.get('users', '').split(',')]
+
+        _['value'] = [{'username' : x.strip()} for x in kwargs.get('usernames', '').split(',')]
+
         return _
+
+class HorizontalPersonBlock(PersonBlock):
+
+    defaults = {
+        'count' : 2,
+        'style' : 'horizontal',
+    }
+
 
 class ShadowBoxBlock(BaseBlock):
     template = 'shadow-box.j2'
