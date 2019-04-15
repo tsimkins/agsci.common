@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="agsci.common">
+
+    <!-- Chain in a pre-adapting adapter that transforms object blocks to
+         HTML code -->
+
+    <adapter
+        factory="plone.app.textfield.transform.PortalTransformsTransformer
+                 .blocks.transform.BlockTransformer"
+        for="Products.CMFCore.interfaces.IContentish"
+        provides="plone.app.textfield.interfaces.ITransformer"
+      />
+
+    <adapter
+        factory="plone.app.textfield.transform.PortalTransformsTransformer
+                 .blocks.transform.BlockTransformer"
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        provides="plone.app.textfield.interfaces.ITransformer"
+      />
+
+</configure>

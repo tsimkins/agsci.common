@@ -1,4 +1,8 @@
+from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
+from zope.component import getAdapter
+
+from .interfaces import IBlock
 
 class BlockTransformer(object):
 
@@ -10,7 +14,7 @@ class BlockTransformer(object):
         # If we have a value, run the 'apply_blocks' method.
         if value.raw:
 
-            if hasattr(value, 'add_blocks') and value.mimeType in (
+            if value.mimeType in (
                 'text/x-html-safe',
                 'text/html'
             ):
@@ -18,7 +22,7 @@ class BlockTransformer(object):
                 # Expand blocks if we're HTML
                 source_value = value.raw_encoded
 
-                source_value = value.add_blocks(source_value)
+                source_value = self.add_blocks(source_value)
 
                 value = RichTextValue(
                     raw=source_value,
@@ -28,3 +32,55 @@ class BlockTransformer(object):
 
         # Return the output of the next adapter in the chain
         return self.context(value, mimeType)
+
+    def get_params(self, _el):
+        _ = {}
+
+        for _param in _el.findAll('param'):
+            _name = _param.get('name', None)
+            _value = _param.get('value', None)
+            if _name is not None and _value is not None:
+                _[_name] = _value
+
+        return _
+
+    def add_blocks(self, html):
+
+        # Just return value if we're not string or unicode.
+        if not isinstance(html, (str, unicode)):
+            return html
+
+        # Get the Beautiful Soup object
+        soup = BeautifulSoup(html, features="lxml")
+        soup.html.hidden = True
+        soup.body.hidden = True
+
+        found = False
+
+        for _el in soup.findAll('object', attrs={'type' : 'block'}):
+
+            _name = _el.get('name', None)
+
+            if _name:
+
+                try:
+                    block = getAdapter((self.context, ), IBlock, _name)
+                except:
+                    pass
+                else:
+
+                    kwargs = self.get_params(_el)
+
+                    __ = block(_el, **kwargs)
+
+                    if __:
+                        _el.insert_before(*__)
+
+                    _ = _el.extract()
+
+                    found = True
+
+        if found:
+            return soup.prettify()
+
+        return html

@@ -4,18 +4,6 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="agsci.common">
 
-    <!-- Monkey Patches to hook into the HTML rendering code -->
-
-    <include package="collective.monkeypatcher" />
-
-    <monkey:patch
-        description="This adds the blocks into the RichTextValue field"
-        class="plone.app.textfield.value.RichTextValue"
-        original="add_blocks"
-        replacement=".patch.add_blocks"
-        ignoreOriginal="True"
-    />
-
     <!-- Resource Directory -->
     <browser:resourceDirectory
         name="agsci.common.blocks"
