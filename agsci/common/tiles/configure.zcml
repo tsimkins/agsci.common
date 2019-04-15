@@ -61,6 +61,21 @@
         for="*"
     />
 
+
+    <plone:tile
+        name="agsci.common.tiles.large_cta"
+        title="Large CTA"
+        description=""
+        schema=".interfaces.ILargeCTATile"
+        class=".LargeCTATile"
+        template="templates/large_cta.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+        
+
     <plone:tile
         name="agsci.common.tiles.kermit"
         title="Kermit"

@@ -148,6 +148,10 @@ class CTATile(BaseTile):
     __type__ = "Call To Action"
     __full_width__ = True    
 
+class LargeCTATile(BaseTile):
+    __type__ = "Large CTA"
+    __full_width__ = True
+
 class KermitTile(BaseTile):
     __type__ = "Kermit"
 

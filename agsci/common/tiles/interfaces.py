@@ -150,6 +150,28 @@ class ICTATile(Interface):
         required=False
     )
 
+class ILargeCTATile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
 class IKermitTile(Interface):
 
     form.widget(value=DataGridFieldFactory)

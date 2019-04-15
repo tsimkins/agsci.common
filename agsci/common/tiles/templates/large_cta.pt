@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+<section class="container-fluid big-bold-cta"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+	
+	<div class="container">
+		<div class="row">
+    		<div class="col-12 text-center">
+        		<h2 tal:condition="view/data/title|nothing"
+        		    tal:content="view/data/title|nothing" />
+        		<div tal:content="structure view/data/text/output|nothing" />
+                <a class="btn btn-creek point-at-me"
+                   tal:attributes="href view/data/url;"
+                   tal:content="view/data/label|nothing" />
+    		</div>
+		</div>
+	</div>
+	
+</section>
+
+
+  </body>
+</html>
