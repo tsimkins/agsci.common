@@ -123,6 +123,10 @@ class ConditionalTemplateTile(BaseTile):
         return self.render_template(self, *args, **kwargs)
 
     @property
+    def style(self):
+        return self.get_valid_value('style')
+
+    @property
     def render_template(self):
         return ViewPageTemplateFile('templates/%s' % self.template)
 
@@ -163,10 +167,6 @@ class FozzieBearTile(ConditionalTemplateTile):
     __full_width__ = False
 
     @property
-    def style(self):
-        return self.get_valid_value('style')
-
-    @property
     def template(self):
         return 'fozziebear-%s.pt' % self.style
 
@@ -186,10 +186,6 @@ class RowlfTile(BaseTile):
 
 class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
-
-    @property
-    def style(self):
-        return self.get_valid_value('style')
 
     @property
     def template(self):
@@ -248,14 +244,10 @@ class SkeeterTile(ConditionalTemplateTile):
         return items[:(self.max_items-1)]
 
     @property
-    def style(self):
-        return self.get_valid_value('style')
-
-    @property
     def template(self):
         return 'skeeter-%s.pt' % self.style
 
-class AnimalTile(BaseTile):
+class AnimalTile(ConditionalTemplateTile):
     __type__ = "Animal"
 
     def person_view(self, o):
@@ -272,6 +264,10 @@ class AnimalTile(BaseTile):
         })
 
         return [x.getObject() for x in results]
+
+    @property
+    def template(self):
+        return 'animal-%s.pt' % self.style
 
 class PepeTheKingPrawnTile(GonzoTile):
     __type__ = "Pepe the King Prawn"

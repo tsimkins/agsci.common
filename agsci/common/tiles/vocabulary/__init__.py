@@ -19,6 +19,12 @@ class LRAlignVocabulary(KeyValueVocabulary):
         ('right', 'Right'),
     ]
 
+class HVOrientationVocabulary(KeyValueVocabulary):
+    items = [
+        ('vertical', 'Vertical'),
+        ('horizontal', 'Horizontal'),
+    ]
+
 class CardStyleVocabulary(KeyValueVocabulary):
     items = [
         ('image', 'Image'),
@@ -63,3 +69,4 @@ CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
+HVOrientationVocabularyFactory = HVOrientationVocabulary()

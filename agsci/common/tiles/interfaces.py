@@ -400,6 +400,13 @@ class IAnimalTile(Interface):
         required=True,
     )
 
+    style = schema.Choice(
+        title=_(u"Orientation"),
+        vocabulary='agsci.common.tiles.hv_orientation',
+        default='vertical',
+        required=True,
+    )
+
 class IPepeTheKingPrawnTile(IGonzoTile):
     pass
 

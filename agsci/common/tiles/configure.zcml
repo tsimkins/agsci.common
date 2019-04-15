@@ -163,14 +163,12 @@
         for="*"
     />
 
-
     <plone:tile
         name="agsci.common.tiles.animal"
         title="Animal"
         description=""
         schema=".interfaces.IAnimalTile"
         class=".AnimalTile"
-        template="templates/animal.pt"
         add_permission="cmf.ModifyPortalContent"
         permission="zope2.View"
         layer=".interfaces.IAgsciTilesLayer"

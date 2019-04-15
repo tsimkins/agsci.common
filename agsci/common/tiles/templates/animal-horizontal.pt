@@ -6,10 +6,10 @@
       i18n:domain="agsci.common">
   <body>
 
-<section>
+<section
+    tal:attributes="data-tile-type view/tile_type|nothing">
 
-<div class="container"
-     tal:attributes="data-tile-type view/tile_type|nothing">
+<div class="container">
 
     <h2 tal:define="title view/data/title|nothing"
         tal:content="title"
@@ -21,40 +21,48 @@
         <tal:people
             tal:repeat="context view/people|nothing">
 
-             <!-- CARD -->           
-
-            <div class="card card-short-bio agsci-box-shadow"
+             <!-- CARD -->
+            <div class="card card-short-bio card-short-bio-horiz agsci-box-shadow"
                  tal:define="person_view python:view.person_view(context);
                              leadimage person_view/getItemLeadImage|nothing">
-
+            
                 <div class="card-body">
+                    
+                    <div class="row mx-0 mb-2">
+                        <div class="col-12 px-0">
+                            <p class="more-header">Contact</p>
+                        </div>
+                    </div>
                 
                     <div class="row mx-0">
-                        <div class="col-4 col-sm-12 px-0"
+                        
+                        <div class="col-4 col-sm-5 px-0"
                              tal:condition="leadimage">
+
                             <div class="card-img-crop">
                                 <img tal:attributes="alt view/name/title|nothing;
                                                      title view/name/title|nothing;
                                                      src leadimage"
                                      class="w-100 photo" />
                             </div>
-                        </div>
-                
-                        <div class="col-8 col-sm-12 pl-3 px-sm-0 pr-0">
-            
-                            <div class="row mx-0">
 
+                        </div>
+                        
+                        <div class="col-8 col-sm-7 pr-0">
+                            <div class="row mx-0">
                                 <div class="col-12 p-0 pt-2">
-                
+                            
                                     <div class="card-title">
-                                        <a tal:attributes="href context/absolute_url|nothing"
-                                           tal:content="person_view/name/title|nothing">Marra Baker</a>
+                                        <p>
+                                            <a tal:attributes="href context/absolute_url|nothing"
+                                               tal:content="person_view/name/title|nothing" />
+                                        </p>
                                     </div>
-                
+                                    
                                     <p class="jobTitle"
                                         tal:content="person_view/job_title|nothing">
-
-                                    <address class="d-inline-flex flex-column"
+                                    
+                                    <address class="list-inline list-inline-not-mobile list-bio-contact"
                                         tal:define="email context/email|nothing;
                                                     phone_number context/phone_number|nothing;">
                                         <div>
@@ -87,10 +95,10 @@
                                 </div>
                             </div>
                         </div>
+                    
                     </div>
                 </div>
-            </div>
-
+            </div>       
         </tal:people>
     </div>
 

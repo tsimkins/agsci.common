@@ -21,6 +21,12 @@
     />
 
     <utility
+        name="agsci.common.tiles.hv_orientation"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".HVOrientationVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.card_style"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".CardStyleVocabularyFactory"
