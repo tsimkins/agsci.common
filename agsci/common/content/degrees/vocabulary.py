@@ -59,13 +59,6 @@ class CareerVocabulary(StaticVocabulary):
         'Veterinarian',
     ]
     
-class EmployerVocabulary(StaticVocabulary):
-
-    items = [
-        'USDA',
-        'Tyson',
-    ]
-
 class ClubVocabulary(StaticVocabulary):
 
     items = [
@@ -132,14 +125,6 @@ class ClubVocabulary(StaticVocabulary):
         'The Wildlife Society (TWS)',
     ]
 
-class FacilityVocabulary(StaticVocabulary):
-
-    items = [
-        'Agriculture and Environment Center',
-        'Dairy Barn',
-        'Mushroom Research Center',
-    ]
-
 class ScholarshipVocabulary(StaticVocabulary):
 
     items = [
@@ -149,7 +134,5 @@ class ScholarshipVocabulary(StaticVocabulary):
 
 InterestAreaVocabularyFactory = InterestAreaVocabulary()
 CareerVocabularyFactory = CareerVocabulary()
-EmployerVocabularyFactory = EmployerVocabulary()
 ClubVocabularyFactory = ClubVocabulary()
-FacilityVocabularyFactory = FacilityVocabulary()
 ScholarshipVocabularyFactory = ScholarshipVocabulary()

@@ -11,67 +11,236 @@
         <metal:lightbox
             define-macro="lightbox">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 pl-0 ">
-                        <table class="table table-bordered"
-                            tal:define="degrees view/degrees|nothing"
-                            tal:condition="degrees">
+<div class="container-fluid comparison-container py-0 mx-0">
 
-                            <tr>
+    <div class="row mx-0 px-0 bg-nittany-navy close-comparison-bar col-12 text-white p-3 justify-content-start d-flex">
+        <button class="btn btn-creek">Return to Filtered Majors</button>
+    </div>
 
-                                <td></td>
-
-                                <tal:item
-                                    tal:repeat="i view/degrees">
-                                    <th scope="col" class="px-3">
-                                        <div                                         class="card mb-0">
-                                            <div class="card-image-top">
-                                                <div class="card-body p-0">
-                                                    <img class="image-fluid w-100"
-                                                         alt=""
-                                                         tal:attributes="src python:view.getItemLeadImage(item=i);" />
+    <div class="row mx-0 px-0 " style="padding-top: 4rem;">
+        <div class="col-12 px-0 d-block d-md-flex justify-content-center c1">
+            <!-- Small Screen -->
     
-                                                    <div class="d-flex align-items-end justify-content-start text-black p-1">
-                    
-                                                        <p style="font-weight: bold" class="small" class="card-title" tal:content="i/Title" />
-                    
-                                                    </div>
-                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </th>
-                                </tal:item>
-
-                            </tr>
-
-                            <tal:row 
-                                tal:repeat="f view/fields|nothing">
-                                <tr>
-
-                                    <th class="table-secondary" 
-                                        scope="row" 
-                                        tal:define="title f/title|nothing;"
-                                        tal:content="title" />
+            <tal:item
+                 tal:repeat="i view/degrees">
     
-                                    <tal:item
-                                        tal:repeat="i view/degrees"> 
-                                    
-                                        <td tal:define="v python: f.get(i);">
-                                            <ul>
-                                                <li tal:repeat="j v" tal:content="j" />
-                                            </ul>
-                                        </td>
-
-                                    </tal:item>
-                                </tr>
-                            </tal:row>
-                            
-                        </table>
-                    </div>
-                </div>
-            </div>
+            <table class="rtable rtable-mobile-labels d-block d-md-none">
+                <thead class="visual-cards-imgs-cropped">
+                    <tr>
+                        <th scope="col">
+                            <div class="card card-visual card-image-top">
+                                <div class="opacity-dimmer-bottom-left"></div>
+    
+                                <img
+                                    tal:attributes="src python:view.getItemLeadImage(item=i);"
+                                    alt=""
+                                    title=""
+                                    class="w-100" />
+    
+                                <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+                                    <h3 tal:content="i/Title|nothing" />
+    
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="explorer-label element-invisible">
+                                <span>Unique Highlight</span>
+                            </div>
+                            <div>
+                                <p tal:content="i/Description|nothing" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="explorer-label">
+                                <span>Career Opportunities</span>
+                            </div>
+                            <div>
+                                <ul tal:condition="i/career|nothing">
+                                    <li tal:repeat="j i/career"
+                                        tal:content="j" />
+                                </ul>
+                                <p>
+                                    <strong>Recent graduates work for:</strong> ConAgra Foods, Hershey Foods, National Institutes of Health, Nestle, USDA
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="explorer-label">
+                                <span>Options</span>
+                            </div>
+                            <div>
+                                <tal:html
+                                    tal:condition="i/options/output|nothing"
+                                    tal:content="structure i/options/output" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="explorer-label">
+                                <span>Student Clubs and Organizations</span>
+                            </div>
+                            <div>
+                                <ul tal:condition="i/club|nothing">
+                                    <li tal:repeat="j i/club"
+                                        tal:content="j" />
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="explorer-label">
+                                <span>Facilities, Centers, and Institutes</span>
+                            </div>
+                            <div>
+                                <tal:html
+                                    tal:condition="i/facility/output|nothing"
+                                    tal:content="structure i/facility/output" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="major-details">
+                            <a tal:attributes="href i/absolute_url|nothing"
+                                class="btn btn-creek">View Major Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            </tal:item>
+    <!-- ############ -->
+    
+            <!-- Big Screen -->
+            <!-- Standard Table with Scroll -->
+            <table class="rtable rtable-mobile-labels d-none d-md-block">
+                <thead class="visual-cards-imgs-cropped">
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <th scope="col">
+                            <div class="card card-visual card-image-top">
+                                <div class="opacity-dimmer-bottom-left"></div>
+                                    <img tal:attributes="src python:view.getItemLeadImage(item=i);"
+                                         alt=""
+                                         title=""
+                                         class="w-100" />
+                                <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+                                    <h3 tal:content="i/Title|nothing" />
+                                </div>
+                            </div>
+                        </th>
+                        </tal:item>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <td>
+                            <div class="explorer-label element-invisible">
+                                <span>Unique Highlight</span>
+                            </div>
+                            <div>
+                                <p tal:content="i/Description|nothing" />
+                            </div>
+                        </td>
+                        </tal:item>
+                    </tr>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <td>
+                            <div class="explorer-label">
+                                <span>Options</span>
+                            </div>
+                            <div>
+                                <tal:html
+                                    tal:condition="i/options/output|nothing"
+                                    tal:content="structure i/options/output" />
+                            </div>
+                        </td>
+                        </tal:item>
+                    </tr>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <td>
+                            <div class="explorer-label">
+                                <span>Student Clubs and Organizations</span>
+                            </div>
+                            <div>
+                                <ul tal:condition="i/club|nothing">
+                                    <li tal:repeat="j i/club"
+                                        tal:content="j" />
+                                </ul>
+                            </div>
+                        </td>
+                        </tal:item>
+                    </tr>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <td>
+                            <div class="explorer-label">
+                                <span>Career Opportunities</span>
+                            </div>
+                            <div>
+                                <ul tal:condition="i/career|nothing">
+                                    <li tal:repeat="j i/career"
+                                        tal:content="j" />
+                                </ul>
+                                <p tal:condition="i/employers/output|nothing">
+                                    <strong>Recent graduates work for:</strong> 
+    
+                                    <tal:html
+                                        tal:content="structure i/employers/output" />
+                                </p>
+                            </div>
+                        </td>
+                        </tal:item>
+                    </tr>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+                        <td>
+                            <div class="explorer-label">
+                                <span>Facilities, Centers, and Institutes</span>
+                            </div>
+                            <div>
+                                <tal:html
+                                    tal:condition="i/facility/output|nothing"
+                                    tal:content="structure i/facility/output" />
+                            </div>
+                        </td>
+                        </tal:item>
+                    </tr>
+                    <tr>
+                        <tal:item
+                             tal:repeat="i view/degrees">
+    
+                        <td class="major-details">
+                            <a tal:attributes="href i/absolute_url|nothing"
+                                class="btn btn-creek">View Major Details</a>
+                        </td>
+    
+                        </tal:item>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>        
+</div>
 
         </metal:lightbox>
     </metal:content-core>    

@@ -30,6 +30,12 @@ class IDegree(model.Schema):
         ),
     )
 
+    options = RichText(
+        title=_(u"Options"),
+        description=_(u""),
+        required=False,
+    )
+
     interest_area = schema.List(
         title=_(u"Interest Areas"),
         description=_(u""),
@@ -42,10 +48,10 @@ class IDegree(model.Schema):
         value_type=schema.Choice(vocabulary="agsci.common.degree.career"),
     )
 
-    employer = schema.List(
+    employer = RichText(
         title=_(u"Employers"),
         description=_(u""),
-        value_type=schema.Choice(vocabulary="agsci.common.degree.employer"),
+        required=False,
     )
 
     club = schema.List(
@@ -54,10 +60,10 @@ class IDegree(model.Schema):
         value_type=schema.Choice(vocabulary="agsci.common.degree.club"),
     )
 
-    facility = schema.List(
+    facility = RichText(
         title=_(u"Facilities, Centers, and Institutes"),
         description=_(u""),
-        value_type=schema.Choice(vocabulary="agsci.common.degree.facility"),
+        required=False,
     )
 
     scholarship = schema.List(

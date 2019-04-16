@@ -18,21 +18,9 @@
     />
 
     <utility
-        name="agsci.common.degree.employer"
-        provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabulary.EmployerVocabularyFactory"
-    />
-
-    <utility
         name="agsci.common.degree.club"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".vocabulary.ClubVocabularyFactory"
-    />
-    
-    <utility
-        name="agsci.common.degree.facility"
-        provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabulary.FacilityVocabularyFactory"
     />
     
     <utility

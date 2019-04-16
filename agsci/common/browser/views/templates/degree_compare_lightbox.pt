@@ -6,8 +6,6 @@
       i18n:domain="agsci.common">
 <body>
 
-    <h1 class="documentFirstHeading">Compare Degrees</h1>
-
     <metal:lightbox
         metal:use-macro="context/@@degree_compare/macros/lightbox" />
 

@@ -93,29 +93,5 @@ class DegreeContainerCriteria(_Criteria):
         return cache[key]
 
     def __criteria(self):
-
-        criteria = [
-                Criterion(
-                    widget="criteria",
-                    title="Current search",
-                    position="center",
-                    section="default",
-                    hidden=False,
-                ),
-                Criterion(
-                    _cid_="SearchableText",
-                    widget="text",
-                    title="Search Courses",
-                    index="SearchableText",
-                    position="right",
-                    section="default",
-                    wildcard=True,
-                    onlyallelements=True,
-                    hidden=False,
-                )
-        ]
-
-        criteria.extend(self.getFields())
-
-        return PersistentList(criteria)
+        return PersistentList(self.getFields())
 

@@ -40,10 +40,6 @@ def add_catalog_indexes(context, logger=None):
                 ('Tags', 'KeywordIndex'),
                 ('DegreeInterestArea', 'KeywordIndex'),
                 ('DegreeCareer', 'KeywordIndex'),
-                ('DegreeEmployer', 'KeywordIndex'),
-                ('DegreeClub', 'KeywordIndex'),
-                ('DegreeFacility', 'KeywordIndex'),
-                ('DegreeScholarship', 'KeywordIndex'),
                 ('hasLeadImage', 'BooleanIndex'),
                 ('DirectoryClassification', 'KeywordIndex'),
              ]

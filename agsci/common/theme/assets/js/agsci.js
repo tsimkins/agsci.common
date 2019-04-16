@@ -120,14 +120,56 @@ jq3(document).ready(function() {
         jQuery('body.portaltype-agsci_degree_container form.degree-explorer').each(
 
             function() {
-    
+
                 console.log('setting stuff');
+
+                // Create wrapper and dimmer divs
+                var cw = jQuery("<div class='comparison-wrapper'></div>");
+                var dimmer = jQuery("<div class='comparison-dimmer'></div>");
+
+                // Hide them
+                dimmer.hide();
+                cw.hide();
+
+                // Add them to the top and bottom of the body.
+                jQuery('body').append(cw);
+                jQuery('body').prepend(dimmer);
+
                 // Don't submit when clicking Compare
                 jQuery(this).attr('onsubmit', 'return false;');
-                
+
+                // When you actually click the submit button, go grab the results
+                // of the comparison view, and stuff that into the comparison
+                // wrapper. 
                 jQuery(this).children('input[type="submit"]').click(
                     function () {
                         console.log('Compare!');
+
+                        // Get the results of the form submit and
+                        // stuff them inside a div.
+
+                        var results_url = jQuery(this).attr('data-compare-view')
+
+                        var get_results = jQuery.get(results_url, function(data) {
+
+                            jQuery('.comparison-wrapper').each(
+                                function () {
+                                    jQuery(this).html(data);
+
+                                    jQuery('.comparison-wrapper, .comparison-dimmer').show();
+
+                                    jQuery('.close-comparison-bar button').each(
+                                        function () {
+                                            jQuery(this).click(
+                                                function () {
+                                                    jQuery('.comparison-wrapper, .comparison-dimmer').hide();
+                                                }
+                                            );
+                                        }
+                                    );
+                                }
+                            );
+                        })
                     }
                 );
 
@@ -141,26 +183,25 @@ jq3(document).ready(function() {
 
                                 jQuery(this).find('input[type="checkbox"]:checked').each(
                                     function () {
-                                            
                                         degree_ids.push(jQuery(this).attr('value'));
                                     }
                                 );
-                                
+
                                 var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
-                                
+
                                 console.log(compare_view);
-                                
-                                jQuery(this).children('input[type="submit"]').attr('data-featherlight', compare_view)
+
+                                jQuery(this).children('input[type="submit"]').attr('data-compare-view', compare_view)
                             }
                         );
                     }
                 );
         });
-        
+
         //jq3('body.portaltype-agsci_degree_container form.degree-explorer input[type="submit"]').featherlight(window.location.pathname + '/@@degree_compare_lightbox');
 
     });
-    
+
 });
 
 // Add a class of .container to any mosiac-tile-row that has a child of .container
