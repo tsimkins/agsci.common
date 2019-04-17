@@ -92,8 +92,8 @@ class DegreeContainerCriteria(_Criteria):
     
         criteria = [
             Criterion(
-                widget="criteria",
-                title="Current search",
+                widget="criteria_degree_explorer",
+                title="Active Filters",
                 position="center",
                 section="default",
                 hidden=False,

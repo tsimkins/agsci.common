@@ -1,0 +1,22 @@
+<div class="faceted-widget faceted-criteria-widget" style="display: none"
+     i18n:domain="eea"  tal:define="
+  wid python:view.data.getId();
+  hidden python:view.hidden;
+  css string:faceted-widget ${view/css_class};
+  css python:hidden and css + ' faceted-widget-hidden' or css;
+  "
+  tal:attributes="id string:${wid}_widget; class css">
+
+<div class="widget-fieldset faceted-criteria filtered-tags">
+    <span class="active-filters"
+          tal:define="title python:view.data.get('title', '')" 
+          tal:content="python:view.translate(title)" 
+          i18n:translate="" />
+
+  <span tal:attributes="id wid" />
+
+  <button class="btn btn-link px-2"
+          tal:attributes="id string:${wid}_reset">Remove All</button>
+
+</div>
+</div>

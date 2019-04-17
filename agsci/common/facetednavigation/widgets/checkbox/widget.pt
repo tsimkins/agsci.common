@@ -1,4 +1,4 @@
-<div class="faceted-widget faceted-checkboxes-widget" style="display: none"
+<div class="faceted-widget faceted-checkbox_degree_explorer" style="display: none"
      i18n:domain="eea" tal:define="
   error_view nocall:context/@@faceted.widget.error;
   wid python:view.data.getId();

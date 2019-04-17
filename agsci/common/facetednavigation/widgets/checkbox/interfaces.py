@@ -1,4 +1,4 @@
-from eea.facetednavigation.widgets.checkbox.interfaces import ICheckboxSchema as _ICheckboxSchema
+from eea.facetednavigation.widgets.checkbox.interfaces import ICheckboxSchema as _schema
 
-class ICheckboxSchema(_ICheckboxSchema):
+class ICheckboxSchema(_schema):
     pass

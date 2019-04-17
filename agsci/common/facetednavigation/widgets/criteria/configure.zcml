@@ -5,11 +5,11 @@
 
     <faceted:widget
         factory=".widget.Widget"
-        schema=".interfaces.ICheckboxSchema"
+        schema=".interfaces.ICriteriaSchema"
     />
 
     <browser:resource
-        name="eea.facetednavigation.widgets.checkbox_degree_explorer.view.js"
+        name="eea.facetednavigation.widgets.criteria_degree_explorer.view.js"
         file="./view.js"
     />
 
