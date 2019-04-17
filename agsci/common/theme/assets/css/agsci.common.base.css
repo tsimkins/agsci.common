@@ -12,7 +12,8 @@
     font-size: 0.875em;
     margin: 0 0.25em;
     padding: 0.375em;
-    font-family: Arial, sans-serif; }
+    font-family: Arial, sans-serif;
+    z-index: 1; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
     color: #ffffff; }
     .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs > .container, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs > .container {
