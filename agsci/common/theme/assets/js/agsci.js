@@ -141,7 +141,7 @@ jq3(document).ready(function() {
                 // When you actually click the submit button, go grab the results
                 // of the comparison view, and stuff that into the comparison
                 // wrapper. 
-                jQuery(this).children('input[type="submit"]').click(
+                jQuery(this).children('.compare-selections button').click(
                     function () {
                         console.log('Compare!');
 
@@ -191,7 +191,7 @@ jq3(document).ready(function() {
 
                                 console.log(compare_view);
 
-                                jQuery(this).children('input[type="submit"]').attr('data-compare-view', compare_view)
+                                jQuery(this).children('.compare-selections button').attr('data-compare-view', compare_view)
                             }
                         );
                     }
