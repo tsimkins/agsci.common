@@ -23,7 +23,7 @@ PORTABLE HIGHLIGHTS
 	}
 
 .card.card-portable-highlight {
-	background: url(../images/hex-stat-block-bg.svg), darken($color-ps-creek, 10%);
+	background: url(../images/hex-stat-block-bg.svg), $color-ps-creek-accessible;
 	background-position: -65px -120px, center center;
 	background-size: 400px auto;
 	background-repeat: no-repeat;

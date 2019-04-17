@@ -5,7 +5,6 @@ JUMBOTRON HOME STYLE
 ---------------------------------------------------------- */
 	
 .jumbotron {
-	display: block;	
 	height: 60vh; /* setting to fixed height so bg image can be absolute */
 	margin-bottom: 0; /* override bs default */
 	border-radius: 0;
@@ -19,14 +18,13 @@ JUMBOTRON HOME STYLE
 
 	p {
 		margin-bottom: 0.5rem;
-		font-weight: $font-weight-light;
 		line-height: $line-height-base;
 		}
 	
 	p.lead {
 		color: $white;
 		font-size: $font-size-base;
-		margin-bottom: 1rem;
+		margin-bottom: 0;
 		margin-top: 0.5rem;
 		}
 		
@@ -72,31 +70,6 @@ JUMBOTRON HOME STYLE
 		}
 	}
 
-.jumbotron.jumbotron-news-feed {
-	height: 70vh;
-	
-	.jumbotron-img {
-		height: 70vh;	
-		}
-	
-	&:hover {
-		
-		.opacity-dimmer-bottom {
-			background:
-			linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
-			}
-		}
-
-	h3 {
-		color: $white;
-		margin-top: 0.5rem;
-		}
-	
-	p.section-crumb {
-		font-size: $font-size-sm;
-		color: lighten($color-ps-coaly-gray,45%);
-		}
-	}
 	
 .article .jumbotron,
 .article .jumbotron .row,
@@ -111,7 +84,17 @@ JUMBOTRON HOME STYLE
 	height: 60vh;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: top center;	
+	background-position: center center;	
+
+	&.fix-img-top {
+		background-position-y: top;
+		background-position-y: 20%;
+		}
+		
+	&.fix-img-bottom {
+		background-position-y: bottom;
+		background-position-y: 80%;
+		}
 
 	&.fix-img-right {
 		background-position-x: right;

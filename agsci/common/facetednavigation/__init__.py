@@ -9,8 +9,8 @@ from eea.facetednavigation.settings.interfaces import IDontInheritConfiguration
 from zope.globalrequest import getRequest
 from Products.CMFCore.utils import getToolByName
 
-from .content.degrees import IDegree
-from .indexer import degree_index_field
+from ..content.degrees import IDegree
+from ..indexer import degree_index_field
 
 @implementer(ICriteria)
 class DegreeContainerCriteria(_Criteria):
@@ -19,10 +19,6 @@ class DegreeContainerCriteria(_Criteria):
         return {
             'interest_area' : 'DegreeInterestArea',
             'career' : 'DegreeCareer',
-            'employer' : 'DegreeEmployer',
-            'club' : 'DegreeClub',
-            'facility' : 'DegreeFacility',
-            'scholarship' : 'DegreeScholarship',
         }.get(f, f)
 
     def getFields(self):
@@ -60,13 +56,13 @@ class DegreeContainerCriteria(_Criteria):
 
                 yield Criterion(
                     _cid_=cid,
-                    widget="checkbox",
+                    widget="checkbox_degree_explorer",
                     title=title,
                     index=self.idx(key),
                     operator="or",
                     operator_visible=False,
                     vocabulary=vocabulary_name,
-                    position="right",
+                    position="left",
                     section="default",
                     hidden=False,
                     count=True,
@@ -93,5 +89,17 @@ class DegreeContainerCriteria(_Criteria):
         return cache[key]
 
     def __criteria(self):
-        return PersistentList(self.getFields())
+    
+        criteria = [
+            Criterion(
+                widget="criteria",
+                title="Current search",
+                position="center",
+                section="default",
+                hidden=False,
+            ),
+        ]
 
+        criteria.extend(self.getFields())
+
+        return PersistentList(criteria)

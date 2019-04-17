@@ -42,29 +42,19 @@ header {
 	transition: $transition-long;
 	}
 
-header.affix {
-	position: fixed;
+header.affix { 
+	position: fixed;  /* this breaks scrolling of nav on mobile - this needs to be remedied  */
 	top: 0;
 	left: 0;
-	box-shadow: 0 0 16px rgba($black,0.85);
+	box-shadow: 0 0 1rem rgba($color-ps-coaly-gray,0.85);
 	}
-		
-/* OLD WITH NO AFFIX FOR MOBILE - CAN DELETE THIS IF THEY WANT AFFIX STATE
+	
 @include media-breakpoint-up(lg) {
-
-	header {
-		height: auto;
-		position: relative;
-		}
-
-	header.affix {
+	
+	header.affix { 
 		position: fixed;
-		top: 0;
-		left: 0;
-		box-shadow: 0 0 16px rgba($black,0.85);
 		}
 	}
-	*/
 	
 /* Brand - Agsci Logo
 --------------------------------------------- */
@@ -74,52 +64,55 @@ header.affix {
 	min-height: 3.5rem;
 	
 	img.agsci-logo {
-		width: 280px;
-		height: 50px;
+		width: 224px;
+		height: 40px;
 		margin-left: 1rem;
 		}
 	}
 
 	.college-level .navbar-brand {
-	position: absolute;
-	z-index: 9;
-	padding-top: 0.75rem;
-	padding-bottom: 0.75rem;
-	}
-	
-@include media-breakpoint-up(lg) {
-	
-.college-level header {
-	
-	img.agsci-logo {
-		width: 300px;
-		height: 57px;
-		}
+		position: absolute;
+		z-index: 9;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
 	}
 
-.college-level header.affix {
+@include media-breakpoint-up(md) {
 	
-	img.agsci-logo {
+	.college-level header img.agsci-logo {
 		width: 280px;
 		height: 50px;
 		}
 	}
+
+@include media-breakpoint-up(lg) {
+	
+	.college-level header {
+		
+		img.agsci-logo {
+			width: 300px;
+			height: 57px;
+			}
+		}
+	
+	.college-level header.affix {
+		
+		img.agsci-logo {
+			width: 280px;
+			height: 50px;
+			}
+		}
 		
 	.college-level .affix .navbar-brand {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	}
-		
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		}
 	}
 	
 img.agsci-logo,
 .navbar-brand {
 	transition: $transition-long;
 	}
-
-
-	
-
 
 
 /* Mobile College Hamburger Button
@@ -281,8 +274,8 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 		border-radius: 0;
 		margin-top: 0;
 		min-width: 250px;
-		box-shadow: 4px 4px 12px rgba($black,0.5);
-		background-color: lighten($white,60%);
+		box-shadow: $box-shadow-medium;
+		background-color: $white;
 		border: none;
 
 		
@@ -295,7 +288,7 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 		    height: 0;
 		    border-style: solid;
 		    border-width: 0 10px 10px 10px;
-		    border-color: transparent transparent lighten($white,60%) transparent;
+		    border-color: transparent transparent $white transparent;
 		    z-index:9999;
 		    }
 		
@@ -320,7 +313,7 @@ header .navbar {
 	background-color: $color-ps-nittany-navy;
 	position: relative;
 	border-bottom: $border-base;
-	min-height: 4.5rem;
+	min-height: 4rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0;
 	
@@ -433,11 +426,15 @@ header .btn[type="submit"] {
 	}
 
 .navbar-collapse {
-	padding-top: 1rem;
+	padding-top: 0;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	position: relative;
 	margin-top: 3.5rem;
+	max-height: 85vh;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	padding-bottom: 2rem; /* get search box above control bar on mobile */
 	}
 
 @include media-breakpoint-up(md) {
@@ -446,6 +443,8 @@ header .btn[type="submit"] {
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
+		max-height: auto;
+		overflow: visible;
 		}
 	}
 		
@@ -463,11 +462,13 @@ p.main-nav-section-head {
 	font-family: $font-family-sans-serif;
 	}
 
+@include media-breakpoint-up(md) {
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
 		border-bottom: 0.25rem solid $color-ps-creek;
 		transition-delay: 0.375s;
 		outline: none;
+		}
 		}
 						
 @include media-breakpoint-up(lg) {
@@ -538,15 +539,13 @@ p.main-nav-section-head {
 		left:0;
 		right:0;
 		width:100%;
-		box-shadow: 10px 20px 30px -20px rgba($black,1);
+		box-shadow: 10px 20px 30px -20px rgba($color-ps-coaly-gray,1);
 		}
 		
 	.department-level .navbar .dropdown-menu {
-			min-width: 250px;
-			}
+		min-width: 250px;
+		}
 	}
-
-
 
 @include media-breakpoint-up(xl) {
  
@@ -651,7 +650,7 @@ p.main-nav-section-head {
 			font-family: $font-family-sans-serif;
 			font-weight: $font-weight-bold;
 			color: $color-ps-nittany-navy;
-			
+			margin-top: 0.5rem;
 			}
 	}	
 
@@ -720,6 +719,11 @@ p.main-nav-section-head {
 		padding: 0.75rem 1rem 0.5rem 1rem;
 		display: inline-block;
 		border-bottom: 0.25rem solid transparent;
+		
+		&.section-header {
+			margin-top: 0;
+			}
+			
 		}
 		
 	.navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {

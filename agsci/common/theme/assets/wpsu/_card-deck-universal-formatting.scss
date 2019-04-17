@@ -80,15 +80,16 @@
 	
 .card-text p {
 	line-height: $line-height-base;
-	font-weight: 300;
 	font-size: $small1-size;
 	margin-bottom: 0;
 	}
-
+	
 @include media-breakpoint-up(md) {
 	.card-text p {
 		font-size: $small3-size;
 		}
+	
+	.card-deck-2up .card-text p {
+		font-size: $small1-size;
+		}	
 	}
-
-

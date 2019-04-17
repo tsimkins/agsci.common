@@ -32,7 +32,7 @@ COLOR Utility Classes
 	}
 
 .creek { 
-	color: darken($color-ps-creek,15%);
+	color: $color-ps-creek-accessible;
 	}
 
 .limestone-gray {
@@ -72,11 +72,11 @@ COLOR Utility Classes
 	}
 	
 .bg-light-gray {
-	background: lighten($color-ps-coaly-gray,62.5%);
+	background: $color-ps-coaly-gray-light35;
 	}
 
 .bg-lightish-gray {
-	background: lighten($color-ps-coaly-gray,57.5%);
+	background: $color-ps-coaly-gray-light30;
 	}
 	
 .bg-future-green {
@@ -100,7 +100,7 @@ COLOR Utility Classes
 	}
 
 .bg-light-creek {
-	background-color: #e7f4f3;
+	background-color: $color-ps-creek-light35;
 	}
 
 .bg-creek {

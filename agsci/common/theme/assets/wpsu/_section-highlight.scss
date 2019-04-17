@@ -1,25 +1,22 @@
 
+.container-fluid.section-highlight {
+	background-color: $color-ps-coaly-gray-light35;
+	}
+
+.container-fluid.section-highlight:nth-of-type(even) {
+	background-color: $color-ps-coaly-gray-light30;
+	}
 	
-	.container-fluid.section-highlight {
-		background-color: #e4e5e6;
-		}
+.section-highlight {
 	
-	.container-fluid.section-highlight:nth-of-type(even) {
-		background-color: #d6d7da
-		}
-		
-		.section-highlight {
-			img {
+	img {
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
-	}
-	
 		}
+	}
 
 .section-highlight-text {
-	
-	
 	
 	h2 {
 		font-size: 1.5rem;
@@ -34,33 +31,27 @@
 		padding-bottom: 0;
 	
 		a {
-			color: darken($color-ps-creek,10%);
+			color: $color-ps-creek-accessible;
 			}
 		
 		a:hover {
 			color: $color-ps-creek;
-			border-bottom: 1px solid darken($color-ps-creek,10%);
+			border-bottom: 1px solid $color-ps-creek-accessible;
 			}
 		}
 	
 	p {
-		color: $color-ps-slate-gray;
-		font-size: $small3-size;
+		font-size: $small1-size;
 		line-height: $line-height-base;	
 		}	
 	}
 		
-			
-	@include media-breakpoint-up(xl) {
+@include media-breakpoint-up(xl) {
 		
-		.section-highlight-text {
+	.section-highlight-text {
 			
 		p {
 			font-size: $font-size-sm;
-			}
-	
-		.btn {
-			margin-top: 0.5rem;
 			}
 		}
 	}

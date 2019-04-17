@@ -37,7 +37,6 @@ a.element-invisible:focus {
 	color: $black;
 	}
 
-
 @include media-breakpoint-up(sm) {
 	
 	.d-invisible-sm {
@@ -131,16 +130,21 @@ a.element-invisible:focus {
 	General Box Shadow 
 	and boxh shadow hover state for links
 --------------------------------------------- */
+
+$box-shadow-light: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+$box-shadow-medium: 0.25rem 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.3);
+$box-shadow-dark: 0.25rem 0.25rem 1rem rgba($color-ps-slate-gray, 0.5);
+
 .agsci-box-shadow {
-		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+		box-shadow: $box-shadow-light;
 		margin-bottom: $card-group-margin;
 		}
 		
 a.agsci-box-shadow {
-		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+		box-shadow: $box-shadow-light;
 		
 		&:hover { /* change body on hover only if wrapped in a */ 
-			box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.5);
+			box-shadow: $box-shadow-medium;
 			}
 		}
 				

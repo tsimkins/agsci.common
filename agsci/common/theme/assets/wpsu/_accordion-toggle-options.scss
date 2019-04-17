@@ -5,7 +5,6 @@ ACCORDION - MAJOR OPTIONS
 ---------------------------------------------------------- */	
 
 .accordion.accordion-options {
-	
 	margin-bottom: 0;
 	
 	.btn {
@@ -20,7 +19,7 @@ ACCORDION - MAJOR OPTIONS
 		    bottom: 0;
 		    right: -3rem;
 		    width: 3rem;
-		    background-color: lighten($color-ps-creek,15%);
+		    background-color: $color-ps-creek-light15;
 			line-height: 2.5;
 			font-style: normal;
 			font-variant: normal;

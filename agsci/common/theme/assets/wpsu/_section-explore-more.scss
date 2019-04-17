@@ -1,5 +1,5 @@
 .bg-light-gray-patterned {
-	background: url(../images/honey-comb-corner-pattern.svg), lighten($color-ps-coaly-gray,60%);
+	background: url(../images/honey-comb-corner-pattern.svg), $color-ps-coaly-gray-light30;
 	background-repeat: no-repeat, repeat;
 	background-position: -10px -10px, center center;
 	background-size: 240%, 100%;	
@@ -99,10 +99,6 @@ p.more-header {
 	border-bottom: 1px solid $color-ps-creek;
 	}
 	
-.section-explore ul.list-inline li a {
-	border-bottom: transparent;
-	}
-	
 .explore-more-link {
 	line-height: $line-height-md;
 	
@@ -124,6 +120,7 @@ p.more-header {
 			position: relative;
 			right: -0.25rem;
 			color: $color-ps-creek;
+			font-size: 80%; /* match small class size */
 			}
 		
 		&.link-arrow::after {

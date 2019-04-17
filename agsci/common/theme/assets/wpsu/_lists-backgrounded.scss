@@ -24,7 +24,7 @@ ul.list-gray {
 	font-weight: $font-weight-bold;
 	
 	li a {
-		padding: 1.5rem;
+		padding: 1rem 1.5rem;
 		display: block;
 		border-bottom: transparent;
 		transition: $transition-long;
@@ -41,34 +41,34 @@ ul.list-creek {
 	
 		&:hover,
 		&:nth-of-type(n):hover {
-			background: #e7f4f3;
+			background: $color-ps-creek-light35;
 			}
 		}
 		
 	li {
 		&:nth-of-type(1) a {
-			background: #6ebab6;
+			background: $color-ps-creek-light10;
 			}
 		
 		&:nth-of-type(2) a {
-			background: #86c6c2;
+			background: $color-ps-creek-light15;
 			}
 					
 		&:nth-of-type(3) a {
-			background: #9fd1cf;
+			background: $color-ps-creek-light20;
 			}
 					
 		&:nth-of-type(4) a {
-			background: #b7dddb;
+			background: $color-ps-creek-light25;
 			}
 					
 		&:nth-of-type(5) a {
-			background: #cfe8e7;
+			background: $color-ps-creek-light30;
 			}
 					
 		&:nth-of-type(6) a {
-			background: #e7f4f3;
-			}
+			background: $color-ps-creek-light35;
+			}	
 		}
 	}
 

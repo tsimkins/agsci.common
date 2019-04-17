@@ -1,0 +1,30 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="eea">
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="faceted_widgets"
+        template="templates/widgets.pt"
+        class="eea.facetednavigation.browser.app.view.FacetedContainerView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="faceted_widgets_macros"
+        template="templates/widgets.pt"
+        permission="zope2.View"
+    />
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="faceted_macros"
+        template="templates/macros.pt"
+        permission="zope2.View"
+    />
+
+</configure>

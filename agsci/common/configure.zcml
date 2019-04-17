@@ -16,6 +16,7 @@
     <include package=".layouts" />
     <include package=".tiles" />
     <include package=".load" />
+    <include package=".facetednavigation" />
 
     <genericsetup:registerProfile
         name="default"

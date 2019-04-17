@@ -105,10 +105,18 @@ li.li-separator::after {
 		background-color: darken($color-ps-nittany-navy,5%);
 		
 		img.agsci-logo {
-			width: 280px;
-			height: 50px;
+			width: 224px;
+			height: 40px;
 			}
 		
+		}
+	}
+
+@include media-breakpoint-up(md) {
+	
+	.department-level footer img.agsci-logo {
+		width: 280px;
+		height: 50px;
 		}
 	}
 
@@ -118,14 +126,13 @@ li.li-separator::after {
 	
 	p.department-name {
 		font-family: $font-family-base;
-		font-weight: $font-weight-light;
 		color: $white;
-		font-size: $font-size-lg;
+		font-size: $h4-font-size;
 		margin-bottom: 0.25rem;
 		border-bottom: $border-base;
 		display: inline-block;
-		line-height: $line-height-md;
-		padding-bottom: 0.25rem;
+		line-height: $line-height-sm;
+		padding-bottom: 0.5rem;
 		}
 	
 	ul li {

@@ -1,0 +1,89 @@
+<metal:widgets define-macro="widgets" i18n:domain="eea" tal:define="
+  mode mode | string:edit;
+  view_mode python:mode == 'view';
+  edit_mode python:mode == 'edit';
+  search_mode python:mode == 'search';
+
+  faceted_query nocall:here/@@faceted_query;
+  faceted_html python:faceted_query(ajax=False) if (not view.disable_smart_facets and view_mode) else '';
+  visible python:edit_mode or search_mode or view.check_display_criteria(faceted_html);
+  positions python:visible and view.positions or [];
+  positions python:dict((x.value, x.title) for x in positions);
+">
+
+<div class="container degree-explorer mt-3">
+
+  <div class="faceted-clear"></div>
+
+  <!-- Top -->
+  <div tal:define="position string:top" id="top-area">
+    <metal:position use-macro="here/@@faceted_macros/macros/position" />
+  </div>
+
+  <!-- Left & Center-->
+  <div id="center-and-left-area">
+    <!-- Center -->
+    <div id="center-area">
+      <div id="center-content-area">
+        <!-- Center top -->
+        <div tal:define="position string:center" id="center-top-area">
+          <metal:position use-macro="here/@@faceted_macros/macros/position" />
+        </div>
+
+        <!-- Content -->
+        <metal:results use-macro="here/@@faceted_macros/macros/results" />
+
+        <!-- Center bottom -->
+        <div tal:define="position string:bottomcenter" id="center-bottom-area">
+          <metal:position use-macro="here/@@faceted_macros/macros/position" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Left column -->
+    <div tal:define="position string:left" id="left-area" class="cd-panel cd-panel--from-left js-cd-panel-main">
+
+        <div class="cd-panel__container">
+        
+            <div class="panel-close-view d-lg-none">
+                <button href="#0"
+                        class="btn btn-light-creek-outline cd-panel__close js-cd-close">
+                    <i class="fas fa-times"></i>
+                    Close Filters
+                </button>
+                <button href="#0" 
+                        class="btn btn-creek cd-panel__close js-cd-close">
+    
+                        View Selections
+    
+                        <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            
+            <div class="cd-panel__content">
+                <nav id="degree-explorer-nav" class="navbar d-block degree-explorer-filters">
+                    <p class="degree-explorer-header h4 ml-2 mt-0">Explore by:</p>
+                    <metal:position use-macro="here/@@faceted_macros/macros/position" />
+            	</nav>
+            </div> <!-- cd-panel__content -->
+        
+        </div> <!-- cd-panel__container -->
+    </div>
+
+  </div>
+
+  <!-- Right -->
+  <div tal:define="position string:right" id="right-area">
+    <metal:position use-macro="here/@@faceted_macros/macros/position" />
+  </div>
+
+  <!-- Bottom -->
+  <div tal:define="position string:bottom" id="bottom-area">
+    <metal:position use-macro="here/@@faceted_macros/macros/position" />
+  </div>
+
+  <div class="faceted-clear"></div>
+
+</div>
+</metal:widgets>

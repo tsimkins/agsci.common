@@ -199,13 +199,17 @@ body.userrole-authenticated {
         }
     }
 
-    #right-area {
-        padding: 0 1.5%;
+    #left-area {
+        width: 15rem;
+    }
+    
+    .left-area-js {
+        margin-left: 15em;
     }
 
     #faceted-top-column,
     #center-content-area,
-    #right-area {
+    #left-area {
 
         .faceted-criteria {
             dl, .faceted-criteria-hide-show, .faceted-criteria-reset {
@@ -226,78 +230,18 @@ body.userrole-authenticated {
         }
 
         .widget-fieldset {
-            border: none;
             padding: 0;
             margin: 0 0 1.5em 0;
+            max-height: 13rem;
 
-            legend {
-                font-weight: 600;
-                padding: 0;
-                font-size: 1em;
-            }
+            overflow: auto;
 
             form {
 
-                font-size: 0.875em;
-
-                input[id="SearchableText"] {
-                    margin: 0;
-                    font-size: 0.875em;
-                    padding: 0.25em 1%;
-                    width: 100%
-                }
-
-                input[id="SearchableText_button"] {
-                    display: block;
-                    margin: 0.375em 0 0 0;
-                    float: none;
-                    font-size: 0.875em;
-                }
-
-                ul {
-                    margin: 0 0 0 0.75em;
-                    padding: 0;
-
-                    li {
-                        margin: 0;
-                        padding-left: 18px;
-                        line-height: 1.125;
-
-                        input {
-                            margin-left: -18px;
-                            margin-top: 2px;
-                        }
-
-                        label {
-                            padding-left: 0;
-                        }
-                    }
-                }
             }
         }
     }
 
-    #faceted-top-column {
-
-        .widget-fieldset {
-
-            form {
-
-                input[id="SearchableText"] {
-                    margin: 0;
-                    font-size: 0.875em;
-                    padding: 0.25em 0;
-                }
-
-                input[id="SearchableText_button"] {
-                    display: block;
-                    margin: 0.375em 0 0 0;
-                    float: none;
-                    font-size: 0.875em;
-                }
-            }
-        }
-    }
 }
 
 body.viewpermission-manage-portal,

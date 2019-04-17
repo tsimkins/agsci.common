@@ -31,16 +31,7 @@ button {
 	color: $white;
 	
 	&:hover {
-		background-color: lighten($color-ps-creek,10%);
-		}
-	}
-
-.department .btn.btn-primary {
-	margin-top: 0;
-	background-color: rgba($color-ps-creek,1);
-	
-	&:hover {
-		background-color: rgba($color-ps-creek,0.75);
+		background-color: $color-ps-creek-light10;
 		}
 	}
 
@@ -50,9 +41,10 @@ button {
 
 button.btn-link,	
 .btn-link a,
-a.btn-link {
+a.btn-link,
+a.card .btn-link {
 	padding: 0;
-	color: darken($color-ps-creek,10%);
+	color: $color-ps-creek-accessible;
 	border: 1px solid transparent;
 	
 	&::after {
@@ -72,7 +64,7 @@ a.btn-link {
 button.btn-link:hover,
 a:hover .btn-link,
 a.btn-link:hover {
-	border-bottom: 1px solid darken($color-ps-creek,10%);
+	border-bottom: 1px solid $color-ps-creek-accessible;
 	}
 
 .btn.btn-light-gray {
@@ -87,9 +79,9 @@ a.btn-link:hover {
     }
 
 .btn.btn-light-creek-outline {
-	border: 1px solid #cfe8e7;
+	border: 1px solid $color-ps-creek-light30;
 	position: relative;
-	color: darken($color-ps-creek,10%);
+	color: $color-ps-creek-accessible;
 	background: $white;
 	
 	&:hover {
@@ -99,7 +91,7 @@ a.btn-link:hover {
     }
     
 .btn.btn-creek {
-	background: darken($color-ps-creek,10%);
+	background: $color-ps-creek-accessible;
 	border: transparent;
 	position: relative;
 	color: $white;

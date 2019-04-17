@@ -97,7 +97,7 @@
 		position: relative;
 		top: 0;
 		padding-left: 2rem;
-		font-size: $h4-font-size;
+		font-size: $small3-size;
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		line-height: 1.2;
@@ -105,7 +105,13 @@
 	}
 
 
+@include media-breakpoint-up(md) {
 	
+	.department-bar a.department-brand {
+		font-size: $h4-font-size;
+		}
+	}
+		
 @include media-breakpoint-up(lg) {
 	
 	.department-bar a.department-brand {
@@ -190,18 +196,25 @@
 		}
 	
 	img.agsci-logo {
-		width: 280px;
-		height: 50px;
+		width: 224px;
+		height: 40px;
 		margin-left: 1rem;
 		}
 	}
 
+@include media-breakpoint-up(md) {
+	
+	.department-level img.agsci-logo {
+		width: 280px;
+		height: 50px;
+		}
+	}
+	
 @include media-breakpoint-up(lg) {
 	
 	.department-level img.agsci-logo {
 		width: 300px;
 		height: 54px;
-		margin-left: 1rem;
 		}
 		
 	.department-level .college-logo-block {
@@ -257,13 +270,13 @@
 @include media-breakpoint-up(lg) {
 	
 	.affix .department-bar a.department-brand {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
-	}
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		}
 	
 	.department-level header.affix {
-	padding-bottom: 0;
-	}
+		padding-bottom: 0;
+		}
 	
 	.department-level .affix img.agsci-logo { /* px required for svg, specific ht required for smoother transition */
 		width: 260px;
@@ -293,9 +306,11 @@
 		min-height: auto;
 		border-bottom: none;
 		padding-top: 0;
+		padding-bottom: 2rem; /* get search box above control bar on mobile */
 		}
 		
 	.navbar-collapse {
+		padding-bottom: 0;
 		margin-top: 0;
 		background: darken($color-ps-creek,10%);
 		}
@@ -470,7 +485,7 @@
 		.dropdown-menu {
 			min-width: 280px;
 			top: 2.525rem;
-			box-shadow: 4px 4px 12px rgba($black,0.5);
+			box-shadow: $box-shadow-medium;
 			background-color: $white !important;
 			position: absolute;
 			

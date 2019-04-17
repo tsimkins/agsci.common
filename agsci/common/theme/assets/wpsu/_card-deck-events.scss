@@ -31,12 +31,7 @@ CARD DECK - EVENTS
 	&:hover {
 		border: none;
 		background: none;
-		box-shadow: 0.25rem 0.25rem 0.75rem rgba(49, 77, 100, 0.25);
-			
-		.card-body-right {
-			background: $white;
-			border-top: 0.5rem solid rgba($color-ps-creek,0.75);
-			}
+		box-shadow: $box-shadow-medium;
 		}
 	
 	.event-date-block {
@@ -61,7 +56,7 @@ CARD DECK - EVENTS
 	float: left;
 	margin-right: 1rem;
 	font-family: $font-family-sans-serif;
-	background: #b7dddb;
+	background: $color-ps-creek-light25;
 	color: $color-ps-nittany-navy;
 	box-shadow: none;
 	margin-top: 0;
@@ -99,6 +94,16 @@ CARD DECK - EVENTS
 .event-details p {
 	font-size: $small3-size;
 	line-height: $line-height-md;
-	font-weight: $font-weight-light;
 	margin-bottom: 0;
 	}
+	
+.events-new {
+	.card.card-event {
+		box-shadow: $box-shadow-light;
+		
+		&:hover {
+			box-shadow: $box-shadow-medium;
+			}
+		}
+	}
+	

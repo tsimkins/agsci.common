@@ -1,3 +1,30 @@
+.jumbotron.jumbotron-news-feed {
+	height: 70vh;
+	
+	.jumbotron-img {
+		height: 70vh;	
+		}
+	
+	&:hover {
+		
+		.opacity-dimmer-bottom {
+			background:
+			linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+			}
+		}
+
+	h3 {
+		color: $white;
+		margin-top: 0.5rem;
+		}
+	
+	p.section-crumb {
+		font-size: $font-size-sm;
+		color: white;
+		font-weight: $font-weight-bold;
+		}
+	}
+
 /* ----------------------------------------------------------
 
 CARDS
@@ -39,5 +66,43 @@ CARDS
 		
 	.card.card-news {
 		flex-direction: column;
+
+		p.h3 {
+			font-size: $font-size-base;
+			}
 		}
 	}
+
+@include media-breakpoint-up(lg) {	
+	
+	.card.card-news p.h3 {
+			font-size: $font-size-sm;
+			}
+		}
+			
+
+/* ----------------------------------------------------------
+
+NEWS EVENTS NEW
+
+---------------------------------------------------------- */
+
+.news-new,
+.events-new {
+	background: $color-ps-coaly-gray-light35;
+	}
+
+.news-new {
+	.card.card-news {
+		background: rgba($white,0.5);	
+		border-bottom: none;
+		margin: 0 4px 4px 4px;
+		
+		&:hover {
+			background: $white;
+		}
+		
+		}
+	}
+	
+

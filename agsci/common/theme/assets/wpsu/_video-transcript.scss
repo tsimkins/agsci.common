@@ -9,13 +9,13 @@
 
 .btn-transcript {
 	width: 100%;
-	background-color: lighten($color-ps-coaly-gray,55%);
+	background-color: $color-ps-coaly-gray-light30;
 	text-align: left;
 	}
 
 .accordion-transcript .accordion-content {
 	padding: 1rem;
-	background-color: lighten($color-ps-coaly-gray,60%);
+	background-color: $color-ps-coaly-gray-light35;
 	
 	p {
 		font-size: $small3-size;

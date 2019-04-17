@@ -1,7 +1,7 @@
 .card.card-visual {
 		padding: 0;
 		position: relative;
-		box-shadow: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
+		box-shadow: $box-shadow-light;
 		margin-bottom: $card-group-margin;
 		margin-top: $card-group-margin;
 		position: relative;
@@ -18,11 +18,11 @@
 		
 		.card-body {
 			padding: 1rem;
-			background-color: lighten($color-ps-coaly-gray, 62.5%);
+			background-color: $color-ps-coaly-gray-light35;
 			}
 			
 			&:hover {
-				box-shadow: 0.25rem 0.25rem 0.75rem rgba(49, 77, 100, 0.25);
+				box-shadow: $box-shadow-medium;
 		
 			&::before {
 				opacity:1;
@@ -59,7 +59,7 @@
 	    width: 4rem;
 	    height: 1px;
 	    border-bottom: 2px solid transparent;
-	    z-index: 9999;
+	    z-index: 1;
 	    }
 
 	&:hover h3.card-title::after {
@@ -82,17 +82,53 @@
     &:hover h3.text-center.card-title::after {
     	border-bottom: 2px solid $color-ps-creek;
 		}	
-	
-	a { /* when full card is not a link, option for links inside text */
+
+ /* when full card is not a link, option for links inside text */
+ 	
+	a {
 		text-decoration: none;
 		color: #307e7a;
-		border-bottom: 1px solid $color-ps-creek;
+		border-bottom: $border-base;
 
 		&:hover {
-			border-bottom: 1px solid $color-ps-creek;
+			border-bottom: $border-base;
 			}
 		}
+	}
+
+div.card .card-text {
+	
+	p {
+		margin-bottom: 0.5rem;
 		
+		@include media-breakpoint-up(md) {
+			font-size: $small2-size;
+			}
+		}
+	
+	ul {
+		font-size: $small2-size;
+		
+		li {
+			margin-top: 1rem;
+			margin-bottom: 0.5rem;
+			font-weight: $font-weight-bold;
+			
+			a {
+				color: $black;
+				border-bottom: $border-base;
+				}
+			
+			ul {
+				padding-left: 1.25rem;
+				}
+			
+			li {
+				margin-top: 0.5rem;
+				font-weight: $font-weight-base;
+				}
+			}
+		}
 	}
 
 .visual-cards-imgs-cropped .card-image-top {
@@ -128,4 +164,46 @@
 		}
 	}
 
+@include media-breakpoint-up(md) {
+	
+	.card-deck-2up .card .card-img-overlay h3.card-title { 
+		font-size: $h2-font-size;
+		}
+	}
 
+.card.card-visual.card-horizontal {
+	
+	.row {
+		background-color: $color-ps-coaly-gray-light35;
+		}
+	
+	&:hover .row {
+		background-color: $white;
+		}
+	
+	h3.card-title {
+		font-size: $h4-font-size;
+		position: relative;
+		
+		@include media-breakpoint-up(md) {
+			font-size: $h5-font-size;
+			}
+			
+		&::after {
+			border-bottom-color: $color-ps-creek;
+			}
+		}
+	
+	p {
+		font-size: $small1-size;
+		line-height: $line-height-base;		
+		margin-bottom: 0;
+		padding-top: .125rem;
+		
+		@include media-breakpoint-up(md) {
+			font-size: $small3-size;
+			}
+		
+		}
+	}
+	

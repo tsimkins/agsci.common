@@ -11,12 +11,19 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 	z-index: 9;
 	background-color: $white;
 	margin: -3rem 1rem 1rem 1rem;
+	
+	p {
+		line-height: $line-height-lg;
+		
+		&:last-child {
+			margin-bottom: 0;
+			}
+		}
 	}
 
 .offset-content h2 {
 	margin-bottom: 0.5rem;
 	}
-
 
 .offset-content h2  {
 	
@@ -30,9 +37,10 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 .offset-content a:visited:not(.btn) {
 	text-decoration: none;
 	color: #307e7a;
-	border-bottom: 1px solid transparent;
+	border-bottom: $border-base;
 
 	&:hover {
+		color: $black;
 		border-bottom: 1px solid $color-ps-creek;
 		}
 	}
@@ -99,4 +107,3 @@ section.offset-full-image {
 
 	}
 }
-
