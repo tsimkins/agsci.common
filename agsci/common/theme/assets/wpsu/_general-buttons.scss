@@ -1,5 +1,9 @@
 button {
 	cursor: pointer;
+
+	&.disabled {
+		pointer-events: none;
+		}
 	}
 	
 .btn {

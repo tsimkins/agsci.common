@@ -40,6 +40,7 @@ header {
 	position: relative;
 	z-index: 99;
 	transition: $transition-long;
+	position: fixed;
 	}
 
 header.affix { 
@@ -51,6 +52,10 @@ header.affix {
 	
 @include media-breakpoint-up(lg) {
 	
+	header {
+		position: relative;
+		}
+	
 	header.affix { 
 		position: fixed;
 		}
@@ -60,7 +65,7 @@ header.affix {
 --------------------------------------------- */
 
 .college-level header {
-	min-height: 3.5rem;
+	min-height: 3.75rem;
 	
 	img.agsci-logo {
 		width: 224px;
@@ -312,7 +317,7 @@ header .navbar {
 	background-color: $color-ps-nittany-navy;
 	position: relative;
 	border-bottom: $border-base;
-	min-height: 3.5rem;
+	min-height: 3.75rem;
 	padding-bottom: 0;
 	
 	.navbar-collapse {
@@ -346,7 +351,7 @@ button.dropdown-toggle-button {
 	display: block;
 	position: absolute;
 	right: 0;
-	top: 1rem;
+	top: 0.625rem;
 	background: none;
 	border: transparent;
 	color: $color-ps-creek;
@@ -409,7 +414,6 @@ button.dropdown-toggle  i { /* arrow after mega nav toggle */
 	border-radius: 0;
 	padding: 0;
 	background-color: $white !important;	
-	margin-top: -.5rem;
 	}
 	
 .dropdown-toggle::after {
@@ -429,9 +433,9 @@ header .btn[type="submit"] {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	position: relative;
-	margin-top: 3.5rem;
+	margin-top: 3.75rem;
 	max-height: 85vh;
-	overflow: auto;
+	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	padding-bottom: 2rem; /* get search box above control bar on mobile */
 	}
@@ -448,8 +452,8 @@ header .btn[type="submit"] {
 	}
 		
 p.main-nav-section-head {
-	margin-top: 0.5rem;
-	margin-bottom: 0.75rem;
+	margin-top: 0.75rem;
+	margin-bottom: 0.5rem;
 	font-size: $h3-font-size;
 	line-height: $line-height-xs;
 	font-family: $font-family-sans-serif;
@@ -461,7 +465,8 @@ p.main-nav-section-head {
 	font-family: $font-family-sans-serif;
 	}
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
+	
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
 		border-bottom: 0.25rem solid $color-ps-creek;
@@ -558,6 +563,10 @@ p.main-nav-section-head {
 .nav-item {
 	position: relative;
 	}
+
+.nav-item:not(.dropdown):not(.section-header) { /* hide ALL non-dropdown or non-section header nav item links for desktop */
+	display: none;
+	}
 	
 .nav-link {
 	display: inline-block;
@@ -605,6 +614,10 @@ p.main-nav-section-head {
 
 @include media-breakpoint-up(lg) {
 	
+	.nav-item:not(.dropdown):not(.section-header) {
+		display: list-item; /* re-display ALL non-dropdown or non-section header nav item links for desktop */
+		}
+	
 	.cta {
 		font-size: $small1-size;
 		
@@ -643,15 +656,22 @@ p.main-nav-section-head {
 	padding: 0.75rem 0.125rem;
 	display: block;
 	transition: $transition-base;
+	}		
+
+@include media-breakpoint-up(lg) {
 	
-	&.section-header {
+	.navbar-expand-lg .navbar-nav.dropdown-selectors .section-header {
+		margin-top: 0.5rem;
+		}
+	
+	.navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
 		font-size: $font-size-base;
 		font-family: $font-family-sans-serif;
 		font-weight: $font-weight-bold;
 		color: $color-ps-nittany-navy;
 		margin-top: 0.5rem;
-		}
-	}	
+		}    
+	}
 
 .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
 	padding: 0.5rem 0.75rem;
@@ -661,6 +681,7 @@ p.main-nav-section-head {
 /* display for main dropdown in mobile view */
 .dropdown-menu {
 	display: none;
+	margin-bottom: 0.5rem;
 
 	&.show {
 		diplay: block;
@@ -717,17 +738,15 @@ p.main-nav-section-head {
 		padding: 0.75rem 1rem 0.5rem 1rem;
 		display: inline-block;
 		border-bottom: 0.25rem solid transparent;
-		
-		&.section-header {
-			margin-top: 0;
-			}
-			
+		}
+
+	.navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
+		margin-top: 0;
 		}
 		
 	.navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
 		padding: 0.375rem;
 		}
-		
 
 	.navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true] {
 		background-color: $white;

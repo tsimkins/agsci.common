@@ -8184,6 +8184,8 @@ address a:hover {
     display: inline-block; } }
 button {
   cursor: pointer; }
+  button.disabled {
+    pointer-events: none; }
 
 .btn {
   font-family: "Nunito Sans", sans-serif;
@@ -8574,7 +8576,8 @@ HEADER - COLLEGE LEVEL
 header {
   position: relative;
   z-index: 99;
-  transition: all 0.375s ease-in-out; }
+  transition: all 0.375s ease-in-out;
+  position: fixed; }
 
 header.affix {
   position: fixed;
@@ -8584,12 +8587,15 @@ header.affix {
   box-shadow: 0 0 1rem rgba(84, 88, 90, 0.85); }
 
 @media (min-width: 992px) {
+  header {
+    position: relative; }
+
   header.affix {
     position: fixed; } }
 /* Brand - Agsci Logo
 --------------------------------------------- */
 .college-level header {
-  min-height: 3.5rem; }
+  min-height: 3.75rem; }
   .college-level header img.agsci-logo {
     width: 224px;
     height: 40px;
@@ -8753,8 +8759,7 @@ header .navbar {
   background-color: #001E44;
   position: relative;
   border-bottom: 1px solid rgba(62, 163, 158, 0.25);
-  min-height: 4rem;
-  padding-top: 0.5rem;
+  min-height: 3.75rem;
   padding-bottom: 0; }
   header .navbar .navbar-collapse {
     background-color: #ffffff; }
@@ -8778,7 +8783,7 @@ button.dropdown-toggle-button {
   display: block;
   position: absolute;
   right: 0;
-  top: 1rem;
+  top: 0.625rem;
   background: none;
   border: transparent;
   color: #3EA39E; }
@@ -8790,10 +8795,10 @@ button.dropdown-toggle i {
   margin-left: 0.125rem;
   /* for mobile state click toggles */ }
 
-button.dropdown-toggle-button[aria-expanded="true"] i {
+.dropdown.show button.dropdown-toggle-button i {
   transform: rotate(180deg);
   color: #E98300; }
-  button.dropdown-toggle-button[aria-expanded="true"] i.fas-search {
+  .dropdown.show button.dropdown-toggle-button i.fas-search {
     transform: none; }
 
 @media (min-width: 992px) {
@@ -8841,9 +8846,9 @@ header .btn[type="submit"] {
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;
-  margin-top: 3.5rem;
+  margin-top: 3.75rem;
   max-height: 85vh;
-  overflow: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 2rem;
   /* get search box above control bar on mobile */ }
@@ -8856,8 +8861,8 @@ header .btn[type="submit"] {
     max-height: auto;
     overflow: visible; } }
 p.main-nav-section-head {
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
   font-size: 1.25rem;
   line-height: 1;
   font-family: "Nunito Sans", sans-serif;
@@ -8867,7 +8872,7 @@ p.main-nav-section-head {
 .nav-link.dropdown-toggle {
   font-family: "Nunito Sans", sans-serif; }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
   .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
     border-bottom: 0.25rem solid #3EA39E;
@@ -8936,6 +8941,10 @@ p.main-nav-section-head {
 .nav-item {
   position: relative; }
 
+.nav-item:not(.dropdown):not(.section-header) {
+  /* hide ALL non-dropdown or non-section header nav item links for desktop */
+  display: none; }
+
 .nav-link {
   display: inline-block;
   padding: 0.5rem 0.75rem; }
@@ -8971,6 +8980,10 @@ p.main-nav-section-head {
     font-size: 0.75rem; }
 
 @media (min-width: 992px) {
+  .nav-item:not(.dropdown):not(.section-header) {
+    display: list-item;
+    /* re-display ALL non-dropdown or non-section header nav item links for desktop */ }
+
   .cta {
     font-size: 0.9rem; }
     .cta i {
@@ -8993,22 +9006,27 @@ p.main-nav-section-head {
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link {
   padding-left: 0;
   font-size: 0.9rem;
-  padding: 1rem 0.125rem;
+  padding: 0.75rem 0.125rem;
   display: block;
   transition: all 0.2s ease-in-out; }
-  .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.section-header {
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header {
+    margin-top: 0.5rem; }
+
+  .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
     font-size: 1rem;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     color: #001E44;
-    margin-top: 0.5rem; }
-
+    margin-top: 0.5rem; } }
 .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
   padding: 0.5rem 0.75rem; }
 
 /* display for main dropdown in mobile view */
 .dropdown-menu {
-  display: none; }
+  display: none;
+  margin-bottom: 0.5rem; }
   .dropdown-menu.show {
     diplay: block; }
 
@@ -9045,8 +9063,9 @@ p.main-nav-section-head {
     padding: 0.75rem 1rem 0.5rem 1rem;
     display: inline-block;
     border-bottom: 0.25rem solid transparent; }
-    .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.section-header {
-      margin-top: 0; }
+
+  .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
+    margin-top: 0; }
 
   .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
     padding: 0.375rem; }
@@ -9137,7 +9156,7 @@ header .form-inline .form-control {
   top: 0;
   right: 0;
   background: #00132b;
-  padding: 1rem 0.5rem 1rem 0.5rem;
+  padding: 0.5rem;
   width: 100%;
   text-align: right;
   z-index: 99;
@@ -9186,8 +9205,6 @@ header .form-inline .form-control {
 --------------------------------------------- */
 .department-bar .btn {
   padding: 0.25rem 0.5rem;
-  margin-left: 0.125rem;
-  margin-right: 0.125rem;
   font-size: 0.675rem; }
 
 .department-bar {
@@ -9197,15 +9214,24 @@ header .form-inline .form-control {
     color: #ffffff;
     position: relative;
     top: 0;
-    padding-left: 2rem;
-    font-size: 0.75rem;
+    /* padding-left: 3.5rem; */
+    padding-left: 1rem;
+    font-size: 0.9rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     line-height: 1.2; }
 
 @media (min-width: 768px) {
   .department-bar a.department-brand {
-    font-size: 1.1rem; } }
+    font-size: 1.1rem;
+    padding-left: 4rem; } }
+.affix .department-bar a.department-brand {
+  /* stick department branding w/out PSAg logo */
+  padding-left: 1rem; }
+  @media (min-width: 768px) {
+    .affix .department-bar a.department-brand {
+      padding-left: 1rem; } }
+
 @media (min-width: 992px) {
   .department-bar a.department-brand {
     font-size: 1.25rem;
@@ -9295,8 +9321,7 @@ header .form-inline .form-control {
 
 .affix .department-bar a.department-brand {
   padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1.1rem; }
+  padding-bottom: 1rem; }
 
 .department-level .affix .college-logo-block {
   display: none; }
@@ -9337,11 +9362,14 @@ header .form-inline .form-control {
   padding-bottom: 2rem;
   /* get search box above control bar on mobile */ }
 .department-level header .navbar-collapse {
-  padding-bottom: 0;
+  padding-bottom: 2rem;
   margin-top: 0;
   background: #307e7a; }
 
 @media (min-width: 992px) {
+  .department-level header .navbar-collapse {
+    padding-bottom: 0; }
+
   .department-level header ul li.dropdown {
     margin-bottom: 0;
     border-bottom: transparent; } }
@@ -9364,7 +9392,7 @@ header .form-inline .form-control {
       background-color: #ffffff; }
   .department-dropdowns .dropdown-toggle {
     background: transparent;
-    padding: 1rem 0.75rem 1.25rem 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem;
     /* .25 less on top for hover border */
     display: block;
     transition: all 0.2s ease-in-out;
@@ -9425,10 +9453,11 @@ header .form-inline .form-control {
   width: 100%;
   border: none;
   position: relative;
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  margin-top: -0.5rem; }
   .navbar .department-dropdowns .dropdown-menu ul {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-left: 1rem;
     font-size: 0.9rem; }
 .navbar .department-dropdowns li.dropdown {
@@ -9441,7 +9470,7 @@ header .form-inline .form-control {
 /* Mobile Dropdown Carat Toggles
 --------------------------------------------- */
 .department-level button.dropdown-toggle-button {
-  top: 1.35rem;
+  top: 1.1rem;
   color: #ffffff; }
 
 .department-level button.dropdown-toggle-button[aria-expanded="true"] i {
@@ -10481,8 +10510,10 @@ CARD DECK - EVENTS
   .card.card-event .event-date-block {
     margin-right: 0; }
   .card.card-event img {
-    height: 5.5rem;
-    width: auto; }
+    object-fit: cover;
+    object-position: 50% 50%;
+    height: 100%;
+    width: 100%; }
   .card.card-event .card-image {
     overflow: hidden;
     height: 5.5rem; }
@@ -12266,7 +12297,8 @@ button.filter {
   vertical-align: top; }
 .rtable.rtable-mobile-labels tbody tr:first-of-type td p {
   font-size: 1rem;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  font-weight: 600; }
   @media (min-width: 768px) {
     .rtable.rtable-mobile-labels tbody tr:first-of-type td p {
       font-size: 0.9rem; } }
@@ -12286,12 +12318,15 @@ button.filter {
       color: #2f7a77;
       display: block; }
   .rtable.rtable-mobile-labels td div {
-    padding: 0 1rem 1remm 1rem; }
+    padding: 0 1rem 1rem 1rem; }
     @media (min-width: 768px) {
       .rtable.rtable-mobile-labels td div {
         padding: 0.75rem 1rem 1rem 1rem; } }
 .rtable.rtable-mobile-labels tr:first-of-type td div {
-  padding: 0.75rem 1rem; }
+  padding: 0.75rem 0; }
+  @media (min-width: 768px) {
+    .rtable.rtable-mobile-labels tr:first-of-type td div {
+      padding: 0.75rem 1rem; } }
 .rtable.rtable-mobile-labels td.major-details {
   padding: 0.75rem;
   text-align: center;
@@ -12399,7 +12434,7 @@ button.filter {
     margin: 0 0.5rem; }
   .explorer-buttons-v2 span {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 600;
     font-style: italic;
     margin-right: 0.5rem;
@@ -12554,8 +12589,10 @@ main {
   overflow: visible; }
 
 .filtered-tags {
-  margin-bottom: 1rem;
-  margin-top: 1rem; }
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid rgba(62, 163, 158, 0.25);
+  padding-bottom: 0.5rem; }
   .filtered-tags .active-filters {
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.75rem;

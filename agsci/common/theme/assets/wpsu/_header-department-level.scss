@@ -7,7 +7,7 @@
 	top: 0;
 	right: 0;
 	background: #00132b;
-	padding: 1rem 0.5rem 1rem 0.5rem;
+	padding: 0.5rem;
 	width: 100%;
 	text-align: right;
 	z-index: 99;
@@ -48,20 +48,19 @@
 		&:hover {
 			color: lighten($color-ps-creek,35%);
 			}
-		
 		}
 	}
 
 @include media-breakpoint-up(sm) {
+	
 	.department-level ul.dept-level-college-options {
 		justify-content: flex-end;
 		
 		li span {
 			display: inline;
 			}
+		}
 	}
-	}
-	
 	
 @include media-breakpoint-up(lg) {
 	
@@ -83,8 +82,6 @@
 
 .department-bar .btn {
 	padding: 0.25rem 0.5rem;
-	margin-left: 0.125rem;
-	margin-right: 0.125rem;
 	font-size: $small4-size;
 	}
 
@@ -96,19 +93,28 @@
 		color: $white;
 		position: relative;
 		top: 0;
-		padding-left: 2rem;
-		font-size: $small3-size;
+		/* padding-left: 3.5rem; */
+		padding-left: 1rem;
+		font-size: $small1-size;
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		line-height: 1.2;
 		}		
 	}
 
-
 @include media-breakpoint-up(md) {
 	
 	.department-bar a.department-brand {
 		font-size: $h4-font-size;
+		padding-left: 4rem;
+		}
+	}
+
+.affix .department-bar a.department-brand { /* stick department branding w/out PSAg logo */
+	padding-left: 1rem;
+	
+	@include media-breakpoint-up(md) {
+		padding-left: 1rem;
 		}
 	}
 		
@@ -245,14 +251,14 @@
 .department-level header.affix {
 		
 	.btn.btn-primary.btn-toggle-mobile-nav {
-	margin-top: 0.75rem;
+		margin-top: 0.75rem;
+		}
 	}
-}
 
 .affix .department-bar a.department-brand {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
-	font-size: $h4-font-size;
+	
 	}
 
 .department-level .affix .college-logo-block {
@@ -310,7 +316,7 @@
 		}
 		
 	.navbar-collapse {
-		padding-bottom: 0;
+		padding-bottom: 2rem;
 		margin-top: 0;
 		background: darken($color-ps-creek,10%);
 		}
@@ -318,6 +324,10 @@
 
 @include media-breakpoint-up(lg) {
 	
+	.department-level header .navbar-collapse {
+		padding-bottom: 0;
+		}
+		
 	.department-level header 	ul li.dropdown {
 		margin-bottom: 0;
 		border-bottom: transparent;
@@ -351,7 +361,7 @@
 	
 	.dropdown-toggle {
 		background: transparent;
-		padding: 1rem 0.75rem 1.25rem 0.75rem;/* .25 less on top for hover border */
+		padding: 0.75rem 0.75rem 0.75rem 0.75rem;/* .25 less on top for hover border */
 		display: block;
 		transition: $transition-base;
 		border-top: 0.25rem solid transparent;
@@ -444,10 +454,11 @@
 		border: none;
 		position: relative;
 		background-color: transparent !important;
+		margin-top: -0.5rem;
 		 
 		ul {
 			margin-top: 0;
-			margin-bottom: 1rem;
+			margin-bottom: 0.5rem;
 			margin-left: 1rem;
 			font-size: $small1-size;
 			}
@@ -470,7 +481,7 @@
 /* Mobile Dropdown Carat Toggles
 --------------------------------------------- */	
 .department-level button.dropdown-toggle-button {
-	top: 1.35rem;
+	top: 1.1rem;
 	color: $white;
 	}
 

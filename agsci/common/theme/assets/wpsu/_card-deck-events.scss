@@ -39,8 +39,10 @@ CARD DECK - EVENTS
 		}
 	
 	img {
-		height: 5.5rem;
-		width: auto;
+		object-fit: cover;
+		object-position: 50% 50%;
+		height: 100%;
+		width: 100%;
 		}
 			
 	.card-image {
