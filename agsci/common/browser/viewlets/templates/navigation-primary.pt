@@ -3,23 +3,16 @@
 
     <nav class="navbar navbar-expand-lg">
 
-        <a tal:attributes="href view/portal_url"
-           class="navbar-brand d-lg-none"><img
-                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png"
-                alt="Penn State College of Agricultural Science Logo"
-                class="agsci-logo pl-3"></a>
-
         <button
-            class="btn btn-primary"
+            class="btn btn-primary btn-toggle-mobile-nav"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"><i
-                class="fa fa-bars"></i></button>
+            aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
 
-        <div class="collapse navbar-collapse py-0" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav py-0 mx-auto dropdown-selectors">
 
@@ -28,7 +21,7 @@
                 <li tal:attributes="class klass"
                     tal:define="item_id python:view.label(l1.title.cdata);
                                 hidden l1/hidden/cdata|nothing;
-                                klass python: hidden and 'nav-item dropdown d-lg-none' or 'nav-item dropdown'">
+                                klass python: hidden and 'dropdown d-lg-none' or 'dropdown'">
 
                     <a tal:content="l1/title/cdata"
                        tal:attributes="id item_id;
@@ -89,7 +82,16 @@
 
                                     <div class="col-12 col-md-6 col-lg-3">
 
+                                        <ul class="nav flex-column d-lg-none"
+                                            tal:condition="repeat/group/start|nothing">
 
+                                            <li class="nav-item section-header">
+                                                <a
+                                                    tal:content="string:${l1/title/cdata} Overview"
+                                                    class="nav-link"
+                                                    tal:attributes="href python: view.link(l1)" />
+                                            </li>
+                                        </ul>
 
 <tal:block
     tal:repeat="l2 group/item|nothing">
@@ -103,11 +105,11 @@
 
             <ul class="nav flex-column">
 
-                <li class="nav-item"
+                <li class="nav-item section-header"
                     tal:condition="not: python:view.hidden(l2.title)">
                     <a
                         tal:content="l2/title/cdata"
-                        class="nav-link section-header"
+                        class="nav-link"
                         tal:attributes="href python: view.link(l2)" />
                 </li>
 
