@@ -19,7 +19,6 @@ jq3(document).ready(function() {
 
     };
 
-
     jq3('body.userrole-anonymous [data-toggle="affix"]').each(function() {
         var ele = jq3(this),
             wrapper = jq3('<div class="affix-placeholder"></div>');
@@ -187,7 +186,29 @@ jq3(document).ready(function() {
 
                                 var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
 
-                                jQuery(this).find('.compare-selections button').attr('data-compare-view', compare_view)
+                                var button = jQuery(this).find('.compare-selections button');
+
+                                button.attr('data-compare-view', compare_view);
+                                
+                                if (degree_ids.length >= 2) {
+                                    button.attr('aria-disabled', 'false');
+                                    button.toggleClass('disabled', false);
+                                }
+                                else {
+                                    button.attr('aria-disabled', 'true');
+                                    button.toggleClass('disabled', true);
+                                }
+                                
+                                if (degree_ids.length >= 3) {
+                                    jQuery(this).find('input[type="checkbox"]:not(:checked)').prop('disabled', true);
+                                    jQuery(this).find('input[type="checkbox"]:not(:checked)').parent('div.checkbox').toggleClass('disabled', true);
+                                }
+                                else {
+                                    jQuery(this).find('input[type="checkbox"]').prop('disabled', false);
+                                    jQuery(this).find('input[type="checkbox"]').parent('div.checkbox').toggleClass('disabled', false);
+
+                                }
+                                    
                             }
                         );
                     }

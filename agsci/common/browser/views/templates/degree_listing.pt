@@ -27,13 +27,14 @@
                                 <button type="button" class="btn btn-purple cd-btn js-cd-panel-trigger" data-panel="main">Filter Majors</button>
                             </div>
                             <div class="compare-selections">
-                                <button type="button" class="btn btn-creek" data-panel="main">Compare Majors</button>
+                                <button type="button" 
+                                        class="btn btn-creek disabled" 
+                                        aria-disabled="true"
+                                        data-panel="main">Compare Majors</button>
                             </div>
                         </div>
                     </div>
                 </section>
-
-
 
                 <div class="degree-listing"
                      tal:attributes="data-sort-on sort_field"
@@ -63,7 +64,7 @@
                                  sort_field view/getSortField|nothing">
 
                     <!-- Card Deck -->
-                    <div class="card-deck card-deck-3up agsci-visual-cards">
+                    <div class="card-deck card-deck-4up-2min agsci-visual-cards visual-cards-imgs-cropped">
                         <tal:entry tal:repeat="item batch">
                             <tal:item
                                 tal:define="item_url python:view.getItemURL(item);
@@ -78,39 +79,44 @@
                                             item_type_class python:'contenttype-' + normalizeString(item_type);
                                             item_wf_state item/review_state|python: context.portal_workflow.getInfoFor(item, 'review_state', '');
                                             item_wf_state_class python:'state-' + normalizeString(item_wf_state);">
-                    <div class="card card-visual">
-                        <a class="card-image-top"
-                            tal:define="lightbox_url string:${item_url}/lightbox"
-                            tal:attributes="href item_url;">
+                                            
 
-                            <div class="card-image-top"
-                                tal:attributes="data-featherlight lightbox_url">
-                                <div class="opacity-dimmer-bottom-left"></div>
+<div class="card card-visual container mix explore-interest-business">
 
-                                <img
-                                    class="w-100"
-                                    tal:condition="item/hasLeadImage"
-                                    tal:attributes="src python:view.getItemLeadImage(item)" />
+    <a tal:define="lightbox_url string:${item_url}/lightbox"
+       tal:attributes="href item_url;" 
+       class="card-image-top">
 
-                                <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+        <div class="opacity-dimmer-bottom-left"></div>
 
-                                    <h3 class="card-title" tal:content="item/Title" />
 
-                                </div>
-
-                            </div>
-
-                        </a>
-                        <div class="card-footer">
-
-                            <p>
-                                <input type="checkbox"
-                                    name="degree_id"
-                                    tal:attributes="value item/getId" /> Compare
-                            </p>
-
-                        </div>
-                    </div>
+        <img
+            class="w-100"
+            alt=""
+            title=""
+            tal:condition="item/hasLeadImage"
+            tal:attributes="src python:view.getItemLeadImage(item);
+                            data-href item_url" />
+        
+        <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+            <h3 class="card-title"
+                tal:content="item/Title" />
+        </div>
+        
+    </a>
+        
+        <div class="card-body">
+        
+        <div class="checkbox d-flex">
+            <input type="checkbox"
+                   name="degree_id"
+                   tal:attributes="value item/getId" />
+            <label>Compare</label>
+            <div></div>
+        </div>
+    
+    </div>
+</div>
                             </tal:item>
                         </tal:entry>
 

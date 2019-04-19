@@ -13282,4 +13282,12 @@ body .youtube-video-embed.aspect-3-2 {
   bottom: 0;
   right: 0; }
 
+.degree-listing .container.mix {
+  display: flex; }
+.degree-listing .checkbox.disabled {
+  color: #757575; }
+  .degree-listing .checkbox.disabled label:before {
+    background: #f6f6f6;
+    border-color: #CCCCCC; }
+
 /*# sourceMappingURL=agsci.common.css.map */

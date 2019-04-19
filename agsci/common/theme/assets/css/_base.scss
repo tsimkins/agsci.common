@@ -315,3 +315,18 @@ body {
     bottom: 0; 
     right: 0;
 }
+
+.degree-listing {
+    .container.mix {
+        display: flex;
+    }
+    
+    .checkbox.disabled {
+        color: #757575;
+        
+        label:before {
+            background: #f6f6f6;
+            border-color: #CCCCCC;
+        }
+    }
+}
