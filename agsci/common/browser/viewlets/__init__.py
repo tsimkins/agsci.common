@@ -177,6 +177,5 @@ class JavaScriptViewlet(ViewletBase):
     def faceted_enabled(self):
         return IFacetedNavigable.providedBy(self.context)
 
-
 class PathBarViewlet(_PathBarViewlet):
     pass

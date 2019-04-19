@@ -25,6 +25,18 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Banner -->
+
+    <browser:viewlet
+        name="agsci.common.banner"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".ViewletBase"
+        permission="zope2.View"
+        template="templates/degree_banner.pt"
+        layer="..interfaces.IThemeSpecific"
+        for="agsci.common.content.degrees.IDegreeContainer"
+    />
+
     <!-- Audience Navigation -->
 
     <browser:viewlet

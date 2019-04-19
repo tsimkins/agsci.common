@@ -88,8 +88,9 @@
   position: absolute;
   margin-left: -10000px !important; }
 
-#content header {
-  z-index: auto; }
+header {
+  z-index: 1000; }
+
 #content #plone-document-byline {
   font-size: 0.75em;
   margin: 1em 0;

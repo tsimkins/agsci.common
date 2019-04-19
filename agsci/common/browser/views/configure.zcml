@@ -5,7 +5,16 @@
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:faceted="http://namespaces.zope.org/faceted"
     i18n_domain="agsci.common">
-    
+
+    <browser:page
+        for="agsci.common.content.degrees.IDegreeContainer"
+        name="facetednavigation_view"
+        template="templates/degree_facetednavigation_view.pt"
+        class="eea.facetednavigation.browser.app.view.FacetedContainerView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <faceted:view
         name="faceted-preview-items"
         template="templates/faceted_degrees.pt"

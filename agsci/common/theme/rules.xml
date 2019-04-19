@@ -208,7 +208,19 @@
     
         <!-- Content header -->
         <replace css:theme="#portal-top" css:content-children="#portal-top" />
-    
+
+        <!-- Drop affix for certain types -->
+        <rules css:if-content="body.template-facetednavigation_view">
+            <drop css:theme="header, div" attributes="data-toggle" />
+        </rules>
+        <!-- Banner -->
+        <rules css:if-content="section.banner">
+            <replace css:theme="section.banner" css:content="section.banner" />
+        </rules>
+        <rules css:if-not-content="section.banner">
+            <drop css:theme="section.banner" />
+        </rules>
+
         <!-- Footer -->
         <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 

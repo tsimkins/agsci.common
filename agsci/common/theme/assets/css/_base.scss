@@ -148,10 +148,11 @@
   margin-left: -10000px !important;
 }
 
+header {
+    z-index: 1000;
+}
+
 #content {
-    header {
-        z-index: auto;
-    }
 
     #plone-document-byline {
         font-size: 0.75em;
