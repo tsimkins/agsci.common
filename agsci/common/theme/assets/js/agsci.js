@@ -121,8 +121,6 @@ jq3(document).ready(function() {
 
             function() {
 
-                console.log('setting stuff');
-
                 // Create wrapper and dimmer divs
                 var cw = jQuery("<div class='comparison-wrapper'></div>");
                 var dimmer = jQuery("<div class='comparison-dimmer'></div>");
@@ -140,10 +138,9 @@ jq3(document).ready(function() {
 
                 // When you actually click the submit button, go grab the results
                 // of the comparison view, and stuff that into the comparison
-                // wrapper. 
-                jQuery(this).children('.compare-selections button').click(
+                // wrapper.
+                jQuery(this).find('.compare-selections button').click(
                     function () {
-                        console.log('Compare!');
 
                         // Get the results of the form submit and
                         // stuff them inside a div.
@@ -154,6 +151,7 @@ jq3(document).ready(function() {
 
                             jQuery('.comparison-wrapper').each(
                                 function () {
+
                                     jQuery(this).html(data);
 
                                     jQuery('.comparison-wrapper, .comparison-dimmer').show();
@@ -167,6 +165,7 @@ jq3(document).ready(function() {
                                             );
                                         }
                                     );
+
                                 }
                             );
                         })
@@ -175,7 +174,6 @@ jq3(document).ready(function() {
 
                 jQuery(this).find('input[type="checkbox"]').change(
                     function () {
-                        console.log('Checked: ' + jQuery(this).attr('value'));
 
                         jQuery(this).parents('form').each(
                             function () {
@@ -189,16 +187,12 @@ jq3(document).ready(function() {
 
                                 var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
 
-                                console.log(compare_view);
-
-                                jQuery(this).children('.compare-selections button').attr('data-compare-view', compare_view)
+                                jQuery(this).find('.compare-selections button').attr('data-compare-view', compare_view)
                             }
                         );
                     }
                 );
         });
-
-        //jq3('body.portaltype-agsci_degree_container form.degree-explorer input[type="submit"]').featherlight(window.location.pathname + '/@@degree_compare_lightbox');
 
     });
 
