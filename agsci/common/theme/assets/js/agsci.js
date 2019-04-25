@@ -34,7 +34,7 @@ jq3(document).ready(function() {
 
 });
 
-// need this for tabs on mobile view so that they don't go behind top sticky nav 	
+// need this for tabs on mobile view so that they don't go behind top sticky nav
 jq3('.collapse').on('shown.bs.collapse', function(e) {
     var jq3card = jq3(this).closest('.card');
     jq3('html,body').animate({
@@ -114,108 +114,142 @@ jq3('.popover-dismiss').popover({
 // Faceted load
 jq3(document).ready(function() {
 
-    jQuery(Faceted.Events).bind(Faceted.Events.AJAX_QUERY_SUCCESS , function() {
+    if (typeof Faceted !== 'undefined') {
 
-        jQuery('body.portaltype-agsci_degree_container form.degree-explorer').each(
+        jQuery(Faceted.Events).bind(Faceted.Events.AJAX_QUERY_SUCCESS , function() {
 
-            function() {
+        // Slide In Panel - by CodyHouse.co (adapted to jQuery)
+        // open panel when clicking on trigger btn
+        jQuery('.js-cd-panel-trigger').click(
 
-                // Create wrapper and dimmer divs
-                var cw = jQuery("<div class='comparison-wrapper'></div>");
-                var dimmer = jQuery("<div class='comparison-dimmer'></div>");
+            function (event) {
 
-                // Hide them
-                dimmer.hide();
-                cw.hide();
+                var data_panel = jQuery(this).attr('data-panel');
+                var panelClass = 'js-cd-panel-' + data_panel;
 
-                // Add them to the top and bottom of the body.
-                jQuery('body').append(cw);
-                jQuery('body').prepend(dimmer);
+                jQuery('.' + panelClass).addClass('cd-panel--is-visible');
+                console.log(panelClass);
 
-                // Don't submit when clicking Compare
-                jQuery(this).attr('onsubmit', 'return false;');
+                //close panel when clicking on 'x' or outside the panel
+                jQuery('.' + panelClass).click(
+                    function(event) {
 
-                // When you actually click the submit button, go grab the results
-                // of the comparison view, and stuff that into the comparison
-                // wrapper.
-                jQuery(this).find('.compare-selections button').click(
-                    function () {
+                        var target = jQuery(event.target);
+                        console.log("Clicked.");
+                        console.log(target);
 
-                        // Get the results of the form submit and
-                        // stuff them inside a div.
+                        if( target.hasClass('js-cd-close') || target.hasClass(panelClass)) {
+                            console.log("Close window");
+                            event.preventDefault();
+                            jQuery(this).removeClass('cd-panel--is-visible');
+                        }
+                    }
+                );
 
-                        var results_url = jQuery(this).attr('data-compare-view')
+                event.preventDefault();
+            }
+        );
 
-                        var get_results = jQuery.get(results_url, function(data) {
+            jQuery('body.portaltype-agsci_degree_container form.degree-explorer').each(
 
-                            jQuery('.comparison-wrapper').each(
+                function() {
+
+                    // Create wrapper and dimmer divs
+                    var cw = jQuery("<div class='comparison-wrapper'></div>");
+                    var dimmer = jQuery("<div class='comparison-dimmer'></div>");
+
+                    // Hide them
+                    dimmer.hide();
+                    cw.hide();
+
+                    // Add them to the top and bottom of the body.
+                    jQuery('body').append(cw);
+                    jQuery('body').prepend(dimmer);
+
+                    // Don't submit when clicking Compare
+                    jQuery(this).attr('onsubmit', 'return false;');
+
+                    // When you actually click the submit button, go grab the results
+                    // of the comparison view, and stuff that into the comparison
+                    // wrapper.
+                    jQuery(this).find('.compare-selections button').click(
+                        function () {
+
+                            // Get the results of the form submit and
+                            // stuff them inside a div.
+
+                            var results_url = jQuery(this).attr('data-compare-view')
+
+                            var get_results = jQuery.get(results_url, function(data) {
+
+                                jQuery('.comparison-wrapper').each(
+                                    function () {
+
+                                        jQuery(this).html(data);
+
+                                        jQuery('.comparison-wrapper, .comparison-dimmer').show();
+
+                                        jQuery('.close-comparison-bar button').each(
+                                            function () {
+                                                jQuery(this).click(
+                                                    function () {
+                                                        jQuery('.comparison-wrapper, .comparison-dimmer').hide();
+                                                    }
+                                                );
+                                            }
+                                        );
+                                    }
+                                );
+                            })
+                        }
+                    );
+
+                    jQuery(this).find('input[type="checkbox"]').change(
+                        function () {
+
+                            jQuery(this).parents('form').each(
                                 function () {
+                                    var degree_ids = [];
 
-                                    jQuery(this).html(data);
-
-                                    jQuery('.comparison-wrapper, .comparison-dimmer').show();
-
-                                    jQuery('.close-comparison-bar button').each(
+                                    jQuery(this).find('input[type="checkbox"]:checked').each(
                                         function () {
-                                            jQuery(this).click(
-                                                function () {
-                                                    jQuery('.comparison-wrapper, .comparison-dimmer').hide();
-                                                }
-                                            );
+                                            degree_ids.push(jQuery(this).attr('value'));
                                         }
                                     );
 
+                                    var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
+
+                                    var button = jQuery(this).find('.compare-selections button');
+
+                                    button.attr('data-compare-view', compare_view);
+
+                                    if (degree_ids.length >= 2) {
+                                        button.attr('aria-disabled', 'false');
+                                        button.toggleClass('disabled', false);
+                                    }
+                                    else {
+                                        button.attr('aria-disabled', 'true');
+                                        button.toggleClass('disabled', true);
+                                    }
+
+                                    if (degree_ids.length >= 3) {
+                                        jQuery(this).find('input[type="checkbox"]:not(:checked)').prop('disabled', true);
+                                        jQuery(this).find('input[type="checkbox"]:not(:checked)').parent('div.checkbox').toggleClass('disabled', true);
+                                    }
+                                    else {
+                                        jQuery(this).find('input[type="checkbox"]').prop('disabled', false);
+                                        jQuery(this).find('input[type="checkbox"]').parent('div.checkbox').toggleClass('disabled', false);
+
+                                    }
+
                                 }
                             );
-                        })
-                    }
-                );
+                        }
+                    );
+            });
 
-                jQuery(this).find('input[type="checkbox"]').change(
-                    function () {
-
-                        jQuery(this).parents('form').each(
-                            function () {
-                                var degree_ids = [];
-
-                                jQuery(this).find('input[type="checkbox"]:checked').each(
-                                    function () {
-                                        degree_ids.push(jQuery(this).attr('value'));
-                                    }
-                                );
-
-                                var compare_view = window.location.pathname + '/@@degree_compare_lightbox?degree_id=' + degree_ids.join('&degree_id=');
-
-                                var button = jQuery(this).find('.compare-selections button');
-
-                                button.attr('data-compare-view', compare_view);
-                                
-                                if (degree_ids.length >= 2) {
-                                    button.attr('aria-disabled', 'false');
-                                    button.toggleClass('disabled', false);
-                                }
-                                else {
-                                    button.attr('aria-disabled', 'true');
-                                    button.toggleClass('disabled', true);
-                                }
-                                
-                                if (degree_ids.length >= 3) {
-                                    jQuery(this).find('input[type="checkbox"]:not(:checked)').prop('disabled', true);
-                                    jQuery(this).find('input[type="checkbox"]:not(:checked)').parent('div.checkbox').toggleClass('disabled', true);
-                                }
-                                else {
-                                    jQuery(this).find('input[type="checkbox"]').prop('disabled', false);
-                                    jQuery(this).find('input[type="checkbox"]').parent('div.checkbox').toggleClass('disabled', false);
-
-                                }
-                                    
-                            }
-                        );
-                    }
-                );
         });
-
-    });
+    }
 
 });
 

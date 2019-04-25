@@ -10,7 +10,7 @@
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
-        <!-- 
+        <!--
             Also update these in:
              *  agsci.common.browser.viewlets.CSSViewlet.edit_permissions
              *  agsci.common.theme.assets.css._base.css
@@ -20,8 +20,8 @@
             body.viewpermission-manage-portal,
             body.viewpermission-add-portal-content,
             body.viewpermission-manage-schemata,
-            body.viewpermission-modify-portal-content, 
-            body.viewpermission-portlets-manage-portlets, 
+            body.viewpermission-modify-portal-content,
+            body.viewpermission-portlets-manage-portlets,
             body.viewpermission-list-folder-contents,
             body.viewpermission-plone-site-setup-editing,
             body.viewpermission-plone-site-setup-filtering,
@@ -50,11 +50,11 @@
             <append css:theme="#manage-portlets #column-one">
                 <h2>Left Column Portlets</h2>
             </append>
-            
+
             <append css:theme="#manage-portlets #column-two">
                 <h2>Right Column Portlets</h2>
             </append>
-            
+
             <append css:theme="#manage-portlets #column-one" css:content-children="#portal-column-one" />
             <append css:theme="#manage-portlets #column-two" css:content-children="#portal-column-two" />
         </rules>
@@ -83,7 +83,7 @@
             <!-- Attributes -->
             <copy attributes="*" css:theme="html" css:content="html" />
             <merge attributes="class" css:theme="body" css:content="body" />
-            
+
             <!-- Base tag -->
             <before css:theme="title" css:content="base" />
 
@@ -111,23 +111,23 @@
 
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
         <append attributes="*" css:content="body" css:theme="body" />
-    
+
         <!-- move global nav -->
         <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" />
-    
+
         <!-- full-width breadcrumb -->
         <replace css:content="#viewlet-above-content" css:theme="#above-content" />
-    
+
         <!-- Navigation -->
         <replace css:content-children="#logo-viewlet" css:theme="#logo-viewlet" />
-        
+
         <replace css:content-children="#audience-nav-viewlet" css:theme="#audience-nav-viewlet" />
         <replace css:content-children="#primary-nav-viewlet" css:theme="#primary-nav-viewlet" />
 
         <replace css:content-children="aside.portletNavigationTree" css:theme-children="#navbarSectionNav" />
-        
-        <!-- 
-            If we have a nav portlet, drop the first child in column one. 
+
+        <!--
+            If we have a nav portlet, drop the first child in column one.
             This is an assumption based on convention.
         -->
         <rules css-if-content="#portal-column-one aside.portletNavigationTree">
@@ -136,10 +136,10 @@
 
         <!-- Portlets -->
 
-        <replace css:content-children="#portal-column-one" 
+        <replace css:content-children="#portal-column-one"
                 css:theme="#portal-column-one" />
 
-        <replace css:content-children="#portal-column-two" 
+        <replace css:content-children="#portal-column-two"
                 css:theme="#portal-column-two" />
 
         <rules css:if-not-content="#portal-column-one">
@@ -153,23 +153,27 @@
         <rules css:if-not-content="#portal-column-one, #portal-column-two">
             <drop css:theme="[data-component='portlets']" />
         </rules>
-        
+
         <!-- Central column -->
 
         <rules css:if-content="body.mosaic-grid">
             <replace css:theme="#content" css:content-children="#content" />
         </rules>
 
-        <rules css:if-not-content="body.mosaic-grid">
+        <rules css:if-content="body.portaltype-agsci_degree_container">
+            <replace css:theme-children="#section-content" css:content-children="#portal-column-content" />
+        </rules>
+
+        <rules css:if-not-content="body.mosaic-grid, body.portaltype-agsci_degree_container">
             <replace css:theme="#content-container" method="raw">
-    
+
                 <xsl:variable name="central">
-    
+
                     <xsl:if test="//aside[@id='portal-column-one'] or //aside[@id='portal-column-two']">col-lg-8 </xsl:if>
                     <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-lg-12</xsl:if>
-                    
+
                 </xsl:variable>
-            
+
                 <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
                     <div class="row">
                     <div class="container">
@@ -177,13 +181,13 @@
                     </div>
                     </div>
                 </div>
-    
+
             </replace>
         </rules>
 
         <!-- Alert message -->
         <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
-    
+
         <!-- Left column -->
         <rules css:if-content="#portal-column-one">
         <replace css:theme="#column1-container">
@@ -194,7 +198,7 @@
             </div>
         </replace>
         </rules>
-    
+
         <!-- Right column -->
         <rules css:if-content="#portal-column-two">
         <replace css:theme="#column2-container">
@@ -205,7 +209,7 @@
             </div>
         </replace>
         </rules>
-    
+
         <!-- Content header -->
         <replace css:theme="#portal-top" css:content-children="#portal-top" />
 

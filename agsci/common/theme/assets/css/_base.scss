@@ -23,12 +23,12 @@
             font-family: Arial, sans-serif;
             z-index: 1;
         }
-        
+
         .jumbotron, .jumbotron-short-title {
             #portal-breadcrumbs {
 
                 color: #ffffff;
-                
+
                 > .container {
                     padding-left: 0;
                 }
@@ -36,95 +36,95 @@
                 ol {
                     padding: 0;
                     margin: 0;
-                    
+
                     > li {
                         display: inline-block;
                         list-style-type: none;
                     }
                 }
             }
-            
+
             p {
                 color: #ffffff;
                 font-size: 1.25em;
             }
         }
-        
+
         .jumbotron-short-title {
             #portal-breadcrumbs, p {
                 color: #4D565B;
             }
         }
-        
+
         .cta-bar .btn {
             margin-top: 0.5rem;
         }
-        
+
         h1.documentFirstHeading {
             border-bottom: none;
             font-size: 64px;
         }
-        
+
         .hero-test {
             background-image: url(../../../images/hero-test);
         }
-        
+
         h2.slide-down {
             text-align: center;
         }
-        
+
         h2.slide-down:after {
             margin: auto;
             left: 0;
             right: 0;
         }
-        
+
         .test-tile {
-            
+
             margin: 1em 0;
             padding: 1em;
             background-color: #4A7729;
-            
+
             h2, p {
                 color: #FFFFFF;
             }
-            
+
             ul {
                 display: block;
                 list-style-type: none;
                 padding: 0;
                 margin: 0;
                 text-align: center;
-                
+
                 li {
                     margin: 2em auto;
                     display: block;
-    
+
                     div.outer {
-    
+
                         background-color: #1e407c;
                         color: white;
                         padding: 1em;
                         min-height: 15em;
                         position: relative;
                         text-align: center;
-                        
+
                         div.inner {
-    
+
                             position: absolute;
                             top: 50%;
                             left: 0;
                             right: 0;
-    
+
                             transform: translateY(-50%);
                             margin: 0 auto;
-    
+
                             .title, .description {
                                 text-align: center;
                                 display: block;
                                 font-size: 2em;
                             }
-        
+
                             .title {
                                 font-size: 4em;
                                 font-weight: bold;
@@ -159,7 +159,7 @@ header {
         margin: 1em 0;
         color: #575757;
     }
-    
+
     .documentDescription {
         font-size: 1.25em;
         margin-bottom: 1.5em;
@@ -168,7 +168,7 @@ header {
 
 
 body.mosaic-layout-customized {
-    
+
     padding-top: 25px;
 
     #portal-top,
@@ -177,11 +177,11 @@ body.mosaic-layout-customized {
     .mosaic-blur {
         display: none;
     }
-    
+
     #portal-column-content, main {
         margin: 1em 20%;
     }
-        
+
 }
 
 body.userrole-authenticated {
@@ -204,7 +204,7 @@ body.userrole-authenticated {
     #left-area {
         width: 15rem;
     }
-    
+
     .left-area-js {
         margin-left: 15em;
     }
@@ -249,9 +249,9 @@ body.userrole-authenticated {
 body.viewpermission-manage-portal,
 body.viewpermission-add-portal-content,
 body.viewpermission-manage-schemata,
-body.viewpermission-plone-site-setup-site, 
-body.viewpermission-modify-portal-content, 
-body.viewpermission-portlets-manage-portlets, 
+body.viewpermission-plone-site-setup-site,
+body.viewpermission-modify-portal-content,
+body.viewpermission-portlets-manage-portlets,
 body.viewpermission-plone-site-setup-overview,
 body.viewpermission-plone-site-setup-users-and-groups,
 body.viewpermission-list-folder-contents {
@@ -308,12 +308,12 @@ body {
 }
 
 .comparison-dimmer {
-    background-color: rgba(0,0,0,0.5); 
-    z-index: 9999; 
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    bottom: 0; 
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
     right: 0;
 }
 
@@ -321,13 +321,33 @@ body {
     .container.mix {
         display: flex;
     }
-    
+
     .checkbox.disabled {
         color: #757575;
-        
+
         label:before {
             background: #f6f6f6;
             border-color: #CCCCCC;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    body.portaltype-agsci_degree_container {
+        #faceted-form {
+            .degree-explorer {
+                margin: 0;
+            }
+            #center-area {
+                margin: 0;
+            }
+            #center-and-left-area {
+                margin: 0;
+            }
+            .left-area-js {
+                margin: 0;
+            }
         }
     }
 }

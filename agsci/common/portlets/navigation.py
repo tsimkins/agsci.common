@@ -11,6 +11,32 @@ class Renderer(_Renderer):
     _template = ViewPageTemplateFile('templates/navigation.pt')
     recurse = ViewPageTemplateFile('templates/navigation_recurse.pt')
 
+    def heading_link_target(self):
+
+        nav_root = self.getNavRoot()
+
+        # Root content item gone away or similar issue
+        if not nav_root:
+            return None
+
+        # Go to the item /view we have chosen as root item
+        return nav_root.absolute_url()
+
+    def createNavTree(self, level=1, bottomLevel=None):
+
+        data = self.getNavTree()
+
+        if not bottomLevel:
+            bottomLevel = self.data.bottomLevel or 0
+
+        if bottomLevel < 0:
+            # Special case where navigation tree depth is negative
+            # meaning that the admin does not want the listing to be displayed
+            return self.recurse([], level=level, bottomLevel=bottomLevel)
+        else:
+            return self.recurse(children=data.get('children', []), level=level,
+                                bottomLevel=bottomLevel)
+
     def getNavTree(self, _marker=None):
         if _marker is None:
             _marker = []

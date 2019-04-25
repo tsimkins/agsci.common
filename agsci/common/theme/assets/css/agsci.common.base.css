@@ -205,4 +205,14 @@ body .youtube-video-embed.aspect-3-2 {
     background: #f6f6f6;
     border-color: #CCCCCC; }
 
+@media (max-width: 768px) {
+  body.portaltype-agsci_degree_container #faceted-form .degree-explorer {
+    margin: 0; }
+  body.portaltype-agsci_degree_container #faceted-form #center-area {
+    margin: 0; }
+  body.portaltype-agsci_degree_container #faceted-form #center-and-left-area {
+    margin: 0; }
+  body.portaltype-agsci_degree_container #faceted-form .left-area-js {
+    margin: 0; } }
+
 /*# sourceMappingURL=agsci.common.base.css.map */

@@ -19,9 +19,10 @@
 
 <body>
 
-<div metal:fill-slot="main">
+<div metal:fill-slot="content">
 
 <!-- Folder contents -->
+
 <div class="faceted-form" metal:define-macro="widgets" id="faceted-form"
   tal:define="mode view/mode | string:view" tal:attributes="data-mode mode">
 
@@ -39,5 +40,8 @@
 </div>
 
 </div>
+
+
+
 </body>
 </html>
