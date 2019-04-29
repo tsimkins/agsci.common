@@ -88,9 +88,6 @@
   position: absolute;
   margin-left: -10000px !important; }
 
-header {
-  z-index: 1000; }
-
 #content #plone-document-byline {
   font-size: 0.75em;
   margin: 1em 0;
@@ -109,6 +106,8 @@ body.mosaic-layout-customized {
   body.mosaic-layout-customized #portal-column-content, body.mosaic-layout-customized main {
     margin: 1em 20%; }
 
+body.userrole-authenticated header {
+  z-index: 1000; }
 body.userrole-authenticated footer {
   z-index: 0; }
 

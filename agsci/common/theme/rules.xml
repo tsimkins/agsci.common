@@ -157,7 +157,7 @@
         <!-- Central column -->
 
         <rules css:if-content="body.mosaic-grid">
-            <replace css:theme="#content" css:content-children="#content" />
+            <replace css:theme="#section-content" css:content-children="#content" />
         </rules>
 
         <rules css:if-content="body.portaltype-agsci_degree_container">
@@ -176,9 +176,11 @@
 
                 <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
                     <div class="row">
-                    <div class="container">
-                        <xsl:apply-templates css:select="#content" />
-                    </div>
+                        <div class="container">
+                            <xsl:apply-templates css:select="h1.documentFirstHeading" />
+                            <xsl:apply-templates css:select="div.documentDescription" />
+                            <xsl:apply-templates css:select="#content-core" />
+                        </div>
                     </div>
                 </div>
 
@@ -186,7 +188,9 @@
         </rules>
 
         <!-- Alert message -->
-        <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+        <replace 
+            css:theme-children="#global_statusmessage" 
+            css:content-children="#global_statusmessage" />
 
         <!-- Left column -->
         <rules css:if-content="#portal-column-one">
@@ -217,10 +221,12 @@
         <rules css:if-content="body.template-facetednavigation_view">
             <drop css:theme="header, div" attributes="data-toggle" />
         </rules>
+
         <!-- Banner -->
         <rules css:if-content="section.banner">
             <replace css:theme="section.banner" css:content="section.banner" />
         </rules>
+
         <rules css:if-not-content="section.banner">
             <drop css:theme="section.banner" />
         </rules>
