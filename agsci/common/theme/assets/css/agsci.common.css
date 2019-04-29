@@ -8380,7 +8380,7 @@ blockquote {
   color: #314D64;
   text-transform: none;
   text-align: left;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-family: "Roboto Slab", serif;
   font-weight: 700;
   margin-top: 2rem;
@@ -8393,7 +8393,7 @@ blockquote {
     text-align: right;
     margin-top: 1rem;
     margin-right: 1rem;
-    line-height: 1.4;
+    line-height: 1.2;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 900;
     color: #314D64;
@@ -8405,10 +8405,17 @@ blockquote {
 
 @media (min-width: 576px) {
   blockquote {
-    padding: 2rem 3rem; } }
+    padding: 2rem 3rem; }
+
+  .home blockquote {
+    padding: 1.5rem; } }
 @media (min-width: 992px) {
   blockquote {
-    padding: 2rem 6rem; } }
+    font-size: 1.75rem;
+    padding: 2rem 6rem; }
+
+  .home blockquote {
+    padding: 1.5rem; } }
 p.script-content-callout {
   font-family: "Born Ready";
   font-size: 1.75rem;
@@ -9953,6 +9960,19 @@ JUMBOTRON HOME STYLE
   height: 101%;
   background-position: center center;
   background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.9) 100%);
+  transition: all 0.2s ease-in-out; }
+
+.opacity-dimmer-bottom-left-short {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 101%;
+  background-position: center center;
+  background: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.9) 100%);
   transition: all 0.2s ease-in-out; }
 
 .opacity-dimmer-bottom {
@@ -12903,7 +12923,9 @@ main {
     background-color: #f6f6f7;
     border-left: 0.5rem solid #e9eaea; }
   .side-nav .dropdown.section-level-2 [data-toggle="collapse"] {
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    background-color: transparent;
+    border-left: 0; }
   .side-nav .dropdown .dropdown-menu.show {
     width: 100%;
     position: relative;

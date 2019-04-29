@@ -235,6 +235,8 @@
 
 	&.section-level-2 [data-toggle="collapse"] {
 		padding-left: 1.5rem;
+		background-color: transparent;
+		border-left:  0;
 		}
 	
 	.dropdown-menu.show {

@@ -4,7 +4,7 @@ blockquote {
 	color: $color-ps-slate-gray;
 	text-transform: none;
 	text-align: left;
-	font-size: $h2-font-size;
+	font-size: $h3-font-size;
 	font-family: $font-family-base;
 	font-weight: $font-weight-bolder;
 	margin-top: 2rem;
@@ -20,7 +20,7 @@ blockquote {
 		text-align: right;
 		margin-top: 1rem;
 		margin-right: 1rem;
-		line-height: $line-height-md;
+		line-height: $line-height-sm;
 		font-family: $font-family-sans-serif;
 		font-weight: $font-weight-boldest;
 		color: $color-ps-slate-gray;
@@ -34,17 +34,28 @@ blockquote {
 		}
 	}
 
+	
 @include media-breakpoint-up(sm) {
 	
 	blockquote {
 		padding: 2rem 3rem;
+		}
+	
+	.home blockquote {
+		padding: 1.5rem;
 		}
 	}
 	
 @include media-breakpoint-up(lg) {
 	
 	blockquote {
+		font-size: $h2-font-size;
 		padding: 2rem 6rem;
 		}
-	}
 	
+	.home blockquote {
+		padding: 1.5rem;
+		}
+	
+	}
+
