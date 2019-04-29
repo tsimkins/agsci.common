@@ -44,7 +44,7 @@
                 aria-expanded="false"
                 aria-haspopup="true" >
                 <span class="d-block d-lg-none"
-                    tal:content="node/Title" />
+                    tal:content="string:${node/Title} Toggle" />
                 <i class="fa fa-angle-down"></i>
             </button>
 
@@ -60,31 +60,27 @@
                     <span tal:replace="string:${node/Title} Link">Selected Item Title</span>
                 </a>
 
-            </tal:level>
-
-
-        </li>
-            <li class="collapse"
-                    tal:condition="children"
-                    tal:attributes="data-parent string:#sidebarNav_${item/UID};
-                                    id string:collapse_${item/UID}">
-
-
-
-                <ul tal:attributes="class string:navTree navTreeLevel${level}"
-                    tal:condition="python: children and show_children and bottomLevel and level < bottomLevel or bottomLevel == 0">
+                <ul class="collapse"
+                        tal:condition="python: children and show_children and bottomLevel and level < bottomLevel or bottomLevel == 0"
+                        tal:attributes="data-parent string:#sidebarNav_${item/UID};
+                                        id string:collapse_${item/UID};
+                                        class string:collapse navTree navTreeLevel${level}">
 
                     <li class="d-block d-lg-none">
                         <a tal:attributes="href  python:item_remote_url if use_remote_url else item_url;
-                                            title node/Description;">
+                                           title node/Description;
+                                           class string:${item_class}${li_class}${li_extr_class}${li_folder_class} ${item_type_class}">
 
-                            <span tal:replace="string:${node/Title}">Selected Item Title</span>
+                            <span tal:replace="string:${node/Title} Link Repeated" />
                         </a>
                     </li>
 
-                    <span tal:replace="structure python:view.recurse(children=children, level=level+1, bottomLevel=bottomLevel)" />
+                    <li tal:replace="structure python:view.recurse(children=children, level=level+1, bottomLevel=bottomLevel)" />
                 </ul>
-            </li>
+
+            </tal:level>
+
+        </li>
     </tal:li>
 
 
