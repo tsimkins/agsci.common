@@ -92,7 +92,7 @@
         layer="..interfaces.IThemeSpecific"
     />
 
-    <!-- The Breadcrumbs -->
+    <!-- Breadcrumbs -->
 
     <browser:viewlet
         name="plone.path_bar"
@@ -101,6 +101,18 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         template="templates/path_bar.pt"
+    />
+
+    <!-- Lead Image -->
+
+    <browser:viewlet
+        name="agsci.common.leadimage"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".LeadImageViewlet"
+        permission="zope2.View"
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/leadimage.pt"
     />
 
 </configure>

@@ -134,20 +134,16 @@
   margin-left: -10000px !important;
 }
 
-#content {
-
-    #plone-document-byline {
-        font-size: 0.75em;
-        margin: 1em 0;
-        color: #575757;
-    }
-
-    .documentDescription {
-        font-size: 1.25em;
-        margin-bottom: 1.5em;
-    }
+#plone-document-byline {
+    font-size: 0.75em;
+    margin: 1em 0;
+    color: #575757;
 }
 
+.documentDescription {
+    font-size: 1.25em;
+    margin-bottom: 1.5em;
+}
 
 body.mosaic-layout-customized {
 
@@ -336,4 +332,8 @@ body {
             }
         }
     }
+}
+
+#leadimage img.w-100 {
+    height: auto;
 }

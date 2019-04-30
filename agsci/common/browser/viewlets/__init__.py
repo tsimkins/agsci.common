@@ -11,6 +11,7 @@ import untangle
 
 from agsci.common.utilities import ploneify
 from agsci.common import object_factory
+from agsci.common.content.behaviors.leadimage import LeadImage
 
 class ViewletBase(_ViewletBase):
 
@@ -179,3 +180,16 @@ class JavaScriptViewlet(ViewletBase):
 
 class PathBarViewlet(_PathBarViewlet):
     pass
+
+class LeadImageViewlet(ViewletBase):
+    
+    @property
+    def adapted(self):
+        return LeadImage(self.context)
+
+    @property
+    def klass(self):
+        if self.adapted.image_full_width:
+            return 'my-4 px-0'
+        
+        return 'my-4 ml-lg-3 float-lg-right col-lg-6 px-0'

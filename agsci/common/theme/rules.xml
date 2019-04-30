@@ -179,6 +179,7 @@
                         <div class="container">
                             <xsl:apply-templates css:select="h1.documentFirstHeading" />
                             <xsl:apply-templates css:select="div.documentDescription" />
+                            <xsl:apply-templates css:select="#leadimage" />
                             <xsl:apply-templates css:select="#content-core" />
                         </div>
                     </div>

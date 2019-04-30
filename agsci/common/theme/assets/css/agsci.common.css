@@ -13211,11 +13211,12 @@ p.share-this {
   position: absolute;
   margin-left: -10000px !important; }
 
-#content #plone-document-byline {
+#plone-document-byline {
   font-size: 0.75em;
   margin: 1em 0;
   color: #575757; }
-#content .documentDescription {
+
+.documentDescription {
   font-size: 1.25em;
   margin-bottom: 1.5em; }
 
@@ -13336,5 +13337,7 @@ body .youtube-video-embed.aspect-3-2 {
     margin: 0; }
   body.portaltype-agsci_degree_container #faceted-form .left-area-js {
     margin: 0; } }
+#leadimage img.w-100 {
+  height: auto; }
 
 /*# sourceMappingURL=agsci.common.css.map */

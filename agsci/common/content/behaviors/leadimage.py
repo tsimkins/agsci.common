@@ -71,7 +71,7 @@ class LeadImage(object):
 
         return False
 
-    def tag(self, css_class='leadimage', scale='image_folder'):
+    def tag(self, css_class='w-100', scale='large'):
 
         alt = getattr(self.context, 'image_caption', '')
 
