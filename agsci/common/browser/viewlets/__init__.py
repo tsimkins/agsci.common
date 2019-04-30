@@ -188,6 +188,14 @@ class LeadImageViewlet(ViewletBase):
         return LeadImage(self.context)
 
     @property
+    def lightbox_url(self):
+        return '%s/@@images/image/large' % self.context.absolute_url()
+
+    @property
+    def show_image(self):
+        return self.adapted.has_image and self.adapted.image_show
+
+    @property
     def klass(self):
         if self.adapted.image_full_width:
             return 'my-4 px-0'

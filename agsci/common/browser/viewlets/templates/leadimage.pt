@@ -1,9 +1,13 @@
 <div id="leadimage"
      tal:attributes="class view/klass|nothing"
-     tal:define="has_image view/adapted/has_image|nothing;
-                 show_image view/adapted/show_image|nothing">
+     tal:condition="view/show_image|nothing">
 
-    <img tal:replace="structure view/adapted/tag" />
+    <a tal:attributes="href view/lightbox_url|nothing"
+       data-featherlight="image">
+       
+        <img tal:replace="structure view/adapted/tag" />
+    
+    </a>
 
     <p class="discreet"
        tal:define="caption view/adapted/image_caption|nothing"
