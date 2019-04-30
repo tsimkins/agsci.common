@@ -21,6 +21,12 @@
     />
 
     <utility
+        name="agsci.common.tiles.lc_align"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".LCAlignVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.hv_orientation"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".HVOrientationVocabularyFactory"

@@ -13165,14 +13165,6 @@ p.share-this {
   .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
     border-bottom: none;
     font-size: 64px; }
-  .mosaic-grid-row .mosaic-tile-content .hero-test {
-    background-image: url(../../../images/hero-test); }
-  .mosaic-grid-row .mosaic-tile-content h2.slide-down {
-    text-align: center; }
-  .mosaic-grid-row .mosaic-tile-content h2.slide-down:after {
-    margin: auto;
-    left: 0;
-    right: 0; }
   .mosaic-grid-row .mosaic-tile-content .test-tile {
     margin: 1em 0;
     padding: 1em;

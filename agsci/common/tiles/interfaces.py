@@ -132,6 +132,13 @@ class ICalloutBlockTile(model.Schema):
         required=False,
     )
 
+    text_align = schema.Choice(
+        title=_(u"Text Align"),
+        vocabulary='agsci.common.tiles.lc_align',
+        default=u'left',
+        required=False,
+    )
+
 class ICTATile(Interface):
 
     form.widget(value=DataGridFieldFactory)

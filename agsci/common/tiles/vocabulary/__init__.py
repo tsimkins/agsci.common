@@ -19,6 +19,12 @@ class LRAlignVocabulary(KeyValueVocabulary):
         ('right', 'Right'),
     ]
 
+class LCAlignVocabulary(KeyValueVocabulary):
+    items = [
+        ('left', 'Left'),
+        ('center', 'Center'),
+    ]
+
 class HVOrientationVocabulary(KeyValueVocabulary):
     items = [
         ('vertical', 'Vertical'),
@@ -65,6 +71,7 @@ class VideoAspectRatioVocabulary(StaticVocabulary):
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
+LCAlignVocabularyFactory = LCAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
