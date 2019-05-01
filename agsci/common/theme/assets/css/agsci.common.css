@@ -13146,7 +13146,8 @@ p.share-this {
     font-family: Arial, sans-serif;
     z-index: 1; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
-    color: #ffffff; }
+    color: #ffffff;
+    background-color: transparent; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
     color: #ffffff;
     font-size: 1.25em; }
@@ -13340,5 +13341,8 @@ body .youtube-video-embed.aspect-3-2 {
   #portal-breadcrumbs ol > li {
     display: inline-block;
     list-style-type: none; }
+
+body.mosaic-editor article#content {
+  display: none; }
 
 /*# sourceMappingURL=agsci.common.css.map */

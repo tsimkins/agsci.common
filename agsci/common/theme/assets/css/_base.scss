@@ -27,6 +27,7 @@
         .jumbotron, .jumbotron-short-title {
             #portal-breadcrumbs {
                 color: #ffffff;
+                background-color: transparent;
             }
 
             p {
@@ -340,3 +341,9 @@ body {
     }
 }
 
+body.mosaic-editor {
+
+    article#content {
+        display: none;
+    }
+}

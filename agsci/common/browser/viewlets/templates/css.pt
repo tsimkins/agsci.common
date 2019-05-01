@@ -1,20 +1,27 @@
+    <!--
+        Dynamic CSS Includes
+    -->
+    
 <tal:css 
     tal:define="portal_url view/portal_url|none;
-                editing view/editing|nothing">
+                editing view/editing|nothing;
+                editing_mosaic view/editing_mosaic|nothing">
 
     <link rel="stylesheet"
-        tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/featherlight/featherlight.min.css" />
+        tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/featherlight/featherlight.min.css;
+                        data-editing editing;
+                        data-editing_mosaic editing_mosaic;" />
     
     <link rel="stylesheet"
         tal:condition="editing"
         tal:attributes="href string:${portal_url}/++theme++barceloneta/less/barceloneta-compiled.css" />
 
     <link rel="stylesheet"
-        tal:condition="editing"
+        tal:condition="python: editing and not editing_mosaic"
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.base.css" />
 
     <link rel="stylesheet"
-        tal:condition="not: editing"
+        tal:condition="python: editing_mosaic or not editing"
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.css" />
 
 </tal:css>

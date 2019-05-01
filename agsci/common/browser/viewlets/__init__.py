@@ -1,11 +1,14 @@
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
-from plone.i18n.normalizer.interfaces import IIDNormalizer
-from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
+from plone.app.blocks.layoutbehavior import ILayoutAware
 from plone.app.layout.viewlets.common import PathBarViewlet as _PathBarViewlet
+from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
+from plone.dexterity.utils import getAdditionalSchemata
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 from urlparse import urlparse
-from zope.component.hooks import getSite
 from zope.component import queryUtility
+from zope.component.hooks import getSite
 
 import untangle
 
@@ -169,6 +172,17 @@ class CSSViewlet(ViewletBase):
         return permissions
 
     @property
+    def mosaic_enabled(self):
+        additional_schemata = getAdditionalSchemata(portal_type=self.context.portal_type)
+        if ILayoutAware in additional_schemata:
+            if hasattr(self.context, 'getLayout'):
+                return self.context.getLayout() in ['layout_view',]
+
+    @property
+    def editing_mosaic(self):
+        return self.editing and self.mosaic_enabled
+
+    @property
     def editing(self):
         return any([x in self.permissions for x in self.edit_permissions])
 
@@ -179,7 +193,7 @@ class JavaScriptViewlet(ViewletBase):
         return IFacetedNavigable.providedBy(self.context)
 
 class PathBarViewlet(_PathBarViewlet):
-    pass
+    index = ViewPageTemplateFile('templates/path_bar.pt')
 
 class LeadImageViewlet(ViewletBase):
     

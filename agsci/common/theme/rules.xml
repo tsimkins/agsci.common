@@ -5,6 +5,13 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+    <before theme-children="/html/body" method="raw">
+        <xsl:attribute name="class">
+            <xsl:value-of select="/html/body/@class" />
+            <xsl:if css:test="textarea.pat-layout"> mosaic-editor</xsl:if>
+        </xsl:attribute>
+    </before>
+
     <!-- Include barceloneta's backend.xml for backend theming. -->
     <rules css:if-content=".userrole-authenticated">
 
@@ -76,8 +83,12 @@
         <notheme css:if-not-content="#visual-portal-wrapper" />
 
         <!-- Don't theme in Mosaic editor. -->
-        <notheme css:if-content="textarea.pat-layout" />
         <notheme css:if-not-content="body[class]" />
+
+        <rules css:if-content="textarea.pat-layout">
+            <drop css:content="header" />
+            <drop css:content="#viewlet-above-content" />
+        </rules>
 
         <rules css:if-content="#portal-top, #content-header">
             <!-- Attributes -->
