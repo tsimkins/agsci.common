@@ -7,6 +7,7 @@
 
     <before theme-children="/html/body" method="raw">
         <xsl:attribute name="class">
+            balanced college-level plone-toolbar-left plone-toolbar-expanded
             <xsl:value-of select="/html/body/@class" />
             <xsl:if css:test="textarea.pat-layout"> mosaic-editor</xsl:if>
         </xsl:attribute>
