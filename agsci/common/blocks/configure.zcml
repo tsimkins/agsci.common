@@ -59,4 +59,11 @@
         for="*"
     />
 
+    <adapter
+        name="bordered-callout"
+        factory=".BorderedCalloutBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
 </configure>

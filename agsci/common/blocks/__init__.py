@@ -1,3 +1,4 @@
+from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 from zope.component.hooks import getSite
@@ -62,7 +63,9 @@ class BaseBlock(object):
 
         data = self.get_data(**kwargs)
 
-        return template.render(html=el.encode_contents(), view=self, **data)
+        html = el.encode_contents()
+        html = safe_unicode(html)
+        return template.render(html=html, view=self, **data)
 
 class TileBlock(BaseBlock):
 
@@ -137,4 +140,11 @@ class YouTubeBlock(TileBlock):
 
     defaults = {
         'aspect' : '16:9',
+    }
+
+class BorderedCalloutBlock(BaseBlock):
+    template = 'bordered-callout.j2'
+
+    defaults = {
+        'reveal' : 'reveal',
     }
