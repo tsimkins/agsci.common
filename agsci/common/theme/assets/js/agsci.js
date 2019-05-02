@@ -263,3 +263,14 @@ jq3(document).ready(function() {
         }
     );
 });
+
+
+// Expand the nav portlet on page load.
+
+jq3(document).ready(function() {
+    jq3('#navbarSectionNav li.navTreeCurrentItem > ul, #navbarSectionNav li.navTreeItemInPath > ul, #navbarSectionNav li.navTreeCurrentNode > ul').each(
+        function () {
+            jq3(this).addClass('show');
+        }
+    );
+});
