@@ -1,7 +1,3 @@
-    <!--
-        Dynamic CSS Includes
-    -->
-    
 <tal:css 
     tal:define="portal_url view/portal_url|none;
                 editing view/editing|nothing;
