@@ -346,4 +346,10 @@ body.mosaic-editor {
     article#content {
         display: none;
     }
+
+    // Fixes issue in mosaic editor
+    .mce-menu {
+        position: fixed !important;
+    }
+
 }

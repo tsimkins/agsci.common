@@ -13344,5 +13344,7 @@ body .youtube-video-embed.aspect-3-2 {
 
 body.mosaic-editor article#content {
   display: none; }
+body.mosaic-editor .mce-menu {
+  position: fixed !important; }
 
 /*# sourceMappingURL=agsci.common.css.map */
