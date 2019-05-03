@@ -13346,5 +13346,10 @@ body.mosaic-editor article#content {
   display: none; }
 body.mosaic-editor .mce-menu {
   position: fixed !important; }
+body.mosaic-editor main {
+  margin: 1em 0; }
+
+body.mosaic-editor.plone-toolbar-left-expanded {
+  padding: 25px 0 0 !important; }
 
 /*# sourceMappingURL=agsci.common.css.map */

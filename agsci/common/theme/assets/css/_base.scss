@@ -352,4 +352,12 @@ body.mosaic-editor {
         position: fixed !important;
     }
 
+    main {
+        margin: 1em 0;
+    }
+
+}
+
+body.mosaic-editor.plone-toolbar-left-expanded {
+    padding: 25px 0 0 !important;
 }
