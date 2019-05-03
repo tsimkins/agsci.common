@@ -123,7 +123,7 @@ class IJumbotronTile(model.Schema):
 class ICalloutBlockTile(model.Schema):
 
     title = schema.TextLine(
-        title=_(u'Tile title'),
+        title=_(u'Title'),
         required=False,
     )
 
