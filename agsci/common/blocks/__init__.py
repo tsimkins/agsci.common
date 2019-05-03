@@ -102,6 +102,7 @@ class CTABlock(BaseBlock):
     defaults = {
         'align' : 'left',
         'color' : 'purple',
+        'full' : False,
     }
 
 class PersonBlock(TileBlock):

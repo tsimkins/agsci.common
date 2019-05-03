@@ -1,5 +1,5 @@
 <a href="{{ href }}" 
-   class="card card-cta bg-dark-{{ color }} px-0 reveal text-center float-{{ align }} float-third">
+   class="card card-cta bg-dark-{{ color }} px-0 reveal text-center {% if not full %} float-{{ align }} float-third {% endif %}">
 	
 	<div class="card-body text-white">
 		<p class="h4 mt-0">{{ html|safe }}</p>	
