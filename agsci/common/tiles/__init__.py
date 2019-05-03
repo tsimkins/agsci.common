@@ -250,6 +250,22 @@ class SkeeterTile(ConditionalTemplateTile):
 class AnimalTile(ConditionalTemplateTile):
     __type__ = "Animal"
 
+    @property
+    def css_class(self):
+        return self.get_valid_value('css_class')
+
+    @property
+    def standalone(self):
+        return self.get_valid_value('standalone')
+
+    @property
+    def klass(self):
+
+        if self.standalone:
+            return self.css_class
+
+        return "card-deck card-deck-%sup" % self.count
+
     def person_view(self, o):
         return o.restrictedTraverse('view')
 

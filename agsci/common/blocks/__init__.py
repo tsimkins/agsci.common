@@ -111,6 +111,8 @@ class PersonBlock(TileBlock):
     defaults = {
         'count' : 3,
         'style' : 'vertical',
+        'standalone' : False,
+        'css_class' : '',
     }
 
     def get_data(self, **kwargs):

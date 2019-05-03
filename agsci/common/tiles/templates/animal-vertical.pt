@@ -7,19 +7,23 @@
   <body>
 
 <section
+    tal:define="standalone view/standalone|nothing"
+    tal:omit-tag="standalone"
     tal:attributes="data-tile-type view/tile_type|nothing">
 
-<div class="container">
+<div class="container"
+     tal:omit-tag="view/standalone|nothing">
 
     <h2 tal:define="title view/data/title|nothing"
         tal:content="title"
         tal:condition="title" />
 
-    <div tal:define="count view/count|nothing"
-         tal:attributes="class string:card-deck card-deck-${count}up">
+    <div tal:attributes="class view/klass|nothing"
+         tal:omit-tag="standalone">
 
-        <tal:people
-            tal:repeat="context view/people|nothing">
+        <div tal:omit-tag="not: standalone"
+             tal:attributes="class view/klass|nothing"
+             tal:repeat="context view/people|nothing">
 
             <!-- CARD -->           
 
@@ -91,7 +95,7 @@
                 </div>
             </div>
 
-        </tal:people>
+        </div>
     </div>
 
 </section>
