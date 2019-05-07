@@ -26,7 +26,7 @@
                 <button class="btn btn-large btn-creek"
                         type="button"
                         data-toggle="collapse"
-                        aria-expanded="true"
+                        aria-expanded="false"
                         aria-controls="collapseOne"
                         tal:content="label"
                         tal:attributes="id button_id;
