@@ -151,4 +151,15 @@ a.btn-link:hover {
 	    background: lighten($color-ps-perpetual-purple,20%);
 	    }
     }
-    
+
+.btn.btn-slate {
+	background: lighten($color-ps-slate-gray,10%);
+	border: transparent;
+	position: relative;
+	color: $white;
+	
+	&:hover{
+	    background: lighten($color-ps-slate-gray,20%);
+	    }
+    }
+        

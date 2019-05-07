@@ -40,7 +40,7 @@ header {
 	position: relative;
 	z-index: 99;
 	transition: $transition-long;
-	position: fixed;
+	position: fixed; 
 	}
 
 header.affix { 
@@ -446,7 +446,7 @@ header .btn[type="submit"] {
 		padding-bottom: 1rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
-		max-height: auto;
+		max-height: none;
 		overflow: visible;
 		}
 	}
@@ -684,7 +684,7 @@ p.main-nav-section-head {
 	margin-bottom: 0.5rem;
 
 	&.show {
-		diplay: block;
+		display: block;
 		}
 	}
 

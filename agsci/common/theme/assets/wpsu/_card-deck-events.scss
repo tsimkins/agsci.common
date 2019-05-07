@@ -9,29 +9,42 @@ CARD DECK - EVENTS
 	}
 
 .card.card-event {
-	border: none;
+	
 	background: none;
 	padding: 0;
 	overflow: visible;
 	margin-bottom: 1rem;
+	box-shadow: $box-shadow-light;
 	
 	.card-body {
-		padding: 1rem;	
+		padding: 0.875rem;	
+		background-color: $color-ps-coaly-gray-light35;
 		}
 	
 	.card-title p {
 		font-weight: $font-weight-bold; 
+		font-size: $font-size-base;
+		
+		@include media-breakpoint-up(lg) {
+			font-size: $small1-size;
+			}
+		
 		}
 
 	.card-text p {
 		font-family: $font-family-sans-serif;
-		line-height: $line-height-md;
+		line-height: $line-height-sm;
 		}
 	
 	&:hover {
 		border: none;
 		background: none;
 		box-shadow: $box-shadow-medium;
+		
+		.card-body {
+			background-color: $white;
+			}
+		
 		}
 	
 	.event-date-block {
@@ -47,7 +60,7 @@ CARD DECK - EVENTS
 			
 	.card-image {
 		overflow: hidden;
-		height: 5.5rem;
+		height: 5.25rem;
 		}
 	}
 

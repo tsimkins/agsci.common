@@ -21,17 +21,17 @@
 			background-color: $color-ps-coaly-gray-light35;
 			}
 			
-			&:hover {
-				box-shadow: $box-shadow-medium;
-		
-			&::before {
-				opacity:1;
-				}
-			
-			.card-body {
-				background-color: $white;
-				}
+		&:hover {
+			box-shadow: $box-shadow-medium;
+	
+		&::before {
+			opacity:1;
 			}
+		
+		.card-body {
+			background-color: $white;
+			}
+		}
 	
 	p.section-crumb {
 		margin-top: 0;
@@ -62,10 +62,6 @@
 	    z-index: 1;
 	    }
 
-	&:hover h3.card-title::after {
-	    border-bottom: 2px solid $color-ps-creek;
-	    }	
-	
 	h3.text-center.card-title::after {
 	    content: "";
 	    position: absolute;
@@ -79,10 +75,6 @@
 	    z-index: 9999;
 	    }
 	    
-    &:hover h3.text-center.card-title::after {
-    	border-bottom: 2px solid $color-ps-creek;
-		}	
-
  /* when full card is not a link, option for links inside text */
  	
 	a {
@@ -94,6 +86,18 @@
 			border-bottom: $border-base;
 			}
 		}
+	}
+
+
+a.card.card-visual:hover {
+	
+	h3.card-title::after {
+	    border-bottom: 2px solid $color-ps-creek;
+	    }	
+	   
+	h3.text-center.card-title::after {
+    	border-bottom: 2px solid $color-ps-creek;
+		}	
 	}
 
 div.card .card-text {
@@ -160,7 +164,7 @@ div.card .card-text {
 		margin-bottom: 0.5rem;
 		font-size: $font-size-lg;
 		line-height: $line-height-xs;
-		text-shadow: 2px 2px 8px rgba($black,0.75);
+		text-shadow: 2px 2px 6px rgba($black,0.875);
 		}
 	}
 

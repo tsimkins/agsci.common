@@ -33,6 +33,24 @@
 		    }
 		}
 			
+	&.bg-dark-slate {
+			
+		.card-body {
+			background: $color-ps-slate-gray;	
+			}
+		
+			&:hover {		
+				
+				.card-body {
+					background: lighten($color-ps-slate-gray,10%);
+					}
+
+				.btn {
+					color:  $color-ps-slate-gray;
+					}
+				}
+			}
+			
 	&.bg-dark-purple {
 			
 		.card-body {

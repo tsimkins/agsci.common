@@ -36,6 +36,11 @@ JUMBOTRON HOME STYLE
 		overflow: hidden;
 		}
 
+	&.jumbotron-variable-height .jumbotron-img {
+		background-size: cover;
+		height: 100%;
+		}
+
 	&.jumbotron-full-height,
 	&.jumbotron-full-height .jumbotron-img,
 	&.jumbotron-full-height .jumbotron-header {
@@ -135,7 +140,6 @@ JUMBOTRON HOME STYLE
 	}
 
 .jumbotron-variable-height #portal-breadcrumbs a {
-		
 	color: $black;
 		
 	&::after {

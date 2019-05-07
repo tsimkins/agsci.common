@@ -332,7 +332,7 @@ AGSCI VARIABLE CUSTOMIZATION
 	$list-group-border-color:           none;
 	$list-group-border-radius:          0;
 	$list-group-item-padding-y:         1.5rem;
-	$list-group-item-padding-x:         1.5;
+	$list-group-item-padding-x:         1.5rem;
 	$list-group-active-color:           $black;
 	$list-group-active-bg:              $white;
 	$list-group-action-color:           $white;
@@ -343,7 +343,7 @@ AGSCI VARIABLE CUSTOMIZATION
 	// Breadcrumbs
 	//
 	
-	$breadcrumb-bg:                     none;
+	$breadcrumb-bg:                     transparent;
 	$breadcrumb-divider:                none;
 
 /* ----------------------------------------------------------
@@ -709,6 +709,21 @@ These are additional customizations
 
 /* ----------------------------------------------------------
 
+FIXES - need to parse out. . .
+
+---------------------------------------------------------- */	
+
+.college-level header + main {
+	padding-top: 3.5rem;
+	
+	@include media-breakpoint-up(lg) {
+		padding-top: 0;
+		}
+	}
+
+
+/* ----------------------------------------------------------
+
 PARTIALS
 
 ---------------------------------------------------------- */	
@@ -774,6 +789,8 @@ PARTIALS
 
 
 @import "_modal-universal";
+
+@import "_home";
 
 
 

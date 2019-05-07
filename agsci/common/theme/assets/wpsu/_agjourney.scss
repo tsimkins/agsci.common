@@ -17,7 +17,6 @@ AgSci Journeys
 		flex-shrink: 0;
 	    width: auto;
 	    height: 70vh;
-		vertical-align: none;
 		}
 	}
 
@@ -97,8 +96,9 @@ p.agsci-journeys.ag-journeys-preview {
 	text-align: left;
 	position: relative;
 	left: -2.5rem;
-	top: 1.875rem;
+	top: 1.5rem;
 	opacity: 0.5;
+	margin-bottom: 0;
 	
 	+ h2 {
 		margin-top: 0;
@@ -226,10 +226,6 @@ p.journey-quote-cite {
 	}
 
 /* journey preview w/ inset image */
-
-.card-columns .card.journey-preview {
-	column-break-inside: avoid
-	}
 
 .journey-preview {
 	

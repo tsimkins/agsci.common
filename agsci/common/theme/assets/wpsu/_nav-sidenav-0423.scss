@@ -106,9 +106,9 @@
 		margin-top: 1px;
 		}
 	
-	li.navTreeCurrentNode {
+	li.section-level-1.navTreeCurrentNode {
 
-		a {
+		> a {
 			font-weight: $font-weight-bold;
 			border-left: 0.5rem solid $color-ps-creek;
 			background: rgba($color-ps-coaly-gray,0.075);
@@ -166,14 +166,36 @@
 			background-color: $white;
 			margin-left: 1rem;
 			margin-right: 1rem;
-			
+						
 			&:hover {
 				background-color: $color-ps-coaly-gray-light30;
 				}
+			}
+	}
+
+
+.navbar.collapsing-sidenav ul.navTreeLevel1,
+.navbar.collapsing-sidenav ul.navTreeLevel2 {
+
+	li a.navTreeCurrentNode {
+		font-weight: $font-weight-bold;
+				
+		&::before {
+			content: '\f061';
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+		    font-family: 'Font Awesome 5 Free';
+			font-weight: 900;  
+			margin-right: 0.25rem;
+			position: relative;
+			color: $color-ps-creek;
 			
 			}
-				
+		}
 	}
+
 
 /* dropdown level 2 */
 .navbar.collapsing-sidenav ul.navTreeLevel2 {
