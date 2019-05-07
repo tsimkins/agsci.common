@@ -177,6 +177,13 @@
         </rules>
 
         <rules css:if-not-content="body.mosaic-grid, body.portaltype-agsci_degree_container">
+
+
+            <replace css:theme="#content-header" method="raw">
+                <xsl:apply-templates css:select="#portal-breadcrumbs" />
+                <xsl:apply-templates css:select="h1.documentFirstHeading" />
+            </replace>
+
             <replace css:theme="#content-container" method="raw">
 
                 <xsl:variable name="central">
@@ -186,24 +193,20 @@
 
                 </xsl:variable>
 
-                <div class="{$central} col-12 px-0 mt-3 px-lg-3 pb-4 documentText order-12 order-lg-1">
-                    <div class="row">
-                        <div class="container">
-                            <xsl:apply-templates css:select="#portal-breadcrumbs" />
-                            <xsl:apply-templates css:select="h1.documentFirstHeading" />
-                            <xsl:apply-templates css:select="div.documentDescription" />
-                            <xsl:apply-templates css:select="#leadimage" />
-                            <xsl:apply-templates css:select="#content-core" />
-                        </div>
-                    </div>
+                <div class="{$central} col-12 px-0 pb-4 order-12 order-lg-1">
+                    <p class="lead">
+                        <xsl:value-of css:select="div.documentDescription" />
+                    </p>
+                    <xsl:apply-templates css:select="#leadimage" />
+                    <xsl:apply-templates css:select="#content-core" />
                 </div>
 
             </replace>
         </rules>
 
         <!-- Alert message -->
-        <replace 
-            css:theme-children="#global_statusmessage" 
+        <replace
+            css:theme-children="#global_statusmessage"
             css:content-children="#global_statusmessage" />
 
         <!-- Left column -->
