@@ -475,3 +475,78 @@ class IYouTubeTile(Interface):
         required=True,
         default=u"16:9",
     )
+
+
+class IDropdownAccordionRowSchema(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
+class IDropdownAccordionTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label"),
+        required=False
+    )
+
+    value = schema.List(
+        title=u"Accordion Items",
+        value_type=DictRow(title=u"Items", schema=IDropdownAccordionRowSchema),
+        required=False
+    )
+
+    show_images = schema.Bool(
+        title=_(u"Show Images?"),
+        description=_(u"Show images in the accordion. The image fields below correspond with the rows in the table above."),
+        required=False,
+        default=True,
+    )
+
+    image_0 = NamedBlobImage(
+        title=_(u"Image 1"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_1 = NamedBlobImage(
+        title=_(u"Image 2"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_2 = NamedBlobImage(
+        title=_(u"Image 3"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_3 = NamedBlobImage(
+        title=_(u"Image 4"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_4 = NamedBlobImage(
+        title=_(u"Image 5"),
+        description=_(u""),
+        required=False,
+    )

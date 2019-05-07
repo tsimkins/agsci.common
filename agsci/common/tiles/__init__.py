@@ -1,20 +1,16 @@
-from plone.app.tiles.imagescaling import ImageScale
-
-from plone import api
-from plone.tiles.tile import PersistentTile
-
-from plone.tiles.interfaces import ITileDataManager
-
-from base64 import b64encode
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone import api
+from plone.app.textfield.value import RichTextValue
+from plone.tiles.interfaces import ITileDataManager
+from plone.tiles.tile import PersistentTile
 from urlparse import urlparse, parse_qs
 from zope.schema import getFields
 
 from .. import object_factory
 from ..content.adapters import LocationAdapter
-from ..utilities import toLocalizedTime, getVocabularyTerms
+from ..utilities import toLocalizedTime, getVocabularyTerms, ploneify
 from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(PersistentTile):
@@ -27,10 +23,10 @@ class BaseTile(PersistentTile):
 
     @property
     def container_width(self):
-        
+
         if self.__full_width__ or self.get_valid_value('full_width'):
             return 'full'
-        
+
         return ''
 
     def get_valid_value(self, field_name):
@@ -89,13 +85,22 @@ class BaseTile(PersistentTile):
 
     @property
     def img_src(self):
-        img = self.data.get('image', None)
+        return self.get_img_src()
+
+    def get_img_src(self, serial=None):
+
+        field = 'image'
+
+        if isinstance(serial, int):
+            field = 'image_%d' % serial
+
+        img = self.data.get(field, None)
 
         if img and img.data:
             images = self.publishTraverse(self.request, '@@images')
 
             try:
-                return images.scale('image').url
+                return images.scale(field).url
             except AttributeError:
                 pass
 
@@ -117,6 +122,60 @@ class BaseTile(PersistentTile):
     def items(self):
         return self.portal_catalog.searchResults(self.query)
 
+class MultiTextImageTile(BaseTile):
+
+    @property
+    def Xdata(self):
+
+        try:
+            _ = dict(super(MultiTextImageTile, self).data)
+        except:
+            import pdb; pdb.set_trace()
+
+        if _.has_key('value'):
+            for idx in range(0, len(_['value'])):
+                __ = _['value'][idx]
+
+                if __.has_key('image'):
+                    _['image_%d' % idx] = __['image']
+
+                if __.has_key('text'):
+
+                    _['text_%d' % idx] = RichTextValue(
+                        raw=__['text'],
+                        mimeType="text/html",
+                        outputMimeType="text/x-html-safe",
+                    )
+
+        return _
+
+    def get_img_src(self, serial=0):
+
+        image_field = 'image_%d' % serial
+
+        img = self.data.get(image_field, None)
+
+        if img and img.data:
+            images = self.publishTraverse(self.request, '@@images')
+
+            try:
+                return images.scale(image_field).url
+            except AttributeError:
+                pass
+
+        return ''
+
+    def get_text(self, serial=0):
+
+        field = 'text_%d' % serial
+
+        if self.data.has_key(field):
+            _ = self.data[field]
+            if hasattr(_, 'output'):
+                return _.output
+
+        return ''
+
 class ConditionalTemplateTile(BaseTile):
 
     def __call__(self, *args, **kwargs):
@@ -135,7 +194,7 @@ class JumbotronTile(BaseTile):
 
     __type__ = "Jumbotron"
     __full_width__ = True
-    
+
     def breadcrumbs(self):
         view = BrowserView(self.context, self.request)
         viewlet = PathBarViewlet(self.context, self.request, view)
@@ -150,7 +209,7 @@ class CalloutBlockTile(BaseTile):
 
 class CTATile(BaseTile):
     __type__ = "Call To Action"
-    __full_width__ = True    
+    __full_width__ = True
 
 class LargeCTATile(BaseTile):
     __type__ = "Large CTA"
@@ -316,7 +375,7 @@ class StatlerTile(BaseTile):
 
 class YouTubeTile(BaseTile):
     __type__ = "YouTube"
-    
+
     @property
     def video_id(self):
 
@@ -369,3 +428,9 @@ class YouTubeTile(BaseTile):
         if video_id:
             return "https://www.youtube.com/embed/%s" % video_id
 
+class DropdownAccordionTile(BaseTile):
+    __type__ = "Dropdown Accordion"
+
+    @property
+    def uuid(self):
+        return ploneify(self.data['label'])

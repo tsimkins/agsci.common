@@ -74,7 +74,7 @@
         layer=".interfaces.IAgsciTilesLayer"
         for="*"
     />
-        
+
 
     <plone:tile
         name="agsci.common.tiles.kermit"
@@ -220,6 +220,20 @@
         schema=".interfaces.IYouTubeTile"
         class=".YouTubeTile"
         template="templates/youtube.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
+
+    <plone:tile
+        name="agsci.common.tiles.dropdown_accordion"
+        title="Dropdown Accordion"
+        description=""
+        schema=".interfaces.IDropdownAccordionTile"
+        class=".DropdownAccordionTile"
+        template="templates/dropdown_accordion.pt"
         add_permission="cmf.ModifyPortalContent"
         permission="zope2.View"
         layer=".interfaces.IAgsciTilesLayer"
