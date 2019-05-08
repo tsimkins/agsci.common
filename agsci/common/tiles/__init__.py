@@ -122,33 +122,6 @@ class BaseTile(PersistentTile):
     def items(self):
         return self.portal_catalog.searchResults(self.query)
 
-class MultiTextImageTile(BaseTile):
-
-    @property
-    def Xdata(self):
-
-        try:
-            _ = dict(super(MultiTextImageTile, self).data)
-        except:
-            import pdb; pdb.set_trace()
-
-        if _.has_key('value'):
-            for idx in range(0, len(_['value'])):
-                __ = _['value'][idx]
-
-                if __.has_key('image'):
-                    _['image_%d' % idx] = __['image']
-
-                if __.has_key('text'):
-
-                    _['text_%d' % idx] = RichTextValue(
-                        raw=__['text'],
-                        mimeType="text/html",
-                        outputMimeType="text/x-html-safe",
-                    )
-
-        return _
-
     def get_img_src(self, serial=0):
 
         image_field = 'image_%d' % serial
@@ -430,6 +403,13 @@ class YouTubeTile(BaseTile):
 
 class DropdownAccordionTile(BaseTile):
     __type__ = "Dropdown Accordion"
+
+    @property
+    def row_class(self):
+        if self.data.get('show_images', None):
+            return "col-12 col-md-9 col-xl-7"
+        
+        return "col-12"
 
     @property
     def uuid(self):

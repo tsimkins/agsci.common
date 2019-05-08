@@ -13,7 +13,8 @@
         <div class="col">
             <div class="accordion accordion-options"
                  tal:attributes="id parent_id"
-                 tal:define="title view/data/title|nothing;
+                 tal:define="show_images view/data/show_images|nothing;
+                             title view/data/title|nothing;
                              label view/data/label|nothing;
                              uuid view/uuid|nothing;
                              parent_id string:${uuid}_parent;
@@ -49,15 +50,16 @@
                                              _serial repeat/i/index;
                                              _img_src python:view.get_img_src(_serial);">
 
-                                <div class="col-6 col-md-3 offset-xl-1 mb-3 mb-md-0">
-                                    <div>
-                                        <img tal:attributes="src _img_src"
-                                             alt="" class="w-100" />
-                                    </div>
+                                <div class="col-6 col-md-3 offset-xl-1 mb-3 mb-md-0"
+                                     tal:condition="show_images">
+
+                                    <img tal:attributes="src _img_src"
+                                            tal:condition="_img_src"
+                                            alt="" class="w-100" />
+
                                 </div>
 
-                                <div class="col-12 col-md-9 col-xl-7">
-
+                                <div tal:attributes="class view/row_class|nothing">
 
                                     <h3 class="mt-0"
                                         tal:content="_title" />

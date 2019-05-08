@@ -88,10 +88,11 @@
 
         <rules css:if-content="textarea.pat-layout">
             <drop css:content="header" />
+            <drop css:theme="#page-header" />
             <drop css:content="#viewlet-above-content" />
         </rules>
 
-        <rules css:if-content="#portal-top, #content-header">
+        <rules css:if-content="#portal-top">
             <!-- Attributes -->
             <copy attributes="*" css:theme="html" css:content="html" />
             <merge attributes="class" css:theme="body" css:content="body" />
@@ -170,16 +171,17 @@
 
         <rules css:if-content="body.mosaic-grid">
             <replace css:theme="#section-content" css:content-children="#content" />
+            <drop css:theme="#page-header" />
         </rules>
 
         <rules css:if-content="body.portaltype-agsci_degree_container">
             <replace css:theme-children="#section-content" css:content-children="#portal-column-content" />
+            <drop css:theme="#page-header" />
         </rules>
 
         <rules css:if-not-content="body.mosaic-grid, body.portaltype-agsci_degree_container">
 
-
-            <replace css:theme="#content-header" method="raw">
+            <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />
                 <xsl:apply-templates css:select="h1.documentFirstHeading" />
             </replace>
