@@ -509,7 +509,7 @@ class IDropdownAccordionTile(Interface):
     )
 
     value = schema.List(
-        title=u"Accordion Items",
+        title=u"Items",
         value_type=DictRow(title=u"Items", schema=IDropdownAccordionRowSchema),
         required=False
     )
@@ -549,4 +549,20 @@ class IDropdownAccordionTile(Interface):
         title=_(u"Image 5"),
         description=_(u""),
         required=False,
+    )
+
+
+class IExploreMoreTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+    
+    value = schema.List(
+        title=u"Items",
+        value_type=DictRow(title=u"Items", schema=IDropdownAccordionRowSchema),
+        required=False
     )

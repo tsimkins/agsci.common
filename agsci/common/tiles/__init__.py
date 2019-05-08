@@ -414,3 +414,7 @@ class DropdownAccordionTile(BaseTile):
     @property
     def uuid(self):
         return ploneify(self.data['label'])
+
+class ExploreMoreTile(BaseTile):
+    __type__ = "Explore More"
+    __full_width__ = True

@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="section-explore container-fluid px-0 p-lg-5"
+         tal:attributes="data-tile-type view/tile_type|nothing;
+                         data-container-width view/container_width;">
+
+    <div class="container-fluid bg-light-gray-patterned position-relative py-3">
+    
+        <div class="container explore-options pb-3 px-0">
+    
+        <h2 class="centered-callout-header slide-down text-center"
+            tal:content="view/data/title|noting">
+    
+            <div class="row align-items-stretch row-more-block justify-content-center">
+
+                <tal:col tal:repeat="i view/values|nothing">
+    
+                    <div class="col-12 col-sm-6 col-lg-4 mt-4 more-block"
+                         tal:define="_title i/title|nothing;
+                                     _description i/description|nothing;
+                                     _text i/text/output|nothing;">
+    
+    
+                        <div class="more-block-content agsci-box-shadow">
+
+                            <p class="more-header"
+                               tal:condition="_title"
+                               tal:content="_title">
+
+                            <p tal:condition="_description"
+                               tal:content="_description">
+
+                            <div tal:replace="structure _text" />
+
+                        </div>
+    
+                    </div>
+                </tal:col>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+  </body>
+</html>
