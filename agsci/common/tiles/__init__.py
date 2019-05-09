@@ -122,33 +122,6 @@ class BaseTile(PersistentTile):
     def items(self):
         return self.portal_catalog.searchResults(self.query)
 
-    def get_img_src(self, serial=0):
-
-        image_field = 'image_%d' % serial
-
-        img = self.data.get(image_field, None)
-
-        if img and img.data:
-            images = self.publishTraverse(self.request, '@@images')
-
-            try:
-                return images.scale(image_field).url
-            except AttributeError:
-                pass
-
-        return ''
-
-    def get_text(self, serial=0):
-
-        field = 'text_%d' % serial
-
-        if self.data.has_key(field):
-            _ = self.data[field]
-            if hasattr(_, 'output'):
-                return _.output
-
-        return ''
-
 class ConditionalTemplateTile(BaseTile):
 
     def __call__(self, *args, **kwargs):
