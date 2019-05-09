@@ -27,7 +27,7 @@
                                      _text i/text/output|nothing;">
     
     
-                        <div class="more-block-content agsci-box-shadow">
+                        <div class="more-block-content agsci-box-shadow html">
 
                             <p class="more-header"
                                tal:condition="_title"

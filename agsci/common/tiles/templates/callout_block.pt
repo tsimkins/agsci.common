@@ -15,7 +15,7 @@
                        tal:condition="view/data/title|nothing"
             	       tal:content="view/data/title|nothing" />
 
-            	   <p class="lead fade-up"
+            	   <p class="lead fade-up html"
                       tal:condition="view/data/text/output|nothing"
                       tal:content="structure view/data/text/output|nothing" />
 

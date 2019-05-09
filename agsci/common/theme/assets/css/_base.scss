@@ -1,3 +1,23 @@
+@mixin link_color() {
+    a, a:visited,
+    a:active {
+        color: #009cde !important;
+        border-bottom: 1px solid #E9E9E9 !important;
+        padding-bottom: 0.0625em !important;
+    }
+    
+    a:hover {
+        color: #0078ab !important;
+        border-bottom: 1px solid #0078ab !important;
+    }
+    
+    a.no-border, a.no-border:visited,
+    a.no-border:active, a.no-border:hover {
+        border-bottom: none !important;;
+        padding-bottom: 0 !important;
+    }
+}
+
 .mosaic-grid-row {
 
     margin: 0 auto;
@@ -359,4 +379,9 @@ body.mosaic-editor {
 
 body.mosaic-editor.plone-toolbar-left-expanded {
     padding: 25px 0 0 !important;
+}
+
+#content-core,
+.html {
+    @include link_color();
 }

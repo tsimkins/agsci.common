@@ -21,8 +21,9 @@
                           tal:attributes="href view/data/url|nothing" />
                     </h2>
 
-                    <div tal:condition="view/data/text/output|nothing"
-                       tal:replace="structure view/data/text/output|nothing" />
+                    <div class="html"
+                         tal:condition="view/data/text/output|nothing"
+                         tal:content="structure view/data/text/output|nothing" />
 
                     <a class="btn btn-creek"
                        tal:attributes="href view/data/url|nothing"

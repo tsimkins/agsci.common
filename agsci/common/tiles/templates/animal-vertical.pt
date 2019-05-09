@@ -27,7 +27,7 @@
 
             <!-- CARD -->           
 
-            <div class="card card-short-bio agsci-box-shadow"
+            <div class="card card-short-bio agsci-box-shadow html"
                  tal:define="person_view python:view.person_view(context);
                              leadimage person_view/getItemLeadImage|nothing">
 
@@ -52,7 +52,8 @@
                 
                                     <div class="card-title">
                                         <a tal:attributes="href context/absolute_url|nothing"
-                                           tal:content="person_view/name/title|nothing">Marra Baker</a>
+                                           tal:content="person_view/name/title|nothing"
+                                           class="no-border"/>
                                     </div>
                 
                                     <p class="jobTitle"

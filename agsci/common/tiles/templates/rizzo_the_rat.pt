@@ -10,7 +10,7 @@
          tal:attributes="data-tile-type view/tile_type|nothing">
 
     <div class="container">
-        <div class="row px-0 mx-0 align-items-start justify-content-center">
+        <div class="row px-0 mx-0 align-items-start justify-content-center html">
             <div class="col-12 px-0">
     
                 <div class="address-generic card agsci-box-shadow">

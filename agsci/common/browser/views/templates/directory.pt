@@ -40,7 +40,8 @@
                             <div id="hcard" class="vcard personView">
                                 <h2>
                                     <a tal:attributes="href context/absolute_url|nothing"
-                                       tal:content="person_view/name/title" />
+                                       tal:content="person_view/name/title"
+                                       class="no-border" />
                                 </h2>
                             </div>
     

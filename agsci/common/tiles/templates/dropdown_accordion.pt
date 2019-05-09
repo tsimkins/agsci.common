@@ -43,7 +43,7 @@
                         <tal:row tal:repeat="i view/values|nothing">
 
                             <!-- ROW -->
-                            <div class="row option-block mx-0 border-top py-5"
+                            <div class="row option-block mx-0 border-top py-5 html"
                                  tal:define="_title i/title|nothing;
                                              _description i/description|nothing;
                                              _text i/text/output|nothing;

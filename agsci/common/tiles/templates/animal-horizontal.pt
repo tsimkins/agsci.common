@@ -26,7 +26,7 @@
              tal:repeat="context view/people|nothing">
 
              <!-- CARD -->
-            <div class="card card-short-bio card-short-bio-horiz agsci-box-shadow"
+            <div class="card card-short-bio card-short-bio-horiz agsci-box-shadow html"
                  tal:define="person_view python:view.person_view(context);
                              leadimage person_view/getItemLeadImage|nothing">
             
@@ -53,7 +53,8 @@
                                     <div class="card-title">
                                         <p>
                                             <a tal:attributes="href context/absolute_url|nothing"
-                                               tal:content="person_view/name/title|nothing" />
+                                               tal:content="person_view/name/title|nothing"
+                                               class="no-border" />
                                         </p>
                                     </div>
                                     

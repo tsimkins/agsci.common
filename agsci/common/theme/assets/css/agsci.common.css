@@ -13934,4 +13934,25 @@ body.mosaic-editor .datagridwidget-cell {
 body.mosaic-editor.plone-toolbar-left-expanded {
   padding: 25px 0 0 !important; }
 
+#content-core a, #content-core a:visited,
+#content-core a:active,
+.html a,
+.html a:visited,
+.html a:active {
+  color: #009cde !important;
+  border-bottom: 1px solid #E9E9E9 !important;
+  padding-bottom: 0.0625em !important; }
+#content-core a:hover,
+.html a:hover {
+  color: #0078ab !important;
+  border-bottom: 1px solid #0078ab !important; }
+#content-core a.no-border, #content-core a.no-border:visited,
+#content-core a.no-border:active, #content-core a.no-border:hover,
+.html a.no-border,
+.html a.no-border:visited,
+.html a.no-border:active,
+.html a.no-border:hover {
+  border-bottom: none !important;
+  padding-bottom: 0 !important; }
+
 /*# sourceMappingURL=agsci.common.css.map */
