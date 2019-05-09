@@ -1,3 +1,4 @@
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
@@ -67,6 +68,10 @@ class BaseBlock(object):
         html = safe_unicode(html)
         return template.render(html=html, view=self, **data)
 
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.site, 'portal_catalog')
+
 class TileBlock(BaseBlock):
 
     tile_name = ''
@@ -105,31 +110,32 @@ class CTABlock(BaseBlock):
         'full' : False,
     }
 
-class PersonBlock(TileBlock):
-    tile_name = 'agsci.common.tiles.animal'
-
-    defaults = {
-        'count' : 3,
-        'style' : 'vertical',
-        'standalone' : False,
-        'css_class' : '',
-    }
-
-    def get_data(self, **kwargs):
-
-        _ = super(PersonBlock, self).get_data(**kwargs)
-
-        _['value'] = [{'username' : x.strip()} for x in kwargs.get('usernames', '').split(',')]
-
-        return _
-
-class HorizontalPersonBlock(PersonBlock):
+class PersonBlock(BaseBlock):
+    template = 'person.j2'
 
     defaults = {
         'count' : 2,
-        'style' : 'horizontal',
     }
 
+    def card_view(self, r):
+        o = r.getObject()
+        return o.restrictedTraverse('@@card_view')()
+
+    def people(self, usernames):
+
+        _ids = [x.strip() for x in usernames.split(',')]
+
+        if _ids:
+
+            results = self.portal_catalog.searchResults({
+                'Type' : 'Person',
+                'getId' : _ids,
+                'sort_on' : 'sortable_title',
+            })
+
+            return [self.card_view(x) for x in results]
+
+        return []
 
 class ShadowBoxBlock(BaseBlock):
     template = 'shadow-box.j2'

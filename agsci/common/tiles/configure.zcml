@@ -172,6 +172,7 @@
         add_permission="cmf.ModifyPortalContent"
         permission="zope2.View"
         layer=".interfaces.IAgsciTilesLayer"
+        template="templates/animal.pt"
         for="*"
     />
 

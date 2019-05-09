@@ -252,27 +252,12 @@ class SkeeterTile(ConditionalTemplateTile):
     def template(self):
         return 'skeeter-%s.pt' % self.style
 
-class AnimalTile(ConditionalTemplateTile):
+class AnimalTile(BaseTile):
     __type__ = "Animal"
 
     @property
-    def css_class(self):
-        return self.get_valid_value('css_class')
-
-    @property
-    def standalone(self):
-        return self.get_valid_value('standalone')
-
-    @property
     def klass(self):
-
-        if self.standalone:
-            return self.css_class
-
         return "card-deck card-deck-%sup" % self.count
-
-    def person_view(self, o):
-        return o.restrictedTraverse('view')
 
     @property
     def people(self):
@@ -281,14 +266,11 @@ class AnimalTile(ConditionalTemplateTile):
 
         results = self.portal_catalog.searchResults({
             'Type' : 'Person',
-            'getId' : _ids
+            'getId' : _ids,
+            'sort_on' : 'sortable_title',
         })
 
         return [x.getObject() for x in results]
-
-    @property
-    def template(self):
-        return 'animal-%s.pt' % self.style
 
 class PepeTheKingPrawnTile(GonzoTile):
     __type__ = "Pepe the King Prawn"

@@ -103,6 +103,16 @@
         template="templates/person.pt"
     />
 
+    <!-- Person Card View -->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view"
+        class=".PersonCardView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
     <!-- Directory View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectory"

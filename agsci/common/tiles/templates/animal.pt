@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section tal:attributes="data-tile-type view/tile_type|nothing">
+
+<div class="container">
+
+    <h2 tal:define="title view/data/title|nothing"
+        tal:content="title"
+        tal:condition="title" />
+
+    <div tal:attributes="class view/klass|nothing">
+
+        <tal:people tal:repeat="context view/people|nothing">
+
+            <div tal:replace="structure context/@@card_view" />
+
+        </tal:people>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

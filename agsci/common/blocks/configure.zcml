@@ -39,13 +39,6 @@
     />
 
     <adapter
-        name="person-horizontal"
-        factory=".HorizontalPersonBlock"
-        provides=".interfaces.IBlock"
-        for="*"
-    />
-
-    <adapter
         name="shadow-box"
         factory=".ShadowBoxBlock"
         provides=".interfaces.IBlock"

@@ -376,6 +376,9 @@ class PersonView(BaseView):
     def has_address(self):
         return self.adapted.has_address
 
+class PersonCardView(PersonView):
+    pass
+
 class DirectoryView(BaseView):
 
     @property

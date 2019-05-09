@@ -1,0 +1,67 @@
+<div class="card card-short-bio agsci-box-shadow html"
+        tal:define="leadimage view/getItemLeadImage|nothing">
+
+    <div class="card-body">
+
+        <div class="row mx-0">
+            <div class="col-12 col-md-5 col-sm-12 px-0"
+                    tal:condition="leadimage">
+                <div class="card-img-crop">
+                    <img tal:attributes="alt view/name/title|nothing;
+                                            title view/name/title|nothing;
+                                            src leadimage"
+                            class="w-100 photo" />
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-7 mt-2 mt-md-0 pl-0 px-sm-0 pr-0 pl-md-3 pl-sm-0">
+
+                <div class="row mx-0">
+
+                    <div class="col-12 p-0 pt-2">
+
+                        <div class="card-title">
+                            <a tal:attributes="href context/absolute_url|nothing"
+                                tal:content="view/name/title|nothing"
+                                class="no-border"/>
+                        </div>
+
+                        <p class="jobTitle"
+                            tal:content="view/job_title|nothing">
+
+                        <address class="d-inline-flex flex-column"
+                            tal:define="email context/email|nothing;
+                                        phone_number context/phone_number|nothing;">
+                            <div>
+                                <ul class="list-inline list-inline-not-mobile list-bio-contact">
+                                    <li tal:condition="email">
+                                        <span>Email</span>
+                                        <a tal:attributes="href string:mailto:${email}"
+                                            tal:content="email" />
+                                    </li>
+
+                                    <li tal:condition="phone_number">
+                                        <span>Office</span>
+                                        <a tal:attributes="href string:tel:${phone_number}"
+                                            tal:content="phone_number" />
+                                    </li>
+                                </ul>
+
+                                <tal:social-media
+                                    tal:define="twitter_url context/twitter_url|nothing;
+                                                facebook_url context/facebook_url|nothing;
+                                                youtube_url context/youtube_url|nothing;
+                                                linkedin_url context/linkedin_url|nothing;">
+
+                                    <metal:social-media
+                                        metal:use-macro="context/social-media/macros/social-media" />
+                                </tal:social-media>
+                            </div>
+                        </address>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
