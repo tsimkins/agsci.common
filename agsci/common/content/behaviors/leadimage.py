@@ -10,6 +10,7 @@ from zope.interface import provider, implementer
 
 from agsci.common import AgsciMessageFactory as _
 from agsci.common.constants import IMAGE_FORMATS
+from ..person.person import IPerson
 
 @provider(IFormFieldProvider)
 class ILeadImage(_ILeadImage):
@@ -18,7 +19,7 @@ class ILeadImage(_ILeadImage):
 @provider(IFormFieldProvider)
 class ILeadImageNoCaption(ILeadImage):
     form.omitted('image_caption')
-    
+
 @provider(IFormFieldProvider)
 class ILeadImageExtra(ILeadImage):
 
@@ -26,7 +27,7 @@ class ILeadImageExtra(ILeadImage):
         'settings',
         label=_(u'Settings'),
         fields=(
-            'image_full_width', 
+            'image_full_width',
             'image_show',
         ),
     )
@@ -49,6 +50,10 @@ class ILeadImageExtra(ILeadImage):
 @adapter(IDexterityContent)
 class LeadImage(object):
 
+    exclude_interfaces = [
+        IPerson,
+    ]
+
     def __init__(self, context):
         self.context = context
 
@@ -62,7 +67,11 @@ class LeadImage(object):
 
     @property
     def image_show(self):
-        return getattr(self.context, "image_show", True)
+
+        if not any([x.providedBy(self.context) for x in self.exclude_interfaces]):
+            return getattr(self.context, "image_show", True)
+
+        return False
 
     @property
     def has_image(self):
