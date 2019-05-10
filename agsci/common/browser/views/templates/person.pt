@@ -36,56 +36,54 @@
             </div>
 
             <div class="col-12 col-sm-8 order-sm-1">
-
-                <div id="hcard" class="vcard">
-                    <h1 class="fn n"
-                        tal:define="first_name view/name/first_name|nothing;
-                                    middle_name view/name/middle_name|nothing;
-                                    last_name view/name/last_name|nothing;
-                                    suffix view/name/suffix|nothing;">
-
-                        <span class="given-name"
-                              tal:content="first_name"
-                              tal:condition="first_name" />
-
-                        <span class="additional-name"
-                              tal:content="middle_name"
-                              tal:condition="middle_name" />
-
-                        <span class="family-name"
-                              tal:content="last_name"
-                              tal:condition="last_name" /><tal:suffix
-                              tal:condition="suffix">,
-
-                        <span class="honorific-suffix"
-                              tal:content="suffix" />
-
-                        </tal:suffix>
-
-                    </h1>
-
-                    <ul class="title jobTitle"
-                        tal:define="job_titles context/job_titles|nothing"
-                        tal:condition="job_titles">
-
-                        <li tal:repeat="i job_titles"
-                            tal:content="i" />
-
-                    </ul>
-
-                </div>
-
-                <div class="container bio">
+                <div class="container">
                     <div class="row">
                         <div class="col-12 pl-0">
 
+
+                            <div id="hcard" class="vcard">
+                                <h1 class="fn n"
+                                    tal:define="first_name view/name/first_name|nothing;
+                                                middle_name view/name/middle_name|nothing;
+                                                last_name view/name/last_name|nothing;
+                                                suffix view/name/suffix|nothing;">
+
+                                    <span class="given-name"
+                                          tal:content="first_name"
+                                          tal:condition="first_name" />
+
+                                    <span class="additional-name"
+                                          tal:content="middle_name"
+                                          tal:condition="middle_name" />
+
+                                    <span class="family-name"
+                                          tal:content="last_name"
+                                          tal:condition="last_name" /><tal:suffix
+                                          tal:condition="suffix">,
+
+                                    <span class="honorific-suffix"
+                                          tal:content="suffix" />
+
+                                    </tal:suffix>
+
+                                </h1>
+
+                                <ul class="title jobTitle"
+                                    tal:define="job_titles context/job_titles|nothing"
+                                    tal:condition="job_titles">
+
+                                    <li tal:repeat="i job_titles"
+                                        tal:content="i" />
+
+                                </ul>
+                            </div>
                             <address>
 
                                 <div class="mb-4"
                                     tal:define="street_address view/street_address|nothing;
                                                 city context/city|nothing;
                                                 state context/state|nothing;
-                                                zip_code context/zip_code|nothing;"                                                
+                                                zip_code context/zip_code|nothing;"
                                     tal:condition="view/has_address|nothing">
 
                                     <span class="street-address"

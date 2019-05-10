@@ -12172,7 +12172,7 @@ h1.journey-name {
 DEGREE EXPLORER
 
 ---------------------------------------------------------- */
-h1 span {
+h1.rotated span {
   font-family: 'Born Ready';
   font-weight: 100;
   font-size: 12vw;

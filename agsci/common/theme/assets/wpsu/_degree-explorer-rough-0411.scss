@@ -5,9 +5,9 @@ DEGREE EXPLORER
 
 ---------------------------------------------------------- */
 
-h1 span {
-	font-family: 'Born Ready'; 
-	font-weight: 100; 
+h1.rotated span {
+	font-family: 'Born Ready';
+	font-weight: 100;
 	font-size: 12vw;
 	line-height: 1.0;
 	margin-left: 3rem;
@@ -212,7 +212,7 @@ h1 span {
 	padding: 0 0.5rem;
 	
 	.checkbox {
-		align-items: baseline; 
+		align-items: baseline;
 		}
 	}
 
@@ -303,7 +303,7 @@ button.filter {
 	
 }
 
-/* standard table with scroll 
+/* standard table with scroll
 	SIMPLE VERSION */
 
 .rtable {
@@ -323,7 +323,7 @@ button.filter {
 	vertical-align: top;
 
 	overflow-x: auto;
-	  
+	
 	  // optional - looks better for small cell values
 	 /*  white-space: nowrap; */
 	
@@ -368,10 +368,10 @@ button.filter {
 	}
 
 .comparison-container {
-	 position: fixed; 
-	 overflow: auto; 
-	 bottom: 0; 
-	 height: 95%; 
+	 position: fixed;
+	 overflow: auto;
+	 bottom: 0;
+	 height: 95%;
 	 background: $white;
 	 z-index: 9999;
 	}
@@ -534,7 +534,7 @@ button.filter {
 	
 	tr {
 		
-		td div.explorer-label { 
+		td div.explorer-label {
 			background-color: $color-ps-creek-light35;	
 			}	
 		}
@@ -584,12 +584,12 @@ button.filter {
 				}
 		
 			td {
-				background: linear-gradient(to bottom, rgba($color-ps-coaly-gray-light25,0.5) 0%,rgba($color-ps-coaly-gray-light25,0) 100%); 
+				background: linear-gradient(to bottom, rgba($color-ps-coaly-gray-light25,0.5) 0%,rgba($color-ps-coaly-gray-light25,0) 100%);
 				background-size: auto 4rem;
 				background-repeat: no-repeat;
 				}
 		
-			td div.explorer-label { 
+			td div.explorer-label {
 				background-color: transparent;
 				}	
 				
@@ -648,7 +648,7 @@ button.filter {
 	margin-right: 0;
 	}
 	
-	/* -------------------------------- 
+	/* --------------------------------
 
 Slide In Panel - by CodyHouse.co
 
@@ -735,7 +735,7 @@ Slide In Panel - by CodyHouse.co
 		float: left;
 		z-index: 99;
 		}
-	  
+	
 	.cd-panel--from-left .cd-panel__container {
 		left: 0;
 		-webkit-transform: translate3d(0, 0, 0);

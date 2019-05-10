@@ -196,14 +196,25 @@
                 </xsl:variable>
 
                 <div class="{$central} col-12 px-0 pb-4 order-12 order-lg-1">
-                    <p class="lead">
-                        <xsl:value-of css:select="div.documentDescription" />
-                    </p>
+                    <xsl:if test="//div[@class='documentDescription description']">
+                        <p class="lead">
+                            <xsl:value-of css:select="div.documentDescription" />
+                        </p>
+                    </xsl:if>
                     <xsl:apply-templates css:select="#leadimage" />
                     <xsl:apply-templates css:select="#content-core" />
                 </div>
 
             </replace>
+        </rules>
+
+        <rules css:if-content="body.portaltype-agsci_person">
+            <drop css:theme="#page-header" />
+            <before css:theme="#content-container" method="raw">
+                <div class="container">
+                    <xsl:apply-templates css:select="#portal-breadcrumbs" />
+                </div>
+            </before>
         </rules>
 
         <!-- Alert message -->
