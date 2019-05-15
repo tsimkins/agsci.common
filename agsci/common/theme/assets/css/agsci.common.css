@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ----------------------------------------------------------
 
 CORE BOOTSTRAP FUNCTION SCSS
@@ -12377,7 +12378,7 @@ button.filter {
       margin: 0.25rem 0;
       line-height: 1.4; }
 
-/* standard table with scroll 
+/* standard table with scroll
 	SIMPLE VERSION */
 .rtable {
   width: 100%; }
@@ -12596,7 +12597,7 @@ button.filter {
   margin-left: 0;
   margin-right: 0; }
 
-	/* -------------------------------- 
+	/* --------------------------------
 
 Slide In Panel - by CodyHouse.co
 
@@ -13954,5 +13955,147 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html a.no-border:hover {
   border-bottom: none !important;
   padding-bottom: 0 !important; }
+
+#content-core .entries {
+  padding-top: 1em; }
+  #content-core .entries .entry {
+    margin-bottom: 1.375em; }
+    #content-core .entries .entry .documentByLine {
+      font-size: 0.75em;
+      margin-top: 1em;
+      color: #333333; }
+    #content-core .entries .entry header {
+      min-height: auto;
+      margin-bottom: 0.375em; }
+    #content-core .entries .entry .description {
+      line-height: 1.375; }
+
+.alert.status,
+.portalMessage {
+  padding: 15px;
+  padding-left: 45px;
+  margin-bottom: 20px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+  font-size: 14px;
+  font-weight: 400;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.1); }
+  .alert.status > strong, .alert.status > dt,
+  .portalMessage > strong,
+  .portalMessage > dt {
+    font-weight: 700;
+    padding-right: 5px;
+    color: rgba(0, 0, 0, 0.5); }
+  .alert.status a,
+  .portalMessage a {
+    font-weight: 400;
+    color: #005074; }
+  .alert.status > strong::before, .alert.status > dt::before,
+  .portalMessage > strong::before,
+  .portalMessage > dt::before {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: -30px;
+    margin-right: 10px;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+    top: -1px;
+    position: relative; }
+  .alert.status > dt, .alert.status > dd,
+  .portalMessage > dt,
+  .portalMessage > dd {
+    display: inline; }
+  .alert.status > dd,
+  .portalMessage > dd {
+    margin: 0; }
+  .alert.status.alert-none,
+  .portalMessage.alert-none {
+    box-shadow: none; }
+  .alert.status.alert-success, .alert.status.info,
+  .portalMessage.alert-success,
+  .portalMessage.info {
+    background-color: #aad6ea;
+    border: 1px solid #9acee6;
+    color: rgba(0, 0, 0, 0.5); }
+    .alert.status.alert-success > strong, .alert.status.alert-success > dt, .alert.status.info > strong, .alert.status.info > dt,
+    .portalMessage.alert-success > strong,
+    .portalMessage.alert-success > dt,
+    .portalMessage.info > strong,
+    .portalMessage.info > dt {
+      color: fade(rgba(0, 0, 0, 0.5), 67%); }
+    .alert.status.alert-success > strong::before, .alert.status.alert-success > dt::before, .alert.status.info > strong::before, .alert.status.info > dt::before,
+    .portalMessage.alert-success > strong::before,
+    .portalMessage.alert-success > dt::before,
+    .portalMessage.info > strong::before,
+    .portalMessage.info > dt::before {
+      background-color: #3e7b91;
+      content: "i"; }
+  .alert.status.alert-warning, .alert.status.warning,
+  .portalMessage.alert-warning,
+  .portalMessage.warning {
+    background-color: #ebd380;
+    border: 1px solid #e7ca66;
+    color: rgba(0, 0, 0, 0.5); }
+    .alert.status.alert-warning > strong, .alert.status.alert-warning > dt, .alert.status.warning > strong, .alert.status.warning > dt,
+    .portalMessage.alert-warning > strong,
+    .portalMessage.alert-warning > dt,
+    .portalMessage.warning > strong,
+    .portalMessage.warning > dt {
+      color: fade(rgba(0, 0, 0, 0.5), 67%); }
+    .alert.status.alert-warning > strong::before, .alert.status.alert-warning > dt::before, .alert.status.warning > strong::before, .alert.status.warning > dt::before,
+    .portalMessage.alert-warning > strong::before,
+    .portalMessage.alert-warning > dt::before,
+    .portalMessage.warning > strong::before,
+    .portalMessage.warning > dt::before {
+      background-color: #bc8d0d;
+      content: "!"; }
+  .alert.status.alert-error, .alert.status.error,
+  .portalMessage.alert-error,
+  .portalMessage.error {
+    background-color: #EC9C8D;
+    border: 1px solid #eb9484;
+    color: rgba(0, 0, 0, 0.5); }
+    .alert.status.alert-error > strong, .alert.status.alert-error > dt, .alert.status.error > strong, .alert.status.error > dt,
+    .portalMessage.alert-error > strong,
+    .portalMessage.alert-error > dt,
+    .portalMessage.error > strong,
+    .portalMessage.error > dt {
+      color: fade(rgba(0, 0, 0, 0.5), 67%); }
+    .alert.status.alert-error > strong::before, .alert.status.alert-error > dt::before, .alert.status.error > strong::before, .alert.status.error > dt::before,
+    .portalMessage.alert-error > strong::before,
+    .portalMessage.alert-error > dt::before,
+    .portalMessage.error > strong::before,
+    .portalMessage.error > dt::before {
+      background-color: #ac493f;
+      content: "×"; }
+
+.portlet .portletContent > .portalMessage {
+  padding: 15px;
+  padding-left: 45px;
+  margin: 15px; }
+
+/* special octogonal shape for error
+.alert.status.alert-error,
+.portalMessage.error {
+	& > strong::before, & > dt::before {
+		border-radius: 8px; //soften border
+		background: $plone-alert-error-bullet;
+		background:
+			linear-gradient(135deg, transparent 4px, $plone-alert-error-bullet 0) top left,
+			linear-gradient(225deg, transparent 4px, $plone-alert-error-bullet 0) top right,
+			linear-gradient(315deg, transparent 4px, $plone-alert-error-bullet 0) bottom right,
+			linear-gradient(45deg,  transparent 4px, $plone-alert-error-bullet 0) bottom left;
+		background-size: 50% 50%;
+		background-repeat: no-repeat;
+	}
+}
+*/
 
 /*# sourceMappingURL=agsci.common.css.map */

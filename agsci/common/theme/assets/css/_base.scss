@@ -385,3 +385,31 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html {
     @include link_color();
 }
+
+#content-core {
+    
+    .entries {
+
+        padding-top: 1em;
+
+        .entry {
+            
+            margin-bottom: 1.375em;
+            
+            .documentByLine {
+                font-size: 0.75em;
+                margin-top: 1em;
+                color: #333333;
+            }
+            
+            header {
+                min-height: auto;
+                margin-bottom: 0.375em;
+            }
+            
+            .description {
+                line-height: 1.375;
+            }
+        }
+    }
+}

@@ -240,4 +240,18 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   border-bottom: none !important;
   padding-bottom: 0 !important; }
 
+#content-core .entries {
+  padding-top: 1em; }
+  #content-core .entries .entry {
+    margin-bottom: 1.375em; }
+    #content-core .entries .entry .documentByLine {
+      font-size: 0.75em;
+      margin-top: 1em;
+      color: #333333; }
+    #content-core .entries .entry header {
+      min-height: auto;
+      margin-bottom: 0.375em; }
+    #content-core .entries .entry .description {
+      line-height: 1.375; }
+
 /*# sourceMappingURL=agsci.common.base.css.map */
