@@ -2,13 +2,17 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from plone.app.textfield.value import RichTextValue
+from plone.behavior.interfaces import IBehaviorAssignable, IBehavior
+from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
 from plone.namedfile.file import NamedBlobImage, NamedBlobFile
 from plone.uuid.interfaces import ATTRIBUTE_NAME
+from urlparse import urljoin, urlparse
+from zope.component import getUtility
 from zope.component.hooks import getSite
-
-from urlparse import urljoin
+from zope.component.interfaces import ComponentLookupError
+from zope.schema import getFieldsInOrder
 
 import base64
 import json
@@ -35,11 +39,19 @@ class json_data_object(object):
         # Otherwise, return the value of the key in the data dict
         if self.data.has_key(name):
             value = self.data.get(name, '')
-            
+
             if value:
                 if isinstance(value, dict) and value.has_key('value'):
                     return value['value']
                 return value
+
+        else:
+            # Get based on original ID rather than JSON key
+            for (k,v) in self.data.iteritems():
+                if isinstance(v, dict):
+                    _id = v.get('info', {}).get('id', None)
+                    if _id == name:
+                        return self.__getattribute__(k)
 
         # Then get the attribute on the object itself, or return blank on error
         try:
@@ -51,20 +63,40 @@ class ContentImporter(object):
 
     types_mapping = {}
 
+    exclude_fields = [
+        'title',
+        'id',
+        'description',
+        'image',
+        'file',
+    ]
+
     default_type = 'Folder'
 
-    def __init__(self, path, UID, getId, api_url, **kwargs):
+    def __init__(self, path, UID, api_url, **kwargs):
+        if path.startswith('/'):
+            path = path[1:]
+
+        if path.endswith('/'):
+            path = self.path[:-1]
+
         self.path = path
         self.UID = UID
-        self.getId = getId
         self.api_url = api_url
         self.data = json_data_object(self.json_data)
-        
+
         if isinstance(self.path, unicode):
             self.path = self.path.encode('utf-8')
 
     @property
     def json_data(self):
+        parsed_url = urlparse(self.api_url)
+
+        # Local file
+        if not parsed_url.scheme:
+            return json.loads(open(parsed_url.path, "r").read())
+
+        # Remote URL
         return requests.get(self.api_url).json()
 
     @property
@@ -86,10 +118,14 @@ class ContentImporter(object):
     def parent(self):
         parent_path = "/".join(self.path.split('/')[:-1])
 
-        try:
-            return self.site.restrictedTraverse(parent_path)
-        except:
-            pass
+        if parent_path:
+
+            try:
+                return self.site.restrictedTraverse(parent_path)
+            except:
+                pass
+
+        return self.site
 
     @property
     def exists(self):
@@ -98,16 +134,58 @@ class ContentImporter(object):
     @property
     def product_type(self):
 
-        _type = self.data.type
-        
-        if self.types_mapping.has_key(_type):
-            return self.types_mapping[_type]
+        fti = self.product_fti
 
-        for fti in self.portal_types.listTypeInfo():
-            if fti.Title() == _type:
-                return fti.getId()
-        
+        if fti:
+            return fti.getId()
+
         return self.default_type
+
+    @property
+    def product_fti(self):
+
+        _type = self.data.type
+        _type = self.types_mapping.get(_type, _type)
+
+        try:
+            return getUtility(IDexterityFTI, _type)
+        except ComponentLookupError:
+            return None
+
+    @property
+    def schema(self):
+        fti = self.product_fti
+
+        if fti:
+            return fti.lookupSchema()
+
+    @property
+    def behaviors(self):
+        fti = self.product_fti
+
+        if fti:
+            for _ in fti.behaviors:
+                try:
+                    __ = getUtility(IBehavior, _)
+
+                    if __:
+                        yield __.interface
+
+                except ComponentLookupError:
+                    pass
+
+    @property
+    def fields(self):
+
+        rv = []
+
+        schemata = [self.schema, ]
+        schemata.extend(self.behaviors)
+
+        for _ in schemata:
+            rv.extend(getFieldsInOrder(_))
+
+        return [x[0] for x in rv]
 
     @property
     def html(self):
@@ -137,8 +215,8 @@ class ContentImporter(object):
             filename = filename.decode('utf-8')
 
         return NamedBlobFile(
-            filename=filename, 
-            contentType=contentType, 
+            filename=filename,
+            contentType=contentType,
             data=base64.b64decode(data)
         )
 
@@ -168,20 +246,20 @@ class ContentImporter(object):
         item = createContentInContainer(
             parent,
             self.product_type,
-            id=self.data.id,
+            id=safe_unicode(self.data.id).encode('utf-8'),
             title=self.data.title,
             description=self.data.description,
             checkConstraints=False
         )
 
-        # Set UID        
+        # Set UID
         setattr(item, ATTRIBUTE_NAME, self.UID)
 
         # Set HTML
         html = self.html
-        
+
         if html:
-        
+
             item.text = RichTextValue(
                 raw=html,
                 mimeType=u'text/html',
@@ -190,6 +268,13 @@ class ContentImporter(object):
 
         # Set Lead Image
         image = self.image
-        
+
         if image:
             item.image = image
+
+        for field in self.fields:
+            if field not in self.exclude_fields:
+                value = getattr(self.data, field, None)
+
+                if value:
+                    setattr(item, field, value)
