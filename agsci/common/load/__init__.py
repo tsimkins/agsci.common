@@ -61,7 +61,17 @@ class json_data_object(object):
 
 class ContentImporter(object):
 
-    types_mapping = {}
+    manual_types_mapping = {
+        'Home Page' : 'agsci_homepage',
+        'Photo Folder' : 'agsci_photofolder',
+        'Form Folder' : 'Folder',
+    }
+
+    @property
+    def types_mapping(self):
+        _ = dict([(x.Title(), x.getId()) for x in self.portal_types.listTypeInfo()])
+        _.update(self.manual_types_mapping)
+        return _
 
     exclude_fields = [
         'title',
@@ -69,6 +79,10 @@ class ContentImporter(object):
         'description',
         'image',
         'file',
+        'effective_date',
+        'expiration_date',
+        'text',
+        'language',
     ]
 
     default_type = 'Folder'
@@ -235,25 +249,30 @@ class ContentImporter(object):
 
 
     def __call__(self):
-        if self.exists:
-            raise Exception("%s already exists." % self.path)
 
         parent = self.parent
 
         if not parent:
             raise Exception("Cannot find parent object for %s" % self.path)
 
-        item = createContentInContainer(
-            parent,
-            self.product_type,
-            id=safe_unicode(self.data.id).encode('utf-8'),
-            title=self.data.title,
-            description=self.data.description,
-            checkConstraints=False
-        )
+        _id = safe_unicode(self.data.id).encode('utf-8')
 
-        # Set UID
-        setattr(item, ATTRIBUTE_NAME, self.UID)
+        if not self.exists:
+
+            item = createContentInContainer(
+                parent,
+                self.product_type,
+                id=_id,
+                title=self.data.title,
+                description=self.data.description,
+                checkConstraints=False
+            )
+
+            # Set UID
+            setattr(item, ATTRIBUTE_NAME, self.UID)
+
+        else:
+            item = parent[_id]
 
         # Set HTML
         html = self.html
@@ -272,9 +291,39 @@ class ContentImporter(object):
         if image:
             item.image = image
 
+        # Set field values
         for field in self.fields:
             if field not in self.exclude_fields:
                 value = getattr(self.data, field, None)
 
                 if value:
                     setattr(item, field, value)
+
+        # Set collection criteria
+        if self.product_type in ('Collection', 'Newsletter'):
+            if self.data.collection_criteria:
+                item.setQuery(self.data.collection_criteria)
+
+            if self.data.collection_sort_field:
+                item.setSort_on(self.data.collection_sort_field)
+
+                if self.data.collection_sort_reversed:
+                    item.setSort_reversed(True)
+
+        # Set default page
+        if self.data.default_page:
+            default_page_id = safe_unicode(self.data.default_page).encode('utf-8')
+            self.context.setDefaultPage(default_page_id)
+
+        # Set dates
+        effective = self.data.effective_date
+        expires = self.data.expiration_date
+
+        if effective:
+            item.setEffectiveDate(DateTime(effective))
+
+        if expires:
+            item.setExpirationDate(DateTime(expires))
+
+        # Reindex
+        item.reindexObject()
