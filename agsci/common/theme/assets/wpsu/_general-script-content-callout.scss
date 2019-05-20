@@ -1,16 +1,16 @@
 p.script-content-callout {
-	font-family: $font-family-cursive;
-	font-size: $h2-font-size;
-	line-height: $line-height-sm;
-	color: $black-accessible-gray;
-	transform: rotate(-6deg);
-	float: right;
 	display: inline-block;
+	float: right;
 	width: 40%;
 	margin-left: 1rem;
+	color: $black-accessible-gray;
+	font-size: $h2-font-size;
+	font-family: $font-family-cursive;
+	line-height: $line-height-sm;
 	text-align: left;
+	transform: rotate(-6deg);
 	
-	 span {
+	span {
 		color: $color-ps-creek;
 	 	}
 	}
@@ -22,13 +22,12 @@ p.script-content-callout {
 		}
 	}
 
-
 @include media-breakpoint-up(lg) {
 	
 	p.script-content-callout {
 		position: absolute;
-		width: 27.5%;
 		right: -27.5%;
 		z-index: 9;	
+		width: 27.5%;
 		}
 	}

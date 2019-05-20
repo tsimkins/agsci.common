@@ -1,15 +1,14 @@
 .card.card-visual {
-		padding: 0;
 		position: relative;
-		box-shadow: $box-shadow-light;
-		margin-bottom: $card-group-margin;
 		margin-top: $card-group-margin;
-		position: relative;
+		margin-bottom: $card-group-margin;
+		padding: 0;
+		box-shadow: $box-shadow-light;
 			
 		.card-image-top {
-			background: $black;	
-			overflow: hidden;
 			position: relative;
+			overflow: hidden;
+			background: $black;	
 			}
 		
 		img {
@@ -25,7 +24,7 @@
 			box-shadow: $box-shadow-medium;
 	
 		&::before {
-			opacity:1;
+			opacity: 1;
 			}
 		
 		.card-body {
@@ -38,16 +37,15 @@
 		}
 
 	p.h3 {
+		margin-top: 0;
 		font-size: $h4-font-size;
 		line-height: $line-height-sm;
-		margin-top: 0;
 		}
 
 	&:hover {
 		
 		.opacity-dimmer-bottom {
-			background:
-			linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
 			}
 		}
 	
@@ -65,12 +63,12 @@
 	h3.text-center.card-title::after {
 	    content: "";
 	    position: absolute;
+	    right: 0;
 	    bottom: -0.375rem;
 	    left: 0;
-	    right: 0;
 	    width: 4rem;
-	    margin: 0 auto;
 	    height: 1px;
+	    margin: 0 auto;
 	    border-bottom: 2px solid transparent;
 	    z-index: 9999;
 	    }
@@ -78,16 +76,15 @@
  /* when full card is not a link, option for links inside text */
  	
 	a {
+		border-bottom: $border-base;
 		text-decoration: none;
 		color: #307e7a;
-		border-bottom: $border-base;
 
 		&:hover {
 			border-bottom: $border-base;
 			}
 		}
 	}
-
 
 a.card.card-visual:hover {
 	
@@ -119,8 +116,8 @@ div.card .card-text {
 			font-weight: $font-weight-bold;
 			
 			a {
-				color: $black;
 				border-bottom: $border-base;
+				color: $black;
 				}
 			
 			ul {
@@ -141,16 +138,16 @@ div.card .card-text {
 	}
 	
 .card-img-crop { /* more than square */
+	position: relative;
 	width: 100%;
 	height: 0;
-	padding-bottom: 120%;
 	overflow: hidden;
-	position: relative;
+	padding-bottom: 120%;
 
 	img {
-		width: 100%;
 		position: absolute;
 		top: -10%;	
+		width: 100%;
 		}
 	}
 
@@ -162,9 +159,9 @@ div.card .card-text {
 	h3.card-title {
 		position: relative;
 		margin-bottom: 0.5rem;
+		text-shadow: 2px 2px 6px rgba($black,0.875);
 		font-size: $font-size-lg;
 		line-height: $line-height-xs;
-		text-shadow: 2px 2px 6px rgba($black,0.875);
 		}
 	}
 
@@ -186,8 +183,8 @@ div.card .card-text {
 		}
 	
 	h3.card-title {
-		font-size: $h4-font-size;
 		position: relative;
+		font-size: $h4-font-size;
 		
 		@include media-breakpoint-up(md) {
 			font-size: $h5-font-size;
@@ -199,15 +196,13 @@ div.card .card-text {
 		}
 	
 	p {
-		font-size: $small1-size;
-		line-height: $line-height-base;		
 		margin-bottom: 0;
 		padding-top: .125rem;
+		font-size: $small1-size;
+		line-height: $line-height-base;		
 		
 		@include media-breakpoint-up(md) {
 			font-size: $small3-size;
 			}
-		
 		}
 	}
-	

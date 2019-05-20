@@ -7,10 +7,12 @@ button {
 	}
 	
 .btn {
-	font-family: $font-family-sans-serif;
+	position: relative;
+	padding: 0.5rem 1rem;
+	border: transparent;
 	font-weight: $font-weight-normal;
 	font-size: $small2-size;
-	padding: 0.5rem 1rem;
+	font-family: $font-family-sans-serif;
 	transition: $transition-base;
 	}
 	
@@ -23,14 +25,14 @@ button {
 	}	 
 
 .btn.btn-sm {
-	font-size: $small3-size;
 	padding: 0.25rem 0.75rem;
+	font-size: $small3-size;
 	}
 
 .btn.btn-primary {
 	margin-bottom: 1rem;
 	padding: 1rem 2rem;
-	border-color: $color-ps-creek; 
+	border: 1px solid $color-ps-creek; 
 	background-color: $color-ps-creek;
 	color: $white;
 	
@@ -48,19 +50,19 @@ button.btn-link,
 a.btn-link,
 a.card .btn-link {
 	padding: 0;
-	color: $color-ps-creek-accessible;
 	border: 1px solid transparent;
+	color: $color-ps-creek-accessible;
 	
 	&::after {
+		content: "\f061";
 		display: inline-block;
+		margin-left: 0.25rem;
+		font-weight: 900;  			
 		font-style: normal;
 		font-variant: normal;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
 		font-family: 'Font Awesome 5 Free';
-		content: "\f061";
-		font-weight: 900;  
-		margin-left: 0.25rem;
 		line-height: $line-height-md;		
 		}
 	}
@@ -73,8 +75,7 @@ a.btn-link:hover {
 
 .btn.btn-light-gray {
 	background: lighten($color-ps-limestone-gray,30%);
-	border: transparent;
-	position: relative;
+
 	color: $black;
 	
 	&:hover {
@@ -83,10 +84,9 @@ a.btn-link:hover {
     }
 
 .btn.btn-light-creek-outline {
-	border: 1px solid $color-ps-creek-light30;
-	position: relative;
-	color: $color-ps-creek-accessible;
 	background: $white;
+	border: 1px solid $color-ps-creek-light30;
+	color: $color-ps-creek-accessible;
 	
 	&:hover {
 	    background: $color-ps-creek;
@@ -96,8 +96,6 @@ a.btn-link:hover {
     
 .btn.btn-creek {
 	background: $color-ps-creek-accessible;
-	border: transparent;
-	position: relative;
 	color: $white;
 	
 	&:hover {
@@ -110,19 +108,16 @@ a.btn-link:hover {
 	}
     
 .btn.btn-cta {
+	display: block;
 	background: $color-ps-nittany-navy;
-	position: relative;
+	margin-right: 0.5rem;
 	margin-bottom: 0.5rem;
 	margin-left: 0.5rem;
-	margin-right: 0.5rem;
 	word-break: normal;
-	display: block;
 	}
   
 .btn.btn-orange {
 	background: darken($color-ps-invent-orange,10%);
-	border: transparent;
-	position: relative;
 	color: $white;
 	
 	&:hover{
@@ -132,8 +127,6 @@ a.btn-link:hover {
 
 .btn.btn-green {
 	background: darken($color-ps-future-green,10%);
-	border: transparent;
-	position: relative;
 	color: $white;
 	
 	&:hover{
@@ -143,8 +136,6 @@ a.btn-link:hover {
     
 .btn.btn-purple {
 	background: lighten($color-ps-perpetual-purple,10%);
-	border: transparent;
-	position: relative;
 	color: $white;
 	
 	&:hover{
@@ -154,8 +145,6 @@ a.btn-link:hover {
 
 .btn.btn-slate {
 	background: lighten($color-ps-slate-gray,10%);
-	border: transparent;
-	position: relative;
 	color: $white;
 	
 	&:hover{

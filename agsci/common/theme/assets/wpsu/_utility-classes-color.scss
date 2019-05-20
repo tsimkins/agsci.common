@@ -5,17 +5,17 @@ COLOR Utility Classes
 ---------------------------------------------------------- */	
 .white {
 	color: $white;
-	font-family: $font-family-sans-serif;
-	font-size: 1rem;
 	font-weight: $font-weight-light;
+	font-size: 1rem;
+	font-family: $font-family-sans-serif;
 	line-height: 2.5;
 	}	
 
 .black {
 	color: $black;
-	font-family: $font-family-sans-serif;
-	font-size: 1rem;
 	font-weight: $font-weight-light;
+	font-size: 1rem;
+	font-family: $font-family-sans-serif;
 	line-height: 2.5;
 	}
 	
@@ -56,7 +56,7 @@ COLOR Utility Classes
 	}
 
 .keystone {	
-	color:  darken($color-ps-keystone,25%);	
+	color: darken($color-ps-keystone,25%);	
 	}
 
 .bg-nittany-navy {

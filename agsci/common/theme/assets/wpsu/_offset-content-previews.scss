@@ -4,13 +4,12 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 
 ---------------------------------------------------------- */
 
-
 .offset-content {
-	padding: 1.5rem;
 	position: relative;
-	z-index: 9;
-	background-color: $white;
 	margin: -3rem 1rem 1rem 1rem;
+	padding: 1.5rem;
+	background-color: $white;
+	z-index: 9;
 	
 	p {
 		line-height: $line-height-lg;
@@ -32,16 +31,15 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 		}
 	}
 
-
 .offset-content a:not(.btn),
 .offset-content a:visited:not(.btn) {
-	text-decoration: none;
-	color: #307e7a;
 	border-bottom: $border-base;
+	color: #307e7a;
+	text-decoration: none;
 
 	&:hover {
-		color: $black;
 		border-bottom: 1px solid $color-ps-creek;
+		color: $black;
 		}
 	}
 	
@@ -54,16 +52,16 @@ section.offset-previews {
 			background: $color-ps-slate-gray;
 			}
 			
-	@include media-breakpoint-up(lg) {
-		.offset-content {
-			left: 3rem;
-			order: 1;
-			margin: 0;
-			}
-		
-		.offset-image {
-			order: 12;
-			}
+		@include media-breakpoint-up(lg) {
+			.offset-content {
+				left: 3rem;
+				margin: 0;
+				order: 1;
+				}
+			
+			.offset-image {
+				order: 12;
+				}
 			}
 		}
 	
@@ -78,8 +76,8 @@ section.offset-previews {
 			
 			.offset-content {
 				left: -3rem;
-				order: 12;
 				margin: 0;
+				order: 12;
 				}
 			}
 		}
@@ -87,23 +85,22 @@ section.offset-previews {
 
 @include media-breakpoint-up(lg) {	
 	
-section.offset-full-image {
-
-	.position-absolute-bottom-left {
-		position: absolute;
-		bottom: 1.5rem;
-		left: 1.5rem;
-		right: unset;
-		top: unset;
-		}
+	section.offset-full-image {
 	
-	.position-absolute-bottom-right {
-		position: absolute;
-		bottom: 1.5rem;
-		right: 1.5rem;
-		left: unset;
-		top: unset;
+		.position-absolute-bottom-left {
+			position: absolute;
+			top: unset;
+			right: unset;
+			bottom: 1.5rem;
+			left: 1.5rem;
+			}
+		
+		.position-absolute-bottom-right {
+			position: absolute;
+			top: unset;
+			right: 1.5rem;
+			bottom: 1.5rem;
+			left: unset;
+			}
 		}
-
 	}
-}

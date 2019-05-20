@@ -5,8 +5,8 @@ FOOTER
 ---------------------------------------------------------- */
 
 footer { /* relative and high z-index to mask any affixed nav */
-	background-color: $color-ps-nittany-navy;
 	position: relative;
+	background-color: $color-ps-nittany-navy;
 	z-index: 9;
 
 	img.agsci-logo {
@@ -21,8 +21,8 @@ footer { /* relative and high z-index to mask any affixed nav */
 	li.footer-list-head {
 		display: block;
 		font-weight: $font-weight-base;
-		font-family: $font-family-base;
 		font-size: $font-size-sm;
+		font-family: $font-family-base;
 		}
 
 	.footer-details-block {
@@ -30,19 +30,19 @@ footer { /* relative and high z-index to mask any affixed nav */
 		}
 	
 	p.footerLinks {
-		font-family: $font-family-sans-serif;
-		font-size: $small4-size;
 		margin-bottom: 0.25rem;
+		font-size: $small4-size;
+		font-family: $font-family-sans-serif;
 		line-height: $line-height-md;
 		}
 		
 	ul {
+		margin-bottom: 0;
 		padding-left: 0;
 		list-style-type: none;
 		font-size: $font-size-base;
 		font-family: $font-family-sans-serif;
-		margin-bottom: 0;
-			
+
 		li {
 			margin-left: 0.25rem;
 			margin-right: 0.25rem;
@@ -57,8 +57,8 @@ footer { /* relative and high z-index to mask any affixed nav */
 		}
 	
 	ul.list-inline.list-inline-contact {
-		font-size: $small3-size;
 		margin-bottom: 0;
+		font-size: $small3-size;
 		}
 		
 	abbr[title] {
@@ -89,12 +89,12 @@ footer { /* relative and high z-index to mask any affixed nav */
 
 li.li-separator::after {
 		content: '|';
-		margin-left: 0.5rem;
 		margin-right: 0.25rem;
-		color: $color-ps-creek;
-		font-size: $font-size-base;
+		margin-left: 0.5rem;
 		vertical-align: baseline;
+		color: $color-ps-creek;
 		font-weight: $font-weight-light;
+		font-size: $font-size-base;
 		}
 		
 /* Footer - Department Level
@@ -108,7 +108,6 @@ li.li-separator::after {
 			width: 224px;
 			height: 40px;
 			}
-		
 		}
 	}
 
@@ -125,14 +124,15 @@ li.li-separator::after {
 	background-color: darken($color-ps-nittany-navy,5%);
 	
 	p.department-name {
-		font-family: $font-family-base;
+		display: inline-block;
+		margin-bottom: 0.25rem;	
+		padding-bottom: 0.5rem;
+		border-bottom: $border-base;		
 		color: $white;
 		font-size: $h4-font-size;
-		margin-bottom: 0.25rem;
-		border-bottom: $border-base;
-		display: inline-block;
+		font-family: $font-family-base;
 		line-height: $line-height-sm;
-		padding-bottom: 0.5rem;
+
 		}
 	
 	ul li {
@@ -147,7 +147,3 @@ li.li-separator::after {
 			}
 		}
 	}
-
-
-
-

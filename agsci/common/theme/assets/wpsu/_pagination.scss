@@ -5,20 +5,20 @@ PAGINATION
 ---------------------------------------------------------- */
 
 .pagination {
-	margin-top: 2rem;
 	display: flex;
 	justify-content: space-between;
-	
+	margin-top: 2rem;
+
 	.previous::before,
 	.next::after {
 		display: inline-block;
+		color: $white;
+		font-weight: 900;
 		font-style: normal;
 		font-variant: normal;
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
 		font-family: 'Font Awesome 5 Free';
-		font-weight: 900;
-		color: $white;
 		}
 	
 	.previous::before {
@@ -35,10 +35,10 @@ PAGINATION
 .pagination-pages {
 	
 	a {
-		color: $color-ps-creek-accessible;
 		display: inline-block;
 		padding: 0.375rem;
 		border-bottom: 2px solid transparent;	
+		color: $color-ps-creek-accessible;
 		font-size: $small2-size;	
 		
 		&:hover {
@@ -49,13 +49,13 @@ PAGINATION
 	span {
 		display: inline-block;
 		padding: 0.375rem;	
-		color: $black;
 		border-bottom: 2px solid $color-ps-creek;
+		color: $black;
 		font-size: $small2-size;	
 		
 		&.disabled {
-			border-bottom: transparent;
 			padding: 0.375rem 0;
+			border-bottom: transparent;
 			}
 		}
 	}

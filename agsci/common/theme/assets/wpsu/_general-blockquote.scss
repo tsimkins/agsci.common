@@ -1,33 +1,32 @@
 blockquote {
-	padding: 2rem 0;
+	margin-top: 2rem;
 	margin-bottom: 2rem;
+	padding: 2rem 0;
+
 	color: $color-ps-slate-gray;
-	text-transform: none;
 	text-align: left;
+	text-transform: none;
+	font-weight: $font-weight-base;
 	font-size: $h3-font-size;
 	font-family: $font-family-base;
-	font-weight: $font-weight-base;
-	margin-top: 2rem;
 	line-height: $line-height-sm;
 
-	
-
 	.fas {
-		color: rgba($color-ps-slate-gray,0.5);
 		vertical-align: sub;
+		color: rgba($color-ps-slate-gray,0.5);
 		}
 
 	cite {
 		display: block;
-		text-align: right;
 		margin-top: 0.5rem;
-		margin-right: 1rem;
-		line-height: $line-height-sm;
-		font-family: $font-family-sans-serif;
-		font-weight: $font-weight-bold;
+		margin-right: 1rem;		
+		text-align: right;
 		color: $color-ps-slate-gray;
-		font-size: $font-size-sm;
+		font-weight: $font-weight-bold;
 		font-style: normal;
+		font-size: $font-size-sm;
+		font-family: $font-family-sans-serif;
+		line-height: $line-height-sm;
 		
 		span {
 			font-style: italic;
@@ -35,7 +34,6 @@ blockquote {
 		}
 	}
 
-	
 @include media-breakpoint-up(sm) {
 	
 	blockquote {
@@ -50,13 +48,11 @@ blockquote {
 @include media-breakpoint-up(lg) {
 	
 	blockquote {
-		font-size: $h2-font-size;
 		padding: 2rem 6rem;
+		font-size: $h2-font-size;
 		}
 	
 	.home blockquote {
 		padding: 1.5rem;
 		}
-	
 	}
-

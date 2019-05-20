@@ -7,13 +7,13 @@ JUMBOTRON HOME STYLE
 .jumbotron {
 	height: 60vh; /* setting to fixed height so bg image can be absolute */
 	margin-bottom: 0; /* override bs default */
-	border-radius: 0;
 	padding: 0;
+	border-radius: 0;
     
 	h1, h2 {
-		text-shadow: 4px 4px 8px rgba($black,0.75);
-		color: $white;
 		margin-bottom: 0;
+		color: $white;
+		text-shadow: 4px 4px 8px rgba($black,0.75);
 		}
 
 	p {
@@ -22,10 +22,10 @@ JUMBOTRON HOME STYLE
 		}
 	
 	p.lead {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
 		color: $white;
 		font-size: $font-size-base;
-		margin-bottom: 0;
-		margin-top: 0.5rem;
 		}
 		
 	&.jumbotron-variable-height p.lead {
@@ -37,8 +37,8 @@ JUMBOTRON HOME STYLE
 		}
 
 	&.jumbotron-variable-height .jumbotron-img {
-		background-size: cover;
 		height: 100%;
+		background-size: cover;
 		}
 
 	&.jumbotron-full-height,
@@ -68,14 +68,13 @@ JUMBOTRON HOME STYLE
 		line-height: $line-height-md;
 		
 		span {
+			padding: 0;
 			background: none;
 			box-shadow: none;
-			padding: 0;
 			}
 		}
 	}
 
-	
 .article .jumbotron,
 .article .jumbotron .row,
 .article.jumbotron.jumbotron-img-based {
@@ -84,9 +83,9 @@ JUMBOTRON HOME STYLE
 
 .jumbotron-img {
 	position: absolute;
-	opacity: 1; 
     width: 100%;
-	height: 60vh;
+	height: 60vh;	
+	opacity: 1; 
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;	
@@ -127,6 +126,10 @@ JUMBOTRON HOME STYLE
 .jumbotron:hover p.section-crumb::after {
 	border-bottom: 2px solid $color-ps-creek;
 	}	
+
+#portal-breadcrumbs {
+	line-height: $line-height-md;
+	}
 	
 .jumbotron-img-based #portal-breadcrumbs {
 	

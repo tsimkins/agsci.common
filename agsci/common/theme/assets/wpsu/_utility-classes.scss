@@ -22,13 +22,13 @@
 	&:active,
 	&:focus {
 	    position: absolute;
-	    z-index: 999999;
 	    top: 0;
 	    left: 0;
 	    overflow: visible;
 	    clip: auto;
 	    width: auto;
 	    height: auto;
+	    z-index: 999999;
 		}
 	}
 
@@ -84,6 +84,19 @@ a.element-invisible:focus {
 .fade-in:not(.show) {
     opacity: 0; 
     }
+
+/* Margin - Too late to add to spacer map - so just adding
+	a couple of generica utilities
+--------------------------------------------- */
+
+.mb-2rem {
+	margin-bottom: 2rem;	
+	}
+
+.pb-2rem {
+	padding-bottom: 2rem;
+	}
+
     
 /* Border - 
 	Top and Bottom Utility Class
@@ -118,11 +131,11 @@ a.element-invisible:focus {
 		content: " ";
 		position: absolute;
 		top: 1rem;
-		left: 1rem;
 		right: 1rem;
 		bottom: 1rem;
-		z-index: 1;
+		left: 1rem;
 		border: 0.5rem solid rgba($color-ps-creek,0.5);
+		z-index: 1;
 		}
 	}
 

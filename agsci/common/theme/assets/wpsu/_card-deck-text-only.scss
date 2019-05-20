@@ -3,18 +3,18 @@
 	}
 	
 .card.card-text-only {
-		background: $color-ps-coaly-gray-light35;
-		transition: $transition-base;
-		padding: 1rem;
-		margin-bottom: 1rem;
-		margin-top: 1rem;
-		box-shadow: $box-shadow-light;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 1rem;	
+	background: $color-ps-coaly-gray-light35;
+	box-shadow: $box-shadow-light;
+	transition: $transition-base;
 
-		&:hover {
-			background: $white;
-			box-shadow: $box-shadow-medium;
-			}
-	
+	&:hover {
+		background: $white;
+		box-shadow: $box-shadow-medium;
+		}
+
 	.card-body {
 		padding: 0;
 		background: transparent;

@@ -6,7 +6,6 @@
 		}
 	}
 
-
 @include media-breakpoint-up(lg) {
 	
 	.big-image {
@@ -21,10 +20,10 @@
 	}
 
 .big-image + .container h2 {
-	box-shadow: -0.25rem 0.25rem 0.75rem rgba($color-ps-coaly-gray, 0.25);
-	padding: 1rem;
 	margin-top: 0;
     margin-bottom: 0;
+	padding: 1rem;
+	box-shadow: -0.25rem 0.25rem 0.75rem rgba($color-ps-coaly-gray, 0.25);
     font-size: $h2-font-size;
 	}
 
@@ -44,13 +43,13 @@
     }
 
 .bg-nittany-navy h2 {
-	color: $white;
 	background: lighten($color-ps-nittany-navy, 15%);
+	color: $white;
 	}
 
 .bg-slate h2 {
-	color: $white;
 	background: darken($color-ps-slate-gray, 10%);
+	color: $white;
 	}
 	
 @include media-breakpoint-up(md) {

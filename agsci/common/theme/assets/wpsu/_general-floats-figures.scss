@@ -11,9 +11,9 @@ figure img {
 		}
 
 figcaption {
-	font-family: $font-family-sans-serif;
-	font-size: $small4-size;
 	color: $black-accessible-gray;
+	font-size: $small4-size;
+	font-family: $font-family-sans-serif;
 	}
 
 .float-half,
@@ -29,19 +29,19 @@ figcaption {
 @include media-breakpoint-up(sm) {	
 
 	.float-left {
-		margin-right: 1.5rem;
 		float: left;
+		margin-right: 1.5rem;
 		}
 	
 	.float-right {
-		margin-left: 1.5rem;
 		float: right;
+		margin-left: 1.5rem;
 		}
 	
 	section.float-left,
 	section.float-right { /* required for generic content page with visual header and sidenav - need to float in order to insert side nav after header */
-		margin-left: 0;
 		margin-right: 0;
+		margin-left: 0;
 		}
 					
 	figure.float-left figcaption {

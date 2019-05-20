@@ -9,29 +9,29 @@ ACCORDION - MAJOR OPTIONS
 	
 	.btn {
 		position: relative;
-		text-transform: none;
-		line-height: 1.2;
 		margin-left: 1.5rem;
+		line-height: 1.2;
+		text-transform: none;
 
 		&::after {
+			content: "\f107";
 			position: absolute;
 		    top: 0;
-		    bottom: 0;
 		    right: -3rem;
+		    bottom: 0;
+			display: block;			
 		    width: 3rem;
+		    border-left: 1px solid $white;
 		    background-color: $color-ps-creek-light15;
-			line-height: 2.5;
+			color: rgba($white,0.75);
+			font-weight: 900;  
 			font-style: normal;
 			font-variant: normal;
 			text-rendering: auto;
 			-webkit-font-smoothing: antialiased;
-			font-family: 'Font Awesome 5 Free';
-			content: "\f107";
-			font-weight: 900;  
-			color: rgba($white,0.75);
 			font-size: $h3-font-size;	
-			display: block;
-			border-left: 1px solid $white;
+			font-family: 'Font Awesome 5 Free';
+			line-height: 2.5;	
 			}
 		
 		&[aria-expanded="true"] {

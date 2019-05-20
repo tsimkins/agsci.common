@@ -8,10 +8,10 @@ AgSci Journeys
 
 .jumbotron-journey {
 	display: flex;
+	height: 70vh;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-	height: 70vh;
 	
 	img {
 		flex-shrink: 0;
@@ -29,32 +29,32 @@ AgSci Journeys
 
 .jumbotron.center-top {
 	img {
-		left: 50%;
 	    top: 0;
+		left: 50%;
 	    transform: translate(-50%,0);  
 		}
 	}
 
 .jumbotron.center-bottom {
 	img {
-		left: 50%;
 	    top: 100%;
+		left: 50%;
 	     transform: translate(-50%,-100%);
 		}
 	}
 
 .jumbotron.left-bottom {
 	img {
-		left: 0;
 	    top: 100%;
+		left: 0;
 	    transform: translate(0,-100%);
 		}
 	}
 
 .jumbotron.right-bottom {
 	img {
-		left: 100%;
 	    top: 100%;
+		left: 100%;
 	    transform: translate(-100%,-100%);
 		}
 	}
@@ -66,8 +66,8 @@ AgSci Journeys
 
 .jumbotron.right-top {
 	img {
-		left: 100%;
 	    top: 0;
+		left: 100%;
 	    transform: translate(-100%,0);
 		}
 	}
@@ -80,25 +80,26 @@ AgSci Journeys
 	}
 	
 p.agsci-journeys {
-	font-family: 'Born Ready'; 
-	font-weight: 100; 
-	font-size: 12vw;
-	line-height: 1.0;
-	color: $color-ps-creek;
 	display: inline-block;
+	color: $color-ps-creek;
+	font-weight: 100; 		
+	font-size: 12vw;
+	font-family: $font-family-cursive; 
+	line-height: 1.0;
+	text-shadow: 3px 3px 6px rgba($black,0.75);	
 	transform: rotate(-4deg);
-	text-shadow: 3px 3px 6px rgba($black,0.75);
 	}
 
 p.agsci-journeys.ag-journeys-preview {
+	position: relative;
+	top: 1.5rem;
+	left: -2.5rem;
+	margin-bottom: 0;
 	font-size: $display4-size;
 	text-shadow: none;
 	text-align: left;
-	position: relative;
-	left: -2.5rem;
-	top: 1.5rem;
 	opacity: 0.5;
-	margin-bottom: 0;
+
 	
 	+ h2 {
 		margin-top: 0;
@@ -106,14 +107,14 @@ p.agsci-journeys.ag-journeys-preview {
 	}
 
 p.agsci-journeys-v2 {
-	font-family: 'Born Ready'; 
+	display: block;
+	color: $color-ps-creek;
 	font-weight: 100; 
 	font-size: 12vw;
+	font-family: $font-family-cursive; 
 	line-height: 1.0;
-	color: $color-ps-creek;
-	display: block;
-	transform: rotate(-4deg);
 	text-shadow: 3px 3px 6px rgba($black,0.75);
+	transform: rotate(-4deg);
 	}
 
 @include media-breakpoint-up(md) {
@@ -131,8 +132,8 @@ p.agsci-journeys-v2 {
 
 .agsci-journeys-overlay.agsci-journeys-overlay2 {
 	position: absolute;
-	bottom: 1.5rem;
 	right: 1.5rem;
+	bottom: 1.5rem;
 	max-width: 75%;
 	z-index: 2;
 	}
@@ -149,58 +150,57 @@ h2.agsci-journeys-intro-quote-v2 {
 	
 .agsci-journeys-overlay {
 	position: absolute;
-	bottom: 1.5rem;
 	right: 1.5rem;
+	bottom: 1.5rem;
 	max-width: 75%;
 		
 	p.agsci-journeys-intro-quote {
 		text-align: right;
-		font-family: $font-family-base;
-		font-size: $h2-font-size;
 		color: $white;
 		font-weight: $font-weight-base;
+		font-size: $h2-font-size;
+		font-family: $font-family-base;
 		line-height: $line-height-xs;
 		text-shadow: 4px 4px 8px rgba($black,0.75);
 		}
 	}
 
 .agsci-journeys-overlay-v2 {
-	max-width: 60%;
-	top: 12vh;
-	bottom: initial;
-	right: 3rem;
 	position: absolute;
+	top: 12vh;
+	right: 3rem;
+	bottom: initial;
+	max-width: 60%;
 	}
-
-
+	
 p.quote-angle-script,
 p.quote-angle-script-sm,
 p.quote-angle-script-polaroid {
-	font-family: 'Born Ready';
-	font-size: 3.75rem;
-	font-weight: 100;
-	transform: rotate(-4deg);
 	position: relative;
+	margin-bottom: 0;
+	font-weight: 100;
+	font-size: 3.75rem;
+	font-family: $font-family-cursive; 
 	line-height: 1;
 	text-shadow: 1px 1px 3px rgba($black,0.75);
-	margin-bottom: 0;
+	transform: rotate(-4deg);
 	z-index: 9;
 	}
 
 p.quote-angle-script-polaroid {
-	font-size: 1.75rem;
-	text-shadow: none;
-	color: $color-ps-slate-gray;
 	top: 0.75rem;
 	margin-bottom: 0.5rem;
+	color: $color-ps-slate-gray;
+	font-size: 1.75rem;
+	text-shadow: none;
 	}
 	
 .smaller-script-quote p.quote-angle-script,
 p.quote-angle-script-sm {
+	top: -1.5rem;
+	color: $color-ps-slate-gray;
 	font-size: 3.25rem;
 	text-shadow: none;
-	color: $color-ps-slate-gray;
-	top: -1.5rem
 	}
 
 @include media-breakpoint-up(md) {
@@ -212,17 +212,16 @@ p.quote-angle-script-sm {
 	p.quote-angle-script.quote-left {
 		text-align: right;
 		}
-	
 	}
 
 p.journey-quote-cite {
-	text-align: right;
 	margin-right: 1rem;
-	line-height: $line-height-md;
-	font-family: $font-family-sans-serif;
-	font-weight: $font-weight-boldest;
 	color: $color-ps-slate-gray;
+	text-align: right;
 	text-transform: uppercase;	
+	font-weight: $font-weight-boldest;
+	font-family: $font-family-sans-serif;
+	line-height: $line-height-md;
 	}
 
 /* journey preview w/ inset image */
@@ -236,24 +235,24 @@ p.journey-quote-cite {
 		}
 
 	h2 {
-		text-align: left;
-		font-family: $font-family-base;
-		color: $color-ps-slate-gray;
-		margin-bottom: 0.5rem;
 		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		text-align: left;
+		color: $color-ps-slate-gray;
+		font-family: $font-family-base;
 		}
 	
-	p.agsci-journeys.ag-journeys-preview {
-		font-size: 1.5rem;
+	p.agsci-journeys.ag-journeys-preview {	
 		top: 0.25rem;
+		left: -.5rem;
 		margin-bottom: 0;
 		margin-top: 0.5rem;
-		left: -.5rem;
+		font-size: 1.5rem;
 		}
 	
 	p.journey-quote-cite {
-		font-size: $small3-size;
 		margin-right: 0;
+		font-size: $small3-size;
 		line-height: $line-height-sm;
 		
 		em {
@@ -261,7 +260,6 @@ p.journey-quote-cite {
 			}
 		}
 	}
-	
 	
 img.inset-sq-photo {
 	position: absolute;
@@ -281,27 +279,26 @@ img.inset-sq-photo {
 	}
 
 h1.journey-name {
-	font-size: $h2-font-size;
-	margin-top: 1rem;
-	display: block;
-	text-shadow: none;
-	color: $color-ps-slate-gray;
-	font-weight: $font-weight-light;
-	background: rgba($color-ps-coaly-gray,0.15);
-	padding: 0.25rem 0.5rem 0.125rem 0.5rem;
-	z-index: 11;
-	margin-bottom: 0;
 	display: inline-block;
-	
+	margin-top: 1rem;
+	margin-bottom: 0;
+	padding: 0.25rem 0.5rem 0.125rem 0.5rem;
+	background: rgba($color-ps-coaly-gray,0.15);
+	text-shadow: none;
+	color: $color-ps-slate-gray;		
+	font-weight: $font-weight-light;
+	font-size: $h2-font-size;
+	z-index: 11;
+
 	span {
-		font-weight: $font-weight-boldest;
-		color: $color-ps-slate-gray;
-		font-family: $font-family-base;
-		font-size: $h2-font-size;
-		transform: none;
 		display: inline-block;
-		margin-left: 0;
 		top: 0;
+		margin-left: 0;
+		color: $color-ps-slate-gray;
+		font-weight: $font-weight-boldest;
+		font-size: $h2-font-size;
+		font-family: $font-family-base;
+		transform: none;
 		}
 	}
 
@@ -331,10 +328,10 @@ h1.journey-name {
 	display: block;
 	
 	h2 {
-		font-size: $h2-font-size;
-		text-align: left;
 		margin-top: 0;
 		margin-bottom: 0.5rem;
+		text-align: left;
+		font-size: $h2-font-size;
 		}
 	
 	p:last-of-type {
@@ -360,10 +357,10 @@ h1.journey-name {
 		}
 
 	.agsci-journeys-overlay {
-		max-width: 50%;
 		top: 12vh;
-		bottom: initial;
 		right: 3rem;
+		bottom: initial;
+		max-width: 50%;
 		
 		p.agsci-journeys-intro-quote {
 			font-size: $display3-size;
@@ -377,8 +374,8 @@ h1.journey-name {
 	.agsci-journeys-overlay.agsci-journeys-overlay2 {
 		position: absolute;
 		top: initial;
-		bottom: 1.5rem;
 		right: 1.5rem;
+		bottom: 1.5rem;
 		max-width: 75%;
 		}
 	}
@@ -400,42 +397,43 @@ h1.journey-name {
 /* using on journey for holding column space instead of image */
 .honey-comb-corner::before {
 	content: "";
+	position: absolute;
 	background: url(../images/honey-comb-corner-pattern.svg);
 	background-size: 600px auto;
 	background-repeat: no-repeat;
 	opacity: 0.25;
-	position: absolute;
 	z-index: 0; 
 	}
 		
 .angle-corner {
+	position: relative;
+	width: 100%;
+	height: 100%;
  	background: url(../images/honey-comb-corner-pattern.svg), rgba($color-ps-coaly-gray,0.125);
 	background-repeat: no-repeat, repeat;
 	background-position: -10px -10px, center center;
 	background-size: 240%, 100%;
-	position: relative;
-	width: 100%;
-	height: 100%;
+
 	
 	&::after {
 		content: url(../images/hexagonal-right-side-cover.svg);
 		position: absolute;
-		bottom: 0;
 		top: 0;
 		right: -1px;
+		bottom: 0;
 		left: 0;
 		z-index: 1;
 		}
 	}
 	
 .journey-divider {
-	margin-top: -0.5rem;
 	display: flex;
+	width: 100%;
 	flex-direction: row;
 	justify-content: center;
+	margin-top: -0.5rem;
 	text-align: center;
-	width: 100%;
-	
+
 	img {
 		height: 15px;
 		width: auto;
@@ -446,12 +444,12 @@ h1.journey-name {
 		}
 		
 	&:before, &:after {
-		background-color: rgba($color-ps-coaly-gray,0.25);
 		content: '';
-		flex-grow: 1;
-		height: 1px;
 		position: relative;
 		top: 1.1rem;
+		flex-grow: 1;
+		height: 1px;
+		background-color: rgba($color-ps-coaly-gray,0.25);
 		}	
 	}
 	
@@ -459,22 +457,13 @@ h1.journey-name {
 	
 	p:first-of-type,
 	p.creek-callout {
-		font-size: 120%;
+		margin-bottom: 0.5rem;
 		color: $color-ps-creek;
 		font-weight: $font-weight-bold;
+		font-size: 120%;
 		line-height: $line-height-md;
-		margin-bottom: 0.5rem;
 		}
 	}
-
-/*  INDENT B/C Quote Marks look weird on journey page . . .
-	
-	@include media-breakpoint-up(lg) {
-	 .agsci-journey .feature-content  h2 {
-		text-indent: -.7625rem;
-		}
-	 }
-	 */
 
 .aj-offset {
 	margin-top: -4rem;
@@ -483,12 +472,12 @@ h1.journey-name {
  .agsci-journey {
 	
 	h2 {
-		font-family: $font-family-base;
-		font-size: $h2-font-size;
+		margin-top: 1rem;
 		margin-bottom: 0.5rem;
 		color: $color-ps-slate-gray;
-		margin-top: 1rem;
 		font-weight: $font-weight-bold;
+		font-size: $h2-font-size;
+		font-family: $font-family-base;
 		}
  	
  	.text-white h2 {
@@ -499,12 +488,12 @@ h1.journey-name {
  .overlay-content-block {
 	 
 	 h2 {
-	 	font-family: $font-family-base;
-		font-size: $h2-font-size;
 		margin-bottom: 1rem;
-		color: $color-ps-creek;
 		text-align: left;
 		text-indent: -0.5rem;
+	 	color: $color-ps-creek;
+		font-size: $h2-font-size;
+	 	font-family: $font-family-base;
 		}
  	}
  	
@@ -539,32 +528,32 @@ h1.journey-name {
 	
  @include media-breakpoint-up(md) {
 	.img-fill {
-		max-height: 400px;
 		width: auto;
+		max-height: 400px;
 		}
 	}
 	
 .agsci-polaroid {
-	padding: 0.75rem;
-	background-color: $white;
 	position: relative;
-	z-index: 9;
 	width: 50%;
 	height: auto;
+	padding: 0.75rem;
+	background-color: $white;
 	box-shadow: $box-shadow-dark;
+	z-index: 9;
 		
 	&:nth-of-type(1) {
-		transform: rotate(-6deg);
 		top: 2.5rem;
 		left: -1.5rem;
+		transform: rotate(-6deg);
 		}
 		
 	&:nth-of-type(2) {
 		position: absolute;
-		transform: rotate(6deg);
 		top: 3rem;
 		right: 0;
 		width: 50%;
+		transform: rotate(6deg);
 		}
 	}
 
@@ -572,19 +561,19 @@ h1.journey-name {
 	 
 	.agsci-polaroid:nth-of-type(1) {
 		position: absolute;
-		width: 27.5%;
-		transform: rotate(-6deg);
 		top: -2rem;
 		left: -1.5rem;
+		width: 27.5%;
+		transform: rotate(-6deg);
 		}
 		
 	.agsci-polaroid:nth-of-type(2) {
 		position: absolute;
-		transform: rotate(6deg);
+		top: initial;
 		bottom: -1rem;
 		left: -1.5rem;
 		width: 27.5%;
-		top: initial;
+		transform: rotate(6deg);
 		}
 	 }
 	 	
@@ -595,8 +584,8 @@ h1.journey-name {
 		 }
 	 
 	 .agsci-polaroid:nth-of-type(2) {
+		right: 0;
 		bottom: 1rem;
 		left: initial;
-		right: 0;
 		}
 	 }

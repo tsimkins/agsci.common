@@ -6,9 +6,9 @@
 		}
 	
 	.card {
-		margin-left: 0;
 		margin-right: 0;
 		margin-bottom: $card-group-margin*2;
+		margin-left: 0;
 		}
 	}
 
@@ -19,13 +19,13 @@
 @include media-breakpoint-up(sm) {
 	
 	.card-deck .card {
-		margin-left: $card-group-margin;
 		margin-right: $card-group-margin;
+		margin-left: $card-group-margin;
 		}
 	
 	.card-deck.no-margin .card {
-		margin-left: 0;
 		margin-right: 0;
+		margin-left: 0;
 		}
 	}
 
@@ -56,12 +56,12 @@
 	}
 	
 .card-title p {
-	font-family: $font-family-sans-serif;
-	margin-bottom: 0.75rem;
-	font-size: $font-size-base;
-	line-height: $line-height-sm;
 	position: relative;
+	margin-bottom: 0.75rem;
 	font-weight: $font-weight-base;
+	font-size: $font-size-base;
+	font-family: $font-family-sans-serif;
+	line-height: $line-height-sm;
 	
 	&::after {
 	    content: "";
@@ -79,9 +79,9 @@
 	}
 	
 .card-text p {
-	line-height: $line-height-base;
-	font-size: $small1-size;
 	margin-bottom: 0;
+	font-size: $small1-size;
+	line-height: $line-height-base;
 	}
 	
 @include media-breakpoint-up(md) {

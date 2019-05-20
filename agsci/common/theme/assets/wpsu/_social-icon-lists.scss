@@ -33,9 +33,9 @@ a.phone,
 a.pdf,
 a.full-bio,
 span.fax {
-	margin: 0.25rem 0.75rem 0.25rem 0;
 	display: block;
-	
+	margin: 0.25rem 0.75rem 0.25rem 0;
+
 	.fas {
 		color: #949798;
 		}
@@ -47,20 +47,20 @@ span.fax {
 --------------------------------------------- */
 
 ul.list-social {
-	text-align: left;
-	list-style-type: none;
-	font-family: $font-family-sans-serif;
-	font-size: $small3-size;
-	padding-left: 1rem;
 	width: 100%;
+	padding-left: 1rem;
+	list-style-type: none;
+	text-align: left;
+	font-size: $small3-size;
+	font-family: $font-family-sans-serif;
 	
 	em {
 		margin-right: 0.125rem;
 		}
 	
 	li {
-		margin-bottom: 0.375rem;
 		margin-top: 0.375rem;
+		margin-bottom: 0.375rem;
 		line-height: 2;
 		
 		span, em {
@@ -79,9 +79,9 @@ ul.list-social {
 --------------------------------------------- */
 			
 ul.list-inline.list-inline-social {
-	padding-bottom: 0;
-	margin-bottom: 0;
 	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
 	
 	li {
 		padding-bottom: 0;	
@@ -107,13 +107,3 @@ address,
 		border-bottom: transparent;
 		}
 	}
-
-/* ul.list-inline-social {
-		display: inline;
-		} 	  
- @include media-breakpoint-up(lg) {
-	ul.list-inline-social {
-		display: inline;
-		} 	
-	}
-	 */
