@@ -254,4 +254,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     #content-core .entries .entry .description {
       line-height: 1.375; }
 
+.print-only-logo {
+  display: none; }
+
 /*# sourceMappingURL=agsci.common.base.css.map */

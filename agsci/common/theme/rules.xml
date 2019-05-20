@@ -179,7 +179,30 @@
             <drop css:theme="#page-header" />
         </rules>
 
-        <rules css:if-not-content="body.mosaic-grid, body.portaltype-agsci_degree_container">
+        <rules 
+            css:if-not-content="body.mosaic-grid,
+                                body.portaltype-agsci_degree_container, 
+                                body.viewpermission-manage-portal,
+                                body.viewpermission-add-portal-content,
+                                body.viewpermission-manage-schemata,
+                                body.viewpermission-modify-portal-content,
+                                body.viewpermission-portlets-manage-portlets,
+                                body.viewpermission-list-folder-contents,
+                                body.viewpermission-plone-site-setup-editing,
+                                body.viewpermission-plone-site-setup-filtering,
+                                body.viewpermission-plone-site-setup-imaging,
+                                body.viewpermission-plone-site-setup-language,
+                                body.viewpermission-plone-site-setup-mail,
+                                body.viewpermission-plone-site-setup-markup,
+                                body.viewpermission-plone-site-setup-navigation,
+                                body.viewpermission-plone-site-setup-overview,
+                                body.viewpermission-plone-site-setup-search,
+                                body.viewpermission-plone-site-setup-security,
+                                body.viewpermission-plone-site-setup-site,
+                                body.viewpermission-plone-site-setup-themes,
+                                body.viewpermission-plone-site-setup-tinymce,
+                                body.viewpermission-plone-site-setup-types,
+                                body.viewpermission-plone-site-setup-users-and-groups">
 
             <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />
