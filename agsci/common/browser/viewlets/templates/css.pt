@@ -20,4 +20,9 @@
         tal:condition="python: editing_mosaic or not editing"
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.css" />
 
+
+    <link rel="stylesheet" 
+          media="print" 
+            tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.print.css" />
+
 </tal:css>

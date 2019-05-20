@@ -28,7 +28,7 @@
                    class="card card-visual">
     
                     <div class="card-image-top">
-                        <div class="opacity-dimmer"></div>
+                        <div class="opacity-dimmer-bottom"></div>
     
                         <img tal:attributes="src string:${i/getURL}/@@images/image/large" 
                              alt="" 

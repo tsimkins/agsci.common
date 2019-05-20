@@ -1,7 +1,7 @@
 /*
 Error: Undefined variable: "$color-ps-creek-accessible".
-        on line 35 of theme/assets/wpsu/_utility-classes-color.scss
-        from line 652 of ./theme/assets/wpsu/agsci-custom-bootstrap-2019-v0401.scss
+        on line 35 of _utility-classes-color.scss
+        from line 652 of ./agsci-custom-bootstrap-2019-v0401.scss
 
 30: 	
 31: 	$color-ps-slate-gray: #314D64;
@@ -16,8 +16,8 @@ Error: Undefined variable: "$color-ps-creek-accessible".
 40: 	$color-ps-keystone-light: #FAE24C;
 
 Backtrace:
-theme/assets/wpsu/_utility-classes-color.scss:35
-./theme/assets/wpsu/agsci-custom-bootstrap-2019-v0401.scss:652
+_utility-classes-color.scss:35
+./agsci-custom-bootstrap-2019-v0401.scss:652
 /var/lib/gems/2.3.0/gems/sass-3.7.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.3.0/gems/sass-3.7.3/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.3.0/gems/sass-3.7.3/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -83,4 +83,4 @@ theme/assets/wpsu/_utility-classes-color.scss:35
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-ps-creek-accessible\".\A         on line 35 of theme/assets/wpsu/_utility-classes-color.scss\A         from line 652 of ./theme/assets/wpsu/agsci-custom-bootstrap-2019-v0401.scss\A \A 30: 	\A 31: 	$color-ps-slate-gray: #314D64;\A 32: 	$color-ps-creek: #3EA39E; /* teal */\A 33: 	$color-ps-limestone-gray: #91959C; \A 34: 	$color-ps-limestone-gray-light: #E9EBEA;\A 35: 	\A 36: 	$color-ps-pugh-blue: #96BEE6;\A 37: 	$color-ps-coaly-gray: #54585A;\A 38: 		\A 39: 	$color-ps-keystone: #FFD100; /* yellow */\A 40: 	$color-ps-keystone-light: #FAE24C;"; }
+  content: "Error: Undefined variable: \"$color-ps-creek-accessible\".\A         on line 35 of _utility-classes-color.scss\A         from line 652 of ./agsci-custom-bootstrap-2019-v0401.scss\A \A 30: 	\A 31: 	$color-ps-slate-gray: #314D64;\A 32: 	$color-ps-creek: #3EA39E; /* teal */\A 33: 	$color-ps-limestone-gray: #91959C; \A 34: 	$color-ps-limestone-gray-light: #E9EBEA;\A 35: 	\A 36: 	$color-ps-pugh-blue: #96BEE6;\A 37: 	$color-ps-coaly-gray: #54585A;\A 38: 		\A 39: 	$color-ps-keystone: #FFD100; /* yellow */\A 40: 	$color-ps-keystone-light: #FAE24C;"; }
