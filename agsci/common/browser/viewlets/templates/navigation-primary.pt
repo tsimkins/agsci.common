@@ -33,7 +33,6 @@
                        aria-expanded="false" />
 
                     <button
-                        tal:attributes="id item_id"
                         class="dropdown-toggle-button"
                         role="button"
                         data-toggle="dropdown"
