@@ -30,7 +30,7 @@
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
-        <element value="agsci.common.content.behaviors.ISEOFields" />
+        <element value="agsci.common.content.behaviors.ISEO" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     </property>
     <property name="schema" />
