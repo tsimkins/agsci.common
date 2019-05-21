@@ -10,6 +10,18 @@
     <include package=".vocabulary" />
 
     <plone:tile
+        name="agsci.common.tiles.navigation"
+        title="Navigation tree"
+        description="A tile which displays a navigation tree"
+        class=".NavigationTile"
+        schema="plone.app.standardtiles.navigation.INavigationTile"
+        template="../portlets/templates/navigation.pt"
+        add_permission="cmf.ModifyPortalContent"
+        layer=".interfaces.IAgsciTilesLayer"
+        permission="zope.Public"
+    />
+
+    <plone:tile
         name="agsci.common.tiles.jumbotron"
         title="Jumbotron"
         description=""

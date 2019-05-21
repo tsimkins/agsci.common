@@ -2,9 +2,9 @@
                     children options/children | nothing;
                     bottomLevel options/bottomLevel | nothing;
                     toggle options/toggle | nothing;
-                    supress_icon    view/data/no_icons;
-                    supress_thumb   view/data/no_thumbs;
-                    thumb_scale view/thumb_scale"
+                    supress_icon    python: True;
+                    supress_thumb   python: True;
+                    thumb_scale nothing"
             i18n:domain="plone">
 
 <metal:main define-macro="nav_main"

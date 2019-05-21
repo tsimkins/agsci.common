@@ -1,11 +1,17 @@
+from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.browser.navtree import SitemapQueryBuilder
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
+from plone.app.layout.navigation.interfaces import INavtreeStrategy
+from plone.app.layout.navigation.navtree import buildFolderTree
+from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
 from plone.app.textfield.value import RichTextValue
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
 from urlparse import urlparse, parse_qs
+from zope.component import getMultiAdapter
 from zope.schema import getFields
 
 from .. import object_factory
@@ -363,7 +369,7 @@ class DropdownAccordionTile(BaseTile):
     def row_class(self):
         if self.data.get('show_images', None):
             return "col-12 col-md-9 col-xl-7"
-        
+
         return "col-12"
 
     @property
@@ -373,3 +379,47 @@ class DropdownAccordionTile(BaseTile):
 class ExploreMoreTile(BaseTile):
     __type__ = "Explore More"
     __full_width__ = True
+
+class NavigationTile(_NavigationTile):
+
+    recurse = ViewPageTemplateFile('../portlets/templates/navigation_recurse.pt')
+
+    @property
+    def heading_link_target(self):
+
+        nav_root = self.getNavRoot()
+
+        # Root content item gone away or similar issue
+        if not nav_root:
+            return None
+
+        # Go to the item /view we have chosen as root item
+        return nav_root.absolute_url()
+
+    def link_class(self, level, children):
+        if level > 2:
+            return ''
+
+        if children:
+            return 'd-none d-lg-block'
+
+        return ''
+
+    def getNavTree(self, _marker=None):
+        if _marker is None:
+            _marker = []
+
+        context = aq_inner(self.context)
+
+        # Full nav query, not just the tree for 'this' item
+        queryBuilder = SitemapQueryBuilder(self.getNavRoot())
+        query = queryBuilder()
+
+        strategy = getMultiAdapter((context, self), INavtreeStrategy)
+
+        return buildFolderTree(
+            context,
+            obj=context,
+            query=query,
+            strategy=strategy
+        )

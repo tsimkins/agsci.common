@@ -1,37 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
 <tal:block i18n:domain="plone">
-<aside class="portlet portletNavigationTree"
-    role="navigation"
-    tal:define="root view/navigation_root">
 
-    <div class="side-nav p-0">
+<section class="container-fluid px-0 p-lg-5"
+    tal:attributes="data-tile-type view/tile_type|nothing">
 
-        <p class="d-none d-lg-block">
-            <a href="#"
-               tal:attributes="href string:${view/heading_link_target}"
-               tal:content="view/title"
-               i18n:translate="">Navigation</a>
-        </p>
+    <div class="container" id="navigation-portlet">
 
-        <ul class="navTree" id="sidebarNav">
+        <nav class="navbar navbar-expand-lg collapsing-sidenav">
 
-                <li
-                    tal:attributes="class string:navTreeItem visualNoMarker">
+            <button
+                class="d-lg-none btn btn-primary"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSectionNav"
+                aria-controls="navbarSectionNav"
+                aria-expanded="false"
+                aria-label="Toggle Section Navigation">
 
-                        <a tal:attributes="href string:${view/heading_link_target}"
-                           class="d-lg-none">
+                <i class="fa fa-bars"></i> More Content from This Section Name
 
-                            <span tal:replace="string:${view/title} Overview" />
-                        </a>
-        		</li>
+            </button>
 
-                <li tal:replace="structure view/createNavTree">
-                    SUBTREE
-                </li>
+            <div id="navbarSectionNav"
+                 class="collapse navbar-collapse flex-column py-0 navbar-multilevel">
 
-        </ul>
+                <tal:nav
+                    tal:define="root view/navigation_root">
+
+                    <div class="side-nav p-0">
+
+                        <p class="d-none d-lg-block">
+                            <a href="#"
+                               tal:attributes="href string:${view/heading_link_target}"
+                               tal:content="view/title"
+                               i18n:translate="">Navigation</a>
+                        </p>
+
+                        <ul class="navTree" id="sidebarNav">
+
+                                <li
+                                    tal:attributes="class string:navTreeItem visualNoMarker">
+
+                                        <a tal:attributes="href string:${view/heading_link_target}"
+                                           class="d-lg-none">
+
+                                            <span tal:replace="string:${view/title} Overview" />
+                                        </a>
+                        		</li>
+
+                                <li tal:replace="structure view/createNavTree">
+                                    SUBTREE
+                                </li>
+
+                        </ul>
+
+                    </div>
+
+                </tal:nav>
+
+            </div>
+        </nav>
 
     </div>
+</section>
 
-</aside>
 </tal:block>
 
+</body>
+</html>
