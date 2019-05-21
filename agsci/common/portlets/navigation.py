@@ -55,3 +55,12 @@ class Renderer(_Renderer):
             query=query,
             strategy=strategy
         )
+
+    def link_class(self, level, children):
+        if level > 2:
+            return ''
+
+        if children:
+            return 'd-none d-lg-block'
+
+        return ''

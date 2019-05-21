@@ -15,9 +15,10 @@
         <ul class="navTree" id="sidebarNav">
 
                 <li
-                    tal:attributes="class string:navTreeItem visualNoMarker d-lg-none">
+                    tal:attributes="class string:navTreeItem visualNoMarker">
 
-                        <a tal:attributes="href string:${view/heading_link_target}">
+                        <a tal:attributes="href string:${view/heading_link_target}"
+                           class="d-lg-none">
 
                             <span tal:replace="string:${view/title} Overview" />
                         </a>

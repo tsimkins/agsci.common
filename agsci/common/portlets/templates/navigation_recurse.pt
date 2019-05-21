@@ -53,7 +53,7 @@
                                 item_class python:'%s navTreeCurrentItem' % item_class if is_current else item_class"
                         condition="not:exclude_from_nav">
 
-                <a tal:define="display_class python: level <= 2 and 'd-none d-lg-block' or ''"
+                <a tal:define="display_class python: view.link_class(level, children)"
                    tal:attributes="href  python:item_remote_url if use_remote_url else item_url;
                                    title node/Description;
                                    class string:${item_class}${li_class}${li_extr_class}${li_folder_class} ${item_type_class} ${display_class}">
