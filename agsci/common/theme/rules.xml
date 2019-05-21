@@ -31,6 +31,7 @@
             body.viewpermission-modify-portal-content,
             body.viewpermission-portlets-manage-portlets,
             body.viewpermission-list-folder-contents,
+            body.viewpermission-delete-objects,
             body.viewpermission-plone-site-setup-editing,
             body.viewpermission-plone-site-setup-filtering,
             body.viewpermission-plone-site-setup-imaging,
@@ -179,11 +180,14 @@
             <drop css:theme="#page-header" />
         </rules>
 
-        <rules 
+        <!-- User permissions on body tag -->
+
+        <rules
             css:if-not-content="body.mosaic-grid,
-                                body.portaltype-agsci_degree_container, 
+                                body.portaltype-agsci_degree_container,
                                 body.viewpermission-manage-portal,
                                 body.viewpermission-add-portal-content,
+                                body.viewpermission-delete-objects,
                                 body.viewpermission-manage-schemata,
                                 body.viewpermission-modify-portal-content,
                                 body.viewpermission-portlets-manage-portlets,

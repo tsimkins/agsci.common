@@ -134,6 +134,7 @@ class CSSViewlet(ViewletBase):
         'manage-schemata',
         'modify-portal-content',
         'add-portal-content',
+        'delete-objects',
         'portlets-manage-portlets',
         'list-folder-contents',
         'plone-site-setup-editing',
@@ -196,7 +197,7 @@ class PathBarViewlet(_PathBarViewlet):
     index = ViewPageTemplateFile('templates/path_bar.pt')
 
 class LeadImageViewlet(ViewletBase):
-    
+
     @property
     def adapted(self):
         return LeadImage(self.context)
@@ -213,5 +214,5 @@ class LeadImageViewlet(ViewletBase):
     def klass(self):
         if self.adapted.image_full_width:
             return 'my-4 px-0'
-        
+
         return 'my-4 ml-lg-3 float-lg-right col-lg-6 px-0'
