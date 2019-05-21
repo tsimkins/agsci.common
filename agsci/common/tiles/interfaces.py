@@ -1,12 +1,16 @@
-from agsci.common import AgsciMessageFactory as _
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from plone.app.textfield import RichText
+from plone.autoform import directives as form
+from plone.app.vocabularies.catalog import CatalogSource
+from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
+from z3c.relationfield.schema import RelationChoice
 from zope import schema
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from plone.autoform import directives as form
-from plone.namedfile.field import NamedBlobImage
+from plone.app.contenttypes.interfaces import ICollection
+
+from agsci.common import AgsciMessageFactory as _
 
 from ..content.behaviors import ISocialContact
 
@@ -359,9 +363,10 @@ class ISkeeterTile(Interface):
         required=False
     )
 
-    value = schema.TextLine(
-        title=_(u"Items"),
-        required=False
+    target = RelationChoice(
+        title=_(u"Target Collection"),
+        source=CatalogSource(object_provides=ICollection.__identifier__),
+        required=False,
     )
 
     show_description = schema.Bool(
@@ -383,6 +388,8 @@ class ISkeeterTile(Interface):
         default=u'news',
         required=False,
     )
+
+
 
 class IAnimalTile(Interface):
 
@@ -553,7 +560,7 @@ class IExploreMoreTile(Interface):
         title=_(u"Title"),
         required=False
     )
-    
+
     value = schema.List(
         title=u"Items",
         value_type=DictRow(title=u"Items", schema=IDropdownAccordionRowSchema),

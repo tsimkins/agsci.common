@@ -4,6 +4,7 @@ from Products.CMFPlone.browser.navtree import SitemapQueryBuilder
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
+from plone.app.contenttypes.interfaces import ICollection
 from plone.app.layout.navigation.interfaces import INavtreeStrategy
 from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
@@ -57,12 +58,6 @@ class BaseTile(PersistentTile):
                             return field.default
 
         return value
-
-    query = {
-        'Type' : 'Degree',
-        'sort_on' : 'sortable_title',
-        'sort_order' : 'ascending',
-    }
 
     klass = 'base-tile'
 
@@ -126,7 +121,13 @@ class BaseTile(PersistentTile):
 
     @property
     def items(self):
-        return self.portal_catalog.searchResults(self.query)
+        target = self.data.get('target')
+
+        if target and hasattr(target, 'to_object'):
+            target_object = target.to_object
+
+            if ICollection.providedBy(target_object):
+                return target_object.queryCatalog()
 
 class ConditionalTemplateTile(BaseTile):
 
@@ -210,19 +211,6 @@ class SkeeterTile(ConditionalTemplateTile):
         return {
             'pages' : 3,
         }.get(self.style, 4)
-
-    @property
-    def query(self):
-        _ = self.style
-
-        if _ in ('events'):
-            return {
-                'Type' : 'Event',
-                'sort_on' : 'start',
-                'sort_order' : 'ascending',
-            }
-
-        return super(SkeeterTile, self).query
 
     # Calculates a featured item, otherwise uses the first one.
     # Returns a brain
