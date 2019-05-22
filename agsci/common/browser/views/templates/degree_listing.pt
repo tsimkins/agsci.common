@@ -87,7 +87,7 @@
        tal:attributes="href item_url;" 
        class="card-image-top">
 
-        <div class="opacity-dimmer-bottom-left"></div>
+        <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
 
 
         <img

@@ -28,13 +28,20 @@
                    class="card card-visual">
     
                     <div class="card-image-top">
-                        <div class="opacity-dimmer-bottom"></div>
+                        <div class="opacity-dimmer opacity-dimmer-bottom"></div>
     
-                        <img tal:attributes="src string:${i/getURL}/@@images/image/large" 
+                        <img tal:condition="i/hasLeadImage|nothing"
+                             tal:attributes="src string:${i/getURL}/@@images/image/large" 
                              alt="" 
                              title="" 
                              class="w-100" />
-    
+
+                        <img tal:condition="not: i/hasLeadImage|nothing"
+                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg" 
+                                alt="" 
+                                title="" 
+                                class="w-100" />
+
                         <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
                             <h3 class="card-title text-center"
                                 tal:content="i/Title|nothing">

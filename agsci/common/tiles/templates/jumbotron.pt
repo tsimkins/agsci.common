@@ -13,7 +13,7 @@
         <div tal:attributes="style string:background-image: url(${view/img_src|nothing});"
              class="jumbotron-img bg-center-center fix-img-right"></div>
 
-        <div class="opacity-dimmer-bottom"></div>
+        <div class="opacity-dimmer opacity-dimmer-bottom"></div>
 
         <div class="container mb-4">
         	<div class="row align-items-end">

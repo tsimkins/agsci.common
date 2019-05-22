@@ -29,7 +29,7 @@
                     <tr>
                         <th scope="col">
                             <div class="card card-visual card-image-top">
-                                <div class="opacity-dimmer-bottom-left"></div>
+                                <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
     
                                 <img
                                     tal:attributes="src python:view.getItemLeadImage(item=i);"
@@ -130,7 +130,7 @@
                              tal:repeat="i view/degrees">
                         <th scope="col">
                             <div class="card card-visual card-image-top">
-                                <div class="opacity-dimmer-bottom-left"></div>
+                                <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
                                     <img tal:attributes="src python:view.getItemLeadImage(item=i);"
                                          alt=""
                                          title=""

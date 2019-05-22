@@ -338,9 +338,10 @@ class IScooterTile(Interface):
         required=False
     )
 
-    value = schema.TextLine(
-        title=_(u"Items"),
-        required=False
+    target = RelationChoice(
+        title=_(u"Target Collection"),
+        source=CatalogSource(object_provides=ICollection.__identifier__),
+        required=False,
     )
 
     count = schema.Choice(
