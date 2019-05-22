@@ -13,6 +13,7 @@ from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
 from urlparse import urlparse, parse_qs
 from zope.component import getMultiAdapter
+from zope.component.hooks import getSite
 from zope.schema import getFields
 
 from .. import object_factory
@@ -127,7 +128,15 @@ class BaseTile(PersistentTile):
             target_object = target.to_object
 
             if ICollection.providedBy(target_object):
-                return target_object.queryCatalog()
+                return [x for x in target_object.queryCatalog()]
+
+    @property
+    def site(self):
+        return getSite()
+
+    @property
+    def portal_url(self):
+        return self.site.absolute_url()
 
 class ConditionalTemplateTile(BaseTile):
 
@@ -209,7 +218,8 @@ class SkeeterTile(ConditionalTemplateTile):
     @property
     def max_items(self):
         return {
-            'pages' : 3,
+            'pages' : 4,
+            'news' : 3,
         }.get(self.style, 4)
 
     # Calculates a featured item, otherwise uses the first one.
@@ -223,12 +233,13 @@ class SkeeterTile(ConditionalTemplateTile):
         if featured_id:
             featured_id = featured_id.strip()
 
-            _ = [x for x in items if x.getId ==  featured_id]
+            _ = [x for x in items if x.getId() == featured_id]
 
             if _:
                 return _[0]
 
-        if items:
+        # News always has a featured item
+        if items and self.style in ('news',):
             return items[0]
 
     @property
@@ -240,8 +251,7 @@ class SkeeterTile(ConditionalTemplateTile):
         if featured:
             items = [x for x in items if x.UID != featured.UID]
 
-        return items[:(self.max_items-1)]
-
+        return items[:self.max_items]
     @property
     def template(self):
         return 'skeeter-%s.pt' % self.style

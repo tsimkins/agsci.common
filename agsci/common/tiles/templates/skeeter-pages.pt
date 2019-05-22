@@ -29,8 +29,8 @@
             <div class="col-12 col-md-6 profile-img order-1">
 
                 <img alt=""
-                        class="w-100"
-                        tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                     class="w-100"
+                     tal:attributes="src string:${i/getURL}/@@images/image/large" />
             </div>
 
         </div>
@@ -53,8 +53,9 @@
 
                                 <div class="col-12 col-md-6 profile-img order-1">
                                     <img alt=""
-                                            class="w-100"
-                                            tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                                         tal:condition="i/hasLeadImage|nothing"
+                                         class="w-100"
+                                         tal:attributes="src string:${i/getURL}/@@images/image/large" />
                                 </div>
                             </div>
                         </div>

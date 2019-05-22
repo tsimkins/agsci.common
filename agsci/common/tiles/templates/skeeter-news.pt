@@ -6,7 +6,7 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="pt-5"
+<section class="pt-5 mb-5"
          tal:attributes="data-tile-type view/tile_type|nothing">
 
     <div class="container-fluid position-relative m-0"
@@ -18,26 +18,26 @@
             <div class="row align-items-start">
 
                 <div class="col-12 col-lg-8 px-0">
-    
+
                     <a tal:attributes="href feature/getURL|nothing"
                        class="container-fluid jumbotron jumbotron-img-based jumbotron-full-height jumbotron-news-feed d-flex align-items-end position-relative">
-    
+
                         <div class="jumbotron-img bg-center-center fix-img-right"
-                             tal:attributes="style string:background-image: url(${feature/getURL}/@@images/image/large);"></div>
-    
+                             tal:attributes="style string:background: #333333 url(${feature/getURL}/@@images/image/large) no-repeat center top;; background-size: cover;"></div>
+
                         <div class="opacity-dimmer-bottom"></div>
-    
+
                         <div class="container mb-4">
-    
+
                             <div class="row align-items-end">
-    
+
                                 <div class="col-11 col-lg-9">
-    
+
                                     <p class="section-crumb"
                                        tal:content="python: view.date_format(feature.effective, format='%B %d, %Y')" />
-    
+
                                     <h3 class="h1 no-underline" tal:content="feature/Title|nothing" />
-        
+
                                 </div>
                             </div>
                         </div>
@@ -45,36 +45,37 @@
                 </div>
 
                 <div class="col-12 col-lg-4 border-top px-0">
-        
+
                     <tal:items tal:repeat="i view/items|nothing">
-        
+
                         <a tal:attributes="href i/getURL|nothing"
                            class="card card-news border-bottom">
-        
+
                             <div class="container">
-        
+
                                 <div class="row mt-3 align-items-center">
-        
+
                                     <div class="col-9 col-md-8 profile-copy order-12 mt-0">
                                         <p class="section-crumb"
                                            tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
                                         <p class="h3"
                                            tal:content="i/Title|nothing" />
-        
+
                                     </div>
-        
+
                                     <div class="col-3 col-md-4 profile-img order-1 px-0">
                                         <img tal:attributes="src string:${i/getURL}/@@images/image/large"
                                              alt=""
                                              title=""
-                                             class="w-100" />
+                                             class="w-100"
+                                             tal:condition="i/hasLeadImage|nothing" />
                                     </div>
-        
+
                                 </div>
                             </div>
                         </a>
                     </tal:items>
-        
+
                     <div class="container">
                         <div class="row">
                             <div class="col text-right">

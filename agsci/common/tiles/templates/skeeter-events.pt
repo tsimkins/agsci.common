@@ -35,8 +35,8 @@
             <div class="col-12 col-md-6 profile-img order-1">
 
                 <img alt=""
-                        class="w-100"
-                        tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                     class="w-100"
+                     tal:attributes="src string:${i/getURL}/@@images/image/large" />
             </div>
 
         </div>
@@ -68,7 +68,13 @@
 
                         <div>
                             <img alt=""
+                                 tal:condition="i/hasLeadImage|nothing"
                                  tal:attributes="src string:${i/getURL}/@@images/image/mini" />
+
+                            <img alt=""
+                                tal:condition="not:i/hasLeadImage|nothing"
+                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/fpo-calendar.jpg" />
+
                         </div>
 
                     </div>
