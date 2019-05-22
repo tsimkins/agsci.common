@@ -85,6 +85,24 @@ class IItemBlockTileRowSchema(Interface):
         required=False
     )
 
+class ISocialMediaTileRowSchema(Interface):
+
+    platform = schema.Choice(
+        title=_(u"Social Media Platform"),
+        vocabulary='agsci.common.tiles.social_media_platform',
+        required=False
+    )
+
+    url = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
+    label = schema.TextLine(
+        title=_(u"Label (Optional)"),
+        required=False
+    )
+
 class IJumbotronTile(model.Schema):
 
     title = schema.TextLine(
@@ -570,7 +588,6 @@ class IDropdownAccordionTile(Interface):
         required=False,
     )
 
-
 class IExploreMoreTile(Interface):
 
     form.widget(value=DataGridFieldFactory)
@@ -583,5 +600,20 @@ class IExploreMoreTile(Interface):
     value = schema.List(
         title=u"Items",
         value_type=DictRow(title=u"Items", schema=IDropdownAccordionRowSchema),
+        required=False
+    )
+
+class ISocialMediaTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    value = schema.List(
+        title=u"Platforms",
+        value_type=DictRow(title=u"Items", schema=ISocialMediaTileRowSchema),
         required=False
     )

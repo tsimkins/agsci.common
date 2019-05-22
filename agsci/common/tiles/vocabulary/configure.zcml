@@ -56,4 +56,10 @@
         component=".VideoAspectRatioVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.social_media_platform"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".SocialMediaPlatformVocabularyFactory"
+    />
+
 </configure>

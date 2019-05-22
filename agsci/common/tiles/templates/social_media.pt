@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container"
+         tal:attributes="data-tile-type view/tile_type|nothing">
+
+    <h2 tal:condition="view/data/title|nothing"
+        tal:content="view/data/title" />
+
+    <div class="social">
+        <ul class="list-social">
+
+            <tal:social
+                tal:repeat="i view/values">
+
+                <li>
+                    <a tal:attributes="href i/url|nothing">
+                        <em tal:define="icon_class python:view.get_icon_class(i)"
+                            tal:attributes="class string:title fab fa-2x fa-fw ${icon_class}" />
+                        <span tal:content="python: view.get_label(i)" />
+                    </a>
+                </li>
+            </tal:social>
+        </ul>
+    </div>
+
+</section>
+
+  </body>
+</html>

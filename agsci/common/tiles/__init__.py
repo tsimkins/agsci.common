@@ -12,9 +12,10 @@ from plone.app.textfield.value import RichTextValue
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
 from urlparse import urlparse, parse_qs
-from zope.component import getMultiAdapter
+from zope.component import getMultiAdapter, getUtility
 from zope.component.hooks import getSite
 from zope.schema import getFields
+from zope.schema.interfaces import IVocabularyFactory
 
 from .. import object_factory
 from ..content.adapters import LocationAdapter
@@ -421,3 +422,31 @@ class NavigationTile(_NavigationTile):
             query=query,
             strategy=strategy
         )
+
+class SocialMediaTile(BaseTile):
+    __type__ = "Social Media"
+
+    def get_icon_class(self, _):
+
+        platform = _.platform
+
+        return {
+            'instagram' : 'fa-instagram',
+            'linkedin' : 'fa-linkedin',
+        }.get(platform, 'fa-%s-square' % platform)
+
+    def get_label(self, _):
+
+        if isinstance(_.label, (str, unicode)) and _.label.strip():
+            return _.label.strip()
+
+        # Lookup platform name
+        factory = getUtility(IVocabularyFactory, 'agsci.common.tiles.social_media_platform')
+        vocabulary = factory(self.context)
+
+        platform = _.platform
+
+        try:
+            return vocabulary.getTermByToken(platform).title
+        except:
+            return platform.title()

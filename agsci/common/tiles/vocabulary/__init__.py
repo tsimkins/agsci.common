@@ -55,7 +55,7 @@ class PeopleVocabulary(KeyValueVocabulary):
             'Type' : 'Person',
             'sort_on' : 'sortable_title',
         })
-        
+
         return [
             (x.getId, x.Title) for x in results
         ]
@@ -68,6 +68,18 @@ class VideoAspectRatioVocabulary(StaticVocabulary):
         u'4:3',
     ]
 
+class SocialMediaPlatformVocabulary(KeyValueVocabulary):
+
+    preserve_order = True
+
+    items = [
+        ('facebook', 'Facebook'),
+        ('twitter', 'Twitter'),
+        ('instagram', 'Instagram'),
+        ('linkedin', 'LinkedIn'),
+        ('youtube', 'YouTube'),
+    ]
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
@@ -77,3 +89,4 @@ FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
+SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()
