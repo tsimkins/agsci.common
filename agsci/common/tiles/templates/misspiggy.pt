@@ -27,9 +27,15 @@
 
             <div class="col-12 col-lg-5 order-1 order-lg-12">
 
-                <img alt=""
-                     class="w-100"
-                     tal:attributes="src view/img_src|nothing" />
+                <tal:row tal:repeat="serial python: range(4)">
+
+                    <img tal:define="img_src python:view.get_img_src(serial);"
+                         tal:condition="img_src"
+                         alt=""
+                         class="w-100"
+                         tal:attributes="src img_src" />
+
+                </tal:row>
 
         	</div>
 	

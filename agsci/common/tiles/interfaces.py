@@ -218,8 +218,26 @@ class IMissPiggyTile(Interface):
         required=False
     )
 
-    image = NamedBlobImage(
-        title=_(u"Image"),
+    image_0 = NamedBlobImage(
+        title=_(u"Image 1"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_1 = NamedBlobImage(
+        title=_(u"Image 2"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_2 = NamedBlobImage(
+        title=_(u"Image 3"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_3 = NamedBlobImage(
+        title=_(u"Image 4"),
         description=_(u""),
         required=False,
     )
