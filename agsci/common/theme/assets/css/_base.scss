@@ -413,3 +413,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
         }
     }
 }
+
+/* This fixes the 'Properties' not showing up when the button is clicked
+   in the Mosaic editor. */
+.mosaic-overlay {
+    .fade.in {
+        opacity: 100;
+    }
+}

@@ -254,6 +254,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     #content-core .entries .entry .description {
       line-height: 1.375; }
 
+/* This fixes the 'Properties' not showing up when the button is clicked
+   in the Mosaic editor. */
+.mosaic-overlay .fade.in {
+  opacity: 100; }
+
 .print-only-logo {
   display: none; }
 
