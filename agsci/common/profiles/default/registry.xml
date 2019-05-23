@@ -306,7 +306,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_animal"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.animal</value>
-        <value key="label">Animal</value>
+        <value key="label">Person</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>

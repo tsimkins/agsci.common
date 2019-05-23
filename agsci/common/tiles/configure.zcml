@@ -177,7 +177,7 @@
 
     <plone:tile
         name="agsci.common.tiles.animal"
-        title="Animal"
+        title="Person"
         description=""
         schema=".interfaces.IAnimalTile"
         class=".AnimalTile"

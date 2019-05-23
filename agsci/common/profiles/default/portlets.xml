@@ -15,5 +15,10 @@
         addview="agsci.common.office_address"
         title="Office Address Portlet"
     />
+
+    <portlet
+        addview="agsci.common.person"
+        title="Person Portlet"
+    />
       
 </portlets>

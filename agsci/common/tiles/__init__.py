@@ -41,7 +41,8 @@ class BaseTile(PersistentTile):
     def get_valid_value(self, field_name):
 
         schema = ITileDataManager(self).tileType.schema
-        value = self.data.get(field_name)
+        ###
+        value = self.get_field(field_name)
 
         if schema:
             field = getFields(schema).get(field_name, None)
@@ -97,7 +98,7 @@ class BaseTile(PersistentTile):
         if isinstance(serial, int):
             field = 'image_%d' % serial
 
-        img = self.data.get(field, None)
+        img = self.get_field(field, None)
 
         if img and img.data:
             images = self.publishTraverse(self.request, '@@images')
@@ -112,15 +113,19 @@ class BaseTile(PersistentTile):
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
 
+    def get_field(self, field, default=None):
+        if hasattr(self.data, field):
+            return getattr(self.data, field, default)
+        else:
+            return self.data.get(field, default)
+
+    @property
+    def value(self):
+        return self.get_field('value', default=[])
+
     @property
     def values(self):
-
-        if hasattr(self.data, 'value'):
-            v = self.data.value
-        else:
-            v = self.data.get('value', [])
-            
-        return [object_factory(**x) for x in v]
+        return [object_factory(**x) for x in self.value]
 
     @property
     def count(self):
@@ -128,7 +133,7 @@ class BaseTile(PersistentTile):
 
     @property
     def items(self):
-        target = self.data.get('target')
+        target = self.get_field('target')
 
         if target and hasattr(target, 'to_object'):
             target_object = target.to_object
@@ -234,7 +239,7 @@ class SkeeterTile(ConditionalTemplateTile):
     def featured(self):
         items = super(SkeeterTile, self).items
 
-        featured_id = self.data.get('featured_id')
+        featured_id = self.get_field('featured_id')
 
         if featured_id:
             featured_id = featured_id.strip()
@@ -263,7 +268,7 @@ class SkeeterTile(ConditionalTemplateTile):
         return 'skeeter-%s.pt' % self.style
 
 class AnimalTile(BaseTile):
-    __type__ = "Animal"
+    __type__ = "Person"
 
     @property
     def klass(self):
@@ -272,7 +277,7 @@ class AnimalTile(BaseTile):
     @property
     def people(self):
 
-        _ids = [x.get('username', None) for x in self.data.get('value')]
+        _ids = [x.get('username', None) for x in self.value]
 
         results = self.portal_catalog.searchResults({
             'Type' : 'Person',
@@ -317,7 +322,7 @@ class YouTubeTile(BaseTile):
     @property
     def video_id(self):
 
-        url = self.data.get('url', None)
+        url = self.get_field('url', None)
 
         if url:
 
@@ -352,7 +357,7 @@ class YouTubeTile(BaseTile):
     def wrapper_klass(self):
         _ = ['youtube-video-embed']
 
-        aspect_ratio = self.data.get('video_aspect_ratio', None)
+        aspect_ratio = self.get_field('video_aspect_ratio', None)
 
         if aspect_ratio:
             _.append('aspect-%s' % aspect_ratio.replace(':', '-'))
@@ -371,7 +376,7 @@ class DropdownAccordionTile(BaseTile):
 
     @property
     def row_class(self):
-        if self.data.get('show_images', None):
+        if self.get_field('show_images', None):
             return "col-12 col-md-9 col-xl-7"
 
         return "col-12"

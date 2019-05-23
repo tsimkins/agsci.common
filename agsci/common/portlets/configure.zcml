@@ -31,6 +31,15 @@
         editview=".office_address.EditForm"
         />
 
+    <plone:portlet
+        name="agsci.common.person"
+        interface="..tiles.interfaces.IAnimalTile"
+        assignment=".person.Assignment"
+        renderer=".person.Renderer"
+        addview=".person.AddForm"
+        editview=".person.EditForm"
+        />
+
     <plone:portletRenderer
         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
         class=".navigation.Renderer"
