@@ -10,5 +10,10 @@
         addview="agsci.common.social_media"
         title="Social Media Portlet"
     />
+
+    <portlet
+        addview="agsci.common.office_address"
+        title="Office Address Portlet"
+    />
       
 </portlets>

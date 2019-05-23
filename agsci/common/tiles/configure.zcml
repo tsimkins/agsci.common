@@ -202,7 +202,7 @@
 
     <plone:tile
         name="agsci.common.tiles.rizzo_the_rat"
-        title="Rizzo the Rat"
+        title="Office Address"
         description=""
         schema=".interfaces.IRizzoTheRatTile"
         class=".RizzoTheRatTile"

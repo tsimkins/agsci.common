@@ -22,6 +22,15 @@
         editview=".social_media.EditForm"
         />
 
+    <plone:portlet
+        name="agsci.common.office_address"
+        interface="..tiles.interfaces.IRizzoTheRatTile"
+        assignment=".office_address.Assignment"
+        renderer=".office_address.Renderer"
+        addview=".office_address.AddForm"
+        editview=".office_address.EditForm"
+        />
+
     <plone:portletRenderer
         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
         class=".navigation.Renderer"

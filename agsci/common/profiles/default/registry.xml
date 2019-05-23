@@ -334,7 +334,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_rizzo_the_rat"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.rizzo_the_rat</value>
-        <value key="label">Rizzo the Rat</value>
+        <value key="label">Office Address</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>

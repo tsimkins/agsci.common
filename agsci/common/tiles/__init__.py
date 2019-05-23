@@ -290,7 +290,7 @@ class PepeTheKingPrawnTile(GonzoTile):
         return 'pepe_the_king_prawn-%s.pt' % self.align
 
 class RizzoTheRatTile(BaseTile):
-    __type__ = "Rizzo the Rat"
+    __type__ = "Office Address"
 
     @property
     def adapted(self):
