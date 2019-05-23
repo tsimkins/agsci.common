@@ -25,7 +25,7 @@ class TilePortletRenderer(base.Renderer):
 
             # Push data into our custom tiles
             try:
-                tile.set_data(self.data)
+                tile.set_data(self.data.__dict__)
             except:
                 pass
 
