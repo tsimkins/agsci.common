@@ -1,7 +1,15 @@
 from plone.app.portlets.portlets import base
 from zope.component import queryMultiAdapter
 
-class TileRenderer(base.Renderer):
+class TilePortletAssignment(base.Assignment):
+
+    title = ''
+
+    def __init__(self, title=title, *args, **kwargs):
+        base.Assignment.__init__(self, *args, **kwargs)
+        self.title=title
+
+class TilePortletRenderer(base.Renderer):
 
     tile_name = ''
 

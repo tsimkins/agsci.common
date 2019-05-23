@@ -19,20 +19,12 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 from .. import object_factory
 from ..tiles.interfaces import ISocialMediaTile
-from . import TileRenderer
+from . import TilePortletAssignment, TilePortletRenderer
 
-class Assignment(base.Assignment):
-
+class Assignment(TilePortletAssignment):
     implements(ISocialMediaTile)
 
-    title = ""
-
-    def __init__(self, title=u"", value=[], *args, **kwargs):
-        base.Assignment.__init__(self, *args, **kwargs)
-        self.title = title
-        self.value = value
-
-class Renderer(TileRenderer):
+class Renderer(TilePortletRenderer):
     tile_name = 'agsci.common.tiles.social_media'
 
 class AddForm(base.AddForm):
