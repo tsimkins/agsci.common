@@ -138,14 +138,13 @@
         <replace css:content-children="#audience-nav-viewlet" css:theme="#audience-nav-viewlet" />
         <replace css:content-children="#primary-nav-viewlet" css:theme="#primary-nav-viewlet" />
 
-        <replace css:content-children="#navigation-portlet" css:theme="#navigation-portlet-placeholder" />
-
         <!--
             If we have a nav portlet, drop the first child in column one.
             This is an assumption based on convention.
         -->
-        <rules css-if-content="#portal-column-one aside.portletNavigationTree">
-            <drop css:content="#portal-column-one .portletWrapper:first-child" />
+        <rules css-if-content="#portal-column-one .portletWrapper #navigation-portlet">
+            <replace css:content-children="#navigation-portlet" css:theme="#navigation-portlet-placeholder" />
+            <drop css:content="#portal-column-one .portletWrapper section.navigation-wrapper" />
         </rules>
 
         <!-- Portlets -->
