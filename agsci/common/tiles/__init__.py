@@ -185,7 +185,7 @@ class CalloutBlockTile(BaseTile):
     __type__ = "Callout Block"
 
 class CTATile(BaseTile):
-    __type__ = "Call To Action"
+    __type__ = "Call To Action (Buttons)"
     __full_width__ = True
     
     @property
@@ -322,8 +322,9 @@ class RizzoTheRatTile(BaseTile):
         return self.adapted.has_address
 
 
-class StatlerTile(BaseTile):
-    __type__ = "Statler"
+class StatlerTile(CTATile):
+    __full__width = False
+    __type__ = "Call To Action (Blocks)"
 
 
 class YouTubeTile(BaseTile):

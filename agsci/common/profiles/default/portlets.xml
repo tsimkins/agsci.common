@@ -25,5 +25,10 @@
         addview="agsci.common.cta_button"
         title="Call To Action (Buttons) Portlet"
     />
+
+    <portlet
+        addview="agsci.common.cta_block"
+        title="Call To Action (Blocks) Portlet"
+    />
       
 </portlets>

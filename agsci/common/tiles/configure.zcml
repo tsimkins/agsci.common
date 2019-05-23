@@ -215,7 +215,7 @@
 
     <plone:tile
         name="agsci.common.tiles.statler"
-        title="Statler"
+        title="Call To Action (Blocks)"
         description=""
         schema=".interfaces.IStatlerTile"
         class=".StatlerTile"
