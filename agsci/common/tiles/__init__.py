@@ -114,7 +114,12 @@ class BaseTile(PersistentTile):
 
     @property
     def values(self):
-        v = self.data.get('value', [])
+
+        if hasattr(self.data, 'value'):
+            v = self.data.value
+        else:
+            v = self.data.get('value', [])
+            
         return [object_factory(**x) for x in v]
 
     @property

@@ -5,5 +5,10 @@
         addview="agsci.common.tags"
         title="Tags Portlet"
     />
+
+    <portlet
+        addview="agsci.common.social_media"
+        title="Social Media Portlet"
+    />
       
 </portlets>

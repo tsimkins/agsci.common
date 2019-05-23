@@ -13,6 +13,15 @@
         editview=".tags.EditForm"
         />
 
+    <plone:portlet
+        name="agsci.common.social_media"
+        interface="..tiles.interfaces.ISocialMediaTile"
+        assignment=".social_media.Assignment"
+        renderer=".social_media.Renderer"
+        addview=".social_media.AddForm"
+        editview=".social_media.EditForm"
+        />
+
     <plone:portletRenderer
         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
         class=".navigation.Renderer"
