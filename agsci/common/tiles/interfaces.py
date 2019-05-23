@@ -161,9 +161,15 @@ class ICalloutBlockTile(model.Schema):
         required=False,
     )
 
-class ICTATile(Interface):
+class ICTATileBase(Interface):
 
     form.widget(value=DataGridFieldFactory)
+
+    title = schema.TextLine(
+        title=_(u'Title'),
+        default=u'CTA Buttons',
+        required=False,
+    )
 
     background = schema.Choice(
         title=_(u"Background"),
@@ -178,6 +184,11 @@ class ICTATile(Interface):
         value_type=DictRow(title=u"Button", schema=IButtonTileRowSchema),
         required=False
     )
+
+class ICTATile(ICTATileBase):
+
+    form.omitted('title')
+
 
 class ILargeCTATile(Interface):
 

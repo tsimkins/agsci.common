@@ -11,6 +11,7 @@ class CTABackgroundVocabulary(KeyValueVocabulary):
     items = [
         ('light', 'Light'),
         ('dark', 'Dark'),
+        ('none', 'No Background'),
     ]
 
 class LRAlignVocabulary(KeyValueVocabulary):

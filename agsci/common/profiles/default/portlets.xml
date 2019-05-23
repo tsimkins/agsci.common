@@ -20,5 +20,10 @@
         addview="agsci.common.person"
         title="Person Portlet"
     />
+
+    <portlet
+        addview="agsci.common.cta_button"
+        title="Call To Action (Buttons) Portlet"
+    />
       
 </portlets>

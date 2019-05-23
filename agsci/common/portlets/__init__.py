@@ -6,7 +6,7 @@ class TilePortletAssignment(base.Assignment):
     title = ''
 
     def __init__(self, title=title, *args, **kwargs):
-        base.Assignment.__init__(self, *args, **kwargs)
+        base.Assignment.__init__(self, title=title, *args, **kwargs)
         self.title=title
 
 class TilePortletRenderer(base.Renderer):

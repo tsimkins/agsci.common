@@ -149,6 +149,10 @@ class BaseTile(PersistentTile):
     def portal_url(self):
         return self.site.absolute_url()
 
+    @property
+    def is_portlet(self):
+        return self.data and isinstance(self.data, dict) and self.data.has_key('__parent__')
+
 class ConditionalTemplateTile(BaseTile):
 
     def __call__(self, *args, **kwargs):
@@ -183,6 +187,12 @@ class CalloutBlockTile(BaseTile):
 class CTATile(BaseTile):
     __type__ = "Call To Action"
     __full_width__ = True
+    
+    @property
+    def button_width_class(self):
+        if self.is_portlet:
+            return 'w-75'
+        return ''
 
 class LargeCTATile(BaseTile):
     __type__ = "Large CTA"

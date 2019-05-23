@@ -62,7 +62,7 @@
 
     <plone:tile
         name="agsci.common.tiles.cta"
-        title="Call to Action"
+        title="Call to Action (Buttons)"
         description=""
         schema=".interfaces.ICTATile"
         class=".CTATile"

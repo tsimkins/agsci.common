@@ -40,6 +40,15 @@
         editview=".person.EditForm"
         />
 
+    <plone:portlet
+        name="agsci.common.cta_button"
+        interface="..tiles.interfaces.ICTATileBase"
+        assignment=".cta_button.Assignment"
+        renderer=".cta_button.Renderer"
+        addview=".cta_button.AddForm"
+        editview=".cta_button.EditForm"
+        />
+
     <plone:portletRenderer
         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
         class=".navigation.Renderer"
