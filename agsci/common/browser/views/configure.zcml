@@ -1,4 +1,4 @@
-<configure 
+<configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
@@ -54,7 +54,7 @@
         layer="..interfaces.IThemeSpecific"
         template="templates/degree_compare.pt"
     />
-    
+
     <!-- Degree Compare Lightbox View -->
     <browser:page
         for="agsci.common.content.degrees.IDegreeContainer"
@@ -108,6 +108,16 @@
         for="agsci.common.content.person.person.IPerson"
         name="card_view"
         class=".PersonCardView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
+    <!-- Person Card View (Vertical)-->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view_vertical"
+        class=".PersonCardVerticalView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         template="templates/person_card.pt"

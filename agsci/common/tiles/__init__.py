@@ -187,7 +187,7 @@ class CalloutBlockTile(BaseTile):
 class CTATile(BaseTile):
     __type__ = "Call To Action (Buttons)"
     __full_width__ = True
-    
+
     @property
     def button_width_class(self):
         if self.is_portlet:
@@ -283,6 +283,10 @@ class AnimalTile(BaseTile):
     @property
     def klass(self):
         return "card-deck card-deck-%sup" % self.count
+
+    @property
+    def vertical(self):
+        return self.get_field('style') in ('vertical',)
 
     @property
     def people(self):

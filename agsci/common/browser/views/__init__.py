@@ -377,7 +377,27 @@ class PersonView(BaseView):
         return self.adapted.has_address
 
 class PersonCardView(PersonView):
-    pass
+
+    card_format = 'horizontal'
+
+    @property
+    def card_image_class(self):
+
+        if self.card_format in ('vertical',):
+            return 'col-12 px-0 mb-2'
+
+        return 'col-12 col-md-5 col-sm-12 px-0'
+
+    @property
+    def card_details_class(self):
+        if self.card_format in ('vertical',):
+            return 'col-12 px-0'
+
+        return 'col-12 col-sm-12 col-md-7 mt-2 mt-md-0 pl-0 px-sm-0 pr-0 pl-md-3 pl-sm-0'
+
+class PersonCardVerticalView(PersonCardView):
+
+    card_format = 'vertical'
 
 class DirectoryView(BaseView):
 

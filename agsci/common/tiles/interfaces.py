@@ -437,8 +437,6 @@ class ISkeeterTile(Interface):
         required=False,
     )
 
-
-
 class IAnimalTile(Interface):
 
     form.widget(value=DataGridFieldFactory)
@@ -453,6 +451,13 @@ class IAnimalTile(Interface):
         description=u"",
         value_type=DictRow(title=u"Person", schema=IPersonTileRowSchema),
         required=False
+    )
+
+    style = schema.Choice(
+        title=_(u"Style"),
+        vocabulary='agsci.common.tiles.hv_orientation',
+        default=u'horizontal',
+        required=False,
     )
 
     count = schema.Choice(

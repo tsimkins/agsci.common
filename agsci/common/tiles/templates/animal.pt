@@ -14,11 +14,16 @@
         tal:content="title"
         tal:condition="title" />
 
-    <div tal:attributes="class view/klass|nothing">
+    <div tal:attributes="class view/klass|nothing"
+         tal:define="vertical view/vertical|nothing">
 
         <tal:people tal:repeat="context view/people|nothing">
 
-            <div tal:replace="structure context/@@card_view" />
+            <div tal:condition="not: vertical"
+                 tal:replace="structure context/@@card_view"/>
+
+            <div tal:condition="vertical"
+                 tal:replace="structure context/@@card_view_vertical" />
 
         </tal:people>
 

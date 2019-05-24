@@ -1,20 +1,20 @@
 <div class="card card-short-bio agsci-box-shadow html"
-        tal:define="leadimage view/getItemLeadImage|nothing">
+        tal:define="leadimage view/getItemLeadImage|nothing;">
 
     <div class="card-body">
 
         <div class="row mx-0">
-            <div class="col-12 col-md-5 col-sm-12 px-0"
-                    tal:condition="leadimage">
+            <div tal:attributes="class view/card_image_class"
+                 tal:condition="leadimage">
                 <div class="card-img-crop">
                     <img tal:attributes="alt view/name/title|nothing;
                                             title view/name/title|nothing;
                                             src leadimage"
-                            class="w-100 photo" />
+                         class="w-100 photo" />
                 </div>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-7 mt-2 mt-md-0 pl-0 px-sm-0 pr-0 pl-md-3 pl-sm-0">
+            <div tal:attributes="class view/card_details_class">
 
                 <div class="row mx-0">
 
@@ -31,7 +31,7 @@
                             tal:condition="job_title">
                             <li tal:content="job_title" />
                         </ul>
-                            
+
 
                         <address class="d-inline-flex flex-column"
                             tal:define="email context/email|nothing;
