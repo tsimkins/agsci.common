@@ -393,7 +393,7 @@ class IScooterTile(Interface):
 
     count = schema.Choice(
         title=_(u"Count"),
-        values=[2,3,4],
+        values=[1,2,3,4],
         required=False,
     )
 

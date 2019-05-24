@@ -67,6 +67,15 @@
         editview=".news_event.EditForm"
         />
 
+    <plone:portlet
+        name="agsci.common.cards"
+        interface="..tiles.interfaces.IScooterTile"
+        assignment=".cards.Assignment"
+        renderer=".cards.Renderer"
+        addview=".cards.AddForm"
+        editview=".cards.EditForm"
+        />
+
     <plone:portletRenderer
         portlet="plone.app.portlets.portlets.navigation.INavigationPortlet"
         class=".navigation.Renderer"

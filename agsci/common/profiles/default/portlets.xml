@@ -36,4 +36,9 @@
         title="News/Event Listing Portlet"
     />
 
+    <portlet
+        addview="agsci.common.cards"
+        title="Cards Listing Portlet"
+    />
+
 </portlets>
