@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+<section
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width string:not-full">
+
+    <!--
+        Yo, dawg, I heard you want some portlets in your tiles.
+    -->
+    
+    <tal:block replace="structure provider:plone.leftcolumn" />
+    <tal:block replace="structure provider:plone.rightcolumn" />
+    
+</section>
+  </body>
+</html>

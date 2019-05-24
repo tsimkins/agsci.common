@@ -508,3 +508,6 @@ class SocialMediaTile(BaseTile):
             return vocabulary.getTermByToken(platform).title
         except:
             return platform.title()
+
+class PortletsTile(BaseTile):
+    __type__ = "Portlets"

@@ -262,6 +262,11 @@ jq3(document).ready(function() {
             jq3(this).addClass('container');
         }
     );
+    jq3('.mosaic-grid-row:has(section[data-container-width="not-full"])').each(
+        function () {
+            jq3(this).addClass('container');
+        }
+    );
 });
 
 

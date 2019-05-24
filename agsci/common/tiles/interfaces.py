@@ -633,3 +633,10 @@ class ISocialMediaTile(Interface):
         value_type=DictRow(title=u"Items", schema=ISocialMediaTileRowSchema),
         required=False
     )
+
+class IPortletsTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
