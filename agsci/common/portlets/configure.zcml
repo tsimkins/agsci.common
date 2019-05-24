@@ -48,7 +48,7 @@
         addview=".cta_button.AddForm"
         editview=".cta_button.EditForm"
         />
-        
+
     <plone:portlet
         name="agsci.common.cta_block"
         interface="..tiles.interfaces.IStatlerTile"
@@ -56,6 +56,15 @@
         renderer=".cta_block.Renderer"
         addview=".cta_block.AddForm"
         editview=".cta_block.EditForm"
+        />
+
+    <plone:portlet
+        name="agsci.common.news_event"
+        interface="..tiles.interfaces.ISkeeterTile"
+        assignment=".news_event.Assignment"
+        renderer=".news_event.Renderer"
+        addview=".news_event.AddForm"
+        editview=".news_event.EditForm"
         />
 
     <plone:portletRenderer

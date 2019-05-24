@@ -259,6 +259,9 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .mosaic-overlay .fade.in {
   opacity: 100; }
 
+.portletWrapper p.h3 {
+  margin-top: 0; }
+
 .print-only-logo {
   display: none; }
 

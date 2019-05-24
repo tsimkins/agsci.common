@@ -12,12 +12,12 @@
     <div class="container-fluid position-relative m-0"
          tal:define="feature view/featured|nothing">
 
-        <div class="container"
-            tal:condition="feature|nothing">
+        <div class="container">
 
             <div class="row align-items-start">
 
-                <div class="col-12 col-lg-8 px-0">
+                <div class="col-12 col-lg-8 px-0"
+                     tal:condition="feature|nothing">
 
                     <a tal:attributes="href feature/getURL|nothing"
                        class="container-fluid jumbotron jumbotron-img-based jumbotron-full-height jumbotron-news-feed d-flex align-items-end position-relative">
@@ -44,7 +44,7 @@
                     </a>
                 </div>
 
-                <div class="col-12 col-lg-4 border-top px-0">
+                <div tal:attributes="class view/news_items_class|nothing">
 
                     <tal:items tal:repeat="i view/items|nothing">
 

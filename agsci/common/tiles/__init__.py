@@ -243,25 +243,58 @@ class SkeeterTile(ConditionalTemplateTile):
             'news' : 3,
         }.get(self.style, 4)
 
+    @property
+    def news_items_class(self):
+        if self.is_portlet:
+            return "col-12 border-top px-0"
+        return "col-12 col-lg-4 border-top px-0"
+
+    @property
+    def event_items_count(self):
+        if self.is_portlet:
+            return 1
+        return 4
+
+    @property
+    def page_items_count(self):
+        if self.is_portlet:
+            return 1
+        return 3
+
+    @property
+    def page_items_cols(self):
+        if self.is_portlet:
+            return 12
+        return 6
+
+    @property
+    def page_items_border(self):
+        if self.is_portlet:
+            return 'border-top'
+        return ''
+
     # Calculates a featured item, otherwise uses the first one.
     # Returns a brain
     @property
     def featured(self):
-        items = super(SkeeterTile, self).items
 
-        featured_id = self.get_field('featured_id')
+        # "Tiles as portlets" never have featured items
+        if not self.is_portlet:
+            items = super(SkeeterTile, self).items
 
-        if featured_id:
-            featured_id = featured_id.strip()
+            featured_id = self.get_field('featured_id')
 
-            _ = [x for x in items if x.getId() == featured_id]
+            if featured_id:
+                featured_id = featured_id.strip()
 
-            if _:
-                return _[0]
+                _ = [x for x in items if x.getId() == featured_id]
 
-        # News always has a featured item
-        if items and self.style in ('news',):
-            return items[0]
+                if _:
+                    return _[0]
+
+            # News always has a featured item
+            if items and self.style in ('news',):
+                return items[0]
 
     @property
     def items(self):

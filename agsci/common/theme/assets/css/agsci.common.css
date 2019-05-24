@@ -13573,6 +13573,9 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .mosaic-overlay .fade.in {
   opacity: 100; }
 
+.portletWrapper p.h3 {
+  margin-top: 0; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;

@@ -47,7 +47,7 @@
 
     <div class="container">
 
-        <div class="card-deck card-deck-4up card-deck-events justify-content-center">
+        <div class="card-deck card-deck-${view/event_items_count}up card-deck-events justify-content-center">
 
             <tal:items tal:repeat="i view/items|nothing">
 

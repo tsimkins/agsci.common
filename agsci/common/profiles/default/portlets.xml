@@ -30,5 +30,10 @@
         addview="agsci.common.cta_block"
         title="Call To Action (Blocks) Portlet"
     />
-      
+
+    <portlet
+        addview="agsci.common.news_event"
+        title="News/Event Listing Portlet"
+    />
+
 </portlets>
