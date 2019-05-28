@@ -20,9 +20,7 @@ class BlockTransformer(object):
             ):
 
                 # Expand blocks if we're HTML
-                source_value = value.raw_encoded
-
-                source_value = self.add_blocks(source_value)
+                source_value = self.add_blocks(value.raw)
 
                 value = RichTextValue(
                     raw=source_value,
