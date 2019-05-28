@@ -389,6 +389,16 @@ class PersonCardView(PersonView):
         return 'col-12 col-md-5 col-sm-12 px-0'
 
     @property
+    def card_class(self):
+
+        if self.card_format in ('vertical',):
+            return 'card card-short-bio card-vertical html mb-2'
+
+        return 'card card-short-bio agsci-box-shadow html'
+
+
+
+    @property
     def card_details_class(self):
         if self.card_format in ('vertical',):
             return 'col-12 px-0'

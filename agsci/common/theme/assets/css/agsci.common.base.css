@@ -267,6 +267,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .accordion.accordion-options > .btn {
   margin-bottom: 1em; }
 
+.card-vertical .list-bio-contact li {
+  margin-top: 0; }
+.card-vertical .list-inline-social {
+  margin-top: 0; }
+
 .print-only-logo {
   display: none; }
 

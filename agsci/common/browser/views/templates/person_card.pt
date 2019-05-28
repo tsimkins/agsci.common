@@ -1,5 +1,5 @@
-<div class="card card-short-bio agsci-box-shadow html"
-        tal:define="leadimage view/getItemLeadImage|nothing;">
+<div tal:attributes="class view/card_class"
+     tal:define="leadimage view/getItemLeadImage|nothing;">
 
     <div class="card-body">
 

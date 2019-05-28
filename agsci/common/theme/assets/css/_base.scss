@@ -434,3 +434,14 @@ body.mosaic-editor.plone-toolbar-left-expanded {
         margin-bottom: 1em;
     }
 }
+
+.card-vertical {
+    .list-bio-contact {
+        li {
+            margin-top: 0;
+        }
+    }
+    .list-inline-social {
+        margin-top: 0;
+    }
+}

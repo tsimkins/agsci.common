@@ -117,11 +117,15 @@ class PersonBlock(BaseBlock):
         'count' : 2,
     }
 
-    def card_view(self, r):
+    def card_view(self, r, style=None):
         o = r.getObject()
+
+        if style == 'vertical':
+            return o.restrictedTraverse('@@card_view_vertical')()
+
         return o.restrictedTraverse('@@card_view')()
 
-    def people(self, usernames):
+    def people(self, usernames, style=None):
 
         _ids = [x.strip() for x in usernames.split(',')]
 
@@ -133,7 +137,7 @@ class PersonBlock(BaseBlock):
                 'sort_on' : 'sortable_title',
             })
 
-            return [self.card_view(x) for x in results]
+            return [self.card_view(x, style) for x in results]
 
         return []
 
