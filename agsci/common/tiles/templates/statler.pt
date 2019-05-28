@@ -21,7 +21,7 @@
     
         <div class="row mx-0">
             <div class="col-12">
-                <div tal:attributes="class string:card-deck card-deck-${view/count|nothing}up agsci-visual-cards visual-cards-imgs-cropped">
+                <div tal:attributes="class string:card-deck card-deck-${view/count|nothing}up agsci-visual-cards visual-cards-imgs-cropped justify-content-center">
                 
                 <tal:buttons tal:repeat="button view/values|nothing">
 
