@@ -6,7 +6,7 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="container px-0 my-2"
+<section class="container px-0 mt-2 mb-4"
     tal:attributes="data-tile-type view/tile_type|nothing;">
 
     <div class="row">
