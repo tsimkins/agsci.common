@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
+g<html xmlns="http://www.w3.org/1999/xhtml"
       xml:lang="en"
       lang="en"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
@@ -9,7 +9,8 @@
 <section class="container my-3"
          tal:attributes="data-tile-type view/tile_type|nothing">
 	
-    <h2 tal:content="view/data/title|nothing" />
+    <h2 class="mt-0"
+        tal:content="view/data/title|nothing" />
 
     <div tal:attributes="class string:card-deck card-deck-${view/data/count}up card-deck-text-only">
 

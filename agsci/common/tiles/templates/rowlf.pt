@@ -18,7 +18,8 @@
                 <p class="agsci-journeys ag-journeys-preview"
                    tal:content="view/data/title|nothing" />
 
-                <h2 tal:content="view/data/description|nothing" />
+                <h2 class="mt-0"
+                    tal:content="view/data/description|nothing" />
 
                 <p class="journey-quote-cite"
                    tal:content="view/data/caption|nothing" />

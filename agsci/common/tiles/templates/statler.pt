@@ -14,7 +14,8 @@
             tal:condition="view/data/show_title|nothing">
 
             <div class="col-12">
-                <h2 tal:content="view/data/title|nothing">	
+                <h2 class="mt-0"
+                    tal:content="view/data/title|nothing">	
             </div>
 
         </div>

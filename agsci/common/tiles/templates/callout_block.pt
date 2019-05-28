@@ -11,7 +11,7 @@
             <div class="row">
         		<div tal:define="text_align view/data/text_align|nothing"
         		     tal:attributes="class string:col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-${text_align}">
-            	   <h2 class="slide-down"
+            	   <h2 class="slide-down mt-0"
                        tal:condition="view/data/title|nothing"
             	       tal:content="view/data/title|nothing" />
 

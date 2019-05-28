@@ -10,7 +10,8 @@
 
 <div class="container">
 
-    <h2 tal:define="title view/data/title|nothing"
+    <h2 class="mt-0"
+        tal:define="title view/data/title|nothing"
         tal:content="title"
         tal:condition="title" />
 

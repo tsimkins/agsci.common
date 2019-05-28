@@ -22,7 +22,7 @@
     <div class="row offset-top">
         <div class="col-12 col-md-4 px-0">
 			
-        <h2 class="h1 creek-offset"><span tal:content="view/data/title" /></h2>
+        <h2 class="h1 creek-offset mt-0"><span tal:content="view/data/title" /></h2>
 
     </div>
 
