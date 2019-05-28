@@ -191,3 +191,12 @@ def get_fields_by_type(portal_type):
         behavior = factory.interface
         fields += behavior.namesAndDescriptions()
     return dict(fields)
+
+def toBool(_):
+    if isinstance(_, bool):
+        return _
+    if isinstance(_, (str, unicode)):
+        return _.lower().strip() in ('true', '1')
+    if isinstance(_, int):
+        return bool(_)
+    return False

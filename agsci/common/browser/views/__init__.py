@@ -379,6 +379,7 @@ class PersonView(BaseView):
 class PersonCardView(PersonView):
 
     card_format = 'horizontal'
+    border = True
 
     @property
     def card_image_class(self):
@@ -392,11 +393,13 @@ class PersonCardView(PersonView):
     def card_class(self):
 
         if self.card_format in ('vertical',):
+
+            if self.border:
+                return 'card card-short-bio agsci-box-shadow card-vertical html mb-3'
+
             return 'card card-short-bio card-vertical html mb-2'
 
         return 'card card-short-bio agsci-box-shadow html'
-
-
 
     @property
     def card_details_class(self):
@@ -406,8 +409,10 @@ class PersonCardView(PersonView):
         return 'col-12 col-sm-12 col-md-7 mt-2 mt-md-0 pl-0 px-sm-0 pr-0 pl-md-3 pl-sm-0'
 
 class PersonCardVerticalView(PersonCardView):
-
     card_format = 'vertical'
+
+class PersonCardVerticalNoBorderView(PersonCardVerticalView):
+    border = False
 
 class DirectoryView(BaseView):
 

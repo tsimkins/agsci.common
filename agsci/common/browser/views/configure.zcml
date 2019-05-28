@@ -123,6 +123,16 @@
         template="templates/person_card.pt"
     />
 
+    <!-- Person Card View (Vertical, No Border)-->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view_vertical_no_border"
+        class=".PersonCardVerticalNoBorderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
     <!-- Directory View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectory"

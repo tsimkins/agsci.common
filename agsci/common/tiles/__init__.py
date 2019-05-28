@@ -315,6 +315,8 @@ class AnimalTile(BaseTile):
 
     @property
     def klass(self):
+        if self.vertical:
+            return "card-deck card-deck-%sup mx-2 mb-3" % self.count
         return "card-deck card-deck-%sup" % self.count
 
     @property

@@ -1,5 +1,7 @@
-<div class="card-deck card-deck-{{count}}up mt-2 mb-1 {% if style == 'vertical' %}mx-1{% endif %}">
-    {% for _ in view.people(usernames, style) %}
+{% set border = view.toBool(border) %}
+
+<div class="card-deck card-deck-{{count}}up mb-1 {% if border %}mt-2{% endif %} {% if style == 'vertical' %}mx-1{% endif %}">
+    {% for _ in view.people(usernames, style, border) %}
         {{ _|safe }}
     {% endfor %}
 </div>

@@ -8,6 +8,8 @@ from zope.globalrequest import getRequest
 
 import json
 
+from ..utilities import toBool
+
 class BaseBlock(object):
 
     template_base = '++resource++agsci.common.blocks/'
@@ -117,15 +119,22 @@ class PersonBlock(BaseBlock):
         'count' : 2,
     }
 
-    def card_view(self, r, style=None):
+    def toBool(self, _):
+        return toBool(_)
+
+    def card_view(self, r, style=None, border=True):
         o = r.getObject()
 
         if style == 'vertical':
+
+            if not border:
+                return o.restrictedTraverse('@@card_view_vertical_no_border')()
+
             return o.restrictedTraverse('@@card_view_vertical')()
 
         return o.restrictedTraverse('@@card_view')()
 
-    def people(self, usernames, style=None):
+    def people(self, usernames, style=None, border=True):
 
         _ids = [x.strip() for x in usernames.split(',')]
 
@@ -137,7 +146,7 @@ class PersonBlock(BaseBlock):
                 'sort_on' : 'sortable_title',
             })
 
-            return [self.card_view(x, style) for x in results]
+            return [self.card_view(x, style, toBool(border)) for x in results]
 
         return []
 
