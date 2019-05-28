@@ -12,6 +12,16 @@
         <value key="js">++resource++eea.facetednavigation.widgets.checkbox_degree_explorer.view.js</value>
     </records>
 
+    <records prefix="plone.bundles/mosaic-styles"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="jscompilation">++resource++agsci.common/mosaic/mosaic-styles.js</value>
+        <value key="csscompilation">++resource++agsci.common/mosaic/mosaic-styles.css</value>
+        <value key="last_compilation">2019-05-28 12:00:00</value>
+        <value key="compile">False</value>
+        <value key="merge_with">default</value>
+        <value key="enabled">True</value>
+    </records>
+
     <records prefix="plone.bundles/faceted-view"
                interface='Products.CMFPlone.interfaces.IBundleRegistry'>
         <value key="resources">
