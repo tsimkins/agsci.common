@@ -1,7 +1,9 @@
 <div id="footer-contact">
 
     <ul class="list-inline list-inline-contact">
-        <li class="li-separator">University Park, PA 16802</li>
+        <li class="li-separator">
+            University Park, PA 16802
+        </li>
 
         <tal:links tal:repeat="i view/nav/item|nothing">
             <li tal:define="end repeat/i/end;
