@@ -262,6 +262,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .portletWrapper p.h3 {
   margin-top: 0; }
 
+.accordion.accordion-options > h3 {
+  margin-left: 1.5rem; }
+.accordion.accordion-options > .btn {
+  margin-bottom: 1em; }
+
 .print-only-logo {
   display: none; }
 
