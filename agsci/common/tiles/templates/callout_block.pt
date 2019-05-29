@@ -5,23 +5,28 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="agsci.common">
   <body>
-    <section class="my-5"
-        tal:attributes="data-tile-type view/tile_type|nothing">
-    	<div class="container container-text">
-            <div class="row">
-        		<div tal:define="text_align view/data/text_align|nothing"
-        		     tal:attributes="class string:col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-${text_align}">
-            	   <h2 class="slide-down mt-0"
-                       tal:condition="view/data/title|nothing"
-            	       tal:content="view/data/title|nothing" />
 
-            	   <p class="lead fade-up html"
-                      tal:condition="view/data/text/output|nothing"
-                      tal:content="structure view/data/text/output|nothing" />
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 
-        		</div>
-        	</div>
+	<div class="container container-text">
+        <div class="row">
+    		<div tal:define="text_align view/data/text_align|nothing"
+    		     tal:attributes="class string:col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-${text_align}">
+        	   <h2 class="slide-down mt-0"
+                    tal:condition="view/data/title|nothing"
+        	       tal:content="view/data/title|nothing" />
+
+        	   <p class="lead fade-up html"
+                    tal:condition="view/data/text/output|nothing"
+                    tal:content="structure view/data/text/output|nothing" />
+
+    		</div>
     	</div>
-	</section>
+	</div>
+
+</section>
+
   </body>
 </html>

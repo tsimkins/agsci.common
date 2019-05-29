@@ -17,15 +17,20 @@ from zope.component.hooks import getSite
 from zope.schema import getFields
 from zope.schema.interfaces import IVocabularyFactory
 
+from .interfaces import IBorderTile
+
 from .. import object_factory
 from ..content.adapters import LocationAdapter
-from ..utilities import toLocalizedTime, getVocabularyTerms, ploneify
+from ..utilities import toLocalizedTime, getVocabularyTerms, ploneify, toBool
 from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(PersistentTile):
 
     __type__ = "Base Tile"
     __full_width__ = False
+
+    __section_class__ = ''
+    __border_top__ = __border_bottom__ = False
 
     def set_data(self, data):
         self._Tile__cachedData = data
@@ -38,10 +43,18 @@ class BaseTile(PersistentTile):
 
         return ''
 
+    @property
+    def schema(self):
+        return ITileDataManager(self).tileType.schema
+
+    @property
+    def is_border(self):
+        return IBorderTile in self.schema.getBases()
+
     def get_valid_value(self, field_name):
 
-        schema = ITileDataManager(self).tileType.schema
-        ###
+        schema = self.schema
+
         value = self.get_field(field_name)
 
         if schema:
@@ -63,6 +76,33 @@ class BaseTile(PersistentTile):
         return value
 
     klass = 'base-tile'
+
+    @property
+    def section_class(self):
+
+        _ = []
+
+        _.extend(self.__section_class__.split())
+
+        if self.is_border:
+            border_top = toBool(self.get_valid_value('border_top'))
+            border_bottom = toBool(self.get_valid_value('border_bottom'))
+
+            _.append('my-4')
+
+            if border_top or self.__border_top__:
+                _.extend([
+                    'pt-4',
+                    'border-top',
+                ])
+
+            if border_bottom or self.__border_bottom__:
+                _.extend([
+                    'pb-4',
+                    'border-bottom',
+                ])
+
+        return ' '.join(sorted(set(_)))
 
     def date_format(self, time, **kwargs):
         try:
@@ -203,6 +243,7 @@ class KermitTile(BaseTile):
 
 class MissPiggyTile(BaseTile):
     __type__ = "Miss Piggy"
+    __section_class__ = 'container-fluid'
 
 class FozzieBearTile(ConditionalTemplateTile):
     __type__ = "Fozzie Bear"
@@ -225,9 +266,12 @@ class GonzoTile(ConditionalTemplateTile):
 
 class RowlfTile(BaseTile):
     __type__ = "Rowlf"
+    __section_class = 'journey-preview'
+    __border_top__ = __border_bottom__ = True
 
 class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
+    __section_class__ = 'container'
 
     @property
     def template(self):
@@ -235,6 +279,7 @@ class ScooterTile(ConditionalTemplateTile):
 
 class SkeeterTile(ConditionalTemplateTile):
     __type__ = "Skeeter"
+    __section_class__ = 'container-fluid'
 
     @property
     def max_items(self):

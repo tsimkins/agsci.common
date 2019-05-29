@@ -3,7 +3,6 @@ from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.app.vocabularies.catalog import CatalogSource
 from plone.namedfile.field import NamedBlobImage
-from plone.supermodel import model
 from z3c.relationfield.schema import RelationChoice
 from zope import schema
 from zope.interface import Interface
@@ -17,6 +16,7 @@ from ..content.behaviors import ISocialContact
 class IAgsciTilesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
+# Row Schemas
 class IButtonTileRowSchema(Interface):
 
     title = schema.TextLine(
@@ -103,7 +103,46 @@ class ISocialMediaTileRowSchema(Interface):
         required=False
     )
 
-class IJumbotronTile(model.Schema):
+class IDropdownAccordionRowSchema(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
+# Tiles
+class IBorderTile(Interface):
+
+    form.order_after(
+        border_top='*',
+        border_bottom='border_top',
+    )
+
+    border_top = schema.Bool(
+        title=_(u"Top Border"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+    border_bottom = schema.Bool(
+        title=_(u"Bottom Border"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+class IJumbotronTile(Interface):
 
     title = schema.TextLine(
         title=_(u'Title'),
@@ -142,7 +181,7 @@ class IJumbotronTile(model.Schema):
         default=True,
     )
 
-class ICalloutBlockTile(model.Schema):
+class ICalloutBlockTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u'Title'),
@@ -240,7 +279,7 @@ class IKermitTile(Interface):
         default=True,
     )
 
-class IMissPiggyTile(Interface):
+class IMissPiggyTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -345,7 +384,7 @@ class IGonzoTile(Interface):
         default=True,
     )
 
-class IRowlfTile(Interface):
+class IRowlfTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -378,7 +417,7 @@ class IRowlfTile(Interface):
         required=False
     )
 
-class IScooterTile(Interface):
+class IScooterTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -404,7 +443,7 @@ class IScooterTile(Interface):
         required=False,
     )
 
-class ISkeeterTile(Interface):
+class ISkeeterTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -510,7 +549,7 @@ class IStatlerTile(Interface):
     )
 
 
-class IYouTubeTile(Interface):
+class IYouTubeTile(IBorderTile):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -529,25 +568,7 @@ class IYouTubeTile(Interface):
         default=u"16:9",
     )
 
-
-class IDropdownAccordionRowSchema(Interface):
-
-    title = schema.TextLine(
-        title=_(u"Title"),
-        required=False
-    )
-
-    description = schema.TextLine(
-        title=_(u"Description"),
-        required=False
-    )
-
-    text = RichText(
-        title=_(u'Text'),
-        required=False,
-    )
-
-class IDropdownAccordionTile(Interface):
+class IDropdownAccordionTile(IBorderTile):
 
     form.widget(value=DataGridFieldFactory)
 

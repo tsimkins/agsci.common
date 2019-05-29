@@ -6,8 +6,9 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="my-3"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 
     <div class="container">
         <div class="row">
@@ -24,35 +25,35 @@
 
             <tal:items
                 tal:repeat="i view/items|nothing">
-       
+
                 <a tal:attributes="href i/getURL|nothing"
                    class="card card-visual">
-    
+
                     <div class="card-image-top">
                         <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
-    
+
                         <img tal:condition="i/hasLeadImage|nothing"
-                                tal:attributes="src string:${i/getURL}/@@images/image/large" 
-                                alt="" 
-                                title="" 
+                                tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                alt=""
+                                title=""
                                 class="w-100" />
 
                         <img tal:condition="not: i/hasLeadImage|nothing"
-                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg" 
-                                alt="" 
-                                title="" 
+                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg"
+                                alt=""
+                                title=""
                                 class="w-100" />
 
                         <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
                             <h3 class="card-title"
                                 tal:content="i/Title|nothing">
-    
+
                         </div>
 
                     </div>
-    
+
                     <div class="card-body">
-                        <div class="card-text">                    
+                        <div class="card-text">
                             <p tal:content="i/Description|nothing" />
                         </div>
                     </div>

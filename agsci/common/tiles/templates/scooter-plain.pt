@@ -6,8 +6,9 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="container my-3"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 	
     <h2 class="mt-0"
         tal:content="view/data/title|nothing" />

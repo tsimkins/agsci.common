@@ -6,8 +6,9 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="profile-section container-fluid py-5"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 
     <div class="container"
          tal:define="i view/featured|nothing"
