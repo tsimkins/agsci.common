@@ -32,7 +32,7 @@ class BaseTile(PersistentTile):
     __section_class__ = ''
     __border_top__ = __border_bottom__ = False
 
-    pt = pb = my = 5
+    pt = pb = mt = mb = 5
 
     def set_data(self, data):
         self._Tile__cachedData = data
@@ -80,6 +80,14 @@ class BaseTile(PersistentTile):
     klass = 'base-tile'
 
     @property
+    def border_top(self):
+        return toBool(self.get_valid_value('border_top')) or self.__border_top__
+
+    @property
+    def border_bottom(self):
+        return toBool(self.get_valid_value('border_bottom')) or self.__border_bottom__
+
+    @property
     def section_class(self):
 
         _ = []
@@ -88,18 +96,19 @@ class BaseTile(PersistentTile):
             _.extend(self.__section_class__.split())
 
         if self.is_border:
-            border_top = toBool(self.get_valid_value('border_top'))
-            border_bottom = toBool(self.get_valid_value('border_bottom'))
 
-            _.append('my-%d' % self.my)
+            _.extend([
+                'mt-%d' % self.mt,
+                'mb-%d' % self.mb,
+            ])
 
-            if border_top or self.__border_top__:
+            if self.border_top:
                 _.extend([
                     'pt-%d' % self.pt,
                     'border-top',
                 ])
 
-            if border_bottom or self.__border_bottom__:
+            if self.border_bottom:
                 _.extend([
                     'pb-%d' % self.pb,
                     'border-bottom',
