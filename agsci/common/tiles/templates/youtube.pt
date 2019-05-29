@@ -6,16 +6,14 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="container"
-         tal:define="iframe_url view/iframe_url|nothing"
+<section tal:define="iframe_url view/iframe_url|nothing"
          tal:condition="not:iframe_url"
          tal:attributes="class view/section_class|nothing;
                          data-tile-type view/tile_type|nothing">
     <p>No valid video.</p>
 </section>
 
-<section class="container"
-         tal:define="iframe_url view/iframe_url|nothing"
+<section tal:define="iframe_url view/iframe_url|nothing"
          tal:condition="iframe_url"
          tal:attributes="class view/section_class|nothing;
                          data-tile-type view/tile_type|nothing">

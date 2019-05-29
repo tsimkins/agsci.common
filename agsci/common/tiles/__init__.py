@@ -413,6 +413,7 @@ class StatlerTile(CTATile):
 
 class YouTubeTile(BaseTile):
     __type__ = "YouTube"
+    __section_class__ = 'container'
 
     @property
     def video_id(self):
@@ -468,6 +469,7 @@ class YouTubeTile(BaseTile):
 
 class DropdownAccordionTile(BaseTile):
     __type__ = "Dropdown Accordion"
+    __section_class__ = 'container'
 
     @property
     def row_class(self):
