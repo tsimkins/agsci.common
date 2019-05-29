@@ -7,7 +7,8 @@
   <body>
 
 <section class="container-fluid py-5 border-bottom"
-    tal:attributes="data-tile-type view/tile_type|nothing">
+         data-container-width="full"
+         tal:attributes="data-tile-type view/tile_type|nothing">
 
     <div class="container">
 
