@@ -8,8 +8,23 @@
     <property name="link_target" />
     <property name="immediate_view">view</property>
     <property name="global_allow">True</property>
-    <property name="filter_content_types">False</property>
-    <property name="allowed_content_types" />
+    <property name="filter_content_types">True</property>
+    <property name="allowed_content_types" purge="False">
+        <element value="Collection"/>
+        <element value="Document"/>
+        <element value="Event"/>
+        <element value="File"/>
+        <element value="Folder"/>
+        <element value="Image"/>
+        <element value="Link"/>
+        <element value="News_Item"/>
+        <element value="agsci_degree_container"/>
+        <element value="agsci_homepage"/>
+        <element value="agsci_major"/>
+        <element value="agsci_photofolder"/>
+        <element value="agsci_section"/>
+        <element value="agsci_subsite"/>
+    </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">listing_view</property>
     <property name="view_methods">
