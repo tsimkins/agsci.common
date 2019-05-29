@@ -88,17 +88,17 @@ class BaseTile(PersistentTile):
             border_top = toBool(self.get_valid_value('border_top'))
             border_bottom = toBool(self.get_valid_value('border_bottom'))
 
-            _.append('my-4')
+            _.append('my-5')
 
             if border_top or self.__border_top__:
                 _.extend([
-                    'pt-4',
+                    'pt-5',
                     'border-top',
                 ])
 
             if border_bottom or self.__border_bottom__:
                 _.extend([
-                    'pb-4',
+                    'pb-5',
                     'border-bottom',
                 ])
 
