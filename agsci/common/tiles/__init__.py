@@ -32,6 +32,8 @@ class BaseTile(PersistentTile):
     __section_class__ = ''
     __border_top__ = __border_bottom__ = False
 
+    pt = pb = my = 5
+
     def set_data(self, data):
         self._Tile__cachedData = data
 
@@ -82,23 +84,24 @@ class BaseTile(PersistentTile):
 
         _ = []
 
-        _.extend(self.__section_class__.split())
+        if isinstance(self.__section_class__, (str, unicode)):
+            _.extend(self.__section_class__.split())
 
         if self.is_border:
             border_top = toBool(self.get_valid_value('border_top'))
             border_bottom = toBool(self.get_valid_value('border_bottom'))
 
-            _.append('my-5')
+            _.append('my-%d' % self.my)
 
             if border_top or self.__border_top__:
                 _.extend([
-                    'pt-5',
+                    'pt-%d' % self.pt,
                     'border-top',
                 ])
 
             if border_bottom or self.__border_bottom__:
                 _.extend([
-                    'pb-5',
+                    'pb-%d' % self.pb,
                     'border-bottom',
                 ])
 
@@ -247,6 +250,13 @@ class MissPiggyTile(BaseTile):
 class FozzieBearTile(ConditionalTemplateTile):
     __type__ = "Fozzie Bear"
     __full_width__ = False
+
+    pb = 3
+
+    @property
+    def __section_class__(self):
+        if self.style in ('light,'):
+            return 'px-0'
 
     @property
     def template(self):

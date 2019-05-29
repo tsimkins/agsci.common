@@ -7,9 +7,9 @@
   <body>
 
 <section 
-    class="container-fluid px-0 my-5 pb-3 border-bottom"
     data-container-width="full"
-    tal:attributes="data-tile-type view/tile_type|nothing">
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 
     <div class="container">
 

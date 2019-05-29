@@ -23,7 +23,8 @@
                                  child_id string:${uuid}_child;
                                  button_id string:${uuid}_button">
     
-                    <h3 tal:content="title"
+                    <h3 class="mt-0"
+                        tal:content="title"
                         tal:condition="title">
     
                     <button class="btn btn-large btn-creek"

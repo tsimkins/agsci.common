@@ -320,7 +320,7 @@ class IMissPiggyTile(IBorderTile):
         required=False,
     )
 
-class IFozzieBearTile(Interface):
+class IFozzieBearTile(IBorderTile):
 
     form.widget(value=DataGridFieldFactory)
 
