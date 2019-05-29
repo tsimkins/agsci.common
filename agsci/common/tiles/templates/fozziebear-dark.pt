@@ -6,40 +6,37 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="bg-slate text-white"
+<section class="bg-slate text-white container-fluid px-0 pt-5 pb-3"
     data-container-width="full"
     tal:attributes="data-tile-type view/tile_type|nothing">
 
-    <div class="container-fluid px-0 pt-5 pb-3">
+    <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights text-center mx-0">
 
-        <div class="card-deck card-deck-4up card-deck-portable-highlights text-center justify-content-center mx-0">
+        <tal:items tal:repeat="item view/values|nothing">
 
-            <tal:items tal:repeat="item view/values|nothing">
+            <div class="card card-portable-highlight reveal">
 
-                <div class="card card-portable-highlight reveal">
+                <div class="card-body d-flex flex-column justify-content-center align-items-center">
 
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                    <p>
+                        <span tal:replace="item/pre|nothing"
+                                tal:condition="item/pre|nothing" />
 
-                        <p>
-                            <span tal:replace="item/pre|nothing"
-                                  tal:condition="item/pre|nothing" />
+                        <span tal:content="item/value|nothing"
+                                tal:condition="item/value|nothing" />
 
-                            <span tal:content="item/value|nothing"
-                                  tal:condition="item/value|nothing" />
-
-                            <span tal:replace="item/label|nothing"
-                                  tal:condition="item/label|nothing" />
-                        </p>
-
-                    </div>
+                        <span tal:replace="item/label|nothing"
+                                tal:condition="item/label|nothing" />
+                    </p>
 
                 </div>
 
-            </tal:items>
+            </div>
 
-        </div>
+        </tal:items>
 
     </div>
+
 </section>
 
 

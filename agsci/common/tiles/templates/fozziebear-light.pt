@@ -6,40 +6,42 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="container-fluid py-5 border-bottom"
-         data-container-width="full"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+<section 
+    class="container-fluid px-0 my-5 pb-3 border-bottom"
+    data-container-width="full"
+    tal:attributes="data-tile-type view/tile_type|nothing">
 
     <div class="container">
 
-        <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights">
-
+        <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights text-center mx-0">
+    
             <tal:items tal:repeat="item view/values|nothing">
-
+    
                 <div class="card card-portable-highlight reveal">
-
+    
                 	<div class="card-body">
-
+    
                         <p>
                             <span tal:replace="item/pre|nothing"
-                                  tal:condition="item/pre|nothing" />
-
+                                    tal:condition="item/pre|nothing" />
+    
                             <span tal:content="item/value|nothing"
-                                  tal:condition="item/value|nothing" />
-
+                                    tal:condition="item/value|nothing" />
+    
                             <span tal:replace="item/label|nothing"
-                                  tal:condition="item/label|nothing" />
+                                    tal:condition="item/label|nothing" />
                         </p>
-
+    
                 	</div>
-
+    
                 </div>
-
+    
             </tal:items>
-
+    
     	</div>
 
     </div>
+
 </section>
 
   </body>

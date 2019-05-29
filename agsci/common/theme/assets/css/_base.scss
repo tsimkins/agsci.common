@@ -20,7 +20,8 @@
 
 .mosaic-grid-row {
 
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 
     .mosaic-grid-cell {
         padding: 0;
@@ -71,61 +72,6 @@
             font-size: 64px;
         }
 
-        .test-tile {
-
-            margin: 1em 0;
-            padding: 1em;
-            background-color: #4A7729;
-
-            h2, p {
-                color: #FFFFFF;
-            }
-
-            ul {
-                display: block;
-                list-style-type: none;
-                padding: 0;
-                margin: 0;
-                text-align: center;
-
-                li {
-                    margin: 2em auto;
-                    display: block;
-
-                    div.outer {
-
-                        background-color: #1e407c;
-                        color: white;
-                        padding: 1em;
-                        min-height: 15em;
-                        position: relative;
-                        text-align: center;
-
-                        div.inner {
-
-                            position: absolute;
-                            top: 50%;
-                            left: 0;
-                            right: 0;
-
-                            transform: translateY(-50%);
-                            margin: 0 auto;
-
-                            .title, .description {
-                                text-align: center;
-                                display: block;
-                                font-size: 2em;
-                            }
-
-                            .title {
-                                font-size: 4em;
-                                font-weight: bold;
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 

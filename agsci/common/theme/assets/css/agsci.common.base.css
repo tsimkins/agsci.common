@@ -1,5 +1,6 @@
 .mosaic-grid-row {
-  margin: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
   .mosaic-grid-row .mosaic-grid-cell {
     padding: 0; }
   .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
@@ -27,42 +28,6 @@
   .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
     border-bottom: none;
     font-size: 64px; }
-  .mosaic-grid-row .mosaic-tile-content .test-tile {
-    margin: 1em 0;
-    padding: 1em;
-    background-color: #4A7729; }
-    .mosaic-grid-row .mosaic-tile-content .test-tile h2, .mosaic-grid-row .mosaic-tile-content .test-tile p {
-      color: #FFFFFF; }
-    .mosaic-grid-row .mosaic-tile-content .test-tile ul {
-      display: block;
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      text-align: center; }
-      .mosaic-grid-row .mosaic-tile-content .test-tile ul li {
-        margin: 2em auto;
-        display: block; }
-        .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer {
-          background-color: #1e407c;
-          color: white;
-          padding: 1em;
-          min-height: 15em;
-          position: relative;
-          text-align: center; }
-          .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            margin: 0 auto; }
-            .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .title, .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .description {
-              text-align: center;
-              display: block;
-              font-size: 2em; }
-            .mosaic-grid-row .mosaic-tile-content .test-tile ul li div.outer div.inner .title {
-              font-size: 4em;
-              font-weight: bold; }
 
 .visualClear {
   clear: both !important; }
