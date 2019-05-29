@@ -243,7 +243,6 @@ class KermitTile(BaseTile):
 
 class MissPiggyTile(BaseTile):
     __type__ = "Miss Piggy"
-    __section_class__ = 'container-fluid'
 
 class FozzieBearTile(ConditionalTemplateTile):
     __type__ = "Fozzie Bear"
@@ -271,7 +270,6 @@ class RowlfTile(BaseTile):
 
 class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
-    __section_class__ = 'container'
 
     @property
     def template(self):
@@ -279,7 +277,6 @@ class ScooterTile(ConditionalTemplateTile):
 
 class SkeeterTile(ConditionalTemplateTile):
     __type__ = "Skeeter"
-    __section_class__ = 'container-fluid'
 
     @property
     def max_items(self):
@@ -413,7 +410,6 @@ class StatlerTile(CTATile):
 
 class YouTubeTile(BaseTile):
     __type__ = "YouTube"
-    __section_class__ = 'container'
 
     @property
     def video_id(self):
@@ -469,7 +465,6 @@ class YouTubeTile(BaseTile):
 
 class DropdownAccordionTile(BaseTile):
     __type__ = "Dropdown Accordion"
-    __section_class__ = 'container'
 
     @property
     def row_class(self):

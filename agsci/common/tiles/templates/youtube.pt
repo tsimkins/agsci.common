@@ -10,7 +10,11 @@
          tal:condition="not:iframe_url"
          tal:attributes="class view/section_class|nothing;
                          data-tile-type view/tile_type|nothing">
-    <p>No valid video.</p>
+
+    <div class="container">
+        <p>No valid video.</p>
+    </div>
+    
 </section>
 
 <section tal:define="iframe_url view/iframe_url|nothing"
@@ -18,20 +22,24 @@
          tal:attributes="class view/section_class|nothing;
                          data-tile-type view/tile_type|nothing">
 
-    <h2 class="mt-0"
-        tal:condition="view/data/title|nothing"
-        tal:content="view/data/title" />
+    <div class="container">
 
-    <div class="col-12 col-lg-10 offset-lg-1">
-
-        <div
-            tal:attributes="class view/wrapper_klass|nothing">
-
-            <iframe
-                tal:attributes="src iframe_url" />
+        <h2 class="mt-0"
+            tal:condition="view/data/title|nothing"
+            tal:content="view/data/title" />
+    
+        <div class="col-12 col-lg-10 offset-lg-1">
+    
+            <div
+                tal:attributes="class view/wrapper_klass|nothing">
+    
+                <iframe
+                    tal:attributes="src iframe_url" />
+            </div>
         </div>
-    </div>
 
+    </div>
+    
 </section>
 
 

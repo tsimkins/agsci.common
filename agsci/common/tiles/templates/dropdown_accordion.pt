@@ -10,90 +10,91 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing;">
 
-    <div class="row">
-        <div class="col">
-            <div class="accordion accordion-options"
-                 tal:attributes="id parent_id"
-                 tal:define="show_images view/data/show_images|nothing;
-                             title view/data/title|nothing;
-                             label view/data/label|nothing;
-                             uuid view/uuid|nothing;
-                             parent_id string:${uuid}_parent;
-                             child_id string:${uuid}_child;
-                             button_id string:${uuid}_button">
-
-                <h3 tal:content="title"
-                    tal:condition="title">
-
-                <button class="btn btn-large btn-creek"
-                        type="button"
-                        data-toggle="collapse"
-                        aria-expanded="false"
-                        aria-controls="collapseOne"
-                        tal:content="label"
-                        tal:attributes="id button_id;
-                                        data-target string:#${child_id}" />
-
-                <div class="text-left container-text collapse"
-                     tal:attributes="id child_id;
-                                     aria-labelledby button_id;
-                                     data-parent string:#${parent_id};">
-
-                    <div class="container mb-1 px-0 py-3">
-
-                        <tal:row tal:repeat="i view/values|nothing">
-
-                            <!-- ROW -->
-                            <div class="row option-block mx-0 border-top py-5 html"
-                                 tal:define="_title i/title|nothing;
-                                             _description i/description|nothing;
-                                             _text i/text/output|nothing;
-                                             _serial repeat/i/index;
-                                             _img_src python:view.get_img_src(_serial);">
-
-                                <div class="col-6 col-md-3 offset-xl-1 mb-3 mb-md-0"
-                                     tal:condition="show_images">
-
-                                    <img tal:attributes="src _img_src"
-                                            tal:condition="_img_src"
-                                            alt="" class="w-100" />
-
-                                </div>
-
-                                <div tal:attributes="class view/row_class|nothing">
-
-                                    <h3 class="mt-0"
-                                        tal:content="_title" />
-
-                                    <p tal:condition="_description"
-                                       tal:content="_description" />
-
-                                    <div class="container">
-                                        <div class="row">
-
-                                            <div class="col-12 col-md-6 mb-3"
-                                                 tal:content="structure _text" />
-
-                                        </div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="accordion accordion-options"
+                     tal:attributes="id parent_id"
+                     tal:define="show_images view/data/show_images|nothing;
+                                 title view/data/title|nothing;
+                                 label view/data/label|nothing;
+                                 uuid view/uuid|nothing;
+                                 parent_id string:${uuid}_parent;
+                                 child_id string:${uuid}_child;
+                                 button_id string:${uuid}_button">
+    
+                    <h3 tal:content="title"
+                        tal:condition="title">
+    
+                    <button class="btn btn-large btn-creek"
+                            type="button"
+                            data-toggle="collapse"
+                            aria-expanded="false"
+                            aria-controls="collapseOne"
+                            tal:content="label"
+                            tal:attributes="id button_id;
+                                            data-target string:#${child_id}" />
+    
+                    <div class="text-left container-text collapse"
+                         tal:attributes="id child_id;
+                                         aria-labelledby button_id;
+                                         data-parent string:#${parent_id};">
+    
+                        <div class="container mb-1 px-0 py-3">
+    
+                            <tal:row tal:repeat="i view/values|nothing">
+    
+                                <!-- ROW -->
+                                <div class="row option-block mx-0 border-top py-5 html"
+                                     tal:define="_title i/title|nothing;
+                                                 _description i/description|nothing;
+                                                 _text i/text/output|nothing;
+                                                 _serial repeat/i/index;
+                                                 _img_src python:view.get_img_src(_serial);">
+    
+                                    <div class="col-6 col-md-3 offset-xl-1 mb-3 mb-md-0"
+                                         tal:condition="show_images">
+    
+                                        <img tal:attributes="src _img_src"
+                                                tal:condition="_img_src"
+                                                alt="" class="w-100" />
+    
                                     </div>
-
+    
+                                    <div tal:attributes="class view/row_class|nothing">
+    
+                                        <h3 class="mt-0"
+                                            tal:content="_title" />
+    
+                                        <p tal:condition="_description"
+                                           tal:content="_description" />
+    
+                                        <div class="container">
+                                            <div class="row">
+    
+                                                <div class="col-12 col-md-6 mb-3"
+                                                     tal:content="structure _text" />
+    
+                                            </div>
+    
+                                        </div>
+    
+                                    </div>
+    
                                 </div>
-
-                            </div>
-
-                        </tal:row>
-
+    
+                            </tal:row>
+    
+                        </div>
+    
                     </div>
-
+    
                 </div>
-
+    
             </div>
-
+    
         </div>
-
     </div>
-
 </section>
 
 

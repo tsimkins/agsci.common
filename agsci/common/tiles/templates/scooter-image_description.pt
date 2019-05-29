@@ -11,15 +11,9 @@
                     data-tile-type view/tile_type|nothing">
 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="mt-0"
-                    tal:content="view/data/title|nothing" />
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
+        <h2 class="mt-0"
+            tal:content="view/data/title|nothing" />
 
         <div tal:attributes="class string:card-deck card-deck-${view/data/count}up agsci-visual-cards">
 

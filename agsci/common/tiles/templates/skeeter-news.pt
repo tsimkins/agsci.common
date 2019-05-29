@@ -10,7 +10,7 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
-    <div class="container-fluid position-relative m-0"
+    <div class="position-relative m-0"
          tal:define="feature view/featured|nothing">
 
         <div class="container">
