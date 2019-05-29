@@ -289,6 +289,7 @@ class RowlfTile(BaseTile):
 
 class ScooterTile(ConditionalTemplateTile):
     __type__ = "Scooter"
+    pb = 3
 
     @property
     def template(self):
