@@ -14,9 +14,9 @@
 
 </section>
 
-<section class="container-fluid position-relative px-3 my-2 jumbotron-short-title">
+<section class="container-fluid position-relative px-3 my-2 jumbotron-short-title border-bottom">
     <div class="container px-0">
-        <div class="row py-1 py-lg-3 mx-0 border-bottom">
+        <div class="row py-1 py-lg-3 mx-0">
             <div class="col-12 px-0 col-lg-10">
     
                 <div id="portal-breadcrumbs"
