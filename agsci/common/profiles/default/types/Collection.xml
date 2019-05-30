@@ -39,6 +39,7 @@
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
         <element value="agsci.common.content.behaviors.ICollectionFields" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
+        <element value="plone.layoutaware"/>
     </property>
     <property name="schema" />
     <property name="model_source" />
