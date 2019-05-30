@@ -13,6 +13,7 @@
     <object name="agsci_directory" meta_type="Dexterity FTI" />
     <object name="agsci_directory_classification" meta_type="Dexterity FTI" />
     <object name="agsci_major" meta_type="Dexterity FTI" />
+    <object name="agsci_minor" meta_type="Dexterity FTI" />
     <object name="agsci_person" meta_type="Dexterity FTI" />
     <object name="Collection" meta_type="Dexterity FTI" />
     <object name="Document" meta_type="Dexterity FTI" />

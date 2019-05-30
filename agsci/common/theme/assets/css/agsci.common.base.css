@@ -5,16 +5,6 @@
     padding: 0; }
   .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
     margin-top: 0.5rem !important; }
-  .mosaic-grid-row .mosaic-tile-content section[data-tile-type]:hover:before {
-    content: attr(data-tile-type);
-    position: absolute;
-    color: #FFFFFF;
-    background-color: #000000;
-    font-size: 0.875em;
-    margin: 0 0.25em;
-    padding: 0.375em;
-    font-family: Arial, sans-serif;
-    z-index: 1; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
     color: #ffffff;
     background-color: transparent; }
@@ -43,20 +33,48 @@
   margin: 1em 0;
   color: #575757; }
 
-body.mosaic-layout-customized {
+body.mosaic-layout-customized,
+body.template-edit.mosaic-enabled {
   padding-top: 25px; }
   body.mosaic-layout-customized #portal-top,
   body.mosaic-layout-customized #portal-mainnavigation,
   body.mosaic-layout-customized #portal-breadcrumbs,
-  body.mosaic-layout-customized .mosaic-blur {
+  body.mosaic-layout-customized .mosaic-blur,
+  body.template-edit.mosaic-enabled #portal-top,
+  body.template-edit.mosaic-enabled #portal-mainnavigation,
+  body.template-edit.mosaic-enabled #portal-breadcrumbs,
+  body.template-edit.mosaic-enabled .mosaic-blur {
     display: none; }
-  body.mosaic-layout-customized #portal-column-content, body.mosaic-layout-customized main {
+  body.mosaic-layout-customized #portal-column-content, body.mosaic-layout-customized main,
+  body.template-edit.mosaic-enabled #portal-column-content,
+  body.template-edit.mosaic-enabled main {
     margin: 1em 20%; }
+  body.mosaic-layout-customized section[data-tile-type]:before,
+  body.template-edit.mosaic-enabled section[data-tile-type]:before {
+    content: attr(data-tile-type);
+    position: absolute;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-size: 0.875em;
+    margin: 0 0.25em;
+    padding: 0.375em;
+    font-family: Arial, sans-serif;
+    z-index: 1; }
 
 body.userrole-authenticated header {
   z-index: 1000; }
 body.userrole-authenticated footer {
   z-index: 0; }
+body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:before {
+  content: attr(data-tile-type);
+  position: absolute;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-size: 0.875em;
+  margin: 0 0.25em;
+  padding: 0.375em;
+  font-family: Arial, sans-serif;
+  z-index: 1; }
 
 #faceted-form {
   padding-top: 0; }

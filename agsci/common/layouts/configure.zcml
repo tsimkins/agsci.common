@@ -10,4 +10,10 @@
         type="contentlayout"
         />
 
+    <plone:static
+        directory="minors"
+        name="minors"
+        type="contentlayout"
+        />
+
 </configure>
