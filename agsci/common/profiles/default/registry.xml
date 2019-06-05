@@ -215,7 +215,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_kermit"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.kermit</value>
-        <value key="label">Kermit</value>
+        <value key="label">Feature (Image with CTAs)</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -229,7 +229,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_misspiggy"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.misspiggy</value>
-        <value key="label">Miss Piggy</value>
+        <value key="label">Feature (Callout with Image)</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -243,7 +243,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_fozziebear"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.fozziebear</value>
-        <value key="label">Fozzie Bear</value>
+        <value key="label">Statistic Highlights</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -257,7 +257,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_gonzo"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.gonzo</value>
-        <value key="label">Gonzo</value>
+        <value key="label">Feature (Card)</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -271,7 +271,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_rowlf"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.rowlf</value>
-        <value key="label">Rowlf</value>
+        <value key="label">Marketing Vignette</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -285,7 +285,7 @@
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_scooter"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.scooter</value>
-        <value key="label">Scooter</value>
+        <value key="label">Navigation (Card)</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>

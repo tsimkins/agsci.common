@@ -26,7 +26,6 @@ from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(PersistentTile):
 
-    __type__ = "Base Tile"
     __full_width__ = False
 
     __section_class__ = ''
@@ -128,7 +127,12 @@ class BaseTile(PersistentTile):
 
     @property
     def tile_type(self):
-        return self.__type__
+        try:
+            _ = ITileDataManager(self)
+        except:
+            return 'Error'
+        else:
+            return _.tileType.title
 
     def can_edit(self):
         if api.user.is_anonymous():
@@ -221,7 +225,6 @@ class ConditionalTemplateTile(BaseTile):
 
 class JumbotronTile(BaseTile):
 
-    __type__ = "Jumbotron"
     __full_width__ = True
 
     def breadcrumbs(self):
@@ -231,13 +234,12 @@ class JumbotronTile(BaseTile):
         return viewlet.render()
 
 class ShortJumbotronTile(JumbotronTile):
-    __type__ = "Short Jumbotron"
+    pass
 
 class CalloutBlockTile(BaseTile):
-    __type__ = "Callout Block"
+    pass
 
 class CTATile(BaseTile):
-    __type__ = "Call To Action (Buttons)"
     __full_width__ = True
 
     @property
@@ -247,17 +249,15 @@ class CTATile(BaseTile):
         return ''
 
 class LargeCTATile(BaseTile):
-    __type__ = "Large CTA"
     __full_width__ = True
 
 class KermitTile(BaseTile):
-    __type__ = "Kermit"
+    pass
 
 class MissPiggyTile(BaseTile):
-    __type__ = "Miss Piggy"
+    pass
 
 class FozzieBearTile(ConditionalTemplateTile):
-    __type__ = "Fozzie Bear"
     __full_width__ = False
 
     pb = 3
@@ -272,7 +272,6 @@ class FozzieBearTile(ConditionalTemplateTile):
         return 'fozziebear-%s.pt' % self.style
 
 class GonzoTile(ConditionalTemplateTile):
-    __type__ = "Gonzo"
 
     @property
     def align(self):
@@ -283,12 +282,10 @@ class GonzoTile(ConditionalTemplateTile):
         return 'gonzo-%s.pt' % self.align
 
 class RowlfTile(BaseTile):
-    __type__ = "Rowlf"
     __section_class = 'journey-preview'
     __border_top__ = __border_bottom__ = True
 
 class ScooterTile(ConditionalTemplateTile):
-    __type__ = "Scooter"
     pb = 3
 
     @property
@@ -296,7 +293,6 @@ class ScooterTile(ConditionalTemplateTile):
         return 'scooter-%s.pt' % self.style
 
 class SkeeterTile(ConditionalTemplateTile):
-    __type__ = "Skeeter"
 
     @property
     def max_items(self):
@@ -373,7 +369,6 @@ class SkeeterTile(ConditionalTemplateTile):
         return 'skeeter-%s.pt' % self.style
 
 class AnimalTile(BaseTile):
-    __type__ = "Person"
 
     @property
     def klass(self):
@@ -399,14 +394,12 @@ class AnimalTile(BaseTile):
         return [x.getObject() for x in results]
 
 class PepeTheKingPrawnTile(GonzoTile):
-    __type__ = "Pepe the King Prawn"
 
     @property
     def template(self):
         return 'pepe_the_king_prawn-%s.pt' % self.align
 
 class RizzoTheRatTile(BaseTile):
-    __type__ = "Office Address"
 
     @property
     def adapted(self):
@@ -425,11 +418,9 @@ class RizzoTheRatTile(BaseTile):
 
 class StatlerTile(CTATile):
     __full__width = False
-    __type__ = "Call To Action (Blocks)"
 
 
 class YouTubeTile(BaseTile):
-    __type__ = "YouTube"
 
     @property
     def video_id(self):
@@ -484,7 +475,6 @@ class YouTubeTile(BaseTile):
             return "https://www.youtube.com/embed/%s" % video_id
 
 class DropdownAccordionTile(BaseTile):
-    __type__ = "Dropdown Accordion"
 
     @property
     def row_class(self):
@@ -498,7 +488,6 @@ class DropdownAccordionTile(BaseTile):
         return ploneify(self.data['label'])
 
 class ExploreMoreTile(BaseTile):
-    __type__ = "Explore More"
     __full_width__ = True
 
 class NavigationTile(_NavigationTile):
@@ -546,7 +535,6 @@ class NavigationTile(_NavigationTile):
         )
 
 class SocialMediaTile(BaseTile):
-    __type__ = "Social Media"
 
     def get_icon_class(self, _):
 
@@ -574,4 +562,4 @@ class SocialMediaTile(BaseTile):
             return platform.title()
 
 class PortletsTile(BaseTile):
-    __type__ = "Portlets"
+    pass

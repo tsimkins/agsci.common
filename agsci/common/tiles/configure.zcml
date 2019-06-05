@@ -90,7 +90,7 @@
 
     <plone:tile
         name="agsci.common.tiles.kermit"
-        title="Kermit"
+        title="Feature (Image with CTAs)"
         description=""
         schema=".interfaces.IKermitTile"
         class=".KermitTile"
@@ -103,7 +103,7 @@
 
     <plone:tile
         name="agsci.common.tiles.misspiggy"
-        title="Miss Piggy"
+        title="Feature (Callout with Image)"
         description=""
         schema=".interfaces.IMissPiggyTile"
         class=".MissPiggyTile"
@@ -116,7 +116,7 @@
 
     <plone:tile
         name="agsci.common.tiles.fozziebear"
-        title="Fozzie Bear"
+        title="Statistic Highlights"
         description=""
         schema=".interfaces.IFozzieBearTile"
         class=".FozzieBearTile"
@@ -128,7 +128,7 @@
 
     <plone:tile
         name="agsci.common.tiles.gonzo"
-        title="Gonzo"
+        title="Feature (Card)"
         description=""
         schema=".interfaces.IGonzoTile"
         class=".GonzoTile"
@@ -140,7 +140,7 @@
 
     <plone:tile
         name="agsci.common.tiles.rowlf"
-        title="Rowlf"
+        title="Marketing Vignette"
         description=""
         schema=".interfaces.IRowlfTile"
         class=".RowlfTile"
@@ -153,7 +153,7 @@
 
     <plone:tile
         name="agsci.common.tiles.scooter"
-        title="Scooter"
+        title="Navigation (Card)"
         description=""
         schema=".interfaces.IScooterTile"
         class=".ScooterTile"
@@ -291,5 +291,5 @@
         layer=".interfaces.IAgsciTilesLayer"
         for="*"
     />
-        
+
 </configure>
