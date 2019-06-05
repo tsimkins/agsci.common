@@ -17,9 +17,9 @@
 			
 			<div class="col-12 col-lg-7 col-xl-8 px-0 offset-image">
 
-                <img alt=""
-                     class="w-100"
-                     tal:attributes="src view/img_src|nothing" />
+                <img class="w-100"
+                     tal:attributes="src view/img_src|nothing;
+                                     alt view/img_alt|nothing" />" />
 
 			</div>
 			

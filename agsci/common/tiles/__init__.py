@@ -144,8 +144,26 @@ class BaseTile(PersistentTile):
             obj=self.context)
 
     @property
+    def img_alt(self):
+        return self.get_img_alt()
+
+    @property
     def img_src(self):
         return self.get_img_src()
+
+    def get_img_alt(self, serial=None):
+
+        field = 'image_alt'
+
+        if isinstance(serial, int):
+            field = 'image_%d' % serial
+
+        v = self.get_field(field, None)
+
+        if v and isinstance(v, (str, unicode)):
+            return v
+
+        return ''
 
     def get_img_src(self, serial=None):
 

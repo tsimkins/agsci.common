@@ -266,6 +266,11 @@ class IKermitTile(Interface):
         required=False,
     )
 
+    image_alt = schema.TextLine(
+        title=_(u'Image Alt Text'),
+        required=False,
+    )
+
     value = schema.List(
         title=u"Buttons",
         value_type=DictRow(title=u"Button", schema=IButtonBlockTileRowSchema),
@@ -360,6 +365,11 @@ class IGonzoTile(Interface):
         required=False,
     )
 
+    image_alt = schema.TextLine(
+        title=_(u'Image Alt Text'),
+        required=False,
+    )
+
     image_align = schema.Choice(
         title=_(u"Image Align"),
         vocabulary='agsci.common.tiles.lr_align',
@@ -404,6 +414,11 @@ class IRowlfTile(IBorderTile):
     image = NamedBlobImage(
         title=_(u"Image"),
         description=_(u""),
+        required=False,
+    )
+
+    image_alt = schema.TextLine(
+        title=_(u'Image Alt Text'),
         required=False,
     )
 
