@@ -269,7 +269,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 /* Navbar Invalid Links */
 header a.invalid {
   text-decoration: underline;
-  text-decoration-color: red;
+  text-decoration-color: orange;
   text-decoration-style: wavy; }
 
 .print-only-logo {
