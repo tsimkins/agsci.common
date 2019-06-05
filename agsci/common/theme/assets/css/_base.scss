@@ -127,7 +127,7 @@ body.userrole-authenticated {
     footer {
         z-index: 0;
     }
-    
+
     .mosaic-tile-content {
 
         section[data-tile-type]:hover:before {
@@ -406,5 +406,14 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     }
     .list-inline-social {
         margin-top: 0;
+    }
+}
+
+/* Navbar Invalid Links */
+nav {
+    a.invalid {
+        text-decoration: underline;
+        text-decoration-color: red;
+        text-decoration-style: wavy;
     }
 }

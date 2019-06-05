@@ -266,6 +266,12 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .card-vertical .list-inline-social {
   margin-top: 0; }
 
+/* Navbar Invalid Links */
+nav a.invalid {
+  text-decoration: underline;
+  text-decoration-color: red;
+  text-decoration-style: wavy; }
+
 .print-only-logo {
   display: none; }
 

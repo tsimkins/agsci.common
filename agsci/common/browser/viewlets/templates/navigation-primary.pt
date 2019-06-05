@@ -87,8 +87,9 @@
                                             <li class="nav-item section-header">
                                                 <a
                                                     tal:content="string:${l1/title/cdata} Overview"
-                                                    class="nav-link"
-                                                    tal:attributes="href python: view.link(l1)" />
+                                                    tal:define="link_class python: view.link_class(l1)"
+                                                    tal:attributes="href python: view.link(l1);
+                                                                    class string:nav-link ${link_class}" />
                                             </li>
                                         </ul>
 
@@ -108,16 +109,18 @@
                     tal:condition="not: python:view.hidden(l2.title)">
                     <a
                         tal:content="l2/title/cdata"
-                        class="nav-link"
-                        tal:attributes="href python: view.link(l2)" />
+                        tal:define="link_class python: view.link_class(l2)"
+                        tal:attributes="href python: view.link(l2);
+                                        class string:nav-link ${link_class}" />
                 </li>
 
                 <li tal:repeat="l3 l2/items/item|nothing"
                     class="nav-item">
                     <a
                         tal:content="l3/title/cdata"
-                        class="nav-link"
-                        tal:attributes="href python: view.link(l3)" />
+                        tal:define="link_class python: view.link_class(l3)"
+                        tal:attributes="href python: view.link(l3);
+                                        class string:nav-link ${link_class}" />
                 </li>
             </ul>
 
@@ -128,8 +131,8 @@
 
 <div class="cta-block">
     <a tal:repeat="l3 l2/items/item|nothing"
-       tal:attributes="href python: view.link(l3)"
-       class="nav-cta cta d-flex align-items-center">
+       tal:attributes="href python: view.link(l3);
+                       class string:nav-cta cta d-flex align-items-center">
 
         <i
             tal:attributes="class string:fas fa-lg ${l3/icon/cdata} fa-fw" />

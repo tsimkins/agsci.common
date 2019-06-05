@@ -1,3 +1,4 @@
+from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
@@ -30,6 +31,10 @@ class ViewletBase(_ViewletBase):
         normalizer = queryUtility(IIDNormalizer)
         return normalizer.normalize(_)
 
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.context, 'portal_catalog')
+
 class LogoViewlet(ViewletBase):
     pass
 
@@ -38,6 +43,19 @@ class NavigationViewlet(ViewletBase):
     default_url = '/'
 
     xml_file = '++resource++agsci.common/configuration/navigation.xml'
+
+    def get_paths(self):
+        results = self.portal_catalog.searchResults({
+            'object_provides' : 'plone.dexterity.interfaces.IDexterityContent'
+        })
+
+        site_path = "/".join(self.site.getPhysicalPath())
+
+        return dict([(self.normalize_path(x.getPath()[len(site_path):]), True) for x in results])
+
+    def update(self):
+        super(NavigationViewlet, self).update()
+        self.paths = self.get_paths()
 
     def label(self, title=''):
         return "-".join([ploneify(self.nav_id), ploneify(title)])
@@ -67,23 +85,68 @@ class NavigationViewlet(ViewletBase):
 
         return (scheme, domain, path)
 
-    def link(self, item):
+    def link_class(self, item):
+
+        url = self.get_link(item)
+
+        if url:
+            if not self.is_external_link(url):
+
+                if self.is_valid_internal_path(url):
+                    return 'valid'
+
+        return 'invalid'
+
+    def is_valid_internal_path(self, url):
+        path = self.get_internal_path(url)
+        return self.paths.has_key(path)
+
+    def get_link(self, item):
 
         try:
-            url = item.link.cdata
+            return item.link.cdata
         except AttributeError:
-            url = self.default_url
+            pass
 
+    def is_external_link(self, url):
         (scheme, domain, path) = self.parse_url(url)
 
         # If we have a domain, it's external
-        if domain:
-            return url
+        return not not domain
+
+    def normalize_path(self, path):
 
         if path.startswith('/'):
             path = path[1:]
 
+        if path.endswith('/'):
+            path = path[:-1]
+
+        return path
+
+    def get_internal_path(self, url):
+
+        (scheme, domain, path) = self.parse_url(url)
+
+        return self.normalize_path(path)
+
+    def get_internal_url(self, url):
+
+        path = self.get_internal_path(url)
+
         return '%s/%s' % (self.portal_url, path)
+
+    def link(self, item):
+
+        url = self.get_link(item)
+
+        if not url:
+            url = self.default_url
+
+        if self.is_external_link(url):
+            return url
+
+        return self.get_internal_url(url)
 
     @property
     def config(self):

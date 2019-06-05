@@ -28,6 +28,7 @@
                     </item>
                     <item>
                         <title>Industry</title>
+                        <link>industry</link>
                         <items>
                             <item>
                                 <title>Industry Recruitment &amp; Employer Relations</title>
@@ -114,9 +115,11 @@
                         </item>
                         <item>
                             <title>Industry</title>
+                            <link>industry</link>
                         </item>
                         <item>
                             <title>Alumni</title>
+                            <link>alumni</link>
                         </item>
                         <item>
                             <title>Faculty &amp; Staff</title>
@@ -130,6 +133,7 @@
             <!-- Programs Dropdown -->
             <item>
                 <title>Academics</title>
+                <link>academics</link>
                 <image>
                     <src>
                         ++resource++agsci.common/assets/images/navigation/research.jpg
@@ -142,12 +146,15 @@
                     <group>
                         <item>
                             <title>Undergraduate Degrees</title>
+                            <link>academics/undergraduate</link>
                             <items>
                                 <item>
                                     <title>Majors</title>
+                                    <link>academics/undergraduate/majors</link>
                                 </item>
                                 <item>
                                     <title>Minors</title>
+                                    <link>academics/undergraduate/minors</link>
                                 </item>
                                 <item>
                                     <title>Associate Degrees</title>
@@ -170,6 +177,7 @@
                     <group>
                         <item>
                             <title>Graduate Degree Programs</title>
+                            <link>academics/graduate</link>
                             <items>
                                 <item>
                                     <title>Our Graduate Degree Programs</title>
@@ -187,9 +195,11 @@
                         </item>
                         <item>
                             <title>International Programs</title>
+                            <link>academics/international-programs</link>
                         </item>
                         <item>
                             <title>Academic Departments</title>
+                            <link>academics/departments</link>
                         </item>
                     </group>
                     <group>
