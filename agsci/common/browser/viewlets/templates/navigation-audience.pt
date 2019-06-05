@@ -12,36 +12,37 @@
                     <tal:li
                         tal:repeat="l1 nav/item/items/group/item">
 
-                    	<li 
+                    	<li
                     	   class="dropdown"
                     	   tal:define="item_id python:view.label(l1.title.cdata)">
 
-                        	<a tal:attributes="id item_id"
+                        	<a tal:attributes="id item_id;
+                        	                   href python:view.link(l1)"
                         	   tal:content="l1/title/cdata"
-                        	   class="dropdown-toggle" 
-                        	   href="https://google.com" 
-                        	   role="button" 
-                        	   data-toggle="dropdown" 
-                        	   aria-haspopup="true" 
-                        	   data-click-behavior="default" 
+                        	   class="dropdown-toggle"
+                        	   role="button"
+                        	   data-toggle="dropdown"
+                        	   aria-haspopup="true"
+                        	   data-click-behavior="default"
                         	   aria-expanded="false" />
-            
-                    		<div 
+
+                    		<div
                               tal:attributes="aria-labelledby item_id"
                     		  class="dropdown-menu dropdown-menu-right">
-        
+
                 	           	<div class="container px-0">
-        
+
                             		<div class="row justify-content-center">
-                	            
+                	
                                 		<div class="col-12">
                                             <ul class="nav flex-column">
                                 	            <li tal:repeat="link l1/items/item|nothing"
                                 	                class="nav-item">
-                                                    <a class="nav-link"
-                                                        tal:content="link/title/cdata|nothing" 
-                                                        href="" />
-                                                </li>     
+                                                    <a tal:define="link_class python: view.link_class(link)"
+                                                       tal:content="link/title/cdata|nothing"
+                                                       tal:attributes="href python:view.link(link);
+                                                                       class string:nav-link ${link_class}" />
+                                                </li>
                                             </ul>
                                 		</div>
                             		</div>

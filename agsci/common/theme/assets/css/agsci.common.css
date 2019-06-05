@@ -13581,7 +13581,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   margin-top: 0; }
 
 /* Navbar Invalid Links */
-nav a.invalid {
+header a.invalid {
   text-decoration: underline;
   text-decoration-color: red;
   text-decoration-style: wavy; }

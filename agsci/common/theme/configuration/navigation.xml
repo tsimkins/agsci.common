@@ -11,15 +11,19 @@
                         <items>
                             <item>
                                 <title>Academics</title>
+                                <link>academics</link>
                             </item>
                             <item>
                                 <title>Advising</title>
+                                <link>advising</link>
                             </item>
                             <item>
                                 <title>Careers and Internships</title>
+                                <link>careers</link>
                             </item>
                             <item>
                                 <title>Clubs and Organizations</title>
+                                <link>clubs</link>
                             </item>
                             <item>
                                 <title>Student Life</title>
@@ -35,6 +39,7 @@
                             </item>
                             <item>
                                 <title>Student Careers and Internships</title>
+                                <link>careers</link>
                             </item>
                             <item>
                                 <title>Collaborating with the College</title>
@@ -43,6 +48,7 @@
                     </item>
                     <item>
                         <title>Alumni</title>
+                        <link>alumni</link>
                         <items>
             	            <item>
                                 <title>Why We Give</title>
