@@ -13348,7 +13348,8 @@ NEWS & EVENTS
   color: #575757; }
 
 body.mosaic-layout-customized,
-body.template-edit.mosaic-enabled {
+body.template-edit.mosaic-enabled,
+body.show-tile-labels {
   padding-top: 25px; }
   body.mosaic-layout-customized #portal-top,
   body.mosaic-layout-customized #portal-mainnavigation,
@@ -13357,14 +13358,21 @@ body.template-edit.mosaic-enabled {
   body.template-edit.mosaic-enabled #portal-top,
   body.template-edit.mosaic-enabled #portal-mainnavigation,
   body.template-edit.mosaic-enabled #portal-breadcrumbs,
-  body.template-edit.mosaic-enabled .mosaic-blur {
+  body.template-edit.mosaic-enabled .mosaic-blur,
+  body.show-tile-labels #portal-top,
+  body.show-tile-labels #portal-mainnavigation,
+  body.show-tile-labels #portal-breadcrumbs,
+  body.show-tile-labels .mosaic-blur {
     display: none; }
   body.mosaic-layout-customized #portal-column-content, body.mosaic-layout-customized main,
   body.template-edit.mosaic-enabled #portal-column-content,
-  body.template-edit.mosaic-enabled main {
+  body.template-edit.mosaic-enabled main,
+  body.show-tile-labels #portal-column-content,
+  body.show-tile-labels main {
     margin: 1em 20%; }
   body.mosaic-layout-customized section[data-tile-type]:before,
-  body.template-edit.mosaic-enabled section[data-tile-type]:before {
+  body.template-edit.mosaic-enabled section[data-tile-type]:before,
+  body.show-tile-labels section[data-tile-type]:before {
     content: attr(data-tile-type);
     position: absolute;
     color: #FFFFFF;
