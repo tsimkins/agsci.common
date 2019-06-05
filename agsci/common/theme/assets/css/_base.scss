@@ -93,8 +93,7 @@
 }
 
 body.mosaic-layout-customized,
-body.template-edit.mosaic-enabled,
-body.show-tile-labels {
+body.template-edit.mosaic-enabled {
 
     padding-top: 25px;
 
@@ -109,6 +108,12 @@ body.show-tile-labels {
         margin: 1em 20%;
     }
 
+    section[data-tile-type]:before {
+        @include tile_labels();
+    }
+}
+
+body.show-tile-labels {
     section[data-tile-type]:before {
         @include tile_labels();
     }
