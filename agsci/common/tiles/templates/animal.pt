@@ -8,7 +8,7 @@
 
 <section tal:attributes="data-tile-type view/tile_type|nothing">
 
-<div class="container">
+<div class="container" tal:omit-tag="view/is_portlet">
 
     <h2 class="mt-0"
         tal:define="title view/data/title|nothing"

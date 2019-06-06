@@ -1,18 +1,21 @@
 @mixin link_color() {
     a, a:visited,
-    a:active {
+    a:active,
+    .a {
         color: #009cde !important;
         border-bottom: 1px solid #E9E9E9 !important;
         padding-bottom: 0.0625em !important;
     }
 
-    a:hover {
+    a:hover,
+    .a:hover {
         color: #0078ab !important;
         border-bottom: 1px solid #0078ab !important;
     }
 
     a.no-border, a.no-border:visited,
-    a.no-border:active, a.no-border:hover {
+    a.no-border:active, a.no-border:hover,
+    .a.no-border {
         border-bottom: none !important;;
         padding-bottom: 0 !important;
     }
@@ -344,7 +347,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     padding: 25px 0 0 !important;
 }
 
-#content-core,
+#parent-fieldname-text,
 .html {
     @include link_color();
 }
@@ -363,9 +366,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
                 color: #575757;
             }
 
-            .summary a {
+            span.a {
                 font-size: 1.5em;
             }
+
+            @include link_color();
 
             .description {
                 line-height: 1.375;

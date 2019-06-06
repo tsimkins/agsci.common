@@ -13,7 +13,7 @@
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">
-        <div class="entries" metal:define-slot="entries">
+        <section class="entries container px-0" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
             <tal:block tal:define="obj item/getObject;
                 item_url item/getURL;
@@ -29,71 +29,80 @@
                 item_creator item/Creator;
                 item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;
                 item_has_image python:item.getIcon">
-              <metal:block define-slot="entry">
-                <div class="entry mb-5">
-                  <div metal:define-macro="listitem">
-                    <div class="summary" tal:attributes="title item_type">
-                     <a tal:attributes="href item_link">
-                      <img class="image-tile"
-                             tal:condition="item_has_image"
-                             tal:attributes="src  string:$item_url/@@images/image/tile">
-                      </a>
-                      <a tal:attributes="href item_link;
-                                         class string:$item_type_class $item_wf_state_class url;
-                                         title item_type"
-                          tal:content="item_title">
 
-                             Item Title
-                      </a>
-                     </div>
-                    <metal:block metal:define-macro="document_byline">
-                      <div class="documentByLine discreet">
+    <metal:block define-slot="entry">
+
+        <a tal:attributes="href item_link;
+                           class string:card $item_type_class $item_wf_state_class url;
+                           title item_type">
+
+            <div class="entry container mx-0 mb-5">
+
+            	<div class="row align-items-stretch">
+
+            		<div class="col-12 col-md-8 col-lg-7 order-2 order-md-1 mt-0 px-0">
+
+                        <span class="a px-0 summary"
+                                tal:content="item_title" />
+
                         <tal:byline condition="view/show_about">
-                          &mdash;
-                          <tal:name tal:condition="item_creator"
-                              tal:define="author python:view.pas_member.info(item_creator);
-                                          creator_short_form author/username;
-                                          creator_long_form string:?author=${author/username};
-                                          creator_is_openid python:'/' in creator_short_form;
-                                          creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
-                          <span i18n:translate="label_by_author">
-                            by
-                            <a tal:attributes="href string:${view/navigation_root_url}/author/${item_creator}"
-                                tal:content="author/name_or_id"
-                                tal:omit-tag="not:author"
-                                i18n:name="author">
-                              Bob Dobalina
-                            </a>
-                          </span>
-                          </tal:name>
+                            <div class="documentByLine discreet">
+                                &mdash;
+                                <tal:name tal:condition="item_creator"
+                                    tal:define="author python:view.pas_member.info(item_creator);
+                                                creator_short_form author/username;
+                                                creator_long_form string:?author=${author/username};
+                                                creator_is_openid python:'/' in creator_short_form;
+                                                creator_id python:(creator_short_form, creator_long_form)[creator_is_openid];">
+                                <span i18n:translate="label_by_author">
+                                by
+                                <strong tal:attributes="href string:${view/navigation_root_url}/author/${item_creator}"
+                                    tal:content="author/name_or_id"
+                                    tal:omit-tag="not:author"
+                                    i18n:name="author">
+                                    Bob Dobalina
+                                </strong>
+                                </span>
+                                </tal:name>
 
-                          <tal:modified>
-                            &mdash;
-                            <tal:mod i18n:translate="box_last_modified">last modified</tal:mod>
-                            <span tal:replace="python:view.toLocalizedTime(item_modified,long_format=1)">
-                              August 16, 2001 at 23:35:59
-                            </span>
-                          </tal:modified>
+                                <tal:modified>
+                                &mdash;
+                                <tal:mod i18n:translate="box_last_modified">last modified</tal:mod>
+                                <span tal:replace="python:view.toLocalizedTime(item_modified,long_format=1)">
+                                    August 16, 2001 at 23:35:59
+                                </span>
+                                </tal:modified>
 
-                          <metal:description define-slot="description_slot">
-                            <tal:comment replace="nothing">
-                              Place custom listing info for custom types here
-                            </tal:comment>
-                          </metal:description>
+                                <metal:description define-slot="description_slot">
+                                <tal:comment replace="nothing">
+                                    Place custom listing info for custom types here
+                                </tal:comment>
+                                </metal:description>
+                            </div>
                         </tal:byline>
-                      </div>
-                    </metal:block>
-                  </div>
-                  <p class="description"
-                      tal:condition="item_description"
-                      tal:content="item_description">
-                    description
-                  </p>
+
+                        <p class="description my-3"
+                            tal:condition="item_description"
+                            tal:content="item_description">
+                        description
+                        </p>
+
+                    </div>
+
+            		<div class="col-12 col-md-4 col-lg-5 order-1 order-md-2 pl-md-3 pl-0 pr-0 mb-md-0 mb-3">
+                        <img class="w-100"
+                                tal:condition="python: view.show_image and item_has_image"
+                                alt=""
+                                tal:attributes="src  string:$item_url/@@images/image/large" />
+            		</div>
                 </div>
-              </metal:block>
-            </tal:block>
+            </div>
+        </a>
+
+    </metal:block>
+</tal:block>
           </tal:repeat>
-        </div>
+        </section>
 
         <div metal:use-macro="context/batch_macros/macros/navigation" />
 

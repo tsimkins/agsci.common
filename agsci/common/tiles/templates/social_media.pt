@@ -6,30 +6,33 @@
       i18n:domain="agsci.common">
   <body>
 
-<section class="container px-0 p-lg-2"
-         tal:attributes="data-tile-type view/tile_type|nothing">
+<section
+    tal:attributes="data-tile-type view/tile_type|nothing">
 
-    <h2 class="mt-0"
-        tal:condition="view/data/title|nothing"
-        tal:content="view/data/title" />
+    <div class="container px-0 p-lg-2"
+         tal:omit-tag="view/is_portlet">
 
-    <div class="social">
-        <ul class="list-social">
+        <h2 class="mt-0"
+            tal:condition="view/data/title|nothing"
+            tal:content="view/data/title" />
 
-            <tal:social
-                tal:repeat="i view/values">
+        <div class="social">
+            <ul class="list-social">
 
-                <li>
-                    <a tal:attributes="href i/url|nothing">
-                        <em tal:define="icon_class python:view.get_icon_class(i)"
-                            tal:attributes="class string:title fab fa-2x fa-fw ${icon_class}" />
-                        <span tal:content="python: view.get_label(i)" />
-                    </a>
-                </li>
-            </tal:social>
-        </ul>
+                <tal:social
+                    tal:repeat="i view/values">
+
+                    <li>
+                        <a tal:attributes="href i/url|nothing">
+                            <em tal:define="icon_class python:view.get_icon_class(i)"
+                                tal:attributes="class string:title fab fa-2x fa-fw ${icon_class}" />
+                            <span tal:content="python: view.get_label(i)" />
+                        </a>
+                    </li>
+                </tal:social>
+            </ul>
+        </div>
     </div>
-
 </section>
 
   </body>

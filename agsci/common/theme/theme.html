@@ -73,13 +73,23 @@
 
                             <div id="content-container"></div>
 
-                            <div class="col-12 p-0 p-lg-3 col-lg-4 mt-2 order-1 order-lg-12 d-block sticky-sidenav"
+                            <div class="col-12 p-0 p-lg-5 col-lg-4 mt-2 order-1 order-lg-12 d-block sticky-sidenav"
                                  data-component="portlets">
 
                                 <nav id="navigation-portlet-placeholder"></nav>
 
                                 <div id="portal-column-one">Col1</div>
-                                <div id="portal-column-two">Col2</div>
+                                <div class="d-none d-md-none d-lg-block">
+                                    <div id="portal-column-two">Col2</div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-12 p-0 p-lg-5 col-lg-4 mt-2 order-12 d-block d-md-block d-lg-none"
+                                 data-component="portlets">
+
+                                <div id="portal-column-two-mobile">Col2 (Mobile)</div>
 
 
                             </div>
