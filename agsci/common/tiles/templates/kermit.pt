@@ -12,8 +12,8 @@
 	
     <div class="d-block d-lg-flex big-image justify-content-center">
 
-        <img alt=""
-             tal:attributes="src view/img_src|nothing" />
+        <img tal:attributes="src view/img_src|nothing;
+                             alt view/img_alt|nothing" />
 
     </div>
 
@@ -35,7 +35,7 @@
                 <tal:buttons tal:repeat="button view/values|nothing">
 
                     <div class="col-12 col-md-6">
-    
+
                         <a tal:attributes="href button/url;
                                            class string:card card-cta bg-dark-${button/color|nothing} px-0 reveal text-center">
     	
@@ -43,9 +43,9 @@
                         		<p class="h4 mt-0" tal:content="button/title|nothing" />
                         		<div class="btn" tal:content="button/label|nothing" />		
                     		</div>
-    
+
                     	</a>
-    
+
                     </div>
                 </tal:buttons>
         	</div>

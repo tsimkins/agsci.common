@@ -6,7 +6,7 @@
       i18n:domain="agsci.common">
   <body>
 
-<section 
+<section
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 	
@@ -30,11 +30,12 @@
 
                 <tal:row tal:repeat="serial python: range(4)">
 
-                    <img tal:define="img_src python:view.get_img_src(serial);"
+                    <img tal:define="img_src python:view.get_img_src(serial);
+                                     img_alt python:view.get_img_alt(serial);"
                          tal:condition="img_src"
-                         alt=""
                          class="w-100"
-                         tal:attributes="src img_src" />
+                         tal:attributes="src img_src;
+                                         alt img_alt" />
 
                 </tal:row>
 

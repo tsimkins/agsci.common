@@ -297,8 +297,20 @@ class IMissPiggyTile(IBorderTile):
         required=False,
     )
 
+    image_alt_0 = schema.TextLine(
+        title=_(u"Image 1 Alt Text"),
+        description=_(u""),
+        required=False,
+    )
+
     image_1 = NamedBlobImage(
         title=_(u"Image 2"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_alt_1 = schema.TextLine(
+        title=_(u"Image 2 Alt Text"),
         description=_(u""),
         required=False,
     )
@@ -309,8 +321,20 @@ class IMissPiggyTile(IBorderTile):
         required=False,
     )
 
+    image_alt_2 = schema.TextLine(
+        title=_(u"Image 3 Alt Text"),
+        description=_(u""),
+        required=False,
+    )
+
     image_3 = NamedBlobImage(
         title=_(u"Image 4"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_alt_3 = schema.TextLine(
+        title=_(u"Image 4 Alt Text"),
         description=_(u""),
         required=False,
     )
@@ -616,8 +640,20 @@ class IDropdownAccordionTile(IBorderTile):
         required=False,
     )
 
+    image_alt_0 = schema.TextLine(
+        title=_(u"Image 1 Alt Text"),
+        description=_(u""),
+        required=False,
+    )
+
     image_1 = NamedBlobImage(
         title=_(u"Image 2"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_alt_1 = schema.TextLine(
+        title=_(u"Image 2 Alt Text"),
         description=_(u""),
         required=False,
     )
@@ -628,14 +664,32 @@ class IDropdownAccordionTile(IBorderTile):
         required=False,
     )
 
+    image_alt_2 = schema.TextLine(
+        title=_(u"Image 3 Alt Text"),
+        description=_(u""),
+        required=False,
+    )
+
     image_3 = NamedBlobImage(
         title=_(u"Image 4"),
         description=_(u""),
         required=False,
     )
 
+    image_alt_3 = schema.TextLine(
+        title=_(u"Image 4 Alt Text"),
+        description=_(u""),
+        required=False,
+    )
+
     image_4 = NamedBlobImage(
         title=_(u"Image 5"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_alt_5 = schema.TextLine(
+        title=_(u"Image 5 Alt Text"),
         description=_(u""),
         required=False,
     )
