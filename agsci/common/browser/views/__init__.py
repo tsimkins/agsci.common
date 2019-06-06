@@ -20,6 +20,8 @@ except ImportError:
 
 class BaseView(BrowserView):
 
+    image_size = 'large'
+
     @property
     def object_fields(self):
         portal_type = self.context.portal_type
@@ -58,7 +60,7 @@ class BaseView(BrowserView):
 
         return object_factory(**_)
 
-    def getItemLeadImage(self, item=None, size='large'):
+    def item_image(self, item=None, size='large'):
 
         hasLeadImage = False
 
@@ -82,6 +84,10 @@ class BaseView(BrowserView):
             return '%s/@@images/image/%s' % (url, size)
 
         return '%s/@@images/image' % (url,)
+
+    @property
+    def image(self):
+        return self.item_image(size=self.image_size)
 
     @property
     def show_date(self):
@@ -145,11 +151,14 @@ class BaseView(BrowserView):
 
 class DegreeListingView(BaseView):
 
+    image_size = None
+
     def getQuery(self):
         return {'Type' : 'Degree', 'sort_on' : 'sortable_title'}
 
     def getFolderContents(self):
         return self.portal_catalog.queryCatalog(self.getQuery())
+
 
 class DegreeView(BaseView):
 
@@ -167,10 +176,6 @@ class DegreeView(BaseView):
         sorted_fields = sorted(IDegree.namesAndDescriptions(), key=lambda x: sort_order(x[0]))
 
         return [x[1] for x in sorted_fields]
-
-    @property
-    def image(self):
-        return self.getItemLeadImage(size=None)
 
 class DegreeCompareView(DegreeView):
 

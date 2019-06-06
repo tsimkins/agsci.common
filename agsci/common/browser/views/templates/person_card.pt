@@ -1,15 +1,15 @@
 <div tal:attributes="class view/card_class"
-     tal:define="leadimage view/getItemLeadImage|nothing;">
+     tal:define="image view/item_image|nothing;">
 
     <div class="card-body">
 
         <div class="row mx-0">
             <div tal:attributes="class view/card_image_class"
-                 tal:condition="leadimage">
+                 tal:condition="image">
                 <div class="card-img-crop">
                     <img tal:attributes="alt view/name/title|nothing;
                                             title view/name/title|nothing;
-                                            src leadimage"
+                                            src image"
                          class="w-100 photo" />
                 </div>
             </div>

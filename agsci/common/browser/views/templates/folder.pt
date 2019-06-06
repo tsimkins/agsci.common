@@ -30,9 +30,9 @@
                 item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;
                 item_has_image python:item.getIcon">
               <metal:block define-slot="entry">
-                <article class="entry">
-                  <header metal:define-macro="listitem">
-                    <span class="summary" tal:attributes="title item_type">
+                <div class="entry mb-5">
+                  <div metal:define-macro="listitem">
+                    <div class="summary" tal:attributes="title item_type">
                      <a tal:attributes="href item_link">
                       <img class="image-tile"
                              tal:condition="item_has_image"
@@ -45,9 +45,9 @@
 
                              Item Title
                       </a>
-                     </span>
+                     </div>
                     <metal:block metal:define-macro="document_byline">
-                      <div class="documentByLine">
+                      <div class="documentByLine discreet">
                         <tal:byline condition="view/show_about">
                           &mdash;
                           <tal:name tal:condition="item_creator"
@@ -83,13 +83,13 @@
                         </tal:byline>
                       </div>
                     </metal:block>
-                  </header>
-                  <p class="description discreet"
+                  </div>
+                  <p class="description"
                       tal:condition="item_description"
                       tal:content="item_description">
                     description
                   </p>
-                </article>
+                </div>
               </metal:block>
             </tal:block>
           </tal:repeat>

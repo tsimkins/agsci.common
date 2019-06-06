@@ -20,26 +20,26 @@
     <div class="row mx-0 px-0 " style="padding-top: 4rem;">
         <div class="col-12 px-0 d-block d-md-flex justify-content-center c1">
             <!-- Small Screen -->
-    
+
             <tal:item
                  tal:repeat="i view/degrees">
-    
+
             <table class="rtable rtable-mobile-labels d-block d-md-none">
                 <thead class="visual-cards-imgs-cropped">
                     <tr>
                         <th scope="col">
                             <div class="card card-visual card-image-top">
                                 <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
-    
+
                                 <img
-                                    tal:attributes="src python:view.getItemLeadImage(item=i);"
+                                    tal:attributes="src python:view.item_image(item=i);"
                                     alt=""
                                     title=""
                                     class="w-100" />
-    
+
                                 <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
                                     <h3 tal:content="i/Title|nothing" />
-    
+
                                 </div>
                             </div>
                         </th>
@@ -117,10 +117,10 @@
                     </tr>
                 </tbody>
             </table>
-    
+
             </tal:item>
     <!-- ############ -->
-    
+
             <!-- Big Screen -->
             <!-- Standard Table with Scroll -->
             <table class="rtable rtable-mobile-labels d-none d-md-block">
@@ -131,7 +131,7 @@
                         <th scope="col">
                             <div class="card card-visual card-image-top">
                                 <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
-                                    <img tal:attributes="src python:view.getItemLeadImage(item=i);"
+                                    <img tal:attributes="src python:view.item_image(item=i);"
                                          alt=""
                                          title=""
                                          class="w-100" />
@@ -201,8 +201,8 @@
                                         tal:content="j" />
                                 </ul>
                                 <p tal:condition="i/employers/output|nothing">
-                                    <strong>Recent graduates work for:</strong> 
-    
+                                    <strong>Recent graduates work for:</strong>
+
                                     <tal:html
                                         tal:content="structure i/employers/output" />
                                 </p>
@@ -228,22 +228,22 @@
                     <tr>
                         <tal:item
                              tal:repeat="i view/degrees">
-    
+
                         <td class="major-details">
                             <a tal:attributes="href i/absolute_url|nothing"
                                 class="btn btn-creek">View Major Details</a>
                         </td>
-    
+
                         </tal:item>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>        
+    </div>
 </div>
 
         </metal:lightbox>
-    </metal:content-core>    
+    </metal:content-core>
 
 </body>
 </html>

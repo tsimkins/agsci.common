@@ -21,14 +21,14 @@
         <div class="row">
 
             <div class="col-6 col-sm-4 order-sm-12"
-                 tal:define="leadimage view/getItemLeadImage|nothing"
-                 tal:condition="leadimage">
+                 tal:define="image view/item_image|nothing"
+                 tal:condition="image">
 
                 <div class="headshot">
 
                     <img tal:attributes="alt view/name/title|nothing;
                                          title view/name/title|nothing;
-                                         src leadimage"
+                                         src image"
                          class="w-100 photo" />
 
                 </div>

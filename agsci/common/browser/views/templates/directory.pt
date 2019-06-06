@@ -13,29 +13,29 @@
 
     <tal:people
         tal:repeat="context view/people">
-        
+
         <tal:person
             tal:define="person_view python:view.person_view(context);
                         data person_view/data|nothing"
             tal:condition="data">
-        
+
                 <!-- BIO -->
                 <div class="container border-bottom bio">
                     <div class="row"
-                         tal:define="leadimage person_view/getItemLeadImage|nothing"
-                         tal:condition="leadimage">
+                         tal:define="image person_view/item_image|nothing"
+                         tal:condition="image">
                         <div class="col-6 col-sm-4 col-lg-2 pr-lg-0">
                             <div class="headshot card-img-crop">
                                 <img tal:attributes="alt person_view/name/title|nothing;
                                                      title person_view/name/title|nothing;
-                                                     src leadimage"
+                                                     src image"
                                      class="w-100 photo" />
-                            </div>        
+                            </div>
                             <a href="" class="d-none d-sm-block btn btn-sm btn-light-creek-outline mt-2">Full Bio</a>
 
                         </div>
-                    
-                
+
+
                         <div class="col-12 col-sm-8 col-lg-10">
                             <div id="hcard" class="vcard personView">
                                 <h2>
@@ -44,30 +44,30 @@
                                        class="no-border" />
                                 </h2>
                             </div>
-    
+
                             <ul class="title jobTitle"
                                 tal:define="job_titles context/job_titles|nothing"
                                 tal:condition="job_titles">
-        
+
                                 <li tal:repeat="i job_titles"
                                     tal:content="i" />
-        
+
                             </ul>
-    
+
                             <div class="container">
                                 <div class="row">
-                            
+
                                     <div class="col-12 col-lg-6 col-xl-8 pr-0"
                                          tal:define="i data/areas_expertise|nothing"
                                          tal:condition="i/value|nothing">
-    
+
                                         <h3 tal:content="i/title" />
                                         <ul>
                                             <li tal:repeat="j i/value" tal:content="j" />
                                         </ul>
                                     </div>
-                            
-                                    <div class="col-12 col-lg-6 col-xl-4 pl-0">        
+
+                                    <div class="col-12 col-lg-6 col-xl-4 pl-0">
 
                                         <address>
                                         <div>
@@ -84,17 +84,17 @@
                                                     <a tal:attributes="href string:tel:${phone_number}"
                                                        tal:content="phone_number" />
                                                 </li>
-    
+
                                             </ul>
                                         </div>
                                         </address>
-                    
+
                                         <a tal:attributes="href context/absolute_url|nothing"
                                            class="d-inline-block d-sm-none btn btn-light-creek-outline mt-2 ml-3">Full Bio</a>
-                                             
-                                    
+
+
                                     </div>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
         </tal:person>
 
     </tal:people>
-        
+
 </section>
 
 
