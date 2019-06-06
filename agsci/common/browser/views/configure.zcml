@@ -93,6 +93,16 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Default Folder View -->
+    <browser:page
+        for="plone.app.contenttypes.interfaces.IFolder"
+        name="view"
+        class=".FolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/folder.pt"
+    />
+
     <!-- Person View -->
     <browser:page
         for="agsci.common.content.person.person.IPerson"

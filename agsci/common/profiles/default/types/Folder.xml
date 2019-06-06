@@ -27,14 +27,9 @@
         <element value="agsci_subsite"/>
     </property>
     <property name="allow_discussion">False</property>
-    <property name="default_view">listing_view</property>
+    <property name="default_view">view</property>
     <property name="view_methods">
-        <element value="album_view" />
-        <element value="event_listing" />
-        <element value="full_view" />
-        <element value="listing_view" />
-        <element value="summary_view" />
-        <element value="tabular_view" />
+        <element value="view" />
         <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>

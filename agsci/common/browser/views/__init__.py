@@ -1,25 +1,11 @@
-from Acquisition import aq_inner, aq_base
-from DateTime import DateTime
+from Acquisition import aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from RestrictedPython.Utilities import same_type as _same_type
-from RestrictedPython.Utilities import test as _test
-from StringIO import StringIO
-from plone.app.textfield.value import RichTextValue
-from plone.app.workflow.browser.sharing import SharingView, AUTH_GROUP
-from plone.autoform.interfaces import IFormFieldProvider
-from plone.memoize.instance import memoize
-from urllib import quote_plus
-from zope import schema
-from zope.component import getUtility, getMultiAdapter, getAdapters
-from zope.component.interfaces import ComponentLookupError
-from zope.interface import implements, Interface
-from zope.interface.interfaces import IMethod
 from collective.z3cform.datagridfield import DictRow
-import urlparse
+from plone import api
+from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
+from zope import schema
 
 from agsci.common.content.degrees import IDegree
 from agsci.common.indexer import degree_index_field
@@ -31,7 +17,6 @@ try:
     from zope.app.component.hooks import getSite
 except ImportError:
     from zope.component.hooks import getSite
-
 
 class BaseView(BrowserView):
 
@@ -111,55 +96,16 @@ class BaseView(BrowserView):
         return getattr(aq_base(self.context), 'show_read_more', False)
 
     @property
-    def portal_state(self):
-        return getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
-
-    @property
-    def context_state(self):
-        return getMultiAdapter((self.context, self.request),
-                                name=u'plone_context_state')
-
-    @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
 
     @property
     def anonymous(self):
-        return self.portal_state.anonymous()
-
-    # Providing Restricted Python "test" method
-    def test(self, *args):
-        return _test(*args)
-
-    # Providing Restricted Python "test" same_type
-    def same_type(self, arg1, *args):
-        return _same_type(arg1, *args)
-
-    @property
-    def hasTiledContents(self):
-        if hasattr(self.context, 'getLayout') and self.context.getLayout() in ['folder_summary_view', 'subfolder_view']:
-            return ITileFolder.providedBy(self.context)
-        return False
-
+        return api.user.is_anonymous()
 
     @property
     def use_view_action(self):
         return getToolByName(self.context, 'portal_properties').get("site_properties").getProperty('typesUseViewActionInListings', ())
-
-    def isPublication(self, item):
-
-        publication_interfaces = [
-            'agsci.UniversalExtender.interfaces.IUniversalPublicationExtender',
-            'agsci.UniversalExtender.interfaces.IFilePublicationExtender',
-            'agsci.ExtensionExtender.interfaces.IExtensionPublicationExtender',
-        ]
-
-        object_provides = getattr(item, 'object_provides', [])
-
-        if object_provides:
-            return (len(set(object_provides) & set(publication_interfaces)) > 0)
-
-        return False
 
     def getItemURL(self, item):
 
@@ -172,9 +118,7 @@ class BaseView(BrowserView):
 
         # Logged out
         if self.anonymous:
-            if item_type in ['Image',] or \
-               (item_type in ['File',] and \
-                    (self.isPublication(item) or not self.getFileType(item))):
+            if item_type in ['Image', 'File']:
                 return item_url + '/view'
             else:
                 return item_url
@@ -185,127 +129,19 @@ class BaseView(BrowserView):
             else:
                 return item_url
 
-    def getIcon(self, item):
-
-        if hasattr(item, 'getIcon'):
-            if hasattr(item.getIcon, '__call__'):
-                return item.getIcon()
-            else:
-                return item.getIcon
-
-        return None
-
-    def fileExtensionIcons(self):
-        ms_data = ['xls', 'doc', 'ppt']
-
-        data = {
-            'xls' : u'Microsoft Excel',
-            'ppt' : u'Microsoft PowerPoint',
-            'publisher' : u'Microsoft Publisher',
-            'doc' : u'Microsoft Word',
-            'pdf' : u'PDF',
-            'pdf_icon' : u'PDF',
-            'text' : u'Plain Text',
-            'txt' : u'Plain Text',
-            'zip' : u'ZIP Archive',
-        }
-
-        for ms in ms_data:
-            ms_type = data.get(ms, '')
-            if ms_type:
-                data['%sx' % ms] = ms_type
-
-        return data
-
-    def getFileType(self, item):
-
-        icon = self.getIcon(item)
-
-        if icon:
-            icon = icon.split('.')[0]
-
-        return self.fileExtensionIcons().get(icon, None)
-
-    def getLinkType(self, url):
-
-        if '.' in url:
-            icon = url.strip().lower().split('.')[-1]
-            return self.fileExtensionIcons().get(icon, None)
-
-        return None
-
-    def getItemSize(self, item):
-        if hasattr(item, 'getObjSize'):
-            if hasattr(item.getObjSize, '__call__'):
-                return item.getObjSize()
-            else:
-                return item.getObjSize
-        return None
-
-    def getRemoteUrl(self, item):
-        if hasattr(item, 'getRemoteUrl'):
-            if hasattr(item.getRemoteUrl, '__call__'):
-                return item.getRemoteUrl()
-            else:
-                return item.getRemoteUrl
-        return None
-
-    def getItemInfo(self, item):
-        if item.portal_type in ['File',]:
-            obj_size = self.getItemSize(item)
-            file_type = self.getFileType(item)
-
-            if file_type:
-                if obj_size:
-                    return u'%s, %s' % (file_type, obj_size)
-                else:
-                    return u'%s' % file_type
-
-        elif item.portal_type in ['Link',]:
-            url = self.getRemoteUrl(item)
-            return self.getLinkType(url)
-
-        return None
-
-    def getItemClass(self, item, layout='folder_listing'):
-
-        # Default classes for all views
-        item_class = ['tileItem', 'visualIEFloatFix']
-
-        return " ".join(item_class)
-
-    @property
-    def getTileColumns(self):
-        return getattr(self.context, 'tile_folder_columns', '3')
-
-    @memoize
-    def getSection(self):
-        v = self.context.restrictedTraverse('@@agcommon_utilities')
-        return v.getSection()
-
-    @property
-    def portal(self):
-        return getToolByName(self.context, 'portal_url').getPortalObject()
-
     @property
     def portal_url(self):
         return self.portal.absolute_url()
 
-    def showPersonAreas(self):
-        return getattr(self.context, 'show_person_areas', True)
-
-    @property
-    def portal_membership(self):
-        return getToolByName(self.context, 'portal_membership')
-
     def getCurrentUser(self):
-        return self.portal_membership.getAuthenticatedMember()
+        return api.user.get_current()
 
     def isDefaultPage(self):
         if not hasattr(self.context.aq_parent, 'getDefaultPage'):
             return False
 
         return (self.context.getId() == self.context.aq_parent.getDefaultPage())
+
 
 class DegreeListingView(BaseView):
 
@@ -413,6 +249,9 @@ class PersonCardVerticalView(PersonCardView):
 
 class PersonCardVerticalNoBorderView(PersonCardVerticalView):
     border = False
+
+class FolderView(_FolderView, BaseView):
+    pass
 
 class DirectoryView(BaseView):
 

@@ -17,9 +17,6 @@ class ITagsView(Interface):
     tags view interface
     """
 
-    def test():
-        """ test method"""
-
 class TagsView(RSSFeedView, AgendaView):
 
     implements(ITagsView)
