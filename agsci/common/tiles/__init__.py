@@ -156,7 +156,7 @@ class BaseTile(PersistentTile):
         field = 'image_alt'
 
         if isinstance(serial, int):
-            field = 'image_%d' % serial
+            field = '%s_%d' % (field, serial)
 
         v = self.get_field(field, None)
 
@@ -170,7 +170,7 @@ class BaseTile(PersistentTile):
         field = 'image'
 
         if isinstance(serial, int):
-            field = 'image_%d' % serial
+            field = '%s_%d' % (field, serial)
 
         img = self.get_field(field, None)
 
