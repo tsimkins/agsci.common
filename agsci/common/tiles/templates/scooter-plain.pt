@@ -7,11 +7,12 @@
   <body>
 
 <section
+    tal:define="title view/data/title|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
-	
-	<div class="container"
-	     tal:define="title view/data/title|nothing">
+    
+    <div class="container"
+         tal:omit-tag="view/is_portlet">
 
         <h2 class="mt-0"
             tal:condition="title"
@@ -25,9 +26,9 @@
                 <a tal:attributes="href i/getURL|nothing"
                    class="card card-text-only">
                     <div class="card-body">
-                    	<div class="card-title">
+                        <div class="card-title">
                             <p tal:content="i/Title|nothing">
-                    	</div>
+                        </div>
                         <div class="card-text">
                             <p tal:content="i/Description|nothing">
                         </div>
