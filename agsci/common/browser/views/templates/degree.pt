@@ -15,30 +15,33 @@
                 <div class="row">
                     <div class="col-6 pl-0 ">
                         <table class="table table-bordered">
-                            <tal:row 
+                            <tal:row
                                 tal:repeat="i view/fields">
                                 <tr tal:condition="v"
                                     tal:define="title i/title|nothing;
                                                 v python: i.get(context);">
                                     <th class="table-secondary" scope="row" tal:content="title" />
                                     <td>
-                                        <ul>
+                                        <ul tal:condition="not: v/output|nothing">
                                             <li tal:repeat="j v" tal:content="j" />
                                         </ul>
+                                        <tal:html
+                                            tal:condition="v/output|nothing"
+                                            tal:replace="structure v/output" />
                                     </td>
                                 </tr>
                             </tal:row>
                         </table>
                     </div>
                     <div class="col-6 pr-3 mt-3">
-                        <img class="image-fluid w-100" alt="" 
+                        <img class="image-fluid w-100" alt=""
                              tal:attributes="src view/image|nothing" />
                     </div>
                 </div>
             </div>
 
         </metal:lightbox>
-    </metal:content-core>    
+    </metal:content-core>
 
 </body>
 </html>
