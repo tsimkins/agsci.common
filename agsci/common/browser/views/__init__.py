@@ -258,6 +258,11 @@ class PersonCardVerticalNoBorderView(PersonCardVerticalView):
 class FolderView(_FolderView, BaseView):
     pass
 
+class CollectionView(FolderView):
+
+    def batch(self):
+        return self.context.queryCatalog()
+
 class DirectoryView(FolderView):
 
     @property

@@ -103,6 +103,34 @@
         template="templates/folder.pt"
     />
 
+    <!-- Collection View -->
+    <browser:page
+        for="plone.app.contenttypes.interfaces.ICollection"
+        name="view"
+        class=".CollectionView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/folder.pt"
+    />
+
+    <!--
+        Collection View
+        ================
+        Note that the layer is ..interfaces.IThemeContentTypes. This was
+        necessary to override the resolution order, since
+        IPloneAppContenttypesLayer came first and was not letting us override
+        via the 'layer' view.
+    -->
+
+    <browser:page
+        for="plone.app.contenttypes.interfaces.ICollection"
+        name="view"
+        class=".CollectionView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeContentTypes"
+        template="templates/folder.pt"
+    />
+
     <!-- Person View -->
     <browser:page
         for="agsci.common.content.person.person.IPerson"

@@ -5,10 +5,15 @@
         name="agsci.common.tiles"
         interface="agsci.common.tiles.interfaces.IAgsciTilesLayer"
     />
-      
+
     <layer
         name="agsci.common"
         interface="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <layer
+        name="agsci.common.contenttypes"
+        interface="agsci.common.browser.interfaces.IThemeContentTypes"
     />
 
 </layers>

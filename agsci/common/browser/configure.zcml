@@ -11,4 +11,10 @@
         name="agsci.common"
         />
 
+    <interface
+        interface=".interfaces.IThemeContentTypes"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="agsci.common.contenttypes"
+        />
+
 </configure>
