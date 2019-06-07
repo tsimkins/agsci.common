@@ -258,10 +258,10 @@ class PersonCardVerticalNoBorderView(PersonCardVerticalView):
 class FolderView(_FolderView, BaseView):
     pass
 
-class DirectoryView(BaseView):
+class DirectoryView(FolderView):
 
     @property
-    def people(self):
+    def results(self):
         return self.context.people()
 
     def person_view(self, o):
