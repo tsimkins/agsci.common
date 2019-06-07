@@ -62,17 +62,15 @@ class BaseView(BrowserView):
 
     def item_image(self, item=None, size='large'):
 
-        hasLeadImage = False
+        if not self.item_has_image(item):
+            return None
 
         if not item:
             item = self.context
-            from agsci.common.indexer import hasLeadImage as _hasLeadImage
-            hasLeadImage = _hasLeadImage(self.context)()
 
         # Is a brain
         if hasattr(item, 'getURL'):
             url = item.getURL()
-            hasLeadImage = item.hasLeadImage
 
         elif hasattr(item, 'absolute_url'):
             url = item.absolute_url()
@@ -148,6 +146,31 @@ class BaseView(BrowserView):
 
         return (self.context.getId() == self.context.aq_parent.getDefaultPage())
 
+    def item_has_image(self, item=None):
+
+        has_image = False
+
+        if not item:
+            item = self.context
+            from agsci.common.indexer import hasLeadImage as _hasLeadImage
+            has_image = _hasLeadImage(self.context)()
+
+        # Is a brain
+        elif hasattr(item, 'hasLeadImage'):
+            has_image = item.hasLeadImage
+
+        return has_image
+
+    def show_item_image(self, item):
+        return self.show_image and  self.item_has_image(item)
+
+    def item_class(self, item):
+        _ = ['col-12', 'order-2', 'order-md-1', 'mt-0', 'px-0']
+
+        if self.show_item_image(item):
+            _.extend(['col-md-8', 'col-lg-7'])
+
+        return " ".join(_)
 
 class DegreeListingView(BaseView):
 

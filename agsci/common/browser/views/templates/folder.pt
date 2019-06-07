@@ -38,9 +38,9 @@
 
             <div class="entry container mx-0 mb-5">
 
-            	<div class="row align-items-stretch">
+                <div class="row align-items-stretch">
 
-            		<div class="col-12 col-md-8 col-lg-7 order-2 order-md-1 mt-0 px-0">
+                    <div tal:attributes="class python:view.item_class(item)">
 
                         <span class="a px-0 summary"
                                 tal:content="item_title" />
@@ -89,12 +89,12 @@
 
                     </div>
 
-            		<div class="col-12 col-md-4 col-lg-5 order-1 order-md-2 pl-md-3 pl-0 pr-0 mb-md-0 mb-3">
+                    <div tal:condition="python: view.show_item_image(item)"
+                      class="col-12 col-md-4 col-lg-5 order-1 order-md-2 pl-md-3 pl-0 pr-0 mb-md-0 mb-3">
                         <img class="w-100"
-                                tal:condition="python: view.show_image and item_has_image"
                                 alt=""
                                 tal:attributes="src  string:$item_url/@@images/image/large" />
-            		</div>
+                    </div>
                 </div>
             </div>
         </a>
