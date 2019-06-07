@@ -13,7 +13,7 @@
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">
-        <section class="entries container px-0" metal:define-slot="entries">
+        <section class="entries container px-2 px-md-0" metal:define-slot="entries">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
             <tal:block tal:define="obj item/getObject;
                 item_url item/getURL;
@@ -91,7 +91,7 @@
                     </div>
 
                     <div tal:condition="python: view.show_item_image(item)"
-                      class="col-12 col-md-4 col-lg-5 order-1 order-md-2 pl-md-3 pl-0 pr-0 mb-md-0 mb-3">
+                      class="col-12 col-sm-6 col-md-4 col-xl-3 order-sm-2 order-1 pl-sm-3 pl-0 pr-0 mb-md-0 mb-3">
                         <img class="w-100"
                                 alt=""
                                 tal:attributes="src  string:$item_url/@@images/image/large" />

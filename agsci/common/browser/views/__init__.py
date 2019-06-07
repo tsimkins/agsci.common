@@ -170,10 +170,10 @@ class BaseView(BrowserView):
         return self.show_image and  self.item_has_image(item)
 
     def item_class(self, item):
-        _ = ['col-12', 'order-2', 'order-md-1', 'mt-0', 'px-0']
+        _ = ['col-12', 'order-sm-1', 'order-2', 'mt-0', 'px-0']
 
         if self.show_item_image(item):
-            _.extend(['col-md-8', 'col-lg-7'])
+            _.extend(['col-sm-6 ', 'col-md-8', 'col-xl-9'])
 
         return " ".join(_)
 
