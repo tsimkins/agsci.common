@@ -9,7 +9,7 @@ from zope import schema
 
 from agsci.common.content.degrees import IDegree
 from agsci.common.indexer import degree_index_field
-from agsci.common.utilities import get_fields_by_type
+from agsci.common.utilities import get_fields_by_type, toLocalizedTime
 from agsci.common import object_factory
 from agsci.common.interfaces import ILocationAdapter
 
@@ -87,6 +87,10 @@ class BaseView(BrowserView):
     def image(self):
         return self.item_image(size=self.image_size)
 
+    def item_date(self, item):
+        if item.effective:
+            return toLocalizedTime(item.effective)
+
     @property
     def show_date(self):
         return getattr(aq_base(self.context), 'show_date', False)
@@ -152,12 +156,13 @@ class BaseView(BrowserView):
 
         if not item:
             item = self.context
-            from agsci.common.indexer import hasLeadImage as _hasLeadImage
-            has_image = _hasLeadImage(self.context)()
 
         # Is a brain
-        elif hasattr(item, 'hasLeadImage'):
+        if hasattr(item, 'hasLeadImage'):
             has_image = item.hasLeadImage
+        else:
+            from agsci.common.indexer import hasLeadImage as _hasLeadImage
+            has_image = _hasLeadImage(item)()
 
         return has_image
 

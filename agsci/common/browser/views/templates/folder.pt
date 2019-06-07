@@ -81,6 +81,11 @@
                             </div>
                         </tal:byline>
 
+                        <p class="discreet my-2"
+                            tal:condition="view/show_date"
+                            tal:content="python: view.item_date(item)">
+                        </p>
+
                         <p class="description my-3"
                             tal:condition="item_description"
                             tal:content="item_description">
