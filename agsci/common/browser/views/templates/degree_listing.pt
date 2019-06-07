@@ -83,9 +83,7 @@
 
 <div class="card card-visual container mix explore-interest-business">
 
-    <a tal:define="lightbox_url string:${item_url}/lightbox"
-       tal:attributes="href item_url;"
-       class="card-image-top">
+    <div class="card-image-top">
 
         <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
 
@@ -103,7 +101,7 @@
                 tal:content="item/Title" />
         </div>
 
-    </a>
+    </div>
 
         <div class="card-body">
 
