@@ -41,30 +41,6 @@ class ISEO(model.Schema):
 
 
 @provider(IFormFieldProvider)
-class ICollectionFields(model.Schema):
-
-    order_by_id = schema.List(
-        title=_(u"Order by id"),
-        description=_(u"The content will show items with the listed ids first, and then sort by the default sort order.  One per line."),
-        value_type=schema.TextLine(required=True),
-        required=False,
-    )
-
-    order_by_title = schema.List(
-        title=_(u"Order by Title"),
-        description=_(u"The content will show items matching the specified regex patterns first, and then sort by the default sort order.  One per line."),
-        value_type=schema.TextLine(required=True),
-        required=False,
-    )
-
-    show_person_areas = schema.Bool(
-        title=_(u"Show 'Areas of Expertise' for people in results."),
-        description=_(u""),
-        required=False,
-    )
-
-
-@provider(IFormFieldProvider)
 class INewsItemFields(model.Schema):
 
     article_link = schema.TextLine(
@@ -77,44 +53,40 @@ class INewsItemFields(model.Schema):
 @provider(IFormFieldProvider)
 class IFolderFields(model.Schema):
 
-    listing_after_text = schema.Bool(
-        title=_(u"Show text after folder contents"),
-        description=_(u"This will show the Body Text field after the folder contents instead of before."),
-        required=False,
+    model.fieldset(
+        'settings',
+        label=_(u'Settings'),
+        fields=[
+            'show_date',
+            'show_description',
+            'show_image',
+        ],
     )
 
     show_date = schema.Bool(
         title=_(u"Show date"),
         description=_(u"This will show the publication date for each item in the folder listing."),
         required=False,
+        default=False,
     )
 
     show_description = schema.Bool(
         title=_(u"Show description"),
         description=_(u"This will show the description for each item in the folder listing."),
         required=False,
+        default=True,
     )
 
     show_image = schema.Bool(
         title=_(u"Show Lead Image in folder listing"),
         description=_(u"This will show the lead image for each item in the folder listing."),
         required=False,
+        default=True,
     )
 
 @provider(IFormFieldProvider)
 class IHomepageFields(model.Schema):
-
-    show_homepage_text = schema.Bool(
-        title=_(u"Show Homepage Text"),
-        description=_(u"Display the text on the homepage."),
-        required=False,
-    )
-
-    slider_random = schema.Bool(
-        title=_(u"Randomize HomePage Slider"),
-        description=_(u"Display slider images in a random rather than sequential order."),
-        required=False,
-    )
+    pass
 
 
 @provider(IFormFieldProvider)
@@ -177,7 +149,7 @@ class ISocialMediaBase(model.Schema):
         title=_(u"Facebook URL"),
         required=False,
     )
-    
+
     twitter_url = schema.TextLine(
         title=_(u"Twitter URL"),
         required=False,
@@ -246,5 +218,5 @@ class ISocialContact(ISocialMediaBase, IContact):
     form.order_after(email='zip_code')
     form.order_after(facebook_url='fax_number')
     form.order_after(twitter_url='facebook_url')
-    form.order_after(youtube_url='twitter_url')    
-    form.order_after(linkedin_url='youtube_url')    
+    form.order_after(youtube_url='twitter_url')
+    form.order_after(linkedin_url='youtube_url')

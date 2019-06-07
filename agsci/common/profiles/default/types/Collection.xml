@@ -22,7 +22,6 @@
     <property name="klass">plone.app.contenttypes.content.Collection</property>
     <property name="behaviors">
         <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.contenttypes.behaviors.collection.ICollection" />
         <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
@@ -30,8 +29,9 @@
         <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
         <element value="plone.app.relationfield.behavior.IRelatedItems" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
-        <element value="agsci.common.content.behaviors.ICollectionFields" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
+        <element value="agsci.common.content.behaviors.collection.ICollectionFields" />
+        <element value="agsci.common.content.behaviors.collection.ICollection" />
         <element value="plone.layoutaware"/>
     </property>
     <property name="schema" />

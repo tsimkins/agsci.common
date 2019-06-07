@@ -191,4 +191,13 @@
         template="templates/social_media.pt"
     />
 
+    <!-- Query Builder Results for Collection -->
+    <browser:page
+        name="querybuilderresults"
+        class=".querybuilder.QueryBuilder"
+        permission="zope2.View"
+        for="*"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>

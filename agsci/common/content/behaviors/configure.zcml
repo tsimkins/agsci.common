@@ -12,7 +12,7 @@
         description="Customized Lead Image behavior (Extra Fields)"
         provides=".leadimage.ILeadImageExtra"
     />
-    
+
     <plone:behavior
         title="Lead Image (No Caption)"
         description="Customized Lead Image behavior (No Caption)"
@@ -58,9 +58,19 @@
     <!-- Behaviors per content-type -->
 
     <plone:behavior
-        title="Collection Behaviors"
+        title="Collection Behaviors (AgSci)"
         description=""
-        provides=".ICollectionFields"
+        provides=".collection.ICollectionFields"
+    />
+
+    <plone:behavior
+        name="agsci.common.collection"
+        title="Collection (AgSci)"
+        description="Adds collection behavior"
+        provides=".collection.ICollection"
+        factory="plone.app.contenttypes.behaviors.collection.Collection"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        marker="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
     />
 
     <plone:behavior
