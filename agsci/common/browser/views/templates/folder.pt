@@ -34,7 +34,7 @@
 
         <a tal:attributes="href item_link;
                            class string:card $item_type_class $item_wf_state_class url;
-                           title item_type">
+                           title item_title">
 
             <div class="entry container mx-0 mb-5">
 
