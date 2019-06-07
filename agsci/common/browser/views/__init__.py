@@ -96,12 +96,12 @@ class BaseView(BrowserView):
         return getattr(aq_base(self.context), 'show_date', False)
 
     @property
-    def show_image(self):
-        return getattr(aq_base(self.context), 'show_image', False)
+    def show_description(self):
+        return getattr(aq_base(self.context), 'show_description', False)
 
     @property
-    def show_read_more(self):
-        return getattr(aq_base(self.context), 'show_read_more', False)
+    def show_image(self):
+        return getattr(aq_base(self.context), 'show_image', False)
 
     @property
     def portal_catalog(self):

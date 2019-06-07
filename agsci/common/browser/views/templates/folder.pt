@@ -73,21 +73,17 @@
                                 </span>
                                 </tal:modified>
 
-                                <metal:description define-slot="description_slot">
-                                <tal:comment replace="nothing">
-                                    Place custom listing info for custom types here
-                                </tal:comment>
-                                </metal:description>
                             </div>
                         </tal:byline>
 
                         <p class="discreet my-2"
-                            tal:condition="view/show_date"
+                            tal:condition="view/show_date|nothing"
                             tal:content="python: view.item_date(item)">
                         </p>
 
                         <p class="description my-3"
-                            tal:condition="item_description"
+                            tal:define="show_description view/show_description|nothing"
+                            tal:condition="python:show_description and item_description"
                             tal:content="item_description">
                         description
                         </p>
