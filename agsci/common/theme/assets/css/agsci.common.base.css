@@ -239,6 +239,17 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html .a.no-border {
   border-bottom: none !important;
   padding-bottom: 0 !important; }
+#parent-fieldname-text li,
+.html li {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 0.75em; }
+#parent-fieldname-text td, #parent-fieldname-text th,
+.html td,
+.html th {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.8; }
 
 #content-core .entries {
   padding-top: 1em; }
@@ -264,7 +275,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     border-bottom: none !important;
     padding-bottom: 0 !important; }
   #content-core .entries .entry .description {
-    line-height: 1.375; }
+    line-height: 1.8; }
 
 /* This fixes the 'Properties' not showing up when the button is clicked
    in the Mosaic editor. */

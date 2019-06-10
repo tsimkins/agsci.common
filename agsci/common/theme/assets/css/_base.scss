@@ -350,6 +350,18 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 #parent-fieldname-text,
 .html {
     @include link_color();
+
+    li {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        margin-bottom: 0.75em;
+    }
+
+    td, th {
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
 }
 
 #content-core {
@@ -373,7 +385,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
             @include link_color();
 
             .description {
-                line-height: 1.375;
+                line-height: 1.8;
             }
         }
     }
