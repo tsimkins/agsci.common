@@ -253,18 +253,29 @@ jq3(document).ready(function() {
 
 });
 
-// Add a class of .container to any mosiac-tile-row that has a child of .container
-// This fixes multi-column mosaic layout issues
+// Mosaic fixes
 
 jq3(document).ready(function() {
+
+    // Add a class of .container to any mosiac-tile-row that has a child of .container
+    // This fixes multi-column mosaic layout issues
+
     jq3('.mosaic-grid-row:not(:has(section[data-container-width="full"]))').each(
         function () {
             jq3(this).addClass('container');
         }
     );
+
     jq3('.mosaic-grid-row:has(section[data-container-width="not-full"])').each(
         function () {
             jq3(this).addClass('container');
+        }
+    );
+
+    // Add margin class for sections that are inside a first 3/4 width cell
+    jq3('.mosaic-grid-cell.mosaic-position-leftmost.mosaic-width-three-quarters section').each(
+        function() {
+            jq3(this).addClass('mr-5');
         }
     );
 });
