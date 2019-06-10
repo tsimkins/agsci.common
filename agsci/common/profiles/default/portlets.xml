@@ -41,4 +41,49 @@
         title="Cards Listing Portlet"
     />
 
+    <!-- Remove unused portlets -->
+    <portlet
+        addview="portlets.Actions"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Calendar"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Classic"
+        remove="True" />
+
+    <portlet
+        addview="plone.portlet.collection.Collection"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Events"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Login"
+        remove="True" />
+
+    <portlet
+        addview="portlets.News"
+        remove="True" />
+
+    <portlet
+        addview="portlets.rss"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Recent"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Review"
+        remove="True" />
+
+    <portlet
+        addview="portlets.Search"
+        remove="True" />
+
 </portlets>
