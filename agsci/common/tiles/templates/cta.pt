@@ -11,15 +11,15 @@
 
     <div class="container"
         tal:omit-tag="view/is_portlet">
-    
+
         <div class="row d-flex justify-content-center overflow-hidden">
 
         <tal:buttons tal:repeat="button view/values|nothing">
             <a tal:attributes="href button/url;
-                               class string:btn btn-${button/color|nothing} ${view/button_width_class|nothing}"
+                               class string:btn btn-${button/color|nothing} ${view/button_width_class|nothing} px-1"
                tal:content="button/title|nothing" />
         </tal:buttons>
-        
+
         </div>
     </div>
 </section>

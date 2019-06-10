@@ -730,3 +730,16 @@ class IPortletsTile(Interface):
         title=_(u"Title"),
         required=False
     )
+
+
+class IRichTextTile(IBorderTile):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )

@@ -581,3 +581,6 @@ class SocialMediaTile(BaseTile):
 
 class PortletsTile(BaseTile):
     pass
+
+class RichTextTile(BaseTile):
+    pass

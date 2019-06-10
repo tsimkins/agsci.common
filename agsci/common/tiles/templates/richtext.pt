@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:define="title view/data/title|nothing;
+                section_class view/section_class|nothing;"
+    tal:attributes="class string:${section_class} mx-5;
+                    data-tile-type view/tile_type|nothing;">
+
+	<div class="container-fluid">
+
+        <h2 class="mt-0"
+            tal:condition="title"
+            tal:content="title" />
+
+        <div class="html"
+                tal:content="structure view/data/text/output|nothing" />
+    </div>
+
+</section>
+
+  </body>
+</html>

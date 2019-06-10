@@ -141,6 +141,10 @@
              interface="plone.app.mosaic.interfaces.ITile"
              remove="True" />
 
+    <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_html"
+             interface="plone.app.mosaic.interfaces.ITile"
+             remove="True" />
+
     <!-- Navigation Tile (Portlet) -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_navigation"
              interface="plone.app.mosaic.interfaces.ITile">
@@ -449,6 +453,20 @@
         <value key="favorite">false</value>
         <value key="rich_text">false</value>
         <value key="weight">130</value>
+    </records>
+
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_richtext"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.richtext</value>
+        <value key="label">Rich Text</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
     </records>
 
 </registry>
