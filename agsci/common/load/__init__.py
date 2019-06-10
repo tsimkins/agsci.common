@@ -220,6 +220,29 @@ class ContentImporter(object):
 
         return ''
 
+    def get_resource_uid(self, path):
+        path = safe_unicode(path).encode('utf-8')
+
+        if path.startswith('/'):
+            path = path[1:]
+
+        segments = path.split('/')
+
+        if segments[-1].startswith('image_'):
+            undef = segments.pop()
+            path = "/".join(segments)
+
+        try:
+            _ = self.site.restrictedTraverse(path)
+        except KeyError:
+            #import pdb; pdb.set_trace()
+            pass
+        except:
+            #import pdb; pdb.set_trace()
+            pass
+        else:
+            return _.UID()
+
     def fix_html(self, html):
         updated = False
 
@@ -242,6 +265,14 @@ class ContentImporter(object):
 
             for thead in table.findAll('thead'):
                 thead['class'] = ['thead-dark',]
+
+        for img in soup.findAll('img'):
+            src = img.get('src', None)
+            if src:
+                uid = self.get_resource_uid(src)
+                if uid:
+                    img['src'] = 'resolveuid/%s' % uid
+                    updated = True
 
         if updated:
             return str(soup)
