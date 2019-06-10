@@ -98,7 +98,11 @@ class ContentImporter(object):
         self.path = path
         self.UID = UID
         self.api_url = api_url
-        self.data = json_data_object(self.json_data)
+
+        try:
+            self.data = json_data_object(self.json_data)
+        except:
+            self.data = None
 
         if isinstance(self.path, unicode):
             self.path = self.path.encode('utf-8')
@@ -272,18 +276,33 @@ class ContentImporter(object):
         for _ in [
             self.data.lead_image,
             self.data.image,
-
         ]:
             if _:
                 return self.data_to_image_field(
                     data=_['data'],
                     contentType=_['content_type'],
+                    filename=_.get('filename', 'image'),
+                )
+
+    @property
+    def file(self):
+        for _ in [
+            self.data.file,
+        ]:
+            if _:
+                return self.data_to_file_field(
+                    data=_['data'],
+                    contentType=_['content_type'],
+                    filename=_.get('filename', 'file'),
                 )
 
     def getId(self):
         return safe_unicode(self.data.id).encode('utf-8')
 
     def __call__(self):
+
+        if not self.data:
+            raise Exception("No data provided.")
 
         parent = self.parent
 
@@ -320,7 +339,13 @@ class ContentImporter(object):
                 outputMimeType='text/x-html-safe'
             )
 
-        # Set Lead Image
+        # File field
+        file = self.file
+
+        if file:
+            item.file = self.file
+
+        # Set Lead Image or Image field
         image = self.image
 
         if image:
