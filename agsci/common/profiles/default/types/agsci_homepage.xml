@@ -12,9 +12,10 @@
     <property name="allowed_content_types">
     </property>
     <property name="allow_discussion">False</property>
-    <property name="default_view">view</property>
+    <property name="default_view">layout_view</property>
     <property name="view_methods">
         <element value="view" />
+        <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addFolder</property>
@@ -25,6 +26,7 @@
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="agsci.common.content.behaviors.IHomepageFields" />
+        <element value="plone.layoutaware"/>
     </property>
     <property name="schema" />
     <property name="schema_policy">dexterity</property>
