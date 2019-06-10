@@ -10,6 +10,11 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
+  <div id="parent-fieldname-text"
+       tal:define="text context/text|nothing"
+       tal:condition="text"
+       tal:content="structure text/raw" />
+
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">

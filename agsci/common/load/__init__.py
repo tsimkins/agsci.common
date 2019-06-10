@@ -1,6 +1,7 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
+from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
 from plone.behavior.interfaces import IBehaviorAssignable, IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
@@ -124,7 +125,9 @@ class ContentImporter(object):
     @property
     def context(self):
         try:
-            return self.site.restrictedTraverse(self.path)
+            _id = self.getId()
+            if _id in self.parent.objectIds():
+                return self.parent[_id]
         except:
             pass
 
@@ -207,9 +210,39 @@ class ContentImporter(object):
             self.data.text,
             self.data.folder_text,
         ]:
+
             if _:
-                return _
+                return self.fix_html(_)
+
         return ''
+
+    def fix_html(self, html):
+        updated = False
+
+        soup = BeautifulSoup(html, 'html.parser')
+
+        for table in soup.findAll('table'):
+
+            updated = True
+
+            klass = table.get('class', [])
+            klass = list(klass)
+
+            klass.extend([
+                'table',
+                'table-bordered',
+                'table-striped',
+            ])
+
+            table['class'] = " ".join(sorted(set(klass)))
+
+            for thead in table.findAll('thead'):
+                thead['class'] = ['thead-dark',]
+
+        if updated:
+            return str(soup)
+
+        return html
 
     def data_to_image_field(self, data, contentType='', filename=None):
 
@@ -247,6 +280,8 @@ class ContentImporter(object):
                     contentType=_['content_type'],
                 )
 
+    def getId(self):
+        return safe_unicode(self.data.id).encode('utf-8')
 
     def __call__(self):
 
@@ -255,7 +290,7 @@ class ContentImporter(object):
         if not parent:
             raise Exception("Cannot find parent object for %s" % self.path)
 
-        _id = safe_unicode(self.data.id).encode('utf-8')
+        _id = self.getId()
 
         if not self.exists:
 
