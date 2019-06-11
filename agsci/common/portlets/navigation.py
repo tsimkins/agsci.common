@@ -22,12 +22,16 @@ class Renderer(_Renderer):
         # Go to the item /view we have chosen as root item
         return nav_root.absolute_url()
 
+    @property
+    def bottomLevel(self):
+        return self.data.bottomLevel or 0
+
     def createNavTree(self, level=1, bottomLevel=None):
 
         data = self.getNavTree()
 
         if not bottomLevel:
-            bottomLevel = self.data.bottomLevel or 0
+            bottomLevel = self.bottomLevel
 
         if bottomLevel < 0:
             # Special case where navigation tree depth is negative
@@ -48,6 +52,16 @@ class Renderer(_Renderer):
         query = queryBuilder()
 
         strategy = getMultiAdapter((context, self.data), INavtreeStrategy)
+
+        # Add explicit path to query, since the sitemap query uses the root of
+        # the site
+        nav_root = self.getNavRoot()
+
+        if nav_root:
+            query['path'] = {
+                'query' : "/".join(nav_root.getPhysicalPath()),
+                'depth' : self.bottomLevel
+            }
 
         return buildFolderTree(
             context,
