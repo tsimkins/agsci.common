@@ -208,6 +208,31 @@ class ContentImporter(object):
 
         return [x[0] for x in rv]
 
+    def fix_html(self, html):
+        updated = False
+
+        soup = BeautifulSoup(html, 'lxml')
+
+        # Zap class on table so Diazo replacement will work.
+        for table in soup.findAll('table'):
+            updated = True
+            if hasattr(table, 'class'):
+                del table['class']
+
+        for img in soup.findAll('img'):
+            src = img.get('src', None)
+            if src:
+                uid = self.get_resource_uid(src)
+                if uid:
+                    updated = True
+                    img['src'] = 'resolveuid/%s' % uid
+
+        if updated:
+            soup.body.hidden = True
+            return str(soup.body)
+
+        return html
+
     @property
     def html(self):
         for _ in [
@@ -242,42 +267,6 @@ class ContentImporter(object):
             pass
         else:
             return _.UID()
-
-    def fix_html(self, html):
-        updated = False
-
-        soup = BeautifulSoup(html, 'html.parser')
-
-        for table in soup.findAll('table'):
-
-            updated = True
-
-            klass = table.get('class', [])
-            klass = list(klass)
-
-            klass.extend([
-                'table',
-                'table-bordered',
-                'table-striped',
-            ])
-
-            table['class'] = " ".join(sorted(set(klass)))
-
-            for thead in table.findAll('thead'):
-                thead['class'] = ['thead-dark',]
-
-        for img in soup.findAll('img'):
-            src = img.get('src', None)
-            if src:
-                uid = self.get_resource_uid(src)
-                if uid:
-                    img['src'] = 'resolveuid/%s' % uid
-                    updated = True
-
-        if updated:
-            return str(soup)
-
-        return html
 
     def data_to_image_field(self, data, contentType='', filename=None):
 

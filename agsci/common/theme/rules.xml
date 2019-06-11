@@ -5,6 +5,22 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+    <replace css:content="#content-core table">
+        <xsl:copy>
+            <xsl:attribute name="class">table table-bordered table-striped</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+    </replace>
+
+    <replace css:content="#content-core table thead">
+        <xsl:copy>
+            <xsl:attribute name="class">thead-dark</xsl:attribute>
+            <xsl:copy-of select="@*" />
+            <xsl:apply-templates />
+        </xsl:copy>
+    </replace>
+
     <before theme-children="/html/body" method="raw">
         <xsl:attribute name="class">
             balanced college-level plone-toolbar-left plone-toolbar-expanded
