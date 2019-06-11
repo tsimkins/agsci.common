@@ -28,7 +28,6 @@ uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
 class json_data_object(object):
 
     def __init__(self, data={}):
-
         self.data = data
 
     def __getattribute__(self, name):
@@ -102,7 +101,7 @@ class ContentImporter(object):
         try:
             self.data = json_data_object(self.json_data)
         except:
-            self.data = None
+            self.data = json_data_object({})
 
         if isinstance(self.path, unicode):
             self.path = self.path.encode('utf-8')
