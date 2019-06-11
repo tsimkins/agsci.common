@@ -16,7 +16,7 @@
 
         <tal:buttons tal:repeat="button view/values|nothing">
             <a tal:attributes="href button/url;
-                               class string:btn btn-${button/color|nothing} ${view/button_width_class|nothing} px-1"
+                               class string:btn btn-${button/color|nothing} ${view/button_width_class|nothing} ${view/button_padding_class|nothing}"
                tal:content="button/title|nothing" />
         </tal:buttons>
 

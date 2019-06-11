@@ -266,6 +266,12 @@ class CTATile(BaseTile):
             return 'w-75'
         return ''
 
+    @property
+    def button_padding_class(self):
+        if self.is_portlet:
+            return 'px-1'
+        return ''
+
 class LargeCTATile(BaseTile):
     __full_width__ = True
 
