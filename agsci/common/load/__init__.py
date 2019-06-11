@@ -122,6 +122,10 @@ class ContentImporter(object):
         return getToolByName(self.site, 'portal_types')
 
     @property
+    def wftool(self):
+        return getToolByName(self.site, "portal_workflow")
+
+    @property
     def site(self):
         return getSite()
 
@@ -228,7 +232,7 @@ class ContentImporter(object):
 
         if updated:
             soup.body.hidden = True
-            return str(soup.body)
+            return unicode(soup.body)
 
         return html
 
@@ -259,10 +263,8 @@ class ContentImporter(object):
         try:
             _ = self.site.restrictedTraverse(path)
         except KeyError:
-            #import pdb; pdb.set_trace()
             pass
         except:
-            #import pdb; pdb.set_trace()
             pass
         else:
             return _.UID()
@@ -315,12 +317,17 @@ class ContentImporter(object):
                     filename=_.get('filename', 'file'),
                 )
 
+    @property
+    def review_state(self):
+        if self.exists:
+            return self.wftool.getInfoFor(self.context, 'review_state')
+
     def getId(self):
         return safe_unicode(self.data.id).encode('utf-8')
 
     def __call__(self):
 
-        if not self.data:
+        if not self.data.data:
             raise Exception("No data provided.")
 
         parent = self.parent
@@ -345,6 +352,11 @@ class ContentImporter(object):
             setattr(item, ATTRIBUTE_NAME, self.UID)
 
         else:
+
+            # If the item exists, and it's published, no further changes
+            if self.review_state in ['published',]:
+                return
+
             item = parent[_id]
 
         # Set HTML
@@ -358,7 +370,7 @@ class ContentImporter(object):
                 outputMimeType='text/x-html-safe'
             )
 
-        # File field
+        # Set File field
         file = self.file
 
         if file:
