@@ -10,7 +10,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".TitleLength"
-        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -19,7 +19,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".DescriptionLength"
-        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
     <subscriber
@@ -40,7 +40,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".HeadingLevels"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -49,7 +49,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".HeadingLength"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -58,7 +58,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".AllCapsHeadings"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -67,7 +67,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".AppropriateLinkText"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -76,7 +76,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ImageInsideLink"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -85,7 +85,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ExternalAbsoluteImage"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -94,7 +94,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".BoldHeadings"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -103,7 +103,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".HeadingsInBold"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -112,7 +112,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ImageInsideTextParagraph"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -121,7 +121,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ParagraphMultipleBreakSequenceCheck"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -130,7 +130,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".UnderlinedText"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -139,7 +139,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".InlineStyles"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
     <!-- Body Text: Prohibited attributes -->
@@ -147,7 +147,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ProhibitedAttributes"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
 
@@ -156,7 +156,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".InternalLinkByUID"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
     <!--
@@ -187,7 +187,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".ExternalLinkCheck"
-        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
     <!-- Warn if Publishing Dates are in the future -->
@@ -195,7 +195,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".FuturePublishingDate"
-        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 
     <!--
@@ -205,7 +205,7 @@
     <subscriber
         provides=".IContentCheck"
         factory=".IgnoredChecks"
-        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+        for="plone.dexterity.interfaces.IDexterityContent"
     />
 -->
 </configure>

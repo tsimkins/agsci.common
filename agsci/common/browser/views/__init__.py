@@ -302,3 +302,10 @@ class DirectoryView(FolderView):
 
 class SocialMediaView(BaseView):
     pass
+
+class ReindexObjectView(BaseView):
+
+    def __call__(self):
+
+        self.context.reindexObject()
+        return self.request.response.redirect('%s?rescanned=1' % self.context.absolute_url())

@@ -64,7 +64,7 @@ def getValidationErrors(context):
 
     request = getRequest()
 
-    key = "product-validation-errors-%s" % context.UID()
+    key = "validation-errors-%s" % context.UID()
 
     cache = IAnnotations(request)
 
@@ -88,10 +88,7 @@ def _getValidationErrors(context):
 
             try:
                 for j in i:
-
-                    # ContentCheckError is a NOOP error. Ignore.
-                    if not isinstance(j, ContentCheckError):
-                        errors.append(j)
+                    errors.append(j)
 
             except Exception as e:
                 errors.append(
@@ -182,10 +179,10 @@ class ContentCheck(object):
     def now(self):
         return datetime.now(pytz.timezone(DEFAULT_TIMEZONE))
 
-# Validates the product title length
+# Validates the title length
 class TitleLength(ContentCheck):
 
-    title = "Product Title Length"
+    title = "Title Length"
     description = "Titles should be no more than 60 characters."
     action = "Edit the title to be no more than 60 characters.  For short titles, add more detail."
 
@@ -198,23 +195,19 @@ class TitleLength(ContentCheck):
     def check(self):
         v = self.value()
 
-        if v > 128:
+        if v > 60:
             yield ContentCheckError(self, u"%d characters is too long." % v)
-        elif v > 80:
-            yield ContentCheckError(self, u"%d characters is too long." % v)
-        elif v > 60:
-            yield ContentCheckError(self, u"%d characters is too long." % v)
-        elif v < 16:
+        elif v < 10:
             yield ContentCheckError(self, u"%d characters may be too short." % v)
 
 
-# Validates the product description length
+# Validates the description length
 class DescriptionLength(ContentCheck):
 
     limit = 300
 
-    title = "Product Description Length"
-    description = "Product must have a description, which should be a maximum of %d characters." % limit
+    title = "Description Length"
+    description = "Content must have a description, which should be a maximum of %d characters." % limit
     action = "Edit the description to be no more than %d characters.  For short or missing descriptions, add more detail." % limit
 
     # Sort order (lower is higher)
@@ -234,7 +227,7 @@ class DescriptionLength(ContentCheck):
         if v > self.limit:
             yield ContentCheckError(self, u"%d characters is too long." % v)
         elif v == 0:
-            yield ContentCheckError(self, u"A description is required for this product.")
+            yield ContentCheckError(self, u"A description is required for this content.")
         elif v < 32:
             yield ContentCheckError(self, u"%d characters may be too short." % v)
 
@@ -318,7 +311,7 @@ class BodyTextCheck(ContentCheck):
     @property
     @context_memoize
     def soup(self):
-        return BeautifulSoup(self.html)
+        return BeautifulSoup(self.html, features='lxml')
 
     @property
     @context_memoize
@@ -450,7 +443,7 @@ class HeadingLevels(BodyHeadingCheck):
     description = "Validates that the heading level hierarchy is correct."
 
     # Remedial Action
-    action = "In the product text (including any pages for Articles), validate that the heading levels are in the correct order, and none are skipped."
+    action = "In the text, validate that the heading levels are in the correct order, and none are skipped."
 
     def check(self):
 
@@ -558,14 +551,14 @@ class ProhibitedWords(BodyTextCheck):
                 yield ContentCheckError(self, 'Found "%s" in body text.' % _m.group(0))
 
 
-# Verifies that a lead image is assigned to the product
+# Verifies that a lead image is assigned to the content
 class HasLeadImage(ContentCheck):
 
     title = "Lead Image"
 
     description = "A quality lead image is suggested to provide a visual connection for the user, and to display in search results."
 
-    action = "Please add a quality lead image to this product."
+    action = "Please add a quality lead image to this content."
 
     # Sort order (lower is higher)
     sort_order = 5
@@ -596,14 +589,14 @@ class HasLeadImage(ContentCheck):
         if not self.value():
             yield ContentCheck(self, 'No lead image found')
 
-# Verifies that a valid lead image format is used for the product
+# Verifies that a valid lead image format is used for the content
 class LeadImageFormat(HasLeadImage):
 
     title = "Lead Image: Format"
 
     description = "Lead-images should be either JPEG (for photos) or PNG (for graphics/line art)"
 
-    action = "Please add a quality JPEG or PNG lead image to this product."
+    action = "Please add a quality JPEG or PNG lead image to this content."
 
     # Sort order (lower is higher)
     sort_order = 5
@@ -625,7 +618,7 @@ class LeadImageOrientation(HasLeadImage):
 
     description = "Lead-images should be landscape orientation"
 
-    action = "Please add a quality landscape orientation image to this product."
+    action = "Please add a quality landscape orientation image to this content."
 
     # Sort order (lower is higher)
     sort_order = 5
@@ -655,7 +648,7 @@ class LeadImageWidth(LeadImageOrientation):
 
     description = "Lead-images should be at least %d pixels wide." % minimum_image_width
 
-    action = "Please add a larger lead image to this product."
+    action = "Please add a larger lead image to this content."
 
     # Check if the image width is less than the height
     def value(self):
@@ -707,7 +700,7 @@ class AppropriateLinkText(BodyLinkCheck):
 
             # Minimum length check
             if len(i) < self.min_chars:
-                yield ContentCheckError(self, 'Short link text "%s" ("%d" characters)' % (i, len(i)))
+                yield ContentCheckError(self, 'Short link text "%s" (%d characters)' % (i, len(i)))
 
             # Check for individual prohibited words
             link_words = self.toWords(i)
@@ -990,7 +983,7 @@ class ProhibitedAttributes(BodyTextCheck):
                     )
 
 
-# Validate that resolveuid/... links actually resolve, and that they link to a product or a file.
+# Validate that resolveuid/... links actually resolve, and that they link to a content or a file.
 class InternalLinkByUID(BodyLinkCheck):
 
     title = 'HTML: Internal Links By Plone Id'
@@ -1069,7 +1062,7 @@ class LargeImages(ContentCheck):
 
     title = "Large Images"
 
-    description = "Validates that images contained in product are an appropriate size for the web."
+    description = "Validates that images contained in content are an appropriate size for the web."
 
     action = "Resize image to a maximum of 1200px width."
 
@@ -1229,7 +1222,7 @@ class ExternalLinkCheck(BodyLinkCheck):
 
         if self.value():
             yield ManualCheckError(self,
-                u"""Product contains external links."""
+                u"""Content contains external links."""
             )
 
     def manual_check(self):
@@ -1278,10 +1271,10 @@ class FuturePublishingDate(ContentCheck):
     title = "Future Publishing Date"
 
     # Description for the check
-    description = "Validates that the publishing date for the product is not in the future, which will prevent the product from being imported. This is occasionally the desired behavior, but is often set in error."
+    description = "Validates that the publishing date for the content is not in the future, which will prevent the content from being visible. This is occasionally the desired behavior, but is often set in error."
 
     # Action to remediate the issue
-    action = "Adjust or remove the publishing date (under the Dates tab) of the product in Plone if it is not set for a reason."
+    action = "Adjust or remove the publishing date (under the Dates tab) of the content in Plone if it is not set for a reason."
 
     def value(self):
         return localize(self.context.effective())

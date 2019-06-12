@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:title fill-slot="content-title">
+    <h1 class="documentFirstHeading">
+        <tal:block
+            tal:condition="not: view/show_all">
+            Content Issues By Product Type
+        </tal:block>
+        <tal:block
+            tal:condition="view/show_all">
+            All Content Checks By Product Type
+        </tal:block>
+    </h1>
+</metal:title>
+
+<metal:description fill-slot="content-description">
+
+    <p tal:define="description view/description|nothing"
+       tal:condition="description"
+       tal:content="description" />
+
+</metal:description>
+
+<metal:content-core fill-slot="content-core">
+
+    <p class="discreet">
+        <a tal:condition="not: view/show_all"
+           tal:attributes="href string:${context/absolute_url}/@@content_checks?all=1">
+           Show <strong>All Content Checks By Product Type</strong></a>
+        <a tal:condition="view/show_all"
+           tal:attributes="href string:${context/absolute_url}/@@content_checks">
+           Show <strong>Content Issues By Product Type</strong></a>
+    </p>
+
+    <tal:structure tal:repeat="i view/getChecksByType">
+        <h2 tal:content="i/product_type" />
+
+        <table class="table table-bordered table-striped html" tal:condition="i/checks|nothing">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Test Title</th>
+                    <th>Test Description</th>
+                    <th>Action to Take</th>
+                    <th>Products With Issue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tal:repeat="j i/checks">
+                    <td>
+                        <a tal:attributes="href python: view.getErrorListingURL(i, j)"
+                           tal:content="j/title" />
+                    </td>
+                    <td tal:content="j/description" />
+                    <td tal:content="j/action" />
+                    <td tal:content="python: view.getIssueCount(i, j)" />
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="discreet"
+           tal:condition="not: i/checks|nothing">
+            <tal:block tal:condition="not: view/show_all">
+                No products with issues found.
+            </tal:block>
+            <tal:block tal:condition="view/show_all">
+                No checks found.
+            </tal:block>
+        </p>
+
+    </tal:structure>
+
+</metal:content-core>
+
+</body>
+</html>

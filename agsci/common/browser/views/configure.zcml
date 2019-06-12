@@ -95,6 +95,16 @@
 
     <!-- Default Folder View -->
     <browser:page
+        for="*"
+        name="folder_base"
+        class=".FolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/folder.pt"
+    />
+
+    <!-- Default Folder View -->
+    <browser:page
         for="plone.app.contenttypes.interfaces.IFolder"
         name="view"
         class=".FolderView"
@@ -198,6 +208,32 @@
         permission="zope2.View"
         for="*"
         layer="..interfaces.IThemeSpecific"
+    />
+
+    <!-- Content Checks -->
+    <browser:page
+        for="*"
+        name="content_checks"
+        class=".check.EnumerateErrorChecksView"
+        permission="zope2.View"
+        template="templates/enumerate_error_checks.pt"
+    />
+
+    <browser:page
+        for="*"
+        name="content_check_items"
+        class=".check.ContentCheckItemsView"
+        permission="zope2.View"
+        template="templates/content_check_items.pt"
+    />
+
+    <!-- Rescan Views -->
+
+    <browser:page
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="rescan"
+        class=".ReindexObjectView"
+        permission="zope2.View"
     />
 
 </configure>

@@ -11,6 +11,8 @@ import pytz
 import re
 import unicodedata
 
+from .constants import DEFAULT_TIMEZONE
+
 #Ploneify
 def ploneify(toPlone, filename=False):
 
