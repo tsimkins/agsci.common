@@ -14,7 +14,7 @@
 
         <div class="row px-0 mx-0 align-items-start justify-content-center html">
             <div class="col-12 px-0">
-    
+
                 <div class="address-generic card agsci-box-shadow">
 
                     <div class="card-title"
@@ -26,17 +26,17 @@
                     </div>
 
                     <address
-                        tal:define="email view/data/email|nothing;
-                                    phone_number view/data/phone_number|nothing;
-                                    fax_number view/data/fax_number|nothing;
-                                    street_address view/street_address|nothing;
+                        tal:define="street_address view/street_address|nothing;
                                     city view/data/city|nothing;
                                     state view/data/state|nothing;
                                     zip_code view/data/zip_code|nothing;
-                                    has_address view/street_address">
-                                    
-                        <div class="mb-4"
+                                    has_address view/street_address;
+                                    directions view/data/directions|nothing;">
+
+                        <div class="mb-3"
                              tal:condition="has_address">
+
+                            <h3>Address</h3>
 
                             <span class="street-address"
                                     tal:condition="street_address"
@@ -55,42 +55,61 @@
                             <span class="postal-code"
                                     tal:condition="zip_code"
                                     tal:content="zip_code" />
-                        </div>
-                                    
-                        <div>
-                            <ul class="list-inline list-inline-not-mobile list-bio-contact">
-                                <li tal:condition="email">
-                                    <span>Email</span> 
-                                    <a tal:attributes="href string:mailto:${email}"
-                                        tal:content="email" />
-                                </li>
 
-                                <li tal:condition="phone_number">
-                                    <span>Office</span> 
-                                    <a tal:attributes="href string:tel:${phone_number}"
-                                        tal:content="phone_number" />
-                                </li>
-
-                                <li tal:condition="fax_number">
-                                    <span>Fax</span> 
-                                    <a tal:attributes="href string:tel:${fax_number}"
-                                        tal:content="fax_number" />
-                                </li>
-                            </ul>
-
-                            <tal:social-media
-                                tal:define="twitter_url view/data/twitter_url|nothing;
-                                            facebook_url view/data/facebook_url|nothing;
-                                            youtube_url view/data/youtube_url|nothing;
-                                            linkedin_url view/data/linkedin_url|nothing;">
-                                            
-                                <metal:social-media
-                                    metal:use-macro="context/social-media/macros/social-media" />
-                            </tal:social-media>
-
+                            <tal:block
+                                tal:condition="directions">
+                                <br />
+                                <a tal:attributes="href directions">Directions</a>
+                            </tal:block>
 
                         </div>
+
+
                     </address>
+
+                    <div tal:define="hours view/data/hours|nothing;
+                                     email view/data/email|nothing;
+                                     phone_number view/data/phone_number|nothing;
+                                     fax_number view/data/fax_number|nothing;">
+
+                        <p class="mb-2"
+                             tal:condition="hours">
+                            Hours: <span tal:replace="hours" />
+                        </p>
+
+
+                        <ul class="list-inline list-inline-not-mobile list-bio-contact">
+                            <li tal:condition="email">
+                                <span>Email</span>
+                                <a tal:attributes="href string:mailto:${email}"
+                                    tal:content="email" />
+                            </li>
+
+                            <li tal:condition="phone_number">
+                                <span>Office</span>
+                                <a tal:attributes="href string:tel:${phone_number}"
+                                    tal:content="phone_number" />
+                            </li>
+
+                            <li tal:condition="fax_number">
+                                <span>Fax</span>
+                                <a tal:attributes="href string:tel:${fax_number}"
+                                    tal:content="fax_number" />
+                            </li>
+                        </ul>
+
+                        <tal:social-media
+                            tal:define="twitter_url view/data/twitter_url|nothing;
+                                        facebook_url view/data/facebook_url|nothing;
+                                        youtube_url view/data/youtube_url|nothing;
+                                        linkedin_url view/data/linkedin_url|nothing;">
+
+                            <metal:social-media
+                                metal:use-macro="context/social-media/macros/social-media" />
+                        </tal:social-media>
+
+
+                    </div>
 
                 </div>
             </div>

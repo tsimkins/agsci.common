@@ -555,6 +555,16 @@ class IRizzoTheRatTile(ISocialContact, Interface):
         required=False
     )
 
+    directions = schema.TextLine(
+        title=_(u"Directions"),
+        required=False,
+    )
+
+    hours = schema.TextLine(
+        title=_(u"Hours"),
+        required=False,
+    )
+
     form.order_before(title='*')
 
 
