@@ -19,7 +19,7 @@
 
                 <img class="w-100"
                      tal:attributes="src view/img_src|nothing;
-                                     alt view/img_alt|nothing" />" />
+                                     alt view/img_alt|nothing" />
 
 			</div>
 			
