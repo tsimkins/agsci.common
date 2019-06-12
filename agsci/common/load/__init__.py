@@ -1,5 +1,6 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
+from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
@@ -320,7 +321,10 @@ class ContentImporter(object):
     @property
     def review_state(self):
         if self.exists:
-            return self.wftool.getInfoFor(self.context, 'review_state')
+            try:
+                return self.wftool.getInfoFor(self.context, 'review_state')
+            except WorkflowException:
+                pass
 
     def getId(self):
         return safe_unicode(self.data.id).encode('utf-8')
@@ -381,6 +385,15 @@ class ContentImporter(object):
 
         if image:
             item.image = image
+
+            # Unset full width field if image is too small, or is portrait.
+            try:
+                (w,h) = image.getImageSize()
+            except:
+                pass
+            else:
+                if w < h or w < 600:
+                    item.image_full_width = False
 
         # Set field values
         for field in self.fields:
