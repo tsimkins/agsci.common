@@ -244,4 +244,13 @@
         permission="zope2.View"
         template="templates/link_check.pt"
     />
+
+    <!-- Get rid of plonejsi18n error -->
+    <browser:page
+        for="*"
+        name="plonejsi18n"
+        class=".BaseView"
+        permission="zope2.View"
+    />
+
 </configure>

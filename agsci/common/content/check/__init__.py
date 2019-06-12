@@ -506,10 +506,6 @@ class HeadingLength(BodyHeadingCheck):
 
             if v > 200:
                 yield ContentCheckError(self, u"Length of %d characters for <%s> heading '%s' is too long." % (v, i.name, text))
-            elif v > 120:
-                yield ContentCheckError(self, u"Length of %d characters for <%s> heading '%s' is too long." % (v, i.name, text))
-            elif v > warning_length:
-                yield ContentCheckError(self, u"Length of %d characters for <%s> heading '%s' may be too long." % (v, i.name, text))
 
 # Prohibited words and phrases. Checks for individual words, phrases, and regex patterns in body text.
 class ProhibitedWords(BodyTextCheck):
@@ -524,7 +520,7 @@ class ProhibitedWords(BodyTextCheck):
     find_words = ['PSU',]
 
     # List of phrases, will be checked for 'in' body text.
-    find_phrases = ['Cooperative Extension',]
+    find_phrases = []
 
     # Regex patterns.  These are probably 'spensive.
     find_patterns = ['https*://',]
@@ -610,7 +606,7 @@ class LeadImageFormat(HasLeadImage):
 
     def check(self):
         if self.value():
-            yield self.error(self, 'Invalid format lead image found.')
+            yield ContentCheckError(self, 'Invalid format lead image found.')
 
 class LeadImageOrientation(HasLeadImage):
 
@@ -668,7 +664,7 @@ class LeadImageWidth(LeadImageOrientation):
 
             (w,h) = self.dimensions
 
-            yield self.error(self, 'Lead image width is %d pixels.' % w)
+            yield ContentCheckError(self, 'Lead image width is %d pixels.' % w)
 
 # Checks for instances of inappropriate link text in body
 class AppropriateLinkText(BodyLinkCheck):
@@ -689,49 +685,37 @@ class AppropriateLinkText(BodyLinkCheck):
         data = []
 
         for a in super(AppropriateLinkText, self).value():
-            data.append(self.soup_to_text(a))
+            label = self.soup_to_text(a)
+            href = a.get('href', '')
+
+            # Check for a special case where an image is the link, and use the alt text.
+            if not label:
+                for img in a.findAll('img'):
+                    alt = img.get('alt', '')
+                    if alt:
+                        label = alt
+                        break
+
+            data.append((label, href))
 
         return data
 
     def check(self):
 
         # Iterate through link text for document
-        for i in self.value():
+        for (label, href) in self.value():
 
             # Minimum length check
-            if len(i) < self.min_chars:
-                yield ContentCheckError(self, 'Short link text "%s" (%d characters)' % (i, len(i)))
+            if len(label) < self.min_chars:
+                yield ContentCheckError(self, 'Short link text "%s" (%d characters) for %s' % (label, len(label), href))
 
             # Check for individual prohibited words
-            link_words = self.toWords(i)
+            link_words = self.toWords(label)
 
             # Iterate through the words and check for presence in link text.
             for j in link_words:
                 if j in self.find_words:
-                    yield ContentCheckError(self, 'Inappropriate Link Text "%s" (found "%s")' % (i, j))
-
-# Checks for cases where an image is linked to something
-class ImageInsideLink(BodyLinkCheck):
-
-    title = 'HTML: Image Inside Link'
-
-    description = "Checks for <img> tags inside a link (<a> tag).  Images should not be used inside of links."
-
-    action = "Remove link tag from around image."
-
-    def value(self):
-        images = []
-
-        for a in super(ImageInsideLink, self).value():
-            images.extend(a.findAll('img'))
-
-        return len(images)
-
-    def check(self):
-        found_images = self.value()
-
-        if found_images:
-            yield ContentCheckError(self, 'Found %d images inside of links.' % found_images)
+                    yield ContentCheckError(self, 'Inappropriate Link Text "%s" (found "%s") for %s' % (label, j, href))
 
 
 # Checks for cases where an image is linked to something
@@ -748,52 +732,6 @@ class ExternalAbsoluteImage(BodyImageCheck):
             src = img.get('src', '')
             if not src.startswith('resolveuid'):
                 yield ContentCheckError(self, 'Image source of "%s" references an external/absolute image.' % src)
-
-
-# Checks for cases where an image is inside a paragraph that has text, but does not have a discreet tag.
-class ImageInsideTextParagraph(BodyImageCheck):
-
-    title = "HTML: Image inside a paragraph"
-
-    description = "Checks for <img> tags mixed in with paragraphs of text."
-
-    action = "Use the rich text editor to separate the image into a standalone paragraph of class 'discreet' containing only the image caption."
-
-    # Other acceptable tags for an image to be under, in addition to the
-    # standard '<p>'
-    ok_parent_tags = ['td', 'li']
-
-    def check(self):
-        # Iterate through all images in HTML
-        for img in self.value():
-
-            # Find the image's parent paragraph
-            p = img.findParent('p')
-
-            if p:
-                p_class = p.get('class', '').strip()
-                p_text = self.soup_to_text(p)
-
-                if p_text:
-
-                    p_text = truncate_text(p_text, 32)
-
-                    if p_class and p_class == 'discreet':
-
-                        if not p.find('br'):
-                            yield ContentCheckError(self, 'Image and caption "%s" needs a <br /> between image and text.' % p_text)
-                    else:
-                        yield ContentCheckError(self, 'Paragraph with image and text "%s" should be of class "discreet" and contain only the caption.' % p_text)
-
-            else:
-
-                # Check if an image is inside one of the other acceptable tags.
-                # If it is, do not return an error.
-
-                ok_parent = img.findParent(self.ok_parent_tags)
-
-                if not ok_parent:
-                    yield ContentCheckError(self, 'Image is not inside a <p> tag.')
 
 
 # Checks for cases where a heading has a 'strong' or 'b' tag inside

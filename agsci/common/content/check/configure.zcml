@@ -71,15 +71,6 @@
     />
 
 
-    <!-- Body Text: Image Inside Link -->
-
-    <subscriber
-        provides=".IContentCheck"
-        factory=".ImageInsideLink"
-        for="plone.dexterity.interfaces.IDexterityContent"
-    />
-
-
     <!-- Body Text: Image with an external or absolute URL -->
 
     <subscriber
@@ -103,15 +94,6 @@
     <subscriber
         provides=".IContentCheck"
         factory=".HeadingsInBold"
-        for="plone.dexterity.interfaces.IDexterityContent"
-    />
-
-
-    <!-- Body Text: Image Inside Paragraph of Text -->
-
-    <subscriber
-        provides=".IContentCheck"
-        factory=".ImageInsideTextParagraph"
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
