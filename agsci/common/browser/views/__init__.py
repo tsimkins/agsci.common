@@ -7,6 +7,7 @@ from plone import api
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
 from zope import schema
 
+from agsci.common.content.check import ExternalLinkCheck
 from agsci.common.content.degrees import IDegree
 from agsci.common.indexer import degree_index_field
 from agsci.common.utilities import get_fields_by_type, toLocalizedTime
@@ -309,3 +310,9 @@ class ReindexObjectView(BaseView):
 
         self.context.reindexObject()
         return self.request.response.redirect('%s?rescanned=1' % self.context.absolute_url())
+
+class ExternalLinkCheckView(BaseView):
+
+    def link_check(self):
+        results = [x for x in ExternalLinkCheck(self.context).manual_check()]
+        return results

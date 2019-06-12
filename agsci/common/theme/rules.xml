@@ -87,8 +87,6 @@
         <drop css:content="#audience-nav-viewlet" />
         <drop css:content="#primary-nav-viewlet" />
 
-        <append css:theme="#section-content" css:content="#data-check" />
-
     </rules>
 
     <!-- Drop portlet manager div -->
@@ -227,6 +225,8 @@
                                 body.viewpermission-plone-site-setup-tinymce,
                                 body.viewpermission-plone-site-setup-types,
                                 body.viewpermission-plone-site-setup-users-and-groups">
+
+            <append css:theme="#section-content" css:content="#data-check" />
 
             <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />

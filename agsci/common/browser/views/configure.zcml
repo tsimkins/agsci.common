@@ -236,4 +236,12 @@
         permission="zope2.View"
     />
 
+    <!-- External Link Check -->
+    <browser:page
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="link_check"
+        class=".ExternalLinkCheckView"
+        permission="zope2.View"
+        template="templates/link_check.pt"
+    />
 </configure>
