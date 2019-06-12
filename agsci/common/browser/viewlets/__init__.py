@@ -288,9 +288,9 @@ class LeadImageViewlet(ViewletBase):
     @property
     def klass(self):
         if self.adapted.image_full_width:
-            return 'my-4 px-0'
+            return 'mb-4 px-0'
 
-        return 'my-4 ml-lg-3 float-lg-right col-lg-6 px-0'
+        return 'mb-4 ml-lg-3 float-lg-right col-lg-6 px-0'
 
 class DataCheckViewlet(ViewletBase):
 
