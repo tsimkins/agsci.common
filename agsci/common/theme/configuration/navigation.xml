@@ -343,6 +343,7 @@
             <!-- Extension Dropdown -->
             <item>
                 <title>Extension</title>
+                <link>extension</link>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
                     <title>
@@ -353,11 +354,13 @@
                     <group>
                         <item>
                             <title>Educational Programming</title>
+                            <link>extension/programming</link>
                         </item>
                     </group>
                     <group>
                         <item>
                             <title>Major Initiatives</title>
+                            <link>extension/initiatives</link>
                         </item>
                     </group>
                 </items>
