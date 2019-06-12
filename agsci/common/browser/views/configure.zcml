@@ -215,7 +215,7 @@
         for="*"
         name="content_checks"
         class=".check.EnumerateErrorChecksView"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
         template="templates/enumerate_error_checks.pt"
     />
 
@@ -223,7 +223,7 @@
         for="*"
         name="content_check_items"
         class=".check.ContentCheckItemsView"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
         template="templates/content_check_items.pt"
     />
 
@@ -233,7 +233,7 @@
         for="plone.dexterity.interfaces.IDexterityContent"
         name="rescan"
         class=".ReindexObjectView"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
     />
 
     <!-- External Link Check -->
@@ -241,7 +241,7 @@
         for="plone.dexterity.interfaces.IDexterityContent"
         name="link_check"
         class=".ExternalLinkCheckView"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
         template="templates/link_check.pt"
     />
 

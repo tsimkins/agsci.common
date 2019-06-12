@@ -1169,6 +1169,10 @@ class ExternalLinkCheck(BodyLinkCheck):
 
             (return_code, return_url) = self.check_link(url)
 
+
+            if not link_text:
+                link_text = url
+
             data = self.object_factory(
                 title=link_text,
                 url=url,

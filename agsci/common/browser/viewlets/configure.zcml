@@ -122,7 +122,7 @@
         name="agsci.common.data_check"
         manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         class=".DataCheckViewlet"
-        permission="zope2.View"
+        permission="cmf.ModifyPortalContent"
         template="templates/data_check.pt"
     />
 </configure>

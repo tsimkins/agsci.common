@@ -34,8 +34,8 @@
 
     <h3>Key</h3>
 
-    <table class="table table-bordered table-striped html" >
-        <thead class="thead-dark">
+    <table class="listing" >
+        <thead>
             <tr>
                 <th>
                     Status
@@ -69,8 +69,8 @@
         tal:define="link_check view/link_check"
         condition="link_check">
 
-        <table class="table table-bordered table-striped html">
-            <thead class="thead-dark">
+        <table class="listing">
+            <thead>
                 <tr>
                     <th>
                         Message
