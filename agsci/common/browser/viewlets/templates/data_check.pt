@@ -1,0 +1,49 @@
+<div id="data-check" class="container my-3 html">
+    <h2>Content Issues</h2>
+
+    <p>This lists some automagically detected content issues for review.</p>
+
+    <tal:errors condition="view/data">
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Test Title
+                    </th>
+                    <th>
+                        Test Description
+                    </th>
+                    <th>
+                        Message
+                    </th>
+                    <th>
+                        Action to Take
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tal:repeat="i view/data">
+                    <td tal:content="i/check/title" />
+                    <td tal:content="i/check/description" />
+                    <td tal:content="i/msg" tal:condition="not: i/render" />
+                    <td tal:content="structure i/msg" tal:condition="i/render" />
+                    <td tal:content="i/check/action" tal:condition="not: i/render_action" />
+                    <td tal:content="structure i/check/action" tal:condition="i/render_action" />
+                </tr>
+            </tbody>
+        </table>
+    </tal:errors>
+
+    <tal:no-errors condition="not: view/data">
+        <p class="error-check-none">No issues found.</p>
+    </tal:no-errors>
+
+    <form method="post"
+          class="rescan-issues"
+          tal:condition="not: view/anonymous"
+          tal:attributes="action view/post_url">
+        <input type="submit" value="Rescan" />
+    </form>
+
+</div>

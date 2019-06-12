@@ -7,6 +7,7 @@ from plone.app.layout.viewlets.common import PathBarViewlet as _PathBarViewlet
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone import api
 from urlparse import urlparse
 from zope.component import queryUtility
 from zope.component.hooks import getSite
@@ -16,6 +17,13 @@ import untangle
 from agsci.common.utilities import ploneify
 from agsci.common import object_factory
 from agsci.common.content.behaviors.leadimage import LeadImage
+from agsci.common.content.check import getValidationErrors
+
+try:
+    from plone.protect.utils import addTokenToUrl
+except ImportError:
+    def addTokenToUrl(x):
+        return x
 
 class ViewletBase(_ViewletBase):
 
@@ -34,6 +42,10 @@ class ViewletBase(_ViewletBase):
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
+
+    @property
+    def anonymous(self):
+        return api.user.is_anonymous()
 
 class LogoViewlet(ViewletBase):
     pass
@@ -279,3 +291,13 @@ class LeadImageViewlet(ViewletBase):
             return 'my-4 px-0'
 
         return 'my-4 ml-lg-3 float-lg-right col-lg-6 px-0'
+
+class DataCheckViewlet(ViewletBase):
+
+    def data(self):
+        return getValidationErrors(self.context)
+
+    def post_url(self):
+        url = '%s/@@rescan' % self.context.absolute_url()
+
+        return addTokenToUrl(url)

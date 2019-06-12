@@ -42,6 +42,8 @@ def add_catalog_indexes(context, logger=None):
                 ('DegreeCareer', 'KeywordIndex'),
                 ('hasLeadImage', 'BooleanIndex'),
                 ('DirectoryClassification', 'KeywordIndex'),
+                ('ContentIssues', 'FieldIndex'),
+                ('ContentErrorCodes', 'KeywordIndex'),
              ]
 
     indexables = []

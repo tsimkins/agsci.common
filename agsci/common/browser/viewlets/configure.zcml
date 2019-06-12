@@ -115,4 +115,14 @@
         template="templates/leadimage.pt"
     />
 
+    <!-- Data Check -->
+
+    <browser:viewlet
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="agsci.common.data_check"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+        class=".DataCheckViewlet"
+        permission="zope2.View"
+        template="templates/data_check.pt"
+    />
 </configure>

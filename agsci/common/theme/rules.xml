@@ -87,6 +87,8 @@
         <drop css:content="#audience-nav-viewlet" />
         <drop css:content="#primary-nav-viewlet" />
 
+        <append css:theme="#section-content" css:content="#data-check" />
+
     </rules>
 
     <!-- Drop portlet manager div -->

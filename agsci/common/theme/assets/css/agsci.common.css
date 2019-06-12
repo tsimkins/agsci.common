@@ -13558,7 +13558,8 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   font-size: 0.9rem;
   line-height: 1.8;
   margin-bottom: 0.75em; }
-#parent-fieldname-text td, #parent-fieldname-text th,
+#parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
+.html input,
 .html td,
 .html th {
   font-family: "Nunito Sans", sans-serif;

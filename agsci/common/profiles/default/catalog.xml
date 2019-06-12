@@ -3,4 +3,6 @@
   <column value="Tags" />
   <column value="hasLeadImage" />
   <column value="DirectoryClassification" />
+  <column value="ContentIssues" />
+  <column value="ContentErrorCodes" />
 </object>

@@ -1,0 +1,211 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agsci.common">
+
+    <!-- Check For Title Length -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".TitleLength"
+        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+    />
+
+
+    <!-- Check For Description Length -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".DescriptionLength"
+        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+    />
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".LeadImageFormat"
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+    />
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".LeadImageWidth"
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+    />
+
+
+    <!-- Body Text: Heading Levels -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".HeadingLevels"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Heading Length -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".HeadingLength"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Checks ALL CAPS headings -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".AllCapsHeadings"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Appropriate Link Text -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".AppropriateLinkText"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Image Inside Link -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ImageInsideLink"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Image with an external or absolute URL -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ExternalAbsoluteImage"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Bold text inside headings. -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".BoldHeadings"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Headings inside bold text. -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".HeadingsInBold"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Image Inside Paragraph of Text -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ImageInsideTextParagraph"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Multiple sequential breaks inside a paragraph -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ParagraphMultipleBreakSequenceCheck"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Underlined text -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".UnderlinedText"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Inline Styles -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".InlineStyles"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+    <!-- Body Text: Prohibited attributes -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ProhibitedAttributes"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+
+    <!-- Body Text: Verify Internal UID Links Resolve -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".InternalLinkByUID"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+    <!--
+         Validate that images are not too large (size/dimensions)
+    -->
+<!--
+    <subscriber
+        provides=".IContentCheck"
+        factory=".LargeImages"
+        for="..IAtlasProduct"
+    />
+-->
+
+    <!--
+        Validate that active people have valid classification(s)
+    -->
+
+<!--
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ActivePersonClassifications"
+        for="agsci.person.content.person.IPerson"
+    />
+-->
+
+    <!-- External Link Check (Manual) -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ExternalLinkCheck"
+        for="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior"
+    />
+
+    <!-- Warn if Publishing Dates are in the future -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".FuturePublishingDate"
+        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+    />
+
+    <!--
+        Reporting check to see if any checks are ignored.
+     -->
+<!--
+    <subscriber
+        provides=".IContentCheck"
+        factory=".IgnoredChecks"
+        for="plone.app.dexterity.behaviors.metadata.IDublinCore"
+    />
+-->
+</configure>

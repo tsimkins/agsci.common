@@ -7,6 +7,7 @@ from zope.component import provideAdapter
 from .content.behaviors import IAlwaysExcludeFromNavigation
 from .content.behaviors.tags import ITags
 from .content.behaviors.leadimage import ILeadImage, LeadImage
+from .content.check import getValidationErrors
 from .content.degrees import IDegree
 from .content.person.person import IPerson
 
@@ -84,3 +85,18 @@ def AlwaysExcludeFromNavigation(context):
     return True
 
 provideAdapter(AlwaysExcludeFromNavigation, name='exclude_from_nav')
+
+# Content Error Codes
+@indexer(IDexterityContent)
+def ContentErrorCodes(context):
+    errors = getValidationErrors(context)
+    return tuple(sorted(set([x.error_code for x in errors])))
+
+provideAdapter(ContentErrorCodes, name='ContentErrorCodes')
+
+# Content Issues
+@indexer(IDexterityContent)
+def ContentIssues(context):
+    return len([x for x in getValidationErrors(context)])
+
+provideAdapter(ContentIssues, name='ContentIssues')

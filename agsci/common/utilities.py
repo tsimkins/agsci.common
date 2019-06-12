@@ -1,3 +1,4 @@
+from datetime import datetime
 from DateTime import DateTime
 from Products.CMFPlone.utils import safe_unicode
 from plone.behavior.interfaces import IBehavior
@@ -6,6 +7,7 @@ from plone.i18n.normalizer import idnormalizer, filenamenormalizer
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
+import pytz
 import re
 import unicodedata
 
@@ -222,3 +224,40 @@ def setSiteURL(site, domain='trs22.psu.edu:5051', path='', https=True):
 
     if site.REQUEST.get('_ec_cache', None):
         site.REQUEST['_ec_cache'] = {}
+
+def truncate_text(v, max_chars=200, el='...'):
+
+    if v and isinstance(v, (str, unicode)):
+
+        v = " ".join(v.strip().split())
+
+        if len(v) > max_chars:
+            v = v[:max_chars]
+            _d = v.split()
+            _d.pop()
+            v = " ".join(_d) + el
+
+    return v
+
+# Localize all DateTime/datetime values to Eastern Time Zone
+def localize(_):
+
+    tz = pytz.timezone(DEFAULT_TIMEZONE)
+
+    if isinstance(_, DateTime):
+
+        try:
+            tz = pytz.timezone(_.timezone())
+        except pytz.UnknownTimeZoneError:
+            pass
+
+        _ = _.asdatetime()
+
+    if isinstance(_, datetime):
+
+        if not _.tzinfo:
+            return tz.localize(_)
+
+        return _
+
+    return None
