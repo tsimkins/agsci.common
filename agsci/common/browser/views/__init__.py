@@ -285,7 +285,17 @@ class PersonCardVerticalNoBorderView(PersonCardVerticalView):
     border = False
 
 class FolderView(_FolderView, BaseView):
-    pass
+
+    batch_size = 500 # Because pagination *sucks*
+
+    def __init__(self, context, request):
+        super(FolderView, self).__init__(context, request)
+
+        limit_display = getattr(self.request, 'limit_display', None)
+        limit_display = int(limit_display) if limit_display is not None else self.batch_size
+
+        b_size = getattr(self.request, 'b_size', None)
+        self.b_size = int(b_size) if b_size is not None else limit_display
 
 class CollectionView(FolderView):
 
