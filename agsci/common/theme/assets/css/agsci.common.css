@@ -13443,7 +13443,8 @@ body.viewpermission-modify-portal-content #content,
 body.viewpermission-portlets-manage-portlets #content,
 body.viewpermission-plone-site-setup-overview #content,
 body.viewpermission-plone-site-setup-users-and-groups #content,
-body.viewpermission-list-folder-contents #content {
+body.viewpermission-list-folder-contents #content,
+body.viewpermission-delete-objects #content {
   margin-top: 2em; }
 body.viewpermission-manage-portal #viewlet-below-content,
 body.viewpermission-add-portal-content #viewlet-below-content,
@@ -13453,8 +13454,63 @@ body.viewpermission-modify-portal-content #viewlet-below-content,
 body.viewpermission-portlets-manage-portlets #viewlet-below-content,
 body.viewpermission-plone-site-setup-overview #viewlet-below-content,
 body.viewpermission-plone-site-setup-users-and-groups #viewlet-below-content,
-body.viewpermission-list-folder-contents #viewlet-below-content {
+body.viewpermission-list-folder-contents #viewlet-below-content,
+body.viewpermission-delete-objects #viewlet-below-content {
   display: none; }
+body.viewpermission-manage-portal section.entries div.container,
+body.viewpermission-add-portal-content section.entries div.container,
+body.viewpermission-manage-schemata section.entries div.container,
+body.viewpermission-plone-site-setup-site section.entries div.container,
+body.viewpermission-modify-portal-content section.entries div.container,
+body.viewpermission-portlets-manage-portlets section.entries div.container,
+body.viewpermission-plone-site-setup-overview section.entries div.container,
+body.viewpermission-plone-site-setup-users-and-groups section.entries div.container,
+body.viewpermission-list-folder-contents section.entries div.container,
+body.viewpermission-delete-objects section.entries div.container {
+  margin-bottom: 1em; }
+body.viewpermission-manage-portal section.entries a,
+body.viewpermission-manage-portal section.entries a:hover,
+body.viewpermission-manage-portal section.entries a:focus,
+body.viewpermission-add-portal-content section.entries a,
+body.viewpermission-add-portal-content section.entries a:hover,
+body.viewpermission-add-portal-content section.entries a:focus,
+body.viewpermission-manage-schemata section.entries a,
+body.viewpermission-manage-schemata section.entries a:hover,
+body.viewpermission-manage-schemata section.entries a:focus,
+body.viewpermission-plone-site-setup-site section.entries a,
+body.viewpermission-plone-site-setup-site section.entries a:hover,
+body.viewpermission-plone-site-setup-site section.entries a:focus,
+body.viewpermission-modify-portal-content section.entries a,
+body.viewpermission-modify-portal-content section.entries a:hover,
+body.viewpermission-modify-portal-content section.entries a:focus,
+body.viewpermission-portlets-manage-portlets section.entries a,
+body.viewpermission-portlets-manage-portlets section.entries a:hover,
+body.viewpermission-portlets-manage-portlets section.entries a:focus,
+body.viewpermission-plone-site-setup-overview section.entries a,
+body.viewpermission-plone-site-setup-overview section.entries a:hover,
+body.viewpermission-plone-site-setup-overview section.entries a:focus,
+body.viewpermission-plone-site-setup-users-and-groups section.entries a,
+body.viewpermission-plone-site-setup-users-and-groups section.entries a:hover,
+body.viewpermission-plone-site-setup-users-and-groups section.entries a:focus,
+body.viewpermission-list-folder-contents section.entries a,
+body.viewpermission-list-folder-contents section.entries a:hover,
+body.viewpermission-list-folder-contents section.entries a:focus,
+body.viewpermission-delete-objects section.entries a,
+body.viewpermission-delete-objects section.entries a:hover,
+body.viewpermission-delete-objects section.entries a:focus {
+  border-bottom: none !important;
+  text-decoration: none; }
+body.viewpermission-manage-portal section.entries a:before,
+body.viewpermission-add-portal-content section.entries a:before,
+body.viewpermission-manage-schemata section.entries a:before,
+body.viewpermission-plone-site-setup-site section.entries a:before,
+body.viewpermission-modify-portal-content section.entries a:before,
+body.viewpermission-portlets-manage-portlets section.entries a:before,
+body.viewpermission-plone-site-setup-overview section.entries a:before,
+body.viewpermission-plone-site-setup-users-and-groups section.entries a:before,
+body.viewpermission-list-folder-contents section.entries a:before,
+body.viewpermission-delete-objects section.entries a:before {
+  content: '' !important; }
 
 /* YouTube CSS */
 body .youtube-video-embed {
@@ -13626,8 +13682,17 @@ header a.invalid {
   text-decoration-color: orange;
   text-decoration-style: wavy; }
 
-body.template-link_check #data-check {
+body.template-link_check #data-check,
+body.template-content_checks #data-check {
   display: none; }
+body.template-link_check td, body.template-link_check th,
+body.template-content_checks td,
+body.template-content_checks th {
+  font-size: 1.5rem; }
+
+.address p, .address li {
+  font-size: 0.825rem;
+  line-height: 1.4; }
 
 .alert.status,
 .portalMessage {

@@ -203,12 +203,30 @@ body.viewpermission-modify-portal-content,
 body.viewpermission-portlets-manage-portlets,
 body.viewpermission-plone-site-setup-overview,
 body.viewpermission-plone-site-setup-users-and-groups,
-body.viewpermission-list-folder-contents {
+body.viewpermission-list-folder-contents,
+body.viewpermission-delete-objects {
     #content {
         margin-top: 2em;
     }
     #viewlet-below-content {
         display: none;
+    }
+
+    section.entries {
+        div.container {
+            margin-bottom: 1em;
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            border-bottom: none !important;
+            text-decoration: none;
+        }
+
+        a:before {
+            content: '' !important;
+        }
     }
 }
 
@@ -435,8 +453,20 @@ header {
     }
 }
 
-body.template-link_check {
+body.template-link_check,
+body.template-content_checks {
     #data-check {
         display: none;
+    }
+
+    td, th {
+        font-size: 1.5rem;
+    }
+}
+
+.address {
+    p, li {
+        font-size: 0.825rem;
+        line-height: 1.4;
     }
 }

@@ -67,7 +67,8 @@
 
                     </address>
 
-                    <div tal:define="hours view/data/hours|nothing;
+                    <div class="addresss"
+                         tal:define="hours view/data/hours|nothing;
                                      email view/data/email|nothing;
                                      phone_number view/data/phone_number|nothing;
                                      fax_number view/data/fax_number|nothing;">

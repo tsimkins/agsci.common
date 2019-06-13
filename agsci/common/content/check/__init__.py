@@ -197,7 +197,7 @@ class TitleLength(ContentCheck):
 
         if v > 60:
             yield ContentCheckError(self, u"%d characters is too long." % v)
-        elif v < 10:
+        elif v < 3:
             yield ContentCheckError(self, u"%d characters may be too short." % v)
 
 
