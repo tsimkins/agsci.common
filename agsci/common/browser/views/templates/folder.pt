@@ -13,7 +13,7 @@
   <div id="parent-fieldname-text"
        tal:define="text context/text|nothing"
        tal:condition="text"
-       tal:content="structure text/raw" />
+       tal:content="structure python:context.text.output_relative_to(view.context)" />
 
   <tal:results define="batch view/batch">
     <metal:listingmacro define-macro="listing">
