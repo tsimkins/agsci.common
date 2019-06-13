@@ -520,7 +520,7 @@ class ProhibitedWords(BodyTextCheck):
     find_words = ['PSU',]
 
     # List of phrases, will be checked for 'in' body text.
-    find_phrases = []
+    find_phrases = ['Agronomy Facts',]
 
     # Regex patterns.  These are probably 'spensive.
     find_patterns = ['https*://',]
