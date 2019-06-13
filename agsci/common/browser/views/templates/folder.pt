@@ -22,7 +22,7 @@
             tal:define="normalizeString nocall: context/plone_utils/normalizeString;">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
             <tal:block tal:define="obj item/getObject;
-                item_url item/getURL;
+                item_url python:view.getItemURL(item);
                 item_id item/getId;
                 item_title item/Title;
                 item_description item/Description;
@@ -33,12 +33,11 @@
                 item_wf_state item/review_state;
                 item_wf_state_class python:'state-' + normalizeString(item_wf_state);
                 item_creator item/Creator;
-                item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;
                 item_has_image python:item.getIcon">
 
     <metal:block define-slot="entry">
 
-        <a tal:attributes="href item_link;
+        <a tal:attributes="href item_url;
                            class string:card $item_type_class $item_wf_state_class url;
                            title item_title">
 
@@ -48,7 +47,7 @@
 
                     <div tal:attributes="class python:view.item_class(item)">
 
-                        <span class="a px-0 summary"
+                        <div class="a px-0 pb-1 mb-1 summary"
                                 tal:content="item_title" />
 
                         <tal:byline condition="view/show_about">
@@ -82,12 +81,17 @@
                             </div>
                         </tal:byline>
 
-                        <p class="discreet my-2"
+                        <p class="discreet mb-1"
                             tal:condition="view/show_date|nothing"
                             tal:content="python: view.item_date(item)">
                         </p>
 
-                        <p class="description my-3"
+                        <p class="discreet small mt-0 mb-1"
+                           tal:define="item_info python:view.getItemInfo(item)"
+                           tal:condition="item_info"
+                           tal:content="item_info" />
+
+                        <p class="description mb-1"
                             tal:define="show_description view/show_description|nothing"
                             tal:condition="python:show_description and item_description"
                             tal:content="item_description">

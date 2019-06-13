@@ -5,7 +5,9 @@ from Products.Five import BrowserView
 from collective.z3cform.datagridfield import DictRow
 from plone import api
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
+from plone.registry.interfaces import IRegistry
 from zope import schema
+from zope.component import getUtility
 
 from agsci.common.content.check import ExternalLinkCheck
 from agsci.common.content.degrees import IDegree
@@ -111,32 +113,6 @@ class BaseView(BrowserView):
     @property
     def anonymous(self):
         return api.user.is_anonymous()
-
-    @property
-    def use_view_action(self):
-        return getToolByName(self.context, 'portal_properties').get("site_properties").getProperty('typesUseViewActionInListings', ())
-
-    def getItemURL(self, item):
-
-        item_type = item.portal_type
-
-        if hasattr(item, 'getURL'):
-            item_url = item.getURL()
-        else:
-            item_url = item.absolute_url()
-
-        # Logged out
-        if self.anonymous:
-            if item_type in ['Image', 'File']:
-                return item_url + '/view'
-            else:
-                return item_url
-        # Logged in
-        else:
-            if item_type in self.use_view_action:
-                return item_url + '/view'
-            else:
-                return item_url
 
     @property
     def portal_url(self):
@@ -296,6 +272,101 @@ class FolderView(_FolderView, BaseView):
 
         b_size = getattr(self.request, 'b_size', None)
         self.b_size = int(b_size) if b_size is not None else limit_display
+
+    def getItemSize(self, item):
+
+        if hasattr(item, 'getObjSize'):
+            if hasattr(item.getObjSize, '__call__'):
+                return item.getObjSize()
+            else:
+                return item.getObjSize
+
+    def fileExtensionIcons(self):
+        ms_data = ['xls', 'doc', 'ppt']
+
+        data = {
+            'xls' : u'Microsoft Excel',
+            'ppt' : u'Microsoft PowerPoint',
+            'publisher' : u'Microsoft Publisher',
+            'doc' : u'Microsoft Word',
+            'pdf' : u'PDF',
+            'pdf_icon' : u'PDF',
+            'text' : u'Plain Text',
+            'txt' : u'Plain Text',
+            'zip' : u'ZIP Archive',
+        }
+
+        for ms in ms_data:
+            ms_type = data.get(ms, '')
+            if ms_type:
+                data['%sx' % ms] = ms_type
+
+        mimetypes
+
+        return data
+
+    def getRemoteUrl(self, item):
+        if hasattr(item, 'getRemoteUrl'):
+            if hasattr(item.getRemoteUrl, '__call__'):
+                return item.getRemoteUrl()
+            else:
+                return item.getRemoteUrl
+
+    def getLinkType(self, url):
+
+        if '.' in url:
+            icon = url.strip().lower().split('.')[-1]
+            return self.fileExtensionIcons().get(icon, None)
+
+    def getFileType(self, item):
+
+        mimetypes_registry = getToolByName(self.context, 'mimetypes_registry')
+
+        _ = mimetypes_registry.lookup(item.mime_type)
+
+        if _:
+            return _[0].name()
+
+
+    def getItemInfo(self, item):
+
+        if item.portal_type in ['File',]:
+            obj_size = self.getItemSize(item)
+            file_type = self.getFileType(item)
+
+            if file_type:
+                if obj_size:
+                    return u'%s, %s' % (file_type, obj_size)
+                else:
+                    return u'%s' % file_type
+
+        elif item.portal_type in ['Link',]:
+            url = self.getRemoteUrl(item)
+            return self.getLinkType(url)
+
+
+    def getItemURL(self, item):
+
+        item_type = item.portal_type
+
+        if hasattr(item, 'getURL'):
+            item_url = item.getURL()
+        else:
+            item_url = item.absolute_url()
+
+        if item_type in self.use_view_action:
+            return item_url + '/view'
+        else:
+            return item_url
+
+    @property
+    def use_view_action(self):
+
+        if not self.anonymous:
+            registry = getUtility(IRegistry)
+            return registry.get('plone.types_use_view_action_in_listings', [])
+
+        return []
 
 class CollectionView(FolderView):
 

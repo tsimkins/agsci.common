@@ -399,8 +399,10 @@ body.mosaic-editor.plone-toolbar-left-expanded {
                 color: #575757;
             }
 
-            span.a {
-                font-size: 1.5em;
+            div.a.summary {
+                padding-bottom: 0.25rem !important;
+                font-size: 1.25em;
+                display: inline-block;
             }
 
             @include link_color();
@@ -408,6 +410,8 @@ body.mosaic-editor.plone-toolbar-left-expanded {
             .description {
                 line-height: 1.8;
             }
+
+
         }
     }
 }

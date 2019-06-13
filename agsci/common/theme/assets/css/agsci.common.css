@@ -13638,8 +13638,10 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     font-size: 0.6875em;
     margin: 1em 0 0.5em 1em;
     color: #575757; }
-  #content-core .entries .entry span.a {
-    font-size: 1.5em; }
+  #content-core .entries .entry div.a.summary {
+    padding-bottom: 0.25rem !important;
+    font-size: 1.25em;
+    display: inline-block; }
   #content-core .entries .entry a, #content-core .entries .entry a:visited,
   #content-core .entries .entry a:active,
   #content-core .entries .entry .a {
