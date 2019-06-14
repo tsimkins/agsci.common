@@ -68,6 +68,10 @@ class ContentImporter(object):
         'Form Folder' : 'Folder',
     }
 
+    valid_layouts = [
+        'subfolder_view',
+    ]
+
     @property
     def types_mapping(self):
         _ = dict([(x.Title(), x.getId()) for x in self.portal_types.listTypeInfo()])
@@ -418,6 +422,12 @@ class ContentImporter(object):
         if self.data.default_page:
             default_page_id = safe_unicode(self.data.default_page).encode('utf-8')
             self.context.setDefaultPage(default_page_id)
+
+        # Set layout
+        layout = self.data.layout
+
+        if layout in self.valid_layouts:
+            item.setLayout(layout)
 
         # Set dates
         effective = self.data.effective_date
