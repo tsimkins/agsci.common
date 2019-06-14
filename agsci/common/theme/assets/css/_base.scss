@@ -474,3 +474,16 @@ body.template-content_checks {
         line-height: 1.4;
     }
 }
+
+#section-content {
+    #data-check {
+        th, td {
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+
+        input.small {
+            font-size: 0.8rem;
+        }
+    }
+}

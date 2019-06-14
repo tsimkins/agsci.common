@@ -1,5 +1,5 @@
-<div id="data-check" class="container my-3 html">
-    <h2>Content Issues</h2>
+<div id="data-check" class="container px-0 my-3 html py-4 border-top">
+    <h2 class="mt-0">Content Issues</h2>
 
     <p>This lists some automagically detected content issues for review.</p>
 
@@ -43,7 +43,7 @@
           class="rescan-issues"
           tal:condition="not: view/anonymous"
           tal:attributes="action view/post_url">
-        <input type="submit" value="Rescan" />
+        <input class="small" type="submit" value="Rescan" />
     </form>
 
 </div>

@@ -382,6 +382,12 @@ body.template-content_checks th {
   font-size: 0.825rem;
   line-height: 1.4; }
 
+#section-content #data-check th, #section-content #data-check td {
+  font-size: 0.8rem;
+  line-height: 1.5; }
+#section-content #data-check input.small {
+  font-size: 0.8rem; }
+
 .print-only-logo {
   display: none; }
 
