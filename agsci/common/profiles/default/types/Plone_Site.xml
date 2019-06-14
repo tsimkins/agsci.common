@@ -22,6 +22,7 @@
         <element value="agsci_subsite" />
         <element value="agsci_degree_container" />
         <element value="agsci_directory" />
+        <element value="FormFolder"/>
     </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">folder_contents</property>

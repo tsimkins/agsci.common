@@ -21,6 +21,12 @@
     }
 }
 
+@mixin body_font() {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.9rem;
+}
+
+
 @mixin tile_labels {
     content: attr(data-tile-type);
     position: absolute;
@@ -379,8 +385,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     }
 
     input, td, th {
-        font-family: "Nunito Sans", sans-serif;
-        font-size: 0.9rem;
+        @include body_font();
     }
 
     td, th {
@@ -494,6 +499,42 @@ body.template-content_checks {
 
         input.small {
             font-size: 0.8rem;
+        }
+    }
+}
+
+body.portaltype-formfolder {
+    .pfg-form {
+        padding: 1rem 0;
+        background: transparent;
+
+        label {
+            color: #000000;
+            font-weight: 400;
+        }
+
+        .formControls {
+            margin: 1em 0;
+
+            input[type="submit"] {
+                @include body_font();
+            }
+        }
+    }
+}
+
+body.portaltype-formthankspage {
+    #content-core {
+        > blockquote {
+            padding: 0;
+
+            @include body_font();
+
+            dl {
+                dd {
+                    margin-bottom: 1rem;
+                }
+            }
         }
     }
 }

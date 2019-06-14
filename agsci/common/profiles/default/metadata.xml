@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <version>5</version>
+  <version>6</version>
   <dependencies>
     <dependency>profile-plone.app.mosaic:default</dependency>
     <dependency>profile-plone.app.tiles:default</dependency>
@@ -17,5 +17,6 @@
     <dependency>profile-eea.facetednavigation:universal</dependency>
     <dependency>profile-dexterity.membrane:default</dependency>
     <dependency>profile-Products.membrane:default</dependency>
+    <dependency>profile-Products.PloneFormGen:default</dependency>
   </dependencies>
 </metadata>

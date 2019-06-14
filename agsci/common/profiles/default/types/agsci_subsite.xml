@@ -15,6 +15,7 @@
         <element value="Document" />
         <element value="Link" />
         <element value="Collection" />
+        <element value="FormFolder"/>
     </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">view</property>
