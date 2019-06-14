@@ -111,6 +111,8 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         template="templates/folder.pt"
+        menu="plone_displayviews"
+        title="View"
     />
 
     <!-- Default Subfolder View -->
@@ -121,6 +123,8 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         template="templates/subfolder.pt"
+        menu="plone_displayviews"
+        title="Subfolder View"
     />
 
     <!-- Collection View -->
@@ -149,6 +153,8 @@
         permission="zope2.View"
         layer="..interfaces.IThemeContentTypes"
         template="templates/folder.pt"
+        menu="plone_displayviews"
+        title="View"
     />
 
     <!-- Person View -->
