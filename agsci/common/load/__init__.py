@@ -422,12 +422,13 @@ class ContentImporter(object):
         if self.data.default_page:
             default_page_id = safe_unicode(self.data.default_page).encode('utf-8')
             self.context.setDefaultPage(default_page_id)
+        else:
 
-        # Set layout
-        layout = self.data.layout
+            # Set layout if no default page
+            layout = self.data.layout
 
-        if layout in self.valid_layouts:
-            item.setLayout(layout)
+            if layout in self.valid_layouts:
+                item.setLayout(layout)
 
         # Set dates
         effective = self.data.effective_date
