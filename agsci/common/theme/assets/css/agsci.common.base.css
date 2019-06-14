@@ -315,8 +315,16 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html td,
 .html th {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.8; }
+  font-size: 0.9rem; }
+#parent-fieldname-text td, #parent-fieldname-text th,
+.html td,
+.html th {
+  line-height: 1.4; }
+#parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
+.html table.table-sm td,
+.html table.table-sm th {
+  font-size: 0.875rem;
+  line-height: 1.25; }
 
 #content-core .entries {
   padding-top: 1em; }
