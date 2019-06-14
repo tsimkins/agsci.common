@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <div id="parent-fieldname-text"
+       tal:define="text context/text|nothing"
+       tal:condition="text"
+       tal:content="structure python:context.text.output_relative_to(view.context)" />
+
+  <tal:results define="batch view/batch;
+                       normalizeString nocall: context/plone_utils/normalizeString;">
+      <tal:listing condition="batch">
+
+        <section class="entries container mt-3 px-2 px-md-0">
+
+          <tal:repeat repeat="item batch">
+
+            <tal:block tal:define="obj item/getObject;
+                item_url python:view.getItemURL(item);
+                item_id item/getId;
+                item_title item/Title;
+                item_description item/Description;
+                item_type item/Type;
+                item_modified item/ModificationDate;
+                item_created item/CreationDate;
+                item_type_class python:'contenttype-' + normalizeString(item_type);
+                item_wf_state item/review_state;
+                item_wf_state_class python:'state-' + normalizeString(item_wf_state);
+                item_creator item/Creator;
+                item_has_image python:item.getIcon;">
+
+                <h2 class="mt-4">
+                    <a tal:attributes="href item_url"
+                       tal:omit-tag="view/anonymous">
+                       <span tal:replace="item_title" />
+                    </a>
+                </h2>
+
+                <p class="description mb-1"
+                    tal:define="show_description view/show_description|nothing"
+                    tal:condition="python:show_description and item_description"
+                    tal:content="item_description" />
+
+                <tal:contents
+                    tal:define="view nocall: obj/@@view;
+                                batch view/batch;">
+
+                    <div class="mt-2">
+                        <metal:product-listing use-macro="obj/@@folder_base/macros/listing" />
+                    </div>
+
+                </tal:contents>
+
+            </tal:block>
+
+          </tal:repeat>
+        </section>
+      </tal:listing>
+
+      <metal:empty metal:define-slot="no_items_in_listing">
+        <p class="discreet"
+            tal:condition="not: view/batch"
+            tal:content="view/no_items_message">
+          There are currently no items in this folder.
+        </p>
+      </metal:empty>
+
+  </tal:results>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

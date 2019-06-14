@@ -113,6 +113,16 @@
         template="templates/folder.pt"
     />
 
+    <!-- Default Subfolder View -->
+    <browser:page
+        for="plone.app.contenttypes.interfaces.IFolder"
+        name="subfolder_view"
+        class=".SubfolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/subfolder.pt"
+    />
+
     <!-- Collection View -->
     <browser:page
         for="plone.app.contenttypes.interfaces.ICollection"

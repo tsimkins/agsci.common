@@ -301,8 +301,6 @@ class FolderView(_FolderView, BaseView):
             if ms_type:
                 data['%sx' % ms] = ms_type
 
-        mimetypes
-
         return data
 
     def getRemoteUrl(self, item):
@@ -367,6 +365,13 @@ class FolderView(_FolderView, BaseView):
             return registry.get('plone.types_use_view_action_in_listings', [])
 
         return []
+
+class SubfolderView(FolderView):
+
+    # Only show folderish items
+    def results(self):
+        results = super(SubfolderView, self).results()
+        return [x for x in results if x._brain.is_folderish]
 
 class CollectionView(FolderView):
 
