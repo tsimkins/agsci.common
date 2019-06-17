@@ -149,10 +149,18 @@ class ContentImporter(object):
 
         if parent_path:
 
+            # Return the parent path object if it exists.  If not, return the
+            # 'imports' directory at the root of the site if it exists.
+            # Finally, just raise an error.
+            # This is to prevent random content from coming in at the site root.
             try:
                 return self.site.restrictedTraverse(parent_path)
             except:
-                pass
+
+                if 'imports' in self.site.objectIds():
+                    return self.site['imports']
+
+                raise Exception('No Parent found')
 
         return self.site
 
@@ -235,6 +243,14 @@ class ContentImporter(object):
                     updated = True
                     img['src'] = 'resolveuid/%s' % uid
 
+        for a in soup.findAll('a'):
+            href = a.get('href', None)
+            if href:
+                uid = self.get_resource_uid(href)
+                if uid:
+                    updated = True
+                    a['href'] = 'resolveuid/%s' % uid
+
         if updated:
             soup.body.hidden = True
             return unicode(soup.body)
@@ -261,7 +277,7 @@ class ContentImporter(object):
 
         segments = path.split('/')
 
-        if segments[-1].startswith('image_'):
+        if segments[-1].startswith('image_') or segments[-1] in ('view',):
             undef = segments.pop()
             path = "/".join(segments)
 
