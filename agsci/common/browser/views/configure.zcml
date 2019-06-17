@@ -157,6 +157,16 @@
         title="View"
     />
 
+    <!-- Photo Gallery View -->
+    <browser:page
+        for="agsci.common.content.photofolder.IPhotoFolder"
+        name="view"
+        class=".PhotoFolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/photofolder.pt"
+    />
+
     <!-- Person View -->
     <browser:page
         for="agsci.common.content.person.person.IPerson"

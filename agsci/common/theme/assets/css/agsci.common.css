@@ -13746,6 +13746,21 @@ body.portaltype-formthankspage #content-core > blockquote {
   body.portaltype-formthankspage #content-core > blockquote dl dd {
     margin: 0.375rem 0 1rem 1rem; }
 
+body.portaltype-agsci_photofolder .carousel-item img {
+  margin: 0 auto; }
+body.portaltype-agsci_photofolder .carousel-item .carousel-caption {
+  background-color: #575757;
+  opacity: 0.9; }
+body.portaltype-agsci_photofolder .carousel-control-prev,
+body.portaltype-agsci_photofolder .carousel-control-next {
+  opacity: 0.75; }
+body.portaltype-agsci_photofolder .carousel-control-prev-icon,
+body.portaltype-agsci_photofolder .carousel-control-next-icon {
+  width: 60px;
+  height: 60px;
+  background-size: 75% 75%;
+  background-color: #575757; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;

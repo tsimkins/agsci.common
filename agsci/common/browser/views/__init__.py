@@ -378,6 +378,26 @@ class CollectionView(FolderView):
     def batch(self):
         return self.context.queryCatalog()
 
+class PhotoFolderView(FolderView):
+
+    def image_size(self, _):
+
+        if hasattr(_, 'image'):
+            image = _.image
+            return image.getImageSize()
+
+        return (0,0)
+
+    def image_class(self, _):
+
+        (w,h) = self.image_size(_)
+
+        if w and h:
+            if w > h:
+                return 'd-block w-100'
+
+            return 'd-block h-100'
+
 class DirectoryView(FolderView):
 
     @property
