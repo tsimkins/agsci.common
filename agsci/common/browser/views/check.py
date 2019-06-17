@@ -7,7 +7,7 @@ from plone.memoize.view import memoize
 from zope.component import subscribers
 
 from agsci.common.content.check import IContentCheck, getValidationErrors
-from . import BaseView
+from . import FolderView
 
 import urllib
 
@@ -18,7 +18,7 @@ class ContentTypeChecks(object):
         self.checks = checks
 
 # This view will show all of the automated checks by content type
-class EnumerateErrorChecksView(BaseView):
+class EnumerateErrorChecksView(FolderView):
 
     description = 'All Content'
 
@@ -110,7 +110,9 @@ class ContentCheckItemsView(EnumerateErrorChecksView):
 
     @property
     def query(self):
-        return {}
+        return {
+            'path' : '/'.join(self.context.getPhysicalPath()),
+        }
 
     @property
     def results(self):
