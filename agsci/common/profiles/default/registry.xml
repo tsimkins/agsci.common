@@ -1,6 +1,24 @@
 <?xml version="1.0"?>
 <registry>
 
+  <!-- Image Sizes -->
+
+  <record name="plone.allowed_sizes"
+          interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
+          field="allowed_sizes">
+    <value>
+      <element>gallery 1024:683</element>
+      <element>large 768:768</element>
+      <element>preview 400:400</element>
+      <element>mini 200:200</element>
+      <element>thumb 128:128</element>
+      <element>tile 64:64</element>
+      <element>icon 32:32</element>
+      <element>listing 16:16</element>
+    </value>
+    
+  </record>
+
     <!-- criteria widget -->
     <records prefix="plone.resources/faceted-widgets-criteria-degree-explorer-view"
              interface='Products.CMFPlone.interfaces.IResourceRegistry'>
