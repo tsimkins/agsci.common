@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block define-macro="content-core">
+
+  <div id="parent-fieldname-text"
+       tal:define="text context/text|nothing"
+       tal:condition="text"
+       tal:content="structure python:context.text.output_relative_to(view.context)" />
+
+  <tal:results define="batch view/batch">
+    <metal:listingmacro define-macro="listing">
+      <tal:listing condition="batch">
+
+          <div id="carousel-captions"
+               class="carousel slide"
+               data-interval="false"
+               data-ride="false">
+
+            <div id="carousel" class="carousel-inner">
+
+              <tal:repeat repeat="item batch" metal:define-macro="entries">
+                <tal:block tal:define="obj item/getObject;
+                    item_url python:view.getItemURL(item);
+                    item_id item/getId;
+                    item_title item/Title;
+                    item_description item/Description;
+                    item_type item/Type;
+                    item_modified item/ModificationDate;
+                    item_created item/CreationDate;
+                    item_wf_state item/review_state;
+                    item_creator item/Creator;
+                    item_has_image python:item.getIcon;
+                    is_first repeat/item/start">
+
+                  <div tal:attributes="class python: is_first and 'active carousel-item' or 'carousel-item'">
+                    <img tal:define="src item/getURL|item/absolute_url|nothing;
+                                     src string:${src}/@@images/image/gallery"
+                         tal:attributes="src src;
+                                         class python:view.image_class(item)"
+                         class="d-block w-100" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h3 tal:content="item_title" />
+                      <p tal:content="item_description"
+                         tal:condition="item_description" />
+                    </div>
+                  </div>
+                </tal:block>
+
+              </tal:repeat>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#carousel-captions" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carousel-captions" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+      </tal:listing>
+
+      <metal:empty metal:define-slot="no_items_in_listing">
+        <p class="discreet"
+            tal:condition="not: view/batch"
+            tal:content="view/no_items_message">
+          There are currently no items in this folder.
+        </p>
+      </metal:empty>
+    </metal:listingmacro>
+  </tal:results>
+
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>
