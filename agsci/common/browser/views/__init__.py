@@ -154,6 +154,29 @@ class BaseView(BrowserView):
 
         return " ".join(_)
 
+    def getItemURL(self, item):
+
+        item_type = item.portal_type
+
+        if hasattr(item, 'getURL'):
+            item_url = item.getURL()
+        else:
+            item_url = item.absolute_url()
+
+        if item_type in self.use_view_action:
+            return item_url + '/view'
+        else:
+            return item_url
+
+    @property
+    def use_view_action(self):
+
+        if not self.anonymous:
+            registry = getUtility(IRegistry)
+            return registry.get('plone.types_use_view_action_in_listings', [])
+
+        return []
+
 class DegreeListingView(BaseView):
 
     image_size = None
@@ -341,30 +364,6 @@ class FolderView(_FolderView, BaseView):
         elif item.portal_type in ['Link',]:
             url = self.getRemoteUrl(item)
             return self.getLinkType(url)
-
-
-    def getItemURL(self, item):
-
-        item_type = item.portal_type
-
-        if hasattr(item, 'getURL'):
-            item_url = item.getURL()
-        else:
-            item_url = item.absolute_url()
-
-        if item_type in self.use_view_action:
-            return item_url + '/view'
-        else:
-            return item_url
-
-    @property
-    def use_view_action(self):
-
-        if not self.anonymous:
-            registry = getUtility(IRegistry)
-            return registry.get('plone.types_use_view_action_in_listings', [])
-
-        return []
 
 class SubfolderView(FolderView):
 
