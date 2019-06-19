@@ -133,7 +133,7 @@
 
         </rules>
 
-<!-- pasteme -->
+        <!-- Include extra JavaScript for faceted nav -->
 
         <rules css:if-content=".template-facetednavigation_view">
             <after css:theme-children="#theme-javascript" css:content="head script" />
