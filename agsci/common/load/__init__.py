@@ -394,6 +394,10 @@ class ContentImporter(object):
 
             item = self.context
 
+        # Set subject (tags)
+        if self.data.subject:
+            item.setSubject(list(self.data.subject))
+
         # Set HTML
         html = self.html
 

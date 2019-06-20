@@ -367,10 +367,18 @@ class FolderView(_FolderView, BaseView):
 
 class SubfolderView(FolderView):
 
+    def include_item(self, _):
+
+        if _._brain.is_folderish:
+            return True
+
+        if _.Type() in ('Collection',):
+            return True
+
     # Only show folderish items
     def results(self):
         results = super(SubfolderView, self).results()
-        return [x for x in results if x._brain.is_folderish]
+        return [x for x in results if self.include_item(x)]
 
 class CollectionView(FolderView):
 
