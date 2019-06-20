@@ -224,6 +224,13 @@ class ICTATileBase(Interface):
         required=False
     )
 
+    full_width = schema.Bool(
+        title=_(u"Full Width?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+
 class ICTATile(ICTATileBase):
 
     form.omitted('title')
