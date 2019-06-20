@@ -10,7 +10,7 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
-    <div class="container px-0 p-lg-2"
+    <div class="container px-0 px-lg-2"
          tal:omit-tag="view/is_portlet">
 
         <h2 class="mt-0"
