@@ -180,7 +180,7 @@ class ContentImporter(object):
         return not not self.context
 
     @property
-    def product_type(self):
+    def portal_type(self):
 
         fti = self.product_fti
 
@@ -376,7 +376,7 @@ class ContentImporter(object):
 
             item = createContentInContainer(
                 parent,
-                self.product_type,
+                self.portal_type,
                 id=_id,
                 title=self.data.title,
                 description=self.data.description,
@@ -435,7 +435,7 @@ class ContentImporter(object):
                     setattr(item, field, value)
 
         # Set collection criteria
-        if self.product_type in ('Collection', 'Newsletter'):
+        if self.portal_type in ('Collection', 'Newsletter'):
             if self.data.collection_criteria:
                 item.setQuery(self.data.collection_criteria)
 
