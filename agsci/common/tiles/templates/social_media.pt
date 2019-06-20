@@ -7,7 +7,8 @@
   <body>
 
 <section
-    tal:attributes="data-tile-type view/tile_type|nothing">
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
 
     <div class="container px-0 p-lg-2"
          tal:omit-tag="view/is_portlet">

@@ -560,6 +560,8 @@ class NavigationTile(_NavigationTile):
 
 class SocialMediaTile(BaseTile):
 
+    __section_class__ = 'my-5'
+
     def get_icon_class(self, _):
 
         platform = _.platform
