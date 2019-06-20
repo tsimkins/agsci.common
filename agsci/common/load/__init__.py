@@ -138,8 +138,14 @@ class ContentImporter(object):
     def context(self):
         try:
             _id = self.getId()
+
             if _id in self.parent.objectIds():
                 return self.parent[_id]
+
+            _ = dict([(x.UID(), x) for x in self.parent.listFolderContents()])
+
+            return _.get(self.UID, None)
+
         except:
             pass
 
@@ -381,7 +387,7 @@ class ContentImporter(object):
             if self.review_state in ['published',]:
                 return
 
-            item = parent[_id]
+            item = self.context
 
         # Set HTML
         html = self.html
