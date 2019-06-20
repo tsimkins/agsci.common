@@ -92,7 +92,7 @@ class ContentImporter(object):
 
     default_type = 'Folder'
 
-    def __init__(self, path, UID, api_url, **kwargs):
+    def __init__(self, path, UID, api_url, context=None, **kwargs):
         if path.startswith('/'):
             path = path[1:]
 
@@ -102,6 +102,8 @@ class ContentImporter(object):
         self.path = path
         self.UID = UID
         self.api_url = api_url
+
+        self.import_path = context
 
         try:
             self.data = json_data_object(self.json_data)
@@ -132,6 +134,9 @@ class ContentImporter(object):
 
     @property
     def site(self):
+        if self.import_path:
+            return self.import_path
+
         return getSite()
 
     @property
