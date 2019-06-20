@@ -258,7 +258,6 @@ class CalloutBlockTile(BaseTile):
     pass
 
 class CTATile(BaseTile):
-    __full_width__ = True
 
     @property
     def button_width_class(self):
