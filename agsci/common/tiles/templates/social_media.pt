@@ -17,7 +17,7 @@
             tal:condition="view/data/title|nothing"
             tal:content="view/data/title" />
 
-        <div class="social">
+        <div class="social py-2">
             <ul class="list-social">
 
                 <tal:social
