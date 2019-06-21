@@ -247,7 +247,7 @@ class BodyTextCheck(ContentCheck):
     # h1 - h6
     all_heading_tags = ['h%d' % x for x in range(1,7)]
 
-    resolveuid_re = re.compile("resolveuid/([abcdef0-9]{32})", re.I|re.M)
+    resolveuid_re = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
 
     @property
     def internal_link_uids(self):
@@ -416,7 +416,7 @@ class BodyLinkCheck(BodyTextCheck):
                     return False
 
                 # URLs with 'resolveuid' are OK
-                if path.startswith('resolveuid'):
+                if self.resolveuid_re.match(path):
                     return False
 
                 # Otherwise, URLs should have a domain
@@ -730,7 +730,7 @@ class ExternalAbsoluteImage(BodyImageCheck):
     def check(self):
         for img in self.value():
             src = img.get('src', '')
-            if not src.startswith('resolveuid'):
+            if not self.resolveuid_re.match(src):
                 yield ContentCheckError(self, 'Image source of "%s" references an external/absolute image.' % src)
 
 
