@@ -16,7 +16,7 @@
       <element>icon 32:32</element>
       <element>listing 16:16</element>
     </value>
-    
+
   </record>
 
     <!-- criteria widget -->
@@ -486,5 +486,20 @@
         <value key="rich_text">false</value>
         <value key="weight">100</value>
     </records>
+
+    <records interface="plone.app.querystring.interfaces.IQueryField"
+            prefix="plone.app.querystring.field.getId">
+        <value key="title">Short name (id)</value>
+        <value key="description">The short name of an item (used in the url)</value>
+        <value key="enabled">True</value>
+        <value key="sortable">True</value>
+        <value key="operations">
+            <element>plone.app.querystring.operation.selection.any</element>
+            <element>plone.app.querystring.operation.string.is</element>
+        </value>
+        <value key="vocabulary">agsci.common.getId</value>
+        <value key="group">Metadata</value>
+    </records>
+
 
 </registry>

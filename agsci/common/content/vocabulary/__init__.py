@@ -15,11 +15,11 @@ from ..behaviors.tags import ITagsRoot
 class BaseVocabulary(object):
 
     implements(IVocabularyFactory)
-    
+
     @property
     def site(self):
         return getSite()
-    
+
     @property
     def portal_catalog(self):
         return getToolByName(self.site, 'portal_catalog')
@@ -154,8 +154,16 @@ class StatesVocabulary(KeyValueVocabulary):
         ('WY', 'Wyoming'),
     ]
 
+# Short Name
+class ShortNameVocabulary(StaticVocabulary):
+
+    @property
+    def items(self):
+        return self.portal_catalog.uniqueValuesFor('getId')
+
 
 # Factories
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
 PersonClassificationsVocabularyFactory = PersonClassificationsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()
+ShortNameVocabularyFactory = ShortNameVocabulary()

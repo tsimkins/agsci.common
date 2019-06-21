@@ -20,4 +20,10 @@
         component=".PersonClassificationsVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.getId"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ShortNameVocabularyFactory"
+    />
+
 </configure>
