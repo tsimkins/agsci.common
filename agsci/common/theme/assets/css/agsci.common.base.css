@@ -11,7 +11,7 @@
   .mosaic-grid-row .mosaic-tile-content .jumbotron p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
     color: #ffffff;
     font-size: 1.25em; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
+  .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
     color: #4D565B; }
   .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
     margin-top: 0.5rem; }

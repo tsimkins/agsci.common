@@ -6,31 +6,33 @@
       i18n:domain="agsci.common">
     <body>
 
-<section class="container-fluid jumbotron jumbotron-img-based jumbotron-short-header jumbotron-new-overlay d-flex align-items-end position-relative"
-         tal:attributes="data-tile-type view/tile_type|nothing;
-                         data-container-width view/container_width;">
+<section
+    class="container-fluid jumbotron jumbotron-img-based jumbotron-short-header jumbotron-new-overlay d-flex align-items-end position-relative"
+    tal:define="img_src view/img_src|nothing"
+    tal:condition="img_src"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
 
-    <div class="jumbotron-img jumbotron-fix-left" tal:attributes="style string:background-image: url(${view/img_src|nothing}"></div>
+    <div class="jumbotron-img jumbotron-fix-left" tal:attributes="style string:background-image: url(${img_src}"></div>
 
 </section>
 
-<section class="container-fluid position-relative px-3 my-2 jumbotron-short-title border-bottom">
-    <div class="container px-0">
-        <div class="row py-1 py-lg-3 mx-0">
-            <div class="col-12 px-0 col-lg-10">
-    
-                <div id="portal-breadcrumbs"
-                     tal:condition="view/data/show_breadcrumbs|nothing"
-                      tal:replace="structure view/breadcrumbs|nothing" />
-            
-                <h1 tal:condition="view/data/show_title|nothing"                    
-                    tal:content="view/data/title|context/Title|nothing">
+<section
+    class="container-fluid jumbotron jumbotron-short jumbotron-variable-height jumbotron-new-overlay d-flex align-items-end position-relative"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+    <div class="container px-0 py-3 py-lg-5 border-bottom">
 
-                <p tal:condition="view/data/show_description|nothing"                    
-                   tal:content="view/data/description|context/Description|nothing">
+        <div id="portal-breadcrumbs"
+                tal:condition="view/data/show_breadcrumbs|nothing"
+                tal:replace="structure view/breadcrumbs|nothing" />
 
-            </div>
-        </div>
+        <h1 tal:condition="view/data/show_title|nothing"
+            tal:content="view/data/title|context/Title|nothing">
+
+        <p tal:condition="view/data/show_description|nothing"
+            tal:content="view/data/description|context/Description|nothing">
+
     </div>
 </section>
 
