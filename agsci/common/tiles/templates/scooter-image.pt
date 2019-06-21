@@ -7,7 +7,8 @@
   <body>
 
 <section
-    tal:define="title view/data/title|nothing"
+    tal:define="title view/data/title|nothing;
+                show_item_title view/data/show_item_title|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
@@ -27,11 +28,12 @@
                    class="card card-visual">
 
                     <div class="card-image-top">
-                        <div class="opacity-dimmer opacity-dimmer-bottom"></div>
+                        <div class="opacity-dimmer opacity-dimmer-bottom"
+                             tal:condition="show_item_title"></div>
 
                         <img tal:condition="i/hasLeadImage|nothing"
-                             tal:attributes="src string:${i/getURL}/@@images/image/large"
-                             alt=""
+                             tal:attributes="src string:${i/getURL}/@@images/image/large;
+                                             alt python: show_item_title and '' or title"
                              title=""
                              class="w-100" />
 
@@ -41,7 +43,9 @@
                                 title=""
                                 class="w-100" />
 
-                        <div class="card-img-overlay d-flex align-items-center justify-content-center text-white">
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center text-white"
+                             tal:condition="show_item_title">
+
                             <h3 class="card-title text-center"
                                 tal:content="i/Title|nothing">
 

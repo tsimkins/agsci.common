@@ -489,6 +489,13 @@ class IScooterTile(IBorderTile):
         required=False,
     )
 
+    show_item_title = schema.Bool(
+        title=_(u"Show Item Title?"),
+        description=_(u"(For Image card style)"),
+        required=False,
+        default=True,
+    )
+
 class ISkeeterTile(IBorderTile):
 
     title = schema.TextLine(
