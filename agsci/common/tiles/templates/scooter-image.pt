@@ -27,19 +27,23 @@
                 <a tal:attributes="href i/getURL|nothing"
                    class="card card-visual">
 
-                    <div class="card-image-top">
+                    <div class="card-image-top"
+                         tal:define="item_title i/Title|nothing;
+                                     alt_text python: not show_item_title and item_title or ''">
+
                         <div class="opacity-dimmer opacity-dimmer-bottom"
                              tal:condition="show_item_title"></div>
 
                         <img tal:condition="i/hasLeadImage|nothing"
                              tal:attributes="src string:${i/getURL}/@@images/image/large;
-                                             alt python: show_item_title and '' or title"
+                                             alt alt_text;"
                              title=""
                              class="w-100" />
 
                         <img tal:condition="not: i/hasLeadImage|nothing"
-                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg"
-                                alt=""
+                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg;
+                                                alt alt_text;"
+
                                 title=""
                                 class="w-100" />
 
@@ -47,7 +51,7 @@
                              tal:condition="show_item_title">
 
                             <h3 class="card-title text-center"
-                                tal:content="i/Title|nothing">
+                                tal:content="item_title">
 
                         </div>
 
