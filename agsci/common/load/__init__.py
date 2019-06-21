@@ -69,7 +69,7 @@ class ContentImporter(object):
     }
 
     fields_mapping = {
-        'show_image' : 'image_show',
+        'show_leadimage_context' : 'image_show',
     }
 
     valid_layouts = [
