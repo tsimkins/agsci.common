@@ -68,6 +68,10 @@ class ContentImporter(object):
         'Form Folder' : 'Folder',
     }
 
+    fields_mapping = {
+        'show_image' : 'image_show',
+    }
+
     valid_layouts = [
         'subfolder_view',
     ]
@@ -432,11 +436,14 @@ class ContentImporter(object):
 
         # Set field values
         for field in self.fields:
-            if field not in self.exclude_fields:
+
+            set_field = self.fields_mapping.get(field, field)
+
+            if set_field not in self.exclude_fields:
                 value = getattr(self.data, field, None)
 
-                if value:
-                    setattr(item, field, value)
+                if value or isinstance(value, (bool,)):
+                    setattr(item, set_field, value)
 
         # Set collection criteria
         if self.portal_type in ('Collection', 'Newsletter'):
