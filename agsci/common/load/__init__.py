@@ -3,6 +3,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
+from plone.app.linkintegrity.handlers import modifiedContent
 from plone.app.textfield.value import RichTextValue
 from plone.behavior.interfaces import IBehaviorAssignable, IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
@@ -533,6 +534,9 @@ class ContentImporter(object):
 
         if expires:
             item.setExpirationDate(DateTime(expires))
+
+        # Set references
+        modifiedContent(item, None)
 
         # Reindex
         item.reindexObject()
