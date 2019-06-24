@@ -281,7 +281,7 @@ class ContentImporter(object):
 
             for _h in soup.findAll(hx):
                 if _h.name != 'h2':
-                    _h.name = h2
+                    _h.name = 'h2'
                     updated = True
 
         if updated:
