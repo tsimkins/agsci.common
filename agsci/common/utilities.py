@@ -326,6 +326,24 @@ def scrub_html(html):
     removeEmptyBR = re.compile(r'(<(p|div|strong|em)>)\s*(<br */*>\s*)+\s*(</\2>)', re.I|re.M)
     html = removeEmptyBR.sub(r" ", html)
 
+    # Fix paragraphs that have duplicate <br /> tags
+    replaceDuplicateBR = re.compile(r'(<p.*?>)(.*?)(<br */*>\s*){2,10}(.*?)(</p>)', re.I|re.M)
+    paragraph = re.compile(r'(<p.*?>.*?</p>)', re.I|re.M)
+
+    replacements = []
+
+    for m in paragraph.finditer(html):
+        p = m.group(0)
+        p_orig = p
+
+        while replaceDuplicateBR.search(p):
+            p = replaceDuplicateBR.sub(r"\1\2\5 \1\4\5", p)
+        if p != p_orig:
+            replacements.append([p_orig, p])
+
+    for (old, new) in replacements:
+        html = html.replace(old, new)
+
     # Remove attributes that should not be transferred
     removeAttributes = re.compile('\s*(id|width|height|valign|type|style|target|dir)\s*=\s*".*?"', re.I|re.M)
     html = removeAttributes.sub(" ", html)
