@@ -7,6 +7,7 @@ from plone.i18n.normalizer import idnormalizer, filenamenormalizer
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
+import htmlentitydefs
 import pytz
 import re
 import unicodedata
@@ -263,3 +264,82 @@ def localize(_):
         return _
 
     return None
+
+# Clean up 'gunk' characters in HTML
+def scrub_html(html):
+
+    # Clean up whitespace, and make everything space delimited
+    html = " ".join(html.split())
+
+    # HTML entites to turn into ASCII.
+    htmlEntities = [
+        ["&#8211;", "--"],
+        ["&#8220;", '"'],
+        ["&#8221;", '"'],
+        ["&#8216;", "'"],
+        ["&#8217;", "'"],
+        ["&#145;", "'"],
+        ["&#146;", "'"],
+        ["&#160;", " "],
+        ["&nbsp;", " "],
+        ["&bull;", " "],
+        ["&quot;", "\""],
+        ["&#150;", "-"],
+        ["&#151;", " -- "],
+        ["&#147;", "\""],
+        ["&#148;", "\""],
+        ["&quot;", "\""],
+        ["&quot;", "\""],
+        [unichr(186), "&deg;"],
+        [unichr(176), "&deg;"],
+        [unichr(215), "x"],
+        ["`", "'"],
+        [unichr(181), "&micro;"],
+        [unichr(8776), "&asymp;"],
+        [unichr(160), " "],
+        ["\t", " "],
+        [u"\u201c", '"'],
+        [u"\u201d", '"'],
+        [u"\u2018", "'"],
+        [u"\u2019", "'"],
+        [u"\u2013", "-"],
+        [u"\u2014", "--"],
+    ]
+
+    # Replace those entites
+    for ent in htmlEntities:
+        html = html.replace(ent[0], ent[1])
+
+    # Replace unicode characters (u'\u1234') with html entity ('&abcd;')
+    for (k,v) in htmlentitydefs.codepoint2name.iteritems():
+
+        if v in ["gt", "lt", "amp", "bull", "quot"]:
+            continue
+
+        html = html.replace(unichr(k), "&%s;" % v)
+
+    # Replace <br /> inside table th/td with nothing.
+    replaceEmptyBR = re.compile(r'(<(td|th).*?>)\s*(<br */*>\s*)+\s*(</\2>)', re.I|re.M)
+    html = replaceEmptyBR.sub(r"\1 \4", html)
+
+    # Remove HTML elements that only have a <br /> inside them
+    removeEmptyBR = re.compile(r'(<(p|div|strong|em)>)\s*(<br */*>\s*)+\s*(</\2>)', re.I|re.M)
+    html = removeEmptyBR.sub(r" ", html)
+
+    # Remove attributes that should not be transferred
+    removeAttributes = re.compile('\s*(id|width|height|valign|type|style|target|dir)\s*=\s*".*?"', re.I|re.M)
+    html = removeAttributes.sub(" ", html)
+
+    # Remove empty tags
+    removeEmptyTags = re.compile(r'<(p|span|strong|em)>\s*</\1>', re.I|re.M)
+    html = removeEmptyTags.sub(" ", html)
+
+    # Remove HTML comments
+    removeComments = re.compile(r'<!--(.*?)-->', re.I|re.M)
+    removeCommentsEncoded = re.compile(r'&lt;!--(.*?)--&gt;', re.I|re.M)
+
+    html = removeComments.sub(" ", html)
+    html = removeCommentsEncoded.sub(" ", html)
+
+    # Return of scrubbed HTML
+    return html

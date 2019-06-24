@@ -22,6 +22,8 @@ import re
 import requests
 import urllib2
 
+from ..utilities import scrub_html
+
 # Regular expression to validate UID
 uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
 
@@ -242,6 +244,8 @@ class ContentImporter(object):
     def fix_html(self, html):
         updated = False
 
+        html = scrub_html(html)
+
         soup = BeautifulSoup(html, 'lxml')
 
         # Zap class on table so Diazo replacement will work.
@@ -253,10 +257,10 @@ class ContentImporter(object):
         for img in soup.findAll('img'):
             src = img.get('src', None)
             if src:
-                uid = self.get_resource_uid(src)
-                if uid:
+                img_src = self.get_img_url(src)
+                if img_src:
                     updated = True
-                    img['src'] = 'resolveuid/%s' % uid
+                    img['src'] = img_src
 
         for a in soup.findAll('a'):
             href = a.get('href', None)
@@ -266,11 +270,25 @@ class ContentImporter(object):
                     updated = True
                     a['href'] = 'resolveuid/%s' % uid
 
+        # Fix heading levels to an h2 if all headings are the same level
+        headings = soup.findAll(['h%x' % x for x in range(1,7)])
+        heading_names = list(set([x.name for x in headings]))
+
+        if len(heading_names) == 1:
+
+            hx = heading_names[0]
+
+            for _h in soup.findAll(hx):
+                if _h.name != 'h2':
+                    _h.name = h2
+                    updated = True
+
         if updated:
             soup.body.hidden = True
             return unicode(soup.body)
 
         return html
+
 
     @property
     def html(self):
@@ -284,6 +302,33 @@ class ContentImporter(object):
 
         return ''
 
+    def get_img_url(self, src):
+        if src:
+            src = safe_unicode(src).encode('utf-8')
+            if src.startswith('/'):
+                src = src[1:]
+            if '@@' in src:
+                _src = src[:src.index('@@')-1]
+                _view = src[src.index('@@'):]
+                try:
+                    _img = self.context.restrictedTraverse(_src)
+                except:
+                    pass
+                else:
+                    uid = _img.UID()
+                    new_src = 'resolveuid/%s' % uid
+                    images_view = _img.restrictedTraverse('@@images')
+                    (field, scale) = _view.split('/')[-2:]
+                    if not images_view.scale(field, scale):
+                        scale = 'gallery'
+                    _view = '@@images/%s/%s' % (field, scale)
+                    return '%s/%s' % (new_src, _view)
+            else:
+                _ = self.get_resource_uid(src)
+
+                if _:
+                    return 'resolveuid/%s' % _
+
     def get_resource_uid(self, path):
         path = safe_unicode(path).encode('utf-8')
 
@@ -296,14 +341,25 @@ class ContentImporter(object):
             undef = segments.pop()
             path = "/".join(segments)
 
-        try:
-            _ = self.site.restrictedTraverse(path)
-        except KeyError:
-            pass
-        except:
-            pass
-        else:
-            return _.UID()
+        if path.startswith('..'):
+
+            context = self.context
+
+            if context:
+                base_url = context.absolute_url()
+            else:
+                base_url = '%s/%s' % (self.parent.absolute_url(), self.getId())
+
+            path = urljoin(base_url, path)[len(getSite().absolute_url())+1:]
+
+        for site in (self.site, getSite()):
+
+            try:
+                _ = site.restrictedTraverse(path)
+            except:
+                continue
+            else:
+                return _.UID()
 
     def data_to_image_field(self, data, contentType='', filename=None):
 
