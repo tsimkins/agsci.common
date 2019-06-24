@@ -5,6 +5,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from datetime import datetime, timedelta
+from plone.app.linkintegrity.utils import getIncomingLinks
 from plone.registry.interfaces import IRegistry
 from urlparse import urlparse
 from zope.annotation.interfaces import IAnnotations
@@ -1247,3 +1248,27 @@ class IgnoredChecks(ContentCheck):
             yield ManualCheckError(self,
                 u"""The following checks are configured to be ignored: %s""" % "; ".join(sorted(v))
             )
+
+class UnreferencedImageCheck(ContentCheck):
+
+    title = "Unreferenced Image"
+    description = "This image is not part of a photo folder, and is not referenced by any content."
+    action = "Remove image if this is not used."
+
+    allowed_container_types = ['PhotoFolder',]
+
+    def value(self):
+        return [x for x in getIncomingLinks(obj=self.context, from_attribute=None)]
+
+    def check(self):
+
+        p_type = self.context.aq_parent.Type()
+
+        if p_type not in self.allowed_container_types:
+
+            v = self.value()
+
+            if not v:
+                yield ContentCheckError(self,
+                    u"Remove this image if not needed."
+                )

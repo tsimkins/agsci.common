@@ -190,4 +190,12 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 -->
+
+    <!-- Warn if images are unreferenced -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".UnreferencedImageCheck"
+        for="plone.app.contenttypes.interfaces.IImage"
+    />
 </configure>
