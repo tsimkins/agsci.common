@@ -112,6 +112,13 @@ class CareerVocabulary(StaticVocabulary):
 class ClubVocabulary(StaticVocabulary):
 
     items = [
+        'Horse Judging Team',
+        'Meat Judging Team',
+        'Penn State International Genetically Engineered Machine Competition (iGEM)',
+        'Penn State Pullers',
+        'Pre-Med Club',
+        'Alpha Tau Alpha, Eta Chapter',
+        'National Agri-Marketing Association (NAMA)',
         'Ag Advocates',
         'Agribusiness Management Club',
         'Ag Student Council',
