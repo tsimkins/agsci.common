@@ -109,6 +109,18 @@
 
     </record>
 
+    <!-- Block styles -->
+    <record
+        name="plone.block_styles"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="block_styles">
+        <value>
+            <element>Paragraph|p</element>
+            <element>Callout|callout</element>
+            <element>Discreet|discreet</element>
+        </value>
+    </record>
+
     <!-- Inline styles -->
     <record
         name="plone.inline_styles"
@@ -128,9 +140,124 @@
         field="alignment_styles">
         <value>
             <element>Left|alignleft|alignleft</element>
-            <element>Right|alignright|alignright</element>
         </value>
     </record>
+
+    <!-- Table Styles -->
+
+    <record name="plone.table_styles"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="table_styles">
+        <value>
+        </value>
+    </record>
+
+    <!-- Toolbar buttons -->
+
+    <record name="plone.toolbar"
+          interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+          field="toolbar">
+        <value>undo redo | styleselect | bold italic | bullist numlist | unlink plonelink ploneimage</value>
+    </record>
+
+    <!-- Toolbar Menus -->
+    <record name="plone.menu"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="menu">
+        <value>
+            {
+                "format": {
+                    "items": "bold italic superscript subscript | formats | removeformat",
+                    "title": "Format"
+                },
+                "edit": {
+                    "items": "undo redo | cut copy paste pastetext | searchreplace textpattern selectall",
+                    "title": "Edit"
+                },
+                "insert": {
+                    "items": "link media | template hr",
+                    "title": "Insert"
+                },
+                "table": {
+                    "items": "inserttable tableprops deletetable | cell row column",
+                    "title": "Table"
+                },
+                "tools": {
+                    "items": "code",
+                    "title": "Tools"
+                },
+                "view": {
+                    "items": "visualaid visualchars",
+                    "title": "View"
+                }
+            }
+        </value>
+    </record>
+
+    <!-- Folderish Items -->
+
+    <record name="plone.contains_objects"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="contains_objects">
+        <value>
+            <element>Blog</element>
+            <element>Degree Container</element>
+            <element>Directory</element>
+            <element>Folder</element>
+            <element>Major</element>
+            <element>Minor</element>
+            <element>Plone Site</element>
+            <element>Section</element>
+            <element>Subsite</element>
+        </value>
+    </record>
+
+    <!-- Plugins -->
+
+    <record name="plone.plugins"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="plugins">
+        <value>
+          <element>code</element>
+          <element>lists</element>
+          <element>media</element>
+          <element>paste</element>
+          <element>table</element>
+          <element>visualchars</element>
+          <element>wordcount</element>
+        </value>
+    </record>
+
+    <!-- Formats -->
+    <record name="plone.formats"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="formats">
+
+        <value>
+            {
+                "callout": [
+                    { "block": "p", "classes": "callout" },
+                    { "block": "div", "classes": "callout" }
+                ],
+                "discreet": [
+                    { "block": "p", "classes": "discreet" }
+                ]
+            }
+        </value>
+
+    </record>
+
+    <record name="plone.other_settings"
+        interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
+        field="other_settings">
+      <value>
+        {
+            "importcss_file_filter": "++resource++agsci.common/assets/css/tinymce-styles.css"
+        }
+      </value>
+    </record>
+
+    <!-- Tile Configuration -->
 
     <record name="plone.app.tiles">
         <value purge="false">
