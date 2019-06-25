@@ -48,7 +48,7 @@ class IDegree(model.Schema):
         value_type=schema.Choice(vocabulary="agsci.common.degree.career"),
     )
 
-    employer = RichText(
+    employer = schema.TextLine(
         title=_(u"Employers"),
         description=_(u""),
         required=False,

@@ -66,8 +66,11 @@
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />
                                 </ul>
-                                <p>
-                                    <strong>Recent graduates work for:</strong> ConAgra Foods, Hershey Foods, National Institutes of Health, Nestle, USDA
+                                <p tal:condition="i/employer|nothing">
+                                    <strong>Recent graduates work for:</strong>
+
+                                    <tal:html
+                                        tal:content="i/employer" />
                                 </p>
                             </div>
                         </td>
@@ -200,11 +203,11 @@
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />
                                 </ul>
-                                <p tal:condition="i/employers/output|nothing">
+                                <p tal:condition="i/employer|nothing">
                                     <strong>Recent graduates work for:</strong>
 
                                     <tal:html
-                                        tal:content="structure i/employers/output" />
+                                        tal:content="i/employer" />
                                 </p>
                             </div>
                         </td>
