@@ -8,6 +8,7 @@
                 <group>
                     <item>
                         <title>Students</title>
+                        <link>students</link>
                         <items>
                             <item>
                                 <title>Academics</title>
