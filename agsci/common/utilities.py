@@ -252,9 +252,12 @@ def localize(_):
         try:
             tz = pytz.timezone(_.timezone())
         except pytz.UnknownTimeZoneError:
-            pass
-
-        _ = _.asdatetime()
+            _ = datetime(
+                _.year(), _.month(), _.day(),
+                _.hour(), _.minute(), int(_.second())
+            )
+        else:
+            _ = _.asdatetime()
 
     if isinstance(_, datetime):
 

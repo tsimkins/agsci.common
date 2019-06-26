@@ -23,7 +23,7 @@ import re
 import requests
 import urllib2
 
-from ..utilities import scrub_html
+from ..utilities import scrub_html, localize
 
 # Regular expression to validate UID
 uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
@@ -534,6 +534,15 @@ class ContentImporter(object):
 
         if expires:
             item.setExpirationDate(DateTime(expires))
+
+        # If event, set start and end
+        if self.portal_type in ('Event',):
+            start_date = localize(DateTime(self.data.start_date))
+            end_date = localize(DateTime(self.data.end_date))
+
+            acc = IEventAccessor(item)
+            acc.start = start_date
+            acc.end = end_date
 
         # Set references
         modifiedContent(item, None)
