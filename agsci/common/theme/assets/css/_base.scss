@@ -594,3 +594,20 @@ body.portaltype-agsci_photofolder {
         background-color: #575757;
     }
 }
+
+body.portaltype-event {
+    #content-core {
+        .event.summary {
+
+            margin-bottom: 1rem;
+
+            p {
+                margin-bottom: 0;
+
+                strong:after {
+                    content: ": ";
+                }
+            }
+        }
+    }
+}

@@ -2,9 +2,12 @@ from Acquisition import aq_base
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.z3cform.datagridfield import DictRow
 from plone import api
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
+from plone.app.event.browser.event_view import EventView as _EventView
+from plone.app.event.browser.event_summary import EventSummaryView as _EventSummaryView
 from plone.registry.interfaces import IRegistry
 from zope import schema
 from zope.component import getUtility
@@ -413,6 +416,36 @@ class DirectoryView(FolderView):
 
     def person_view(self, o):
         return o.restrictedTraverse('view')
+
+class EventView(_EventView, BaseView):
+
+    data = None
+
+    index = ViewPageTemplateFile("templates/event_view.pt")
+
+class EventSummaryView(_EventSummaryView, BaseView):
+
+    data = None
+
+    @property
+    def event_date(self):
+        start = self.context.start
+        end = self.context.end
+
+        whole_day = getattr(self.context, 'whole_day', False)
+        open_end = getattr(self.context, 'open_end', False)
+
+        if whole_day:
+
+            if open_end:
+                return toLocalizedTime(start)
+
+            return toLocalizedTime(start, end_time=end)
+
+        elif open_end:
+            return toLocalizedTime(start, long_format=True)
+
+        return toLocalizedTime(start, end_time=end, long_format=True)
 
 class SocialMediaView(BaseView):
     pass

@@ -217,6 +217,25 @@
         template="templates/directory.pt"
     />
 
+    <!-- Event View -->
+    <browser:page
+        for="plone.event.interfaces.IEvent"
+        name="event_view"
+        class=".EventView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeBrowserLayer"
+        template="templates/event_view.pt"
+    />
+
+    <browser:page
+        for="plone.event.interfaces.IEvent"
+        name="event_summary"
+        class=".EventSummaryView"
+        template="templates/event_summary.pt"
+        permission="zope2.View"
+        layer="..interfaces.IThemeBrowserLayer"
+    />
+
     <!-- Social Media Icons -->
     <browser:page
         for="*"

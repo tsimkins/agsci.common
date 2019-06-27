@@ -13761,6 +13761,13 @@ body.portaltype-agsci_photofolder .carousel-control-next-icon {
   background-size: 75% 75%;
   background-color: #575757; }
 
+body.portaltype-event #content-core .event.summary {
+  margin-bottom: 1rem; }
+  body.portaltype-event #content-core .event.summary p {
+    margin-bottom: 0; }
+    body.portaltype-event #content-core .event.summary p strong:after {
+      content: ": "; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;

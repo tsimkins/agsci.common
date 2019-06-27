@@ -16,4 +16,9 @@
         interface="agsci.common.browser.interfaces.IThemeContentTypes"
     />
 
+    <layer
+        name="agsci.common.browserlayer"
+        interface="agsci.common.browser.interfaces.IThemeBrowserLayer"
+    />
+
 </layers>

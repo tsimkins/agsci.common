@@ -92,6 +92,18 @@ class IHomepageFields(model.Schema):
 @provider(IFormFieldProvider)
 class IEventFields(model.Schema):
 
+    model.fieldset(
+        'registration',
+        label=_(u'Registration'),
+        fields=[
+            'free_registration',
+            'free_registration_attendee_limit',
+            'free_registration_confirmation_message',
+            'free_registration_deadline',
+            'free_registration_email',
+        ],
+    )
+
     event_canceled = schema.Bool(
         title=_(u"This event has been canceled"),
         description=_(u"Check this box if an event has been canceled, and provide any addition information under 'Event Cancellation Information'"),

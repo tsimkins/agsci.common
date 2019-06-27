@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      i18n:domain="plone"
+      tal:omit-tag="">
+<body tal:omit-tag="">
+
+<tal:def tal:define="data python:view.data; excludes view/excludes">
+
+  <div class="event summary details html">
+
+    <p>
+        <strong>When</strong>
+        <span tal:content="view/event_date" />
+    </p>
+
+    <p tal:condition="data/location">
+        <strong>Where</strong>
+        <span tal:content="data/location" />
+    </p>
+
+
+    <div
+        tal:define="mail data/contact_email;
+                    name data/contact_name;
+                    phone data/contact_phone;"
+        tal:condition="python:name or mail or phone">
+
+        <p tal:condition="python:name or mail">
+
+            <strong>Contact</strong>
+
+            <a tal:condition="mail"
+               tal:attributes="href string:mailto:${mail}"
+               tal:content="name" />
+
+            <span
+                tal:condition="not:mail"
+                tal:content="name" />
+        </p>
+
+        <p tal:condition="data/contact_phone">
+            <strong>Contact Phone</strong>
+            <span tal:content="data/contact_phone" />
+        </p>
+
+    </div>
+
+    <tal:cond condition="data/event_url">
+      <p class="event-url">
+        <strong>Web</strong>
+        <tal:span>
+          <a href="" tal:attributes="href data/event_url">Visit external website</a>
+        </tal:span>
+      </p>
+    </tal:cond>
+
+
+  </div>
+
+</tal:def>
+
+</body>
+</html>
