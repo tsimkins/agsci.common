@@ -293,6 +293,57 @@ body {
     right: 0;
 }
 
+/* Degree Comparison table */
+.comparison-container {
+    .rtable.rtable-mobile-labels {
+        tbody {
+            padding-top: 6rem;
+
+            tr:first-of-type td p {
+                font-weight: normal;
+            }
+        }
+        .visual-cards-imgs-cropped {
+            .card-visual.card-image-top {
+
+                height: 5rem;
+
+                .card-image-overlay {
+                    background-color: #314D64;
+                }
+
+                img {
+                    margin-top: -10000rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .comparison-container {
+
+        .rtable.rtable-mobile-labels {
+          /*
+            border-spacing: 1rem 0;
+            border-collapse: separate;
+          */
+            td {
+
+                div {
+                    padding: 0.75rem 1.25rem 1rem;
+                }
+
+                div.explorer-label {
+                    padding: 0.75rem 1rem;
+                }
+            }
+        }
+
+
+    }
+}
+
 .degree-listing {
     .container.mix {
         display: flex;

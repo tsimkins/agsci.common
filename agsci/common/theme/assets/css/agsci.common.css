@@ -13552,6 +13552,28 @@ body .youtube-video-embed.aspect-3-2 {
   bottom: 0;
   right: 0; }
 
+/* Degree Comparison table */
+.comparison-container .rtable.rtable-mobile-labels tbody {
+  padding-top: 6rem; }
+  .comparison-container .rtable.rtable-mobile-labels tbody tr:first-of-type td p {
+    font-weight: normal; }
+.comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top {
+  height: 5rem; }
+  .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top .card-image-overlay {
+    background-color: #314D64; }
+  .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top img {
+    margin-top: -10000rem; }
+
+@media (min-width: 768px) {
+  .comparison-container .rtable.rtable-mobile-labels {
+    /*
+      border-spacing: 1rem 0;
+      border-collapse: separate;
+    */ }
+    .comparison-container .rtable.rtable-mobile-labels td div {
+      padding: 0.75rem 1.25rem 1rem; }
+    .comparison-container .rtable.rtable-mobile-labels td div.explorer-label {
+      padding: 0.75rem 1rem; } }
 .degree-listing .container.mix {
   display: flex; }
 .degree-listing .checkbox.disabled {

@@ -24,12 +24,11 @@
             <tal:item
                  tal:repeat="i view/degrees">
 
-            <table class="rtable rtable-mobile-labels d-block d-md-none">
+            <table class="rtable rtable-mobile-labels d-block d-md-none mt-3">
                 <thead class="visual-cards-imgs-cropped">
                     <tr>
                         <th scope="col">
-                            <div class="card card-visual card-image-top">
-                                <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
+                            <div class="card card-visual card-image-top bg-slate">
 
                                 <img
                                     tal:attributes="src python:view.item_image(item=i);"
@@ -132,13 +131,14 @@
                         <tal:item
                              tal:repeat="i view/degrees">
                         <th scope="col">
-                            <div class="card card-visual card-image-top">
-                                <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
-                                    <img tal:attributes="src python:view.item_image(item=i);"
-                                         alt=""
-                                         title=""
-                                         class="w-100" />
-                                <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+                            <div class="card card-visual card-image-top bg-slate">
+
+                                <img tal:attributes="src python:view.item_image(item=i);"
+                                        alt=""
+                                        title=""
+                                        class="w-100" />
+
+                                <div class="card-img-overlay d-flex flex-fill flex-grow align-items-end justify-content-start text-white">
                                     <h3 tal:content="i/Title|nothing" />
                                 </div>
                             </div>
