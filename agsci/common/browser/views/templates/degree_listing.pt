@@ -18,7 +18,7 @@
                 tal:attributes="action string:${context/absolute_url}/@@degree_compare_lightbox">
 
                 <section class="container-fluid explorer-buttons-v2 px-0">
-                    <div class="container px-0">
+                    <div class="container px-3 px-md-0">
                         <div class="select-message">
                             <span>Select up to three majors to compare.</span>
                         </div>
@@ -36,7 +36,7 @@
                     </div>
                 </section>
 
-                <div class="degree-listing"
+                <div class="degree-listing px-3 px-md-0"
                      tal:attributes="data-sort-on sort_field"
                      tal:condition="batch"
                      tal:define="default_limit_display python: int(30);

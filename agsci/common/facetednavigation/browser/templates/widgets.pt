@@ -11,7 +11,7 @@
   positions python:dict((x.value, x.title) for x in positions);
 ">
 
-<div class="container degree-explorer mt-3">
+<div class="container degree-explorer mt-3 px-0 px-md-3 px-sm-0">
 
   <div class="faceted-clear"></div>
 
@@ -44,30 +44,30 @@
     <div tal:define="position string:left" id="left-area" class="cd-panel cd-panel--from-left js-cd-panel-main">
 
         <div class="cd-panel__container">
-        
+
             <div class="panel-close-view d-lg-none">
                 <button href="#0"
                         class="btn btn-light-creek-outline cd-panel__close js-cd-close">
                     <i class="fas fa-times"></i>
                     Close Filters
                 </button>
-                <button href="#0" 
+                <button href="#0"
                         class="btn btn-creek cd-panel__close js-cd-close">
-    
+
                         View Selections
-    
+
                         <i class="fas fa-arrow-right"></i>
                 </button>
             </div>
-            
-            
+
+
             <div class="cd-panel__content">
                 <nav id="degree-explorer-nav" class="navbar d-block degree-explorer-filters">
                     <p class="degree-explorer-header h4 ml-2 mt-0">Explore by:</p>
                     <metal:position use-macro="here/@@faceted_macros/macros/position" />
             	</nav>
             </div> <!-- cd-panel__content -->
-        
+
         </div> <!-- cd-panel__container -->
     </div>
 

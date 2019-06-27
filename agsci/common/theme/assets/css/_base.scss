@@ -186,12 +186,19 @@ body.userrole-authenticated {
             }
         }
 
-        .widget-fieldset {
-            padding: 0;
-            margin: 0 0 1.5em 0;
-            max-height: 13rem;
+        .faceted-widget {
+            margin-bottom: 1.5rem;
+            border: 1px solid #CCCCCC;
+        }
 
+        .widget-fieldset {
+
+            padding: 0;
+            margin: 0;
+            max-height: 13rem;
             overflow: auto;
+            border-width: 0;
+            border-style: none;
 
             form {
 
@@ -295,6 +302,16 @@ body {
 
 /* Degree Comparison table */
 .comparison-container {
+
+    .close-comparison-bar {
+        h2 {
+            background: transparent;
+        }
+        h2:after {
+            border-bottom: none;
+        }
+    }
+
     .rtable.rtable-mobile-labels {
         tbody {
             padding-top: 6rem;

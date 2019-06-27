@@ -13427,13 +13427,20 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:b
   #faceted-form #center-content-area .faceted-criteria dl dd,
   #faceted-form #left-area .faceted-criteria dl dd {
     margin-left: 1em; }
+  #faceted-form #faceted-top-column .faceted-widget,
+  #faceted-form #center-content-area .faceted-widget,
+  #faceted-form #left-area .faceted-widget {
+    margin-bottom: 1.5rem;
+    border: 1px solid #CCCCCC; }
   #faceted-form #faceted-top-column .widget-fieldset,
   #faceted-form #center-content-area .widget-fieldset,
   #faceted-form #left-area .widget-fieldset {
     padding: 0;
-    margin: 0 0 1.5em 0;
+    margin: 0;
     max-height: 13rem;
-    overflow: auto; }
+    overflow: auto;
+    border-width: 0;
+    border-style: none; }
 
 body.viewpermission-manage-portal #content,
 body.viewpermission-add-portal-content #content,
@@ -13553,6 +13560,10 @@ body .youtube-video-embed.aspect-3-2 {
   right: 0; }
 
 /* Degree Comparison table */
+.comparison-container .close-comparison-bar h2 {
+  background: transparent; }
+.comparison-container .close-comparison-bar h2:after {
+  border-bottom: none; }
 .comparison-container .rtable.rtable-mobile-labels tbody {
   padding-top: 6rem; }
   .comparison-container .rtable.rtable-mobile-labels tbody tr:first-of-type td p {
