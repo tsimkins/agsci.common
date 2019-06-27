@@ -155,7 +155,7 @@ jq3(document).ready(function() {
                 function() {
 
                     // Create wrapper and dimmer divs
-                    var cw = jQuery("<div class='comparison-wrapper'></div>");
+                    var cw = jQuery("<div class='comparison-wrapper'>Hi.</div>");
                     var dimmer = jQuery("<div class='comparison-dimmer'></div>");
 
                     // Hide them
@@ -163,7 +163,7 @@ jq3(document).ready(function() {
                     cw.hide();
 
                     // Add them to the top and bottom of the body.
-                    jQuery('body').append(cw);
+                    jQuery('body').prepend(cw);
                     jQuery('body').prepend(dimmer);
 
                     // Don't submit when clicking Compare
@@ -182,25 +182,23 @@ jq3(document).ready(function() {
 
                             var get_results = jQuery.get(results_url, function(data) {
 
-                                jQuery('.comparison-wrapper').each(
+                                jQuery('.comparison-wrapper').html(data);
+//                                jQuery('.comparison-wrapper').html('<div>asdf</div>')
+                                jQuery('.comparison-dimmer').show();
+                                jQuery('.comparison-wrapper').slideDown("slow");
+                                jQuery('.comparison').slideDown("slow", function () {
+                                    jQuery('.comparison-container, .comparison-wrapper').css({'position' : 'fixed'});
+                                });
+                                jQuery('.close-comparison-bar button').each(
                                     function () {
-
-                                        jQuery(this).html(data);
-
-                                        jQuery('.comparison-wrapper, .comparison-dimmer').show();
-
-                                        jQuery('.close-comparison-bar button').each(
+                                        jQuery(this).click(
                                             function () {
-                                                jQuery(this).click(
-                                                    function () {
-                                                        jQuery('.comparison-wrapper, .comparison-dimmer').hide();
-                                                    }
-                                                );
+                                                jQuery('.comparison-wrapper, .comparison-dimmer').hide();
                                             }
                                         );
                                     }
                                 );
-                            })
+                            });
                         }
                     );
 
