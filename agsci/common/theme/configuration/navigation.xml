@@ -36,14 +36,28 @@
                         <link>industry</link>
                         <items>
                             <item>
-                                <title>Industry Recruitment &amp; Employer Relations</title>
+                                <title>Penn State Ag Council</title>
+                                <link>industry/agcouncil</link>
                             </item>
                             <item>
-                                <title>Student Careers and Internships</title>
-                                <link>careers</link>
+                                <title>Ag Action Network</title>
+                                <link>industry/ag-action-network</link>
                             </item>
                             <item>
-                                <title>Collaborating with the College</title>
+                                <title>Recruitment and Employer Relations</title>
+                                <link>industry/recruitment</link>
+                            </item>
+                            <item>
+                                <title>Continuing Education</title>
+                                <link>industry/continuing-education</link>
+                            </item>
+                            <item>
+                                <title>Labs and Services</title>
+                                <link>industry/services</link>
+                            </item>
+                            <item>
+                                <title>Research Partnerships</title>
+                                <link>https://researchpartnerships.psu.edu/</link>
                             </item>
                         </items>
                     </item>
