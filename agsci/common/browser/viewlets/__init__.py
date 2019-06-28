@@ -102,9 +102,7 @@ class NavigationViewlet(ViewletBase):
         url = self.get_link(item)
 
         if url:
-            if not self.is_external_link(url):
-
-                if self.is_valid_internal_path(url):
+            if self.is_external_link(url) or self.is_valid_internal_path(url):
                     return 'valid'
 
         return 'invalid'
