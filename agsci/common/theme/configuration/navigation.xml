@@ -179,15 +179,15 @@
                                 </item>
                                 <item>
                                     <title>Associate Degrees</title>
+                                    <link>academics/undergraduate/associate-degrees</link>
                                 </item>
                                 <item>
                                     <title>Certificates</title>
-                                </item>
-                                <item>
-                                    <title>Undecided</title>
+                                    <link>academics/undergraduate/certificates</link>
                                 </item>
                                 <item>
                                     <title>Online Degrees</title>
+                                    <link>academics/undergraduate/online-degrees</link>
                                 </item>
                                 <item>
                                     <title>Study Abroad</title>
@@ -202,15 +202,19 @@
                             <items>
                                 <item>
                                     <title>Our Graduate Degree Programs</title>
+                                    <link>academics/graduate/our-graduate-degree-programs</link>
                                 </item>
                                 <item>
-                                    <title>Inter-College Degree Programs</title>
+                                    <title>Intercollege Degree Programs</title>
+                                    <link>academics/graduate/intercollege-degree-programs</link>
                                 </item>
                                 <item>
                                     <title>Dual-Title Degree Programs</title>
+                                    <link>academics/graduate/dual-title-degree-programs</link>
                                 </item>
                                 <item>
-                                    <title>Study Abroad</title>
+                                    <title>Online Degree Programs</title>
+                                    <link>academics/graduate/online-degree-programs</link>
                                 </item>
                             </items>
                         </item>
@@ -221,6 +225,10 @@
                         <item>
                             <title>Academic Departments</title>
                             <link>academics/departments</link>
+                        </item>
+                        <item>
+                            <title>Student Resources</title>
+                            <link>academics/student-resources</link>
                         </item>
                     </group>
                     <group>
