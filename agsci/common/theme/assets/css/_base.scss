@@ -358,10 +358,9 @@ body {
     .comparison-container {
 
         .rtable.rtable-mobile-labels {
-          /*
+
             border-spacing: 1rem 0;
             border-collapse: separate;
-          */
 
             td {
 
@@ -371,6 +370,10 @@ body {
 
                 div.explorer-label {
                     padding: 0.75rem 1rem;
+                    
+                    span {
+                        visibility: visible;
+                    }
                 }
             }
         }

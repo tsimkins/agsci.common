@@ -13595,14 +13595,14 @@ body .youtube-video-embed.aspect-3-2 {
 
 @media (min-width: 768px) {
   .comparison-container .rtable.rtable-mobile-labels {
-    /*
-      border-spacing: 1rem 0;
-      border-collapse: separate;
-    */ }
+    border-spacing: 1rem 0;
+    border-collapse: separate; }
     .comparison-container .rtable.rtable-mobile-labels td div {
       padding: 0.75rem 1.25rem 1rem; }
     .comparison-container .rtable.rtable-mobile-labels td div.explorer-label {
-      padding: 0.75rem 1rem; } }
+      padding: 0.75rem 1rem; }
+      .comparison-container .rtable.rtable-mobile-labels td div.explorer-label span {
+        visibility: visible; } }
 .degree-listing .container.mix {
   display: flex; }
 .degree-listing .checkbox.disabled {
