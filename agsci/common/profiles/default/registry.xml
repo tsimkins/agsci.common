@@ -257,15 +257,7 @@
       </value>
     </record>
 
-    <!-- Tile Configuration -->
-
-    <record name="plone.app.tiles">
-        <value purge="false">
-            <element>agsci.common.tiles.jumbotron</element>
-            <element>agsci.common.tiles.callout_block</element>
-        </value>
-    </record>
-
+    <!-- Types displayed in left nav -->
     <record
         name="plone.displayed_types"
         interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
@@ -282,11 +274,47 @@
         </value>
     </record>
 
+    <!-- Tile Configuration -->
+
+    <!-- Omitted fields -->
+    <record name="plone.app.mosaic.default_omitted_fields">
+        <value purge="False">
+            <element>agsci.common.content.behaviors.leadimage.ILeadImageExtra.image_caption</element>
+            <element>agsci.common.content.behaviors.leadimage.ILeadImageExtra.image_full_width</element>
+            <element>agsci.common.content.behaviors.leadimage.ILeadImageExtra.image_show</element>
+        </value>
+    </record>
+
+    <!-- Add an Ag Journey category -->
+    <records interface="plone.app.mosaic.interfaces.IWeightedDict"
+            prefix="plone.app.mosaic.tiles_categories.advanced">
+        <value key="name">agjourney</value>
+        <value key="label">AgJourney</value>
+        <value key="weight">5</value>
+    </records>
+
+    <!-- Additional tiles (Not needed?) -->
+    <record name="plone.app.tiles">
+        <value purge="false">
+            <element>agsci.common.tiles.jumbotron</element>
+            <element>agsci.common.tiles.callout_block</element>
+        </value>
+    </record>
+
+    <!-- Remove tiles -->
     <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_navigation"
              interface="plone.app.mosaic.interfaces.ITile"
              remove="True" />
 
     <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_html"
+             interface="plone.app.mosaic.interfaces.ITile"
+             remove="True" />
+
+    <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_embed"
+             interface="plone.app.mosaic.interfaces.ITile"
+             remove="True" />
+
+    <records prefix="plone.app.mosaic.app_tiles.plone_app_standardtiles_discussion"
              interface="plone.app.mosaic.interfaces.ITile"
              remove="True" />
 
@@ -305,6 +333,7 @@
         <value key="weight">120</value>
     </records>
 
+    <!-- Jumbotron -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_jumbotron"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.jumbotron</value>
@@ -319,6 +348,7 @@
         <value key="weight">100</value>
     </records>
 
+    <!-- Short Jumbotron -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_short_jumbotron"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.short_jumbotron</value>
@@ -333,6 +363,7 @@
         <value key="weight">110</value>
     </records>
 
+    <!-- Callout Block -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_callout_block"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.callout_block</value>
@@ -347,6 +378,7 @@
         <value key="weight">170</value>
     </records>
 
+    <!-- CTA Buttons -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_cta"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.cta</value>
@@ -361,6 +393,7 @@
         <value key="weight">160</value>
     </records>
 
+    <!-- Image with CTAs -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_kermit"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.kermit</value>
@@ -375,6 +408,7 @@
         <value key="weight">310</value>
     </records>
 
+    <!-- Callout with Image -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_misspiggy"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.misspiggy</value>
@@ -389,6 +423,7 @@
         <value key="weight">320</value>
     </records>
 
+    <!-- Statistic Highlights -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_fozziebear"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.fozziebear</value>
@@ -403,6 +438,7 @@
         <value key="weight">280</value>
     </records>
 
+    <!-- Feature Cards -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_gonzo"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.gonzo</value>
@@ -417,6 +453,7 @@
         <value key="weight">290</value>
     </records>
 
+    <!-- Marketing Vignette -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_rowlf"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.rowlf</value>
@@ -431,6 +468,7 @@
         <value key="weight">380</value>
     </records>
 
+    <!-- Navigation Card -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_scooter"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.scooter</value>
@@ -445,6 +483,7 @@
         <value key="weight">390</value>
     </records>
 
+    <!-- Skeeter -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_skeeter"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.skeeter</value>
@@ -459,6 +498,7 @@
         <value key="weight">400</value>
     </records>
 
+    <!-- Person -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_animal"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.animal</value>
@@ -473,6 +513,7 @@
         <value key="weight">200</value>
     </records>
 
+    <!-- Pepe the King Prawn -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_pepe_the_king_prawn"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.pepe_the_king_prawn</value>
@@ -487,6 +528,7 @@
         <value key="weight">350</value>
     </records>
 
+    <!-- Office Address -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_rizzo_the_rat"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.rizzo_the_rat</value>
@@ -501,7 +543,7 @@
         <value key="weight">210</value>
     </records>
 
-
+    <!-- CTA Blocks -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_statler"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.statler</value>
@@ -516,10 +558,11 @@
         <value key="weight">150</value>
     </records>
 
+    <!-- YouTube Video-->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_youtube"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.youtube</value>
-        <value key="label">YouTube</value>
+        <value key="label">YouTube Video</value>
         <value key="category">structure</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
@@ -530,6 +573,7 @@
         <value key="weight">420</value>
     </records>
 
+    <!-- Large CTA -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_large_cta"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.large_cta</value>
@@ -544,6 +588,7 @@
         <value key="weight">180</value>
     </records>
 
+    <!-- Dropdown Accordion -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_dropdown_accordion"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.dropdown_accordion</value>
@@ -558,6 +603,7 @@
         <value key="weight">240</value>
     </records>
 
+    <!-- Explore More -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_explore_more"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.explore_more</value>
@@ -572,6 +618,7 @@
         <value key="weight">260</value>
     </records>
 
+    <!-- Social Media -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_social_media"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.social_media</value>
@@ -586,6 +633,7 @@
         <value key="weight">220</value>
     </records>
 
+    <!-- Portlets -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_portlets"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.portlets</value>
@@ -600,6 +648,7 @@
         <value key="weight">130</value>
     </records>
 
+    <!-- Rich Text -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_richtext"
              interface="plone.app.mosaic.interfaces.ITile">
         <value key="name">agsci.common.tiles.richtext</value>
@@ -614,6 +663,22 @@
         <value key="weight">100</value>
     </records>
 
+    <!-- Ag Journey: Jumbotron -->
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_agjourney_jumbotron"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.agjourney_jumbotron</value>
+        <value key="label">Jumbotron</value>
+        <value key="category">agjourney</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+    <!-- getId Query field for collection -->
     <records interface="plone.app.querystring.interfaces.IQueryField"
             prefix="plone.app.querystring.field.getId">
         <value key="title">Short name (id)</value>
@@ -627,6 +692,5 @@
         <value key="vocabulary">agsci.common.getId</value>
         <value key="group">Metadata</value>
     </records>
-
 
 </registry>

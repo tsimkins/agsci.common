@@ -54,7 +54,7 @@
             margin-top: 0.5rem !important;
         }
 
-        .jumbotron, .jumbotron-short-title {
+        .jumbotron-standard, .jumbotron-short-title {
             #portal-breadcrumbs {
                 color: #ffffff;
                 background-color: transparent;
@@ -192,7 +192,7 @@ body.userrole-authenticated {
                 margin-bottom: 1.5rem;
                 border: 1px solid #CCCCCC;
             }
-            
+
             .widget-fieldset {
                 max-height: 13rem;
                 border-width: 0;
@@ -206,7 +206,7 @@ body.userrole-authenticated {
             margin: 0;
             overflow: auto;
         }
-        
+
     }
 
 }
@@ -314,7 +314,7 @@ body {
     right: 0;
 
     .close-comparison-bar {
-        
+
         position: absolute; /* updated via Javascript to fixed */
 
         h2 {
@@ -335,9 +335,9 @@ body {
             }
         }
         .visual-cards-imgs-cropped {
-            
+
             position: absolute;  /* updated via Javascript to fixed */
-            
+
             .card-visual.card-image-top {
 
                 height: 5rem;
@@ -362,13 +362,13 @@ body {
             border-spacing: 1rem 0;
             border-collapse: separate;
           */
-          
+
             td {
-    
+
                 div {
                     padding: 0.75rem 1.25rem 1rem;
                 }
-    
+
                 div.explorer-label {
                     padding: 0.75rem 1rem;
                 }
@@ -705,4 +705,17 @@ body.portaltype-event {
             }
         }
     }
+}
+
+/* Hide Ag Journey tile group on non-Ag Journey types */
+
+body:not(.portaltype-agsci_agjourney) {
+    .mosaic-option-group-agjourney {
+        color: #888888;
+        display: none;
+    }
+}
+
+#select2-drop {
+    font-size: 14px;
 }

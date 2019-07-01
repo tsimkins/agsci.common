@@ -13319,10 +13319,10 @@ NEWS & EVENTS
     padding: 0; }
   .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
     margin-top: 0.5rem !important; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
+  .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
     color: #ffffff;
     background-color: transparent; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
+  .mosaic-grid-row .mosaic-tile-content .jumbotron-standard p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
     color: #ffffff;
     font-size: 1.25em; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
@@ -13821,6 +13821,14 @@ body.portaltype-event #content-core .event.summary {
     margin-bottom: 0; }
     body.portaltype-event #content-core .event.summary p strong:after {
       content: ": "; }
+
+/* Hide Ag Journey tile group on non-Ag Journey types */
+body:not(.portaltype-agsci_agjourney) .mosaic-option-group-agjourney {
+  color: #888888;
+  display: none; }
+
+#select2-drop {
+  font-size: 14px; }
 
 .alert.status,
 .portalMessage {

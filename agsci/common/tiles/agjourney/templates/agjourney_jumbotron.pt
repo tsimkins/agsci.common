@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    class="container-fluid left-top jumbotron-journey jumbotron jumbotron-img-based d-flex position-relative"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+    <div tal:attributes="style string:background-image: url(${view/img_src|nothing});"
+            class="jumbotron-img bg-center-center fix-img-right"></div>
+
+	<div class="opacity-dimmer opacity-dimmer-top-right">
+		&nbsp;
+	</div>
+
+	<div class="opacity-dimmer opacity-dimmer-bottom-right">
+		&nbsp;
+	</div>
+
+	<p class="agsci-journeys d-block">
+		<span tal:replace="view/data/title|nothing" />
+	</p>
+	
+	<div class="agsci-journeys-overlay agsci-journeys-overlay2">
+		<p class="agsci-journeys-intro-quote">
+			&ldquo;<span tal:replace="view/data/description|nothing" />&rdquo;
+		</p>
+
+	</div>
+</section>
+  </body>
+</html>
