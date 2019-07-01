@@ -13427,20 +13427,23 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:b
   #faceted-form #center-content-area .faceted-criteria dl dd,
   #faceted-form #left-area .faceted-criteria dl dd {
     margin-left: 1em; }
-  #faceted-form #faceted-top-column .faceted-widget,
-  #faceted-form #center-content-area .faceted-widget,
-  #faceted-form #left-area .faceted-widget {
+  #faceted-form #faceted-top-column .faceted-left-widgets .faceted-widget,
+  #faceted-form #center-content-area .faceted-left-widgets .faceted-widget,
+  #faceted-form #left-area .faceted-left-widgets .faceted-widget {
     margin-bottom: 1.5rem;
     border: 1px solid #CCCCCC; }
+  #faceted-form #faceted-top-column .faceted-left-widgets .widget-fieldset,
+  #faceted-form #center-content-area .faceted-left-widgets .widget-fieldset,
+  #faceted-form #left-area .faceted-left-widgets .widget-fieldset {
+    max-height: 13rem;
+    border-width: 0;
+    border-style: none; }
   #faceted-form #faceted-top-column .widget-fieldset,
   #faceted-form #center-content-area .widget-fieldset,
   #faceted-form #left-area .widget-fieldset {
     padding: 0;
     margin: 0;
-    max-height: 13rem;
-    overflow: auto;
-    border-width: 0;
-    border-style: none; }
+    overflow: auto; }
 
 body.viewpermission-manage-portal #content,
 body.viewpermission-add-portal-content #content,
@@ -13550,41 +13553,45 @@ body .youtube-video-embed.aspect-3-2 {
   right: 0;
   left: auto; }
 
-.comparison-dimmer {
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0; }
-
 .comparison-wrapper {
   z-index: 10000;
   position: absolute;
+  /* updated via Javascript to fixed */
   bottom: 0;
   left: 0;
-  top: 5em;
+  top: 0;
   right: 0;
   background: #FFFFFF; }
 
 /* Degree Comparison table */
 .comparison-container {
-  position: static; }
-  .comparison-container .close-comparison-bar h2 {
-    background: transparent; }
-  .comparison-container .close-comparison-bar h2:after {
-    border-bottom: none; }
+  position: absolute;
+  /* updated via Javascript to fixed */
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  right: 0; }
+  .comparison-container .close-comparison-bar {
+    position: absolute;
+    /* updated via Javascript to fixed */ }
+    .comparison-container .close-comparison-bar h2 {
+      background: transparent; }
+    .comparison-container .close-comparison-bar h2:after {
+      border-bottom: none; }
   .comparison-container .rtable.rtable-mobile-labels tbody {
     padding-top: 6rem; }
     .comparison-container .rtable.rtable-mobile-labels tbody tr:first-of-type td p {
       font-weight: normal; }
-  .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top {
-    height: 5rem; }
-    .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top .card-image-overlay {
-      background-color: #314D64; }
-    .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top img {
-      margin-top: -10000rem; }
+  .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
+    position: absolute;
+    /* updated via Javascript to fixed */ }
+    .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top {
+      height: 5rem; }
+      .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top .card-image-overlay {
+        background-color: #314D64; }
+      .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped .card-visual.card-image-top img {
+        margin-top: -10000rem; }
 
 @media (min-width: 768px) {
   .comparison-container .rtable.rtable-mobile-labels {
@@ -13605,6 +13612,9 @@ body .youtube-video-embed.aspect-3-2 {
     border-color: #CCCCCC; }
 
 @media (max-width: 768px) {
+  .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
+    position: static !important; }
+
   body.portaltype-agsci_degree_container #faceted-form .degree-explorer {
     margin: 0; }
   body.portaltype-agsci_degree_container #faceted-form #center-area {

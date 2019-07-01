@@ -186,24 +186,27 @@ body.userrole-authenticated {
             }
         }
 
-        .faceted-widget {
-            margin-bottom: 1.5rem;
-            border: 1px solid #CCCCCC;
+        .faceted-left-widgets {
+
+            .faceted-widget {
+                margin-bottom: 1.5rem;
+                border: 1px solid #CCCCCC;
+            }
+            
+            .widget-fieldset {
+                max-height: 13rem;
+                border-width: 0;
+                border-style: none;
+            }
         }
 
         .widget-fieldset {
 
             padding: 0;
             margin: 0;
-            max-height: 13rem;
             overflow: auto;
-            border-width: 0;
-            border-style: none;
-
-            form {
-
-            }
         }
+        
     }
 
 }
@@ -290,22 +293,12 @@ body {
     left: auto;
 }
 
-.comparison-dimmer {
-    background-color: rgba(0,0,0,0.5);
-    z-index: 9999;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 .comparison-wrapper {
     z-index: 10000;
-    position: absolute;
+    position: absolute; /* updated via Javascript to fixed */
     bottom: 0;
     left: 0;
-    top: 5em;
+    top: 0;
     right: 0;
     background: #FFFFFF;
 }
@@ -313,12 +306,21 @@ body {
 /* Degree Comparison table */
 .comparison-container {
 
-    position: static;
+    position: absolute; /* updated via Javascript to fixed */
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
 
     .close-comparison-bar {
+        
+        position: absolute; /* updated via Javascript to fixed */
+
         h2 {
             background: transparent;
         }
+
         h2:after {
             border-bottom: none;
         }
@@ -333,6 +335,9 @@ body {
             }
         }
         .visual-cards-imgs-cropped {
+            
+            position: absolute;  /* updated via Javascript to fixed */
+            
             .card-visual.card-image-top {
 
                 height: 5rem;
@@ -357,12 +362,13 @@ body {
             border-spacing: 1rem 0;
             border-collapse: separate;
           */
+          
             td {
-
+    
                 div {
                     padding: 0.75rem 1.25rem 1rem;
                 }
-
+    
                 div.explorer-label {
                     padding: 0.75rem 1rem;
                 }
@@ -389,6 +395,15 @@ body {
 }
 
 @media (max-width: 768px) {
+    .comparison-container {
+
+        .rtable.rtable-mobile-labels {
+            .visual-cards-imgs-cropped {
+                position: static !important;
+            }
+        }
+
+    }
 
     body.portaltype-agsci_degree_container {
         #faceted-form {
