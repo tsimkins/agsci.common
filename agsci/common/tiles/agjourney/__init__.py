@@ -10,6 +10,8 @@ class AgJourneyBioTile(YouTubeTile):
 
 class QuoteAndImageTile(ConditionalTemplateTile):
 
+    __full_width__ = True
+
     @property
     def padding(self):
         _ = []
@@ -27,7 +29,7 @@ class QuoteAndImageTile(ConditionalTemplateTile):
 
     @property
     def section_class(self):
-        _ = "container-fluid bg-light-gray agsci-journey".split()
+        _ = "container-fluid bg-light-gray".split()
 
         _.extend(self.padding)
 

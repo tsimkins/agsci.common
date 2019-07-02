@@ -716,6 +716,16 @@ body.portaltype-event {
     }
 }
 
+body.portaltype-agsci_agjourney {
+
+    .jumbotron-journey {
+        .jumbotron-img {
+            height: 70vh;
+        }
+    }
+}
+
+
 /* Hide Ag Journey tile group on non-Ag Journey types */
 
 body:not(.portaltype-agsci_agjourney) {

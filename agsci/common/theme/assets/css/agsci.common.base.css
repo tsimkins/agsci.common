@@ -510,6 +510,9 @@ body.portaltype-event #content-core .event.summary {
     body.portaltype-event #content-core .event.summary p strong:after {
       content: ": "; }
 
+body.portaltype-agsci_agjourney .jumbotron-journey .jumbotron-img {
+  height: 70vh; }
+
 /* Hide Ag Journey tile group on non-Ag Journey types */
 body:not(.portaltype-agsci_agjourney) .mosaic-option-group-agjourney {
   color: #888888;
