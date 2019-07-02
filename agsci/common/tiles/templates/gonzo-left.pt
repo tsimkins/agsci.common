@@ -34,6 +34,7 @@
                          tal:content="structure view/data/text/output|nothing" />
 
                     <a class="btn btn-creek"
+                       tal:condition="view/data/url|nothing"
                        tal:attributes="href view/data/url|nothing"
                        tal:content="view/data/label|nothing" />
 				</div>
