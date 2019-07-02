@@ -31,4 +31,16 @@
         for="agsci.common.content.agjourney.IAgJourney"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.quote_and_image"
+        title="Quote and Image"
+        description=""
+        schema=".interfaces.IQuoteAndImageTile"
+        class=".QuoteAndImageTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.agjourney.IAgJourney"
+    />
+
 </configure>

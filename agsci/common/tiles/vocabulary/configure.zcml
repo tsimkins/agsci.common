@@ -62,4 +62,10 @@
         component=".SocialMediaPlatformVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.agjourney.quote_style"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".AgJourneyQuoteStyleVocabularyFactory"
+    />
+
 </configure>

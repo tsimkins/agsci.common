@@ -81,6 +81,16 @@ class SocialMediaPlatformVocabulary(KeyValueVocabulary):
         ('youtube', 'YouTube'),
     ]
 
+class AgJourneyQuoteStyleVocabulary(KeyValueVocabulary):
+    items = [
+        ('plain_image_left', 'Plain (Image Left)'),
+        ('plain_image_right', 'Plain (Image Right)'),
+        ('plain_image_none', 'Plain (No Image)'),
+        ('image_large', 'Large Image'),
+        ('handwriting_small', 'Handwriting (Small)'),
+        ('handwriting_large', 'Handwriting (Large)'),
+    ]
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
@@ -91,3 +101,4 @@ PeopleVocabularyFactory = PeopleVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()
+AgJourneyQuoteStyleVocabularyFactory = AgJourneyQuoteStyleVocabulary()

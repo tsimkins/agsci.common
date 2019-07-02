@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+        <section class="container-fluid position-relative px-0 mb-3">
+            <div class="container-fluid bg-creek text-white pt-3">
+                <div class="row align-items-center mx-0">
+                    <div class="col-12 col-md-4 px-0">
+                        <img tal:define="img_src view/img_src|nothing;
+                                         img_alt view/img_alt|nothing;"
+                             tal:condition="img_src"
+                             class="w-100"
+                             tal:attributes="src img_src;
+                                             alt img_alt" />
+                    </div>
+                    <div class="col-12 col-md-8 my-3 px-0">
+                        <p class="quote-angle-script">
+                            <tal:quote tal:condition="view/data/quote_title|nothing">&ldquo;</tal:quote><span tal:replace="view/data/title|nothing" /><tal:quote tal:condition="view/data/quote_title|nothing">&rdquo;</tal:quote>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+  </body>
+</html>

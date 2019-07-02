@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+    <div class="row justify-content-center">
+        <section class="container agsci-overview m-0">
+            <div class="row position-relative feature-side-by-side mx-0 bg-white">
+                <div class="col-12 col-lg-4 py-3">
+
+                    <img tal:define="img_src view/img_src|nothing;
+                                     img_alt view/img_alt|nothing;"
+                         tal:condition="img_src"
+                         class="w-100"
+                         tal:attributes="src img_src;
+                                         alt img_alt" />
+                </div>
+                <div class="col-12 col-lg-8 feature-content px-lg-5 py-4 order-1 order-lg-12">
+                    <h2>
+                        <tal:quote tal:condition="view/data/quote_title|nothing">&ldquo;</tal:quote><span tal:replace="view/data/title|nothing" /><tal:quote tal:condition="view/data/quote_title|nothing">&rdquo;</tal:quote>
+                    </h2>
+
+                    <p>
+                        <tal:quote tal:condition="view/data/quote_description|nothing">&ldquo;</tal:quote><span tal:replace="view/data/description|nothing" /><tal:quote tal:condition="view/data/quote_description|nothing">&rdquo;</tal:quote>
+                    </p>
+
+                    <div class="journey-divider mx-auto">
+                        <span>
+                            <img alt=""
+                                 tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/icon-divider-hexagon.svg" />
+                        </span>
+                    </div>
+
+                    <tal:text
+                        tal:replace="structure view/data/text/output|nothing" />
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</section>
+
+  </body>
+</html>
