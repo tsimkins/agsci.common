@@ -29,3 +29,33 @@ class IAgJourneyJumbotronTile(Interface):
         description=_(u""),
         required=False,
     )
+
+
+class IAgJourneyBioTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    title_bold = schema.TextLine(
+        title=_(u"Title (Bold)"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
+    url = schema.TextLine(
+        title=_(u"Video URL"),
+        required=True,
+    )
+
+    video_aspect_ratio = schema.Choice(
+        title=_(u"Video Aspect Ratio"),
+        vocabulary="agsci.common.tiles.video_aspect_ratio",
+        required=True,
+        default=u"16:9",
+    )

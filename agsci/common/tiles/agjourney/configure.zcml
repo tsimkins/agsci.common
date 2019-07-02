@@ -18,4 +18,17 @@
         for="agsci.common.content.agjourney.IAgJourney"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.agjourney_bio"
+        title="Ag Journey Bio"
+        description=""
+        schema=".interfaces.IAgJourneyBioTile"
+        class=".AgJourneyBioTile"
+        template="templates/agjourney_bio.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.agjourney.IAgJourney"
+    />
+
 </configure>

@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section class="container py-5 agjourney-bio"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+    <div class="row">
+        <div class="col-12">
+            <h1 class="journey-name">
+                <span tal:replace="view/data/title|nothing" />
+                <span tal:content="view/data/title_bold|nothing" />
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-5 pr-lg-0">
+
+            <div class="bio-box" tal:content="structure view/data/text/output|nothing" />
+        </div>
+
+        <div class="col-12 col-lg-7 pl-lg-0">
+            <div tal:attributes="class view/wrapper_klass|nothing"
+                 tal:define="iframe_url view/iframe_url|nothing"
+                 tal:condition="iframe_url">
+
+                <iframe
+                    tal:attributes="src iframe_url" />
+            </div>
+        </div>
+    </div>
+</section>
+
+  </body>
+</html>
