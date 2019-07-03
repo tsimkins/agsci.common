@@ -29,7 +29,7 @@
 					<h2 class="h2-no-divider mt-0"
 					    tal:content="view/data/title|nothing" />
 
-                    <div class="html"
+                    <div class="html mb-3"
                          tal:condition="view/data/text/output|nothing"
                          tal:content="structure view/data/text/output|nothing" />
 
