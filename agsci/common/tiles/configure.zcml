@@ -306,4 +306,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.pull_quote"
+        title="Pull Quote"
+        description=""
+        schema=".interfaces.IPullQuoteTile"
+        class=".PullQuoteTile"
+        template="templates/pull_quote.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

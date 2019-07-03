@@ -767,3 +767,20 @@ class IRichTextTile(IBorderTile):
         title=_(u'Text'),
         required=False,
     )
+
+class IPullQuoteTile(Interface):
+
+    quote = schema.TextLine(
+        title=_(u"Quote"),
+        required=False
+    )
+
+    speaker = schema.TextLine(
+        title=_(u"Speaker"),
+        required=False
+    )
+
+    speaker_title = schema.TextLine(
+        title=_(u"Speaker Title"),
+        required=False
+    )

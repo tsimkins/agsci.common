@@ -663,6 +663,21 @@
         <value key="weight">100</value>
     </records>
 
+    <!-- Pull Quote -->
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_pull_quote"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.pull_quote</value>
+        <value key="label">Pull Quote</value>
+        <value key="category">structure</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
     <!-- Ag Journey: Jumbotron -->
     <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_agjourney_jumbotron"
              interface="plone.app.mosaic.interfaces.ITile">

@@ -591,3 +591,6 @@ class PortletsTile(BaseTile):
 
 class RichTextTile(BaseTile):
     pass
+
+class PullQuoteTile(BaseTile):
+    pass

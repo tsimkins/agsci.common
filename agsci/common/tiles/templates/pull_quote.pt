@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+
+<section
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <blockquote
+                    tal:define="speaker_title view/data/speaker_title|nothing">
+                    &ldquo;<span tal:replace="view/data/quote|nothing" />&rdquo;
+                    <cite>
+                         <i class="fas fa-comment fa-fw fa-2x"></i>
+                         <span tal:replace="view/data/speaker|nothing" /><tal:speaker_title condition="speaker_title">,
+                        <em>
+                            <span tal:replace="view/data/speaker_title|nothing" />
+                        </em></tal:speaker_title>
+                    </cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+  </body>
+</html>
