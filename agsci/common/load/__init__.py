@@ -21,7 +21,6 @@ import base64
 import json
 import re
 import requests
-import urllib2
 
 from ..utilities import scrub_html, localize
 
