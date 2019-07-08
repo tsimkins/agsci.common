@@ -46,8 +46,8 @@
                          tal:attributes="src src;
                                          class python:view.image_class(item)"
                          class="d-block w-100" alt="">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h3 tal:content="item_title" />
+                    <div class="carousel-caption d-none d-md-block px-3">
+                      <h3 class="mt-0" tal:content="item_title" />
                       <p tal:content="item_description"
                          tal:condition="item_description" />
                     </div>

@@ -682,6 +682,15 @@ body.portaltype-agsci_photofolder {
         .carousel-caption {
             background-color: #575757;
             opacity: 0.9;
+            text-align: left;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            p {
+                line-height: 1.6;
+                margin-bottom: 0;
+            }
         }
     }
 

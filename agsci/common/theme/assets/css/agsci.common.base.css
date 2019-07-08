@@ -492,7 +492,14 @@ body.portaltype-agsci_photofolder .carousel-item img {
   margin: 0 auto; }
 body.portaltype-agsci_photofolder .carousel-item .carousel-caption {
   background-color: #575757;
-  opacity: 0.9; }
+  opacity: 0.9;
+  text-align: left;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  body.portaltype-agsci_photofolder .carousel-item .carousel-caption p {
+    line-height: 1.6;
+    margin-bottom: 0; }
 body.portaltype-agsci_photofolder .carousel-control-prev,
 body.portaltype-agsci_photofolder .carousel-control-next {
   opacity: 0.75; }
