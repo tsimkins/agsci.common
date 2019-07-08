@@ -15,11 +15,12 @@
         <div class="row">
             <div class="col">
                 <blockquote
-                    tal:define="speaker_title view/data/speaker_title|nothing">
+                    tal:define="speaker view/data/speaker|nothing;
+                                speaker_title view/data/speaker_title|nothing">
                     &ldquo;<span tal:replace="view/data/quote|nothing" />&rdquo;
-                    <cite>
+                    <cite tal:condition="speaker">
                          <i class="fas fa-comment fa-fw fa-2x"></i>
-                         <span tal:replace="view/data/speaker|nothing" /><tal:speaker_title condition="speaker_title">,
+                         <span tal:replace="speaker" /><tal:speaker_title condition="speaker_title">,
                         <em>
                             <span tal:replace="view/data/speaker_title|nothing" />
                         </em></tal:speaker_title>
