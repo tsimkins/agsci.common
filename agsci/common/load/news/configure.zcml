@@ -4,7 +4,13 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="agsci.common">
 
-    <include package=".cvent" />
-    <include package=".news" />
+    <!-- Import News View -->
+    <browser:page
+        for="*"
+        name="import_news"
+        class=".ImportNewsView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
 
 </configure>
