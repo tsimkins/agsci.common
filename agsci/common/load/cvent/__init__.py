@@ -18,54 +18,54 @@ from zope.interface import alsoProvides
 
 from agsci.common.utilities import localize
 
+# For Cvent URL http://guest.cvent.com/EVENTS/Calendar/Calendar.aspx?cal=9d9ed7b8-dd56-46d5-b5b3-8fb79e05acaf
+
 class ImportCventView(BrowserView):
+
+    summary_url = "http://guest.cvent.com/EVENTS/info/summary.aspx?e=%s"
+
+    conference_url = "https://agsci.psu.edu/conferences/event-calendar"
+
+    calendar_url = "https://agsci.psu.edu/cvent.json"
 
     @property
     def site(self):
         return getSite()
 
-    def cvent_events(self, calendar_url, summaryURL):
+    @property
+    def cvent_events(self):
 
         def fmt_date(x):
-            return DateTime(x.replace("T", ' ') + " US/Eastern")
+            return localize(DateTime(x.replace("T", ' ') + " US/Eastern"))
 
-        results = []
-
-        response = requests.get(calendar_url)
+        response = requests.get(self.calendar_url)
 
         if response.status_code == 200:
 
             for _ in response.json():
-
                 _id = _['id']
                 _title = _['title']
                 _start = fmt_date(_['startDate'])
                 _end = fmt_date(_['endDate'])
-                _url = self.cvent_summary_url(summaryURL % _id)
+                _url = self.cvent_summary_url(_id)
                 _location = _.get('location', '')
 
-                results.append((_id, _title, _start, _end, _url, _location))
+                yield {
+                    'id' : _id,
+                    'title' : _title,
+                    'start' : _start,
+                    'end' : _end,
+                    'url' : _url,
+                    'location' : _location
+                }
 
-        return results
-
-    def cvent_summary_url(self, url):
+    def cvent_summary_url(self, cvent_id):
+        url = self.summary_url % cvent_id
         response = requests.get(url)
         return response.url.split('?')[0]
 
-    def __call__(
-        self,
-        emailUsers=['trs22'],
-        cventURL = "http://guest.cvent.com/EVENTS/Calendar/Calendar.aspx?cal=9d9ed7b8-dd56-46d5-b5b3-8fb79e05acaf",
-        summaryURL = "http://guest.cvent.com/EVENTS/info/summary.aspx?e=%s",
-        conferenceURL="https://agsci.psu.edu/conferences/event-calendar",
-        calendar_url="https://agsci.psu.edu/cvent.json",
-        owner=None
-    ):
-
-        alsoProvides(self.request, IDisableCSRFProtection)
-
-        status = []
-        events = []
+    @property
+    def existing_cvent_ids(self):
         cvent_ids = []
 
         # Get listing of events, and their cventid if it exists
@@ -75,42 +75,55 @@ class ImportCventView(BrowserView):
             if cvent_id:
                 cvent_ids.append(cvent_id)
 
-        for (
-            _id,
-            _title,
-            _start,
-            _end,
-            _url,
-            _location
-        ) in self.cvent_events(calendar_url, summaryURL):
+        return cvent_ids
 
-            _title = safe_unicode(_title)
+    def create_cvent_event(self, **kwargs):
+
+        item = createContentInContainer(
+            self.context,
+            "Event",
+            id=kwargs['id'],
+            title=kwargs['title'],
+            event_url=kwargs['url'],
+            location=kwargs['location'],
+            exclude_from_nav=True,
+            checkConstraints=False
+        )
+
+        start_date = kwargs['start']
+        end_date = kwargs['end']
+
+        acc = IEventAccessor(item)
+        acc.start = start_date
+        acc.end = end_date
+
+        item.manage_addProperty('cventid', kwargs['id'], 'string')
+        #item.setLayout("event_redirect_view")
+        item.reindexObject()
+
+        return item
+
+    def __call__(
+            self,
+            emailUsers=['trs22'],
+            owner=None
+        ):
+
+        alsoProvides(self.request, IDisableCSRFProtection)
+
+        status = []
+        events = []
+        cvent_ids = self.existing_cvent_ids
+
+        for _ in self.cvent_events:
+
+            _title = safe_unicode(_['title'])
+            _id = _['id']
 
             if not cvent_ids.count(_id):
-                events.append("<li><a href=\"%s/%s\">%s</a></li>" % (conferenceURL, _id, _title))
+                events.append("<li><a href=\"%s/%s\">%s</a></li>" % (self.conference_url, _id, _title))
 
-                item = createContentInContainer(
-                    self.context,
-                    "Event",
-                    id=_id,
-                    title=_title,
-                    event_url=_url,
-                    location=_location,
-                    exclude_from_nav=True,
-                    checkConstraints=False
-                )
-
-                start_date = localize(DateTime(_start))
-                end_date = localize(DateTime(_end))
-
-                acc = IEventAccessor(item)
-                acc.start = start_date
-                acc.end = end_date
-
-                item.manage_addProperty('cventid', _id, 'string')
-                #item.setExcludeFromNav(True)
-                #item.setLayout("event_redirect_view")
-                item.reindexObject()
+                self.create_cvent_event(**_)
 
                 status.append("Created event %s (id %s)" % (_title, _id))
 
