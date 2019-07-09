@@ -15,6 +15,7 @@ import re
 import requests
 from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
+from email.mime.text import MIMEText
 
 from agsci.common.utilities import localize
 
@@ -130,7 +131,7 @@ class ImportCventView(BrowserView):
             else:
                 status.append("Skipped event %s (id %s)" % (_title, _id))
 
-        if events:
+        if events or True:
             status.append("Sending email to: %s" % ", ".join(emailUsers))
             mFrom = "do.not.reply@psu.edu"
             mSubj = "CVENT Events Imported: %s" % self.site.getId()
@@ -142,7 +143,9 @@ class ImportCventView(BrowserView):
                 mTo = "%s@psu.edu" % myUser
 
                 mMsg = "\n".join(["\n\n", mTitle, "<ul>", statusText, "<ul>"])
-                mailHost.send(mMsg.encode('utf-8'), mto=mTo, mfrom=mFrom, subject=mSubj)
+                mMsg = MIMEText(mMsg, 'html')
+
+                mailHost.send(mMsg, mto=mTo, mfrom=mFrom, subject=mSubj)
 
         status.append("Finished Loading")
 
