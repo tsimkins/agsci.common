@@ -265,9 +265,9 @@ jq3(document).ready(function() {
 var navBreakPointPx = 991; // pixels
 
 /*
-    * Set the Main Menu Navigation Behavior
-    *     hover or click
-    */
+* Set the Main Menu Navigation Behavior
+*     hover or click
+*/
 function setNavBehavior()
 {
     if (window.innerWidth < navBreakPointPx)
@@ -281,25 +281,25 @@ function setNavBehavior()
 }
 
 /*
-    * Set Nav Click Behavior
-    *
-    */
+* Set Nav Click Behavior
+*
+*/
 function setNavClick()
 {
-    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
+    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
 }
 
 /*
-    * Set Nav Hover Behavior
-    *
-    */
+* Set Nav Hover Behavior
+*
+*/
 function setNavHover()
 {
-    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover({});
-    jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
-    jq3('header .nav-external-link').on('click', function()
+    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover({});
+    jq3('header .navbar-dropdown .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
+    jq3('header .navbar-dropdown .nav-external-link').on('click', function()
     {
         if (jq3(this).attr('aria-expanded')=='true' && window.innerWidth >= navBreakPointPx)
         {
@@ -309,9 +309,9 @@ function setNavHover()
 }
 
 /*
-    * Attach behavior calls to resize, ready, load
-    *    Do NOT remove any of these.
-    */
+* Attach behavior calls to resize, ready, load
+* Do NOT remove any of these.
+*/
 window.addEventListener('resize', function(event) { setNavBehavior(); });
 jq3( window ).on( "load", function() { setNavBehavior(); });
 setNavBehavior();

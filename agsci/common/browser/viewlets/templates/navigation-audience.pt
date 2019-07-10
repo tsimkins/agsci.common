@@ -1,7 +1,7 @@
 <div id="audience-nav-viewlet"
     tal:define="nav view/nav|nothing">
 
-    <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar">
+    <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar navbar-dropdown">
 
         <div class="row mx-0 align-items-center">
     	
@@ -19,7 +19,7 @@
                         	<a tal:attributes="id item_id;
                         	                   href python:view.link(l1)"
                         	   tal:content="l1/title/cdata"
-                        	   class="dropdown-toggle"
+                        	   class="dropdown-toggle nav-external-link"
                         	   role="button"
                         	   data-toggle="dropdown"
                         	   aria-haspopup="true"

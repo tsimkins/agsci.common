@@ -1,7 +1,7 @@
 <div id="primary-nav-viewlet"
     tal:define="nav view/nav|nothing">
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dropdown">
 
         <button
             class="btn btn-primary btn-toggle-mobile-nav"
