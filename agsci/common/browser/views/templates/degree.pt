@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6 pl-0 ">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered html">
                             <tal:row
                                 tal:repeat="i view/fields">
                                 <tr tal:condition="v"
@@ -22,9 +22,14 @@
                                                 v python: i.get(context);">
                                     <th class="table-secondary" scope="row" tal:content="title" />
                                     <td>
-                                        <ul tal:condition="not: v/output|nothing">
+                                        <ul tal:condition="python: isinstance(v, (list, tuple))
+">
                                             <li tal:repeat="j v" tal:content="j" />
                                         </ul>
+
+                                        <p tal:condition="python: isinstance(v, (str, unicode))"
+                                            tal:content="v" />
+
                                         <tal:html
                                             tal:condition="v/output|nothing"
                                             tal:replace="structure v/output" />

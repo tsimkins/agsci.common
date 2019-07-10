@@ -364,8 +364,7 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 #parent-fieldname-text li,
 .html li {
   font-size: 0.9rem;
-  line-height: 1.8;
-  margin-bottom: 0.75em; }
+  line-height: 1.8; }
 #parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
 .html input,
 .html td,
