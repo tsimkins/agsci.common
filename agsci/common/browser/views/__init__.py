@@ -462,3 +462,27 @@ class ExternalLinkCheckView(BaseView):
     def link_check(self):
         results = [x for x in ExternalLinkCheck(self.context).manual_check()]
         return results
+
+class NewsItemView(BaseView):
+
+    index = ViewPageTemplateFile("templates/news_item.pt")
+
+    @property
+    def article_link(self):
+        return getattr(self.context, 'article_link', None)
+
+
+    def __call__(self):
+
+        if self.anonymous and self.article_link:
+
+            RESPONSE =  self.request.RESPONSE
+
+            RESPONSE.setHeader(
+                'Cache-Control',
+                'max-age=0, s-maxage=3600, must-revalidate, public, proxy-revalidate'
+            )
+
+            return RESPONSE.redirect(self.article_link)
+
+        return self.index()
