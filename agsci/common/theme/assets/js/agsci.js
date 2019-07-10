@@ -42,38 +42,6 @@ jq3('.collapse').on('shown.bs.collapse', function(e) {
     }, 500);
 });
 
-//BOOTSTRAP HOVER OR CLICK NAV
-//on load, if window 992px or less, set click behavior
-if (window.innerWidth <= 992) {
-    //add click behavior
-    jq3('[data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
-} else {
-    //add default hover behavior
-    jq3('[data-toggle="dropdown"]').bootstrapDropdownHover({});
-}
-
-//on window resize, if window 992px or less, set click behaviour
-window.addEventListener('resize', function(event) {
-    if (window.innerWidth <= 992) {
-        //destroy previous call to script
-        jq3('[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-        //add click behavior
-        jq3('[data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
-
-
-    } else {
-        //destroy previous call to script
-        jq3('[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-        //add default hover behavior
-        jq3('[data-toggle="dropdown"]').bootstrapDropdownHover({});
-        jq3('.nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable').on('click', function() {
-            if (jq3(this).attr('aria-expanded') == 'true') {
-                window.location = jq3(this).attr('href');
-            }
-        });
-    }
-});
-
 window.sr = ScrollReveal({
     reset: false
 }); /* reset to false - otherwise things get weird after launching modal */
@@ -128,18 +96,14 @@ jq3(document).ready(function() {
                 var panelClass = 'js-cd-panel-' + data_panel;
 
                 jQuery('.' + panelClass).addClass('cd-panel--is-visible');
-                console.log(panelClass);
 
                 //close panel when clicking on 'x' or outside the panel
                 jQuery('.' + panelClass).click(
                     function(event) {
 
                         var target = jQuery(event.target);
-                        console.log("Clicked.");
-                        console.log(target);
 
                         if( target.hasClass('js-cd-close') || target.hasClass(panelClass)) {
-                            console.log("Close window");
                             event.preventDefault();
                             jQuery(this).removeClass('cd-panel--is-visible');
                         }
@@ -165,7 +129,7 @@ jq3(document).ready(function() {
                         // Add to the top and bottom of the body.
                         jQuery('body').prepend(cw);
                     }
-                    
+
                     // Don't submit when clicking Compare
                     jQuery(this).attr('onsubmit', 'return false;');
 
@@ -184,11 +148,10 @@ jq3(document).ready(function() {
 
                                 jQuery('.comparison-wrapper').html(data);
 
-                                jQuery('.comparison-wrapper').show('slide', 
-                                    { direction: 'down' }, 
+                                jQuery('.comparison-wrapper').show('slide',
+                                    { direction: 'down' },
                                     function () {
                                         jQuery('.comparison-wrapper, .comparison-container, .close-comparison-bar, .visual-cards-imgs-cropped').css({'position' : 'fixed'});
-                                        console.log("Fixed position.");
                                     }
                                 );
 
@@ -295,3 +258,60 @@ jq3(document).ready(function() {
         }
     );
 });
+
+
+/* Set nav behavior */
+// less than this uses "mobile" click nav behavior
+var navBreakPointPx = 991; // pixels
+
+/*
+    * Set the Main Menu Navigation Behavior
+    *     hover or click
+    */
+function setNavBehavior()
+{
+    if (window.innerWidth < navBreakPointPx)
+    {
+        setNavClick();
+    }
+    else
+    {
+        setNavHover();
+    }
+}
+
+/*
+    * Set Nav Click Behavior
+    *
+    */
+function setNavClick()
+{
+    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
+}
+
+/*
+    * Set Nav Hover Behavior
+    *
+    */
+function setNavHover()
+{
+    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    jq3('header .nav-link[data-toggle="dropdown"]').bootstrapDropdownHover({});
+    jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
+    jq3('header .nav-external-link').on('click', function()
+    {
+        if (jq3(this).attr('aria-expanded')=='true' && window.innerWidth >= navBreakPointPx)
+        {
+            window.location = jq3(this).attr('href');
+        }
+    });
+}
+
+/*
+    * Attach behavior calls to resize, ready, load
+    *    Do NOT remove any of these.
+    */
+window.addEventListener('resize', function(event) { setNavBehavior(); });
+jq3( window ).on( "load", function() { setNavBehavior(); });
+setNavBehavior();
