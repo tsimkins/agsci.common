@@ -4,11 +4,15 @@ from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.content import Container
+from plone.app.vocabularies.catalog import CatalogSource
+from z3c.relationfield.schema import RelationChoice
 from zope.interface import Interface, provider, invariant, Invalid, implementer, implements
 from plone.app.content.interfaces import INameFromTitle
 from zope.component import adapter
 
 from agsci.common import AgsciMessageFactory as _
+
+from ..major import IMajor
 
 @provider(IFormFieldProvider)
 class IDegreeContainer(model.Schema):
@@ -62,6 +66,12 @@ class IDegree(model.Schema):
     facility = RichText(
         title=_(u"Facilities, Centers, and Institutes"),
         description=_(u""),
+        required=False,
+    )
+
+    target = RelationChoice(
+        title=_(u"Target Major/Degree"),
+        source=CatalogSource(object_provides=IMajor.__identifier__),
         required=False,
     )
 

@@ -15,6 +15,7 @@ from zope.component import getUtility
 
 from agsci.common.content.check import ExternalLinkCheck
 from agsci.common.content.degrees import IDegree
+from agsci.common.content.major import IMajor
 from agsci.common.indexer import degree_index_field
 from agsci.common.utilities import get_fields_by_type, toLocalizedTime
 from agsci.common import object_factory
@@ -216,8 +217,20 @@ class DegreeListingView(BaseView):
     def getFolderContents(self):
         return self.portal_catalog.queryCatalog(self.getQuery())
 
-
 class DegreeView(BaseView):
+
+    def get_target(self, context):
+        target = getattr(context, 'target', None)
+
+        if target and hasattr(target, 'to_object'):
+            target_object = target.to_object
+
+            if IMajor.providedBy(target_object):
+                return target_object.absolute_url()
+
+    @property
+    def target(self):
+        return self.get_target(self.context)
 
     @property
     def fields(self):

@@ -33,6 +33,11 @@
                                         <tal:html
                                             tal:condition="v/output|nothing"
                                             tal:replace="structure v/output" />
+
+                                        <a tal:condition="python: i.getName() == 'target' "
+                                           tal:define="target view/target|nothing"
+                                           tal:attributes="href target"
+                                           tal:content="target" />
                                     </td>
                                 </tr>
                             </tal:row>
