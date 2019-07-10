@@ -23,16 +23,13 @@ import time
 import urllib2
 
 from agsci.common.constants import DEFAULT_TIMEZONE
-from agsci.common.utilities import localize
+from agsci.common.utilities import localize, ploneify
 
 class ImportNewsView(BrowserView):
 
     url = 'http://news.psu.edu/rss/college/agricultural-sciences'
 
     user_agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0"
-
-    IMAGE_FIELD_NAME = 'image'
-    IMAGE_CAPTION_FIELD_NAME = 'imageCaption'
 
     # Transform from news tag to Plone tag
     tag_transforms = {
@@ -103,7 +100,7 @@ class ImportNewsView(BrowserView):
         )
 
         # Grab article image and set it as contentleadimage
-        html = self.getHTML(kwargs['url'])
+        html = self.get_html(kwargs['url'])
 
         if html:
 
@@ -114,7 +111,7 @@ class ImportNewsView(BrowserView):
             )
 
             # Set Lead Image or Image field
-            (image, image_caption) = self.getImageAndCaption(html)
+            (image, image_caption) = self.get_image_and_caption(html)
 
             if image:
                 item.image = image
@@ -137,7 +134,7 @@ class ImportNewsView(BrowserView):
         item.setModificationDate(dateStamp)
         item.setEffectiveDate(dateStamp)
 
-        tags = self.getTags(html)
+        tags = self.get_tags(html)
 
         if tags:
 
@@ -235,63 +232,57 @@ class ImportNewsView(BrowserView):
 
         return u"<p>%s</p>" % safe_unicode(item.text)
 
-    def getTags(self, html):
-        valid_tags = self.valid_tags
-
+    def get_tags(self, html):
         soup = BeautifulSoup(html, features='lxml')
 
-        try:
-            article_tags = []
+        tags = []
 
-            for tags_div in soup.findAll("div", {'class' : re.compile('article-related-terms')}):
-                items = tags_div.findAll("a")
-                article_tags.extend([ploneify(x.contents[0].text).strip() for x in items])
+        for tags_div in soup.findAll("div", {'class' : re.compile('article-related-terms')}):
+            items = tags_div.findAll("a")
+            tags.extend([ploneify(x.text).strip() for x in items])
 
-            # Transform tags
-            article_tags = [self.transform_tag(x) for x in article_tags]
+        # Transform tags
+        tags = [self.transform_tag(x) for x in tags]
 
-            if valid_tags:
-                tags = list(set(valid_tags) & set(article_tags))
-            else:
-                tags = list(article_tags)
-
-            return tags
-
-        except:
-            return []
+        return list(set(tags) & set(self.valid_tags))
 
     @property
     def portal_transforms(self):
         return getToolByName(self.context, 'portal_transforms')
 
-    def getHTML(self, url):
+    def get_html(self, url):
         response = requests.get(url, headers={ 'User-Agent': self.user_agent })
 
         if response.status_code == 200:
             return response.text
 
-    def getImageAndCaption(self, html=None, url=None):
+    def get_image_and_caption(self, html=None, url=None):
 
         if not (html or url):
             return (None, None)
         elif not html:
-            html = self.getHTML(url)
+            html = self.get_html(url)
 
         soup = BeautifulSoup(html, features='lxml')
 
-        img_url = ""
+        image_url = ""
         img_caption = ""
-        imgSrc = ""
+        image_src = ""
 
         # Remove related nodes
         for _ in soup.findAll("div", {'class' : 'related-nodes'}):
             __ = _.extract()
 
         for div in soup.findAll("div", attrs={'class' : re.compile('image')}):
+
             for img in div.findAll("img"):
-                img_url = img.get('src')
-                if img_url:
+
+                image_url = img.get('src')
+
+                if image_url:
+
                     parent = div.parent
+
                     for caption in parent.findAll("div", attrs={'class' : re.compile('short-caption')}):
                         img_caption = caption.text
 
@@ -299,54 +290,56 @@ class ImportNewsView(BrowserView):
                             break
 
                     if not img_caption:
+
                         for span in div.findAll("span", {'property' : 'dc:title'}):
+
                             img_caption = span.get('content')
+
                             if img_caption:
                                 break
-            if img_url:
+
+            if image_url:
                 break
 
-        if not img_url:
+        if not image_url:
+
             img_caption = ""
+
             for ul in soup.findAll("ul", {'class' : 'slides'}):
+
                 for li in ul.findAll('li'):
+
                     try:
-                        img_url = li.find("div", {'class' : re.compile('field-name-field-image')}).find("img").get('src')
+                        image_url = li.find("div", {'class' : re.compile('field-name-field-image')}).find("img").get('src')
                         img_caption = li.find("div", {'class' : re.compile('field-name-field-flickr-description')}).text
                     except:
                         pass
-                    if img_url:
+
+                    if image_url:
                         break
-        if img_url:
-            imgSrc = urljoin(url, img_url)
 
-        if imgSrc:
-            imgData = self.download_image(imgSrc)
+        if image_url:
+            image_src = urljoin(url, image_url)
 
-            filename = img_url.split('/')[-1].split('?')[0]
-
-            if filename:
-                filename = safe_unicode(filename)
-            else:
-                filename = u'image'
-
-            image_field = NamedBlobImage(
-                filename=filename,
-                data=imgData
-            )
-
-            return (image_field, img_caption)
+            if image_src:
+                image_data = self.download_image(image_src)
+    
+                filename = image_url.split('/')[-1].split('?')[0]
+    
+                if filename:
+                    filename = safe_unicode(filename)
+                else:
+                    filename = u'image'
+    
+                image_field = NamedBlobImage(
+                    filename=filename,
+                    data=image_data
+                )
+    
+                return (image_field, img_caption)
 
         else:
             return (None, None)
-
-    def hasImage(self, context):
-        image_field = context.getField(IMAGE_FIELD_NAME).get(context)
-
-        if image_field and image_field.size:
-            return True
-        else:
-            return False
 
     def download_image(self, url):
         response = requests.get(url, headers={ 'User-Agent': self.user_agent }, stream=True)
@@ -354,86 +347,3 @@ class ImportNewsView(BrowserView):
         if response.status_code == 200:
             response.raw.decode_content = True
             return response.raw.read()
-
-    def setImage(self, item, image_url=None, html=None):
-        # Given an article, and either an image URL or a set of HTML, sets the image
-        # and caption for the article.
-
-        theImage = theImageCaption = ""
-
-        if image_url:
-            theImage = self.download_image(image_url)
-            theImageCaption = ""
-        else:
-            if not html:
-                if hasattr(item, 'getRemoteUrl'):
-                    url = item.getRemoteUrl()
-                elif hasattr(item, 'article_link'):
-                    url = item.article_link
-                else:
-                    url = None
-
-                if url:
-                    html = self.getHTML(url)
-                else:
-                    return None
-
-            # Grab article image and caption
-            (theImage, theImageCaption) = getImageAndCaption(html=html)
-
-        if theImage:
-            item.getField(IMAGE_FIELD_NAME).set(item, theImage)
-            item.getField(IMAGE_CAPTION_FIELD_NAME).set(item, theImageCaption)
-            item.reindexObject()
-            print "setImage for %s" % item.id
-        else:
-            print "No Image for %s" % item.id
-
-
-    def retroSetImages(self):
-        for item in self.context.listFolderContents(contentFilter={"portal_type" : "News Item"}):
-
-            self.setImage(item)
-
-    data = {
-        'extension': ['cooperative-extension', 'penn-state-cooperative-extension', 'extension', 'penn-state-extension'],
-        'aec' : ['earth-and-environment', 'chesapeake-bay', 'energy', 'water', 'water-quality', 'environmental-engineering', 'environment', 'environmental-stewardship', 'forestry']
-    }
-
-
-    def setTags(context, tag):
-        # Tag Feeds
-
-        print "Settings %s within %s" % (tag, context.absolute_url())
-
-        if tag not in data.keys():
-            return False
-        else:
-            urls = data[tag]
-
-        print "Urls to search: %s" % ", ".join(urls)
-
-        linkRegex = re.compile("<link>http://news.psu.edu/story/(\d+)/.*?</link>", re.I|re.M)
-
-        found_articles = False
-
-        for u in urls:
-            print "Sleeping 10"
-            time.sleep(10)
-            tag_url = 'http://news.psu.edu/rss/tag/%s' % u
-            print "Grabbing %s" % tag_url
-            rss = urllib2.urlopen(tag_url).read()
-            for m in re.finditer(linkRegex, rss):
-                link = m.group(1)
-                if link in context.objectIds():
-                    story = context[link]
-                    subject = list(story.Subject())
-                    if not subject.count('news-%s' % tag):
-                        subject.append('news-%s' % tag)
-                        print "New subject for %s : %s" % (link, str(subject))
-                        found_articles = True
-                        story.setSubject(tuple(subject))
-                        story.reindexObject()
-
-        return found_articles
-
