@@ -13,8 +13,6 @@ from urllib2 import HTTPError
 from urlparse import urljoin
 from zope.component import getUtility
 from zope.component.hooks import getSite
-from plone.protect.interfaces import IDisableCSRFProtection
-from zope.interface import alsoProvides
 
 import feedparser
 import re
@@ -25,7 +23,9 @@ import urllib2
 from agsci.common.constants import DEFAULT_TIMEZONE
 from agsci.common.utilities import localize, ploneify
 
-class ImportNewsView(BrowserView):
+from .. import ImportContentView
+
+class ImportNewsView(ImportContentView):
 
     url = 'http://news.psu.edu/rss/college/agricultural-sciences'
 
@@ -184,9 +184,7 @@ class ImportNewsView(BrowserView):
     def wftool(self):
         return getToolByName(self.context, 'portal_workflow')
 
-    def __call__(self):
-
-        alsoProvides(self.request, IDisableCSRFProtection)
+    def import_content(self):
 
         rv = ["Syncing RSS feeds from %s" % self.url]
 
@@ -323,19 +321,19 @@ class ImportNewsView(BrowserView):
 
             if image_src:
                 image_data = self.download_image(image_src)
-    
+
                 filename = image_url.split('/')[-1].split('?')[0]
-    
+
                 if filename:
                     filename = safe_unicode(filename)
                 else:
                     filename = u'image'
-    
+
                 image_field = NamedBlobImage(
                     filename=filename,
                     data=image_data
                 )
-    
+
                 return (image_field, img_caption)
 
         else:

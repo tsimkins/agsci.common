@@ -2,6 +2,7 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFPlone.utils import safe_unicode
+from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from plone.app.linkintegrity.handlers import modifiedContent
 from plone.app.textfield.value import RichTextValue
@@ -16,13 +17,15 @@ from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.component.interfaces import ComponentLookupError
 from zope.schema import getFieldsInOrder
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides
 
 import base64
 import json
 import re
 import requests
 
-from ..utilities import scrub_html, localize
+from ..utilities import scrub_html, localize, execute_under_special_role
 
 # Regular expression to validate UID
 uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
@@ -548,3 +551,19 @@ class ContentImporter(object):
 
         # Reindex
         item.reindexObject()
+
+class ImportContentView(BrowserView):
+
+    def __call__(self):
+
+        alsoProvides(self.request, IDisableCSRFProtection)
+
+        try:
+            # Running importContent as Contributor so we can do this anonymously.
+            return execute_under_special_role(['Contributor', 'Reader', 'Editor', 'Member'],
+                                                self.import_content)
+        except Exception as e:
+            return '%s: %s' % (type(e).__name__, e.message)
+
+    def import_content(self):
+        pass

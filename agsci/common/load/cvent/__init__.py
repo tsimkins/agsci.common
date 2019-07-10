@@ -13,21 +13,22 @@ import urllib2
 import sys
 import re
 import requests
-from plone.protect.interfaces import IDisableCSRFProtection
-from zope.interface import alsoProvides
 from email.mime.text import MIMEText
 
 from agsci.common.utilities import localize
+from .. import ImportContentView
 
 # For Cvent URL http://guest.cvent.com/EVENTS/Calendar/Calendar.aspx?cal=9d9ed7b8-dd56-46d5-b5b3-8fb79e05acaf
 
-class ImportCventView(BrowserView):
+class ImportCventView(ImportContentView):
 
     summary_url = "http://guest.cvent.com/EVENTS/info/summary.aspx?e=%s"
 
     conference_url = "https://agsci.psu.edu/conferences/event-calendar"
 
     calendar_url = "https://agsci.psu.edu/cvent.json"
+
+    email_users = ['trs22',]
 
     @property
     def site(self):
@@ -104,13 +105,7 @@ class ImportCventView(BrowserView):
 
         return item
 
-    def __call__(
-            self,
-            emailUsers=['trs22'],
-            owner=None
-        ):
-
-        alsoProvides(self.request, IDisableCSRFProtection)
+    def import_content(self):
 
         status = []
         events = []
@@ -131,15 +126,15 @@ class ImportCventView(BrowserView):
             else:
                 status.append("Skipped event %s (id %s)" % (_title, _id))
 
-        if events or True:
-            status.append("Sending email to: %s" % ", ".join(emailUsers))
+        if events:
+            status.append("Sending email to: %s" % ", ".join(self.email_users))
             mFrom = "do.not.reply@psu.edu"
             mSubj = "CVENT Events Imported: %s" % self.site.getId()
             mTitle = "<p><strong>The following events from cvent have been imported.</strong></p>"
             statusText = "\n".join(events)
             mailHost = self.context.MailHost
 
-            for myUser in emailUsers:
+            for myUser in self.email_users:
                 mTo = "%s@psu.edu" % myUser
 
                 mMsg = "\n".join(["\n\n", mTitle, "<ul>", statusText, "<ul>"])
