@@ -30,7 +30,7 @@
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.tags.ITagsRoot" />
     </property>
-    <property name="schema" />
+    <property name="schema">agsci.common.content.blog.IBlog</property>
     <property name="schema_policy">dexterity</property>
     <alias from="(Default)" to="(dynamic view)" />
     <alias from="edit" to="@@edit" />
