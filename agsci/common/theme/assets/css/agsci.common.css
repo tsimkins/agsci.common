@@ -13696,6 +13696,13 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   font-size: 0.875rem;
   line-height: 1.25; }
 
+#content-core .event.summary {
+  margin-bottom: 1rem; }
+  #content-core .event.summary p {
+    margin-bottom: 0;
+    line-height: 1.5; }
+    #content-core .event.summary p strong:after {
+      content: ": "; }
 #content-core .entries {
   padding-top: 1em; }
   #content-core .entries .entry .documentByLine {
@@ -13834,13 +13841,6 @@ body.portaltype-agsci_photofolder .carousel-control-next-icon {
   height: 60px;
   background-size: 75% 75%;
   background-color: #575757; }
-
-body.portaltype-event #content-core .event.summary {
-  margin-bottom: 1rem; }
-  body.portaltype-event #content-core .event.summary p {
-    margin-bottom: 0; }
-    body.portaltype-event #content-core .event.summary p strong:after {
-      content: ": "; }
 
 body.portaltype-agsci_agjourney .jumbotron-journey .jumbotron-img {
   height: 70vh; }

@@ -506,6 +506,21 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 
 #content-core {
 
+    .event.summary {
+
+        margin-bottom: 1rem;
+
+        p {
+            margin-bottom: 0;
+
+            line-height: 1.5;
+
+            strong:after {
+                content: ": ";
+            }
+        }
+    }
+
     .entries {
 
         padding-top: 1em;
@@ -725,23 +740,6 @@ body.portaltype-agsci_photofolder {
         height: 60px;
         background-size: 75% 75%;
         background-color: #575757;
-    }
-}
-
-body.portaltype-event {
-    #content-core {
-        .event.summary {
-
-            margin-bottom: 1rem;
-
-            p {
-                margin-bottom: 0;
-
-                strong:after {
-                    content: ": ";
-                }
-            }
-        }
     }
 }
 

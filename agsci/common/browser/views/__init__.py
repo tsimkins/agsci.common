@@ -4,6 +4,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.z3cform.datagridfield import DictRow
+from jinja2 import Environment, FileSystemLoader
 from plone import api
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
 from plone.app.event.browser.event_view import EventView as _EventView
@@ -26,7 +27,13 @@ except ImportError:
 
 class BaseView(BrowserView):
 
+    j2_template_base = "++resource++agsci.common.view.j2/"
+
     image_size = 'large'
+
+    @property
+    def site(self):
+        return getSite()
 
     @property
     def object_fields(self):
@@ -179,6 +186,25 @@ class BaseView(BrowserView):
             return registry.get('plone.types_use_view_action_in_listings', [])
 
         return []
+
+    def get_event_date_range(self, context):
+        start = context.start
+        end = context.end
+
+        whole_day = getattr(context, 'whole_day', False)
+        open_end = getattr(context, 'open_end', False)
+
+        if whole_day:
+
+            if open_end:
+                return toLocalizedTime(start)
+
+            return toLocalizedTime(start, end_time=end)
+
+        elif open_end:
+            return toLocalizedTime(start, long_format=True)
+
+        return toLocalizedTime(start, end_time=end, long_format=True)
 
 class DegreeListingView(BaseView):
 
@@ -368,6 +394,26 @@ class FolderView(_FolderView, BaseView):
             url = self.getRemoteUrl(item)
             return self.getLinkType(url)
 
+    def getItemHTMLInfo(self, item):
+
+        if item.portal_type in ['Event',]:
+            return self.render_j2(template='event_listing.j2', item=item)
+
+    def render_j2(self, template=None, item=None):
+        resource = self.site.restrictedTraverse(self.j2_template_base)
+
+        loader = FileSystemLoader(resource.context.path)
+
+        env = Environment(
+            loader=loader,
+            trim_blocks=True,
+            lstrip_blocks=True,
+        )
+
+        _template = env.get_template(template)
+
+        return _template.render(view=self, item=item)
+
 class SubfolderView(FolderView):
 
     def include_item(self, _):
@@ -429,23 +475,7 @@ class EventSummaryView(_EventSummaryView, BaseView):
 
     @property
     def event_date(self):
-        start = self.context.start
-        end = self.context.end
-
-        whole_day = getattr(self.context, 'whole_day', False)
-        open_end = getattr(self.context, 'open_end', False)
-
-        if whole_day:
-
-            if open_end:
-                return toLocalizedTime(start)
-
-            return toLocalizedTime(start, end_time=end)
-
-        elif open_end:
-            return toLocalizedTime(start, long_format=True)
-
-        return toLocalizedTime(start, end_time=end, long_format=True)
+        return self.get_event_date_range(self.context)
 
 class SocialMediaView(BaseView):
     pass

@@ -6,6 +6,11 @@
     xmlns:faceted="http://namespaces.zope.org/faceted"
     i18n_domain="agsci.common">
 
+    <!-- Resource Directory -->
+    <browser:resourceDirectory
+        name="agsci.common.view.j2"
+        directory="j2" />
+
     <browser:page
         for="agsci.common.content.degrees.IDegreeContainer"
         name="facetednavigation_view"

@@ -91,6 +91,11 @@
                            tal:condition="item_info"
                            tal:content="item_info" />
 
+                        <div class="mt-0 mb-1"
+                           tal:define="item_info python:view.getItemHTMLInfo(item)"
+                           tal:condition="item_info"
+                           tal:content="structure item_info" />
+
                         <p class="description mb-1"
                             tal:define="show_description view/show_description|nothing"
                             tal:condition="python:show_description and item_description"

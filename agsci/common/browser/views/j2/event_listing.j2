@@ -1,0 +1,11 @@
+<div class="event summary details html">
+{% set obj = item.getObject() %}
+{% set location = obj.location %}
+<p><strong>When</strong>
+{{ view.get_event_date_range(obj) }}
+
+{% if location %}
+<br> <strong>Where</strong> {{ location }}
+{% endif %}
+</p>
+</div>
