@@ -114,7 +114,7 @@
                     </tr>
                     <tr>
                         <td class="major-details">
-                            <a tal:attributes="href i/absolute_url|nothing"
+                            <a tal:attributes="href python:view.get_target(i)"
                                 class="btn btn-creek">View Major Details</a>
                         </td>
                     </tr>
