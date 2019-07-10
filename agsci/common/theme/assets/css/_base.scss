@@ -605,6 +605,26 @@ body.template-content_checks {
             font-size: 0.8rem;
         }
     }
+
+    #global_statusmessage {
+
+        flex: 0 0 100%;
+
+        > .portalMessage {
+            clear: both;
+            font-size: 0.8rem;
+            margin: 1em 2em;
+
+            p, span, strong{
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+
+            p {
+                margin-bottom: 0.375em;
+            }
+        }
+    }
 }
 
 body.portaltype-formfolder {

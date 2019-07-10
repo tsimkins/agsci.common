@@ -13765,6 +13765,17 @@ body.template-content_checks th {
   line-height: 1.5; }
 #section-content #data-check input.small {
   font-size: 0.8rem; }
+#section-content #global_statusmessage {
+  flex: 0 0 100%; }
+  #section-content #global_statusmessage > .portalMessage {
+    clear: both;
+    font-size: 0.8rem;
+    margin: 1em 2em; }
+    #section-content #global_statusmessage > .portalMessage p, #section-content #global_statusmessage > .portalMessage span, #section-content #global_statusmessage > .portalMessage strong {
+      font-size: 0.8rem;
+      line-height: 1.5; }
+    #section-content #global_statusmessage > .portalMessage p {
+      margin-bottom: 0.375em; }
 
 body.portaltype-formfolder .pfg-form {
   width: 100%;
