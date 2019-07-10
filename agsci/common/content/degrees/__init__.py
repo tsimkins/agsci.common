@@ -26,7 +26,6 @@ class IDegree(model.Schema):
             'employer',
             'club',
             'facility',
-            'scholarship',
         ),
     )
 
@@ -64,12 +63,6 @@ class IDegree(model.Schema):
         title=_(u"Facilities, Centers, and Institutes"),
         description=_(u""),
         required=False,
-    )
-
-    scholarship = schema.List(
-        title=_(u"Scholarships"),
-        description=_(u""),
-        value_type=schema.Choice(vocabulary="agsci.common.degree.scholarship"),
     )
 
 class Degree(Container):

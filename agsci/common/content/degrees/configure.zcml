@@ -22,11 +22,5 @@
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".vocabulary.ClubVocabularyFactory"
     />
-    
-    <utility
-        name="agsci.common.degree.scholarship"
-        provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabulary.ScholarshipVocabularyFactory"
-    />
 
 </configure>

@@ -172,14 +172,6 @@ class ClubVocabulary(StaticVocabulary):
         'The Wildlife Society (TWS)',
     ]
 
-class ScholarshipVocabulary(StaticVocabulary):
-
-    items = [
-        'Dairy Farmers of America',
-        'Vartkes Miroyan Memorial Award',
-    ]
-
 InterestAreaVocabularyFactory = InterestAreaVocabulary()
 CareerVocabularyFactory = CareerVocabulary()
 ClubVocabularyFactory = ClubVocabulary()
-ScholarshipVocabularyFactory = ScholarshipVocabulary()
