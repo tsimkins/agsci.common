@@ -72,7 +72,14 @@ class BlockTransformer(object):
                     __ = block(_el, **kwargs)
 
                     if __:
-                        _el.insert_before(*__)
+                        parent = _el.parent
+
+                        # If the object is the only thing inside the parent.
+                        if parent.name in ('p',) and len(parent.contents) == 1:
+                            parent.insert_before(*__)
+                            _ = parent.extract()
+                        else:
+                            _el.insert_before(*__)
 
                     _ = _el.extract()
 
