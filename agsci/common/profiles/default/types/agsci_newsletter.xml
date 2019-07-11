@@ -12,9 +12,9 @@
     <property name="allowed_content_types">
     </property>
     <property name="allow_discussion">False</property>
-    <property name="default_view">view</property>
+    <property name="default_view">newsletter_email</property>
     <property name="view_methods">
-        <element value="view" />
+        <element value="newsletter_email" />
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addFolder</property>
@@ -24,8 +24,9 @@
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
     </property>
-    <property name="schema" />
+    <property name="schema">agsci.common.content.newsletter.INewsletter</property>
     <property name="schema_policy">dexterity</property>
     <alias from="(Default)" to="(dynamic view)" />
     <alias from="edit" to="@@edit" />

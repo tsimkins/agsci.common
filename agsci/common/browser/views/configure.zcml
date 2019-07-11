@@ -6,6 +6,8 @@
     xmlns:faceted="http://namespaces.zope.org/faceted"
     i18n_domain="agsci.common">
 
+    <include package=".newsletter" />
+
     <!-- Resource Directory -->
     <browser:resourceDirectory
         name="agsci.common.view.j2"
@@ -96,6 +98,16 @@
         template="templates/faceted_query.pt"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
+    />
+
+    <!-- Plain Template View -->
+    <browser:page
+        for="*"
+        name="plain_template"
+        class=".BaseView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/plain_template.pt"
     />
 
     <!-- Default Folder View -->

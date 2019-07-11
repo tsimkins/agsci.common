@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="agsci.common">
+
+    <!-- Newsletter View -->
+    <browser:page
+        for="agsci.common.content.newsletter.INewsletter"
+        name="newsletter_view"
+        class=".NewsletterView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+        template="templates/newsletter_view.pt"
+    />
+
+    <!-- Newsletter Email View -->
+    <browser:page
+        for="agsci.common.content.newsletter.INewsletter"
+        name="newsletter_email"
+        class=".NewsletterEmail"
+        template="templates/newsletter_view.pt"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
+    <!-- Modify Newsletter View -->
+    <browser:page
+        for="agsci.common.content.newsletter.INewsletter"
+        name="newsletter_modify"
+        class=".NewsletterModify"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+        permission="cmf.ModifyPortalContent"
+    />
+
+</configure>

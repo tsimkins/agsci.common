@@ -48,6 +48,7 @@ setup(name='agsci.common',
         'beautifulsoup4',
         'Jinja2',
         'Products.PloneFormGen',
+        'premailer',
     ],
     entry_points="""
       # -*- Entry points: -*-
