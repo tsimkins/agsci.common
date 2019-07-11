@@ -34,6 +34,7 @@
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.ISEO" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
     </property>
     <property name="schema" />
     <property name="schema_policy">dexterity</property>
