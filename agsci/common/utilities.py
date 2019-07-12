@@ -1,10 +1,16 @@
+from plone.portlets.interfaces import IPortletManager
+from plone.portlets.interfaces import IPortletAssignment
+from plone.portlets.interfaces import IPortletAssignmentMapping
+from plone.portlets.interfaces import ILocalPortletAssignmentManager
+
 from datetime import datetime
 from DateTime import DateTime
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.i18n.normalizer import idnormalizer, filenamenormalizer
-from zope.component import getUtility
+from zope.component import getUtility, getMultiAdapter
 from zope.schema.interfaces import IVocabularyFactory
 from zope.component.hooks import getSite
 from AccessControl import getSecurityManager
@@ -424,3 +430,33 @@ def execute_under_special_role(roles, function, *args, **kwargs):
     finally:
         # Restore the old security manager
         setSecurityManager(sm)
+
+# Set roles on object
+def set_editor_roles(context, group_id):
+    context.manage_setLocalRoles(group_id, ['Contributor', 'Reviewer', 'Editor', 'Reader'])
+    context.reindexObjectSecurity()
+
+# Adds an editors group to the subsite
+def add_editors_group(context):
+    group_id = "%s-editors"% str(context.id)
+    group_title = "%s Editors"% str(context.Title())
+
+    grouptool = getToolByName(context, 'portal_groups')
+
+    if grouptool.addGroup(group_id):
+        grouptool.getGroupById(group_id).title = group_title
+
+    set_editor_roles(context, group_id)
+
+    return group_id
+
+def get_portlet_manager(context, manager_name):
+    return getUtility(IPortletManager, name=manager_name, context=context)
+
+def get_portlet_assignment_manager(context, manager_name):
+    manager = get_portlet_manager(context, manager_name)
+    return getMultiAdapter((context, manager), ILocalPortletAssignmentManager)
+
+def get_portlet_mapping(context, manager_name):
+    manager = get_portlet_manager(context, manager_name)
+    return getMultiAdapter((context, manager), IPortletAssignmentMapping)
