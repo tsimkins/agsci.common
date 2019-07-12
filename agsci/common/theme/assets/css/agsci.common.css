@@ -13708,6 +13708,16 @@ body.mosaic-editor.plone-toolbar-left-expanded {
       content: ": "; }
 #content-core .entries {
   padding-top: 1em; }
+  #content-core .entries a.card.state-private .summary,
+  #content-core .entries a.card.state-private:hover .summary,
+  #content-core .entries a.card.state-private:visited .summary,
+  #content-core .entries a.card.state-private:link .summary {
+    color: #FF0000 !important; }
+  #content-core .entries a.card.state-pending .summary,
+  #content-core .entries a.card.state-pending:hover .summary,
+  #content-core .entries a.card.state-pending:visited .summary,
+  #content-core .entries a.card.state-pending:link .summary {
+    color: #FFA500 !important; }
   #content-core .entries .entry .documentByLine {
     font-size: 0.6875em;
     margin: 1em 0 0.5em 1em;

@@ -530,6 +530,24 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 
         padding-top: 1em;
 
+        a.card.state-private,
+        a.card.state-private:hover,
+        a.card.state-private:visited,
+        a.card.state-private:link {
+            .summary {
+                color: #FF0000 !important;
+            }
+        }
+
+        a.card.state-pending,
+        a.card.state-pending:hover,
+        a.card.state-pending:visited,
+        a.card.state-pending:link {
+            .summary {
+                color: #FFA500 !important;
+            }
+        }
+
         .entry {
 
             .documentByLine {
@@ -549,7 +567,6 @@ body.mosaic-editor.plone-toolbar-left-expanded {
             .description {
                 line-height: 1.8;
             }
-
 
         }
     }
