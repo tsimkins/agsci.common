@@ -11,13 +11,16 @@ from zope.security import checkPermission
 from Products.CMFPlone.utils import safe_unicode
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.app.contenttypes.interfaces import ICollection
+from urllib import quote, urlencode
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.event import addRelations, _relations
 from z3c.relationfield.relation import RelationValue
 
 import premailer
 import re
-from urllib import quote, urlencode
+
+from agsci.common.content.blog import IBlog
+from agsci.common.content.newsletter import INewsletter
 
 from .. import BaseView
 
@@ -140,6 +143,8 @@ class NewsletterView(BaseView):
             _ = [x for x in _ if x.effective >= self.start_date]
             return _
 
+        return []
+
     @property
     def enabled_items(self):
         return [
@@ -193,8 +198,29 @@ class NewsletterView(BaseView):
 
     @property
     def newsletter_title(self):
+        return self.newsletter.Title()
 
-        return self.context.Title()
+    @property
+    def newsletter(self):
+
+        if INewsletter.providedBy(self.context):
+            return self.context
+
+        elif IBlog.providedBy(self.context):
+
+            newsletters = self.context.listFolderContents({'Type' : 'Newsletter'})
+
+            if newsletters:
+
+                if len(newsletters) == 1:
+                    return newsletters[0]
+                else:
+                    # By id
+                    if 'newsletter' in [x.getId() for x in newsletters]:
+                        return self.context['newsletter']
+                    else:
+                        # Just pick one!
+                        return newsletters[0]
 
     # If we have a @lists.psu.edu listserv, return the listserv name
 
@@ -202,7 +228,7 @@ class NewsletterView(BaseView):
     def listserv(self):
         domain = "lists.psu.edu".upper()
 
-        email = getattr(self.context, 'listserv_email', '').upper().strip()
+        email = getattr(self.newsletter, 'listserv_email', '').upper().strip()
 
         if email.endswith("@%s" % domain):
             email = email.replace("@%s" % domain, "")

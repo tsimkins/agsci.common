@@ -34,4 +34,14 @@
         permission="cmf.ModifyPortalContent"
     />
 
+    <!-- Newsletter subscribe -->
+    <browser:page
+        for="agsci.common.content.blog.IBlog"
+        name="subscribe"
+        class=".NewsletterSubscribeView"
+        template="templates/newsletter_subscribe_view.pt"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+        permission="zope2.View"
+    />
+
 </configure>
