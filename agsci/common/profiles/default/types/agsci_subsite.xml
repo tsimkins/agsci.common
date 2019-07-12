@@ -38,7 +38,7 @@
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
         <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
     </property>
-    <property name="schema" />
+    <property name="schema">agsci.common.content.subsite.ISubsite</property>
     <property name="schema_policy">dexterity</property>
     <alias from="(Default)" to="(dynamic view)" />
     <alias from="edit" to="@@edit" />
