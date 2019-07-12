@@ -124,6 +124,10 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:b
     max-height: 13rem;
     border-width: 0;
     border-style: none; }
+  #faceted-form #faceted-top-column .faceted-left-widgets #career_widget .widget-fieldset,
+  #faceted-form #center-content-area .faceted-left-widgets #career_widget .widget-fieldset,
+  #faceted-form #left-area .faceted-left-widgets #career_widget .widget-fieldset {
+    max-height: 24rem; }
   #faceted-form #faceted-top-column .widget-fieldset,
   #faceted-form #center-content-area .widget-fieldset,
   #faceted-form #left-area .widget-fieldset {

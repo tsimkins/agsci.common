@@ -198,6 +198,12 @@ body.userrole-authenticated {
                 border-width: 0;
                 border-style: none;
             }
+
+            #career_widget {
+                .widget-fieldset {
+                    max-height: 24rem;
+                }
+            }
         }
 
         .widget-fieldset {
