@@ -160,7 +160,8 @@ jq3(document).ready(function() {
                                         jQuery(this).click(
                                             function () {
 
-                                                jQuery('.comparison-container, .close-comparison-bar, .visual-cards-imgs-cropped').css({'position' : 'absolute'});
+                                                jQuery('.comparison-container, .close-comparison-bar').css({'position' : 'absolute'});
+                                                jQuery('.visual-cards-imgs-cropped').css({'position' : 'static'});
 
                                                 jQuery('.comparison-wrapper').hide('slide',
                                                     { direction: 'down' });
