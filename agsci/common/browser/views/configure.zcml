@@ -255,7 +255,7 @@
 
     <!-- News Item View -->
     <browser:page
-        for=" plone.app.contenttypes.interfaces.INewsItem"
+        for="plone.app.contenttypes.interfaces.INewsItem"
         name="newsitem_view"
         class=".NewsItemView"
         permission="zope2.View"

@@ -5,3 +5,6 @@ class ITagsAdapter(Interface):
 
 class ILocationAdapter(Interface):
     pass
+
+class ICollegeHomepage(Interface):
+    pass

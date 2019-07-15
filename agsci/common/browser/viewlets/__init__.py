@@ -11,13 +11,18 @@ from plone import api
 from urlparse import urlparse
 from zope.component import queryUtility
 from zope.component.hooks import getSite
+from plone.app.contenttypes.interfaces import INewsItem
+from plone.event.interfaces import IEvent
 
+import json
 import untangle
 
-from agsci.common.utilities import ploneify
+from agsci.common.interfaces import ICollegeHomepage
+from agsci.common.utilities import ploneify, localize
 from agsci.common import object_factory
 from agsci.common.content.behaviors.leadimage import LeadImage
 from agsci.common.content.check import getValidationErrors
+from agsci.common.content.person.person import IPerson
 
 try:
     from plone.protect.utils import addTokenToUrl
@@ -300,3 +305,128 @@ class DataCheckViewlet(ViewletBase):
         url = '%s/@@rescan' % self.context.absolute_url()
 
         return addTokenToUrl(url)
+
+class StructuredDataViewlet(ViewletBase):
+    index = ViewPageTemplateFile('templates/structured-data.pt')
+
+    @property
+    def image(self):
+        # Check for item image
+        adapted = LeadImage(self.context)
+
+        if adapted.has_image:
+            return '%s/@@images/image' % self.context.absolute_url()
+
+    def data(self):
+
+        context = self.context
+
+        data = {}
+
+        if ICollegeHomepage.providedBy(self.context):
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'EducationalOrganization',
+                    'address': {    '@type': 'PostalAddress',
+                                    'addressLocality': 'University Park',
+                                    'addressRegion': 'PA',
+                                    'postalCode': '16802',
+                                    'streetAddress': 'Penn State University'},
+                    'logo': 'https://agsci.psu.edu/psu-agsciences-logo.png',
+                    'name': 'Penn State College of Agricultural Sciences',
+                    'sameAs': [
+                        'https://www.facebook.com/agsciences',
+                        'https://www.twitter.com/agsciences',
+                        'https://plus.google.com/+PennStateAgSciences',
+                        'https://instagram.com/agsciences',
+                        'https://www.linkedin.com/company/penn-state-college-of-agricultural-sciences',
+                        'https://www.youtube.com/psuagsciences',
+                        'https://en.wikipedia.org/wiki/Penn_State_College_of_Agricultural_Sciences'],
+                    'telephone': '+1-814-865-7521',
+                    'url': 'https://agsci.psu.edu'
+                    }
+
+        elif IEvent.providedBy(context):
+
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Event',
+                    'name': context.Title(),
+                    'description' : context.Description(),
+                    'startDate' : localize(context.start).isoformat(),
+                    'endDate' : localize(context.end).isoformat(),
+                    'url' : context.absolute_url(),
+                    'location' : {
+                        "@type" : "Place",
+                        "address" : getattr(context, 'location', ''),
+                        "name" : getattr(context, 'location', ''),
+                    }
+            }
+
+        elif INewsItem.providedBy(context):
+
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Article',
+                    'headline': context.Title(),
+                    'description' : context.Description(),
+                    'datePublished' : localize(context.effective()).isoformat(),
+                    'url' : context.absolute_url(),
+            }
+
+        elif IPerson.providedBy(context):
+
+            # Job Title
+            job_titles = getattr(context, 'job_titles', [])
+
+            if job_titles:
+                job_title = job_titles[0]
+            else:
+                job_title = ""
+
+            # Email
+            email = getattr(context, 'email', '')
+
+            # Name
+            (first_name, middle_name, last_name) = [getattr(context, x, '') for x in ('first_name', 'middle_name', 'last_name')]
+
+            # Address
+            street_address = getattr(context, 'street_address', [])
+
+            if street_address:
+                street_address = [x for x in street_address if x]
+                street_address = ', '.join(street_address)
+
+            city = getattr(context, 'city', '')
+            state = getattr(context, 'state', '')
+            zip_code = getattr(context, 'zip_code', '')
+
+            # Phone
+            phone_number = getattr(context, 'phone_number', '')
+
+            data = {
+                    '@context': 'http://schema.org',
+                    '@type': 'Person',
+                    'url' : context.absolute_url(),
+                    'email' : email,
+                    'givenName' : first_name,
+                    'additionalName' : middle_name,
+                    'familyName' : last_name,
+                    'telephone' : phone_number,
+                    'jobTitle' : job_title,
+                    'workLocation' : {
+                        '@type' : 'PostalAddress',
+                        'addressCountry' : 'US',
+                        'addressLocality' : city,
+                        'addressRegion' : state,
+                        'postalCode' : zip_code,
+                        'streetAddress' : street_address,
+                    }
+            }
+
+        data['image'] = self.image
+
+        if data:
+            return json.dumps(data, indent=4)
+
+        return None

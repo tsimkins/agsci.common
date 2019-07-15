@@ -40,4 +40,10 @@
         name="agsci.common"
         directory="theme" />
 
+    <!-- Define marker interface for college homepage -->
+
+    <interface
+        interface=".interfaces.ICollegeHomepage"
+        />
+
 </configure>
