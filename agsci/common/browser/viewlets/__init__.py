@@ -1,18 +1,22 @@
+from Products.CMFPlone.utils import safe_unicode
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
 from plone.app.blocks.layoutbehavior import ILayoutAware
 from plone.app.layout.viewlets.common import PathBarViewlet as _PathBarViewlet
+from plone.app.layout.viewlets.common import TitleViewlet as _TitleViewlet
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone import api
 from urlparse import urlparse
-from zope.component import queryUtility
+from zope.component import queryUtility, getMultiAdapter
 from zope.component.hooks import getSite
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.event.interfaces import IEvent
+from plone.memoize.instance import memoize
 
 import json
 import untangle
@@ -23,6 +27,11 @@ from agsci.common import object_factory
 from agsci.common.content.behaviors.leadimage import LeadImage
 from agsci.common.content.check import getValidationErrors
 from agsci.common.content.person.person import IPerson
+
+try:
+    from html import escape
+except ImportError:
+    from cgi import escape
 
 try:
     from plone.protect.utils import addTokenToUrl
@@ -51,6 +60,19 @@ class ViewletBase(_ViewletBase):
     @property
     def anonymous(self):
         return api.user.is_anonymous()
+
+    @property
+    def is_default_page(self):
+        # Determine if we're the default page
+
+        parent = self.context.aq_parent
+
+        try:
+            parent_default_page_id = parent.getDefaultPage()
+        except AttributeError:
+            parent_default_page_id = ''
+
+        return (self.context.id == parent_default_page_id)
 
 class LogoViewlet(ViewletBase):
     pass
@@ -429,4 +451,104 @@ class StructuredDataViewlet(ViewletBase):
         if data:
             return json.dumps(data, indent=4)
 
-        return None
+class TitleViewlet(ViewletBase, _TitleViewlet):
+
+    def update(self):
+        pass
+
+    @property
+    def org_title(self):
+        for _ in self.context.aq_chain:
+
+            org_title = _.getProperty('org_title', None)
+
+            if org_title:
+                return org_title
+
+            if IPloneSiteRoot.providedBy(_):
+                break
+
+    @property
+    @memoize
+    def site_title_data(self):
+
+        portal_state = getMultiAdapter((self.context, self.request),
+                                       name=u'plone_portal_state')
+
+        portal_title = portal_state.navigation_root_title()
+
+        _ = [self.page_title, portal_title, self.org_title]
+        _ = [x for x in _ if x]
+        _ = [escape(safe_unicode(x)) for x in _]
+
+        items = sorted(set(_), key=lambda x: _.index(x))
+
+        return items
+
+    @property
+    def site_title(self):
+        return self.sep.join(self.site_title_data)
+
+class OpenGraphViewlet(TitleViewlet):
+
+    # FB config
+    fbadmins = ','.join(['100001031380608', '9370853', '100003483428817'])
+    fbappid = '374493189244485'
+    fbpageid = '53789486293'
+
+    def get_image_info(self, context=None):
+
+        if not context:
+            context = self.context
+
+        # Check for item image
+        adapted = LeadImage(context)
+
+        if adapted.has_image:
+            return ('%s/@@images/image' % self.context.absolute_url(), adapted.image_format)
+
+        return (None, None)
+
+    @property
+    def url(self):
+
+        if self.is_default_page:
+            return self.context.aq_parent.absolute_url()
+
+        return self.context.absolute_url()
+
+    def update(self):
+
+        # Assign image URL and mime type
+        image_url = image_mime_type = ''
+
+        # Look up through the acquisition chain until we hit a Plone site
+        for _ in self.context.aq_chain:
+            if IPloneSiteRoot.providedBy(_):
+                break
+
+            (image_url, image_mime_type) = self.get_image_info(_)
+
+            if image_url:
+                break
+
+        # Fallback
+        if not image_url:
+            image_url = "%s/++resource++agsci.common/assets/images/social-media-site-graphic.png" % self.context.portal_url()
+
+        (self.fb_image, self.link_mime_type) = (image_url, image_mime_type)
+
+        self.link_metadata_image = self.fb_image
+
+        # FB Titles
+        titles = self.site_title_data
+
+        if len(titles) == 3:
+            self.fb_site_name = u'%s (%s)' % tuple(titles[1:3])
+            self.fb_title = u'%s (%s)' % tuple(titles[0:2])
+
+        elif len(titles) == 2:
+            self.fb_title = self.fb_site_name = u'%s (%s)' % tuple(titles[0:2])
+
+        else:
+            self.fb_title = self.fb_site_name = titles[0]

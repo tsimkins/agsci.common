@@ -126,13 +126,33 @@
         template="templates/data_check.pt"
     />
 
+    <!-- Render the browser title -->
+
+    <browser:viewlet
+        name="plone.htmlhead.title"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".TitleViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Structured Data metadata -->
     <browser:viewlet
-        name="agcommon.htmlhead.structured_data"
+        name="agsci.common.htmlhead.structured_data"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         class=".StructuredDataViewlet"
         permission="zope2.View"
         template="templates/structured-data.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+    <!-- Facebook Open Graph metadata -->
+    <browser:viewlet
+        name="agsci.common.htmlhead.opengraph"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".OpenGraphViewlet"
+        permission="zope2.View"
+        template="templates/opengraph.pt"
         layer="..interfaces.IThemeSpecific"
         />
 
