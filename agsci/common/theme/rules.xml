@@ -63,7 +63,8 @@
             body.viewpermission-plone-site-setup-themes,
             body.viewpermission-plone-site-setup-tinymce,
             body.viewpermission-plone-site-setup-types,
-            body.viewpermission-plone-site-setup-users-and-groups">
+            body.viewpermission-plone-site-setup-users-and-groups,
+            body.viewpermission-sharing-page-delegate-roles">
             <drop css:theme="header, footer" />
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />

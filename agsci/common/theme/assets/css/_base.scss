@@ -220,13 +220,26 @@ body.userrole-authenticated {
 body.viewpermission-manage-portal,
 body.viewpermission-add-portal-content,
 body.viewpermission-manage-schemata,
-body.viewpermission-plone-site-setup-site,
 body.viewpermission-modify-portal-content,
 body.viewpermission-portlets-manage-portlets,
-body.viewpermission-plone-site-setup-overview,
-body.viewpermission-plone-site-setup-users-and-groups,
 body.viewpermission-list-folder-contents,
-body.viewpermission-delete-objects {
+body.viewpermission-delete-objects,
+body.viewpermission-plone-site-setup-editing,
+body.viewpermission-plone-site-setup-filtering,
+body.viewpermission-plone-site-setup-imaging,
+body.viewpermission-plone-site-setup-language,
+body.viewpermission-plone-site-setup-mail,
+body.viewpermission-plone-site-setup-markup,
+body.viewpermission-plone-site-setup-navigation,
+body.viewpermission-plone-site-setup-overview,
+body.viewpermission-plone-site-setup-search,
+body.viewpermission-plone-site-setup-security,
+body.viewpermission-plone-site-setup-site,
+body.viewpermission-plone-site-setup-themes,
+body.viewpermission-plone-site-setup-tinymce,
+body.viewpermission-plone-site-setup-types,
+body.viewpermission-plone-site-setup-users-and-groups,
+body.viewpermission-sharing-page-delegate-roles {
     #content {
         margin-top: 2em;
     }

@@ -225,6 +225,7 @@ class CSSViewlet(ViewletBase):
         'plone-site-setup-tinymce',
         'plone-site-setup-types',
         'plone-site-setup-users-and-groups',
+        'sharing-page-delegate-roles'
     ]
 
     @property
