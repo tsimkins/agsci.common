@@ -5,6 +5,7 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from plone.app.linkintegrity.handlers import modifiedContent
+from plone.app.textfield import RichText
 from plone.app.textfield.value import RichTextValue
 from plone.behavior.interfaces import IBehaviorAssignable, IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
@@ -73,8 +74,19 @@ class ContentImporter(object):
         'Form Folder' : 'Folder',
     }
 
+    # new : old
     fields_mapping = {
-        'show_leadimage_context' : 'image_show',
+        'image_show' : 'show_leadimage_context',
+        'areas_expertise' : 'extension_areas',
+        'research_areas' : 'department_research_areas',
+        'state' : 'office_state',
+        'city' : 'office_city',
+        'bio' : 'biography',
+        'street_address' : 'office_address',
+        'zip_code' : 'office_postal_code',
+        'phone_number' : 'office_phone',
+        'primary_profile_url' : 'primary_profile',
+        'username' : 'id',
     }
 
     valid_layouts = [
@@ -242,7 +254,11 @@ class ContentImporter(object):
         for _ in schemata:
             rv.extend(getFieldsInOrder(_))
 
-        return [x[0] for x in rv]
+        return dict(rv)
+
+    @property
+    def field_names(self):
+        return self.fields.keys()
 
     def fix_html(self, html):
         updated = False
@@ -298,6 +314,7 @@ class ContentImporter(object):
         for _ in [
             self.data.text,
             self.data.folder_text,
+            self.data.biography,
         ]:
 
             if _:
@@ -423,6 +440,27 @@ class ContentImporter(object):
     def getId(self):
         return safe_unicode(self.data.id).encode('utf-8')
 
+    def transform_value(self, field=None, field_name=None, value=None):
+
+        if field_name in ('office_address',):
+
+            if isinstance(value, (str, unicode)):
+                return [x for x in value.replace("\r", "\n").split("\n") if x]
+
+        elif field_name in ('websites',):
+            if isinstance(value, (list, tuple)):
+                return [dict(zip(('url', 'title'), x.split('|'))) for x in value]
+
+        elif isinstance(field, RichText):
+
+            return RichTextValue(
+                raw=value,
+                mimeType=u'text/html',
+                outputMimeType='text/x-html-safe'
+            )
+
+        return value
+
     def __call__(self):
 
         if not self.data.data:
@@ -437,14 +475,24 @@ class ContentImporter(object):
 
         if not self.exists:
 
-            item = createContentInContainer(
-                parent,
-                self.portal_type,
-                id=_id,
-                title=self.data.title,
-                description=self.data.description,
-                checkConstraints=False
-            )
+            # People have no title or description.
+            if self.portal_type in ('agsci_person',):
+                item = createContentInContainer(
+                    parent,
+                    self.portal_type,
+                    id=_id,
+                    checkConstraints=False
+                )
+
+            else:
+                item = createContentInContainer(
+                    parent,
+                    self.portal_type,
+                    id=_id,
+                    title=self.data.title,
+                    description=self.data.description,
+                    checkConstraints=False
+                )
 
             # Set UID
             setattr(item, ATTRIBUTE_NAME, self.UID)
@@ -494,15 +542,29 @@ class ContentImporter(object):
                     item.image_full_width = False
 
         # Set field values
-        for field in self.fields:
+        # Map current field name 'field' to old 'data_field' from feed.
 
-            set_field = self.fields_mapping.get(field, field)
+        fields = self.fields
+        field_names = self.field_names
 
-            if set_field not in self.exclude_fields:
-                value = getattr(self.data, field, None)
+        for field_name in field_names:
+
+            field = fields.get(field_name)
+            data_field = self.fields_mapping.get(field_name, field_name)
+
+            if field_name not in self.exclude_fields:
+
+                value = getattr(self.data, data_field, None)
 
                 if value or isinstance(value, (bool,)):
-                    setattr(item, set_field, value)
+
+                    value = self.transform_value(
+                        field=field,
+                        field_name=data_field,
+                        value=value,
+                    )
+
+                    setattr(item, field_name, value)
 
         # Set collection criteria
         if self.portal_type in ('Collection', 'Newsletter'):

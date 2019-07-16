@@ -161,9 +161,20 @@ class ShortNameVocabulary(StaticVocabulary):
     def items(self):
         return self.portal_catalog.uniqueValuesFor('getId')
 
+class ResearchAreasVocabulary(StaticVocabulary):
+
+    items = [
+        u"Advanced Agricultural and Food Systems",
+        u"Biologically-Based Materials and Products",
+        u"Community Resilience and Capacity",
+        u"Environmental Resilience",
+        u"Global Engagement",
+        u"Integrated Health Solutions",
+    ]
 
 # Factories
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
 PersonClassificationsVocabularyFactory = PersonClassificationsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()
 ShortNameVocabularyFactory = ShortNameVocabulary()
+ResearchAreasVocabularyFactory = ResearchAreasVocabulary()

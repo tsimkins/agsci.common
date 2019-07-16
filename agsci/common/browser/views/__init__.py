@@ -62,7 +62,10 @@ class BaseView(BrowserView):
                 is_grid = isinstance(value_type, DictRow)
 
                 if is_grid and isinstance(f, (schema.List, schema.Tuple)):
-                    value = [object_factory(**x) for x in value]
+                    try:
+                        value = [object_factory(**x) for x in value]
+                    except:
+                        value = []
 
                 __ = {
                     'name' : i,

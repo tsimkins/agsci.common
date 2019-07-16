@@ -4,6 +4,7 @@ from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from dexterity.membrane.behavior.user import DxUserObject
 from dexterity.membrane.content.member import IMember
 from plone.app.content.interfaces import INameFromTitle
+from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.content import Item
@@ -32,8 +33,8 @@ contact_fields = [
 
 professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
-    'hr_department', 'all_emails', 'sso_principal_name', 'bio',
-    'education', 'websites', 'areas_expertise', 
+    'hr_department', 'all_emails', 'sso_principal_name', 'bio', 'short_bio',
+    'education', 'websites', 'areas_expertise', 'research_areas',
 ]
 
 class ILinkRowSchema(Interface):
@@ -188,9 +189,21 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         required=False,
     )
 
+    research_areas = schema.List(
+        title=_(u"Research Areas"),
+        required=False,
+        value_type=schema.Choice(vocabulary="agsci.common.research_areas"),
+    )
+
     primary_profile_url = schema.TextLine(
         title=_(u"Primary Profile URL"),
         description=_(u"URL of primary profile (if not Extension site)"),
+        required=False,
+    )
+
+    short_bio = RichText(
+        title=_(u"Short Biography"),
+        description=_(u"Used in listings."),
         required=False,
     )
 
@@ -237,7 +250,7 @@ class Person(Item):
         names = dict([(x, getattr(self, x, '')) for x in self.name_fields])
         names['title'] = self.title
         return object_factory(**names)
-        
+
     @property
     def title(self):
 

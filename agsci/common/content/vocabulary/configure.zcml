@@ -21,6 +21,12 @@
     />
 
     <utility
+        name="agsci.common.research_areas"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ResearchAreasVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.getId"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".ShortNameVocabularyFactory"
