@@ -159,9 +159,6 @@
                     <src>
                         ++resource++agsci.common/assets/images/navigation/research.jpg
                     </src>
-                    <title>
-                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
-                    </title>
                 </image>
                 <items>
                     <group>
@@ -250,6 +247,12 @@
                                     <description>Learn More about How to Apply</description>
                                     <icon>fa-list-alt</icon>
                                 </item>
+                                <item>
+                                    <title>Compare our Undergraduate Degrees</title>
+                                    <description />
+                                    <link>academics/undergraduate/degree-explorer</link>
+                                    <icon>fa-atlas</icon>
+                                </item>
                             </items>
                         </item>
                     </group>
@@ -260,9 +263,6 @@
                 <title>Admissions</title>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/admissions.jpg</src>
-                    <title>
-                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
-                    </title>
                 </image>
                 <items>
                     <group>
@@ -325,6 +325,12 @@
                                     <description>Learn More about How to Apply</description>
                                     <icon>fa-list-alt</icon>
                                 </item>
+                                <item>
+                                    <title>Compare our Undergraduate Degrees</title>
+                                    <description />
+                                    <link>academics/undergraduate/degree-explorer</link>
+                                    <icon>fa-atlas</icon>
+                                </item>
                             </items>
                         </item>
                     </group>
@@ -335,31 +341,31 @@
                 <title>Research</title>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
-                    <title>
-                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
-                    </title>
                 </image>
                 <items>
                     <group>
                         <item>
+                            <link>research/areas</link>
                             <title>Research Areas</title>
                         </item>
                         <item>
-                            <title>Research Highlights</title>
-                        </item>
-                    </group>
-                    <group>
-                        <item>
-                            <title>Opportunities for Research</title>
+                            <link>research/areas</link>
+                            <title>Research Impacts</title>
                         </item>
                         <item>
+                            <link>research/centers</link>
                             <title>Research Centers and Institutes</title>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Ag Experiment Stations</title>
+                            <title>Research and Extension Centers</title>
                         </item>
+                        <item>
+                            <title>Research Commercialization</title>
+                        </item>
+                    </group>
+                    <group>
                     </group>
                 </items>
             </item>
@@ -368,19 +374,30 @@
                 <title>Extension</title>
                 <link>extension</link>
                 <image>
-                    <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
+                    <link>https://extension.psu.edu/spotted-lanternfly</link>
+                    <src>++resource++agsci.common/assets/images/navigation/slf.jpg</src>
                     <title>
-                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
+                        Leading the fight against
+the spotted lanternfly.
                     </title>
                 </image>
                 <items>
+
+                    <group>
+                        <item type="text">
+                            As part of a top research institution, Penn State
+                            Extension delivers science-based information to
+                            citizens. We provide face-to-face and online
+                            education to our customers—when, where, and how
+                            they want it—to address problems and advance
+                            opportunities.
+                        </item>
+                    </group>
                     <group>
                         <item>
                             <title>Educational Programming</title>
                             <link>extension/programming</link>
                         </item>
-                    </group>
-                    <group>
                         <item>
                             <title>Major Initiatives</title>
                             <link>extension/initiatives</link>
@@ -393,9 +410,6 @@
                 <title>About</title>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/about.jpg</src>
-                    <title>
-                        Lorem ipsum dolor sit amet, consectetur adipiscg elit proin.
-                    </title>
                 </image>
                 <items>
                     <group>

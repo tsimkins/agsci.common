@@ -79,8 +79,6 @@ class LogoViewlet(ViewletBase):
 
 class NavigationViewlet(ViewletBase):
 
-    default_url = '/'
-
     xml_file = '++resource++agsci.common/configuration/navigation.xml'
 
     def get_paths(self):
@@ -177,13 +175,14 @@ class NavigationViewlet(ViewletBase):
 
         url = self.get_link(item)
 
-        if not url:
-            url = self.default_url
+        if url:
 
-        if self.is_external_link(url):
-            return url
+            if self.is_external_link(url):
+                return url
 
-        return self.get_internal_url(url)
+            return self.get_internal_url(url)
+
+        return ""
 
     @property
     def config(self):

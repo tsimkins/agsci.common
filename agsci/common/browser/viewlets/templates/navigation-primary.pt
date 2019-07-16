@@ -57,8 +57,10 @@
                                     <div tal:condition="l1/image|nothing">
 
                                         <a class="nav-img-preview"
-                                            tal:define="image l1/image|nothing"
-                                            tal:attributes="href python: view.link(image)">
+                                            tal:define="image l1/image|nothing;
+                                                        image_link python: view.link(image)"
+                                            tal:omit-tag="not:image_link"
+                                            tal:attributes="href image_link">
 
                                             <div>
                                                 <img tal:define="src image/src/cdata/strip|nothing"
@@ -67,9 +69,11 @@
                                                     alt=""
                                                     class="w-100" />
                                             </div>
-                                            <!--
-                                            <p tal:content="image/title/cdata|nothing" />
-                                            -->
+
+                                            <p tal:define="title image/title/cdata|nothing"
+                                               tal:condition="title"
+                                               tal:content="title" />
+
                                         </a>
 
                                     </div>
@@ -99,6 +103,16 @@
     <tal:block
             tal:define="item_type python:view.type(l2)">
 
+        <tal:item
+            tal:condition="python: item_type == 'text'">
+            <ul class="nav flex-column">
+
+                <li class="nav-item">
+                    <p class="mt-3" tal:content="l2/cdata|nothing" />
+                </li>
+            </ul>
+
+        </tal:item>
 
         <tal:item
             tal:condition="python: item_type == 'nav'">
