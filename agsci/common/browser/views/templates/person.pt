@@ -124,9 +124,10 @@
                                             <span>Fax</span>
                                             <span tal:replace="fax_number" />
                                         </li>
-                                        <li>
+                                        <li tal:define="cv_file view/cv_file|nothing"
+                                            tal:condition="cv_file">
                                             <span>PDF</span>
-                                            <a href="">Curriculum Vitae</a>
+                                            <a tal:attributes="href cv_file">Curriculum Vitae</a>
                                         </li>
                                     </ul>
                                 </div>

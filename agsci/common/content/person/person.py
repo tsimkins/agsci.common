@@ -8,6 +8,7 @@ from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.dexterity.content import Item
+from plone.namedfile.field import NamedBlobFile
 from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
@@ -34,7 +35,7 @@ contact_fields = [
 professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
     'hr_department', 'all_emails', 'sso_principal_name', 'bio', 'short_bio',
-    'education', 'websites', 'areas_expertise', 'research_areas',
+    'education', 'cv_file', 'websites', 'areas_expertise', 'research_areas',
 ]
 
 class ILinkRowSchema(Interface):
@@ -173,6 +174,11 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     education = schema.List(
         title=_(u"Education"),
         value_type=schema.TextLine(required=True),
+        required=False,
+    )
+
+    cv_file = NamedBlobFile(
+        title=_(u"CV File"),
         required=False,
     )
 

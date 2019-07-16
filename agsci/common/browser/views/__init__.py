@@ -290,6 +290,14 @@ class PersonView(BaseView):
     def has_address(self):
         return self.adapted.has_address
 
+    @property
+    def cv_file(self):
+        _ = getattr(self.context, 'cv_file', None)
+
+        if _ and hasattr(_, 'contentType') and _.contentType in ('application/pdf'):
+                return "%s/@@download/cv_file" % self.context.absolute_url()
+
+
 class PersonCardView(PersonView):
 
     card_format = 'horizontal'
