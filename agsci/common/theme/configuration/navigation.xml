@@ -12,7 +12,7 @@
                         <items>
                             <item>
                                 <title>Academics</title>
-                                <link>academics</link>
+                                <link>students/academics</link>
                             </item>
                             <item>
                                 <title>Advising</title>
@@ -101,18 +101,23 @@
 
                     <item>
                         <title>Visitors &amp; Public</title>
+                        <link>visitors-and-public</link>
                         <items>
             	            <item>
                                 <title>Places to Visit</title>
+                                <link>visitors-and-public/places-to-visit</link>
                             </item>
                             <item>
                                 <title>Service Laboratories</title>
+                                <link>visitors-and-public/service-laboratories</link>
                             </item>
                             <item>
                                 <title>Programs and Events</title>
+                                <link>visitors-and-public/programs-and-events</link>
                             </item>
                             <item>
                                 <title>Youth Opportunities</title>
+                                <link>visitors-and-public/youth-opportunities</link>
                             </item>
 
                         </items>
@@ -430,23 +435,12 @@ the spotted lanternfly.
                     <group>
                         <item>
                             <title>Industry Relations</title>
-                            <items>
-                                <item>
-                                    <title>Penn State Ag Business Council</title>
-                                </item>
-                            </items>
+                            <link>industry</link>
                         </item>
 
                         <item>
                             <title>Diversity</title>
-                            <items>
-                                <item>
-                                    <title>Mission and Awareness</title>
-                                </item>
-                                <item>
-                                    <title>Multicultural Programs</title>
-                                </item>
-                            </items>
+                            <link>diversity</link>
                         </item>
                     </group>
 
