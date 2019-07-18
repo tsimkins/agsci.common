@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+<section
+    class="section-explore container-fluid px-0 px-lg-5 mb-0 mb-lg-5"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+    <div class="container-fluid bg-light-gray-patterned position-relative py-3">
+        <div class="container explore-options pb-3 px-0">
+            <h2 class="centered-callout-header slide-down text-center"
+                tal:content="view/data/title|nothing" />
+            <p class="lead fade-up"
+                tal:content="view/data/description|nothing" />
+            <div class="row align-items-start justify-content-center">
+                <!-- News -->
+                <div class="col-12 col-md-8 col-xl-7 pt-3">
+                    <tal:items tal:repeat="i view/news|nothing">
+                    <a class="card card-news"
+                        tal:attributes="href i/getURL|nothing">
+                        <div class="container"
+                            tal:define="title i/Title|nothing;
+                                        description i/Description|nothing">
+                            <div class="row align-items-stretch">
+
+                                <div class="col-8 col-lg-9 news-story-copy order-12 mt-0">
+                                    <p class="section-crumb" tal:content="python: view.date_format(i.effective)" />
+                                    <p class="h3 mt-0"
+                                        tal:condition="title"
+                                        tal:content="title" />
+
+                                    <p class="d-none d-md-block"
+                                        tal:condition="description"
+                                        tal:content="description" />
+                                    <span>Read More</span>
+                                </div>
+                                <div class="col-4 col-lg-3 profile-img order-1 px-0">
+                                        <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                             alt=""
+                                             title=""
+                                             class="w-100"
+                                             tal:condition="i/hasLeadImage|nothing" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    </tal:items>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-right">
+                                <a class="btn btn-link mb-0"
+                                   tal:attributes="href view/more_news_link|nothing">
+                                    More News
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="col-10 col-md-4 col-xl-3 mt-3">
+                    <div class="card-deck card-deck-1up-2up-1up card-deck-events justify-content-center">
+                        <tal:items tal:repeat="i view/events|nothing">
+                            <a class="card card-event"
+                               tal:attributes="href i/getURL|nothing">
+                                <div class="card-image d-flex"
+                                     tal:define="start i/start|nothing">
+                                    <div class="event-date-block">
+                                        <div class="event-day"
+                                             tal:content="python: view.date_format(start, format='%a')" />
+                                        <div class="event-month"
+                                             tal:content="python: view.date_format(start, format='%b')" />
+                                        <div class="event-date"
+                                             tal:content="python: view.date_format(start, format='%d')" />
+                                    </div>
+                                    <div>
+                                        <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                                alt=""
+                                                title=""
+                                                class="w-100"
+                                                tal:condition="i/hasLeadImage|nothing" />
+
+                                        <img alt=""
+                                            tal:condition="not:i/hasLeadImage|nothing"
+                                            tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/fpo-calendar.jpg" />
+
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <p tal:content="i/Title|nothing" />
+                                    </div>
+                                </div>
+                            </a>
+                        </tal:items>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-right">
+                                <a class="btn btn-link my-0"
+                                   tal:attributes="href view/more_events_link|nothing">
+                                More Events
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  </body>
+</html>

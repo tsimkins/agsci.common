@@ -6,6 +6,7 @@ from plone.namedfile.field import NamedBlobImage
 from z3c.relationfield.schema import RelationChoice
 from zope import schema
 from zope.interface import Interface
+from plone.app.contenttypes.interfaces import ICollection
 
 from agsci.common import AgsciMessageFactory as _
 
@@ -103,4 +104,29 @@ class ICallToActionImageAndBlocksTile(Interface):
         title=u"Buttons",
         value_type=DictRow(title=u"Button", schema=IButtonBlockTileRowSchema),
         required=False
+    )
+
+
+class INewsAndEventsTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    target_news = RelationChoice(
+        title=_(u"Target News Collection"),
+        source=CatalogSource(object_provides=ICollection.__identifier__),
+        required=False,
+    )
+
+    target_events = RelationChoice(
+        title=_(u"Target Events Collection"),
+        source=CatalogSource(object_provides=ICollection.__identifier__),
+        required=False,
     )

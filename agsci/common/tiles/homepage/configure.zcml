@@ -44,4 +44,18 @@
         for="agsci.common.content.homepage.ICollegeHomepage"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.homepage_college.news_and_events"
+        title="News and Events"
+        description=""
+        schema=".interfaces.INewsAndEventsTile"
+        class=".NewsAndEventsTile"
+        template="templates/news_and_events.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.homepage.ICollegeHomepage"
+    />
+
+
 </configure>

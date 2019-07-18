@@ -207,13 +207,41 @@ class BaseTile(PersistentTile):
 
     @property
     def items(self):
-        target = self.get_field('target')
+        return self.get_items()
+
+    def get_target_object(self, field='target'):
+        target = self.get_field(field)
 
         if target and hasattr(target, 'to_object'):
-            target_object = target.to_object
+            return target.to_object
 
-            if ICollection.providedBy(target_object):
-                return [x for x in target_object.queryCatalog()]
+    def get_items(self, field='target'):
+        target_object = self.get_target_object(field)
+
+        if ICollection.providedBy(target_object):
+            return [x for x in target_object.queryCatalog()]
+
+    @property
+    def more_items_link(self):
+        return self.get_more_items_link()
+
+    def get_more_items_link(self, field='target'):
+        target_object = self.get_target_object(field)
+
+        if target_object:
+
+            parent = target_object.aq_parent
+
+            if parent and hasattr(parent, 'getDefaultPage'):
+
+                default_page_id = parent.getDefaultPage()
+                target_object_id = target_object.getId()
+
+                if default_page_id == target_object_id:
+                    return parent.absolute_url()
+
+
+            return target_object.absolute_url()
 
     @property
     def site(self):
