@@ -4,6 +4,7 @@
     <object name="Plone Site" meta_type="Factory-based Type Information with dynamic views"/>
     <object name="agsci_blog" meta_type="Dexterity FTI" />
     <object name="agsci_homepage" meta_type="Dexterity FTI" />
+    <object name="agsci_homepage_college" meta_type="Dexterity FTI" />
     <object name="agsci_newsletter" meta_type="Dexterity FTI" />
     <object name="agsci_photofolder" meta_type="Dexterity FTI" />
     <object name="agsci_section" meta_type="Dexterity FTI" />

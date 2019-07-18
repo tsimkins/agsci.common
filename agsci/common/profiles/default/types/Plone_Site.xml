@@ -18,6 +18,7 @@
         <element value="Collection" />
         <element value="agsci_blog" />
         <element value="agsci_homepage" />
+        <element value="agsci_homepage_college" />
         <element value="agsci_section" />
         <element value="agsci_subsite" />
         <element value="agsci_degree_container" />

@@ -13954,6 +13954,11 @@ body:not(.portaltype-agsci_agjourney) .mosaic-option-group-agjourney {
   color: #888888;
   display: none; }
 
+/* Hide College Homepage tile group on non-College Homepage types */
+body:not(.portaltype-agsci_homepage_college) .mosaic-option-group-homepage-college {
+  color: #888888;
+  display: none; }
+
 #select2-drop {
   font-size: 14px; }
 

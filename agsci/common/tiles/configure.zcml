@@ -8,6 +8,7 @@
     <includeDependencies package="." />
     <include package="plone.app.tiles" />
     <include package=".agjourney" />
+    <include package=".homepage" />
     <include package=".vocabulary" />
 
     <plone:tile

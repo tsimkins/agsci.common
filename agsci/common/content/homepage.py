@@ -10,3 +10,10 @@ class IHomepage(model.Schema):
 
 class Homepage(Item):
     pass
+
+@provider(IFormFieldProvider)
+class ICollegeHomepage(IHomepage):
+    pass
+
+class CollegeHomepage(Homepage):
+    pass

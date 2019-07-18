@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+
+<section
+    class="container-fluid jumbotron jumbotron-img-based jumbotron-full-height d-flex align-items-end position-relative text-white"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+	<div class="jumbotron-img fix-img-center fix-img-left"
+	     tal:attributes="style string:background-image: url(${view/img_src|nothing})">
+		&nbsp;
+	</div>
+	<div class="opacity-dimmer opacity-dimmer-bottom">
+		&nbsp;
+	</div>
+	<div class="container mb-4">
+		<div class="row">
+			<div class="col-12 col-lg-11">
+				<h1 tal:content="view/data/title|nothing" />
+				<blockquote class="home-quote reveal px-0 pt-2">
+                    <div class="html"
+                         tal:content="structure view/data/text/output|nothing" />
+				</blockquote>
+			</div>
+		</div>
+	</div>
+</section>
+
+</body>
+</html>
