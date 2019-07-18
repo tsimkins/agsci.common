@@ -31,4 +31,17 @@
         for="agsci.common.content.homepage.ICollegeHomepage"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.homepage_college.call_to_action_image_and_blocks"
+        title="Call To Action (Image and Blocks)"
+        description=""
+        schema=".interfaces.ICallToActionImageAndBlocksTile"
+        class=".CallToActionImageAndBlocksTile"
+        template="templates/call_to_action_image_and_blocks.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.homepage.ICollegeHomepage"
+    />
+
 </configure>

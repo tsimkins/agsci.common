@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    class="container-fluid jumbotron jumbotron-img-based jumbotron-variable-height d-flex align-items-end position-relative text-white bg-light-gray"
+    tal:attributes="data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+	<div class="jumbotron-img d-none d-md-block"
+	     tal:attributes="style string:background-image: url(${view/img_src|nothing})">
+		&nbsp;
+	</div>
+	<div class="container cta-home-block">
+		<div class="row">
+			<div class="col-12 col-md-6 col-xl-4 offset-md-6 offset-xl-7">
+				<div class="card-deck card-deck-1up-2up-1up-home-cta mt-2">
+
+<tal:item tal:repeat="i view/values|nothing">
+    <a tal:define="color i/color|nothing"
+       tal:attributes="href i/url|nothing;
+                       class string:card card-cta bg-dark-${color} px-0 reveal text-center my-3">
+    	<div class="d-flex flex-column card-body text-white align-items-center justify-content-center">
+        	<p class="h4 mt-0"
+        	   tal:content="i/title|nothing" />	
+        	<div class="btn"
+        	     tal:content="i/label|nothing" />		
+    	</div>
+    </a>
+</tal:item>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+</body>
+</html>

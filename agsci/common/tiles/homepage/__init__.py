@@ -7,3 +7,5 @@ class JumbotronTile(BaseTile):
 class RolloverPanelsTile(BaseTile):
     __full_width__ = True
 
+class CallToActionImageAndBlocksTile(BaseTile):
+    __full_width__ = True

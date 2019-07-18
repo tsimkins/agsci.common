@@ -10,7 +10,7 @@ from zope.interface import Interface
 from agsci.common import AgsciMessageFactory as _
 
 from .. import IBorderTile
-from ..interfaces import IDropdownAccordionRowSchema
+from ..interfaces import IDropdownAccordionRowSchema, IButtonBlockTileRowSchema
 
 class IJumbotronTile(Interface):
 
@@ -33,11 +33,6 @@ class IJumbotronTile(Interface):
 class IRolloverPanelsTile(Interface):
 
     form.widget(value=DataGridFieldFactory)
-
-    title = schema.TextLine(
-        title=_(u"Title"),
-        required=False
-    )
 
     value = schema.List(
         title=u"Items",
@@ -91,4 +86,21 @@ class IRolloverPanelsTile(Interface):
         title=_(u"Image 4 Alt Text"),
         description=_(u""),
         required=False,
+    )
+
+
+class ICallToActionImageAndBlocksTile(Interface):
+
+    form.widget(value=DataGridFieldFactory)
+
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
+    value = schema.List(
+        title=u"Buttons",
+        value_type=DictRow(title=u"Button", schema=IButtonBlockTileRowSchema),
+        required=False
     )

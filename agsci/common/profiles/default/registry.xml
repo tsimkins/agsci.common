@@ -758,7 +758,22 @@
         <value key="settings">true</value>
         <value key="favorite">false</value>
         <value key="rich_text">false</value>
-        <value key="weight">100</value>
+        <value key="weight">200</value>
+    </records>
+
+    <!-- College Homepage: Call To Action (Image and Blocks) -->
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_homepage_college_call_to_action_image_and_blocks"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.homepage_college.call_to_action_image_and_blocks</value>
+        <value key="label">Call To Action (Image and Blocks)</value>
+        <value key="category">homepage_college</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">300</value>
     </records>
 
     <!-- getId Query field for collection -->
