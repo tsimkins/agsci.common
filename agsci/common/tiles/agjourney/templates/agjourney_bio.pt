@@ -25,14 +25,27 @@
             <div class="bio-box" tal:content="structure view/data/text/output|nothing" />
         </div>
 
-        <div class="col-12 col-lg-7 pl-lg-0">
-            <div tal:attributes="class view/wrapper_klass|nothing"
-                 tal:define="iframe_url view/iframe_url|nothing"
-                 tal:condition="iframe_url">
+        <div class="col-12 col-lg-7 pl-lg-0"
+             tal:define="img_src view/img_src|nothing;
+                         img_alt view/img_alt|nothing;">
 
-                <iframe
-                    tal:attributes="src iframe_url" />
-            </div>
+            <img tal:condition="img_src"
+                 class="w-100"
+                 tal:attributes="src img_src;
+                                 alt img_alt" />
+
+            <tal:video
+                tal:condition="not: img_src">
+
+                <div tal:attributes="class view/wrapper_klass|nothing"
+                     tal:define="iframe_url view/iframe_url|nothing"
+                     tal:condition="iframe_url">
+
+                    <iframe
+                        tal:attributes="src iframe_url" />
+                </div>
+
+            </tal:video>
         </div>
     </div>
 </section>

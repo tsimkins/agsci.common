@@ -48,9 +48,16 @@ class IAgJourneyBioTile(Interface):
         required=False,
     )
 
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u"The image will always be used if it exists."),
+        required=False,
+    )
+
     url = schema.TextLine(
         title=_(u"Video URL"),
-        required=True,
+        description=_(u"The video will be used if no image is provided."),
+        required=False,
     )
 
     video_aspect_ratio = schema.Choice(
