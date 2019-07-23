@@ -9013,14 +9013,19 @@ p.main-nav-section-head {
   color: #6d7274;
   font-weight: 400;
   font-size: 0.825rem;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Nunito Sans", sans-serif;
+  line-height: 1; }
   .cta:hover {
     background: #eff0f1;
     color: black; }
+  .cta .fa-fw {
+    width: 1.5em; }
   .cta i {
     min-width: 1.75rem;
     color: #3EA39E;
     text-align: center; }
+  .cta em {
+    font-style: normal; }
   .cta span {
     display: block;
     margin-top: 0.25rem;
@@ -9986,6 +9991,13 @@ CARD DECK GENERAL CONFIG
   .card-deck.card-deck-3up.no-margin .card {
     flex: 0 0 33.3333%; } }
 @media (min-width: 0) {
+  .card-deck.card-deck-3up-cta .card {
+    flex: 0 0 calc(100% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 0) {
   .card-deck.card-deck-3up-explorer .card {
     flex: 0 0 calc(50% - 1rem);
     /* $card-group-margin is half of $grid-gutter-width */ } }
@@ -10054,6 +10066,13 @@ CARD DECK GENERAL CONFIG
   .card-deck.card-deck-3up.no-margin .card {
     flex: 0 0 33.3333%; } }
 @media (min-width: 576px) {
+  .card-deck.card-deck-3up-cta .card {
+    flex: 0 0 calc(100% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 576px) {
   .card-deck.card-deck-3up-explorer .card {
     flex: 0 0 calc(50% - 1rem);
     /* $card-group-margin is half of $grid-gutter-width */ } }
@@ -10117,6 +10136,13 @@ CARD DECK GENERAL CONFIG
 @media (min-width: 768px) {
   .card-deck.card-deck-3up .card {
     flex: 0 0 calc(50% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 768px) {
+  .card-deck.card-deck-3up-cta .card {
+    flex: 0 0 calc(33.3333333333% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */ }
 
   .card-deck.card-deck-3up.no-margin .card {
@@ -10185,6 +10211,13 @@ CARD DECK GENERAL CONFIG
 @media (min-width: 992px) {
   .card-deck.card-deck-3up .card {
     flex: 0 0 calc(50% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 992px) {
+  .card-deck.card-deck-3up-cta .card {
+    flex: 0 0 calc(33.3333333333% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */ }
 
   .card-deck.card-deck-3up.no-margin .card {
@@ -10252,6 +10285,13 @@ CARD DECK GENERAL CONFIG
     flex: 0 0 50%; } }
 @media (min-width: 1200px) {
   .card-deck.card-deck-3up .card {
+    flex: 0 0 calc(33.3333333333% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 1200px) {
+  .card-deck.card-deck-3up-cta .card {
     flex: 0 0 calc(33.3333333333% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */ }
 
@@ -10320,6 +10360,13 @@ CARD DECK GENERAL CONFIG
     flex: 0 0 50%; } }
 @media (min-width: 1440px) {
   .card-deck.card-deck-3up .card {
+    flex: 0 0 calc(33.3333333333% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 1440px) {
+  .card-deck.card-deck-3up-cta .card {
     flex: 0 0 calc(33.3333333333% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */ }
 
@@ -10388,6 +10435,13 @@ CARD DECK GENERAL CONFIG
     flex: 0 0 50%; } }
 @media (min-width: 1800px) {
   .card-deck.card-deck-3up .card {
+    flex: 0 0 calc(33.3333333333% - 2rem);
+    /* $card-group-margin is half of $grid-gutter-width */ }
+
+  .card-deck.card-deck-3up.no-margin .card {
+    flex: 0 0 33.3333%; } }
+@media (min-width: 1800px) {
+  .card-deck.card-deck-3up-cta .card {
     flex: 0 0 calc(33.3333333333% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */ }
 
@@ -13022,6 +13076,9 @@ main {
 JUMBOTRON
 
 ---------------------------------------------------------- */
+.fa-one-and-a-half-x {
+  font-size: 1.5em; }
+
 .home .jumbotron h1 {
   max-width: 90%;
   font-size: 0.875rem; }
@@ -13096,7 +13153,7 @@ VALUE PROPOSITIONS
       font-size: 1.375rem;
       color: #ffffff;
       margin-bottom: 1rem;
-      line-height: 1.2;
+      line-height: 1.4;
       text-align: left;
       font-weight: 400; }
       @media (min-width: 576px) {
@@ -13208,7 +13265,7 @@ CTAs
   .cta-home-block .card-deck {
     margin-bottom: 0.75rem; }
   .cta-home-block .card.card-cta .card-body {
-    padding: 1.5rem 1.25rem; }
+    padding: 1.25rem 1.25rem; }
     .cta-home-block .card.card-cta .card-body .card-cta span {
       display: block;
       font-size: 120%;

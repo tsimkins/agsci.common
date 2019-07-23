@@ -76,6 +76,16 @@ $cards-per-line-3up: (
    xxxl: 3
    );
 
+$cards-per-line-3up-cta: (
+    xs: 1,
+    sm: 1,
+    md: 3,
+    lg: 3,
+    xl: 3,
+    xxl: 3,
+   xxxl: 3
+   );
+   
 $cards-per-line-3up-explorer: (
     xs: 2,
     sm: 2,
@@ -193,6 +203,17 @@ $cards-per-line-6up: (
 			}
 		}
 
+	@media (min-width: $breakpoint) {
+		
+		.card-deck.card-deck-3up-cta .card {
+			flex: 0 0 calc(#{100/map-get($cards-per-line-3up-cta, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+			}
+	
+		.card-deck.card-deck-3up.no-margin .card {
+			flex: 0 0 33.3333%;
+			}
+		}
+		
 	@media (min-width: $breakpoint) {
 		
 		.card-deck.card-deck-3up-explorer .card {

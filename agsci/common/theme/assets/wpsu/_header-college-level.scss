@@ -600,10 +600,15 @@ p.main-nav-section-head {
 	font-weight: $font-weight-base;
 	font-size: $small2-size;
 	font-family: $font-family-sans-serif;
+	line-height: 1;
 
 	&:hover {
 		background: lighten($color-ps-coaly-gray,60%);
 		color: darken($color-ps-coaly-gray,35%);
+		}
+	
+	.fa-fw {
+		width: 1.5em;
 		}
 	
 	i {
@@ -611,7 +616,11 @@ p.main-nav-section-head {
 		color: $color-ps-creek;
 		text-align: center;
 		}
-
+	
+	em {
+		font-style: normal;
+		}
+		
 	span {
 		display: block;
 		margin-top: 0.25rem;
