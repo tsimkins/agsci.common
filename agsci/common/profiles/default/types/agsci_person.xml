@@ -18,7 +18,7 @@
   <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">plone.app.contenttypes.addFolder</property>
+ <property name="add_permission">agsci.common.directory_editor</property>
  <property name="klass">agsci.common.content.person.person.Person</property>
  <property name="behaviors">
   <element value="agsci.common.content.behaviors.IAlwaysExcludeFromNavigation" />

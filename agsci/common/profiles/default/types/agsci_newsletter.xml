@@ -17,7 +17,7 @@
         <element value="newsletter_email" />
     </property>
     <property name="default_view_fallback">False</property>
-    <property name="add_permission">plone.app.contenttypes.addFolder</property>
+    <property name="add_permission">agsci.common.restricted_types</property>
     <property name="klass">agsci.common.content.newsletter.Newsletter</property>
     <property name="behaviors">
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
