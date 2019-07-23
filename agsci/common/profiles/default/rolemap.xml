@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<rolemap>
+
+    <roles>
+
+        <role name="Restricted Types"/>
+        <role name="Collection Editor"/>
+        <role name="Directory Editor"/>
+
+    </roles>
+
+    <permissions>
+
+        <permission
+            name="agsci.common.collection_editor"
+            acquire="True">
+
+            <role name="Site Administrator"/>
+            <role name="Manager"/>
+            <role name="Collection Editor" />
+
+        </permission>
+
+        <permission
+            name="agsci.common.restricted_types"
+            acquire="True">
+
+            <role name="Site Administrator"/>
+            <role name="Manager"/>
+            <role name="Restricted Types"/>
+
+        </permission>
+
+        <permission
+            name="agsci.common.directory_editor"
+            acquire="True">
+
+            <role name="Site Administrator"/>
+            <role name="Manager"/>
+            <role name="Directory Editor"/>
+
+        </permission>
+
+    </permissions>
+
+</rolemap>
