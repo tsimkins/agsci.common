@@ -104,6 +104,7 @@ class ClubVocabulary(StaticVocabulary):
     items = [
         "1/4 Scale Tractor Pulling Team (Penn State Pullers)",
         "Ag Advocates",
+        "Ag Avengers",
         "Ag Student Council",
         "Ag Systems Management Club",
         "Agribusiness Management Club",
@@ -137,7 +138,7 @@ class ClubVocabulary(StaticVocabulary):
         "Horse Judging Team",
         "Horticulture Club",
         "International Ag Club",
-        "Lead Society Ag Avengers",
+        "Lead Society",
         "Literacy, Education, and Agricultural Development Society",
         "Livestock Judging Team",
         "Meat Judging Team",
