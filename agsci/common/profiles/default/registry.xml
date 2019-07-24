@@ -271,6 +271,7 @@
             <element>agsci_subsite</element>
             <element>agsci_directory</element>
             <element>agsci_directory_classification</element>
+            <element>agsci_directory_group</element>
         </value>
     </record>
 

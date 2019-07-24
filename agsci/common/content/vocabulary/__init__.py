@@ -89,6 +89,14 @@ class PersonClassificationsVocabulary(StaticVocabulary):
         results = self.portal_catalog.searchResults({'Type' : 'Classification'})
         return [x.Title for x in results]
 
+# Directory groups for people
+class PersonGroupsVocabulary(StaticVocabulary):
+
+    @property
+    def items(self):
+        results = self.portal_catalog.searchResults({'Type' : 'DirectoryGroup'})
+        return [x.Title for x in results]
+
 # US States
 class StatesVocabulary(KeyValueVocabulary):
 
@@ -175,6 +183,7 @@ class ResearchAreasVocabulary(StaticVocabulary):
 # Factories
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
 PersonClassificationsVocabularyFactory = PersonClassificationsVocabulary()
+PersonGroupsVocabularyFactory = PersonGroupsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()
 ShortNameVocabularyFactory = ShortNameVocabulary()
 ResearchAreasVocabularyFactory = ResearchAreasVocabulary()

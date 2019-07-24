@@ -80,6 +80,16 @@ def PersonDirectoryClassification(context):
 
 provideAdapter(PersonDirectoryClassification, name='DirectoryClassification')
 
+# Person Directory Group
+@indexer(IPerson)
+def PersonDirectoryGroup(context):
+    try:
+        return getattr(context.aq_base, 'groups', [])
+    except:
+        return []
+
+provideAdapter(PersonDirectoryGroup, name='DirectoryGroup')
+
 @indexer(IAlwaysExcludeFromNavigation)
 def AlwaysExcludeFromNavigation(context):
     return True

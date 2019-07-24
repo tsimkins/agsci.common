@@ -21,6 +21,12 @@
     />
 
     <utility
+        name="agsci.common.person.groups"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".PersonGroupsVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.research_areas"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".ResearchAreasVocabularyFactory"

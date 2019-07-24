@@ -18,6 +18,9 @@ class IDirectory(model.Schema):
 class IClassification(IDirectory):
     pass
 
+class IDirectoryGroup(IClassification):
+    pass
+
 class Directory(Container):
 
     @property
@@ -48,4 +51,12 @@ class Classification(Directory):
     def query(self):
         _ = super(Classification, self).query
         _['DirectoryClassification'] = self.Title()
+        return _
+
+class DirectoryGroup(Classification):
+
+    @property
+    def query(self):
+        _ = super(Classification, self).query
+        _['DirectoryGroup'] = self.Title()
         return _

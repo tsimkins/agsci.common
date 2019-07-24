@@ -17,10 +17,9 @@ from zope.interface import implements, provider, implementer, Interface
 from ..behaviors import IContact, ISocialMediaBase
 
 from agsci.common import AgsciMessageFactory as _
-
+from agsci.common.permissions import DIRECTORY_EDITOR
 
 ACTIVE_REVIEW_STATES = ('published',)
-AGSCI_DIRECTORY_EDITOR = 'agsci.directory.editor'
 
 social_media_fields = [
     'twitter_url', 'facebook_url', 'youtube_url', 'linkedin_url',
@@ -36,6 +35,7 @@ professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
     'hr_department', 'all_emails', 'sso_principal_name', 'bio', 'short_bio',
     'education', 'cv_file', 'websites', 'areas_expertise', 'research_areas',
+    'groups',
 ]
 
 class ILinkRowSchema(Interface):
@@ -102,9 +102,10 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     form.widget(websites=DataGridFieldFactory)
 
     # Only allow Directory Editors to write to these fields
-    form.write_permission(username=AGSCI_DIRECTORY_EDITOR)
-    form.write_permission(classifications=AGSCI_DIRECTORY_EDITOR)
-    form.write_permission(primary_profile_url=AGSCI_DIRECTORY_EDITOR)
+    form.write_permission(username=DIRECTORY_EDITOR)
+    form.write_permission(classifications=DIRECTORY_EDITOR)
+    form.write_permission(groups=DIRECTORY_EDITOR)
+    form.write_permission(primary_profile_url=DIRECTORY_EDITOR)
 
     # Fields
     username = schema.TextLine(
@@ -137,6 +138,12 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         title=_(u"Classifications"),
         required=True,
         value_type=schema.Choice(vocabulary="agsci.common.person.classifications"),
+    )
+
+    groups = schema.List(
+        title=_(u"Groups"),
+        required=False,
+        value_type=schema.Choice(vocabulary="agsci.common.person.groups"),
     )
 
     job_titles = schema.List(
