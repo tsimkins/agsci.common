@@ -234,6 +234,26 @@
         template="templates/directory.pt"
     />
 
+    <!-- Classification View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IClassification"
+        name="view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+    />
+
+    <!-- Classification Table View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IClassification"
+        name="table_view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory.pt"
+    />
+
     <!-- Event View -->
     <browser:page
         for="plone.event.interfaces.IEvent"

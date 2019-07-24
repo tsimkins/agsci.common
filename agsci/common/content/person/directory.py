@@ -8,7 +8,12 @@ from agsci.common import AgsciMessageFactory as _
 # Directory
 
 class IDirectory(model.Schema):
-    pass
+
+    show_classifications = schema.List(
+        title=_(u"Show Classifications"),
+        required=True,
+        value_type=schema.Choice(vocabulary="agsci.common.person.classifications"),
+    )
 
 class IClassification(IDirectory):
     pass
@@ -17,7 +22,10 @@ class Directory(Container):
 
     @property
     def query(self):
-        return {'Type' : 'Person', 'sort_on' : 'sortable_title'}
+        return {
+            'Type' : 'Person',
+            'sort_on' : 'sortable_title',
+        }
 
     def people(self, modified=None):
         portal_catalog = getToolByName(self, 'portal_catalog')
@@ -26,6 +34,11 @@ class Directory(Container):
 
         if modified:
             query['modified'] = modified
+
+        show_classifications = getattr(self, 'show_classifications', [])
+
+        if show_classifications and isinstance(show_classifications, (list, tuple)):
+            query['DirectoryClassification'] = show_classifications
 
         return map(lambda x: x.getObject(), portal_catalog.searchResults(query))
 
