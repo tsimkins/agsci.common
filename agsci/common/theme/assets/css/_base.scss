@@ -191,12 +191,24 @@ body.userrole-authenticated {
             .faceted-widget {
                 margin-bottom: 1.5rem;
                 border: 1px solid #CCCCCC;
+
+                p.discreet {
+                    margin: 0 0.5rem 1em;
+                    font-size: 0.75rem;
+                    line-height: 1.3;
+                }
             }
 
             .widget-fieldset {
                 max-height: 13rem;
                 border-width: 0;
                 border-style: none;
+            }
+
+            #interestarea_widget {
+                .widget-fieldset {
+                    max-height: 18rem;
+                }
             }
 
             #career_widget {

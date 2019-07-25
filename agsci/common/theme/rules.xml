@@ -199,6 +199,10 @@
         <rules css:if-content="body.portaltype-agsci_degree_container">
             <replace css:theme-children="#section-content" css:content-children="#portal-column-content" />
             <drop css:theme="#page-header" />
+
+            <after css:content="#interestarea_widget legend">
+                <p class="discreet">Check off your passions. You may be surprised by the majors which can help you pursue your interests.</p>
+            </after>
         </rules>
 
         <!-- User permissions on body tag -->

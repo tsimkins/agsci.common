@@ -13489,12 +13489,22 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:b
   #faceted-form #left-area .faceted-left-widgets .faceted-widget {
     margin-bottom: 1.5rem;
     border: 1px solid #CCCCCC; }
+    #faceted-form #faceted-top-column .faceted-left-widgets .faceted-widget p.discreet,
+    #faceted-form #center-content-area .faceted-left-widgets .faceted-widget p.discreet,
+    #faceted-form #left-area .faceted-left-widgets .faceted-widget p.discreet {
+      margin: 0 0.5rem 1em;
+      font-size: 0.75rem;
+      line-height: 1.3; }
   #faceted-form #faceted-top-column .faceted-left-widgets .widget-fieldset,
   #faceted-form #center-content-area .faceted-left-widgets .widget-fieldset,
   #faceted-form #left-area .faceted-left-widgets .widget-fieldset {
     max-height: 13rem;
     border-width: 0;
     border-style: none; }
+  #faceted-form #faceted-top-column .faceted-left-widgets #interestarea_widget .widget-fieldset,
+  #faceted-form #center-content-area .faceted-left-widgets #interestarea_widget .widget-fieldset,
+  #faceted-form #left-area .faceted-left-widgets #interestarea_widget .widget-fieldset {
+    max-height: 18rem; }
   #faceted-form #faceted-top-column .faceted-left-widgets #career_widget .widget-fieldset,
   #faceted-form #center-content-area .faceted-left-widgets #career_widget .widget-fieldset,
   #faceted-form #left-area .faceted-left-widgets #career_widget .widget-fieldset {
