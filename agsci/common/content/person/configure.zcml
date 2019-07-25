@@ -14,8 +14,14 @@
     />
 
     <adapter
-         factory=".person.PersonDefaultRoles"
-         provides="Products.membrane.interfaces.IMembraneUserRoles"
+        factory=".person.PersonDefaultRoles"
+        provides="Products.membrane.interfaces.IMembraneUserRoles"
+    />
+
+    <adapter
+        factory=".directory.DirectoryMembraneGroup"
+        for=".directory.IDirectoryGroup"
+        provides="dexterity.membrane.behavior.group.IMembraneGroup"
     />
 
 </configure>

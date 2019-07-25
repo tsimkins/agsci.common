@@ -241,7 +241,7 @@
         class=".DirectoryView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
-        template="templates/directory_detail.pt"
+        template="templates/directory.pt"
     />
 
     <!-- Directory View -->
@@ -274,6 +274,20 @@
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
         template="templates/directory.pt"
+        menu="plone_displayviews"
+        title="Table View"
+    />
+
+    <!-- DirectoryGroup Table View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IDirectoryGroup"
+        name="table_view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory.pt"
+        menu="plone_displayviews"
+        title="Table View"
     />
 
     <!-- Event View -->

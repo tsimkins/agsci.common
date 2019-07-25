@@ -1,10 +1,15 @@
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from plone import api
+from Products.membrane.interfaces import IGroup
+from Products.membrane.interfaces import IMembraneUserAuth
+from dexterity.membrane.behavior.group import IMembraneGroup, MembraneGroup
 from Products.CMFCore.utils import getToolByName
 from plone.autoform import directives as form
 from plone.dexterity.content import Container
 from plone.supermodel import model
 from zope import schema
-from zope.interface import Interface
+from zope.component import adapter
+from zope.interface import Interface, implementer
 
 from agsci.common import AgsciMessageFactory as _
 
@@ -111,7 +116,6 @@ class PersonListing(Container):
 
         return sorted(_, key=get_order)
 
-#    @property
     def people(self):
         portal_catalog = getToolByName(self, 'portal_catalog')
 
@@ -148,7 +152,7 @@ class IDirectory(model.Schema):
 
     show_classifications = schema.List(
         title=_(u"Show Classifications"),
-        required=True,
+        required=False,
         value_type=schema.Choice(vocabulary="agsci.common.person.classifications"),
     )
 
@@ -156,26 +160,28 @@ class Directory(PersonListing):
     pass
 
 # Directory Group (one to many)
-class IDirectoryGroup(IDirectory):
+class IDirectoryGroup(IDirectory, IGroup):
     pass
 
 class DirectoryGroup(Directory):
 
     @property
-    def query(self):
-        _ = super(Classification, self).query
-        _['DirectoryGroup'] = self.Title()
-        return _
+    def groups(self):
+        return [self.Title(),]
+
+@implementer(IGroup)
+@adapter(IMembraneGroup)
+class DirectoryMembraneGroup(MembraneGroup):
+
+    def getGroupMembers(self):
+        return ()
 
 # Classification (one to one, in theory)
 class IClassification(IDirectoryGroup):
     form.omitted('show_classifications')
 
-class Classification(DirectoryGroup):
+class Classification(Directory):
 
     @property
-    def query(self):
-        _ = super(Classification, self).query
-        _['DirectoryClassification'] = self.Title()
-        return _
-
+    def classifications(self):
+        return [self.Title(),]
