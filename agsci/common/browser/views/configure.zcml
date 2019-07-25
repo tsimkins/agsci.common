@@ -224,6 +224,16 @@
         template="templates/person_card.pt"
     />
 
+    <!-- Person Listing View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IPersonListing"
+        name="view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+    />
+
     <!-- Directory View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectory"
@@ -231,7 +241,19 @@
         class=".DirectoryView"
         permission="zope2.View"
         layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+    />
+
+    <!-- Directory View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IPersonListing"
+        name="table_view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
         template="templates/directory.pt"
+        menu="plone_displayviews"
+        title="Table View"
     />
 
     <!-- Classification View -->

@@ -10,6 +10,7 @@
     <property name="global_allow">True</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
+        <element value="agsci_directory_person_listing" />
         <element value="agsci_homepage" />
         <element value="agsci_subsite" />
         <element value="agsci_section" />

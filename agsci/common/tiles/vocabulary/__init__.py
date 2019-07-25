@@ -58,7 +58,7 @@ class PeopleVocabulary(KeyValueVocabulary):
         })
 
         return [
-            (x.getId, x.Title) for x in results
+            (x.getId, x.sortable_title_case) for x in results
         ]
 
 class VideoAspectRatioVocabulary(StaticVocabulary):

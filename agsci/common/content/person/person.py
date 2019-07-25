@@ -283,6 +283,9 @@ class Person(Item):
         fields = ['last_name', 'first_name', 'middle_name', ]
         return tuple([getattr(self, x, '') for x in fields])
 
+    def getLastFirstName(self):
+        fields = ['last_name', 'first_name']
+        return ", ".join(tuple([getattr(self, x, '') for x in fields]))
 
 class ITitleFromPersonUserId(INameFromTitle):
     def title():

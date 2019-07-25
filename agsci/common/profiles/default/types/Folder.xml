@@ -19,6 +19,7 @@
         <element value="Link"/>
         <element value="News_Item"/>
         <element value="agsci_degree_container"/>
+        <element value="agsci_directory_person_listing" />
         <element value="agsci_homepage"/>
         <element value="agsci_major"/>
         <element value="agsci_minor"/>

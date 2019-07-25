@@ -70,6 +70,16 @@ def PersonSortableTitle(context):
 
 provideAdapter(PersonSortableTitle, name='sortable_title')
 
+# Person Sortable Title
+@indexer(IPerson)
+def PersonLastFirst(context):
+    try:
+        return context.getLastFirstName()
+    except:
+        return ''
+
+provideAdapter(PersonLastFirst, name='sortable_title_case')
+
 # Person Directory Classification
 @indexer(IPerson)
 def PersonDirectoryClassification(context):

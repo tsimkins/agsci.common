@@ -6,4 +6,5 @@
   <column value="DirectoryGroup" />
   <column value="ContentIssues" />
   <column value="ContentErrorCodes" />
+  <column value="sortable_title_case" />
 </object>

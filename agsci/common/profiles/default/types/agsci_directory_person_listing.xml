@@ -1,36 +1,33 @@
 <?xml version="1.0"?>
-<object name="Directory" meta_type="Dexterity FTI" i18n:domain="plone"
+<object name="Person Listing" meta_type="Dexterity FTI" i18n:domain="plone"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title" i18n:translate="">Directory</property>
+ <property name="title" i18n:translate="">Person Listing</property>
  <property name="description" i18n:translate="">None</property>
  <property name="icon_expr">string:${portal_url}/document_icon.png</property>
- <property name="factory">agsci_directory</property>
+ <property name="factory">agsci_directory_person_listing</property>
  <property
-    name="add_view_expr">string:${folder_url}/++add++agsci_directory</property>
+    name="add_view_expr">string:${folder_url}/++add++agsci_directory_person_listing</property>
  <property name="link_target"></property>
  <property name="immediate_view">view</property>
  <property name="global_allow">False</property>
  <property name="filter_content_types">True</property>
- <property name="allowed_content_types" purge="False">
-  <element value="agsci_person"/>
-  <element value="agsci_directory_person_listing" />
-  <element value="agsci_directory_classification"/>
-  <element value="agsci_directory_group"/>
- </property>
+ <property name="allowed_content_types" />
  <property name="allow_discussion">False</property>
  <property name="default_view">view</property>
  <property name="view_methods">
   <element value="view"/>
+  <element value="table_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.ManagePortal</property>
- <property name="klass">agsci.common.content.person.directory.Directory</property>
+ <property name="klass">agsci.common.content.person.directory.PersonListing</property>
  <property name="behaviors">
     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
     <element value="plone.app.content.interfaces.INameFromTitle" />
+    <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
  </property>
 
-  <property name="schema">agsci.common.content.person.directory.IDirectory</property>
+  <property name="schema">agsci.common.content.person.directory.IPersonListing</property>
 
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
