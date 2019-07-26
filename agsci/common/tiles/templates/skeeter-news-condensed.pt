@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
+
+    <div class="container-text content-primary">
+        <h2 class="mt-0"
+            tal:define="title view/data/title|nothing"
+            tal:condition="title"
+            tal:content="title" />
+
+        <tal:items tal:repeat="i view/items|nothing">
+
+            <a tal:attributes="href i/getURL|nothing"
+                class="card card-news">
+
+                <div class="container">
+
+                    <div class="row align-items-stretch">
+
+                        <div class="col-8 col-lg-9 news-story-copy order-12 mt-0">
+                            <p class="section-crumb"
+                                tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
+                            <p class="h3 mt-0"
+                                tal:content="i/Title|nothing" />
+
+                            <p class="d-none d-md-block"
+                               tal:define="description i/Description|nothing"
+                               tal:condition="description"
+                               tal:content="description" />
+
+                            <span>Read More</span>
+
+                        </div>
+
+                        <div class="col-4 col-lg-3 profile-img order-1 px-0">
+                            <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                    alt=""
+                                    title=""
+                                    class="w-100"
+                                    tal:condition="i/hasLeadImage|nothing" />
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </tal:items>
+    </div>
+</section>
+
+  </body>
+</html>

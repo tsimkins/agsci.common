@@ -42,6 +42,7 @@ class CardStyleVocabulary(KeyValueVocabulary):
 class FeatureCardStyleVocabulary(KeyValueVocabulary):
     items = [
         ('news', 'News Items'),
+        ('news-condensed', 'News Items (Condensed)'),
         ('events', 'Events'),
         ('pages', 'Pages'),
     ]
