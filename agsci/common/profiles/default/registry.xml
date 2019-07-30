@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <registry>
 
+  <!-- Enable Sitemap -->
+  <record name="plone.enable_sitemap"
+          interface="Products.CMFPlone.interfaces.controlpanel.ISiteSchema"
+          field="enable_sitemap">
+    <value>True</value>
+  </record>
+
   <!-- Image Sizes -->
 
   <record name="plone.allowed_sizes"

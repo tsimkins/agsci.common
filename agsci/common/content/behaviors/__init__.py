@@ -27,6 +27,15 @@ class IResearchAreas(model.Schema):
 @provider(IFormFieldProvider)
 class ISEO(model.Schema):
 
+    model.fieldset(
+        'settings',
+        label=_(u'Settings'),
+        fields=[
+            'canonical_url_text',
+            'exclude_from_robots',
+        ],
+    )
+
     canonical_url_text = schema.TextLine(
         title=_(u"Canonical URL (External Resource)"),
         description=_(u"Full URL"),

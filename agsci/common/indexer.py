@@ -4,7 +4,7 @@ from plone.indexer import indexer
 from plone.namedfile.file import NamedBlobFile
 from zope.component import provideAdapter
 
-from .content.behaviors import IAlwaysExcludeFromNavigation
+from .content.behaviors import IAlwaysExcludeFromNavigation, ISEO
 from .content.behaviors.tags import ITags
 from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.check import getValidationErrors
@@ -120,3 +120,10 @@ def ContentIssues(context):
     return len([x for x in getValidationErrors(context)])
 
 provideAdapter(ContentIssues, name='ContentIssues')
+
+# Exclude From Robots
+@indexer(ISEO)
+def exclude_from_robots(context):
+    return not not getattr(context.aq_base, 'exclude_from_robots', False)
+
+provideAdapter(exclude_from_robots, name='exclude_from_robots')

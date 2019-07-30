@@ -380,4 +380,14 @@
         permission="zope2.View"
     />
 
+    <!-- Sitemap View -->
+    <browser:page
+        name="sitemap.xml.gz"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        class=".SiteMapView"
+        permission="zope2.Public"
+        layer="..interfaces.IThemeSpecific"
+    />
+
+
 </configure>

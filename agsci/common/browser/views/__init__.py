@@ -1,4 +1,5 @@
 from Acquisition import aq_base
+from BTrees.OOBTree import OOBTree
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
@@ -7,8 +8,11 @@ from collective.z3cform.datagridfield import DictRow
 from jinja2 import Environment, FileSystemLoader
 from plone import api
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
+from plone.app.layout.sitemap.sitemap import SiteMapView as _SiteMapView
+from plone.app.layout.sitemap.sitemap import _render_cachekey
 from plone.app.event.browser.event_view import EventView as _EventView
 from plone.app.event.browser.event_summary import EventSummaryView as _EventSummaryView
+from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
 from zope import schema
 from zope.component import getUtility
@@ -548,3 +552,136 @@ class NewsItemView(BaseView):
             return RESPONSE.redirect(self.article_link)
 
         return self.index()
+
+class SiteMapView(_SiteMapView):
+
+    exclude_types = [
+        'Image',
+        'Event',
+    ]
+
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.context, 'portal_catalog')
+
+    @property
+    @memoize
+    def exclude_paths(self):
+
+        queries = [
+            {
+                'exclude_from_robots' : True
+            },
+            {
+                'review_state' : ['private',],
+            },
+        ]
+
+        paths = []
+
+        for q in queries:
+            results = self.portal_catalog.searchResults(q)
+            paths.extend([x.getURL() for x in results])
+
+        paths = set(paths)
+
+        duplicate_paths = []
+
+        for p in paths:
+            _p = '%s/' % p
+
+            duplicate_paths.extend([
+                x for x in paths if x.startswith(_p)
+            ])
+
+        _paths = paths - set(duplicate_paths)
+
+        return _paths
+
+    def excluded(self, url):
+
+        exclude_paths = self.exclude_paths
+
+        # Filter out excluded paths
+        if url in exclude_paths:
+            return True
+
+        if any([url.startswith('%s/' % x) for x in exclude_paths]):
+            return True
+
+    def objects(self):
+        """Returns the data to create the sitemap."""
+
+        query = {}
+
+        utils = getToolByName(self.context, 'plone_utils')
+
+        query['portal_type'] = utils.getUserFriendlyTypes()
+
+        registry = getUtility(IRegistry)
+
+        typesUseViewActionInListings = frozenset(
+            registry.get('plone.types_use_view_action_in_listings', []))
+
+        is_plone_site_root = IPloneSiteRoot.providedBy(self.context)
+
+        if not is_plone_site_root:
+            query['path'] = '/'.join(self.context.getPhysicalPath())
+
+        query['is_default_page'] = True
+
+        default_page_modified = OOBTree()
+
+        for item in self.portal_catalog.searchResults(query):
+            key = item.getURL().rsplit('/', 1)[0]
+            value = (item.modified.micros(), item.modified.ISO8601())
+            default_page_modified[key] = value
+
+        # The plone site root is not catalogued.
+        if is_plone_site_root:
+            loc = self.context.absolute_url()
+            date = self.context.modified()
+            # Comparison must be on GMT value
+            modified = (date.micros(), date.ISO8601())
+            default_modified = default_page_modified.get(loc, None)
+            if default_modified is not None:
+                modified = max(modified, default_modified)
+            lastmod = modified[1]
+            yield {
+                'loc': loc,
+                'lastmod': lastmod,
+                # 'changefreq': 'always',
+                #  hourly/daily/weekly/monthly/yearly/never
+                # 'prioriy': 0.5, # 0.0 to 1.0
+            }
+
+        query['is_default_page'] = False
+
+        for item in self.portal_catalog.searchResults(query):
+
+            # Don't include excluded types
+            if item.Type in self.exclude_types:
+                continue
+
+            loc = item.getURL()
+            date = item.modified
+
+            # Filter out excluded paths
+            if self.excluded(loc):
+                continue
+
+            # Comparison must be on GMT value
+            modified = (date.micros(), date.ISO8601())
+            default_modified = default_page_modified.get(loc, None)
+            if default_modified is not None:
+                modified = max(modified, default_modified)
+            lastmod = modified[1]
+            if item.portal_type in typesUseViewActionInListings:
+                loc += '/view'
+            yield {
+                'loc': loc,
+                'lastmod': lastmod,
+                # 'changefreq': 'always',
+                #  hourly/daily/weekly/monthly/yearly/never
+                # 'prioriy': 0.5, # 0.0 to 1.0
+            }
