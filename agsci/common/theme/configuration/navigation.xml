@@ -266,6 +266,7 @@
             <!-- Admissions Dropdown -->
             <item>
                 <title>Admissions</title>
+                <link>admissions</link>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/admissions.jpg</src>
                 </image>
@@ -273,27 +274,35 @@
                     <group>
                         <item>
                             <title>Undergraduate</title>
+                            <link>admissions/undergraduate</link>
                             <items>
                                 <item>
+                                    <title>Apply Now Online</title>
+                                    <link>admissions/undergraduate/apply-now-online</link>
+                                </item>
+                                <item>
+                                    <title>Important Dates</title>
+                                    <link>admissions/undergraduate/importantdates</link>
+                                </item>
+                                <item>
                                     <title>Schedule a Visit</title>
+                                    <link>admissions/undergraduate/visit</link>
                                 </item>
                                 <item>
                                     <title>Request More Information</title>
+                                    <link>admissions/undergraduate/request</link>
                                 </item>
                                 <item>
-                                    <title>Application Procedures</title>
-                                </item>
-                                <item>
-                                    <title>Why Penn State?</title>
-                                </item>
-                                <item>
-                                    <title>Transfer Information</title>
-                                </item>
-                                <item>
-                                    <title>Commonwealth Campuses</title>
+                                    <title>Transferring to Penn State</title>
+                                    <link>admissions/undergraduate/transfer</link>
                                 </item>
                                 <item>
                                     <title>Tuition and Financial Aid</title>
+                                    <link>admissions/undergraduate/aid</link>
+                                </item>
+                                <item>
+                                    <title>Why Penn State?</title>
+                                    <link>admissions/undergraduate/why</link>
                                 </item>
                             </items>
                         </item>
@@ -301,6 +310,7 @@
                     <group>
                         <item>
                             <title>Graduate</title>
+                            <link>admissions/graduate</link>
                             <items>
                                 <item>
                                     <title>How to Apply to a Graduate Program</title>
@@ -352,21 +362,41 @@
                         <item>
                             <link>research/areas</link>
                             <title>Research Areas</title>
+                            <items>
+                                <item>
+                                    <title>Advanced Agricultural and Food Systems</title>
+                                    <link>research/areas/advanced-agricultural-and-food-systems</link>
+                                </item><item>
+                                    <title>Biologically-Based Materials and Products</title>
+                                    <link>research/areas/biologically-based-materials-and-products</link>
+                                </item><item>
+                                    <title>Community Resilience and Capacity</title>
+                                    <link>research/areas/community-resilience-and-capacity</link>
+                                </item><item>
+                                    <title>Environmental Resilience</title>
+                                    <link>research/areas/environmental-resilience</link>
+                                </item><item>
+                                    <title>Integrated Health Solutions</title>
+                                    <link>research/areas/integrated-health-solutions</link>
+                                </item>
+                            </items>
                         </item>
+                    </group>
+                    <group>
                         <item>
-                            <link>research/areas</link>
+                            <link>research/impacts</link>
                             <title>Research Impacts</title>
                         </item>
                         <item>
                             <link>research/centers</link>
                             <title>Research Centers and Institutes</title>
                         </item>
-                    </group>
-                    <group>
                         <item>
+                            <link>research/extension-centers</link>
                             <title>Research and Extension Centers</title>
                         </item>
                         <item>
+                            <link>research/research-commercialization</link>
                             <title>Research Commercialization</title>
                         </item>
                     </group>
