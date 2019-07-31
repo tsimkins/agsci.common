@@ -66,12 +66,6 @@
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />
                                 </ul>
-                                <p tal:condition="i/employer|nothing">
-                                    <strong>Recent graduates work for:</strong>
-
-                                    <tal:html
-                                        tal:content="i/employer" />
-                                </p>
                             </div>
                         </td>
                     </tr>
@@ -204,12 +198,6 @@
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />
                                 </ul>
-                                <p tal:condition="i/employer|nothing">
-                                    <strong>Recent graduates work for:</strong>
-
-                                    <tal:html
-                                        tal:content="i/employer" />
-                                </p>
                             </div>
                         </td>
                         </tal:item>

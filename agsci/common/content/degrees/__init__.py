@@ -27,7 +27,6 @@ class IDegree(model.Schema):
         fields=(
             'interest_area',
             'career',
-            'employer',
             'club',
             'facility',
         ),
@@ -49,12 +48,6 @@ class IDegree(model.Schema):
         title=_(u"Careers"),
         description=_(u""),
         value_type=schema.Choice(vocabulary="agsci.common.degree.career"),
-    )
-
-    employer = schema.TextLine(
-        title=_(u"Employers"),
-        description=_(u""),
-        required=False,
     )
 
     club = schema.List(
