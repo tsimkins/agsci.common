@@ -95,7 +95,8 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
 
     form.omitted(
         'homepage', 'hr_job_title', 'hr_admin_area',
-        'hr_department', 'all_emails', 'sso_principal_name'
+        'hr_department', 'all_emails', 'sso_principal_name',
+        'newsletter_url',
     )
 
     # Grid Fields

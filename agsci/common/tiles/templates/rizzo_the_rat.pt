@@ -67,7 +67,7 @@
 
                     </address>
 
-                    <div class="addresss"
+                    <div class="address"
                          tal:define="hours view/data/hours|nothing;
                                      email view/data/email|nothing;
                                      phone_number view/data/phone_number|nothing;
@@ -103,7 +103,8 @@
                             tal:define="twitter_url view/data/twitter_url|nothing;
                                         facebook_url view/data/facebook_url|nothing;
                                         youtube_url view/data/youtube_url|nothing;
-                                        linkedin_url view/data/linkedin_url|nothing;">
+                                        linkedin_url view/data/linkedin_url|nothing;
+                                        newsletter_url view/data/newsletter_url|nothing;">
 
                             <metal:social-media
                                 metal:use-macro="context/social-media/macros/social-media" />

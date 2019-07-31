@@ -166,6 +166,8 @@ class ISocialMediaBase(model.Schema):
 
     __doc__ = "Social Media"
 
+    form.write_permission(newsletter_url="cmf.ManagePortal")
+
     facebook_url = schema.TextLine(
         title=_(u"Facebook URL"),
         required=False,
@@ -185,6 +187,12 @@ class ISocialMediaBase(model.Schema):
         title=_(u"LinkedIn URL"),
         required=False,
     )
+
+    newsletter_url = schema.TextLine(
+        title=_(u"Newsletter Subscribe URL"),
+        required=False,
+    )
+
 
 @provider(IFormFieldProvider)
 class ILocation(model.Schema):
@@ -241,3 +249,4 @@ class ISocialContact(ISocialMediaBase, IContact):
     form.order_after(twitter_url='facebook_url')
     form.order_after(youtube_url='twitter_url')
     form.order_after(linkedin_url='youtube_url')
+    form.order_after(newsletter_url='linkedin_url')

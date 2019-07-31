@@ -594,6 +594,8 @@ body.template-content_checks th {
 .address p, .address li {
   font-size: 0.825rem;
   line-height: 1.4; }
+.address .list-inline-social a .fa-envelope, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:active .fa-envelope {
+  color: black !important; }
 
 #section-content #data-check th, #section-content #data-check td {
   font-size: 0.8rem;

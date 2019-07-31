@@ -704,6 +704,15 @@ body.template-content_checks {
         font-size: 0.825rem;
         line-height: 1.4;
     }
+
+    .list-inline-social {
+        a, a:hover, a:visited, a:active {
+
+            .fa-envelope {
+                color: black !important;
+            }
+        }
+    }
 }
 
 #section-content {
