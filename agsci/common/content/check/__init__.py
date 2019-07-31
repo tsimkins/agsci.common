@@ -180,6 +180,56 @@ class ContentCheck(object):
     def now(self):
         return datetime.now(pytz.timezone(DEFAULT_TIMEZONE))
 
+    @property
+    def site(self):
+        return getSite()
+
+# Check for words in the short name that are duplicate further up in the path.
+class ShortNameDuplicateWords(ContentCheck):
+
+    title = "Short Name: Words duplicated in URL path"
+    description = "To make URLs more semantic, words should not be duplicated in the short name that exist in the URL path (e.g. /research/research-centers should be /research/centers)"
+    action = "Edit the short name of this item to condense it"
+
+    exclude_types = [
+        'News Item',
+        'Event',
+        'Link',
+        'File',
+        'Image',
+    ]
+
+    def value(self):
+
+        # Skip types we don't really care about checking
+        if self.context.Type() in self.exclude_types:
+            return
+
+        self_id = self.context.getId()
+        self_id_words = re.split('[-/]', self_id)
+
+        parent_path = self.context.aq_parent.absolute_url()
+        parent_path = parent_path[len(self.site.absolute_url())+1:]
+
+        parent_levels = len(parent_path.split('/'))
+
+        # Skip items that are too deep
+        if parent_levels > 3:
+            return
+
+        path_words = [x for x in re.split('[-/]', parent_path) if x]
+
+        duplicate_words = set(self_id_words) & set(path_words)
+
+        return sorted(duplicate_words)
+
+
+    def check(self):
+        v = self.value()
+
+        if v:
+            yield ContentCheckError(self, u"Duplicate words found in URL path: %r" % v)
+
 # Validates the title length
 class TitleLength(ContentCheck):
 
