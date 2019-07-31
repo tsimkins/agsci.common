@@ -13958,10 +13958,23 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .card-vertical .list-inline-social {
   margin-top: 0; }
 
-.card-deck-image-plain .card.card-visual {
+.card-deck-image-plain .card.card-visual,
+.card-deck-link .card.card-visual {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   box-shadow: none; }
-  .card-deck-image-plain .card.card-visual .card-image-top {
+  .card-deck-image-plain .card.card-visual .card-image-top,
+  .card-deck-link .card.card-visual .card-image-top {
     background-color: transparent; }
+  .card-deck-image-plain .card.card-visual > span,
+  .card-deck-link .card.card-visual > span {
+    line-height: 1.2; }
+.card-deck-image-plain a, .card-deck-image-plain a:hover, .card-deck-image-plain a:visited, .card-deck-image-plain a:active,
+.card-deck-link a,
+.card-deck-link a:hover,
+.card-deck-link a:visited,
+.card-deck-link a:active {
+  border-bottom: none !important; }
 
 /* Navbar Invalid Links */
 header a.invalid {

@@ -37,6 +37,7 @@ class CardStyleVocabulary(KeyValueVocabulary):
         ('image', 'Image'),
         ('image_description', 'Image and Description'),
         ('image_plain', 'Image (Plain)'),
+        ('links', 'Links'),
         ('plain', 'Plain'),
     ]
 

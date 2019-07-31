@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:define="title view/data/title|nothing;
+                show_item_title view/data/show_item_title|nothing"
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
+
+    <div class="container"
+         tal:omit-tag="view/is_portlet">
+
+        <h2 class="mt-0"
+            tal:condition="title"
+            tal:content="title" />
+
+        <div tal:attributes="class string:card-deck card-deck-link card-deck-${view/data/count}up agsci-visual-cards html">
+
+            <tal:items
+                tal:repeat="i view/items|nothing">
+
+                <a tal:attributes="href i/getURL|nothing;"
+                   tal:define="item_title i/Title|nothing;"
+                   class="card card-visual">
+
+                   <span tal:content="item_title" />
+
+                 </a>
+            </tal:items>
+
+        </div>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

@@ -680,16 +680,25 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     }
 }
 
-.card-deck-image-plain {
+.card-deck-image-plain,
+.card-deck-link {
     .card.card-visual {
-
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
         box-shadow: none;
 
         .card-image-top {
             background-color: transparent;
         }
+
+        > span {
+            line-height: 1.2;
+        }
     }
 
+    a, a:hover, a:visited, a:active {
+        border-bottom: none !important;
+    }
 }
 
 /* Navbar Invalid Links */
