@@ -13390,13 +13390,17 @@ NEWS & EVENTS
     border-bottom: none;
     font-size: 64px; }
 
-body.userrole-manager.mosaic-grid .mosaic-grid-row {
+body.userrole-manager.mosaic-grid .mosaic-grid-row,
+body.template-edit.mosaic-enabled .mosaic-grid-row {
   border: 1px dashed #F5F5F5; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-grid-cell {
     border: 1px dashed #4B0082; }
-    body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell .mosaic-tile-content {
+    body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell .mosaic-tile-content,
+    body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-grid-cell .mosaic-tile-content {
       border: 1px dashed #F5F5F5; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-grid-cell:before {
     position: absolute;
     color: #FFFFFF;
     background-color: #4B0082;
@@ -13405,17 +13409,23 @@ body.userrole-manager.mosaic-grid .mosaic-grid-row {
     padding: 0.375em;
     font-family: Arial, sans-serif;
     z-index: 1; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-full:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-full:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-full:before {
     content: "100%"; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-half:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-half:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-half:before {
     content: "50%"; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-quarter:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-quarter:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-quarter:before {
     content: "25%"; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-three-quarters:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-three-quarters:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-three-quarters:before {
     content: "75%"; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-third:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-third:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-third:before {
     content: "33%"; }
-  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-two-thirds:before {
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-two-thirds:before,
+  body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:before {
     content: "66%"; }
 
 .visualClear {

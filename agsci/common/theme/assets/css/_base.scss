@@ -84,7 +84,8 @@
     }
 }
 
-body.userrole-manager.mosaic-grid {
+body.userrole-manager.mosaic-grid,
+body.template-edit.mosaic-enabled {
     .mosaic-grid-row {
         border: 1px dashed #F5F5F5;
 
