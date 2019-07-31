@@ -20,7 +20,7 @@
                             </item>
                             <item>
                                 <title>Careers and Internships</title>
-                                <link>careers</link>
+                                <link>students/careers</link>
                             </item>
                             <item>
                                 <title>Clubs and Organizations</title>
@@ -28,6 +28,11 @@
                             </item>
                             <item>
                                 <title>Student Life</title>
+                                <link>students/life</link>
+                            </item>
+                            <item>
+                                <title>Graduate Student Resources</title>
+                                <link>students/graduate</link>
                             </item>
                         </items>
                     </item>
@@ -45,7 +50,7 @@
                             </item>
                             <item>
                                 <title>Recruitment and Employer Relations</title>
-                                <link>industry/recruitment</link>
+                                <link>students/careers/information-for-employers</link>
                             </item>
                             <item>
                                 <title>Continuing Education</title>
@@ -54,10 +59,6 @@
                             <item>
                                 <title>Labs and Services</title>
                                 <link>industry/services</link>
-                            </item>
-                            <item>
-                                <title>Research Partnerships</title>
-                                <link>https://researchpartnerships.psu.edu/</link>
                             </item>
                         </items>
                     </item>
@@ -193,6 +194,7 @@
                                 </item>
                                 <item>
                                     <title>Study Abroad</title>
+                                    <link>international/study-abroad</link>
                                 </item>
                             </items>
                         </item>
@@ -354,6 +356,7 @@
             <!-- Research Dropdown -->
             <item>
                 <title>Research</title>
+                <link>research</link>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
                 </image>
