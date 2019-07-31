@@ -84,6 +84,56 @@
     }
 }
 
+body.userrole-manager.mosaic-grid {
+    .mosaic-grid-row {
+        border: 1px dashed #F5F5F5;
+
+        .mosaic-grid-cell {
+            border: 1px dashed #4B0082;
+
+            .mosaic-tile-content {
+                border: 1px dashed #F5F5F5;
+            }
+        }
+
+        .mosaic-grid-cell:before {
+            position: absolute;
+            color: #FFFFFF;
+            background-color: #4B0082;
+            font-size: 0.875em;
+            margin: 0 0.25em;
+            padding: 0.375em;
+            font-family: Arial, sans-serif;
+            z-index: 1;
+        }
+
+        .mosaic-width-full:before {
+            content: "100%";
+        }
+
+        .mosaic-width-half:before {
+            content: "50%";
+        }
+
+        .mosaic-width-quarter:before {
+            content: "25%";
+        }
+
+        .mosaic-width-three-quarters:before {
+            content: "75%";
+        }
+
+        .mosaic-width-third:before {
+            content: "33%";
+        }
+
+        .mosaic-width-two-thirds:before {
+            content: "66%";
+        }
+
+    }
+}
+
 .visualClear {
     clear: both !important;
 }

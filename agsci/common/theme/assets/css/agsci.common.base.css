@@ -19,6 +19,34 @@
     border-bottom: none;
     font-size: 64px; }
 
+body.userrole-manager.mosaic-grid .mosaic-grid-row {
+  border: 1px dashed #F5F5F5; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell {
+    border: 1px dashed #4B0082; }
+    body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell .mosaic-tile-content {
+      border: 1px dashed #F5F5F5; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-grid-cell:before {
+    position: absolute;
+    color: #FFFFFF;
+    background-color: #4B0082;
+    font-size: 0.875em;
+    margin: 0 0.25em;
+    padding: 0.375em;
+    font-family: Arial, sans-serif;
+    z-index: 1; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-full:before {
+    content: "100%"; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-half:before {
+    content: "50%"; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-quarter:before {
+    content: "25%"; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-three-quarters:before {
+    content: "75%"; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-third:before {
+    content: "33%"; }
+  body.userrole-manager.mosaic-grid .mosaic-grid-row .mosaic-width-two-thirds:before {
+    content: "66%"; }
+
 .visualClear {
   clear: both !important; }
 
