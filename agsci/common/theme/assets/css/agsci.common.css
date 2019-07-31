@@ -13958,6 +13958,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .card-vertical .list-inline-social {
   margin-top: 0; }
 
+.card-deck-image-plain .card.card-visual {
+  box-shadow: none; }
+  .card-deck-image-plain .card.card-visual .card-image-top {
+    background-color: transparent; }
+
 /* Navbar Invalid Links */
 header a.invalid {
   text-decoration: underline;

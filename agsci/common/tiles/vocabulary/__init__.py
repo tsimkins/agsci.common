@@ -36,6 +36,7 @@ class CardStyleVocabulary(KeyValueVocabulary):
     items = [
         ('image', 'Image'),
         ('image_description', 'Image and Description'),
+        ('image_plain', 'Image (Plain)'),
         ('plain', 'Plain'),
     ]
 

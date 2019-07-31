@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:define="title view/data/title|nothing;
+                show_item_title view/data/show_item_title|nothing"
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
+
+    <div class="container"
+         tal:omit-tag="view/is_portlet">
+
+        <h2 class="mt-0"
+            tal:condition="title"
+            tal:content="title" />
+
+        <div tal:attributes="class string:card-deck card-deck-image-plain card-deck-${view/data/count}up agsci-visual-cards">
+
+            <tal:items
+                tal:repeat="i view/items|nothing">
+
+                <a tal:attributes="href i/getURL|nothing"
+                   class="card card-visual">
+
+                    <div class="card-image-top"
+                         tal:define="item_title i/Title|nothing;
+                                     alt_text python: not show_item_title and item_title or ''">
+
+                        <div class="opacity-dimmer opacity-dimmer-bottom"
+                             tal:condition="show_item_title"></div>
+
+                        <img tal:condition="i/hasLeadImage|nothing"
+                             tal:attributes="src string:${i/getURL}/@@images/image/large;
+                                             alt alt_text;"
+                             title=""
+                             class="w-100" />
+
+                        <img tal:condition="not: i/hasLeadImage|nothing"
+                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg;
+                                                alt alt_text;"
+
+                                title=""
+                                class="w-100" />
+
+                        <div class="card-img-overlay d-flex align-items-center justify-content-center text-white"
+                             tal:condition="show_item_title">
+
+                            <h3 class="card-title text-center"
+                                tal:content="item_title">
+
+                        </div>
+
+                    </div>
+                 </a>
+            </tal:items>
+
+        </div>
+
+    </div>
+
+</section>
+
+  </body>
+</html>
