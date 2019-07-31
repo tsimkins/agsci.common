@@ -80,6 +80,7 @@ class SocialMediaPlatformVocabulary(KeyValueVocabulary):
         ('instagram', 'Instagram'),
         ('linkedin', 'LinkedIn'),
         ('youtube', 'YouTube'),
+        ('newsletter', 'Newsletter'),
     ]
 
 class AgJourneyQuoteStyleVocabulary(KeyValueVocabulary):

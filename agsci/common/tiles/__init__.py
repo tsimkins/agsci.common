@@ -593,10 +593,17 @@ class SocialMediaTile(BaseTile):
 
         platform = _.platform
 
-        return {
+        s_icon = {
+            'newsletter' : 'far',
+        }.get(platform, 'fab')
+
+        p_icon = {
             'instagram' : 'fa-instagram',
             'linkedin' : 'fa-linkedin',
+            'newsletter' : 'fa-envelope',
         }.get(platform, 'fa-%s-square' % platform)
+
+        return " ".join([s_icon, p_icon])
 
     def get_label(self, _):
 
