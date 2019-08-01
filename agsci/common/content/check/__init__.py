@@ -197,9 +197,25 @@ class ShortNameDuplicateWords(ContentCheck):
         'Link',
         'File',
         'Image',
+        'PhotoFolder',
     ]
 
+    @property
+    def is_default_page(self):
+        p = self.context.aq_parent
+
+        try:
+            default_page_id = p.getDefaultPage()
+        except:
+            pass
+        else:
+            return default_page_id and default_page_id == self.context.getId()
+
     def value(self):
+
+        # Don't perform this check for default pages
+        if self.is_default_page:
+            return
 
         # Skip types we don't really care about checking
         if self.context.Type() in self.exclude_types:
