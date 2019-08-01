@@ -206,7 +206,7 @@
                             <items>
                                 <item>
                                     <title>Our Graduate Degree Programs</title>
-                                    <link>academics/graduate/our-graduate-degree-programs</link>
+                                    <link>academics/graduate/programs</link>
                                 </item>
                                 <item>
                                     <title>Intercollege Degree Programs</title>
@@ -399,7 +399,7 @@
                             <title>Research and Extension Centers</title>
                         </item>
                         <item>
-                            <link>research/research-commercialization</link>
+                            <link>research/commercialization</link>
                             <title>Research Commercialization</title>
                         </item>
                     </group>
