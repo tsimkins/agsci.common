@@ -206,4 +206,12 @@
         factory=".UnreferencedImageCheck"
         for="plone.app.contenttypes.interfaces.IImage"
     />
+
+    <!-- Check for invalid Collection path criteria -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".InvalidCollectionPath"
+        for="plone.app.contenttypes.interfaces.ICollection"
+    />
 </configure>

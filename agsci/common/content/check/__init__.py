@@ -28,6 +28,7 @@ import requests
 
 alphanumeric_re = re.compile("[^A-Za-z0-9]+", re.I|re.M)
 resolveuid_re = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
+uid_re = re.compile("^([abcdef0-9]{32})$", re.I|re.M)
 
 # Cached version of _getIgnoreChecks
 def getIgnoreChecks(context):
@@ -1336,4 +1337,35 @@ class UnreferencedImageCheck(ContentCheck):
             if not v:
                 yield ContentCheckError(self,
                     u"Remove this image if not needed."
+                )
+
+class InvalidCollectionPath(ContentCheck):
+
+    title = "Invalid Collection Path"
+    description = "Checks for a UID in the collection path criteria that doesn't exist."
+    action = "Remove or fix missing paths."
+
+    def value(self):
+        query = self.context.getQuery()
+
+        if query:
+            _uids = [x.get('v', '') for x in query if x.get('i', '') == 'path']
+            _uids = [x.split(':')[0] for x in _uids]
+            _uids = [x for x in _uids if uid_re.match(x)]
+            return _uids
+
+    @property
+    def all_uids(self):
+        return self.portal_catalog.uniqueValuesFor('UID')
+
+    def check(self):
+
+        uids = self.value()
+
+        if uids:
+            missing_uids = set(uids) - set(self.all_uids)
+
+            if missing_uids:
+                yield ContentCheckError(self,
+                    u"Invalid collection paths in criteria"
                 )
