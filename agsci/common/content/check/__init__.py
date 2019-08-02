@@ -27,6 +27,7 @@ import re
 import requests
 
 alphanumeric_re = re.compile("[^A-Za-z0-9]+", re.I|re.M)
+resolveuid_re = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
 
 # Cached version of _getIgnoreChecks
 def getIgnoreChecks(context):
@@ -314,8 +315,6 @@ class BodyTextCheck(ContentCheck):
     # h1 - h6
     all_heading_tags = ['h%d' % x for x in range(1,7)]
 
-    resolveuid_re = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
-
     @property
     def internal_link_uids(self):
 
@@ -327,7 +326,7 @@ class BodyTextCheck(ContentCheck):
 
             if href:
 
-                m = self.resolveuid_re.match(href)
+                m = resolveuid_re.match(href)
 
                 if m:
                     _.append(m.group(1))
@@ -344,7 +343,7 @@ class BodyTextCheck(ContentCheck):
 
             if href:
 
-                m = self.resolveuid_re.match(href)
+                m = resolveuid_re.match(href)
 
                 if m:
                     _.append(m.group(1))
@@ -483,7 +482,7 @@ class BodyLinkCheck(BodyTextCheck):
                     return False
 
                 # URLs with 'resolveuid' are OK
-                if self.resolveuid_re.match(path):
+                if resolveuid_re.match(path):
                     return False
 
                 # Otherwise, URLs should have a domain
@@ -797,7 +796,7 @@ class ExternalAbsoluteImage(BodyImageCheck):
     def check(self):
         for img in self.value():
             src = img.get('src', '')
-            if not self.resolveuid_re.match(src):
+            if not resolveuid_re.match(src):
                 yield ContentCheckError(self, 'Image source of "%s" references an external/absolute image.' % src)
 
 
@@ -1023,7 +1022,7 @@ class InternalLinkByUID(BodyLinkCheck):
                 if href:
 
                     # Check for a regex match
-                    m = self.resolveuid_re.search(href)
+                    m = resolveuid_re.search(href)
 
                     if m:
                         # Grab the contents of the href to use in an error message
