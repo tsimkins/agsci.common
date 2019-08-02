@@ -5,7 +5,7 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
-    <replace css:content="#content-core table">
+    <replace css:content="#content-core table, .mosaic-grid-cell table">
         <xsl:copy>
             <xsl:attribute name="class">table table-bordered table-striped</xsl:attribute>
             <xsl:copy-of select="@*" />
@@ -13,7 +13,7 @@
         </xsl:copy>
     </replace>
 
-    <replace css:content="#content-core table thead">
+    <replace css:content="#content-core table thead, .mosaic-grid-cell table thead">
         <xsl:copy>
             <xsl:attribute name="class">thead-dark</xsl:attribute>
             <xsl:copy-of select="@*" />
