@@ -11,8 +11,13 @@
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
         <element value="agsci_directory_person_listing" />
+        <element value="agsci_blog" />
         <element value="agsci_homepage" />
+        <element value="agsci_subsite" />
+        <element value="agsci_section" />
         <element value="Folder" />
+        <element value="File" />
+        <element value="Image" />
         <element value="Document" />
         <element value="Link" />
         <element value="Collection" />
