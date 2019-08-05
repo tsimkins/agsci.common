@@ -404,6 +404,25 @@
                         </item>
                     </group>
                     <group>
+                        <item type="cta">
+                            <items>
+                                <item>
+                                    <link>support</link>
+                                    <title>Support the College</title>
+                                    <icon>fa-hands-helping</icon>
+                                </item>
+                                <item>
+                                    <link>alumni</link>
+                                    <title>Join the Ag Alumni Society</title>
+                                    <icon>fa-users</icon>
+                                </item>
+                                <item>
+                                    <link>magazine</link>
+                                    <title>Read Penn State Ag Science Magazine</title>
+                                    <icon>fa-book-open</icon>
+                                </item>
+                            </items>
+                        </item>
                     </group>
                 </items>
             </item>
@@ -441,6 +460,27 @@ the spotted lanternfly.
                             <link>extension/initiatives</link>
                         </item>
                     </group>
+                    <group>
+                        <item type="cta">
+                            <items>
+                                <item>
+                                    <link>support</link>
+                                    <title>Support Penn State Extension</title>
+                                    <icon>fa-hands-helping</icon>
+                                </item>
+                                <item>
+                                    <link>https://extension.psu.edu</link>
+                                    <title>Start Your Learning Journey</title>
+                                    <icon>fa-chalkboard-teacher</icon>
+                                </item>
+                                <item>
+                                    <link>https://extension.psu.edu/email-preferences</link>
+                                    <title>Connect with Penn State Extension</title>
+                                    <icon>fa-envelope</icon>
+                                </item>
+                            </items>
+                        </item>
+                    </group>
                 </items>
             </item>
             <!-- About Dropdown -->
@@ -475,20 +515,29 @@ the spotted lanternfly.
                             <title>Diversity</title>
                             <link>diversity</link>
                         </item>
-                    </group>
 
-                    <group>
                         <item>
-                            <title>Development</title>
+                            <title>Supporting the College</title>
+                            <link>support</link>
+                        </item>
+                    </group>
+                    <group>
+                        <item type="cta">
                             <items>
                                 <item>
-                                    <title>Make a Gift</title>
+                                    <link>support</link>
+                                    <title>Support the College</title>
+                                    <icon>fa-hands-helping</icon>
                                 </item>
                                 <item>
-                                    <title>Impact Opportunities</title>
+                                    <link>alumni</link>
+                                    <title>Join the Ag Alumni Society</title>
+                                    <icon>fa-users</icon>
                                 </item>
                                 <item>
-                                    <title>Scholarship and Awards Banquet</title>
+                                    <link>magazine</link>
+                                    <title>Read Penn State Ag Science Magazine</title>
+                                    <icon>fa-book-open</icon>
                                 </item>
                             </items>
                         </item>
