@@ -1,6 +1,25 @@
 <?xml version="1.0"?>
 <registry>
 
+    <record    name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.use_email_as_username">
+        <field type="plone.registry.field.Bool"/>
+        <value>False</value>
+    </record>
+    <record name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.use_uuid_as_userid">
+        <field type="plone.registry.field.Bool"/>
+        <value>False</value>
+    </record>
+    <record name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.local_roles">
+        <field type="plone.registry.field.Set">
+            <value_type type="plone.registry.field.TextLine"/>
+        </field>
+        <value>
+            <element>Creator</element>
+            <element>Editor</element>
+            <element>Reader</element>
+        </value>
+    </record>
+
   <!-- Enable Sitemap -->
   <record name="plone.enable_sitemap"
           interface="Products.CMFPlone.interfaces.controlpanel.ISiteSchema"

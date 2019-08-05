@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="membrane_tool" meta_type="MembraneTool" purge="False">
+    <membrane-type name="agsci_person"/>
+    <membrane-type name="agsci_directory"/>
+    <membrane-type name="agsci_directory_classification"/>
+    <membrane-type name="agsci_directory_group"/>
+</object>
