@@ -48,7 +48,7 @@
                         </a>
                     </li>
 
-                    <li tal:condition="newsletter_url">
+                    <li tal:condition="newsletter_url|nothing">
                         <a class="no-border"
                            tal:attributes="href newsletter_url">
                             <em class="title far fa-2x fa-fw fa-envelope"></em>

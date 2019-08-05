@@ -178,6 +178,7 @@
                              facebook_url context/facebook_url|nothing;
                              youtube_url context/youtube_url|nothing;
                              linkedin_url context/linkedin_url|nothing;
+                             newsletter_url nothing;
                              websites i/value|nothing;"
                  tal:condition="websites|social_media|nothing">
 
