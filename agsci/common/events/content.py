@@ -176,8 +176,10 @@ def onSubsiteCreate(context, event, add_group=True):
                                             includeTop = True,
                                             topLevel = 0,
                                             bottomLevel = 3)
-
-    left_column['navigation'] = left_navigation
+    try:
+        left_column['navigation'] = left_navigation
+    except:
+        pass
 
     # Create homepage
     if 'front-page' not in context.objectIds():
