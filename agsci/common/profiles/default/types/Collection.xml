@@ -19,7 +19,7 @@
         <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>
-    <property name="add_permission">plone.app.contenttypes.addCollection</property>
+    <property name="add_permission">agsci.common.collection_editor</property>
     <property name="klass">plone.app.contenttypes.content.Collection</property>
     <property name="behaviors">
         <element value="plone.app.content.interfaces.INameFromTitle" />
