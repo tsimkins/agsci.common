@@ -486,6 +486,7 @@ the spotted lanternfly.
             <!-- About Dropdown -->
             <item>
                 <title>About</title>
+                <link>about</link>
                 <image>
                     <src>++resource++agsci.common/assets/images/navigation/about.jpg</src>
                 </image>
@@ -493,15 +494,12 @@ the spotted lanternfly.
                     <group>
                         <item>
                             <title>Leadership</title>
+                            <link>about/leadership</link>
                         </item>
 
                         <item>
                             <title>Mission and Strategic Plan</title>
-                            <items>
-                                <item>
-                                    <title>History of the College</title>
-                                </item>
-                            </items>
+                            <link>about/strategic</link>
                         </item>
 
                     </group>
@@ -512,7 +510,7 @@ the spotted lanternfly.
                         </item>
 
                         <item>
-                            <title>Diversity</title>
+                            <title>Diversity and Inclusion</title>
                             <link>diversity</link>
                         </item>
 
