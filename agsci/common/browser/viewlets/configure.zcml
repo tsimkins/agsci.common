@@ -103,6 +103,18 @@
         template="templates/path_bar.pt"
     />
 
+    <!-- Tags -->
+
+    <browser:viewlet
+        for="plone.app.contenttypes.interfaces.ICollection"
+        name="agsci.common.tags"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".tags.TagsViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/tags.pt"
+    />
+
     <!-- Lead Image -->
 
     <browser:viewlet
