@@ -10,6 +10,24 @@
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 
+  <div id="public-tags-filter"
+       class="discreet html border p-3 mb-2"
+       tal:define="tags view/tags|nothing"
+       tal:condition="tags">
+
+        <p>Filtered by tags:</p>
+
+        <ul>
+            <li tal:repeat="i tags"
+                tal:content="i" />
+        </ul>
+
+        <p class="mb-1">
+            <a tal:attributes="href context/absolute_url">Unfilter...</a>
+        </p>
+
+  </div>
+
   <div id="parent-fieldname-text"
        tal:define="text context/text|nothing"
        tal:condition="text"

@@ -27,20 +27,20 @@ class TagsAdapter(BaseAdapter):
 
     @property
     def parent_object(self):
-        
+
         tag_root = self.tag_root
-        
+
         if hasattr(tag_root, 'getDefaultPage'):
             default_page_id = tag_root.getDefaultPage()
-            
+
             if default_page_id in tag_root.objectIds():
                 default_page = tag_root[default_page_id]
-                
+
                 if ICollection.providedBy(default_page):
                     return default_page
-            
+
         return tag_root
-        
+
     @property
     def available_tags(self):
 
@@ -62,10 +62,10 @@ class TagsAdapter(BaseAdapter):
     def normalized_tags(self):
 
         normalized_tags = []
-        
+
         for _ in self.available_tags:
             normalized_tags.append([self.normalize(_), _])
-        
+
         return dict(normalized_tags)
 
 
@@ -81,18 +81,37 @@ class TagsAdapter(BaseAdapter):
 
             if _:
                 return _
-        
+
         return []
 
     @property
     def items(self):
+        return self.get_items(self.available_tags)
 
+    def get_items(self, tags):
+
+        parent_object = self.parent_object
         path = '/'.join(self.tag_root.getPhysicalPath())
 
-        return self.portal_catalog.searchResults({
-            'Tags' : self.available_tags,
-            'path' : path
-        })
+        if tags:
+
+            if ICollection.providedBy(parent_object):
+
+                return parent_object.results(
+                    batch=False,
+                    custom_query={
+                        'Tags' : tags
+                    }
+                )
+
+            else:
+
+                return self.portal_catalog.searchResults({
+                    'Tags' : tags,
+                    'path' : path
+                })
+
+        return []
 
 
     @property

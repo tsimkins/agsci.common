@@ -12,15 +12,19 @@ from plone.app.layout.sitemap.sitemap import SiteMapView as _SiteMapView
 from plone.app.layout.sitemap.sitemap import _render_cachekey
 from plone.app.event.browser.event_view import EventView as _EventView
 from plone.app.event.browser.event_summary import EventSummaryView as _EventSummaryView
+from plone.batching import Batch
 from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
 from zope import schema
 from zope.component import getUtility
+from zope.interface import implementer
+from zope.publisher.interfaces import IPublishTraverse
 
 from agsci.common.content.check import ExternalLinkCheck
 from agsci.common.content.degrees import IDegree
 from agsci.common.content.major import IMajor
 from agsci.common.indexer import degree_index_field
+from agsci.common.interfaces import ITagsAdapter
 from agsci.common.utilities import get_fields_by_type, toLocalizedTime
 from agsci.common import object_factory
 from agsci.common.interfaces import ILocationAdapter
@@ -685,3 +689,42 @@ class SiteMapView(_SiteMapView):
                 #  hourly/daily/weekly/monthly/yearly/never
                 # 'prioriy': 0.5, # 0.0 to 1.0
             }
+
+@implementer(IPublishTraverse)
+class TagsView(CollectionView):
+
+    def publishTraverse(self, request, name):
+
+        if name:
+            if '|' in name:
+                self.url_tags = sorted(name.split('|'))
+            else:
+                self.url_tags = [name]
+        else:
+            self.url_tags = []
+
+        self.original_url = request.getURL()
+        self.original_context = self.context
+
+        self.context = self.tag_root
+
+        return self
+
+    @property
+    def tags(self):
+
+        if hasattr(self, 'url_tags') and self.url_tags:
+            _tags = dict(self.adapted.selected_tags)
+            _ = [_tags.get(x, None) for x in self.url_tags]
+            return [x for x in _ if x]
+
+    @property
+    def tag_root(self):
+        return self.adapted.tag_root
+
+    @property
+    def adapted(self):
+        return ITagsAdapter(self.context)
+
+    def batch(self):
+        return Batch(self.adapted.get_items(self.tags), size=99999)

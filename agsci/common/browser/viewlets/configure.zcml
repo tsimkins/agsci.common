@@ -103,10 +103,22 @@
         template="templates/path_bar.pt"
     />
 
-    <!-- Tags -->
+    <!-- Tags (Collection) -->
 
     <browser:viewlet
         for="plone.app.contenttypes.interfaces.ICollection"
+        name="agsci.common.tags"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".tags.TagsViewlet"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/tags.pt"
+    />
+
+    <!-- Tags (Container) -->
+
+    <browser:viewlet
+        for="plone.dexterity.interfaces.IDexterityContainer"
         name="agsci.common.tags"
         manager="plone.app.layout.viewlets.interfaces.IAboveContent"
         class=".tags.TagsViewlet"

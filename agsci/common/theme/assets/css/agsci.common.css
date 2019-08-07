@@ -14087,6 +14087,9 @@ body:not(.portaltype-agsci_homepage_college) .mosaic-option-group-homepage-colle
 #select2-drop {
   font-size: 14px; }
 
+#public-tags-filter {
+  font-size: 0.9rem; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;
