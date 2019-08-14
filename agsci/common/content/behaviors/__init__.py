@@ -1,4 +1,5 @@
 from dexterity.membrane.content.member import is_email
+from plone.app.dexterity.behaviors.exclfromnav import IExcludeFromNavigation
 from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.autoform.interfaces import IFormFieldProvider
@@ -12,6 +13,25 @@ from agsci.common import AgsciMessageFactory as _
 @provider(IFormFieldProvider)
 class IAlwaysExcludeFromNavigation(model.Schema):
     pass
+
+@provider(IFormFieldProvider)
+class IDefaultExcludeFromNavigation(IExcludeFromNavigation):
+
+    form.write_permission(exclude_from_nav="cmf.ManagePortal")
+
+    exclude_from_nav = schema.Bool(
+        title=_(
+            u'label_exclude_from_nav',
+            default=u'Exclude from navigation'
+        ),
+        description=_(
+            u'help_exclude_from_nav',
+            default=u'If selected, this item will not appear in the '
+                    u'navigation tree'
+        ),
+        default=True,
+        required=False,
+    )
 
 @provider(IFormFieldProvider)
 class IResearchAreas(model.Schema):

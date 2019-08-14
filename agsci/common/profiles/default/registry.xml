@@ -293,11 +293,13 @@
             <element>Collection</element>
             <element>Folder</element>
             <element>Document</element>
+            <element>Link</element>
             <element>agsci_section</element>
             <element>agsci_subsite</element>
             <element>agsci_directory</element>
             <element>agsci_directory_classification</element>
             <element>agsci_directory_group</element>
+            <element>agsci_directory_person_listing</element>
         </value>
     </record>
 

@@ -26,6 +26,13 @@
         provides=".IAlwaysExcludeFromNavigation"
     />
 
+    <!-- Default Exclude from nav -->
+    <plone:behavior
+        title="Exclude from Navigation (Default: True)"
+        description="Exclude items from nav with a default of True."
+        provides=".IDefaultExcludeFromNavigation"
+    />
+
     <!-- Behaviors for public (non-Plone) tags -->
     <plone:behavior
         title="Public Tags Behaviors"
