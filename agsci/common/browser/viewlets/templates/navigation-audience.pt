@@ -4,7 +4,7 @@
     <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar navbar-dropdown">
 
         <div class="row mx-0 align-items-center">
-    	
+        
             <div class="col-9 offset-3 text-right">
 
                 <ul class="audience-dropdowns dropdown-selectors justify-content-end">
@@ -12,46 +12,47 @@
                     <tal:li
                         tal:repeat="l1 nav/item/items/group/item">
 
-                    	<li
-                    	   class="dropdown"
-                    	   tal:define="item_id python:view.label(l1.title.cdata)">
+                        <li
+                           class="dropdown"
+                           tal:define="item_id python:view.label(l1.title.cdata)">
 
-                        	<a tal:attributes="id item_id;
-                        	                   href python:view.link(l1)"
-                        	   tal:content="l1/title/cdata"
-                        	   class="dropdown-toggle nav-external-link"
-                        	   role="button"
-                        	   data-toggle="dropdown"
-                        	   aria-haspopup="true"
-                        	   data-click-behavior="default"
-                        	   aria-expanded="false" />
+                            <a tal:attributes="id item_id;
+                                               href python:view.link(l1)"
+                               tal:content="l1/title/cdata"
+                               class="dropdown-toggle nav-external-link"
+                               role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true"
+                               data-click-behavior="default"
+                               aria-expanded="false" />
 
-                    		<div
+                            <div
                               tal:attributes="aria-labelledby item_id"
-                    		  class="dropdown-menu dropdown-menu-right">
+                              tal:condition="l1/items/children|nothing"
+                              class="dropdown-menu dropdown-menu-right">
 
-                	           	<div class="container px-0">
+                                   <div class="container px-0">
 
-                            		<div class="row justify-content-center">
-                	
-                                		<div class="col-12">
+                                    <div class="row justify-content-center">
+                    
+                                        <div class="col-12">
                                             <ul class="nav flex-column">
-                                	            <li tal:repeat="link l1/items/item|nothing"
-                                	                class="nav-item">
+                                                <li tal:repeat="link l1/items/item|nothing"
+                                                    class="nav-item">
                                                     <a tal:define="link_class python: view.link_class(link)"
                                                        tal:content="link/title/cdata|nothing"
                                                        tal:attributes="href python:view.link(link);
                                                                        class string:nav-link ${link_class}" />
                                                 </li>
                                             </ul>
-                                		</div>
-                            		</div>
-                    	       	</div>
-                    		</div>
-                    	</li>
-                	</tal:li>
+                                        </div>
+                                    </div>
+                                   </div>
+                            </div>
+                        </li>
+                    </tal:li>
                 </ul>
-        	</div>
+            </div>
         </div>
     </div>
 </div>
