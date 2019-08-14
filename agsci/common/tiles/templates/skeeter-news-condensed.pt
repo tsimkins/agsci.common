@@ -41,11 +41,19 @@
                         </div>
 
                         <div class="col-4 col-lg-3 profile-img order-1 px-0">
+
                             <img tal:attributes="src string:${i/getURL}/@@images/image/large"
                                     alt=""
                                     title=""
                                     class="w-100"
                                     tal:condition="i/hasLeadImage|nothing" />
+
+                            <img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/fpo-newspaper.jpg"
+                                    alt=""
+                                    title=""
+                                    class="w-100"
+                                    tal:condition="not:i/hasLeadImage|nothing" />
+
                         </div>
 
                     </div>

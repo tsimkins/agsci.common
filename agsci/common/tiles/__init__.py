@@ -403,6 +403,13 @@ class SkeeterTile(ConditionalTemplateTile):
 
             # News always has a featured item
             if items and self.style in ('news',):
+
+                # Get only items with an image
+                _ = [x for x in items if x.hasLeadImage]
+
+                if _:
+                    return _[0]
+
                 return items[0]
 
     @property
