@@ -67,38 +67,26 @@
                         <link>alumni</link>
                         <items>
             	            <item>
-                                <title>Why We Give</title>
+                                <title>Get Involved</title>
+                                <link>alumni/membership</link>
                             </item>
                             <item>
-                                <title>Join the Ag Alumni Society</title>
+                                <title>Awards and Recognition</title>
+                                <link>alumni/awards</link>
                             </item>
                             <item>
-                                <title>Volunteer on an Alumni Committee</title>
-                            </item>
-                            <item>
-                                <title>Alumni Awards and Recognition</title>
-                            </item>
-                            <item>
-                                <title>Alumni Groups</title>
-                            </item>
-                            <item>
-                                <title>Make a Gift</title>
+                                <title>Armsby Honor Society</title>
+                                <link>alumni/armsby</link>
                             </item>
                         </items>
                     </item>
 
                     <item>
                         <title>Faculty &amp; Staff</title>
+                        <link>faculty-staff</link>
                         <items>
-            	            <item>
-                                <title>Faculty and Staff Contacts</title>
-                            </item>
-                            <item>
-                                <title>Faculty and Staff Resources</title>
-                            </item>
                         </items>
                     </item>
-
 
                     <item>
                         <title>Visitors &amp; Public</title>
@@ -150,9 +138,11 @@
                         </item>
                         <item>
                             <title>Faculty &amp; Staff</title>
+                            <link>faculty-staff</link>
                         </item>
                         <item>
                             <title>Visitor &amp; Public</title>
+                            <link>visitor-and-public</link>
                         </item>
                     </group>
                 </items>
@@ -315,10 +305,20 @@
                             <link>admissions/graduate</link>
                             <items>
                                 <item>
-                                    <title>How to Apply to a Graduate Program</title>
+                                    <title>Schedule a Visit</title>
+                                    <link>admissions/graduate/visit</link>
                                 </item>
                                 <item>
-                                    <title>Funding Opportunities</title>
+                                    <title>Scholarship and Funding Opportunities</title>
+                                    <link>admissions/graduate/funding-opportunities</link>
+                                </item>
+                                <item>
+                                    <title>Student Research and Facilities</title>
+                                    <link>students/graduate/research</link>
+                                </item>
+                                <item>
+                                    <title>Why Penn State?</title>
+                                    <link>admissions/graduate/why</link>
                                 </item>
                             </items>
                         </item>
