@@ -244,6 +244,16 @@
         template="templates/directory_detail.pt"
     />
 
+    <!-- Person Listing View (Folder Base)-->
+    <browser:page
+        for="agsci.common.content.person.directory.IPersonListing"
+        name="folder_base"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+    />
+
     <!-- Directory View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectory"

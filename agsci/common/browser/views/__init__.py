@@ -463,7 +463,9 @@ class SubfolderView(FolderView):
 
 class CollectionView(FolderView):
 
-    def batch(self):
+    batch_size = 99999
+
+    def results(self):
         return self.context.queryCatalog()
 
 class PhotoFolderView(FolderView):
@@ -488,7 +490,8 @@ class PhotoFolderView(FolderView):
 
 class DirectoryView(FolderView):
 
-    @property
+    batch_size = 99999
+
     def results(self):
         return self.context.people()
 
@@ -718,5 +721,5 @@ class TagsView(CollectionView):
     def adapted(self):
         return ITagsAdapter(self.context)
 
-    def batch(self):
-        return Batch(self.adapted.get_items(self.tags), size=99999)
+    def results(self):
+        return self.adapted.get_items(self.tags)

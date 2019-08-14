@@ -54,7 +54,7 @@
                                 batch view/batch;">
 
                     <div class="mt-2">
-                        <metal:product-listing use-macro="obj/@@folder_base/macros/listing" />
+                        <metal:listing use-macro="obj/@@folder_base/macros/listing" />
                     </div>
 
                 </tal:contents>
