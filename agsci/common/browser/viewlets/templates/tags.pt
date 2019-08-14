@@ -1,9 +1,9 @@
-<tal:block condition="view/available"
+<tal:block condition="view/available|nothing"
     tal:define="tag_root nocall: view/tag_root|nothing">
 
     <div id="public-tags" class="html border p-3 mb-2">
         <h2 class="h3 mt-0">Tags</h2>
-    
+
         <ul class="list-inline mt-4">
             <li class="list-inline-item"
                 tal:repeat="tag view/tag_data">
@@ -16,5 +16,5 @@
         </ul>
 
     </div>
-    
+
 </tal:block>
