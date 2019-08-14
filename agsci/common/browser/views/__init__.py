@@ -495,14 +495,6 @@ class DirectoryView(FolderView):
     def person_view(self, o):
         return o.restrictedTraverse('view')
 
-class CollectionDirectoryView(FolderView):
-
-    def batch(self):
-        return self.context.queryCatalog()
-
-    def person_view(self, o):
-        return o.restrictedTraverse('view')
-
 class EventView(_EventView, BaseView):
 
     data = None
