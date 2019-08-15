@@ -61,8 +61,8 @@ class ValueTextLinkReport(TextLinkReport):
 
                     text = _.get('text', None)
 
-                    if text:
-                        yield text
+                    if text and hasattr(text, 'raw'):
+                        yield text.raw
 
 class TitleLinkReport(LinkReport):
 
@@ -117,8 +117,8 @@ def link_factory(_):
         'agsci.common.tiles.animal' : [],
         'agsci.common.tiles.callout_block' : [TextLinkReport,],
         'agsci.common.tiles.cta' : [ButtonLinkReport, ],
-        'agsci.common.tiles.dropdown_accordion' : [],
-        'agsci.common.tiles.explore_more' : [],
+        'agsci.common.tiles.dropdown_accordion' : [ValueTextLinkReport,],
+        'agsci.common.tiles.explore_more' : [ValueTextLinkReport, ],
         'agsci.common.tiles.fozziebear' : [],
         'agsci.common.tiles.gonzo' : [TitleLinkReport, TextLinkReport,],
         'agsci.common.tiles.jumbotron' : [],
