@@ -556,8 +556,12 @@ class OpenGraphViewlet(TitleViewlet):
 class TileLinksViewlet(ViewletBase):
 
     @property
-    def links(self):
+    def check(self):
+        return TileLinksCheck(self.context)
 
-        check = TileLinksCheck(self.context)
-        
-        return check.value()
+    def check_link(self, link):
+        return self.check.check_link(link, text=True)
+
+    @property
+    def links(self):
+        return self.check.value()

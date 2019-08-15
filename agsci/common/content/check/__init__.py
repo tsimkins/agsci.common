@@ -186,6 +186,11 @@ class ContentCheck(object):
     def site(self):
         return getSite()
 
+    @property
+    def path(self):
+        return "/%s" % "/".join(self.context.getPhysicalPath()[len(self.site.getPhysicalPath()):])
+
+
 # Check for words in the short name that are duplicate further up in the path.
 class ShortNameDuplicateWords(ContentCheck):
 
@@ -1374,10 +1379,67 @@ class TileLinksCheck(BodyTextCheck):
 
     title = "Tile Links"
     description = "Checks for links within a Mosaic tile"
-    action = "Informational."
+    action = "Update link URL in tile."
+
+    config_data = {
+        "/": [
+            [
+                "Request Info",
+                "/admissions/undergraduate/request"
+            ],
+            [
+                "Schedule a Visit",
+                "/admissions/undergraduate/visit"
+            ],
+            [
+                "Apply",
+                "https://admissions.psu.edu/apply/"
+            ],
+            [
+                "Discover Ag Careers",
+                "/students/careers"
+            ],
+            [
+                "Admissions",
+                "/admissions/undergraduate"
+            ],
+            [
+                "Tuition and Financial Aid",
+                "/admissions/undergraduate/aid"
+            ],
+            [
+                "Scholarships",
+                "/students/academics/scholarships"
+            ],
+            [
+                "Student Life",
+                "/students/life"
+            ],
+            [
+                "Undergraduate Research",
+                "/students/academics/research"
+            ],
+            [
+                "Study Abroad",
+                "/international/study-abroad"
+            ],
+            [
+                "Entrepreneurship and Innovation",
+                "/entrepreneurship"
+            ],
+            [
+                "Internships",
+                "/students/careers"
+            ]
+        ]
+    }
 
     @property
-    def links(self):
+    def config(self):
+        return sorted(self.config_data.iteritems(), key=lambda x: len(x[0]), reverse=True)
+
+    @property
+    def mosaic_layout(self):
 
         if hasattr(self.context, 'getLayout'):
 
@@ -1387,24 +1449,67 @@ class TileLinksCheck(BodyTextCheck):
 
                 if self.context.customContentLayout:
 
-                    tiles = IAnnotations(self.context)
-                    soup = BeautifulSoup(self.context.customContentLayout, features="lxml")
+                    return self.context.customContentLayout
 
-                    for div in soup.findAll(attrs={'data-tile' : re.compile('.+')}):
+    @property
+    def tiles(self):
+        mosaic_layout = self.mosaic_layout
 
-                        tile_url = div.get('data-tile')
-                        tile_name = tile_url.split('/')[1][2:]
-                        tile_id = tile_url.split('?')[0].split('/')[-1]
+        if mosaic_layout:
 
-                        _tile = queryMultiAdapter((self.context, self.request), name=tile_name)
+            soup = BeautifulSoup(mosaic_layout, features="lxml")
 
-                        tile = _tile[tile_id]
+            for div in soup.findAll(attrs={'data-tile' : re.compile('.+')}):
 
-                        for _ in tile.links:
-                            yield _
+                tile_url = div.get('data-tile')
+                tile_name = tile_url.split('/')[1][2:]
+                tile_id = tile_url.split('?')[0].split('/')[-1]
+
+                _tile = queryMultiAdapter((self.context, self.request), name=tile_name)
+
+                yield _tile[tile_id]
+
+    @property
+    def links(self):
+
+        for tile in self.tiles:
+            for _ in tile.links:
+                yield _
 
     def value(self):
         return [x for x in self.links]
 
+    def check_link(self, link, text=False):
+
+        path = self.path
+        found_link = False
+
+        for (config_path, links) in self.config:
+
+            if found_link:
+                continue
+
+            if path.startswith(config_path):
+
+                for (label, url) in links:
+
+                    if ploneify(link.label) == ploneify(label):
+
+                        found_link = True
+
+                        if link.label != label:
+                            if not text:
+                                yield ContentCheckError(self, u"Link Label mismatch: '%s' instead of '%s'" % (link.label, label))
+
+                        if url != link.url:
+                            if text:
+                                yield url
+                            else:
+                                yield ContentCheckError(self, u"Link '%s' is '%s' instead of '%s'" % (link.label, link.url, url))
+
     def check(self):
-        pass
+
+        for link in self.value():
+
+            for _ in self.check_link(link):
+                yield _

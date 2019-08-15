@@ -214,4 +214,13 @@
         factory=".InvalidCollectionPath"
         for="plone.app.contenttypes.interfaces.ICollection"
     />
+
+    <!-- Check for links in tiles -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".TileLinksCheck"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
+
 </configure>
