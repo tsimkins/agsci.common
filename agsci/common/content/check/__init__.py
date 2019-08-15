@@ -9,7 +9,7 @@ from plone.app.linkintegrity.utils import getIncomingLinks
 from plone.registry.interfaces import IRegistry
 from urlparse import urlparse
 from zope.annotation.interfaces import IAnnotations
-from zope.component import subscribers, getAdapters, getUtility
+from zope.component import subscribers, getAdapters, getUtility, queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
@@ -1369,3 +1369,42 @@ class InvalidCollectionPath(ContentCheck):
                 yield ContentCheckError(self,
                     u"Invalid collection paths in criteria"
                 )
+
+class TileLinksCheck(BodyTextCheck):
+
+    title = "Tile Links"
+    description = "Checks for links within a Mosaic tile"
+    action = "Informational."
+
+    @property
+    def links(self):
+
+        if hasattr(self.context, 'getLayout'):
+
+            layout = self.context.getLayout()
+
+            if layout in ('layout_view',):
+
+                if self.context.customContentLayout:
+
+                    tiles = IAnnotations(self.context)
+                    soup = BeautifulSoup(self.context.customContentLayout, features="lxml")
+
+                    for div in soup.findAll(attrs={'data-tile' : re.compile('.+')}):
+
+                        tile_url = div.get('data-tile')
+                        tile_name = tile_url.split('/')[1][2:]
+                        tile_id = tile_url.split('?')[0].split('/')[-1]
+
+                        _tile = queryMultiAdapter((self.context, self.request), name=tile_name)
+
+                        tile = _tile[tile_id]
+
+                        for _ in tile.links:
+                            yield _
+
+    def value(self):
+        return [x for x in self.links]
+
+    def check(self):
+        pass

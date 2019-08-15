@@ -18,6 +18,7 @@ from zope.schema import getFields
 from zope.schema.interfaces import IVocabularyFactory
 
 from .interfaces import IBorderTile
+from .links import link_factory
 
 from .. import object_factory
 from ..content.adapters import LocationAdapter
@@ -254,6 +255,14 @@ class BaseTile(PersistentTile):
     @property
     def is_portlet(self):
         return self.data and isinstance(self.data, dict) and self.data.has_key('__parent__')
+
+    @property
+    def links(self):
+
+        for lf in link_factory(self.__name__):
+
+            for _ in lf(self)():
+                yield _
 
 class ConditionalTemplateTile(BaseTile):
 

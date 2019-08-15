@@ -180,4 +180,14 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Tile Links Viewlet -->
+    <browser:viewlet
+        name="agsci.common.tile_links"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".TileLinksViewlet"
+        permission="cmf.ModifyPortalContent"
+        template="templates/tile_links.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>

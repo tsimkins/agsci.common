@@ -1,0 +1,28 @@
+<div id="tile-links"
+    class="m-5 html">
+
+    <h2 class="mt-0">Tile Links</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Tile Type</th>
+                <th>Label</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr tal:repeat="i view/links">
+                <td tal:content="i/tile_type|nothing" />
+                <td tal:content="i/label" />
+                <td>
+                    <a tal:attributes="href i/url|nothing"
+                       tal:content="i/url|nothing" />
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

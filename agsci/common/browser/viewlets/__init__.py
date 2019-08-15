@@ -12,7 +12,7 @@ from plone.dexterity.utils import getAdditionalSchemata
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone import api
 from urlparse import urlparse
-from zope.component import queryUtility, getMultiAdapter
+from zope.component import queryUtility, getMultiAdapter, queryMultiAdapter
 from zope.component.hooks import getSite
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.event.interfaces import IEvent
@@ -21,6 +21,7 @@ from plone.memoize.instance import memoize
 import json
 import untangle
 
+from agsci.common.content.check import TileLinksCheck
 from agsci.common.interfaces import ICollegeHomepage
 from agsci.common.utilities import ploneify, localize
 from agsci.common import object_factory
@@ -551,3 +552,12 @@ class OpenGraphViewlet(TitleViewlet):
 
         else:
             self.fb_title = self.fb_site_name = titles[0]
+
+class TileLinksViewlet(ViewletBase):
+
+    @property
+    def links(self):
+
+        check = TileLinksCheck(self.context)
+        
+        return check.value()
