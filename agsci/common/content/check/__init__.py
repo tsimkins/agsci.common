@@ -1467,7 +1467,8 @@ class TileLinksCheck(BodyTextCheck):
 
                 _tile = queryMultiAdapter((self.context, self.request), name=tile_name)
 
-                yield _tile[tile_id]
+                if _tile:
+                    yield _tile[tile_id]
 
     @property
     def links(self):
