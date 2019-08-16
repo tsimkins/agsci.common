@@ -36,7 +36,7 @@
                         <div class="mb-3"
                              tal:condition="has_address">
 
-                            <h3>Address</h3>
+                            <h3 class="hiddenStructure">Address</h3>
 
                             <span class="street-address"
                                     tal:condition="street_address"
