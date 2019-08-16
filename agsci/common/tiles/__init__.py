@@ -7,6 +7,7 @@ from plone import api
 from plone.app.contenttypes.interfaces import ICollection
 from plone.app.layout.navigation.interfaces import INavtreeStrategy
 from plone.app.layout.navigation.navtree import buildFolderTree
+from plone.app.portlets.portlets.navigation import NavtreeStrategy
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
 from plone.app.textfield.value import RichTextValue
 from plone.tiles.interfaces import ITileDataManager
@@ -589,10 +590,23 @@ class NavigationTile(_NavigationTile):
         context = aq_inner(self.context)
 
         # Full nav query, not just the tree for 'this' item
-        queryBuilder = SitemapQueryBuilder(self.getNavRoot())
+        nav_root = self.getNavRoot()
+
+        queryBuilder = SitemapQueryBuilder(nav_root)
         query = queryBuilder()
 
-        strategy = getMultiAdapter((context, self), INavtreeStrategy)
+        # Add explicit path to query, since the sitemap query uses the root of
+        # the site
+        if nav_root:
+            query['path'] = {
+                'query' : "/".join(nav_root.getPhysicalPath()),
+                'depth' : self.data.get('bottomLevel', 3)
+            }
+
+        data = dict(self.data)
+        data['root_uid'] = data['root']
+
+        strategy = NavtreeStrategy(context, object_factory(**data))
 
         return buildFolderTree(
             context,
