@@ -560,7 +560,7 @@ class TileLinksViewlet(ViewletBase):
         return TileLinksCheck(self.context)
 
     def check_link(self, link):
-        return self.check.check_link(link, text=True)
+        return self.check.check_link(link)
 
     @property
     def links(self):

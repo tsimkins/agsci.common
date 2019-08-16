@@ -409,5 +409,24 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Tile Links View -->
+    <browser:page
+        name="tile_links"
+        for="*"
+        class=".TileLinksView"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/tile_links.pt"
+    />
+
+    <!-- Tile Links View -->
+    <browser:page
+        name="tile_links_data"
+        for="*"
+        class=".TileLinksDataView"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 
 </configure>

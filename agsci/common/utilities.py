@@ -27,6 +27,9 @@ from .constants import DEFAULT_TIMEZONE
 #Ploneify
 def ploneify(toPlone, filename=False):
 
+    if not toPlone:
+        return u''
+
     # Start with Unicode
     ploneString = safe_unicode(toPlone)
 

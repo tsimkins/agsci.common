@@ -23,7 +23,7 @@
                 </td>
                 <td>
                     <p tal:repeat="j python: view.check_link(i)"
-                       tal:content="j" />
+                       tal:content="j/data/correct_url" />
                 </td>
             </tr>
         </tbody>

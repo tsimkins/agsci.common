@@ -1474,13 +1474,14 @@ class TileLinksCheck(BodyTextCheck):
     def links(self):
 
         for tile in self.tiles:
-            for _ in tile.links:
-                yield _
+            if hasattr(tile, 'links'):
+                for _ in tile.links:
+                    yield _
 
     def value(self):
         return [x for x in self.links]
 
-    def check_link(self, link, text=False):
+    def check_link(self, link):
 
         path = self.path
         found_link = False
@@ -1496,17 +1497,29 @@ class TileLinksCheck(BodyTextCheck):
 
                     if ploneify(link.label) == ploneify(label):
 
+                        data = self.object_factory(
+                            url=link.url,
+                            context=self.context,
+                            tile_id=link.id,
+                            label=label,
+                            correct_url=url,
+                        )
+
                         found_link = True
 
                         if link.label != label:
-                            if not text:
-                                yield ContentCheckError(self, u"Link Label mismatch: '%s' instead of '%s'" % (link.label, label))
+                            yield ContentCheckError(
+                                self,
+                                u"Link Label mismatch: '%s' instead of '%s'" % (link.label, label),
+                                data=data
+                            )
 
                         if url != link.url:
-                            if text:
-                                yield url
-                            else:
-                                yield ContentCheckError(self, u"Link '%s' is '%s' instead of '%s'" % (link.label, link.url, url))
+                            yield ContentCheckError(
+                                self,
+                                u"Link '%s' is '%s' instead of '%s'" % (link.label, link.url, url),
+                                data=data,
+                            )
 
     def check(self):
 

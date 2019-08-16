@@ -10,6 +10,7 @@ class LinkReport(object):
     def __call__(self):
         _name = self.context.__name__
         _tile_type = self.context.tile_type
+        _id = self.context.id
 
         for (_label, _url) in self.links:
             yield object_factory(
@@ -17,6 +18,7 @@ class LinkReport(object):
                 tile_type=_tile_type,
                 label=_label,
                 url=_url,
+                id=_id,
             )
 
 class TextLinkReport(LinkReport):

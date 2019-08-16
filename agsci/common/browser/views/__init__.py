@@ -19,8 +19,10 @@ from zope import schema
 from zope.component import getUtility
 from zope.interface import implementer
 from zope.publisher.interfaces import IPublishTraverse
+from plone.dexterity.interfaces import IDexterityFTI
+from plone.behavior.interfaces import IBehavior
 
-from agsci.common.content.check import ExternalLinkCheck
+from agsci.common.content.check import ExternalLinkCheck, TileLinksCheck
 from agsci.common.content.degrees import IDegree
 from agsci.common.content.major import IMajor
 from agsci.common.indexer import degree_index_field
@@ -33,6 +35,8 @@ try:
     from zope.app.component.hooks import getSite
 except ImportError:
     from zope.component.hooks import getSite
+
+import json
 
 class BaseView(BrowserView):
 
@@ -723,3 +727,52 @@ class TagsView(CollectionView):
 
     def results(self):
         return self.adapted.get_items(self.tags)
+
+class TileLinksView(BaseView):
+
+    @property
+    def mosaic_types(self):
+
+        all_types = self.portal_catalog.uniqueValuesFor('portal_type')
+
+        for portal_type in all_types:
+            fti = getUtility(IDexterityFTI, name=portal_type)
+
+            if 'plone.layoutaware' in fti.behaviors:
+                yield portal_type
+
+    @property
+    def errors(self):
+        mosaic_types = [x for x in self.mosaic_types]
+
+        results = self.portal_catalog.searchResults({
+            'path' : "/".join(self.context.getPhysicalPath()),
+            'portal_type' : mosaic_types
+        })
+
+        for r in results:
+            o = r.getObject()
+            check = TileLinksCheck(o)
+            for _ in check.check():
+                yield _
+
+class TileLinksDataView(TileLinksView):
+
+    def __call__(self):
+
+        data = []
+
+        for _ in self.errors:
+            data.append({
+                'uid' : _.data.context.UID(),
+                'type' : _.data.context.Type(),
+                'url' : _.data.context.absolute_url(),
+                'title' : _.data.context.Title(),
+                'tile_id' : _.data.tile_id,
+                'link_label' : _.data.label,
+                'link_url' : _.data.url,
+                'correct_link_url' : _.data.correct_url,
+            })
+
+        self.request.response.setHeader('Content-Type', 'application/json')
+        return json.dumps(data, indent=4)
