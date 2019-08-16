@@ -43,12 +43,16 @@ class KeyValueVocabulary(object):
 class InterestAreaVocabulary(StaticVocabulary):
 
     items = [
-        'Animals',
-        'Business',
-        'Environment',
-        'Human Health',
-        'Plants',
-        'Science',
+        u'Animal',
+        u'Plant',
+        u'Environment, Sustainability, Nature',
+        u'Science',
+        u'Business',
+        u'Health and Medicine',
+        u'Engineering',
+        u'Education',
+        u'Food',
+        u'Policy and Regulatory Affairs',
     ]
 
 class CareerVocabulary(StaticVocabulary):

@@ -12,12 +12,6 @@
     />
 
     <utility
-        name="agsci.common.degree.career"
-        provides="zope.schema.interfaces.IVocabularyFactory"
-        component=".vocabulary.CareerVocabularyFactory"
-    />
-
-    <utility
         name="agsci.common.degree.club"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".vocabulary.ClubVocabularyFactory"

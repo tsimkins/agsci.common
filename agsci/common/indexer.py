@@ -39,7 +39,6 @@ provideAdapter(hasLeadImage, name='hasLeadImage')
 # Degree fields
 degree_index_field =[
     ('DegreeInterestArea', 'interest_area'),
-    ('DegreeCareer', 'career'),
 ]
 
 # Function that returns a "get a value of this field" function

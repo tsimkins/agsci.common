@@ -59,9 +59,14 @@
                     <tr>
                         <td>
                             <div class="explorer-label">
-                                <span>Career Opportunities</span>
+                                <span>Career Examples</span>
                             </div>
                             <div>
+                                <p>
+                                    Here are just a few examples of what our
+                                    alumni are doing with a degree from the
+                                    College of Agricultural Sciences:
+                                </p>
                                 <ul tal:condition="i/career|nothing">
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />
@@ -191,9 +196,14 @@
                              tal:repeat="i view/degrees">
                         <td>
                             <div class="explorer-label">
-                                <span>Career Opportunities</span>
+                                <span>Career Examples</span>
                             </div>
                             <div>
+                                <p>
+                                    Here are just a few examples of what our
+                                    alumni are doing with a degree from the
+                                    College of Agricultural Sciences:
+                                </p>
                                 <ul tal:condition="i/career|nothing">
                                     <li tal:repeat="j i/career"
                                         tal:content="j" />

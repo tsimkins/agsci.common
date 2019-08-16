@@ -47,7 +47,8 @@ class IDegree(model.Schema):
     career = schema.List(
         title=_(u"Careers"),
         description=_(u""),
-        value_type=schema.Choice(vocabulary="agsci.common.degree.career"),
+        value_type=schema.TextLine(required=True),
+        required=False,
     )
 
     club = schema.List(

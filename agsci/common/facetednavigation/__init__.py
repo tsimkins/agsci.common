@@ -18,13 +18,12 @@ class DegreeContainerCriteria(_Criteria):
     def idx(self, f):
         return {
             'interest_area' : 'DegreeInterestArea',
-            'career' : 'DegreeCareer',
         }.get(f, f)
 
     def getFields(self):
 
         fields = [x[1] for x in degree_index_field]
-        
+
         def sort_order(x):
             try:
                 return fields.index(x)
@@ -89,7 +88,7 @@ class DegreeContainerCriteria(_Criteria):
         return cache[key]
 
     def __criteria(self):
-    
+
         criteria = [
             Criterion(
                 widget="criteria_degree_explorer",
