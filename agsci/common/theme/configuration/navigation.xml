@@ -230,16 +230,19 @@
                             <title hidden="True">Links</title>
                             <items>
                                 <item>
+                                    <link>admissions/undergraduate/request</link>
                                     <title>Request Information</title>
                                     <description>Explore Majors and Career Pathways</description>
                                     <icon>fa-info-circle</icon>
                                 </item>
                                 <item>
+                                    <link>admissions/undergraduate/visit</link>
                                     <title>Schedule a Visit</title>
                                     <description>Come to University Park</description>
                                     <icon>fa-map-marked-alt</icon>
                                 </item>
                                 <item>
+                                    <link>https://admissions.psu.edu/apply/</link>
                                     <title>Application Procedures</title>
                                     <description>Learn More about How to Apply</description>
                                     <icon>fa-list-alt</icon>
@@ -305,6 +308,10 @@
                             <link>admissions/graduate</link>
                             <items>
                                 <item>
+                                    <title>How to Apply</title>
+                                    <link>admissions/graduate/apply</link>
+                                </item>
+                                <item>
                                     <title>Schedule a Visit</title>
                                     <link>admissions/graduate/visit</link>
                                 </item>
@@ -328,16 +335,19 @@
                             <title hidden="True">Links</title>
                             <items>
                                 <item>
+                                    <link>admissions/undergraduate/request</link>
                                     <title>Request Information</title>
                                     <description>Explore Majors and Career Pathways</description>
                                     <icon>fa-info-circle</icon>
                                 </item>
                                 <item>
+                                    <link>admissions/undergraduate/visit</link>
                                     <title>Schedule a Visit</title>
                                     <description>Come to University Park</description>
                                     <icon>fa-map-marked-alt</icon>
                                 </item>
                                 <item>
+                                    <link>https://admissions.psu.edu/apply/</link>
                                     <title>Application Procedures</title>
                                     <description>Learn More about How to Apply</description>
                                     <icon>fa-list-alt</icon>
@@ -502,6 +512,11 @@ the spotted lanternfly.
                             <link>about/strategic</link>
                         </item>
 
+                        <item>
+                            <title>History of the College</title>
+                            <link>about/history</link>
+                        </item>
+
                     </group>
                     <group>
                         <item>
@@ -518,6 +533,12 @@ the spotted lanternfly.
                             <title>Supporting the College</title>
                             <link>support</link>
                         </item>
+
+                        <item>
+                            <title>Ag Journeys</title>
+                            <link>ag-journeys</link>
+                        </item>
+
                     </group>
                     <group>
                         <item type="cta">
