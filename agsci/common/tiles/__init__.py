@@ -300,13 +300,13 @@ class CTATile(BaseTile):
     @property
     def button_width_class(self):
         if self.is_portlet:
-            return 'w-75'
+            return 'w-100'
         return ''
 
     @property
     def button_padding_class(self):
         if self.is_portlet:
-            return 'px-1'
+            return 'px-0 mx-3'
         return ''
 
 class LargeCTATile(BaseTile):
