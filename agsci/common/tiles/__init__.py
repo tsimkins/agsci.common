@@ -355,6 +355,8 @@ class ScooterTile(ConditionalTemplateTile):
 
 class SkeeterTile(ConditionalTemplateTile):
 
+    __section_class__ = 'container-fluid'
+
     @property
     def max_items(self):
         return {

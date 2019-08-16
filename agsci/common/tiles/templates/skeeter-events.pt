@@ -15,7 +15,7 @@
         tal:condition="title"
         tal:content="title" />
 
-    <div class="container pb-5"
+    <div class="pb-5"
          tal:define="i view/featured|nothing"
          tal:condition="i|nothing">
 
@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="container">
+    <div>
 
         <div class="card-deck card-deck-${view/event_items_count}up card-deck-events justify-content-left">
 

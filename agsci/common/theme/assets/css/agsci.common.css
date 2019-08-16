@@ -8410,8 +8410,8 @@ FORM - BASIC
     margin-top: 1rem; }
 
 blockquote {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 2rem 0;
   color: #314D64;
   text-align: left;
@@ -8439,13 +8439,13 @@ blockquote {
 
 @media (min-width: 576px) {
   blockquote {
-    padding: 2rem 3rem; }
+    padding: 1rem 3rem; }
 
   .home blockquote {
     padding: 1.5rem; } }
 @media (min-width: 992px) {
   blockquote {
-    padding: 2rem 6rem;
+    padding: 1rem 3rem;
     font-size: 1.75rem; }
 
   .home blockquote {
