@@ -15,14 +15,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav py-0 mx-auto dropdown-selectors">
-    
+
                 <tal:li tal:repeat="l1 nav/items/item">
-    
+
                     <li tal:attributes="class klass"
                         tal:define="item_id python:view.label(l1.title.cdata);
                                     hidden l1/hidden/cdata|nothing;
                                     klass python: hidden and 'dropdown d-lg-none' or 'dropdown'">
-    
+
                         <a tal:content="l1/title/cdata"
                            tal:attributes="id item_id;
                                            href python: view.link(l1)"
@@ -31,7 +31,7 @@
                            data-toggle="dropdown"
                            aria-haspopup="true"
                            aria-expanded="false" />
-    
+
                         <button
                             class="dropdown-toggle-button"
                             role="button"
@@ -39,86 +39,88 @@
                             aria-haspopup="true"
                             aria-expanded="false"><i
                                 class="fas fa-lg fa-angle-down"></i></button>
-    
+
                         <div
                             tal:attributes="aria-labelledby item_id"
                             class="dropdown-menu dropdown-menu-light">
-    
+
                             <div class="container px-0">
-    
+
                                 <div class="row mx-0">
-    
+
                                     <div class="col-12 col-md-6 col-lg-3 d-none d-lg-block">
-    
+
                                         <p
                                             tal:content="l1/title/cdata"
                                             class="main-nav-section-head" />
-    
+
                                         <div tal:condition="l1/image|nothing">
-    
+
                                             <a class="nav-img-preview"
                                                 tal:define="image l1/image|nothing;
                                                             image_link python: view.link(image)"
                                                 tal:omit-tag="not:image_link"
                                                 tal:attributes="href image_link">
-    
+
                                                 <div>
                                                     <img tal:define="src image/src/cdata/strip|nothing"
-    
+
                                                         tal:attributes="src string:${view/portal_url}/${src}"
                                                         alt=""
                                                         class="w-100" />
                                                 </div>
-    
+
                                                 <p tal:define="title image/title/cdata|nothing"
                                                    tal:condition="title"
                                                    tal:content="title" />
-    
+
                                             </a>
-    
+
                                         </div>
-    
+
                                     </div>
-    
+
                                     <tal:group
                                         tal:repeat="group l1/items/group|nothing">
-    
+
                                         <div class="col-12 col-md-6 col-lg-3">
-    
+
                                             <ul class="nav flex-column d-lg-none"
                                                 tal:condition="repeat/group/start|nothing">
-    
-                                                <li class="nav-item section-header">
+
+                                                <li class="nav-item section-header"
+                                                    tal:define="link_url python: view.link(l1)"
+                                                    tal:condition="link_url">
                                                     <a
                                                         tal:content="string:${l1/title/cdata} Overview"
                                                         tal:define="link_class python: view.link_class(l1)"
-                                                        tal:attributes="href python: view.link(l1);
+                                                        tal:attributes="href link_url;
                                                                         class string:nav-link ${link_class}" />
                                                 </li>
                                             </ul>
-    
+
     <tal:block
         tal:repeat="l2 group/item|nothing">
-    
+
         <tal:block
                 tal:define="item_type python:view.type(l2)">
-    
+
             <tal:item
                 tal:condition="python: item_type == 'text'">
                 <ul class="nav flex-column">
-    
+
                     <li class="nav-item">
                         <p class="mt-3" tal:content="l2/cdata|nothing" />
                     </li>
                 </ul>
-    
+
             </tal:item>
-    
+
             <tal:item
                 tal:condition="python: item_type == 'nav'">
-    
+
                 <ul class="nav flex-column">
-    
+
                     <li class="nav-item section-header"
                         tal:condition="not: python:view.hidden(l2.title)">
                         <a
@@ -127,7 +129,7 @@
                             tal:attributes="href python: view.link(l2);
                                             class string:nav-link ${link_class}" />
                     </li>
-    
+
                     <li tal:repeat="l3 l2/items/item|nothing"
                         class="nav-item">
                         <a
@@ -137,29 +139,29 @@
                                             class string:nav-link ${link_class}" />
                     </li>
                 </ul>
-    
+
             </tal:item>
-    
+
             <tal:item
                 tal:condition="python: item_type == 'cta'">
-    
+
     <div class="cta-block">
         <a tal:repeat="l3 l2/items/item|nothing"
            tal:attributes="href python: view.link(l3);
                            class string:nav-cta cta d-flex align-items-center">
-    
+
             <i
                 tal:attributes="class string:fas fa-lg ${l3/icon/cdata} fa-fw" />
-    
+
             <div tal:content="l3/title/cdata" />
         </a>
     </div>
             </tal:item>
-    
+
         </tal:block>
     </tal:block>
-    
-    
+
+
                                         </div>
                                     </tal:group>
                                 </div>
@@ -167,26 +169,26 @@
                         </div>
                     </li>
                 </tal:li>
-    
+
                 <!-- Search Dropdown -->
-    
+
                 <li class="nav-item dropdown d-flex align-items-center">
-    
+
                     <form class="form-inline my-2 my-lg-0">
-    
+
                         <input
                            class="form-control"
                            type="search"
                            placeholder="Search"
                            aria-label="Search">
-    
+
                         <button
                          class="btn btn-primary my-2 my-sm-0"
                          type="submit"><i
                              class="fa fa-search"></i></button>
-    
+
                      </form>
-    
+
                 </li>
             </ul>
         </div>

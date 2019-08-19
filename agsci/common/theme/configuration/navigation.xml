@@ -119,34 +119,6 @@
 
     <nav id="primary">
         <items>
-            <!-- Resources Dropdown -->
-            <item>
-                <title>Resources For</title>
-                <hidden>True</hidden>
-                <items>
-                    <group>
-                        <item>
-                            <title hidden="True">Students</title>
-                        </item>
-                        <item>
-                            <title>Industry</title>
-                            <link>industry</link>
-                        </item>
-                        <item>
-                            <title>Alumni</title>
-                            <link>alumni</link>
-                        </item>
-                        <item>
-                            <title>Faculty &amp; Staff</title>
-                            <link>faculty-staff</link>
-                        </item>
-                        <item>
-                            <title>Visitor &amp; Public</title>
-                            <link>visitor-and-public</link>
-                        </item>
-                    </group>
-                </items>
-            </item>
             <!-- Programs Dropdown -->
             <item>
                 <title>Academics</title>
@@ -559,6 +531,34 @@ the spotted lanternfly.
                                     <icon>fa-book-open</icon>
                                 </item>
                             </items>
+                        </item>
+                    </group>
+                </items>
+            </item>
+            <!-- Resources Dropdown -->
+            <item>
+                <title>Resources For</title>
+                <hidden>True</hidden>
+                <items>
+                    <group>
+                        <item>
+                            <title hidden="True">Students</title>
+                        </item>
+                        <item>
+                            <title>Industry</title>
+                            <link>industry</link>
+                        </item>
+                        <item>
+                            <title>Alumni</title>
+                            <link>alumni</link>
+                        </item>
+                        <item>
+                            <title>Faculty &amp; Staff</title>
+                            <link>faculty-staff</link>
+                        </item>
+                        <item>
+                            <title>Visitor &amp; Public</title>
+                            <link>visitor-and-public</link>
                         </item>
                     </group>
                 </items>
