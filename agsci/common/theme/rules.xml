@@ -92,6 +92,11 @@
 
     </rules>
 
+    <!-- Drop items for search view -->
+    <rules css:if-content="body.template-search">
+        <drop css:content="#portal-breadcrumbs" />
+    </rules>
+
     <!-- Drop portlet manager div -->
     <rules css:if-not-content="body.viewpermission-portlets-manage-portlets">
         <drop css:theme="#manage-portlets" />

@@ -1,3 +1,5 @@
+@import 'pagination';
+
 @mixin link_color() {
     a, a:visited,
     a:active,
@@ -899,4 +901,14 @@ body:not(.portaltype-agsci_homepage_college) {
 
 #public-tags-filter {
     font-size: 0.9rem;
+}
+
+body.template-search {
+    ol.searchResults {
+        padding-left: 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
 }

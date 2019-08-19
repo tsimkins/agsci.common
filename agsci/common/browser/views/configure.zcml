@@ -448,5 +448,14 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Search View -->
+    <browser:page
+        name="search"
+        class="Products.CMFPlone.browser.search.Search"
+        permission="zope2.View"
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        template="templates/search.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
 
 </configure>

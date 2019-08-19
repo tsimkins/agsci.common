@@ -33,7 +33,7 @@
        tal:condition="text"
        tal:content="structure python:context.text.output_relative_to(view.context)" />
 
-  <tal:results define="batch view/batch">
+  <tal:results define="batch view/batch|nothing">
     <metal:listingmacro define-macro="listing">
       <tal:listing condition="batch">
         <section class="entries container px-2 px-md-0" metal:define-slot="entries"
@@ -68,7 +68,7 @@
                         <div class="a px-0 pb-1 mb-1 summary"
                                 tal:content="item_title" />
 
-                        <tal:byline condition="view/show_about">
+                        <tal:byline condition="view/show_about|nothing">
                             <div class="documentByLine discreet">
                                 &mdash;
                                 <tal:name tal:condition="item_creator"

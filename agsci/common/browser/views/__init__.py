@@ -1,4 +1,4 @@
-from Acquisition import aq_base
+from Acquisition import aq_base, aq_inner
 from BTrees.OOBTree import OOBTree
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -7,6 +7,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collective.z3cform.datagridfield import DictRow
 from jinja2 import Environment, FileSystemLoader
 from plone import api
+from plone.app.contenttypes.behaviors.collection import ICollection
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
 from plone.app.layout.sitemap.sitemap import SiteMapView as _SiteMapView
 from plone.app.layout.sitemap.sitemap import _render_cachekey
@@ -477,8 +478,47 @@ class CollectionView(FolderView):
 
     batch_size = 99999
 
-    def results(self):
-        return self.context.queryCatalog()
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    @property
+    def collection_behavior(self):
+        return ICollection(aq_inner(self.context))
+
+    @property
+    def b_size(self):
+        return getattr(self, '_b_size', self.collection_behavior.item_count)
+
+    @property
+    def b_start(self):
+        b_start = getattr(self.request, 'b_start', None) or 0
+        return int(b_start)
+
+    def results(self, **kwargs):
+        """Return a content listing based result set with results from the
+        collection query.
+        :param **kwargs: Any keyword argument, which can be used for catalog
+                         queries.
+        :type  **kwargs: keyword argument
+        :returns: plone.app.contentlisting based result set.
+        :rtype: ``plone.app.contentlisting.interfaces.IContentListing`` based
+                sequence.
+        """
+        # Extra filter
+        contentFilter = dict(self.request.get('contentFilter', {}))
+        contentFilter.update(kwargs.get('contentFilter', {}))
+        kwargs.setdefault('custom_query', contentFilter)
+        kwargs.setdefault('batch', True)
+        kwargs.setdefault('b_size', self.b_size)
+        kwargs.setdefault('b_start', self.b_start)
+
+        results = self.collection_behavior.results(**kwargs)
+        return results
+
+    def batch(self):
+        # collection is already batched.
+        return self.results()
 
 class PhotoFolderView(FolderView):
 
