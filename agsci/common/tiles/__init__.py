@@ -343,7 +343,7 @@ class GonzoTile(ConditionalTemplateTile):
         return 'gonzo-%s.pt' % self.align
 
 class RowlfTile(BaseTile):
-    __section_class = 'journey-preview'
+    __section_class__ = 'journey-preview'
     __border_top__ = __border_bottom__ = True
 
 class ScooterTile(ConditionalTemplateTile):
