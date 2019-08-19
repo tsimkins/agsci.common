@@ -17,15 +17,31 @@
         tal:condition="title" />
 
     <div tal:attributes="class view/klass|nothing"
-         tal:define="vertical view/vertical|nothing">
+         tal:define="vertical view/vertical|nothing;
+                     show_image view/show_image|nothing">
 
         <tal:people tal:repeat="context view/people|nothing">
+            <tal:image
+                tal:condition="show_image">
 
-            <div tal:condition="not: vertical"
-                 tal:replace="structure context/@@card_view"/>
+                <div tal:condition="not: vertical"
+                     tal:replace="structure context/@@card_view_image"/>
 
-            <div tal:condition="vertical"
-                 tal:replace="structure context/@@card_view_vertical" />
+                <div tal:condition="vertical"
+                     tal:replace="structure context/@@card_view_vertical_image" />
+
+            </tal:image>
+
+            <tal:no-image
+                tal:condition="not:show_image">
+
+                <div tal:condition="not: vertical"
+                     tal:replace="structure context/@@card_view"/>
+
+                <div tal:condition="vertical"
+                     tal:replace="structure context/@@card_view_vertical" />
+
+            </tal:no-image>
 
         </tal:people>
 

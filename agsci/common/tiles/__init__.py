@@ -441,6 +441,10 @@ class SkeeterTile(ConditionalTemplateTile):
 class AnimalTile(BaseTile):
 
     @property
+    def show_image(self):
+        return self.get_valid_value('show_image')
+
+    @property
     def klass(self):
         if self.vertical:
             return "card-deck card-deck-%sup mx-2 mb-3" % self.count
@@ -461,7 +465,16 @@ class AnimalTile(BaseTile):
             'sort_on' : 'sortable_title',
         })
 
-        return [x.getObject() for x in results]
+        def sort_order(_):
+            try:
+                return _ids.index(_.getId())
+            except ValueError:
+                return 99999
+
+        return sorted(
+            [x.getObject() for x in results],
+            key=sort_order
+        )
 
 class PepeTheKingPrawnTile(GonzoTile):
 

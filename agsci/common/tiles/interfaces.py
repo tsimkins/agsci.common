@@ -552,6 +552,13 @@ class IAnimalTile(Interface):
         required=False,
     )
 
+    show_image = schema.Bool(
+        title=_(u"Show Person Image?"),
+        description=_(u""),
+        required=False,
+        default=True,
+    )
+
     count = schema.Choice(
         title=_(u"Count"),
         values=[1,2,3,4],

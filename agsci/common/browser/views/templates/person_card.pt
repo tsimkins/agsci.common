@@ -5,7 +5,7 @@
 
         <div class="row mx-0">
             <div tal:attributes="class view/card_image_class"
-                 tal:condition="image">
+                 tal:condition="view/show_image|nothing">
                 <div class="card-img-crop">
                     <img tal:attributes="alt view/name/title|nothing;
                                             title view/name/title|nothing;

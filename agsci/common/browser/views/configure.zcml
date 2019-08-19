@@ -224,6 +224,26 @@
         template="templates/person_card.pt"
     />
 
+    <!-- Person Card View (Image)-->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view_image"
+        class=".PersonCardImageView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
+    <!-- Person Card View (Vertical/Image)-->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view_vertical_image"
+        class=".PersonCardVerticalImageView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
     <!-- Person Card View (Vertical, No Border)-->
     <browser:page
         for="agsci.common.content.person.person.IPerson"
