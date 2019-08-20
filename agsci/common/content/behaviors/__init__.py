@@ -203,6 +203,11 @@ class ISocialMediaBase(model.Schema):
         required=False,
     )
 
+    instagram_url = schema.TextLine(
+        title=_(u"Instagram URL"),
+        required=False,
+    )
+
     linkedin_url = schema.TextLine(
         title=_(u"LinkedIn URL"),
         required=False,
@@ -268,5 +273,6 @@ class ISocialContact(ISocialMediaBase, IContact):
     form.order_after(facebook_url='fax_number')
     form.order_after(twitter_url='facebook_url')
     form.order_after(youtube_url='twitter_url')
-    form.order_after(linkedin_url='youtube_url')
+    form.order_after(instagram_url='youtube_url')
+    form.order_after(linkedin_url='instagram_url')
     form.order_after(newsletter_url='linkedin_url')

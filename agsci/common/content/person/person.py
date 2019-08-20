@@ -22,7 +22,7 @@ from agsci.common.permissions import DIRECTORY_EDITOR
 ACTIVE_REVIEW_STATES = ('published',)
 
 social_media_fields = [
-    'twitter_url', 'facebook_url', 'youtube_url', 'linkedin_url',
+    'twitter_url', 'facebook_url', 'youtube_url', 'instagram_url', 'linkedin_url',
 ]
 
 contact_fields = [

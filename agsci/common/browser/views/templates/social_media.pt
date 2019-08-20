@@ -10,6 +10,7 @@
         tal:define="twitter_url string:https://www.twitter.com;
                     facebook_url string:https://www.facebook.com;
                     youtube_url string:https://www.youtube.com;
+                    instagram_url string:https://www.instagram.com;
                     linkedin_url string:https://www.linkedin.com;">
 
 
@@ -17,7 +18,7 @@
                 metal:define-macro="social-media">
 
                 <ul class="list-inline list-inline-social"
-                    tal:define="social_media python: any([twitter_url, facebook_url, youtube_url, linkedin_url]);"
+                    tal:define="social_media python: any([twitter_url, facebook_url, youtube_url, instagram_url, linkedin_url]);"
                     tal:condition="social_media">
 
                     <li tal:condition="facebook_url">
@@ -38,6 +39,13 @@
                         <a class="no-border"
                            tal:attributes="href youtube_url">
                             <em class="title fab fa-2x fa-fw fa-youtube-square"></em>
+                        </a>
+                    </li>
+
+                    <li tal:condition="instagram_url">
+                        <a class="no-border"
+                           tal:attributes="href instagram_url">
+                            <em class="title fab fa-2x fa-fw fa-instagram"></em>
                         </a>
                     </li>
 
