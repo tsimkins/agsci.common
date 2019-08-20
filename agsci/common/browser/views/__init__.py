@@ -550,6 +550,9 @@ class DirectoryView(FolderView):
     def person_view(self, o):
         return o.restrictedTraverse('view')
 
+    def show_short_bio(self):
+        return not not getattr(self.context, 'show_short_bio', False)
+
 class EventView(_EventView, BaseView):
 
     data = None

@@ -96,11 +96,19 @@
                                             </div>
                                             </address>
 
+
+
                                             <a tal:attributes="href context/absolute_url|nothing"
                                                class="d-inline-block d-sm-none btn btn-light-creek-outline mt-2 ml-3">Full Bio</a>
 
 
                                         </div>
+
+<div class="html mt-3"
+     tal:define="short_bio context/short_bio/output|nothing;
+                 show_short_bio view/show_short_bio|nothing;"
+     tal:condition="python: show_short_bio and short_bio"
+     tal:content="structure short_bio" />
                                     </div>
                                 </div>
                             </div>

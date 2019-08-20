@@ -54,6 +54,11 @@ class IPersonListing(model.Schema):
         value_type=schema.Choice(vocabulary="agsci.common.person.groups"),
     )
 
+    show_short_bio = schema.Bool(
+        title=_(u"Show Short Bio"),
+        description=_(u"Only works on detail view, not table view."),
+        required=False,
+    )
 
 class PersonListing(Container):
 
