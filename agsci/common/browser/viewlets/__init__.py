@@ -563,5 +563,6 @@ class TileLinksViewlet(ViewletBase):
         return self.check.check_link(link)
 
     @property
+    @memoize
     def links(self):
         return self.check.value()

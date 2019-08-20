@@ -1,5 +1,7 @@
-<div id="tile-links"
-    class="m-5 html">
+<div tal:condition="links"
+     tal:define="links view/links|nothing"
+     id="tile-links"
+     class="m-5 html">
 
     <h2 class="mt-0">Tile Links</h2>
 
@@ -14,7 +16,7 @@
         </thead>
 
         <tbody>
-            <tr tal:repeat="i view/links">
+            <tr tal:repeat="i links">
                 <td tal:content="i/tile_type|nothing" />
                 <td tal:content="i/label" />
                 <td>
