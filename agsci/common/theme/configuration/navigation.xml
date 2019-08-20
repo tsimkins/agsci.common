@@ -124,8 +124,10 @@
                 <title>Academics</title>
                 <link>academics</link>
                 <image>
+                    <title>Learn first-hand about our undergraduate programs! Attend our October 14 Open House.</title>
+                    <link>admissions/undergraduate/visit/college-of-agricultural-sciences-open-house</link>
                     <src>
-                        ++resource++agsci.common/assets/images/navigation/research.jpg
+                        ++resource++agsci.common/assets/images/navigation/spotlight-academics-open-house.jpg
                     </src>
                 </image>
                 <items>
@@ -235,7 +237,11 @@
                 <title>Admissions</title>
                 <link>admissions</link>
                 <image>
-                    <src>++resource++agsci.common/assets/images/navigation/admissions.jpg</src>
+                    <title>The undergraduate admissions application period is open! Apply by November 1 for an early-action decision.</title>
+                    <link>admissions/undergraduate</link>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/spotlight-admissions-apply-now.jpg
+                    </src>
                 </image>
                 <items>
                     <group>
@@ -340,7 +346,9 @@
                 <title>Research</title>
                 <link>research</link>
                 <image>
-                    <src>++resource++agsci.common/assets/images/navigation/research.jpg</src>
+                    <title>Ag Sciences Research is impacting real-world problems in Pennsylvania and around the globe.</title>
+                    <link>research/impacts</link>
+                    <src>++resource++agsci.common/assets/images/navigation/spotlight-research.jpg</src>
                 </image>
                 <items>
                     <group>
@@ -416,8 +424,7 @@
                     <link>https://extension.psu.edu/spotted-lanternfly</link>
                     <src>++resource++agsci.common/assets/images/navigation/slf.jpg</src>
                     <title>
-                        Leading the fight against
-the spotted lanternfly.
+                        Discover how we're leading the fight against the Spotted Lanternfly.
                     </title>
                 </image>
                 <items>
@@ -470,6 +477,8 @@ the spotted lanternfly.
                 <title>About</title>
                 <link>about</link>
                 <image>
+                    <title>It all started with Penn State's land-grant mission.</title>
+                    <link>about/history</link>
                     <src>++resource++agsci.common/assets/images/navigation/about.jpg</src>
                 </image>
                 <items>
