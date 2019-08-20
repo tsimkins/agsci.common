@@ -112,7 +112,7 @@
 			background: rgba($color-ps-coaly-gray,0.075);
 			border-left: 0.5rem solid $color-ps-creek;
 			font-weight: $font-weight-bold;
-			} 
+			}
 		}
 	
 	 a {
@@ -192,7 +192,7 @@
 			font-variant: normal;
 			text-rendering: auto;
 			-webkit-font-smoothing: antialiased;
-			font-weight: 900;  
+			font-weight: 900;
 		    font-family: 'Font Awesome 5 Free';
 			}
 		}
@@ -209,7 +209,7 @@
 		margin-left: 0;
 		margin-right: 0.5rem;
 		font-style: italic;
-		border-left: 0.25rem solid $color-ps-coaly-gray-light15; 
+		border-left: 0.25rem solid $color-ps-coaly-gray-light15;
 		
 		&::before {
 			content: none;
@@ -225,6 +225,10 @@
 		
 .side-nav .dropdown {
 	position: relative;
+
+    a.children {
+        padding-right: 2.25em;
+    }
 
 	[data-toggle="collapse"] {
 		position: relative;

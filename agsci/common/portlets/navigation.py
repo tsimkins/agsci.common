@@ -75,6 +75,6 @@ class Renderer(_Renderer):
             return ''
 
         if children:
-            return 'd-none d-lg-block'
+            return 'd-none d-lg-block children'
 
         return ''

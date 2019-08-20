@@ -12915,6 +12915,8 @@ main {
 
 .side-nav .dropdown {
   position: relative; }
+  .side-nav .dropdown a.children {
+    padding-right: 2.25em; }
   .side-nav .dropdown [data-toggle="collapse"] {
     position: relative;
     display: flex;
