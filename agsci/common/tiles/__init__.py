@@ -10,6 +10,7 @@ from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.portlets.portlets.navigation import NavtreeStrategy
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
 from plone.app.textfield.value import RichTextValue
+from plone.memoize.instance import memoize
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
 from urlparse import urlparse, parse_qs
@@ -34,6 +35,8 @@ class BaseTile(PersistentTile):
     __border_top__ = __border_bottom__ = False
 
     pt = pb = mt = mb = 5
+
+    show_tile = True
 
     def set_data(self, data):
         self._Tile__cachedData = data
@@ -208,6 +211,7 @@ class BaseTile(PersistentTile):
         return self.get_valid_value('count')
 
     @property
+    @memoize
     def items(self):
         return self.get_items()
 
@@ -358,6 +362,10 @@ class SkeeterTile(ConditionalTemplateTile):
     __section_class__ = 'container-fluid'
 
     @property
+    def show_tile(self):
+        return not not self.items
+
+    @property
     def max_items(self):
         return {
             'pages' : 4,
@@ -434,6 +442,7 @@ class SkeeterTile(ConditionalTemplateTile):
             items = [x for x in items if x.UID != featured.UID]
 
         return items[:self.max_items]
+
     @property
     def template(self):
         return 'skeeter-%s.pt' % self.style
