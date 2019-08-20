@@ -33,7 +33,7 @@ HEADER - COLLEGE LEVEL
 	}
 
 	
-/* General Header 
+/* General Header
 --------------------------------------------- */	
 
 header {
@@ -51,7 +51,7 @@ header {
 	
 	}
 
-header.affix { 
+header.affix {
 	position: fixed;  /* this breaks scrolling of nav on mobile - this needs to be remedied  */
 	top: 0;
 	left: 0;
@@ -64,7 +64,7 @@ header.affix {
 		position: relative;
 		}
 	
-	header.affix { 
+	header.affix {
 		position: fixed;
 		}
 	}
@@ -340,14 +340,14 @@ header .navbar {
 		background-color: $white;
 		}
 	
-	header .navbar .navbar-collapse { 
+	header .navbar .navbar-collapse {
 		margin-top: 0;
 		}
 
 	.navbar-expand-lg {
 	    flex-flow: row;
 	    justify-content: flex-start;
-		} 
+		}
 	}
 	
 /* Mega Menu Toggles
@@ -491,7 +491,7 @@ p.main-nav-section-head {
 		padding: 1.5rem 0;
 		border-top: $border-base;
 		}
-	 
+	
  	.navbar-collapse {
 	 	top: 0; /* only offset for mobile */
 		padding-right: 0;
@@ -556,8 +556,8 @@ p.main-nav-section-head {
 		}
 	}
 
-@include media-breakpoint-up(xl) {
- 
+@include media-breakpoint-up(sm) {
+
 	.navbar-expand-lg .navbar-nav .nav-link {
 		margin-right: 0.125rem;
 		margin-left: 0.125rem;
@@ -572,7 +572,7 @@ p.main-nav-section-head {
 .college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) { /* hide ALL non-dropdown or non-section header nav item links for desktop */
 	display: none;
 	
-	@include media-breakpoint-up(md) { /* show all nav in mega menu for expanded menu */
+	@include media-breakpoint-up(lg) { /* show all nav in mega menu for expanded menu */
 		display: block;
 		}
 	}
@@ -687,7 +687,7 @@ p.main-nav-section-head {
 		font-weight: $font-weight-bold;
 		font-family: $font-family-sans-serif;
 		font-size: $font-size-base;
-		}    
+		}
 	}
 
 .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
@@ -704,13 +704,13 @@ p.main-nav-section-head {
 		}
 	}
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
 
 	.navbar-expand-lg .navbar-nav .nav-link {
 		font-size: $small2-size;
 		}
 	
-	.navbar-expand-lg .navbar-nav .dropdown-menu .nav-link { 
+	.navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
 		font-size: $small3-size; /* mega menu link size */
 		}
 	}
@@ -818,7 +818,7 @@ p.main-nav-section-head {
 		font-size: $small1-size; /* dropdown selector size  */
 		}
 	
-	.navbar-expand-lg .navbar-nav .dropdown-menu .nav-link { 
+	.navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
 		font-size: $small3-size; /* mega menu link size */
 		}
 	}

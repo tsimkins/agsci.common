@@ -8612,7 +8612,7 @@ HEADER - COLLEGE LEVEL
 .hide-affix-inline-block {
   display: inline-block; }
 
-/* General Header 
+/* General Header
 --------------------------------------------- */
 header {
   transition: all 0.375s ease-in-out;
@@ -8978,7 +8978,7 @@ p.main-nav-section-head {
 
   .department-level .navbar .dropdown-menu {
     min-width: 250px; } }
-@media (min-width: 1200px) {
+@media (min-width: 576px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     margin-right: 0.125rem;
     margin-left: 0.125rem;
@@ -8989,7 +8989,7 @@ p.main-nav-section-head {
 .college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) {
   /* hide ALL non-dropdown or non-section header nav item links for desktop */
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) {
       /* show all nav in mega menu for expanded menu */
       display: block; } }
@@ -9083,7 +9083,7 @@ p.main-nav-section-head {
   .dropdown-menu.show {
     display: block; }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     font-size: 0.825rem; }
 
