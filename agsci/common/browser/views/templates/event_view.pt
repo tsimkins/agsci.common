@@ -27,6 +27,77 @@
       <tal:text content="structure data/text" />
     </div>
 
+        <metal:register define-macro="register"
+            tal:condition="context/free_registration|nothing"
+            tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
+                        canViewRegistrations nocall: registration_view/canViewRegistrations;
+                        allowRegistration nocall: registration_view/allowRegistration;
+                        can_view_registrations python: canViewRegistrations(context);
+                        registration_allowed python: allowRegistration(context);
+                        registration_deadline context/free_registration_deadline|nothing;
+                        attendee_limit context/free_registration_attendee_limit|nothing;
+                        attendee_count registration_view/getAttendeeCount|nothing;
+                        registration_url registration_view/registrationURL;
+                        isAnon registration_view/anonymous|nothing">
+
+            <h2>Registration</h2>
+
+            <metal:cost define-macro="registration_cost">
+            <div class="event-registration" tal:condition="registration_allowed">
+                <h3>Cost</h3>
+                <p>
+                    There is no fee to attend this event.  However, pre-registration is
+                    <span tal:condition="not: attendee_limit">requested.</span>
+                    <span tal:condition="attendee_limit">required.</span>
+                </p>
+            </div>
+            </metal:cost>
+
+            <metal:deadline define-macro="registration_deadline">
+            <div class="event-registration" tal:condition="registration_deadline">
+                <tal:open condition="registration_allowed">
+                    <h3>Registration deadline</h3>
+                    <span tal:replace="python:toLocalizedTime(registration_deadline, long_format=1)" />
+                </tal:open>
+            </div>
+            </metal:deadline>
+
+            <metal:closed define-macro="registration_closed">
+            <div class="event-registration" tal:condition="not: registration_allowed">
+                <p>Registration for this event is closed.</p>
+            </div>
+            </metal:closed>
+
+            <div class="event-registration" metal:define-macro="registration_count" tal:condition="can_view_registrations">
+            <h3>Registration Count</h3>
+            <p>
+                <span tal:condition="attendee_limit" tal:content="string:${attendee_count}/${attendee_limit} attendees." />
+                <span tal:condition="not: attendee_limit" tal:content="string:${attendee_count}
+                attendees." />
+            </p>
+            </div>
+
+            <form tal:condition="python: (registration_allowed) or (not isAnon and not registration_allowed)"
+                class="event-registration event-registration-public"
+                tal:attributes="action registration_url"
+                method="post">
+                <input type="hidden" name="uid" tal:attributes="value context/UID" />
+                <p>
+                    <input type="submit" value="Register for this event" />
+                </p>
+            </form>
+
+            <form tal:condition="can_view_registrations"
+                class="event-registration"
+                tal:attributes="action string:${registration_url}/download_csv"
+                method="post">
+                <input type="hidden" name="uid" tal:attributes="value context/UID" />
+                <p>
+                    <input type="submit" class="button" value="Download Registration Information" /></p>
+            </form>
+
+        </metal:register>
+
   </div>
 
 </tal:def>
