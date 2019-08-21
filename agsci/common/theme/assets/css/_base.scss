@@ -912,3 +912,9 @@ body.template-search {
         }
     }
 }
+
+.required::after {
+    content: "\25A0";
+    color: #FF0000;
+    padding-left: 0.2em;
+}

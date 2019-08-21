@@ -791,6 +791,11 @@ body.template-search ol.searchResults {
   body.template-search ol.searchResults li {
     list-style-type: none; }
 
+.required::after {
+  content: "\25A0";
+  color: #FF0000;
+  padding-left: 0.2em; }
+
 .print-only-logo {
   display: none; }
 
