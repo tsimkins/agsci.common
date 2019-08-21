@@ -151,88 +151,84 @@
          tal:define="data view/data"
          tal:condition="data">
 
-            <-- Areas of Expertise -->
-            <div class="row align-items-start"
-                 tal:define="i data/areas_expertise|nothing"
-                 tal:condition="i/value|nothing">
+        <-- Areas of Expertise -->
+        <div class="row align-items-start"
+                tal:define="i data/areas_expertise|nothing"
+                tal:condition="i/value|nothing">
 
-                <div class="col-12 col-md-3">
-                     <h3 tal:content="i/title" />
-                </div>
+            <div class="col-12 col-md-3">
+                    <h3 tal:content="i/title" />
+            </div>
 
-                <div class="col-12 col-md-9">
+            <div class="col-12 col-md-9">
 
-                    <ul>
-                        <li tal:repeat="j i/value" tal:content="j"/>
-                    </ul>
-
-                </div>
+                <ul>
+                    <li tal:repeat="j i/value" tal:content="j"/>
+                </ul>
 
             </div>
 
-            <-- Websites/Social Media -->
+        </div>
 
-            <div class="row align-items-start"
-                 tal:define="i data/websites|nothing;
-                             twitter_url context/twitter_url|nothing;
-                             facebook_url context/facebook_url|nothing;
-                             youtube_url context/youtube_url|nothing;
-                             instagram_url context/instagram_url|nothing;
-                             linkedin_url context/linkedin_url|nothing;
-                             newsletter_url nothing;
-                             websites i/value|nothing;"
-                 tal:condition="websites|social_media|nothing">
+        <-- Websites/Social Media -->
 
-                <div class="col-12 col-md-3">
-                     <h3 tal:content="i/title" />
-                </div>
+        <div class="row align-items-start"
+                tal:define="i data/websites|nothing;
+                            twitter_url context/twitter_url|nothing;
+                            facebook_url context/facebook_url|nothing;
+                            youtube_url context/youtube_url|nothing;
+                            instagram_url context/instagram_url|nothing;
+                            linkedin_url context/linkedin_url|nothing;
+                            newsletter_url nothing;
+                            websites i/value|nothing;"
+                tal:condition="websites|social_media|nothing">
 
-                <div class="col-12 col-md-9">
+            <div class="col-12 col-md-3">
+                    <h3 tal:content="i/title" />
+            </div>
 
-                    <ul tal:condition="i/value">
-                        <li tal:repeat="j i/value">
-                            <a tal:attributes="href j/url|nothing"
-                                tal:content="j/title|j/url|nothing" />
-                        </li>
-                    </ul>
+            <div class="col-12 col-md-9">
 
-                    <metal:social-media
-                        metal:use-macro="context/social-media/macros/social-media" />
+                <ul tal:condition="i/value">
+                    <li tal:repeat="j i/value">
+                        <a tal:attributes="href j/url|nothing"
+                            tal:content="j/title|j/url|nothing" />
+                    </li>
+                </ul>
 
-                </div>
+                <metal:social-media
+                    metal:use-macro="context/social-media/macros/social-media" />
 
             </div>
 
-            <!-- Education -->
-            <div class="row align-items-start"
-                 tal:define="i data/education|nothing"
-                 tal:condition="i/value|nothing">
+        </div>
 
-                <div class="col-12 col-md-3">
-                     <h3 tal:content="i/title" />
-                </div>
+        <!-- Education -->
+        <div class="row align-items-start"
+                tal:define="i data/education|nothing"
+                tal:condition="i/value|nothing">
 
-                <div class="col-12 col-md-9">
+            <div class="col-12 col-md-3">
+                    <h3 tal:content="i/title" />
+            </div>
 
-                    <ul>
-                        <li tal:repeat="j i/value" tal:content="j"/>
-                    </ul>
+            <div class="col-12 col-md-9">
 
-                </div>
+                <ul>
+                    <li tal:repeat="j i/value" tal:content="j"/>
+                </ul>
 
             </div>
 
-            <!-- Bio -->
-            <div class="row align-items-start"
-                 tal:define="i context/bio|nothing"
-                 tal:condition="i/value|nothing">
+        </div>
 
-                <div class="col-12 col-md-3">
-                     <h3 tal:content="i/title" />
-                </div>
+        <!-- Bio -->
+        <div class="row align-items-start"
+                tal:define="i context/bio|nothing"
+                tal:condition="i">
 
-                <div class="col-12 col-md-9"
-                     tal:content="structure context/bio|nothing" />
+            <div class="col-12 col-md-9"
+                    tal:content="structure i/output" />
 
         </div>
 
