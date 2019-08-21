@@ -130,9 +130,9 @@ class PersonBlock(BaseBlock):
             if not border:
                 return o.restrictedTraverse('@@card_view_vertical_no_border')()
 
-            return o.restrictedTraverse('@@card_view_vertical')()
+            return o.restrictedTraverse('@@card_view_vertical_image')()
 
-        return o.restrictedTraverse('@@card_view')()
+        return o.restrictedTraverse('@@card_view_image')()
 
     def people(self, usernames, style=None, border=True):
 
