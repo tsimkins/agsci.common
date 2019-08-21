@@ -84,7 +84,10 @@ class NavigationViewlet(ViewletBase):
 
     def get_paths(self):
         results = self.portal_catalog.searchResults({
-            'object_provides' : 'plone.dexterity.interfaces.IDexterityContent'
+            'object_provides' : [
+                'plone.dexterity.interfaces.IDexterityContent',
+                'Products.PloneFormGen.interfaces.form.IPloneFormGenForm',
+            ]
         })
 
         site_path = "/".join(self.site.getPhysicalPath())
