@@ -124,10 +124,10 @@
                 <title>Academics</title>
                 <link>academics</link>
                 <image>
-                    <title>Learn first-hand about our undergraduate programs! Attend our October 14 Open House.</title>
-                    <link>admissions/undergraduate/visit/college-of-agricultural-sciences-open-house</link>
+                    <title>Compare our 17 diverse majors and find the best fit for you!</title>
+                    <link>academics/undergraduate/degree-explorer</link>
                     <src>
-                        ++resource++agsci.common/assets/images/navigation/spotlight-academics-open-house.jpg
+                        ++resource++agsci.common/assets/images/navigation/spotlight-academics-explorer.jpg
                     </src>
                 </image>
                 <items>
