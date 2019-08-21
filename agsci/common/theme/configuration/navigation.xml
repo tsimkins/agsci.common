@@ -11,11 +11,7 @@
                         <link>students</link>
                         <items>
                             <item>
-                                <title>Academics</title>
-                                <link>students/academics</link>
-                            </item>
-                            <item>
-                                <title>Advising</title>
+                                <title>Academic Advising</title>
                                 <link>students/advising</link>
                             </item>
                             <item>
@@ -27,12 +23,28 @@
                                 <link>students/clubs</link>
                             </item>
                             <item>
-                                <title>Student Life</title>
-                                <link>students/life</link>
+                                <title>Entrepreneurship and Innovation</title>
+                                <link>entrepreneur</link>
                             </item>
                             <item>
                                 <title>Graduate Student Resources</title>
                                 <link>students/graduate</link>
+                            </item>
+                            <item>
+                                <title>Research</title>
+                                <link>students/research</link>
+                            </item>
+                            <item>
+                                <title>Scholarships and Financial Aid</title>
+                                <link>students/scholarships</link>
+                            </item>
+                            <item>
+                                <title>Study Abroad</title>
+                                <link>international/study-abroad</link>
+                            </item>              
+                            <item>
+                                <title>Student Life</title>
+                                <link>students/life</link>
                             </item>
                         </items>
                     </item>
