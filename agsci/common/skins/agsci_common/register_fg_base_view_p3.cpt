@@ -1,8 +1,23 @@
-<tal:def define="portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
-                 fields python:here.fgFields(request);
-                 css python:here.getUniqueWidgetAttr(fields, 'helper_css');
-                 js python:here.getUniqueWidgetAttr(fields, 'helper_js');
-                 portal portal | context/@@plone_portal_state/portal">
+<tal:block metal:define-macro="master"
+           define="errors options/state/getErrors | python:{};
+                   schematas nothing;
+                   allow_tabbing python:False;
+                   fieldsets python:['default'];
+                   default_fieldset string:default;
+                   fieldset default_fieldset;
+                   fields python:here.fgFields(request);
+                   portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
+                   type_name here/getPortalTypeName|here/archetype_name;
+                   base_macros here/fg_edit_macros_p3/macros;
+                   edit_template python:'%s_edit' % portal_type;
+                   edit_macros python:path('here/%s/macros | nothing' % edit_template);
+                   header_macro edit_macros/header | header_macro | base_macros/header;
+                   typedescription_macro edit_macros/typedescription | typedescription_macro | base_macros/typedescription;
+                   body_macro edit_macros/body | body_macro | base_macros/body;
+                   footer_macro edit_macros/footer | footer_macro | base_macros/footer;
+                   css python:here.getUniqueWidgetAttr(fields, 'helper_css');
+                   js python:here.getUniqueWidgetAttr(fields, 'helper_js');
+                   portal portal | context/@@plone_portal_state/portal;">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xml:lang="en"
@@ -14,9 +29,7 @@
       i18n:domain="plone">
 
   <metal:head fill-slot="top_slot">
-    <tal:block define="edit_template python:'%s_edit' % portal_type;
-                       edit_macros python:path('here/%s/macros | nothing' % edit_template);
-                       macro edit_macros/topslot | nothing"
+    <tal:block define="macro edit_macros/topslot | nothing"
                     condition="macro">
       <metal:block use-macro="macro" />
     </tal:block>
@@ -56,46 +69,113 @@
     </tal:css>
   </metal:css>
 
+
   <body>
 
-    <metal:content-core fill-slot="content-core">
-      <metal:block define-macro="content-core">
-        <tal:def_macro define="errors options/state/getErrors | python:{};
-                         schematas nothing;
-                         allow_tabbing python:False;
-                         fieldsets python:['default'];
-                         default_fieldset string:default;
-                         fieldset default_fieldset;
-                         fields python:here.fgFields(request);
-                         portal_type python:here.getPortalTypeName().lower().replace(' ', '_');
-                         type_name here/getPortalTypeName|here/archetype_name;
-                         base_macros here/fg_edit_macros_p3/macros;
-                         edit_template python:'%s_edit' % portal_type;
-                         edit_macros python:path('here/%s/macros | nothing' % edit_template);
-                         header_macro edit_macros/header | header_macro | base_macros/header;
-                         typedescription_macro edit_macros/typedescription | typedescription_macro | base_macros/typedescription;
-                         body_macro edit_macros/body | body_macro | base_macros/body;
-                         footer_macro edit_macros/footer | footer_macro | base_macros/footer;">
+    <metal:fill fill-slot="content-title">
+        <tal:block
+            tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
+                        getEventByUID nocall: registration_view/getEventByUID;
+                        item python: getEventByUID();">
+                        
+        <h1 class="documentFirstHeading"
+            tal:condition="nocall: item">
 
-            <tal:if tal:condition="here/getFormPrologue | nothing">
-              <metal:field use-macro="python:context.widget('formPrologue', mode='view')">
-                  Body text
-              </metal:field>
-            </tal:if>
+            <span class="register-header">Register for Event</span> <span tal:content="item/Title" />
 
-            <metal:use_body use-macro="body_macro" />
+        </h1>
+        
+        <h1 class="documentFirstHeading"
+            tal:condition="not: nocall: item">Event not found</h1>
 
-            <tal:if tal:condition="here/getFormEpilogue | nothing">
-              <div style="clear:both">
-                <metal:field use-macro="python:context.widget('formEpilogue', mode='view')">
-                  Body text
-                </metal:field>
-              </div>
-            </tal:if>
+        </tal:block>
 
-        </tal:def_macro>
-      </metal:block>
-    </metal:content-core>
+    </metal:fill>
+
+    <metal:fill fill-slot="content-core">
+      <metal:main define-macro="content-core"
+            tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
+                        getEventByUID nocall: registration_view/getEventByUID;
+                        toLocalizedTime nocall:registration_view/toLocalizedTime;
+                        allowRegistration nocall: registration_view/allowRegistration;
+                        canViewRegistrations nocall: registration_view/canViewRegistrations;
+                        item python: getEventByUID();
+                        item_type item/portal_type|nothing;
+                        item_start item/start|item/StartDate|nothing;
+                        item_end item/end|item/EndDate|nothing;
+                        location item/location|nothing;
+                        map_link item/map_link|nothing;
+                        show_event_location python:False;
+                        registration_allowed python: allowRegistration(item);
+                        can_view_registrations python: canViewRegistrations(item);
+                        registration_deadline item/free_registration_deadline|nothing;
+                        attendee_limit item/free_registration_attendee_limit|nothing;
+                        attendee_count registration_view/getAttendeeCount;
+                        isAnon context/@@plone_portal_state/anonymous;">
+
+
+        <tal:register
+            tal:condition="nocall: item">
+
+            <p class="documentDescription"
+               tal:content="item/Description"
+               tal:condition="item/Description">
+                Description
+            </p>
+
+            <h2>Event Information</h2>
+
+            <p>
+                <strong>When</strong>
+                <span tal:replace="python:toLocalizedTime(item_start, end_time=item_end, long_format=1)" />
+            </p>
+        
+            <p tal:condition="location">
+                <strong>Where</strong>
+                <span tal:content="location" />
+            </p>
+
+            <metal:deadline metal:use-macro="item/event_view/macros/registration_cost" />
+
+            <metal:deadline metal:use-macro="item/event_view/macros/registration_deadline" />
+
+            <tal:status condition="can_view_registrations">
+
+                <h2>Event Registration Status</h2>
+
+                <metal:deadline metal:use-macro="item/event_view/macros/registration_closed" />
+
+                <metal:deadline metal:use-macro="item/event_view/macros/registration_count" />
+
+            </tal:status>
+
+            <tal:form condition="python: registration_allowed or not isAnon">
+
+            <h2>Registrant's Information</h2>
+
+            <div tal:replace="structure provider:plone.abovecontentbody" />
+
+                <tal:if tal:condition="here/getFormPrologue | nothing">
+                  <metal:field use-macro="python:context.widget('formPrologue', mode='view')">
+                      Body text
+                  </metal:field>
+                </tal:if>
+
+                <metal:use_body use-macro="body_macro" />
+
+                <tal:if tal:condition="here/getFormEpilogue | nothing">
+                  <metal:field use-macro="python:context.widget('formEpilogue', mode='view')">
+                      Body text
+                  </metal:field>
+                </tal:if>
+            </tal:form>
+        </tal:register>
+
+      </metal:main>
+    </metal:fill>
+
   </body>
+
 </html>
-</tal:def>
+
+</tal:block>
