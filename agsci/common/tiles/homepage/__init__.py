@@ -22,7 +22,16 @@ class NewsAndEventsTile(BaseTile):
 
     @property
     def more_news_link(self):
-        return self.get_more_items_link('target_news')
+        target_object = self.get_target_object('target_news')
+
+        if target_object:
+
+            parent = target_object.aq_parent
+
+            if parent and parent.Type() in ['Blog',]:
+                return parent.absolute_url()
+
+            return target_object.absolute_url()
 
     @property
     def more_events_link(self):
