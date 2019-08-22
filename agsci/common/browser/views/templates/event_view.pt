@@ -34,6 +34,7 @@
             tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
                         canViewRegistrations nocall: registration_view/canViewRegistrations;
                         allowRegistration nocall: registration_view/allowRegistration;
+                        toLocalizedTime nocall: registration_view/toLocalizedTime;
                         can_view_registrations python: canViewRegistrations(context);
                         registration_allowed python: allowRegistration(context);
                         registration_deadline context/free_registration_deadline|nothing;
