@@ -11,7 +11,7 @@ from zope.interface import implements, Interface
 import HTMLParser
 import csv
 
-from agsci.common.utilities import localize
+from agsci.common.utilities import localize, toLocalizedTime
 
 from . import BaseView
 
@@ -37,6 +37,9 @@ class IRegistrationView(Interface):
     def registrationURL(self):
         pass
 
+    def fgFields(self):
+        pass
+
     def getRegistrations(self, show_titles=True):
         pass
 
@@ -54,6 +57,16 @@ class RegistrationView(BrowserView):
         self.context = context
         self.request = request
 
+    def fgFields(self):
+        pass
+
+    def toLocalizedTime(self, time, long_format=None, time_only=None,
+                        end_time=None, format=None):
+
+        return toLocalizedTime(
+            time, long_format=long_format, time_only=time_only,
+            end_time=end_time, format=format)
+
     def getEventUID(self):
         if self.context.portal_type == 'Event':
             return self.context.UID()
@@ -61,6 +74,7 @@ class RegistrationView(BrowserView):
             return self.request.form.get('uid')
 
     def getEventByUID(self):
+
         uid = self.getEventUID()
 
         if uid:
@@ -95,7 +109,7 @@ class RegistrationView(BrowserView):
         if hasattr(event, 'free_registration_deadline'):
             registration_deadline = getattr(event, 'free_registration_deadline')
             if registration_deadline:
-                if now > registration_deadline:
+                if now > localize(registration_deadline):
                     return False
 
         if now > event.end:
