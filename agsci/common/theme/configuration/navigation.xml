@@ -563,7 +563,8 @@
                 <items>
                     <group>
                         <item>
-                            <title hidden="True">Students</title>
+                            <title>Students</title>
+                            <link>students</link>
                         </item>
                         <item>
                             <title>Industry</title>
