@@ -227,7 +227,7 @@
                 tal:define="i context/bio|nothing"
                 tal:condition="i">
 
-            <div class="col-12 col-md-9"
+            <div class="col-12 col-md-12"
                     tal:content="structure i/output" />
 
         </div>
