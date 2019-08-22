@@ -349,6 +349,15 @@
         layer="..interfaces.IThemeBrowserLayer"
     />
 
+    <!-- Event Redirect View -->
+    <browser:page
+        for="plone.event.interfaces.IEvent"
+        name="event_redirect_view"
+        class=".EventRedirectView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeBrowserLayer"
+    />
+
     <!-- News Item View -->
     <browser:page
         for="plone.app.contenttypes.interfaces.INewsItem"

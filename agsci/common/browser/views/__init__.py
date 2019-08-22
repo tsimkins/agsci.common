@@ -559,6 +559,28 @@ class EventView(_EventView, BaseView):
 
     index = ViewPageTemplateFile("templates/event_view.pt")
 
+class EventRedirectView(EventView):
+
+    @property
+    def event_url(self):
+        return getattr(self.context, 'event_url', None)
+
+
+    def __call__(self):
+
+        if self.anonymous and self.event_url:
+
+            RESPONSE =  self.request.RESPONSE
+
+            RESPONSE.setHeader(
+                'Cache-Control',
+                'max-age=0, s-maxage=3600, must-revalidate, public, proxy-revalidate'
+            )
+
+            return RESPONSE.redirect(self.event_url)
+
+        return self.index()
+
 class EventSummaryView(_EventSummaryView, BaseView):
 
     data = None

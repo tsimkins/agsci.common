@@ -27,8 +27,10 @@
       <tal:text content="structure data/text" />
     </div>
 
+    <tal:register
+        tal:condition="context/free_registration|nothing">
+
         <metal:register define-macro="register"
-            tal:condition="context/free_registration|nothing"
             tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
                         canViewRegistrations nocall: registration_view/canViewRegistrations;
                         allowRegistration nocall: registration_view/allowRegistration;
@@ -97,7 +99,7 @@
             </form>
 
         </metal:register>
-
+    </tal:register>
   </div>
 
 </tal:def>
