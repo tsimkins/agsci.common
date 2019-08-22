@@ -7,6 +7,7 @@ from Products.Five import BrowserView
 from StringIO import StringIO
 from datetime import datetime
 from zope.interface import implements, Interface
+from plone import api
 
 import HTMLParser
 import csv
@@ -52,6 +53,10 @@ class IRegistrationView(Interface):
 class RegistrationView(BrowserView):
 
     implements(IRegistrationView)
+
+    @property
+    def anonymous(self):
+        return api.user.is_anonymous()
 
     def __init__(self, context, request):
         self.context = context

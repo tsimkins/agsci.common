@@ -85,7 +85,7 @@
                 tal:attributes="action registration_url"
                 method="post">
                 <input type="hidden" name="uid" tal:attributes="value context/UID" />
-                <p>
+                <p class="mt-5">
                     <input type="submit" value="Register for this event" />
                 </p>
             </form>
@@ -95,7 +95,7 @@
                 tal:attributes="action string:${registration_url}/download_csv"
                 method="post">
                 <input type="hidden" name="uid" tal:attributes="value context/UID" />
-                <p>
+                <p class="mt-3">
                     <input type="submit" class="button" value="Download Registration Information" /></p>
             </form>
 

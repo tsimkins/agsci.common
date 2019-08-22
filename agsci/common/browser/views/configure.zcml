@@ -476,14 +476,14 @@
         permission="zope2.View"
     />
     
-    <!-- Registration View -->
+    <!-- Download registrations -->
     <browser:page
-        for="*"
-        name="Xregister_fg_base_view_p3"
-        class=".registration.RegistrationFormView"
+        for="Products.PloneFormGen.interfaces.form.IPloneFormGenForm"
+        name="download_csv"
+        class=".registration.DownloadCSVView"
         layer="..interfaces.IThemeSpecific"
         permission="zope2.View"
-        template="templates/register_fg_base_view_p3.pt"
     />
+
 
 </configure>
