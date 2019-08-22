@@ -467,14 +467,4 @@
         permission="zope2.View"
     />
 
-    <!-- Download registrations -->
-    <browser:page
-        for="*"
-        name="register_fg_base_view_p3"
-        class=".registration.RegistrationFormView"
-        layer="..interfaces.IThemeSpecific"
-        permission="zope2.View"
-        template="templates/register_fg_base_view_p3.pt"
-    />
-
 </configure>
