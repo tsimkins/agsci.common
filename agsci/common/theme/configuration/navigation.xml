@@ -15,7 +15,7 @@
                                 <link>students/advising</link>
                             </item>
                             <item>
-                                <title>Careers and Internships</title>
+                                <title>Career Services and Internships</title>
                                 <link>students/careers</link>
                             </item>
                             <item>
@@ -31,11 +31,11 @@
                                 <link>students/graduate</link>
                             </item>
                             <item>
-                                <title>Research</title>
+                                <title>Research Opportunities</title>
                                 <link>students/research</link>
                             </item>
                             <item>
-                                <title>Scholarships and Financial Aid</title>
+                                <title>Scholarships</title>
                                 <link>students/scholarships</link>
                             </item>
                             <item>
@@ -509,9 +509,13 @@
                             <title>History of the College</title>
                             <link>about/history</link>
                         </item>
-
+                        <item>
+                            <title>News and Information</title>
+                            <link>news</link>
+                        </item>
                     </group>
                     <group>
+
                         <item>
                             <title>Industry Relations</title>
                             <link>industry</link>
