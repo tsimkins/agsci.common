@@ -38,7 +38,8 @@
                                                          src image"
                                          class="w-100 photo" />
                                 </div>
-                                <a href="" class="d-none d-sm-block btn btn-sm btn-light-creek-outline mt-2">Full Bio</a>
+                                <a tal:attributes="href context/absolute_url|nothing"
+                                   class="d-none d-sm-block btn btn-sm btn-light-creek-outline mt-2">Full Bio</a>
 
                             </div>
 
