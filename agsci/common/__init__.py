@@ -1,6 +1,11 @@
 from zope.i18nmessageid import MessageFactory
 AgsciMessageFactory = MessageFactory('agsci.common')
 
+from Products.CMFCore.DirectoryView import registerDirectory
+GLOBALS = globals()
+
+registerDirectory('skins/agsci_common', GLOBALS)
+
 # Register indexers
 import indexer
 

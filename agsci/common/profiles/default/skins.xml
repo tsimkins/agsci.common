@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+    <object name="agsci_common"
+        meta_type="Filesystem Directory View"
+        directory="agsci.common:skins/agsci_common" />
+
+    <skin-path name="*">
+        <layer name="agsci_common" insert-after="custom" />
+    </skin-path>
+
+</object>
