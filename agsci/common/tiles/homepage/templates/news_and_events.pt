@@ -39,7 +39,7 @@
                                     <span>Read More</span>
                                 </div>
                                 <div class="col-4 col-lg-3 profile-img order-1 px-0">
-                                        <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                        <img tal:attributes="src string:${i/getURL}/@@images/image/preview"
                                              alt=""
                                              title=""
                                              class="w-100"
@@ -79,7 +79,7 @@
                                              tal:content="python: view.date_format(start, format='%d')" />
                                     </div>
                                     <div>
-                                        <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                        <img tal:attributes="src string:${i/getURL}/@@images/image/preview"
                                                 alt=""
                                                 title=""
                                                 class="w-100"
