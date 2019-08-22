@@ -97,6 +97,10 @@
                         <title>Faculty &amp; Staff</title>
                         <link>faculty-staff</link>
                         <items>
+                            <item>
+                                <title>Faculty &amp; Staff Resources</title>
+                                <link>faculty-staff</link>
+                            </item>
                         </items>
                     </item>
 
