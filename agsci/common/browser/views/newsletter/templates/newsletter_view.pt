@@ -524,7 +524,8 @@ table td.footer .email-footer h2 {
 
     <h2 tal:condition="python: notEditor and (view.show_summary or ( len(view.enabled_items) and len(view.spotlight_items)))">In This Issue</h2>
 
-    <form id="enable-items-form" tal:omit-tag="notEditor" method="POST" action="@@newsletter_modify">
+    <form id="enable-items-form" tal:omit-tag="notEditor" method="POST"
+        tal:attributes="action string:${context/absolute_url}/@@newsletter_modify">
 
     <tal:config condition="not: notEditor">
         <h2>Newsletter Configuration</h2>
