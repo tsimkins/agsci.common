@@ -804,6 +804,11 @@ body.portaltype-formfolder {
 
         }
 
+        .field.ArchetypesBooleanWidget {
+            label {
+                display: inline;
+            }
+        }
 
         .formControls {
             margin: 1em 0;

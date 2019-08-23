@@ -14105,6 +14105,8 @@ body.portaltype-formfolder .pfg-form {
     display: inline; }
   body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget input[type="radio"] {
     margin: 0 0.25rem 0 1rem; }
+  body.portaltype-formfolder .pfg-form .field.ArchetypesBooleanWidget label {
+    display: inline; }
   body.portaltype-formfolder .pfg-form .formControls {
     margin: 1em 0; }
     body.portaltype-formfolder .pfg-form .formControls input[type="submit"] {
