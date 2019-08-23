@@ -799,7 +799,7 @@ class TagsView(CollectionView):
         return ITagsAdapter(self.context)
 
     def results(self):
-        return self.adapted.get_items(self.tags)
+        return Batch(self.adapted.get_items(self.tags), 99999, start=0)
 
 class TileLinksView(BaseView):
 
