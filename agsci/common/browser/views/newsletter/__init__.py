@@ -110,6 +110,9 @@ class NewsletterView(BaseView):
     def getConfig(self):
         value = getattr(self.context, 'value', [])
 
+        if not value:
+            value = []
+
         _ = {}
 
         _['enabled'] = [
@@ -152,6 +155,7 @@ class NewsletterView(BaseView):
             x.UID in self.config['enabled'] and x.UID not in self.config['spotlight']
         ]
 
+    @property
     def spotlight_items(self):
         return [x for x in self.all_items if x.UID in self.config['spotlight']]
 
