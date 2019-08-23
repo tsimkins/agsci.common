@@ -24,7 +24,7 @@
                 aria-expanded="false"
                 aria-label="Toggle Section Navigation">
 
-                <i class="fa fa-bars"></i> More Content from This Section Name
+                <i class="fa fa-bars"></i> More Content from <span tal:replace="view/title|nothing" />
 
             </button>
 
