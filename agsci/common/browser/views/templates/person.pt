@@ -7,6 +7,32 @@
       i18n:domain="agsci.common">
 <body>
 
+<metal:status fill-slot="global_statusmessage">
+
+    <tal:redirect
+        tal:define="primary_profile_url view/primary_profile_url|nothing;"
+        tal:condition="primary_profile_url">
+
+        <div class="portalMessage info">
+
+            <strong>Info</strong>
+
+            <p>
+                You see this page because you have permission to edit this Person.
+                Others will be immediately redirected to the Person's primary profile URL.
+            </p>
+
+            <p class="html">
+                <span>The link address is:</span>
+                <a tal:attributes="href primary_profile_url" tal:content="primary_profile_url" />
+            </p>
+
+        </div>
+
+    </tal:redirect>
+
+</metal:status>
+
     <metal:title fill-slot="content-title">
 
     </metal:title>

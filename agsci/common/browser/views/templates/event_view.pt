@@ -7,6 +7,32 @@
       i18n:domain="plone">
 <body>
 
+<metal:status fill-slot="global_statusmessage">
+
+    <tal:redirect
+        tal:define="event_redirect_url view/event_redirect_url|nothing;"
+        tal:condition="event_redirect_url">
+
+        <div class="portalMessage info">
+
+            <strong>Info</strong>
+
+            <p>
+                You see this page because you have permission to edit this Event.
+                Others will be immediately redirected to the Event's external URL.
+            </p>
+
+            <p class="html">
+                <span>The link address is:</span>
+                <a tal:attributes="href event_redirect_url" tal:content="event_redirect_url" />
+            </p>
+
+        </div>
+
+    </tal:redirect>
+
+</metal:status>
+
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
 <tal:def tal:define="data nocall:view/data">

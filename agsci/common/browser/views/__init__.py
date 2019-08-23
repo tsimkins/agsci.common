@@ -280,6 +280,27 @@ class DegreeCompareView(DegreeView):
 
 class PersonView(BaseView):
 
+    index = ViewPageTemplateFile("templates/person.pt")
+
+    @property
+    def primary_profile_url(self):
+        return getattr(self.context, 'primary_profile_url', None)
+
+    def __call__(self):
+
+        if self.anonymous and self.primary_profile_url:
+
+            RESPONSE =  self.request.RESPONSE
+
+            RESPONSE.setHeader(
+                'Cache-Control',
+                'max-age=0, s-maxage=3600, must-revalidate, public, proxy-revalidate'
+            )
+
+            return RESPONSE.redirect(self.primary_profile_url)
+
+        return self.index()
+
     @property
     def adapted(self):
         return ILocationAdapter(self.context)
@@ -557,18 +578,19 @@ class EventView(_EventView, BaseView):
 
     data = None
 
+    event_redirect_url = None
+
     index = ViewPageTemplateFile("templates/event_view.pt")
 
 class EventRedirectView(EventView):
 
     @property
-    def event_url(self):
+    def event_redirect_url(self):
         return getattr(self.context, 'event_url', None)
-
 
     def __call__(self):
 
-        if self.anonymous and self.event_url:
+        if self.anonymous and self.event_redirect_url:
 
             RESPONSE =  self.request.RESPONSE
 
@@ -577,7 +599,7 @@ class EventRedirectView(EventView):
                 'max-age=0, s-maxage=3600, must-revalidate, public, proxy-revalidate'
             )
 
-            return RESPONSE.redirect(self.event_url)
+            return RESPONSE.redirect(self.event_redirect_url)
 
         return self.index()
 
