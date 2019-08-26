@@ -128,11 +128,11 @@ class PersonBlock(BaseBlock):
         if style == 'vertical':
 
             if not border:
-                return o.restrictedTraverse('@@card_view_vertical_no_border')()
+                return o.restrictedTraverse('@@card_view_vertical_no_border')(block=True)
 
-            return o.restrictedTraverse('@@card_view_vertical_image')()
+            return o.restrictedTraverse('@@card_view_vertical_image')(block=True)
 
-        return o.restrictedTraverse('@@card_view_image')()
+        return o.restrictedTraverse('@@card_view_image')(block=True)
 
     def people(self, usernames, style=None, border=True):
 

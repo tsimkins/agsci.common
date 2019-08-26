@@ -286,9 +286,9 @@ class PersonView(BaseView):
     def primary_profile_url(self):
         return getattr(self.context, 'primary_profile_url', None)
 
-    def __call__(self):
+    def __call__(self, block=False):
 
-        if self.anonymous and self.primary_profile_url:
+        if self.anonymous and self.primary_profile_url and not block:
 
             RESPONSE =  self.request.RESPONSE
 
