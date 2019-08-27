@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object 
+    name="portal_workflow" 
+    meta_type="Plone Workflow Tool"
+    purge="False">
+
+    <property name="title">Contains workflow definitions for your portal</property>
+
+    <object name="simple_publication_workflow" meta_type="Workflow" />
+    <object name="restricted_content_workflow" meta_type="Workflow" />
+    
+    <bindings
+        purge="False">
+        <default>
+            <bound-workflow workflow_id="simple_publication_workflow" />
+        </default>
+
+        <type type_id="Collection">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_agjourney">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_agjourney_container">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_degree">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_degree_container">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_directory">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_directory_classification">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_directory_group">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_directory_person_listing">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_homepage">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_major">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_minor">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_newsletter">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_person">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_section">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_subsite">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+    </bindings>
+</object>
+
