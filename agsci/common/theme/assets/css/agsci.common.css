@@ -13924,14 +13924,32 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html a,
 .html a:visited,
 .html a:active,
-.html .a {
+.html .a,
+body.template-fg_base_view_p3 #content-core a,
+body.template-fg_base_view_p3 #content-core a:visited,
+body.template-fg_base_view_p3 #content-core a:active,
+body.template-fg_base_view_p3 #content-core .a,
+body.template-file_view #content-core a,
+body.template-file_view #content-core a:visited,
+body.template-file_view #content-core a:active,
+body.template-file_view #content-core .a,
+body.template-image_view #content-core a,
+body.template-image_view #content-core a:visited,
+body.template-image_view #content-core a:active,
+body.template-image_view #content-core .a {
   color: #009cde !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important; }
 #parent-fieldname-text a:hover,
 #parent-fieldname-text .a:hover,
 .html a:hover,
-.html .a:hover {
+.html .a:hover,
+body.template-fg_base_view_p3 #content-core a:hover,
+body.template-fg_base_view_p3 #content-core .a:hover,
+body.template-file_view #content-core a:hover,
+body.template-file_view #content-core .a:hover,
+body.template-image_view #content-core a:hover,
+body.template-image_view #content-core .a:hover {
   color: #0078ab !important;
   border-bottom: 1px solid #0078ab !important; }
 #parent-fieldname-text a.no-border, #parent-fieldname-text a.no-border:visited,
@@ -13941,26 +13959,65 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html a.no-border:visited,
 .html a.no-border:active,
 .html a.no-border:hover,
-.html .a.no-border {
+.html .a.no-border,
+body.template-fg_base_view_p3 #content-core a.no-border,
+body.template-fg_base_view_p3 #content-core a.no-border:visited,
+body.template-fg_base_view_p3 #content-core a.no-border:active,
+body.template-fg_base_view_p3 #content-core a.no-border:hover,
+body.template-fg_base_view_p3 #content-core .a.no-border,
+body.template-file_view #content-core a.no-border,
+body.template-file_view #content-core a.no-border:visited,
+body.template-file_view #content-core a.no-border:active,
+body.template-file_view #content-core a.no-border:hover,
+body.template-file_view #content-core .a.no-border,
+body.template-image_view #content-core a.no-border,
+body.template-image_view #content-core a.no-border:visited,
+body.template-image_view #content-core a.no-border:active,
+body.template-image_view #content-core a.no-border:hover,
+body.template-image_view #content-core .a.no-border {
   border-bottom: none !important;
   padding-bottom: 0 !important; }
 #parent-fieldname-text li,
-.html li {
+.html li,
+body.template-fg_base_view_p3 #content-core li,
+body.template-file_view #content-core li,
+body.template-image_view #content-core li {
   font-size: 0.9rem;
   line-height: 1.8; }
 #parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
 .html input,
 .html td,
-.html th {
+.html th,
+body.template-fg_base_view_p3 #content-core input,
+body.template-fg_base_view_p3 #content-core td,
+body.template-fg_base_view_p3 #content-core th,
+body.template-file_view #content-core input,
+body.template-file_view #content-core td,
+body.template-file_view #content-core th,
+body.template-image_view #content-core input,
+body.template-image_view #content-core td,
+body.template-image_view #content-core th {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem; }
 #parent-fieldname-text td, #parent-fieldname-text th,
 .html td,
-.html th {
+.html th,
+body.template-fg_base_view_p3 #content-core td,
+body.template-fg_base_view_p3 #content-core th,
+body.template-file_view #content-core td,
+body.template-file_view #content-core th,
+body.template-image_view #content-core td,
+body.template-image_view #content-core th {
   line-height: 1.4; }
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
 .html table.table-sm td,
-.html table.table-sm th {
+.html table.table-sm th,
+body.template-fg_base_view_p3 #content-core table.table-sm td,
+body.template-fg_base_view_p3 #content-core table.table-sm th,
+body.template-file_view #content-core table.table-sm td,
+body.template-file_view #content-core table.table-sm th,
+body.template-image_view #content-core table.table-sm td,
+body.template-image_view #content-core table.table-sm th {
   font-size: 0.875rem;
   line-height: 1.25; }
 

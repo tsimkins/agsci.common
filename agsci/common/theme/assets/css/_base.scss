@@ -557,7 +557,11 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 }
 
 #parent-fieldname-text,
-.html {
+.html,
+body.template-fg_base_view_p3 #content-core,
+body.template-file_view #content-core,
+body.template-image_view #content-core {
+
     @include link_color();
 
     li {
