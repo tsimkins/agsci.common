@@ -190,10 +190,11 @@ class BaseView(BrowserView):
         else:
             item_url = item.absolute_url()
 
-        if item_type in self.use_view_action:
-            return item_url + '/view'
-        else:
-            return item_url
+        if not self.anonymous:
+            if item_type in self.use_view_action:
+                return item_url + '/view'
+
+        return item_url
 
     @property
     def use_view_action(self):
