@@ -86,7 +86,7 @@
             <div class="event-registration" tal:condition="registration_deadline">
                 <tal:open condition="registration_allowed">
                     <h3>Registration deadline</h3>
-                    <span tal:replace="python:toLocalizedTime(registration_deadline, long_format=1)" />
+                    <p tal:content="python:toLocalizedTime(registration_deadline, long_format=1)" />
                 </tal:open>
             </div>
             </metal:deadline>
