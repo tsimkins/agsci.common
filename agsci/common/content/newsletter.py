@@ -7,6 +7,7 @@ from zope import schema
 from zope.interface import provider, Interface
 from plone.app.vocabularies.catalog import CatalogSource
 from z3c.relationfield.schema import RelationChoice
+from plone.app.contenttypes.interfaces import ILink
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.app.contenttypes.interfaces import ICollection
 
@@ -16,7 +17,12 @@ class INewsletterItemsRowSchema(Interface):
 
     target = RelationChoice(
         title=_(u"News Item"),
-        source=CatalogSource(object_provides=INewsItem.__identifier__),
+        source=CatalogSource(
+            object_provides = [
+                INewsItem.__identifier__,
+                ILink.__identifier__
+            ]
+        ),
         required=False,
     )
 

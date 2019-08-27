@@ -9,8 +9,7 @@ from zope.component import getUtility, getMultiAdapter
 from zope.interface import implements, Interface
 from zope.security import checkPermission
 from Products.CMFPlone.utils import safe_unicode
-from plone.app.contenttypes.interfaces import INewsItem
-from plone.app.contenttypes.interfaces import ICollection
+from plone.app.contenttypes.interfaces import INewsItem, ILink, ICollection
 from urllib import quote, urlencode
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.event import addRelations, _relations
@@ -25,6 +24,11 @@ from agsci.common.content.newsletter import INewsletter
 from .. import BaseView
 
 class NewsletterView(BaseView):
+
+    interfaces = [
+        INewsItem,
+        ILink,
+    ]
 
     def __init__(self, context, request):
         self.context = context
@@ -104,7 +108,7 @@ class NewsletterView(BaseView):
         if target and hasattr(target, 'to_object'):
             target_object = target.to_object
 
-            if INewsItem.providedBy(target_object):
+            if any([x.providedBy(target_object) for x in self.interfaces]):
                 return target_object.UID()
 
     def getConfig(self):
