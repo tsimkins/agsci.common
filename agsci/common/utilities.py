@@ -24,6 +24,8 @@ import unicodedata
 
 from .constants import DEFAULT_TIMEZONE
 
+DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
+
 #Ploneify
 def ploneify(toPlone, filename=False):
 
@@ -436,8 +438,8 @@ def execute_under_special_role(roles, function, *args, **kwargs):
         setSecurityManager(sm)
 
 # Set roles on object
-def set_editor_roles(context, group_id):
-    context.manage_setLocalRoles(group_id, ['Contributor', 'Reviewer', 'Editor', 'Reader'])
+def set_editor_roles(context, group_id, roles=DEFAULT_ROLES):
+    context.manage_setLocalRoles(group_id, roles)
     context.reindexObjectSecurity()
 
 # Adds an editors group to the subsite
