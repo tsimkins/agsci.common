@@ -320,6 +320,7 @@ def scrub_html(html):
         [u"\u2019", "'"],
         [u"\u2013", "-"],
         [u"\u2014", "--"],
+        [u'\u2022', "* "],
     ]
 
     # Replace those entites
