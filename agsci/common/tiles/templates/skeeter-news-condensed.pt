@@ -61,6 +61,14 @@
                 </div>
             </a>
         </tal:items>
+        <div class="container">
+            <div class="row">
+                <div class="col text-right">
+                    <a class="btn btn-sm btn-link mb-0"
+                        tal:attributes="href view/more_items_link|nothing">More News</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
