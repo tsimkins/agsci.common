@@ -8,6 +8,7 @@
 
     <object name="simple_publication_workflow" meta_type="Workflow" />
     <object name="restricted_content_workflow" meta_type="Workflow" />
+    <object name="person_workflow" meta_type="Workflow" />
     
     <bindings
         purge="False">
@@ -68,7 +69,7 @@
         </type>
 
         <type type_id="agsci_person">
-            <bound-workflow workflow_id="restricted_content_workflow" />
+            <bound-workflow workflow_id="person_workflow" />
         </type>
 
         <type type_id="agsci_section">

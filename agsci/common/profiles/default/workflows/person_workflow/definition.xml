@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dc-workflow workflow_id="simple_publication_workflow" title="Restricted Content Workflow" description=" - Restricts access to special content." state_variable="review_state" initial_state="private" manager_bypass="False">
+<dc-workflow workflow_id="simple_publication_workflow" title="Person Workflow" description=" - Workflow for people permissions." state_variable="review_state" initial_state="published" manager_bypass="False">
     <permission>Access contents information</permission>
     <permission>Modify portal content</permission>
     <permission>View</permission>
@@ -19,6 +19,7 @@
         </permission-map>
         <permission-map name="Modify portal content" acquired="False">
             <permission-role>Manager</permission-role>
+            <permission-role>Reviewer</permission-role>
             <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="View" acquired="False">
@@ -45,6 +46,8 @@
         </permission-map>
         <permission-map name="Modify portal content" acquired="False">
             <permission-role>Manager</permission-role>
+            <permission-role>Owner</permission-role>
+            <permission-role>Editor</permission-role>
             <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="View" acquired="False">
@@ -65,6 +68,8 @@
         </permission-map>
         <permission-map name="Modify portal content" acquired="False">
             <permission-role>Manager</permission-role>
+            <permission-role>Owner</permission-role>
+            <permission-role>Editor</permission-role>
             <permission-role>Site Administrator</permission-role>
         </permission-map>
         <permission-map name="View" acquired="False">
@@ -82,21 +87,21 @@
         <description>Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published.</description>
         <action url="%(content_url)s/content_status_modify?workflow_action=reject" category="workflow" icon="">Send back</action>
         <guard>
-            <guard-permission>agsci.common.restricted_types</guard-permission>
+            <guard-permission>Review portal content</guard-permission>
         </guard>
     </transition>
     <transition transition_id="retract" title="Member retracts submission" new_state="private" trigger="USER" before_script="" after_script="">
         <description>If you submitted the item by mistake or want to perform additional edits, this will take it back.</description>
         <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Retract</action>
         <guard>
-            <guard-permission>agsci.common.restricted_types</guard-permission>
+            <guard-permission>Request review</guard-permission>
         </guard>
     </transition>
     <transition transition_id="submit" title="Member submits content for publication" new_state="pending" trigger="USER" before_script="" after_script="">
         <description>Puts your item in a review queue, so it can be published on the site.</description>
         <action url="%(content_url)s/content_status_modify?workflow_action=submit" category="workflow" icon="">Submit for publication</action>
         <guard>
-            <guard-permission>agsci.common.restricted_types</guard-permission>
+            <guard-permission>Request review</guard-permission>
         </guard>
     </transition>
     <worklist worklist_id="reviewer_queue" title="">
