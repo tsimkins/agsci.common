@@ -768,7 +768,7 @@ table td.footer .email-footer h2 {
                                     <img align="right"
                                             class="leadimage"
                                             tal:condition="item_has_leadimage"
-                                            tal:attributes="src string:$item_url/@@images/image/large" />
+                                            tal:attributes="src string:$item_url/@@images/image/mini" />
 
                                     <span tal:condition="python: not view.is_spotlight(item) and view.show_summary" tal:content="string:${repeat/item/number}." />
 
