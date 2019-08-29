@@ -42,7 +42,7 @@ class NewsletterView(BaseView):
     @property
     def canEdit(self):
         try:
-            return checkPermission('Modify portal content', self.context)
+            return checkPermission('cmf.ModifyPortalContent', self.context)
         except:
             return False
 
