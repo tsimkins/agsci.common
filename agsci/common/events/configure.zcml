@@ -15,4 +15,14 @@
         handler=".content.onSubsiteCreate"
         />
 
+    <subscriber
+        for="..content.person.person.IPerson zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".content.onPersonCreateEdit"
+        />
+
+    <subscriber
+        for="..content.person.person.IPerson zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler=".content.onPersonCreateEdit"
+        />
+
 </configure>

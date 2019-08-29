@@ -10,6 +10,36 @@ from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from ..utilities import localize, add_editors_group, get_portlet_assignment_manager, \
     get_portlet_mapping
 
+def setPersonUsername(context, event):
+
+    username = getattr(context, 'username', '')
+
+    if username:
+
+        username = username.encode('utf-8')
+
+        if username != context.getId():
+
+            parent = context.aq_parent
+
+            if username not in parent.objectIds():
+                parent.manage_renameObjects(ids=[context.getId()], new_ids=[username])
+
+        # Set owner roles
+        context.manage_setLocalRoles(username, ('Owner',))
+
+        # Remove local Owner roles for non-owners
+        for (user, roles) in context.get_local_roles():
+            if roles == ('Owner',) and user != username:
+                context.manage_delLocalRoles([user])
+
+        # Reindex the object and the object security
+        context.reindexObjectSecurity()
+        context.reindexObject()
+
+def onPersonCreateEdit(context, event):
+    setPersonUsername(context, event)
+
 def onBlogCreate(context, event):
 
     # Calculate dates
