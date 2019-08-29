@@ -65,7 +65,7 @@
         </type>
 
         <type type_id="agsci_newsletter">
-            <bound-workflow workflow_id="restricted_content_workflow" />
+            <bound-workflow workflow_id="simple_publication_workflow" />
         </type>
 
         <type type_id="agsci_person">
