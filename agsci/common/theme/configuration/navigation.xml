@@ -398,10 +398,6 @@
                             <link>research/snip</link>
                             <title>Collaborative Research</title>
                         </item>
-                        <item>
-                            <link>research/resources</link>
-                            <title>Faculty Funding and Resources</title>
-                        </item>
                     </group>
                     <group>
                         <item>
@@ -415,6 +411,10 @@
                         <item>
                             <link>research/commercialization</link>
                             <title>Research Commercialization</title>
+                        </item>
+                        <item>
+                            <link>research/resources</link>
+                            <title>Faculty Funding and Resources</title>
                         </item>
                     </group>
                     <group>
