@@ -24,11 +24,11 @@ class ImportCventView(ImportContentView):
 
     summary_url = "http://guest.cvent.com/EVENTS/info/summary.aspx?e=%s"
 
-    conference_url = "https://agsci.psu.edu/conferences/event-calendar"
+    conference_url = "https://edit.agsci.psu.edu/conferences/event-calendar"
 
-    calendar_url = "https://agsci.psu.edu/cvent.json"
+    calendar_url = "https://mS5J5CtL4kuPKm7P.agsci.psu.edu/cvent.json"
 
-    email_users = ['trs22',]
+    email_users = ['trs22', 'kkw115', 'buh22', 'nmk107']
 
     @property
     def site(self):
@@ -40,7 +40,7 @@ class ImportCventView(ImportContentView):
         def fmt_date(x):
             return localize(DateTime(x.replace("T", ' ') + " US/Eastern"))
 
-        response = requests.get(self.calendar_url)
+        response = requests.get(self.calendar_url, verify=False)
 
         if response.status_code == 200:
 
