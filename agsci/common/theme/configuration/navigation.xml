@@ -41,7 +41,7 @@
                             <item>
                                 <title>Study Abroad</title>
                                 <link>international/study-abroad</link>
-                            </item>              
+                            </item>
                             <item>
                                 <title>Student Life</title>
                                 <link>students/life</link>
@@ -390,12 +390,20 @@
                                 </item>
                             </items>
                         </item>
-                    </group>
-                    <group>
                         <item>
                             <link>research/impacts</link>
                             <title>Research Impacts</title>
                         </item>
+                        <item>
+                            <link>research/snip</link>
+                            <title>Collaborative Research</title>
+                        </item>
+                        <item>
+                            <link>research/resources</link>
+                            <title>Faculty Funding and Resources</title>
+                        </item>
+                    </group>
+                    <group>
                         <item>
                             <link>research/centers</link>
                             <title>Research Centers and Institutes</title>
