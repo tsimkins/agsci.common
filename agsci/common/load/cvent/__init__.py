@@ -29,6 +29,7 @@ class ImportCventView(ImportContentView):
     calendar_url = "https://mS5J5CtL4kuPKm7P.agsci.psu.edu/cvent.json"
 
     email_users = ['trs22', 'kkw115', 'buh22', 'nmk107']
+    email_users = ['trs22',]
 
     @property
     def site(self):
@@ -100,7 +101,7 @@ class ImportCventView(ImportContentView):
         acc.end = end_date
 
         item.manage_addProperty('cventid', kwargs['id'], 'string')
-        #item.setLayout("event_redirect_view")
+        item.setLayout("event_redirect_view")
         item.reindexObject()
 
         return item
