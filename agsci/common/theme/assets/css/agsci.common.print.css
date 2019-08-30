@@ -141,7 +141,7 @@ body a:link, body a:visited,
 .col-12,
 p,
 .card {
-  page-break-inside: avoid; }
+  /*	page-break-inside: avoid;*/ }
 
 .col-md-4,
 .col-lg-5,
@@ -209,5 +209,27 @@ p.agsci-journeys-intro-quote {
 
 .col-12 p.quote-angle-script {
   left: 0; }
+
+/* trs22 updates */
+.portletWrapper,
+[data-component="portlets"] {
+  display: none !important; }
+
+footer {
+  display: none; }
+
+#section-content .row {
+  display: block; }
+
+#page-header {
+  padding: 0 !important; }
+  #page-header > div.container {
+    padding: 0 !important; }
+
+.print-only-logo {
+  left: 0 !important; }
+
+#portal-breadcrumbs {
+  margin-top: 1rem !important; }
 
 /*# sourceMappingURL=agsci.common.print.css.map */

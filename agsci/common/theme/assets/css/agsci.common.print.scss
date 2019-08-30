@@ -1,1 +1,34 @@
 @import '../wpsu/print';
+
+/* trs22 updates */	
+.portletWrapper,
+[data-component="portlets"] {
+    display: none !important;
+}
+
+footer {
+    display: none;
+}
+
+#section-content {
+    .row {
+        display: block;
+    }
+}
+
+#page-header {
+
+    padding: 0 !important;
+
+    > div.container {
+        padding: 0 !important;
+    }
+}
+
+.print-only-logo {
+    left: 0 !important;
+}
+
+#portal-breadcrumbs {
+    margin-top: 1rem !important;
+}
