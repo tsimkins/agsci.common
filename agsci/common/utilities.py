@@ -1,21 +1,22 @@
-from plone.portlets.interfaces import IPortletManager
-from plone.portlets.interfaces import IPortletAssignment
-from plone.portlets.interfaces import IPortletAssignmentMapping
-from plone.portlets.interfaces import ILocalPortletAssignmentManager
-
-from datetime import datetime
-from DateTime import DateTime
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-from plone.behavior.interfaces import IBehavior
-from plone.dexterity.interfaces import IDexterityFTI
-from plone.i18n.normalizer import idnormalizer, filenamenormalizer
-from zope.component import getUtility, getMultiAdapter
-from zope.schema.interfaces import IVocabularyFactory
-from zope.component.hooks import getSite
 from AccessControl import getSecurityManager
 from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
 from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+from DateTime import DateTime
+from OFS.Folder import Folder
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.Portal import PloneSite
+from Products.CMFPlone.utils import safe_unicode
+from datetime import datetime
+from plone.behavior.interfaces import IBehavior
+from plone.dexterity.interfaces import IDexterityFTI
+from plone.i18n.normalizer import idnormalizer, filenamenormalizer
+from plone.portlets.interfaces import ILocalPortletAssignmentManager
+from plone.portlets.interfaces import IPortletAssignment
+from plone.portlets.interfaces import IPortletAssignmentMapping
+from plone.portlets.interfaces import IPortletManager
+from zope.component import getUtility, getMultiAdapter
+from zope.component.hooks import getSite
+from zope.schema.interfaces import IVocabularyFactory
 
 import htmlentitydefs
 import pytz
@@ -466,3 +467,17 @@ def get_portlet_assignment_manager(context, manager_name):
 def get_portlet_mapping(context, manager_name):
     manager = get_portlet_manager(context, manager_name)
     return getMultiAdapter((context, manager), IPortletAssignmentMapping)
+
+def getPloneSites(app, l=0):
+
+    sites = []
+
+    if l <= 1:
+
+        for (_id, _) in app.ZopeFind(app):
+            if isinstance(_, PloneSite):
+                sites.append(_)
+            elif isinstance(_, Folder):
+                sites.extend(getPloneSites(_, l+1))
+
+    return sites
