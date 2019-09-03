@@ -481,3 +481,30 @@ def getPloneSites(app, l=0):
                 sites.extend(getPloneSites(_, l+1))
 
     return sites
+
+# This makes the 'getURL' and 'absolute_url', etc. methods return the proper
+# URL through the debug prompt.
+def setSiteURL(site, domain=None, path='', https=True):
+
+    if not domain:
+        domain = {
+            'agsci' : 'agsci.psu.edu',
+        }.get(site.getId(), 'nohost_%s_' % site.getId())
+
+    if path and not path.startswith('/'):
+        path = '/%s' % path
+
+    if https:
+        url = 'https://%s%s' % (domain, path)
+    else:
+        url = 'http://%s%s' % (domain, path)
+
+    if url.endswith('/'):
+        url = url[:-1]
+
+    site.REQUEST['SERVER_URL'] = url
+
+    site.REQUEST.other['VirtualRootPhysicalPath'] = site.getPhysicalPath()
+
+    if site.REQUEST.get('_ec_cache', None):
+        site.REQUEST['_ec_cache'] = {}
