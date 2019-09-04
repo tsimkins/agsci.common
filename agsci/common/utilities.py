@@ -202,6 +202,15 @@ def getVocabularyTerms(context, vocabulary_name):
     vocab = factory(context)
     return [x.value for x in vocab._terms]
 
+def getBases(_):
+    rv = []
+
+    for __ in _.getBases():
+        rv.append(__)
+        rv.extend(getBases(__))
+
+    return rv
+
 # https://stackoverflow.com/questions/12178669/list-the-fields-of-a-dexterity-object
 def get_fields_by_type(portal_type):
     fti = getUtility(IDexterityFTI, name=portal_type)
@@ -211,6 +220,9 @@ def get_fields_by_type(portal_type):
         factory = getUtility(IBehavior, bname)
         behavior = factory.interface
         fields += behavior.namesAndDescriptions()
+        for _behavior in getBases(behavior):
+            fields += _behavior.namesAndDescriptions()
+
     return dict(fields)
 
 def toBool(_):
@@ -508,3 +520,7 @@ def setSiteURL(site, domain=None, path='', https=True):
 
     if site.REQUEST.get('_ec_cache', None):
         site.REQUEST['_ec_cache'] = {}
+
+def toISO(_):
+    _date = localize(_)
+    return _date.isoformat()

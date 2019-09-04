@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    i18n_domain="agsci.common">
+
+    <!-- JSON dump -->
+    <browser:page
+        for="*"
+        name="dump-json"
+        class=".JSONDumpView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
+</configure>

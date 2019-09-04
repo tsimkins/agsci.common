@@ -1,0 +1,298 @@
+from Acquisition import ImplicitAcquisitionWrapper
+from bs4 import BeautifulSoup
+from DateTime import DateTime
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
+from Products.Five import BrowserView
+from Products.Five.utilities.interfaces import IMarkerInterfaces
+from plone.app.blob.field import BlobWrapper
+from plone.app.textfield.value import RichTextValue
+from plone.namedfile.file import NamedBlobImage
+from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
+from zope.component.hooks import getSite
+from zope.interface.interface import Method
+from zope.component import queryUtility
+
+import Missing
+import base64
+import json
+import re
+import urllib2
+import urlparse
+
+from agsci.common.utilities import get_fields_by_type, toISO
+
+first_cap_re = re.compile('(.)([A-Z][a-z]+)')
+all_cap_re = re.compile('([a-z0-9])([A-Z])')
+
+# Regular expression to validate UID
+uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
+
+class JSONDumpView(BrowserView):
+
+    # http://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-camel-case
+    def format_key(self, name):
+        s1 = first_cap_re.sub(r'\1_\2', name)
+        return all_cap_re.sub(r'\1_\2', s1).lower()
+
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.context, 'portal_catalog')
+
+    def html_to_text(self, html):
+        portal_transforms = getToolByName(self.context, 'portal_transforms')
+        text = portal_transforms.convert('html_to_text', html).getData()
+        return text
+
+    def __call__(self):
+        json = self.getJSON()
+        self.request.response.setHeader('Content-Type', 'application/json')
+        return json
+
+    @property
+    def base_context(self):
+        return self.context.aq_base
+
+    @property
+    def fields(self):
+        return get_fields_by_type(self.context.portal_type)
+
+    def field_info(self, field):
+
+        return {
+            'id' : field.getName(),
+            'key' : self.format_key(field.getName()),
+            'label' : self.translate(field.title),
+            'description' : self.translate(field.description),
+            'type' : field.__class__.__name__,
+        }
+
+    @property
+    def data(self):
+
+        fields = self.fields
+
+        data = {
+            'uid' : {
+                'info' : {},
+                'value' : self.context.UID(),
+            },
+            'relative_path' : {
+                'info' : {},
+                'value' : self.relative_path,
+            },
+            'review_state' : {
+                'info' : {},
+                'value' : self.review_state,
+            },
+            'type' : {
+                'info' : {},
+                'value' : self.context.Type(),
+            },
+            'default_page' : {
+                'info' : {},
+                'value' : self.default_page,
+            },
+            'layout' : {
+                'info' : {},
+                'value' : self.layout,
+            },
+        }
+
+        # Because something weird happens with subjects field.
+        if fields.has_key('subjects'):
+            fields['subject'] = fields['subjects']
+
+        for (_name, _field) in fields.iteritems():
+
+            if isinstance(_field, Method):
+                continue
+
+            v = getattr(self.base_context, _name, None)
+
+            if hasattr(v, '__call__'):
+                v = v()
+
+            if v is None:
+                continue
+
+            field_name = self.format_key(_name)
+            value = v
+
+            # If blob field type, encode binary data and
+            # include mime type
+            if isinstance(v, (BlobWrapper, NamedBlobImage)):
+
+                blob_data = v.data
+
+                if isinstance(blob_data, ImplicitAcquisitionWrapper):
+                    blob_data = blob_data.data
+
+                if blob_data:
+
+                    value = {
+                        'content_type' : v.contentType,
+                        'data' : base64.b64encode(blob_data),
+                        'filename' : v.filename,
+                    }
+
+                else:
+                    value = None
+
+            elif isinstance(v, DateTime):
+                value = toISO(v)
+
+            elif isinstance(v, (RichTextValue,)):
+
+                html = v.raw
+
+                if html:
+                    soup = BeautifulSoup(html, features="lxml")
+                    soup.html.hidden = True
+                    soup.body.hidden = True
+
+                    # Convert relative img src to full URL path
+                    for img in soup.findAll('img'):
+                        src = img.get('src')
+                        if src and not src.startswith('http'):
+                            img['src'] = urlparse.urljoin(url, src)
+
+                    value = {
+                        'html' : repr(soup),
+                        'text' : self.html_to_text(html).strip()
+                    }
+
+            data[field_name] = {
+                'info' : self.field_info(_field),
+                'value' : value,
+            }
+
+        return data
+
+    @property
+    def review_state(self):
+        try:
+            return self.portal_workflow.getInfoFor(self.context, 'review_state')
+        except:
+            return None
+
+    @property
+    def site(self):
+        return getSite()
+
+    @property
+    def site_path(self):
+        return "/".join(self.site.getPhysicalPath())
+
+    @property
+    def context_path(self):
+        return "/".join(self.context.getPhysicalPath())
+
+    @property
+    def relative_path(self):
+        return self.getRelativePath("/".join(self.context.getPhysicalPath()))
+
+    def getRelativePath(self, path):
+        site_path_length = len(self.site_path)
+        return path[site_path_length+1:]
+
+    def getJSON(self):
+        return json.dumps(self.data, indent=4, sort_keys=True)
+
+    @property
+    def portal_workflow(self):
+        return getToolByName(self.context, "portal_workflow")
+
+    @property
+    def translation_service(self):
+        return getToolByName(self.context, 'translation_service')
+
+    def translate(self, v):
+        return self.translation_service.translate(v, target_language="en")
+
+    @property
+    def default_page(self):
+        if hasattr(self.context, 'getDefaultPage'):
+            _ =  self.context.getDefaultPage()
+            if _ in self.context.objectIds():
+                return _
+
+    @property
+    def layout(self):
+        if not self.default_page:
+            if hasattr(self.context, 'getLayout'):
+                return self.context.getLayout()
+
+class PloneSiteJSONDumpView(JSONDumpView):
+
+    excluded_types = [
+        u'Faculty/Staff Directory',
+        u'Relations Library',
+    ]
+
+    json_api_view = "@@dump-json"
+
+    @property
+    def data(self):
+
+        # Return value
+        data = []
+
+        # Get all child objects
+        results = self.portal_catalog.searchResults({
+            'path' : {
+                'query' : self.context_path,
+                'depth' : 1,
+            }
+        })
+
+        # Remove objects of types that are excluded
+        results = [x for x in results if x.Type not in self.excluded_types]
+
+        # Get the path of the remaining objects
+        paths = [x.getPath() for x in results]
+
+        # If the object on which the view is called is not a Plone site, include
+        # it as well.
+        if not IPloneSiteRoot.providedBy(self.context):
+            paths.append(self.context_path)
+
+        # Find everything inside these paths
+        results = self.portal_catalog.searchResults({
+            'path' : paths
+        })
+
+        # Create data structure of content
+        for r in results:
+
+            data.append({
+                'path' : self.getRelativePath(r.getPath()),
+                'getId' : r.getId,
+                'UID' : r.UID,
+                'Type' : r.Type,
+                'api_url' : '%s/%s' % (r.getURL(), self.json_api_view),
+            })
+
+        # Sort by the length of the path
+        data.sort(key=lambda x: (len(x['path']), x['getId']))
+
+        return data
+
+
+def getAPIData(object_url):
+
+    # Grab JSON data
+    json_url = '%s/@@api-json' % object_url
+
+    try:
+        json_data = urllib2.urlopen(json_url).read()
+    except urllib2.HTTPError:
+        raise ValueError("Error accessing object, url: %s" % json_url)
+
+    # Convert JSON to Python structure
+    try:
+        data = json.loads(json_data)
+    except ValueError:
+        raise ValueError("Error decoding json: %s" % json_url)
+
+    return data

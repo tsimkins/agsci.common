@@ -474,7 +474,7 @@
         layer="..interfaces.IThemeSpecific"
         permission="zope2.View"
     />
-    
+
     <!-- Download registrations -->
     <browser:page
         for="Products.PloneFormGen.interfaces.form.IPloneFormGenForm"
@@ -483,6 +483,5 @@
         layer="..interfaces.IThemeSpecific"
         permission="zope2.View"
     />
-
 
 </configure>
