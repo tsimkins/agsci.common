@@ -118,8 +118,9 @@ class BaseView(BrowserView):
         return self.item_image(size=self.image_size)
 
     def item_date(self, item):
-        if item.effective:
-            return toLocalizedTime(item.effective)
+        if hasattr(item, 'effective_date'):
+            if item.effective_date:
+                return toLocalizedTime(item.effective_date)
 
     @property
     def show_date(self):
