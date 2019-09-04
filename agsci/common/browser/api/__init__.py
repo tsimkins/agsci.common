@@ -8,8 +8,10 @@ from Products.Five.utilities.interfaces import IMarkerInterfaces
 from plone.app.blob.field import BlobWrapper
 from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage
+from z3c.relationfield.relation import RelationValue
 from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
 from zope.component.hooks import getSite
+from zope.globalrequest import getRequest
 from zope.interface.interface import Method
 from zope.component import queryUtility
 
@@ -22,6 +24,80 @@ import urlparse
 
 from agsci.common.utilities import get_fields_by_type, toISO
 
+from json import JSONEncoder
+
+class CustomEncoder(JSONEncoder):
+
+    @property
+    def request(self):
+        return getRequest()
+
+    @property
+    def site(self):
+        return getSite()
+
+    @property
+    def bin(self):
+        return not not self.request.form.get('bin', False)
+
+    def html_to_text(self, html):
+        portal_transforms = getToolByName(self.site, 'portal_transforms')
+        text = portal_transforms.convert('html_to_text', html).getData()
+        return text
+
+    def default(self, o):
+
+        # If blob field type, encode binary data and
+        # include mime type
+        if isinstance(o, (BlobWrapper, NamedBlobImage)):
+
+            # Skip if we're not providing binary info
+            if self.bin:
+
+                blob_data = o.data
+
+                if isinstance(blob_data, ImplicitAcquisitionWrapper):
+                    blob_data = blob_data.data
+
+                if blob_data:
+
+                    return {
+                        'content_type' : o.contentType,
+                        'data' : base64.b64encode(blob_data),
+                        'filename' : o.filename,
+                    }
+
+            return None
+
+        elif isinstance(o, DateTime):
+            return toISO(o)
+
+        elif isinstance(o, (RelationValue,)):
+            return o.to_object.UID()
+
+        elif isinstance(o, (RichTextValue,)):
+
+            html = o.raw
+
+            if html:
+                soup = BeautifulSoup(html, features="lxml")
+                soup.html.hidden = True
+                soup.body.hidden = True
+
+                # Convert relative img src to full URL path
+                for img in soup.findAll('img'):
+                    src = img.get('src')
+                    if src and not src.startswith('http'):
+                        #img['src'] = urlparse.urljoin(self.context.absolute_url(), src)
+                        pass
+
+                return {
+                    'html' : repr(soup),
+                    'text' : self.html_to_text(html).strip()
+                }
+
+        return json.JSONEncoder.default(self, o)
+
 first_cap_re = re.compile('(.)([A-Z][a-z]+)')
 all_cap_re = re.compile('([a-z0-9])([A-Z])')
 
@@ -29,6 +105,8 @@ all_cap_re = re.compile('([a-z0-9])([A-Z])')
 uid_re = re.compile("^[0-9abcedf]{32}$", re.I|re.M)
 
 class JSONDumpView(BrowserView):
+
+    recursive = True
 
     # http://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-camel-case
     def format_key(self, name):
@@ -38,11 +116,6 @@ class JSONDumpView(BrowserView):
     @property
     def portal_catalog(self):
         return getToolByName(self.context, 'portal_catalog')
-
-    def html_to_text(self, html):
-        portal_transforms = getToolByName(self.context, 'portal_transforms')
-        text = portal_transforms.convert('html_to_text', html).getData()
-        return text
 
     def __call__(self):
         json = self.getJSON()
@@ -73,6 +146,10 @@ class JSONDumpView(BrowserView):
         fields = self.fields
 
         data = {
+            'url' : {
+                'info' : {},
+                'value' : self.context.absolute_url(),
+            },
             'uid' : {
                 'info' : {},
                 'value' : self.context.UID(),
@@ -119,49 +196,6 @@ class JSONDumpView(BrowserView):
             field_name = self.format_key(_name)
             value = v
 
-            # If blob field type, encode binary data and
-            # include mime type
-            if isinstance(v, (BlobWrapper, NamedBlobImage)):
-
-                blob_data = v.data
-
-                if isinstance(blob_data, ImplicitAcquisitionWrapper):
-                    blob_data = blob_data.data
-
-                if blob_data:
-
-                    value = {
-                        'content_type' : v.contentType,
-                        'data' : base64.b64encode(blob_data),
-                        'filename' : v.filename,
-                    }
-
-                else:
-                    value = None
-
-            elif isinstance(v, DateTime):
-                value = toISO(v)
-
-            elif isinstance(v, (RichTextValue,)):
-
-                html = v.raw
-
-                if html:
-                    soup = BeautifulSoup(html, features="lxml")
-                    soup.html.hidden = True
-                    soup.body.hidden = True
-
-                    # Convert relative img src to full URL path
-                    for img in soup.findAll('img'):
-                        src = img.get('src')
-                        if src and not src.startswith('http'):
-                            img['src'] = urlparse.urljoin(url, src)
-
-                    value = {
-                        'html' : repr(soup),
-                        'text' : self.html_to_text(html).strip()
-                    }
-
             data[field_name] = {
                 'info' : self.field_info(_field),
                 'value' : value,
@@ -197,7 +231,7 @@ class JSONDumpView(BrowserView):
         return path[site_path_length+1:]
 
     def getJSON(self):
-        return json.dumps(self.data, indent=4, sort_keys=True)
+        return json.dumps(self.data, indent=4, sort_keys=True, cls=CustomEncoder)
 
     @property
     def portal_workflow(self):
@@ -222,6 +256,29 @@ class JSONDumpView(BrowserView):
         if not self.default_page:
             if hasattr(self.context, 'getLayout'):
                 return self.context.getLayout()
+
+class ContainerJSONDumpView(JSONDumpView):
+
+    @property
+    def contents(self):
+
+        _ = []
+
+        for o in self.context.listFolderContents():
+            v = o.restrictedTraverse('@@dump-json')
+            v.recursive = False
+            _.append(v.data)
+
+        return _
+
+    @property
+    def data(self):
+        data = super(ContainerJSONDumpView, self).data
+
+        if self.recursive:
+            data['contents'] = self.contents
+
+        return data
 
 class PloneSiteJSONDumpView(JSONDumpView):
 
@@ -277,22 +334,3 @@ class PloneSiteJSONDumpView(JSONDumpView):
         data.sort(key=lambda x: (len(x['path']), x['getId']))
 
         return data
-
-
-def getAPIData(object_url):
-
-    # Grab JSON data
-    json_url = '%s/@@api-json' % object_url
-
-    try:
-        json_data = urllib2.urlopen(json_url).read()
-    except urllib2.HTTPError:
-        raise ValueError("Error accessing object, url: %s" % json_url)
-
-    # Convert JSON to Python structure
-    try:
-        data = json.loads(json_data)
-    except ValueError:
-        raise ValueError("Error decoding json: %s" % json_url)
-
-    return data

@@ -15,4 +15,13 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- JSON dump -->
+    <browser:page
+        for="plone.dexterity.interfaces.IDexterityContainer"
+        name="dump-json"
+        class=".ContainerJSONDumpView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>
