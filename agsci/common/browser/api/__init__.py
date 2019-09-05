@@ -133,10 +133,8 @@ class JSONDumpView(BrowserView):
     def field_info(self, field):
 
         return {
-            'id' : field.getName(),
-            'key' : self.format_key(field.getName()),
+            'id' : self.format_key(field.getName()),
             'label' : self.translate(field.title),
-            'description' : self.translate(field.description),
             'type' : field.__class__.__name__,
         }
 

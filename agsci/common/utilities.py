@@ -213,13 +213,19 @@ def getBases(_):
 
 # https://stackoverflow.com/questions/12178669/list-the-fields-of-a-dexterity-object
 def get_fields_by_type(portal_type):
+
     fti = getUtility(IDexterityFTI, name=portal_type)
     schema = fti.lookupSchema()
     fields = schema.namesAndDescriptions()
+
+    for _schema in getBases(schema):
+        fields += _schema.namesAndDescriptions()
+
     for bname in fti.behaviors:
         factory = getUtility(IBehavior, bname)
         behavior = factory.interface
         fields += behavior.namesAndDescriptions()
+
         for _behavior in getBases(behavior):
             fields += _behavior.namesAndDescriptions()
 
