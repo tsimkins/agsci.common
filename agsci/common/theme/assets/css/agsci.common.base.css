@@ -545,6 +545,9 @@ body.mosaic-editor .datagridwidget-cell {
 body.mosaic-editor.plone-toolbar-left-expanded {
   padding: 25px 0 0 !important; }
 
+body.template-default_error_message #content-core p {
+  white-space: normal; }
+
 #parent-fieldname-text a, #parent-fieldname-text a:visited,
 #parent-fieldname-text a:active,
 #parent-fieldname-text .a,
@@ -552,6 +555,10 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 .html a:visited,
 .html a:active,
 .html .a,
+body.template-default_error_message #content-core a,
+body.template-default_error_message #content-core a:visited,
+body.template-default_error_message #content-core a:active,
+body.template-default_error_message #content-core .a,
 body.template-fg_thankspage_view_p3 #content-core a,
 body.template-fg_thankspage_view_p3 #content-core a:visited,
 body.template-fg_thankspage_view_p3 #content-core a:active,
@@ -575,6 +582,8 @@ body.template-image_view #content-core .a {
 #parent-fieldname-text .a:hover,
 .html a:hover,
 .html .a:hover,
+body.template-default_error_message #content-core a:hover,
+body.template-default_error_message #content-core .a:hover,
 body.template-fg_thankspage_view_p3 #content-core a:hover,
 body.template-fg_thankspage_view_p3 #content-core .a:hover,
 body.template-fg_base_view_p3 #content-core a:hover,
@@ -593,6 +602,11 @@ body.template-image_view #content-core .a:hover {
 .html a.no-border:active,
 .html a.no-border:hover,
 .html .a.no-border,
+body.template-default_error_message #content-core a.no-border,
+body.template-default_error_message #content-core a.no-border:visited,
+body.template-default_error_message #content-core a.no-border:active,
+body.template-default_error_message #content-core a.no-border:hover,
+body.template-default_error_message #content-core .a.no-border,
 body.template-fg_thankspage_view_p3 #content-core a.no-border,
 body.template-fg_thankspage_view_p3 #content-core a.no-border:visited,
 body.template-fg_thankspage_view_p3 #content-core a.no-border:active,
@@ -617,6 +631,7 @@ body.template-image_view #content-core .a.no-border {
   padding-bottom: 0 !important; }
 #parent-fieldname-text li,
 .html li,
+body.template-default_error_message #content-core li,
 body.template-fg_thankspage_view_p3 #content-core li,
 body.template-fg_base_view_p3 #content-core li,
 body.template-file_view #content-core li,
@@ -627,6 +642,9 @@ body.template-image_view #content-core li {
 .html input,
 .html td,
 .html th,
+body.template-default_error_message #content-core input,
+body.template-default_error_message #content-core td,
+body.template-default_error_message #content-core th,
 body.template-fg_thankspage_view_p3 #content-core input,
 body.template-fg_thankspage_view_p3 #content-core td,
 body.template-fg_thankspage_view_p3 #content-core th,
@@ -644,6 +662,8 @@ body.template-image_view #content-core th {
 #parent-fieldname-text td, #parent-fieldname-text th,
 .html td,
 .html th,
+body.template-default_error_message #content-core td,
+body.template-default_error_message #content-core th,
 body.template-fg_thankspage_view_p3 #content-core td,
 body.template-fg_thankspage_view_p3 #content-core th,
 body.template-fg_base_view_p3 #content-core td,
@@ -656,6 +676,8 @@ body.template-image_view #content-core th {
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
 .html table.table-sm td,
 .html table.table-sm th,
+body.template-default_error_message #content-core table.table-sm td,
+body.template-default_error_message #content-core table.table-sm th,
 body.template-fg_thankspage_view_p3 #content-core table.table-sm td,
 body.template-fg_thankspage_view_p3 #content-core table.table-sm th,
 body.template-fg_base_view_p3 #content-core table.table-sm td,

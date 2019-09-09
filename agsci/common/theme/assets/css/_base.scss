@@ -556,8 +556,13 @@ body.mosaic-editor.plone-toolbar-left-expanded {
     padding: 25px 0 0 !important;
 }
 
+body.template-default_error_message #content-core p {
+    white-space: normal;
+}
+
 #parent-fieldname-text,
 .html,
+body.template-default_error_message #content-core,
 body.template-fg_thankspage_view_p3 #content-core,
 body.template-fg_base_view_p3 #content-core,
 body.template-file_view #content-core,

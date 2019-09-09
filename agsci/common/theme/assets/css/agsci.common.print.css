@@ -141,7 +141,7 @@ body a:link, body a:visited,
 .col-12,
 p,
 .card {
-  /*	page-break-inside: avoid;*/ }
+  page-break-inside: avoid; }
 
 .col-md-4,
 .col-lg-5,
