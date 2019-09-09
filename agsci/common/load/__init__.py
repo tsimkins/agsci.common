@@ -154,6 +154,10 @@ class ContentImporter(object):
         return getToolByName(self.site, "portal_workflow")
 
     @property
+    def portal_catalog(self):
+        return getToolByName(self.site, "portal_catalog")
+
+    @property
     def site(self):
         if self.import_path:
             return self.import_path
@@ -161,7 +165,21 @@ class ContentImporter(object):
         return getSite()
 
     @property
+    def object_by_uid(self):
+        results = self.portal_catalog.searchResults({
+            'UID'  : self.UID,
+        })
+
+        if results:
+            return results[0].getObject()
+
+    @property
     def context(self):
+        o = self.object_by_uid
+
+        if o:
+            return o
+
         try:
             _id = self.getId()
 
@@ -177,6 +195,11 @@ class ContentImporter(object):
 
     @property
     def parent(self):
+        o = self.object_by_uid
+
+        if o:
+            return o.aq_parent
+
         parent_path = "/".join(self.path.split('/')[:-1])
 
         if parent_path:
