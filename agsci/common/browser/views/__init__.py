@@ -1,5 +1,6 @@
 from Acquisition import aq_base, aq_inner
 from BTrees.OOBTree import OOBTree
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
@@ -287,6 +288,14 @@ class PersonView(BaseView):
     @property
     def primary_profile_url(self):
         return getattr(self.context, 'primary_profile_url', None)
+
+    @property
+    def is_expired(self):
+        return self.context.expires() < DateTime()
+
+    @property
+    def show_profile(self):
+        return (self.is_expired and not self.anonymous) or not self.is_expired
 
     def __call__(self, block=False):
 

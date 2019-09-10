@@ -39,7 +39,24 @@
 
     <metal:content-core fill-slot="content-core">
 
-<section class="col-12 px-0 col-lg-8 col-xl-12 pr-lg-3 pb-4 order-12 order-lg-1 bio">
+
+    <tal:expired
+        tal:condition="view/is_expired|nothing">
+
+        <div class="portalMessage info">
+
+            <strong>Note</strong>
+
+            <p>
+                 <span tal:replace="context/Title" /> is no longer associated with this organization.
+            </p>
+
+        </div>
+
+    </tal:expired>
+
+<section class="col-12 px-0 col-lg-8 col-xl-12 pr-lg-3 pb-4 order-12 order-lg-1 bio"
+    tal:condition="view/show_profile|nothing">
 
     <!-- BIO -->
     <div class="container border-bottom">
