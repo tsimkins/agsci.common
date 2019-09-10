@@ -262,10 +262,13 @@ class ContainerJSONDumpView(JSONDumpView):
 
         _ = []
 
+        now = DateTime()
+
         for o in self.context.listFolderContents():
-            v = o.restrictedTraverse('@@dump-json')
-            v.recursive = False
-            _.append(v.data)
+            if o.expires() > now:
+                v = o.restrictedTraverse('@@dump-json')
+                v.recursive = False
+                _.append(v.data)
 
         return _
 
