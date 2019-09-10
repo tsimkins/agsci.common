@@ -14184,11 +14184,43 @@ body.portaltype-formfolder .pfg-form {
   width: 100%;
   padding: 0;
   background: transparent; }
+  body.portaltype-formfolder .pfg-form fieldset {
+    background-color: #F9F9F9;
+    padding: 0.5rem 1rem 1rem; }
+  body.portaltype-formfolder .pfg-form legend {
+    margin: 0;
+    float: none;
+    background: #EEEEEE;
+    border: 1px solid #525252;
+    padding: 0.25rem;
+    width: auto; }
+  body.portaltype-formfolder .pfg-form .field {
+    padding: 0 1rem;
+    margin: 0.5rem 0; }
+    body.portaltype-formfolder .pfg-form .field label {
+      margin-top: 0; }
+  body.portaltype-formfolder .pfg-form .field.error {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #ffddcc;
+    border: 1px #ff0000 solid; }
+    body.portaltype-formfolder .pfg-form .field.error .formHelp {
+      color: #3B3B3B; }
+  body.portaltype-formfolder .pfg-form .fieldErrorBox {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.9rem;
+    margin: 0.375em 0; }
+  body.portaltype-formfolder .pfg-form .formHelp {
+    font-style: normal;
+    display: block;
+    font-size: 0.875em;
+    font-weight: normal;
+    color: #525252; }
   body.portaltype-formfolder .pfg-form label, body.portaltype-formfolder .pfg-form .label, body.portaltype-formfolder .pfg-form label.formQuestion {
     display: block;
     color: #000000;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.25;
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.9rem;
     font-size: 1rem; }
@@ -14198,13 +14230,20 @@ body.portaltype-formfolder .pfg-form {
     font-size: 0.9rem; }
   body.portaltype-formfolder .pfg-form .field {
     width: 100%; }
+  body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue {
+    margin-bottom: 0.375rem; }
+    body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label {
+      font-weight: normal;
+      display: inline;
+      font-size: 0.9rem; }
   body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget span > label {
     font-weight: normal;
     display: inline; }
   body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget input[type="radio"] {
     margin: 0 0.25rem 0 1rem; }
   body.portaltype-formfolder .pfg-form .field.ArchetypesBooleanWidget label {
-    display: inline; }
+    display: inline;
+    font-size: 0.9375rem; }
   body.portaltype-formfolder .pfg-form .formControls {
     margin: 1em 0; }
     body.portaltype-formfolder .pfg-form .formControls input[type="submit"] {

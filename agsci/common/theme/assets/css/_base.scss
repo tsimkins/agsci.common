@@ -782,11 +782,58 @@ body.portaltype-formfolder {
         padding: 0;
         background: transparent;
 
+        fieldset {
+            background-color: #F9F9F9;
+            padding: 0.5rem 1rem 1rem;
+        }
+
+        legend {
+            margin: 0;
+            float: none;
+            background: #EEEEEE;
+            border: 1px solid #525252;
+            padding: 0.25rem;
+            width: auto;
+        }
+
+        .field {
+            padding: 0 1rem;
+            margin: 0.5rem 0;
+
+            label {
+                margin-top: 0
+            }
+        }
+
+        .field.error {
+            padding: 1rem;
+            margin: 1rem 0;
+            background-color: #ffddcc;
+            border: 1px #ff0000 solid;
+
+            .formHelp {
+                color: #3B3B3B;
+            }
+        }
+
+        .fieldErrorBox {
+            @include body_font();
+            margin: 0.375em 0;
+        }
+
+        .formHelp {
+            font-style: normal;
+            display: block;
+            font-size: 0.875em;
+            font-weight: normal;
+            color: #525252;
+        }
+
         label, .label, label.formQuestion {
             display: block;
             color: #000000;
             font-weight: 600;
-            line-height: 1.5;
+            line-height: 1.25;
             @include body_font();
             font-size: 1rem;
         }
@@ -798,6 +845,17 @@ body.portaltype-formfolder {
 
         .field {
             width: 100%;
+        }
+
+        .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue {
+
+            margin-bottom: 0.375rem;
+
+            label {
+                font-weight: normal;
+                display: inline;
+                font-size: 0.9rem;
+            }
         }
 
         .field.ArchetypesSelectionWidget {
@@ -817,6 +875,7 @@ body.portaltype-formfolder {
         .field.ArchetypesBooleanWidget {
             label {
                 display: inline;
+                font-size: 0.9375rem;
             }
         }
 
