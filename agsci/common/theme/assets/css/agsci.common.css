@@ -14196,12 +14196,11 @@ body.portaltype-formfolder .pfg-form {
     width: auto; }
   body.portaltype-formfolder .pfg-form .field {
     padding: 0 1rem;
-    margin: 0.5rem 0; }
+    margin: 1rem 0; }
     body.portaltype-formfolder .pfg-form .field label {
       margin-top: 0; }
   body.portaltype-formfolder .pfg-form .field.error {
     padding: 1rem;
-    margin: 1rem 0;
     background-color: #ffddcc;
     border: 1px #ff0000 solid; }
     body.portaltype-formfolder .pfg-form .field.error .formHelp {
@@ -14215,7 +14214,8 @@ body.portaltype-formfolder .pfg-form {
     display: block;
     font-size: 0.875em;
     font-weight: normal;
-    color: #525252; }
+    color: #525252;
+    margin-top: 0.25rem; }
   body.portaltype-formfolder .pfg-form label, body.portaltype-formfolder .pfg-form .label, body.portaltype-formfolder .pfg-form label.formQuestion {
     display: block;
     color: #000000;
