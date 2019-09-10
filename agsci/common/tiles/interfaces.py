@@ -529,6 +529,12 @@ class ISkeeterTile(IBorderTile):
         required=False,
     )
 
+    filter_tags = schema.List(
+        title=_(u"Filter By Tag(s)"),
+        value_type=schema.Choice(vocabulary="agsci.common.tiles.tags"),
+        required=False,
+    )
+
 class IAnimalTile(Interface):
 
     form.widget(value=DataGridFieldFactory)

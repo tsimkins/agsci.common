@@ -64,6 +64,18 @@ class PeopleVocabulary(KeyValueVocabulary):
             (x.getId, x.sortable_title_case) for x in results
         ]
 
+class TagsVocabulary(StaticVocabulary):
+
+    prefixes = [
+        'majors',
+        'news',
+    ]
+
+    @property
+    def items(self):
+        return [x for x in self.portal_catalog.uniqueValuesFor('Subject') if any([x.startswith('%s' % y) for y in self.prefixes])]
+
+
 class VideoAspectRatioVocabulary(StaticVocabulary):
 
     items = [
@@ -102,6 +114,7 @@ LCAlignVocabularyFactory = LCAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
+TagsVocabularyFactory = TagsVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()

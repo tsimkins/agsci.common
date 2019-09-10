@@ -51,6 +51,12 @@
     />
 
     <utility
+        name="agsci.common.tiles.tags"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".TagsVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.video_aspect_ratio"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".VideoAspectRatioVocabularyFactory"

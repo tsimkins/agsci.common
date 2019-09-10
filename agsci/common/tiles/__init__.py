@@ -359,7 +359,22 @@ class ScooterTile(ConditionalTemplateTile):
 
 class SkeeterTile(ConditionalTemplateTile):
 
-    __section_class__ = 'container-fluid'
+    @property
+    def __section_class__(self):
+
+        if self.style in [
+            'news-condensed',
+        ]:
+            return 'container'
+
+        return 'container-fluid'
+
+    @property
+    def filter_tags(self):
+        _ = self.get_valid_value('filter_tags')
+
+        if _ and isinstance(_, (list, tuple)):
+            return _
 
     @property
     def show_tile(self):
@@ -434,9 +449,15 @@ class SkeeterTile(ConditionalTemplateTile):
 
     @property
     def items(self):
+
         featured = self.featured
+        filter_tags = self.filter_tags
 
         items = super(SkeeterTile, self).items
+
+        # Filter by tags provided.
+        if filter_tags:
+            items = [x for x in items if any([y in x.Subject() for y in filter_tags])]
 
         if featured:
             items = [x for x in items if x.UID != featured.UID]
