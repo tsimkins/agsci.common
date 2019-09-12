@@ -1,6 +1,5 @@
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
-from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
@@ -30,10 +29,6 @@ class ImportCventView(ImportContentView):
 
     email_users = ['trs22', 'kkw115', 'buh22', 'nmk107']
     email_users = ['trs22',]
-
-    @property
-    def site(self):
-        return getSite()
 
     @property
     def cvent_events(self):

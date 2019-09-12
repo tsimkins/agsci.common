@@ -12,6 +12,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
 from plone.namedfile.file import NamedBlobImage, NamedBlobFile
+from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import ATTRIBUTE_NAME
 from urlparse import urljoin, urlparse
 from zope.component import getUtility
@@ -652,3 +653,15 @@ class ImportContentView(BrowserView):
 
     def import_content(self):
         pass
+
+    @property
+    def registry(self):
+        return getUtility(IRegistry)
+
+    @property
+    def portal_catalog(self):
+        return getToolByName(self.site, 'portal_catalog')
+
+    @property
+    def site(self):
+        return getSite()

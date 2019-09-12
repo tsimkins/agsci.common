@@ -60,6 +60,28 @@ def add_catalog_indexes(context, logger=None):
         logger.info("Indexing new indexes %s.", ', '.join(indexables))
         catalog.manage_reindexIndex(ids=indexables)
 
+# Create keys with a default initial value that can be changed, and not
+# overridden by reinstalls.
+def create_registry_keys(site, logger):
+    registry = getUtility(IRegistry)
+
+    keys = [
+        (
+            'agsci.common.ai_api_key',
+            Record(field.TextLine(title=u'Activity Insight API Key')),
+            u''
+        ),
+    ]
+
+    for (key, record, value) in keys:
+
+        if key not in registry:
+            record.value = value
+            registry.records[key] = record
+            logger.info("Added key %s" % key)
+        else:
+            logger.info("Key %s exists. Did not add." % key)
+
 def import_various(context):
     """Import step for configuration that is not handled in xml files.
     """
@@ -69,3 +91,4 @@ def import_various(context):
     logger = context.getLogger('agsci.common')
     site = context.getSite()
     add_catalog_indexes(site, logger)
+    create_registry_keys(site, logger)

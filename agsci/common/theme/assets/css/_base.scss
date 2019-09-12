@@ -992,3 +992,14 @@ body.template-search {
     color: #FF0000;
     padding-left: 0.2em;
 }
+
+body.portaltype-agsci_person {
+    .publications {
+        .publication-title {
+            font-weight: bold;
+        }
+        .journal-name {
+            font-style: italic;
+        }
+    }
+}

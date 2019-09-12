@@ -14308,6 +14308,11 @@ body.template-search ol.searchResults {
   color: #FF0000;
   padding-left: 0.2em; }
 
+body.portaltype-agsci_person .publications .publication-title {
+  font-weight: bold; }
+body.portaltype-agsci_person .publications .journal-name {
+  font-style: italic; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;

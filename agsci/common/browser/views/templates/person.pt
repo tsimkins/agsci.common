@@ -275,6 +275,26 @@
 
         </div>
 
+        <tal:anonymous
+            tal:condition="not: view/anonymous">
+
+        <!-- Publications -->
+        <div class="row align-items-start publications"
+                tal:define="i context/publications|nothing"
+                tal:condition="i">
+
+                <div class="col-12 col-md-3">
+                    <h3>Publications</h3>
+                    <p class="discreet">Only visible to logged-in users.</p>
+                </div>
+
+                <div class="col-12 col-md-9"
+                    tal:content="structure i/output" />
+
+        </div>
+
+        </tal:anonymous>
+
     </div>
 
 </section>

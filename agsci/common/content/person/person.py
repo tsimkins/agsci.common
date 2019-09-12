@@ -96,7 +96,7 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     form.omitted(
         'homepage', 'hr_job_title', 'hr_admin_area',
         'hr_department', 'all_emails', 'sso_principal_name',
-        'newsletter_url',
+        'newsletter_url', 'publications',
     )
 
     # Grid Fields
@@ -218,6 +218,12 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     short_bio = RichText(
         title=_(u"Short Biography"),
         description=_(u"Used in listings."),
+        required=False,
+    )
+
+    publications = RichText(
+        title=_(u"Publications"),
+        description=_(u"Publication list from Asset Insight."),
         required=False,
     )
 
