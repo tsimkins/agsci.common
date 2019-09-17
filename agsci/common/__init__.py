@@ -11,7 +11,7 @@ GLOBALS = globals()
 registerDirectory('skins/agsci_common', GLOBALS)
 
 # Register indexers
-import indexer
+from . import indexer
 
 def initialize(context):
     pass

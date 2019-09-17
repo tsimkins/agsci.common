@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
-from urlparse import urljoin, urlparse, urlunparse
 from zope.component import getUtility, getMultiAdapter
 from zope.interface import implements, Interface
 from zope.security import checkPermission
@@ -14,6 +13,11 @@ from urllib import quote, urlencode
 from zope.intid.interfaces import IIntIds
 from z3c.relationfield.event import addRelations, _relations
 from z3c.relationfield.relation import RelationValue
+
+try:
+    from urllib.parse import urljoin, urlparse, urlunparse
+except ImportError:
+    from urlparse import urljoin, urlparse, urlunparse
 
 import premailer
 import re

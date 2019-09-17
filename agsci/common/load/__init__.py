@@ -14,13 +14,17 @@ from plone.event.interfaces import IEventAccessor
 from plone.namedfile.file import NamedBlobImage, NamedBlobFile
 from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import ATTRIBUTE_NAME
-from urlparse import urljoin, urlparse
 from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.component.interfaces import ComponentLookupError
 from zope.schema import getFieldsInOrder
 from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
+
+try:
+    from urllib.parse import urljoin, urlparse
+except ImportError:
+    from urlparse import urljoin, urlparse
 
 import base64
 import json

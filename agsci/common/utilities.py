@@ -1,6 +1,5 @@
 from AccessControl import getSecurityManager
 from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
-from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 from DateTime import DateTime
 from OFS.Folder import Folder
 from Products.CMFCore.utils import getToolByName
@@ -18,10 +17,20 @@ from zope.component import getUtility, getMultiAdapter
 from zope.component.hooks import getSite
 from zope.schema.interfaces import IVocabularyFactory
 
-import htmlentitydefs
 import pytz
 import re
 import unicodedata
+
+try:
+    from AccessControl.User import Super as BaseUnrestrictedUser
+except ImportError:
+    from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+
+
+try:
+    import  html.entities as htmlentitydefs
+except ImportError:
+    import htmlentitydefs
 
 from .constants import DEFAULT_TIMEZONE
 

@@ -1,8 +1,11 @@
 from functools import wraps
 from datetime import datetime
-from zLOG import LOG
 from zope.globalrequest import getRequest
 from zope.annotation.interfaces import IAnnotations
+
+import logging
+
+LOG = logging.getLogger('agsci.common')
 
 # This is a decorator (@context_memoize) that memoizes no-parameter methods based
 # on the method name and UID for the context. The purpose is to not have to call

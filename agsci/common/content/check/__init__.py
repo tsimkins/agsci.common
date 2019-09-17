@@ -7,13 +7,17 @@ from Products.CMFPlone.utils import safe_unicode
 from datetime import datetime, timedelta
 from plone.app.linkintegrity.utils import getIncomingLinks
 from plone.registry.interfaces import IRegistry
-from urlparse import urlparse
 from zope.annotation.interfaces import IAnnotations
 from zope.component import subscribers, getAdapters, getUtility, queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
 from zope.interface import Interface
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 from agsci.common.constants import DEFAULT_TIMEZONE
 from agsci.common.decorators import context_memoize

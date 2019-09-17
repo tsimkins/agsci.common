@@ -12,7 +12,7 @@ from plone.namedfile.field import NamedBlobFile
 from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
-from zope.interface import implements, provider, implementer, Interface
+from zope.interface import provider, implementer, Interface
 
 from ..behaviors import IContact, ISocialMediaBase
 
@@ -298,8 +298,8 @@ class ITitleFromPersonUserId(INameFromTitle):
     def title():
         """Return a processed title"""
 
+@implementer(ITitleFromPersonUserId)
 class TitleFromPersonUserId(object):
-    implements(ITitleFromPersonUserId)
 
     def __init__(self, context):
         self.context = context

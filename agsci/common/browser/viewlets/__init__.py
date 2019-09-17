@@ -11,12 +11,16 @@ from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone import api
-from urlparse import urlparse
 from zope.component import queryUtility, getMultiAdapter, queryMultiAdapter
 from zope.component.hooks import getSite
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.event.interfaces import IEvent
 from plone.memoize.instance import memoize
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 import json
 import untangle

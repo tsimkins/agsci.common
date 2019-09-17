@@ -15,12 +15,16 @@ from zope.globalrequest import getRequest
 from zope.interface.interface import Method
 from zope.component import queryUtility
 
+try:
+    from urllib.parse import urljoin
+except ImportError:
+    from urlparse import urljoin
+
 import Missing
 import base64
 import json
 import re
 import urllib2
-import urlparse
 
 from agsci.common.utilities import get_fields_by_type, toISO
 
@@ -88,7 +92,7 @@ class CustomEncoder(JSONEncoder):
                 for img in soup.findAll('img'):
                     src = img.get('src')
                     if src and not src.startswith('http'):
-                        #img['src'] = urlparse.urljoin(self.context.absolute_url(), src)
+                        #img['src'] = urljoin(self.context.absolute_url(), src)
                         pass
 
                 return {

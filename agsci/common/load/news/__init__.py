@@ -10,9 +10,13 @@ from plone.app.textfield.value import RichTextValue
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
 from urllib2 import HTTPError
-from urlparse import urljoin
 from zope.component import getUtility
 from zope.component.hooks import getSite
+
+try:
+    from urllib.parse import urljoin
+except ImportError:
+    from urlparse import urljoin
 
 import feedparser
 import re

@@ -13,11 +13,15 @@ from plone.app.textfield.value import RichTextValue
 from plone.memoize.instance import memoize
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
-from urlparse import urlparse, parse_qs
 from zope.component import getMultiAdapter, getUtility
 from zope.component.hooks import getSite
 from zope.schema import getFields
 from zope.schema.interfaces import IVocabularyFactory
+
+try:
+    from urllib.parse import urlparse, parse_qs
+except ImportError:
+    from urlparse import urlparse, parse_qs
 
 from .interfaces import IBorderTile
 from .links import link_factory

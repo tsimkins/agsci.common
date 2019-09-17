@@ -1,5 +1,9 @@
 from Products.CMFPlone.utils import safe_unicode
-from urlparse import urlparse
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 import ldap
 import re
