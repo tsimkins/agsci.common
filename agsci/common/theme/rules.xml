@@ -271,6 +271,7 @@
                     <xsl:apply-templates css:select="#leadimage" />
                     <xsl:apply-templates css:select="#public-tags" />
                     <xsl:apply-templates css:select="#content-core" />
+                    <xsl:apply-templates css:select="#course-policies" />
                 </div>
 
             </replace>

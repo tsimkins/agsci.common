@@ -573,3 +573,9 @@ class TileLinksViewlet(ViewletBase):
     @memoize
     def links(self):
         return self.check.value()
+
+class CourseSyllabusViewlet(ViewletBase):
+    pass
+
+class CourseSyllabusDigitalViewlet(CourseSyllabusViewlet):
+    pass

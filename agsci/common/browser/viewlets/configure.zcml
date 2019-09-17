@@ -190,4 +190,25 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Digital Learning Course Syllabus Viewlet -->
+    <browser:viewlet
+        name="agsci.common.syllabus"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".CourseSyllabusViewlet"
+        permission="zope2.View"
+        template="templates/syllabus.pt"
+        layer="..interfaces.IThemeSpecific"
+        for="agsci.common.interfaces.ICourseSyllabus"
+        />
+
+    <browser:viewlet
+        name="agsci.common.syllabus_digital"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".CourseSyllabusDigitalViewlet"
+        permission="zope2.View"
+        template="templates/syllabus_digital.pt"
+        layer="..interfaces.IThemeSpecific"
+        for="agsci.common.interfaces.ICourseSyllabusDigital"
+        />
+
 </configure>

@@ -47,4 +47,15 @@
         interface=".interfaces.ICollegeHomepage"
         />
 
+    <!-- Define marker interface for course syllabus policies viewlet -->
+
+    <interface
+        interface=".interfaces.ICourseSyllabus"
+        />
+
+    <interface
+        interface=".interfaces.ICourseSyllabusDigital"
+        />
+
+
 </configure>

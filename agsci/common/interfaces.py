@@ -8,3 +8,9 @@ class ILocationAdapter(Interface):
 
 class ICollegeHomepage(Interface):
     pass
+
+class ICourseSyllabus(Interface):
+    pass
+
+class ICourseSyllabusDigital(Interface):
+    pass
