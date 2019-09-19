@@ -589,6 +589,18 @@ body.template-image_view #content-core {
             line-height: 1.25;
         }
     }
+    
+    /* No centering! */
+    table[align="center"],
+    tr[align="center"] {
+        th, td {
+            text-align: left !important;
+        }
+    }
+    
+    [align="center"] {
+        text-align: left !important;
+    }
 }
 
 #content-core {
