@@ -696,6 +696,14 @@ body.template-image_view #content-core {
   body.template-image_view #content-core table.table-sm th {
     font-size: 0.875rem;
     line-height: 1.25; }
+  #parent-fieldname-text table,
+  .html table,
+  body.template-default_error_message #content-core table,
+  body.template-fg_thankspage_view_p3 #content-core table,
+  body.template-fg_base_view_p3 #content-core table,
+  body.template-file_view #content-core table,
+  body.template-image_view #content-core table {
+    caption-side: top; }
   #parent-fieldname-text table[align="center"] th, #parent-fieldname-text table[align="center"] td,
   #parent-fieldname-text tr[align="center"] th,
   #parent-fieldname-text tr[align="center"] td,
