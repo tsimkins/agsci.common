@@ -37,6 +37,6 @@
         <permission value="View" />
     </action>
     <action title="Edit" action_id="edit" category="object" condition_expr="" description="" icon_expr="" link_target="" url_expr="string:${object_url}/edit" visible="True">
-        <permission value="Modify portal content" />
+        <permission value="agsci.common.restricted_types" />
     </action>
 </object>
