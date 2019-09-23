@@ -34,4 +34,4 @@ class TagsViewlet(ViewletBase):
 
     @property
     def available(self):
-        return not not self.tags
+        return self.tags and isinstance(self.tags, (list, tuple)) and len(self.tags) > 1

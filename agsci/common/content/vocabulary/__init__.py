@@ -81,6 +81,24 @@ class PublicTagsVocabulary(BaseVocabulary):
 
         return []
 
+class AllPublicTagsVocabulary(BaseVocabulary):
+
+    @property
+    def items(self):
+        return self.portal_catalog.uniqueValuesFor('Tags')
+
+    def __call__(self, context):
+
+        items = self.items
+
+        return SimpleVocabulary(
+            [
+                SimpleTerm(x, title=x) for x in items
+            ]
+        )
+
+        return []
+
 # Directory classifications for people
 class PersonClassificationsVocabulary(StaticVocabulary):
 
@@ -182,6 +200,7 @@ class ResearchAreasVocabulary(StaticVocabulary):
 
 # Factories
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
+AllPublicTagsVocabularyFactory = AllPublicTagsVocabulary()
 PersonClassificationsVocabularyFactory = PersonClassificationsVocabulary()
 PersonGroupsVocabularyFactory = PersonGroupsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()

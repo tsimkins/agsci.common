@@ -75,6 +75,11 @@ class TagsVocabulary(StaticVocabulary):
     def items(self):
         return [x for x in self.portal_catalog.uniqueValuesFor('Subject') if any([x.startswith('%s' % y) for y in self.prefixes])]
 
+class PublicTagsVocabulary(StaticVocabulary):
+
+    @property
+    def items(self):
+        return self.portal_catalog.uniqueValuesFor('Tags')
 
 class VideoAspectRatioVocabulary(StaticVocabulary):
 
@@ -115,6 +120,7 @@ CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()
 TagsVocabularyFactory = TagsVocabulary()
+PublicTagsVocabularyFactory = PublicTagsVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()

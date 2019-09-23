@@ -46,6 +46,12 @@
         provides=".tags.ITagsRoot"
     />
 
+    <plone:behavior
+        title="Public Tags Root (Folder)"
+        description="Designates that something is a 'Tag Root' object"
+        provides=".tags.IFolderTagsRoot"
+    />
+
     <!-- Research Areas -->
 
     <plone:behavior

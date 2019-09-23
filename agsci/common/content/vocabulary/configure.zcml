@@ -9,6 +9,12 @@
     />
 
     <utility
+        name="agsci.common.all_public_tags"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".AllPublicTagsVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.states"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".StatesVocabularyFactory"

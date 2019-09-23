@@ -835,4 +835,19 @@
         <value key="group">Metadata</value>
     </records>
 
+    <!-- Public Tags -->
+    <records interface="plone.app.querystring.interfaces.IQueryField"
+             prefix="plone.app.querystring.field.Tags">
+        <value key="title">Public Tag</value>
+        <value key="description">Publicly Viewable Tags</value>
+        <value key="enabled">True</value>
+        <value key="sortable">False</value>
+        <value key="operations">
+            <element>plone.app.querystring.operation.selection.any</element>
+            <element>plone.app.querystring.operation.selection.all</element>
+        </value>
+        <value key="vocabulary">agsci.common.all_public_tags</value>
+        <value key="group">Metadata</value>
+    </records>
+
 </registry>

@@ -33,6 +33,7 @@
         <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.app.lockingbehavior.behaviors.ILocking" />
         <element value="agsci.common.content.behaviors.IEventFields" />
+        <element value="agsci.common.content.behaviors.tags.ITags" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
         <element value="plone.layoutaware"/>
         <element value="plone.draftable"/>

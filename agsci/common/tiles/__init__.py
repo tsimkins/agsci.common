@@ -381,11 +381,27 @@ class SkeeterTile(ConditionalTemplateTile):
             return _
 
     @property
+    def filter_public_tags(self):
+        _ = self.get_valid_value('filter_public_tags')
+
+        if _ and isinstance(_, (list, tuple)):
+            return _
+
+    @property
     def show_tile(self):
         return not not self.items
 
     @property
+    def no_max(self):
+        if self.style in ('events',) and self.filter_public_tags:
+            return True
+
+    @property
     def max_items(self):
+
+        if self.no_max:
+            return 99999
+
         return {
             'pages' : 4,
             'news' : 3,
@@ -456,12 +472,16 @@ class SkeeterTile(ConditionalTemplateTile):
 
         featured = self.featured
         filter_tags = self.filter_tags
+        filter_public_tags = self.filter_public_tags
 
         items = super(SkeeterTile, self).items
 
         # Filter by tags provided.
         if filter_tags:
             items = [x for x in items if any([y in x.Subject() for y in filter_tags])]
+
+        if filter_public_tags:
+            items = [x for x in items if any([y in getattr(x, 'public_tags', []) for y in filter_public_tags])]
 
         if featured:
             items = [x for x in items if x.UID != featured.UID]
