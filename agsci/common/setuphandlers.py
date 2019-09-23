@@ -71,6 +71,11 @@ def create_registry_keys(site, logger):
             Record(field.TextLine(title=u'Activity Insight API Key')),
             u''
         ),
+        (
+            'agsci.common.department_id',
+            Record(field.TextLine(title=u'Department Id')),
+            u''
+        ),
     ]
 
     for (key, record, value) in keys:

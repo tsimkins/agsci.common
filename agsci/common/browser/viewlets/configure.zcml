@@ -59,6 +59,17 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Department Navigation -->
+
+    <browser:viewlet
+        name="agsci.common.navigation.department"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".PrimaryDepartmentNavigationViewlet"
+        permission="zope2.View"
+        template="templates/navigation-department.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Social Footer -->
 
     <browser:viewlet

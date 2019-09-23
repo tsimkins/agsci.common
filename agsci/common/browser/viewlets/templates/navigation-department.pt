@@ -1,0 +1,113 @@
+<div id="primary-nav-viewlet"
+    tal:define="nav view/nav|nothing"
+    tal:condition="view/is_department|nothing">
+
+    <nav class="navbar navbar-expand-lg pb-0 department-level">
+
+    	<div class="department-branding d-lg-none">
+
+    		<a class="navbar-brand">
+
+    			<img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png"
+    			     class="agsci-logo pl-3" 
+    			     alt="Penn State College of Agricultural Science Logo" />
+
+    		</a>
+
+    	</div>
+
+    	<a class="department-brand department-brand-creek d-block department-brand-mobile d-lg-none">
+            <span tal:content="view/site/Title|nothing" />
+
+    	</a>
+
+    	<button 
+    	   class="btn btn-primary btn-toggle-mobile-nav" 
+    	   type="button" 
+    	   data-toggle="collapse" 
+    	   data-target="#navbarSupportedContent" 
+    	   aria-controls="navbarSupportedContent" 
+    	   aria-expanded="false" 
+    	   aria-label="Toggle navigation">
+    	</button>
+
+    	<div id="navbarSupportedContent" 
+	       class="collapse navbar-collapse py-0">
+
+    		<ul class="department-dropdowns dropdown-selectors justify-content-center">
+
+                <tal:li tal:repeat="l1 nav/items/item|nothing">
+
+                    <li tal:attributes="class klass"
+                        tal:define="item_id python:view.label(l1.title.cdata);
+                                    hidden l1/hidden/cdata|nothing;
+                                    klass python: hidden and 'dropdown d-lg-none' or 'dropdown'">
+
+                        <a tal:content="l1/title/cdata"
+                           tal:attributes="id item_id;
+                                           href python: view.link(l1)"
+                           class="dropdown-toggle"
+                           role="button"
+                           data-toggle="dropdown"
+                           data-click-behavior="default"
+                           aria-haspopup="true"
+                           aria-expanded="false" />
+
+        				<div class="dropdown-menu"
+                             tal:attributes="aria-labelledby item_id">
+    
+        					<div class="container px-0">
+    
+        						<div class="row justify-content-center">
+    
+        							<div class="col-12">
+        								<ul class="nav flex-column">
+        								
+                                        <tal:block
+                                            tal:repeat="l2 l1/items/item|nothing">
+                                     
+                                            <li class="nav-item">
+                                                <a class="nav-link" 
+                                                   tal:attributes="href l2/link/cdata|nothing"
+                                                   tal:content="l2/title/cdata|nothing" />
+                                            </li>
+    
+                                        </tal:block>
+    
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </tal:li>
+
+                <!-- Search Dropdown -->
+
+                <li class="nav-item dropdown d-flex align-items-center">
+
+                    <form class="form-inline my-2 my-lg-0"
+                          method="get"
+                          tal:attributes="action string:${view/site/absolute_url}/search">
+
+                        <input
+                           class="form-control"
+                           type="search"
+                           name="SearchableText"
+                           placeholder="Search"
+                           aria-label="Search">
+
+                        <button
+                         class="btn btn-primary my-2 my-sm-0"
+                         type="submit"><i
+                             class="fa fa-search"></i></button>
+
+                     </form>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -10,8 +10,9 @@ from plone.app.layout.viewlets.common import TitleViewlet as _TitleViewlet
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone.registry.interfaces import IRegistry
 from plone import api
-from zope.component import queryUtility, getMultiAdapter, queryMultiAdapter
+from zope.component import getUtility, queryUtility, getMultiAdapter, queryMultiAdapter
 from zope.component.hooks import getSite
 from plone.app.contenttypes.interfaces import INewsItem
 from plone.event.interfaces import IEvent
@@ -49,6 +50,10 @@ class ViewletBase(_ViewletBase):
     @property
     def site(self):
         return getSite()
+
+    @property
+    def registry(self):
+        return getUtility(IRegistry)
 
     @property
     def portal_url(self):
@@ -206,11 +211,44 @@ class NavigationViewlet(ViewletBase):
             if nav['id'] == self.nav_id:
                 return nav
 
+    @property
+    def department_id(self):
+        _ = self.registry.get('agsci.common.department_id', None)
+        
+        if _ in [
+            'abe', 'aese', 'animalscience', 'ecosystems', 'ento', 
+            'foodscience', 'plantpath', 'plantscience', 'vbs'
+        ]:
+            return safe_unicode(_).encode('utf-8')
+        
+    @property
+    def is_department(self):
+        return not not self.department_id
+
 class PrimaryNavigationViewlet(NavigationViewlet):
 
     nav_id = 'primary'
 
 class AudienceNavigationViewlet(NavigationViewlet):
+
+    nav_id = 'audience'
+
+class DepartmentNavigationViewlet(NavigationViewlet):
+    
+    @property
+    def xml_file(self):
+        return '++resource++agsci.common/configuration/navigation-%s.xml' % self.department_id
+
+class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
+
+    nav_id = 'primary'
+    
+    @property
+    def nav(self):
+        nav = super(PrimaryDepartmentNavigationViewlet, self).nav
+        return nav
+
+class AudienceDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
     nav_id = 'audience'
 
