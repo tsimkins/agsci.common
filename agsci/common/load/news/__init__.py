@@ -67,8 +67,38 @@ class ImportNewsView(ImportContentView):
         'penn-state-extension' : 'extension',
     }
 
-    def transform_tag(self, _):
-        return self.tag_transforms.get(_, _)
+    conditional_transforms = {
+        'student-stories' : {
+            'agribusiness-management' : 'majors-agribusiness-management',
+            'agricultural-and-extension-education' : 'majors-agricultural-and-extension-education',
+            'agricultural-science' : 'majors-agricultural-science',
+            'animal-science' : 'majors-animal-science',
+            'biological-engineering' : 'majors-biological-engineering',
+            'biorenewable-systems' : 'majors-biorenewable-systems',
+            'community-environment-and-development' : 'majors-community-environment-and-development',
+            'environmental-resource-management' : 'majors-environmental-resource-management',
+            'food-science' : 'majors-food-science',
+            'forest-ecosystem-management' : 'majors-forest-ecosystem-management',
+            'immunology-and-infectious-disease' : 'majors-immunology-and-infectious-disease',
+            'landscape-contracting' : 'majors-landscape-contracting',
+            'plant-sciences' : 'majors-plant-sciences',
+            'toxicology' : 'majors-toxicology',
+            'turfgrass-science' : 'majors-turfgrass-science',
+            'veterinary-and-biomedical-sciences' : 'majors-veterinary-and-biomedical-sciences',
+            'wildlife-and-fisheries-science' : 'majors-wildlife-and-fisheries-science',
+        }
+    }
+
+
+    def transform_tag(self, _, tags=[]):
+        _ = self.tag_transforms.get(_, _)
+
+        for (k, v) in self.conditional_transforms.iteritems():
+
+            if k in tags:
+                _ = v.get(_, _)
+
+        return _
 
     @property
     def valid_tags(self):
@@ -141,13 +171,6 @@ class ImportNewsView(ImportContentView):
         tags = self.get_tags(html)
 
         if tags:
-
-            # Prepend 'news-' to tags if they don't start with 'majors-' or 'department-'
-            for i in range(0, len(tags)):
-                t = tags[i]
-                if not any([t.startswith('%s-' % x) for x in ('majors', 'department')]):
-                    t = 'news-%s' % t
-                    tags[i] = t
 
             item.setSubject(tags)
 
@@ -234,7 +257,7 @@ class ImportNewsView(ImportContentView):
 
         return u"<p>%s</p>" % safe_unicode(item.text)
 
-    def get_tags(self, html):
+    def get_tags(self, html, raw=False, valid=True):
         soup = BeautifulSoup(html, features='lxml')
 
         tags = []
@@ -244,9 +267,21 @@ class ImportNewsView(ImportContentView):
             tags.extend([ploneify(x.text).strip() for x in items])
 
         # Transform tags
-        tags = [self.transform_tag(x) for x in tags]
+        if not raw:
+            tags = [self.transform_tag(x, tags) for x in tags]
 
-        return list(set(tags) & set(self.valid_tags))
+        # Ensure valid
+        if valid:
+            tags = list(set(tags) & set(self.valid_tags))
+
+        # Prepend 'news-' to tags if they don't start with 'majors-' or 'department-'
+        for i in range(0, len(tags)):
+            t = tags[i]
+            if not any([t.startswith('%s-' % x) for x in ('majors', 'department')]):
+                t = 'news-%s' % t
+                tags[i] = t
+
+        return tags
 
     @property
     def portal_transforms(self):
