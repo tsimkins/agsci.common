@@ -285,6 +285,8 @@ class PersonView(BaseView):
 
     index = ViewPageTemplateFile("templates/person.pt")
 
+    card = False
+
     @property
     def primary_profile_url(self):
         return getattr(self.context, 'primary_profile_url', None)
@@ -297,9 +299,9 @@ class PersonView(BaseView):
     def show_profile(self):
         return (self.is_expired and not self.anonymous) or not self.is_expired
 
-    def __call__(self, block=False):
+    def __call__(self):
 
-        if self.anonymous and self.primary_profile_url and not block:
+        if self.anonymous and self.primary_profile_url and not self.card:
 
             RESPONSE =  self.request.RESPONSE
 
@@ -345,6 +347,7 @@ class PersonView(BaseView):
 
 class PersonCardView(PersonView):
 
+    card = True
     card_format = 'horizontal'
     border = True
     show_image = False
