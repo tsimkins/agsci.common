@@ -68,7 +68,7 @@ class ImportNewsView(ImportContentView):
     }
 
     conditional_transforms = {
-        'student-stories' : {
+        ('student-stories',) : {
             'agribusiness-management' : 'majors-agribusiness-management',
             'agricultural-and-extension-education' : 'majors-agricultural-and-extension-education',
             'agricultural-science' : 'majors-agricultural-science',
@@ -95,7 +95,7 @@ class ImportNewsView(ImportContentView):
 
         for (k, v) in self.conditional_transforms.iteritems():
 
-            if k in tags:
+            if any([x in tags for x in k]):
                 _ = v.get(_, _)
 
         return _
@@ -275,11 +275,12 @@ class ImportNewsView(ImportContentView):
             tags = list(set(tags) & set(self.valid_tags))
 
         # Prepend 'news-' to tags if they don't start with 'majors-' or 'department-'
-        for i in range(0, len(tags)):
-            t = tags[i]
-            if not any([t.startswith('%s-' % x) for x in ('majors', 'department')]):
-                t = 'news-%s' % t
-                tags[i] = t
+        if not raw:
+            for i in range(0, len(tags)):
+                t = tags[i]
+                if not any([t.startswith('%s-' % x) for x in ('majors', 'department')]):
+                    t = 'news-%s' % t
+                    tags[i] = t
 
         return tags
 
