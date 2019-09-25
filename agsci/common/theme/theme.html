@@ -62,9 +62,12 @@
 
             <div id="anonymous-actions"></div>
 
-            <!-- Return to Top Button -->
+            <!-- Return to Top Button (hidden from screen readers because of positioning) -->
 
-            <a href="#scroll-top" class="btn btn-primary back-to-top" data-toggle="affix"><i class="fa fa-arrow-up"></i></a>
+            <a href="#scroll-top"
+               aria-hidden="true"
+               class="btn btn-primary back-to-top"
+               data-toggle="affix"><i class="fa fa-arrow-up"></i></a>
 
             <section class="banner"></section>
 
@@ -142,6 +145,11 @@
                 </div>
 
             </section>
+
+            <!-- Return to Top Button (positioned for screen readers) -->
+
+            <a href="#scroll-top"
+               class="hiddenStructure">Back to Top</a>
 
         </main>
 

@@ -30,21 +30,8 @@
                     <div class="container border-bottom bio">
                         <div class="row"
                              tal:define="image person_view/item_image|nothing">
-                            <div class="col-6 col-sm-4 col-lg-2 pr-lg-0">
-                                <div class="headshot card-img-crop">
-                                    <img tal:condition="image"
-                                         tal:attributes="alt person_view/name/title|nothing;
-                                                         title person_view/name/title|nothing;
-                                                         src image"
-                                         class="w-100 photo" />
-                                </div>
-                                <a tal:attributes="href context/absolute_url|nothing"
-                                   class="d-none d-sm-block btn btn-sm btn-light-creek-outline mt-2">Full Bio</a>
 
-                            </div>
-
-
-                            <div class="col-12 col-sm-8 col-lg-10">
+                            <div class="col-12 col-sm-8 col-lg-10 order-2">
                                 <div id="hcard" class="vcard personView">
                                     <h2>
                                         <a tal:attributes="href context/absolute_url|nothing"
@@ -100,7 +87,12 @@
 
 
                                             <a tal:attributes="href context/absolute_url|nothing"
-                                               class="d-inline-block d-sm-none btn btn-light-creek-outline mt-2 ml-3">Full Bio</a>
+                                               class="d-inline-block d-sm-none btn btn-light-creek-outline mt-2 ml-3">
+                                               Full Bio
+
+                                                <span class="hiddenStructure">
+                                                    for <span tal:replace="person_view/name/title" />
+                                   </span></a>
 
 
                                         </div>
@@ -113,6 +105,22 @@
 
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-lg-2 pr-lg-0 order-1">
+                                <div class="headshot card-img-crop">
+                                    <img tal:condition="image"
+                                         tal:attributes="alt person_view/name/title|nothing;
+                                                         title person_view/name/title|nothing;
+                                                         src image"
+                                         class="w-100 photo" />
+                                </div>
+                                <a tal:attributes="href context/absolute_url|nothing"
+                                   class="d-none d-sm-block btn btn-sm btn-light-creek-outline mt-2">Full Bio
+                                   <span class="hiddenStructure">
+                                        for <span tal:replace="person_view/name/title" />
+                                   </span>
+                                </a>
+
                             </div>
                         </div>
                     </div>

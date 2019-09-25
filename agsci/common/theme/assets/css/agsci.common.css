@@ -13956,7 +13956,7 @@ body.template-image_view #content-core {
   body.template-image_view #content-core a:visited,
   body.template-image_view #content-core a:active,
   body.template-image_view #content-core .a {
-    color: #009cde !important;
+    color: #4373B6 !important;
     border-bottom: 1px solid #E9E9E9 !important;
     padding-bottom: 0.0625em !important; }
   #parent-fieldname-text a:hover,
@@ -13973,7 +13973,7 @@ body.template-image_view #content-core {
   body.template-file_view #content-core .a:hover,
   body.template-image_view #content-core a:hover,
   body.template-image_view #content-core .a:hover {
-    color: #0078ab !important;
+    color: #093c79 !important;
     border-bottom: 1px solid #0078ab !important; }
   #parent-fieldname-text a.no-border, #parent-fieldname-text a.no-border:visited,
   #parent-fieldname-text a.no-border:active, #parent-fieldname-text a.no-border:hover,
@@ -14144,12 +14144,12 @@ body.template-image_view #content-core {
   #content-core .entries .entry a, #content-core .entries .entry a:visited,
   #content-core .entries .entry a:active,
   #content-core .entries .entry .a {
-    color: #009cde !important;
+    color: #4373B6 !important;
     border-bottom: 1px solid #E9E9E9 !important;
     padding-bottom: 0.0625em !important; }
   #content-core .entries .entry a:hover,
   #content-core .entries .entry .a:hover {
-    color: #0078ab !important;
+    color: #093c79 !important;
     border-bottom: 1px solid #0078ab !important; }
   #content-core .entries .entry a.no-border, #content-core .entries .entry a.no-border:visited,
   #content-core .entries .entry a.no-border:active, #content-core .entries .entry a.no-border:hover,

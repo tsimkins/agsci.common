@@ -24,42 +24,42 @@
                     <li tal:condition="facebook_url">
                         <a class="no-border"
                            tal:attributes="href facebook_url">
-                            <em class="title fab fa-2x fa-fw fa-facebook-square"></em>
+                            <em class="title fab fa-2x fa-fw fa-facebook-square"><span class="hiddenStructure">Facebook</span></em>
                         </a>
                     </li>
 
                     <li tal:condition="twitter_url">
                         <a class="no-border"
                            tal:attributes="href twitter_url">
-                            <em class="title fab fa-2x fa-fw fa-twitter-square"></em>
+                            <em class="title fab fa-2x fa-fw fa-twitter-square"><span class="hiddenStructure">Twitter</span></em>
                         </a>
                     </li>
 
                     <li tal:condition="youtube_url">
                         <a class="no-border"
                            tal:attributes="href youtube_url">
-                            <em class="title fab fa-2x fa-fw fa-youtube-square"></em>
+                            <em class="title fab fa-2x fa-fw fa-youtube-square"><span class="hiddenStructure">YouTube</span></em>
                         </a>
                     </li>
 
                     <li tal:condition="instagram_url">
                         <a class="no-border"
                            tal:attributes="href instagram_url">
-                            <em class="title fab fa-2x fa-fw fa-instagram"></em>
+                            <em class="title fab fa-2x fa-fw fa-instagram"><span class="hiddenStructure">Instagram</span></em>
                         </a>
                     </li>
 
                     <li tal:condition="linkedin_url">
                         <a class="no-border"
                            tal:attributes="href linkedin_url">
-                            <em class="title fab fa-2x fa-fw fa-linkedin"></em>
+                            <em class="title fab fa-2x fa-fw fa-linkedin"><span class="hiddenStructure">LinkedIn</span></em>
                         </a>
                     </li>
 
                     <li tal:condition="newsletter_url|nothing">
                         <a class="no-border"
                            tal:attributes="href newsletter_url">
-                            <em class="title far fa-2x fa-fw fa-envelope"></em>
+                            <em class="title far fa-2x fa-fw fa-envelope"><span class="hiddenStructure">Subscribe to Newsletter</span></em>
                         </a>
                     </li>
 

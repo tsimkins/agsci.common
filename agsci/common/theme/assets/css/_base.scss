@@ -4,14 +4,14 @@
     a, a:visited,
     a:active,
     .a {
-        color: #009cde !important;
+        color: #4373B6 !important;
         border-bottom: 1px solid #E9E9E9 !important;
         padding-bottom: 0.0625em !important;
     }
 
     a:hover,
     .a:hover {
-        color: #0078ab !important;
+        color: #093c79 !important;
         border-bottom: 1px solid #0078ab !important;
     }
 
@@ -27,7 +27,6 @@
     font-family: "Nunito Sans", sans-serif;
     font-size: 0.9rem;
 }
-
 
 @mixin tile_labels {
     content: attr(data-tile-type);

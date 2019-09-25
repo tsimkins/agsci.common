@@ -184,9 +184,10 @@
                            type="search"
                            name="SearchableText"
                            placeholder="Search"
-                           aria-label="Search">
+                           aria-label="Text to search for">
 
                         <button
+                         aria-label="Submit Search"
                          class="btn btn-primary my-2 my-sm-0"
                          type="submit"><i
                              class="fa fa-search"></i></button>
