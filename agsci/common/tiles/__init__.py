@@ -10,6 +10,7 @@ from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.portlets.portlets.navigation import NavtreeStrategy
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
 from plone.app.textfield.value import RichTextValue
+from plone.dexterity.interfaces import IDexterityContainer
 from plone.memoize.instance import memoize
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
@@ -231,6 +232,23 @@ class BaseTile(PersistentTile):
         if ICollection.providedBy(target_object):
             return [x for x in target_object.queryCatalog()]
 
+        elif IDexterityContainer.providedBy(target_object):
+            # Folder Contents
+            listing = aq_inner(target_object).restrictedTraverse('@@folderListing', None)
+
+            if listing is None:
+                return []
+
+            _ = listing(batch=False)
+
+            # Exclude default page
+            _id = target_object.getDefaultPage()
+
+            if _id:
+                _ = [x for x in _ if _id != x.getId()]
+
+            return _
+
     @property
     def more_items_link(self):
         return self.get_more_items_link()
@@ -356,6 +374,15 @@ class RowlfTile(BaseTile):
 
 class ScooterTile(ConditionalTemplateTile):
     pb = 3
+
+    def get_items(self):
+        items = super(ScooterTile, self).get_items('target')
+
+        if items:
+            return items
+
+        return super(ScooterTile, self).get_items('target_container')
+
 
     @property
     def template(self):
