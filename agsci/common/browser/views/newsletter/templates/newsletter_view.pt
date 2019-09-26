@@ -159,6 +159,7 @@ div.subheader {
 div.documentDescription {
     font-size: 11pt;
     margin: 0 0 6pt 0;
+    line-height: 14pt;
 }
 
 p {
@@ -199,7 +200,6 @@ body.logged-in #portal-columns {
     border: 20px solid #FFFFFF;
 }
 
-table.leadimage td,
 table td.graphic-header {
     padding: 0;
     margin: 0;
@@ -237,16 +237,6 @@ table td.header div,
 table td.header h1,
 table td.header hr {
     width: 600px;
-}
-
-table.leadimage td div,
-table.leadimage td h1,
-table.leadimage td hr {
-    width: auto;
-}
-
-table.leadimage td div.contentLeadImageContainer {
-    text-align: right;
 }
 
 table td.footer p {

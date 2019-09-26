@@ -79,11 +79,9 @@
 
                             <hr size="1">
 
-                            <table class="leadimage"
-                                width="600">
+                            <table width="600">
                                 <tr>
-                                    <td width="340" align="left"
-                                        id="leadimage-left" valign="top">
+                                    <td align="left" valign="top">
                                         <metal:title define-slot="content-title">
                                             <metal:comment tal:content="nothing">
                                                 If you write a custom title always use
@@ -105,10 +103,6 @@
                                         </metal:description>
 
                                         <metal:subheader define-slot="content-date" />
-
-                                    </td>
-                                    <td width="260" align="right" valign="top" id="leadimage-right">
-                                        <metal:leadimage define-slot="content-leadimage" />
 
                                     </td>
                                 </tr>
