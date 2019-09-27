@@ -65,7 +65,8 @@ footer { /* relative and high z-index to mask any affixed nav */
 		text-decoration: none;
 		}
 			
-	abbr:hover{
+	abbr:hover,
+	abbr:focus {
 		cursor: default;
 		}
 	}

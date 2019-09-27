@@ -84,7 +84,8 @@ p.more-header {
 		a {
 			border-bottom: 1px solid $color-ps-creek;
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $color-ps-creek;
 				}
 			}
@@ -99,8 +100,11 @@ p.more-header {
 	color: $black;
 	}
 			
-.section-explore ul li a:hover {
-	border-bottom: 1px solid $color-ps-creek;
+.section-explore ul li {
+    a:hover,
+    a:focus {
+	   border-bottom: 1px solid $color-ps-creek;
+       }
 	}
 	
 .explore-more-link {
@@ -110,7 +114,8 @@ p.more-header {
 		border-bottom: 1px solid transparent;
 		}
 	
-	a:hover {
+	a:hover,
+	a:focus {
 		border-bottom: 1px solid $color-ps-creek;
 		}
 	

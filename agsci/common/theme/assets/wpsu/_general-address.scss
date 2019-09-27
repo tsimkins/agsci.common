@@ -1,51 +1,54 @@
 address {
-	margin-bottom: 0.5rem;
-	font-size: $small1-size;
-	font-family: $font-family-sans-serif;
-	line-height: $line-height-md;
-	
-	a {
-		border-bottom: 1px solid transparent;
-		text-decoration: none;
-		}
-	}
+    margin-bottom: 0.5rem;
+    font-size: $small1-size;
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-md;
+    
+    a {
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        }
+    }
 
 @include media-breakpoint-up(md) {
-	address {
-		font-size: $small2-size;
-		}
-	}
+    address {
+        font-size: $small2-size;
+        }
+    }
 
-address a:hover {
-	border-bottom: 1px solid $color-ps-creek;
-	}
-	
+address {
+    a:hover,
+    a:focus {
+        border-bottom: 1px solid $color-ps-creek;
+        }
+    }
+    
 .address-generic {
-	position: relative;
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	padding: 1.5rem 1.0rem;
-	font-size: $font-size-sm;
-	line-height: $line-height-md;
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem 1.0rem;
+    font-size: $font-size-sm;
+    line-height: $line-height-md;
 
-	.card-title p {
-		font-size: $font-size-lg;
-		}
-	
-	address {
-		padding-top: 0;
-		padding-bottom: 0;
-		}
-	
-	.address-contact {
-		margin-top: 0;
-		font-size: $small3-size;
-		}
-	}
+    .card-title p {
+        font-size: $font-size-lg;
+        }
+    
+    address {
+        padding-top: 0;
+        padding-bottom: 0;
+        }
+    
+    .address-contact {
+        margin-top: 0;
+        font-size: $small3-size;
+        }
+    }
 
 @include media-breakpoint-up(lg) {
-	
-	.address-generic {
-		display: inline-block;
-		}
-	}
+    
+    .address-generic {
+        display: inline-block;
+        }
+    }

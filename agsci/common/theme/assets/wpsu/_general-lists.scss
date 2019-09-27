@@ -71,7 +71,8 @@ ul, ol {
 		a {
 			border-bottom: 1px solid $color-ps-creek;
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				color: $color-ps-creek;
 				}
 			}

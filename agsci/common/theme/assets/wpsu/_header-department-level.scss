@@ -45,7 +45,8 @@
 		font-size: $small3-size;
 		cursor: pointer;
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			color: lighten($color-ps-creek,35%);
 			}
 		}
@@ -351,7 +352,8 @@
 		text-transform: none;
 		transition: $transition-base;
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: $white;
 			}
 		}
@@ -439,7 +441,8 @@
 	
 	a.nav-link {
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: transparent;
 			}
 		}
@@ -523,7 +526,8 @@
 			border-top: $border-base;
 			color: lighten($color-ps-coaly-gray,10%);
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				background: lighten($color-ps-coaly-gray,60%);
 				color: darken($color-ps-coaly-gray,35%);
 				}

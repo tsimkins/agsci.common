@@ -196,7 +196,8 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 	font-size: $small3-size;
 	transition: $transition-base;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		background: lighten($color-ps-coaly-gray,60%);
 		color: darken($color-ps-coaly-gray,35%);
 		}
@@ -236,7 +237,8 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 		.nav-link {
 			display: block;
 	
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: $white;
 				}
 			}
@@ -395,7 +397,8 @@ button.dropdown-toggle  i { /* arrow after mega nav toggle */
 	margin-bottom: 1rem;
 	border-bottom: transparent;
 	
-	&:hover {
+	&:hover,
+	&:focus	 {
 		background-color: lighten($color-ps-coaly-gray, 60%);
 		}
 	
@@ -602,7 +605,8 @@ p.main-nav-section-head {
 	font-family: $font-family-sans-serif;
 	line-height: 1;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background: lighten($color-ps-coaly-gray,60%);
 		color: darken($color-ps-coaly-gray,35%);
 		}
@@ -800,7 +804,8 @@ p.main-nav-section-head {
 		color: lighten($color-ps-coaly-gray,10%);
 		font-size: $small3-size;
 	
-		&:hover {
+		&:hover,
+		&:focus {
 			background: lighten($color-ps-coaly-gray,60%);
 			color: darken($color-ps-coaly-gray,35%);
 			}
@@ -847,6 +852,7 @@ header .form-control {
 	line-height: 1.2;
 	
 	&:hover,
+	&:focus,
 	&:active {
 		background: $white;
 		}

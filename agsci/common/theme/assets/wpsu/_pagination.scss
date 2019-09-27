@@ -41,7 +41,8 @@ PAGINATION
 		color: $color-ps-creek-accessible;
 		font-size: $small2-size;	
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			border-bottom: 2px solid $color-ps-creek;
 			}
 		}

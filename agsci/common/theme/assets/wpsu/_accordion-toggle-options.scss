@@ -41,7 +41,8 @@ ACCORDION - MAJOR OPTIONS
 				}
 			}
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			
 			&::after {
 				color: $white;

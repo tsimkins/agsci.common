@@ -156,7 +156,8 @@ $box-shadow-dark: 0.25rem 0.25rem 1rem rgba($color-ps-slate-gray, 0.5);
 a.agsci-box-shadow {
 		box-shadow: $box-shadow-light;
 		
-		&:hover { /* change body on hover only if wrapped in a */ 
+		&:hover,
+		&:focus { /* change body on hover only if wrapped in a */ 
 			box-shadow: $box-shadow-medium;
 			}
 		}

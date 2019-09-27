@@ -53,7 +53,8 @@ BIO -- body class .template-person_view
 	h2, .h2 {
 		margin-top: 0.5rem;
 		
-		a:hover {
+		a:hover,
+		a:focus {
 			color: $color-ps-creek-accessible;
 			}
 		}

@@ -3,154 +3,159 @@
 PORTABLE HIGHLIGHTS
 
 ---------------------------------------------------------- */
-			
+            
 .card-deck.card-deck-portable-highlights {
-	flex-flow: row wrap; /* override single column for mobile */
-	margin-bottom: 0;
-	}
+    flex-flow: row wrap; /* override single column for mobile */
+    margin-bottom: 0;
+    }
 
 .card.card-portable-highlight {
-	min-height: 20vh;
+    min-height: 20vh;
 
-	&:last-of-type {
-		border-right: transparent;
-		}	
-	
-	.card-body {
-		padding: 1rem;
-		background: transparent;
-		}
-	}
+    &:last-of-type {
+        border-right: transparent;
+        }    
+    
+    .card-body {
+        padding: 1rem;
+        background: transparent;
+        }
+    }
 
 .card.card-portable-highlight {
-	background: url(../images/hex-stat-block-bg.svg), $color-ps-creek-accessible;
-	background-position: -65px -120px, center center;
-	background-size: 400px auto;
-	background-repeat: no-repeat;
-	padding: 3rem 1rem 3rem 1rem;
-	text-align: center;
-	}
+    background: url(../images/hex-stat-block-bg.svg), $color-ps-creek-accessible;
+    background-position: -65px -120px, center center;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    padding: 3rem 1rem 3rem 1rem;
+    text-align: center;
+    }
 
 .card.card-portable-highlight:nth-of-type(2) {
-	background: url(../images/hex-stat-block-bg.svg), $color-ps-slate-gray;
-	background-position: -65px -120px, center center;
-	background-size: 400px auto;
-	background-repeat: no-repeat;
-	}
+    background: url(../images/hex-stat-block-bg.svg), $color-ps-slate-gray;
+    background-position: -65px -120px, center center;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    }
 
 .card.card-portable-highlight:nth-of-type(3) {
-	background: url(../images/hex-stat-block-bg.svg), darken($color-ps-coaly-gray,10%);
-	background-position: -65px -120px, center center;
-	background-size: 400px auto;
-	background-repeat: no-repeat;
-	}
+    background: url(../images/hex-stat-block-bg.svg), darken($color-ps-coaly-gray,10%);
+    background-position: -65px -120px, center center;
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    }
 
 
 .bg-slate .card-deck.card-deck-portable-highlights {
-	
-	.card,
-	.card:nth-of-type(2),
-	.card:nth-of-type(3) {
-		background: darken($color-ps-slate-gray,5%);
-		padding: 1rem;
-		}
-	}
-		
+    
+    .card,
+    .card:nth-of-type(2),
+    .card:nth-of-type(3) {
+        background: darken($color-ps-slate-gray,5%);
+        padding: 1rem;
+        }
+    }
+        
 .card.card-portable-highlight .card-body {
-	padding: 0;
-	
-	p {
-		font-size: $font-size-lg;
-		line-height: $line-height-sm;
-		font-family: $font-family-sans-serif;
-		color: $white;
-		position: relative;
-		text-align: center;
-		z-index: 9;
-		margin-bottom: 0;
+    padding: 0;
+    
+    p {
+        font-size: $font-size-lg;
+        line-height: $line-height-sm;
+        font-family: $font-family-sans-serif;
+        color: $white;
+        position: relative;
+        text-align: center;
+        z-index: 9;
+        margin-bottom: 0;
 
-		span {
-			font-size: 3.2rem;			
-			display: block;
-			text-transform: uppercase;
-			letter-spacing: -.025em;
-			margin-top: 0;
-			font-weight: $font-weight-bolder;
-			line-height: 1;
-			
-			sup {
-				display: inline-block;
-				font-size: 66.6666%;
-				top: -.625rem;
-				position: relative;
-				vertical-align: baseline;
-				}
-			
-			sub {
-				display: block;
-				font-size: 66.6666%;
-				line-height: $line-height-micro;
-				position: relative;
-				margin-top: -.5rem;
-				margin-bottom: .75rem;
-				
-				}
-			}
-		}
-	}
+        span {
+            font-size: 3.2rem;            
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: -.025em;
+            margin-top: 0;
+            font-weight: $font-weight-bolder;
+            line-height: 1;
+            
+            sup {
+                display: inline-block;
+                font-size: 66.6666%;
+                top: -.625rem;
+                position: relative;
+                vertical-align: baseline;
+                }
+            
+            sub {
+                display: block;
+                font-size: 66.6666%;
+                line-height: $line-height-micro;
+                position: relative;
+                margin-top: -.5rem;
+                margin-bottom: .75rem;
+                
+                }
+            }
+        }
+    }
 
 .card.card-portable-highlight.hoverable {
-	overflow: visible;
-	min-height: 25vh;
-	}
+    overflow: visible;
+    min-height: 25vh;
+    }
 
 .card.card-portable-highlight.hoverable .card-body {
-	margin: auto;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0; left: 0; bottom: 0; right: 0;
-	padding: 1.5rem;
-	border: transparent;
-	
-	p.portable-highlight-content {
-		transition: $transition-long;
-		}
-	
-	&:hover p.portable-highlight-content {	
-		opacity: 0;
-		
-		}
-		
-	.hover-content {
-		width: 100%;
-		height: 100%;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: $color-ps-creek-light25;
-		opacity: 0;
-		transition: $transition-long;
-		position: absolute;
-		padding: 0 1.5rem;
-		display: flex;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		
-		p {
-			font-size: $font-size-sm;
-			color: $black;
-			margin-bottom: 0;
-			}
-		}
-	
-	&:hover .hover-content {
-		opacity: 1;
-		transform: scale(1);
-		height: auto;
-		transform: translate(0.5rem,0.5rem);
-		z-index: 9;
-		}
-		
-	}	
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0; bottom: 0; right: 0;
+    padding: 1.5rem;
+    border: transparent;
+    
+    p.portable-highlight-content {
+        transition: $transition-long;
+        }
+    
+    &:hover,
+    &:focus {
+        p.portable-highlight-content {    
+            opacity: 0;
+            }    
+        }
+        
+    .hover-content {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $color-ps-creek-light25;
+        opacity: 0;
+        transition: $transition-long;
+        position: absolute;
+        padding: 0 1.5rem;
+        display: flex;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        
+        p {
+            font-size: $font-size-sm;
+            color: $black;
+            margin-bottom: 0;
+            }
+        }
+    
+    &:hover,
+    &:focus {
+        .hover-content {
+            opacity: 1;
+            transform: scale(1);
+            height: auto;
+            transform: translate(0.5rem,0.5rem);
+            z-index: 9;
+            }
+        }
+        
+    }    

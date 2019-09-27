@@ -34,7 +34,8 @@ CARD DECK - EVENTS
 		line-height: $line-height-sm;
 		}
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		background: none;
 		border: none;
 		box-shadow: $box-shadow-medium;
@@ -113,7 +114,8 @@ CARD DECK - EVENTS
 	.card.card-event {
 		box-shadow: $box-shadow-light;
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			box-shadow: $box-shadow-medium;
 			}
 		}

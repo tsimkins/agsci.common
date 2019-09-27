@@ -33,7 +33,8 @@
 			color: $color-ps-creek-accessible;
 			}
 		
-		a:hover {
+		a:hover,
+		a:focus {
 			border-bottom: 1px solid $color-ps-creek-accessible;
 			color: $color-ps-creek;
 			}

@@ -36,7 +36,8 @@ button {
 	background-color: $color-ps-creek;
 	color: $white;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 		background-color: $color-ps-creek-light10;
 		}
 	}
@@ -69,7 +70,10 @@ a.card .btn-link {
 
 button.btn-link:hover,
 a:hover .btn-link,
-a.btn-link:hover {
+a.btn-link:hover,
+button.btn-link:focus,
+a:focus .btn-link,
+a.btn-link:focus {
 	border-bottom: 1px solid $color-ps-creek-accessible;
 	}
 
@@ -78,7 +82,8 @@ a.btn-link:hover {
 
 	color: $black;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 	    background: lighten($color-ps-limestone-gray,35%);
 	    }
     }
@@ -88,7 +93,8 @@ a.btn-link:hover {
 	border: 1px solid $color-ps-creek-light30;
 	color: $color-ps-creek-accessible;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 	    background: $color-ps-creek;
 	    color: $white;
 	    }
@@ -98,7 +104,8 @@ a.btn-link:hover {
 	background: $color-ps-creek-accessible;
 	color: $white;
 	
-	&:hover {
+	&:hover,
+	&:focus {
 	    background: $color-ps-creek;
 	    }
     }
@@ -120,7 +127,8 @@ a.btn-link:hover {
 	background: darken($color-ps-invent-orange,10%);
 	color: $white;
 	
-	&:hover{
+	&:hover,
+	&:focus {
 	    background: $color-ps-invent-orange;
 	    }
     }
@@ -129,7 +137,8 @@ a.btn-link:hover {
 	background: darken($color-ps-future-green,10%);
 	color: $white;
 	
-	&:hover{
+	&:hover,
+	&:focus {
 	    background: darken($color-ps-future-green,5%)
 	    }
     }
@@ -138,7 +147,8 @@ a.btn-link:hover {
 	background: lighten($color-ps-perpetual-purple,10%);
 	color: $white;
 	
-	&:hover{
+	&:hover,
+	&:focus {
 	    background: lighten($color-ps-perpetual-purple,20%);
 	    }
     }
@@ -147,7 +157,8 @@ a.btn-link:hover {
 	background: lighten($color-ps-slate-gray,10%);
 	color: $white;
 	
-	&:hover{
+	&:hover,
+	&:focus {
 	    background: lighten($color-ps-slate-gray,20%);
 	    }
     }

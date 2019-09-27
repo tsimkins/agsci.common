@@ -24,7 +24,8 @@
 			color: $white;
 			}
 	
-		&:hover {
+		&:hover,
+		&:focus {
 		    
 		    .btn {
 				background: $white;
@@ -39,7 +40,8 @@
 			background: $color-ps-slate-gray;	
 			}
 		
-			&:hover {		
+			&:hover,
+			&:focus {		
 				
 				.card-body {
 					background: lighten($color-ps-slate-gray,10%);
@@ -57,7 +59,8 @@
 			background: $color-ps-perpetual-purple;	
 			}
 		
-			&:hover {		
+			&:hover,
+			&:focus {		
 				
 				.card-body {
 					background: lighten($color-ps-perpetual-purple,10%);
@@ -75,7 +78,8 @@
 			background: darken($color-ps-invent-orange,10%);	
 			}
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				
 				.card-body {
 					background: $color-ps-invent-orange;
@@ -93,7 +97,8 @@
 			background: darken($color-ps-future-green,10%);
 			}
 			
-			&:hover {
+			&:hover,
+			&:focus {
 				
 				.card-body {
 					background: darken($color-ps-future-green,5%);

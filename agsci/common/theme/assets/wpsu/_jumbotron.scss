@@ -123,8 +123,11 @@ JUMBOTRON HOME STYLE
 	font-size: $h4-font-size;
 	}
 
-.jumbotron:hover p.section-crumb::after {
-	border-bottom: 2px solid $color-ps-creek;
+.jumbotron:hover,
+.jumbotron:focus {
+    p.section-crumb::after {
+	   border-bottom: 2px solid $color-ps-creek;
+       }
 	}	
 
 #portal-breadcrumbs {
@@ -155,7 +158,8 @@ JUMBOTRON HOME STYLE
 	color: $white;
 		border-bottom: 1px solid transparent;
 		
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: transparent;
 			border-bottom: 1px solid $color-ps-creek;
 			}

@@ -5,105 +5,111 @@ SOCIAL MEDIA LISTS
 ---------------------------------------------------------- */
 
 a em.fa-facebook-square {
-	color: #4267b2;
-	}
-		
+    color: #4267b2;
+    }
+
 a em.fa-twitter {
-	color: #38A1F3;
-	}
+    color: #38A1F3;
+    }
 
 a em.fa-twitter-square {
-	color: #38A1F3;
-	}
-	
+    color: #38A1F3;
+    }
+
 a em.fa-instagram-square {
-	color: #0077B5;
-	}
-	
+    color: #0077B5;
+    }
+
 a em.fa-linkedin {
-	color: #0077B5;
-	}
-	
+    color: #0077B5;
+    }
+
 a em.fa-youtube-square {
-	color: #FF0000;
-	}
+    color: #FF0000;
+    }
 
 a.email,
 a.phone,
 a.pdf,
 a.full-bio,
 span.fax {
-	display: block;
-	margin: 0.25rem 0.75rem 0.25rem 0;
+    display: block;
+    margin: 0.25rem 0.75rem 0.25rem 0;
 
-	.fas {
-		color: #949798;
-		}
-	}
-	
+    .fas {
+        color: #949798;
+        }
+    }
+
 /* List Social
-	Vertical List - e.g. sidebar
-	with link hover on name (not icon)
+    Vertical List - e.g. sidebar
+    with link hover on name (not icon)
 --------------------------------------------- */
 
 ul.list-social {
-	width: 100%;
-	padding-left: 1rem;
-	list-style-type: none;
-	text-align: left;
-	font-size: $small3-size;
-	font-family: $font-family-sans-serif;
-	
-	em {
-		margin-right: 0.125rem;
-		}
-	
-	li {
-		margin-top: 0.375rem;
-		margin-bottom: 0.375rem;
-		line-height: 2;
-		
-		span, em {
-			display: inline-block;
-			vertical-align: middle;
-			border-bottom: 1px solid transparent;
-			}
-		}
-	
-	a:hover span {
-		border-bottom: 1px solid $color-ps-creek;
-		}
-	}
+    width: 100%;
+    padding-left: 1rem;
+    list-style-type: none;
+    text-align: left;
+    font-size: $small3-size;
+    font-family: $font-family-sans-serif;
+
+    em {
+        margin-right: 0.125rem;
+        }
+
+    li {
+        margin-top: 0.375rem;
+        margin-bottom: 0.375rem;
+        line-height: 2;
+
+        span, em {
+            display: inline-block;
+            vertical-align: middle;
+            border-bottom: 1px solid transparent;
+            }
+        }
+
+    a:hover,
+    a:focus {
+        span {
+            border-bottom: 1px solid $color-ps-creek;
+            }
+        }
+    }
 
 /* List Social - Inline
 --------------------------------------------- */
-			
+
 ul.list-inline.list-inline-social {
-	margin-top: 0;
-	margin-bottom: 0;
-	padding-bottom: 0;
-	
-	li {
-		padding-bottom: 0;	
-		}
-	}
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    li {
+        padding-bottom: 0;
+        }
+    }
 
 address {
-	
-	ul.list-inline.list-inline-social {
-		margin-top: 0.75rem;
-		}
-	}
+
+    ul.list-inline.list-inline-social {
+        margin-top: 0.75rem;
+        }
+    }
 
 /* Override border hover
---------------------------------------------- */	
+--------------------------------------------- */
 
-address, 
+address,
 .container-text,
 .directory-more {
-	
-	ul.list-inline-social li a,
-	ul.list-inline-social li a:hover {
-		border-bottom: transparent;
-		}
-	}
+
+    ul.list-inline-social li {
+        a,
+        a:hover,
+        a:focus {
+            border-bottom: transparent;
+            }
+        }
+    }

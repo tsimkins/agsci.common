@@ -37,7 +37,8 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 	color: #307e7a;
 	text-decoration: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		border-bottom: 1px solid $color-ps-creek;
 		color: $black;
 		}

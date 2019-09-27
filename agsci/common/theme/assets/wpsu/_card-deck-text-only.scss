@@ -10,7 +10,8 @@
 	box-shadow: $box-shadow-light;
 	transition: $transition-base;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background: $white;
 		box-shadow: $box-shadow-medium;
 		}

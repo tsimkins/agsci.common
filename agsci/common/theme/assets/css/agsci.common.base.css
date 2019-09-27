@@ -185,7 +185,8 @@ body.userrole-authenticated header {
   z-index: 1000; }
 body.userrole-authenticated footer {
   z-index: 0; }
-body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:before {
+body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:hover:before,
+body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:focus:before {
   content: attr(data-tile-type);
   position: absolute;
   color: #FFFFFF;
@@ -588,52 +589,72 @@ body.template-image_view #content-core {
     padding-bottom: 0.0625em !important; }
   #parent-fieldname-text a:hover,
   #parent-fieldname-text .a:hover,
+  #parent-fieldname-text a:focus,
+  #parent-fieldname-text .a:focus,
   .html a:hover,
   .html .a:hover,
+  .html a:focus,
+  .html .a:focus,
   body.template-default_error_message #content-core a:hover,
   body.template-default_error_message #content-core .a:hover,
+  body.template-default_error_message #content-core a:focus,
+  body.template-default_error_message #content-core .a:focus,
   body.template-fg_thankspage_view_p3 #content-core a:hover,
   body.template-fg_thankspage_view_p3 #content-core .a:hover,
+  body.template-fg_thankspage_view_p3 #content-core a:focus,
+  body.template-fg_thankspage_view_p3 #content-core .a:focus,
   body.template-fg_base_view_p3 #content-core a:hover,
   body.template-fg_base_view_p3 #content-core .a:hover,
+  body.template-fg_base_view_p3 #content-core a:focus,
+  body.template-fg_base_view_p3 #content-core .a:focus,
   body.template-file_view #content-core a:hover,
   body.template-file_view #content-core .a:hover,
+  body.template-file_view #content-core a:focus,
+  body.template-file_view #content-core .a:focus,
   body.template-image_view #content-core a:hover,
-  body.template-image_view #content-core .a:hover {
+  body.template-image_view #content-core .a:hover,
+  body.template-image_view #content-core a:focus,
+  body.template-image_view #content-core .a:focus {
     color: #093c79 !important;
     border-bottom: 1px solid #0078ab !important; }
   #parent-fieldname-text a.no-border, #parent-fieldname-text a.no-border:visited,
   #parent-fieldname-text a.no-border:active, #parent-fieldname-text a.no-border:hover,
-  #parent-fieldname-text .a.no-border,
+  #parent-fieldname-text a.no-border:focus, #parent-fieldname-text .a.no-border,
   .html a.no-border,
   .html a.no-border:visited,
   .html a.no-border:active,
   .html a.no-border:hover,
+  .html a.no-border:focus,
   .html .a.no-border,
   body.template-default_error_message #content-core a.no-border,
   body.template-default_error_message #content-core a.no-border:visited,
   body.template-default_error_message #content-core a.no-border:active,
   body.template-default_error_message #content-core a.no-border:hover,
+  body.template-default_error_message #content-core a.no-border:focus,
   body.template-default_error_message #content-core .a.no-border,
   body.template-fg_thankspage_view_p3 #content-core a.no-border,
   body.template-fg_thankspage_view_p3 #content-core a.no-border:visited,
   body.template-fg_thankspage_view_p3 #content-core a.no-border:active,
   body.template-fg_thankspage_view_p3 #content-core a.no-border:hover,
+  body.template-fg_thankspage_view_p3 #content-core a.no-border:focus,
   body.template-fg_thankspage_view_p3 #content-core .a.no-border,
   body.template-fg_base_view_p3 #content-core a.no-border,
   body.template-fg_base_view_p3 #content-core a.no-border:visited,
   body.template-fg_base_view_p3 #content-core a.no-border:active,
   body.template-fg_base_view_p3 #content-core a.no-border:hover,
+  body.template-fg_base_view_p3 #content-core a.no-border:focus,
   body.template-fg_base_view_p3 #content-core .a.no-border,
   body.template-file_view #content-core a.no-border,
   body.template-file_view #content-core a.no-border:visited,
   body.template-file_view #content-core a.no-border:active,
   body.template-file_view #content-core a.no-border:hover,
+  body.template-file_view #content-core a.no-border:focus,
   body.template-file_view #content-core .a.no-border,
   body.template-image_view #content-core a.no-border,
   body.template-image_view #content-core a.no-border:visited,
   body.template-image_view #content-core a.no-border:active,
   body.template-image_view #content-core a.no-border:hover,
+  body.template-image_view #content-core a.no-border:focus,
   body.template-image_view #content-core .a.no-border {
     border-bottom: none !important;
     padding-bottom: 0 !important; }
@@ -752,14 +773,24 @@ body.template-image_view #content-core {
   padding-top: 1em; }
   #content-core .entries a.card.state-private .summary,
   #content-core .entries a.card.state-private:hover .summary,
+  #content-core .entries a.card.state-private:focus .summary,
   #content-core .entries a.card.state-private:visited .summary,
   #content-core .entries a.card.state-private:link .summary {
     color: #FF0000 !important; }
   #content-core .entries a.card.state-pending .summary,
   #content-core .entries a.card.state-pending:hover .summary,
+  #content-core .entries a.card.state-pending:focus .summary,
   #content-core .entries a.card.state-pending:visited .summary,
   #content-core .entries a.card.state-pending:link .summary {
     color: #FFA500 !important; }
+  #content-core .entries a.card.state-published .summary,
+  #content-core .entries a.card.state-published:visited .summary,
+  #content-core .entries a.card.state-published:link .summary {
+    color: #4373B6 !important; }
+  #content-core .entries a.card.state-published:hover .summary,
+  #content-core .entries a.card.state-published:focus .summary {
+    color: #093c79 !important;
+    border-bottom: 1px solid #0078ab !important; }
   #content-core .entries .entry .documentByLine {
     font-size: 0.6875em;
     margin: 1em 0 0.5em 1em;
@@ -775,12 +806,14 @@ body.template-image_view #content-core {
     border-bottom: 1px solid #E9E9E9 !important;
     padding-bottom: 0.0625em !important; }
   #content-core .entries .entry a:hover,
-  #content-core .entries .entry .a:hover {
+  #content-core .entries .entry .a:hover,
+  #content-core .entries .entry a:focus,
+  #content-core .entries .entry .a:focus {
     color: #093c79 !important;
     border-bottom: 1px solid #0078ab !important; }
   #content-core .entries .entry a.no-border, #content-core .entries .entry a.no-border:visited,
   #content-core .entries .entry a.no-border:active, #content-core .entries .entry a.no-border:hover,
-  #content-core .entries .entry .a.no-border {
+  #content-core .entries .entry a.no-border:focus, #content-core .entries .entry .a.no-border {
     border-bottom: none !important;
     padding-bottom: 0 !important; }
   #content-core .entries .entry .description {
@@ -804,6 +837,32 @@ body.template-image_view #content-core {
 .card-vertical .list-inline-social {
   margin-top: 0; }
 
+.card-deck-link.card-deck-1up {
+  display: block; }
+  .card-deck-link.card-deck-1up > a {
+    display: block; }
+    .card-deck-link.card-deck-1up > a span {
+      display: inline-block;
+      color: #4373B6 !important;
+      border-bottom: 1px solid #E9E9E9 !important;
+      padding-bottom: 0.0625em !important; }
+  .card-deck-link.card-deck-1up > a:hover span,
+  .card-deck-link.card-deck-1up > a:focus span {
+    color: #093c79 !important;
+    border-bottom: 1px solid #0078ab !important; }
+
+.card-deck-link.html > a {
+  display: block; }
+  .card-deck-link.html > a span {
+    display: inline-block;
+    color: #4373B6 !important;
+    border-bottom: 1px solid #E9E9E9 !important;
+    padding-bottom: 0.0625em !important; }
+.card-deck-link.html > a:hover span,
+.card-deck-link.html > a:focus span {
+  color: #093c79 !important;
+  border-bottom: 1px solid #0078ab !important; }
+
 .card-deck-image-plain .card.card-visual,
 .card-deck-link .card.card-visual {
   margin-top: 0.75rem;
@@ -815,11 +874,12 @@ body.template-image_view #content-core {
   .card-deck-image-plain .card.card-visual > span,
   .card-deck-link .card.card-visual > span {
     line-height: 1.2; }
-.card-deck-image-plain a, .card-deck-image-plain a:hover, .card-deck-image-plain a:visited, .card-deck-image-plain a:active,
+.card-deck-image-plain a, .card-deck-image-plain a:hover, .card-deck-image-plain a:visited, .card-deck-image-plain a:active, .card-deck-image-plain a:focus,
 .card-deck-link a,
 .card-deck-link a:hover,
 .card-deck-link a:visited,
-.card-deck-link a:active {
+.card-deck-link a:active,
+.card-deck-link a:focus {
   border-bottom: none !important; }
 
 /* Navbar Invalid Links */
@@ -839,7 +899,7 @@ body.template-content_checks th {
 .address p, .address li {
   font-size: 0.825rem;
   line-height: 1.4; }
-.address .list-inline-social a .fa-envelope, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:active .fa-envelope {
+.address .list-inline-social a .fa-envelope, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:active .fa-envelope {
   color: black !important; }
 
 #section-content #data-check th, #section-content #data-check td {
