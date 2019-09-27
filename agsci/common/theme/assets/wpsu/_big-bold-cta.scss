@@ -1,23 +1,23 @@
 .big-bold-cta {
-	padding-top: 5rem;
-	padding-bottom: 6rem;
-	background: $color-ps-creek-light20;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    background: $color-ps-creek-light20;
 
-	p {
-		margin-bottom: 0.5rem;
-		}
-	
-	h2 {
-		display: inline-block;
-		margin-bottom: 0.5rem;
-		padding-bottom: 0.5rem;
-		border-bottom: 1px solid $color-ps-creek;
-		font-weight: $font-weight-base;		
-		font-size: 3rem;
-		font-family: $font-family-base;
+    p {
+        margin-bottom: 0.5rem;
+        }
+    
+    h2 {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid $color-ps-creek;
+        font-weight: $font-weight-base;        
+        font-size: 3rem;
+        font-family: $font-family-base;
 
-		&::after {
-			content: none;
-			}
-		}
-	}
+        &::after {
+            content: none;
+            }
+        }
+    }

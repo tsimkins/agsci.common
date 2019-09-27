@@ -1,159 +1,159 @@
 /* List Group Tab Panel - 
-	Make this component responsive. 
-	It's not in the default Bootstrap setup.
+    Make this component responsive. 
+    It's not in the default Bootstrap setup.
 --------------------------------------------- */
 
 .list-group {
-	display: block;
-	}
+    display: block;
+    }
 
 .list-group-item {
-	display: inline; /* remove if you don't want it inline! */
-	}
+    display: inline; /* remove if you don't want it inline! */
+    }
 
 @include media-breakpoint-up(md) {
 
-	.list-group {
-		display: flex;
-		}
-		
-	.list-group-item {
-		display: block;
-		}
-	}
-	
+    .list-group {
+        display: flex;
+        }
+        
+    .list-group-item {
+        display: block;
+        }
+    }
+    
 /* List Inline - 
-	Simply adding to ul level so we don't need 
-	list-inline-item on all sub li 
+    Simply adding to ul level so we don't need 
+    list-inline-item on all sub li 
 --------------------------------------------- */
 
 .list-inline {
-	margin-bottom: 0;
-	
-	li {
-		display: inline-block;
-		}
-	}
+    margin-bottom: 0;
+    
+    li {
+        display: inline-block;
+        }
+    }
 
 .list-inline-not-mobile {
-	
-	li {
-		display: block;
-		}
-	}
-	
+    
+    li {
+        display: block;
+        }
+    }
+    
 @include media-breakpoint-up(lg) {
-		
-		.list-inline-not-mobile li {
-			display: inline-block;
-			}
-		
-		}
+        
+        .list-inline-not-mobile li {
+            display: inline-block;
+            }
+        
+        }
 
 /* General UL/OL
---------------------------------------------- */	
+--------------------------------------------- */    
 ul, ol {
-	font-weight: $font-weight-base;	
-	font-family: $font-family-sans-serif;
-	}
+    font-weight: $font-weight-base;    
+    font-family: $font-family-sans-serif;
+    }
 
 .container-text ul,
 .container-text ol {
-	color: $black-accessible-gray;
-	text-align: left;
-	font-size: $small1-size;
+    color: $black-accessible-gray;
+    text-align: left;
+    font-size: $small1-size;
 
-	li {
-		margin-top: 0.5rem;		
-		margin-bottom: 0.5rem;
-		line-height: $line-height-md;
-		
-		a {
-			border-bottom: 1px solid $color-ps-creek;
-			
-			&:hover,
-			&:focus {
-				color: $color-ps-creek;
-				}
-			}
-		}
-	
-	li:nth-of-type(even) p {
-		background-color: rgba($white, 0.15);
-		}
-	}
+    li {
+        margin-top: 0.5rem;        
+        margin-bottom: 0.5rem;
+        line-height: $line-height-md;
+        
+        a {
+            border-bottom: 1px solid $color-ps-creek;
+            
+            &:hover,
+            &:focus {
+                color: $color-ps-creek;
+                }
+            }
+        }
+    
+    li:nth-of-type(even) p {
+        background-color: rgba($white, 0.15);
+        }
+    }
 
 .container-text ul,
 .container-text ol {
-	padding-left: 3rem;
-	}
-	
+    padding-left: 3rem;
+    }
+    
 .container-text ol {
-	margin-right: 2rem;
-	}
-	
-.container-text {		
-	
-	ul {
-		margin-bottom: 1rem;
-		text-indent: -0.25rem;
-		
-		li {
-			margin-bottom: 0.375rem;
-			}
-		}
-	}
+    margin-right: 2rem;
+    }
+    
+.container-text {        
+    
+    ul {
+        margin-bottom: 1rem;
+        text-indent: -0.25rem;
+        
+        li {
+            margin-bottom: 0.375rem;
+            }
+        }
+    }
 
 .container-text .card ul {
-	font-size: $small2-size;
-	}
+    font-size: $small2-size;
+    }
 
 /* List with Check Marks
 --------------------------------------------- */
 ul.list-checked {
-	padding-left: 2.25rem;
-	list-style-type: none;
+    padding-left: 2.25rem;
+    list-style-type: none;
 
-	li::before {
-		content: "\f058";
-		display: inline-block;
-		margin-right: 0.25rem;
-		color: $color-ps-creek;
-		font-weight: 900;  
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		font-family: 'Font Awesome 5 Free';
-		line-height: 1;	
-		}
-	}
-	
+    li::before {
+        content: "\f058";
+        display: inline-block;
+        margin-right: 0.25rem;
+        color: $color-ps-creek;
+        font-weight: 900;  
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: 'Font Awesome 5 Free';
+        line-height: 1;    
+        }
+    }
+    
 /* Offset List with Left Border
-	e.g. Utilized on Major Pages - Alumni Lists
+    e.g. Utilized on Major Pages - Alumni Lists
 --------------------------------------------- */
 
 .list-offset-bordered {
-	display: block;
-	overflow: visible;
-	margin-bottom: 0;
-	padding: 1rem 0.5rem 0.5rem 0.5rem;
-	background: $white;
-	border-left: $border-base;
+    display: block;
+    overflow: visible;
+    margin-bottom: 0;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    background: $white;
+    border-left: $border-base;
 
-	ul {
-		margin-bottom: 0;
-		padding-left: 1.5rem;
-		}
-	
-	p.offset-left {
-		position: relative;
-		display: inline-block;
-		left: -1.25rem;
-		margin-bottom: 0.5rem;
-		padding: 0.25rem 0.75rem;
-		font-weight: $font-weight-bolder;
-		font-family: $font-family-sans-serif;
-		line-height: $line-height-sm;
-		}
-	}
+    ul {
+        margin-bottom: 0;
+        padding-left: 1.5rem;
+        }
+    
+    p.offset-left {
+        position: relative;
+        display: inline-block;
+        left: -1.25rem;
+        margin-bottom: 0.5rem;
+        padding: 0.25rem 0.75rem;
+        font-weight: $font-weight-bolder;
+        font-family: $font-family-sans-serif;
+        line-height: $line-height-sm;
+        }
+    }

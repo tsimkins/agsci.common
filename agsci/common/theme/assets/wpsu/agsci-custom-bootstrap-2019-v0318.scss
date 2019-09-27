@@ -15,296 +15,296 @@ AGSCI VARIABLE CUSTOMIZATION
 
 ---------------------------------------------------------- */
 
-	//
-	// Custom Colors
-	//
-	
-	$black: #231e20;
-	$black-accessible-gray: #4D565B;
-	$white: #ffffff;
-	
-	$color-ps-nittany-navy: #001E44; /* darker navy */
-	$color-ps-beaver-blue: #1E417B; /* logo navy */
-	$color-ps-sky-blue: #009CDE; /* PA Sky Blue */
-	$color-ps-link-blue: #266EC0; /* accessible wcag AA */
-	
-	$color-ps-slate-gray: #314D64;
-	$color-ps-creek: #3EA39E; /* teal */
-	$color-ps-limestone-gray: #91959C; 
-	$color-ps-limestone-gray-light: #E9EBEA;
-	
-	$color-ps-pugh-blue: #96BEE6;
-	$color-ps-coaly-gray: #54585A;
-		
-	$color-ps-keystone: #FFD100; /* yellow */
-	$color-ps-keystone-light: #FAE24C;
-	$color-ps-highlight-blue: #3DCBFF;
-	
-	$color-ps-perpetual-purple:  #491d70;
+    //
+    // Custom Colors
+    //
+    
+    $black: #231e20;
+    $black-accessible-gray: #4D565B;
+    $white: #ffffff;
+    
+    $color-ps-nittany-navy: #001E44; /* darker navy */
+    $color-ps-beaver-blue: #1E417B; /* logo navy */
+    $color-ps-sky-blue: #009CDE; /* PA Sky Blue */
+    $color-ps-link-blue: #266EC0; /* accessible wcag AA */
+    
+    $color-ps-slate-gray: #314D64;
+    $color-ps-creek: #3EA39E; /* teal */
+    $color-ps-limestone-gray: #91959C; 
+    $color-ps-limestone-gray-light: #E9EBEA;
+    
+    $color-ps-pugh-blue: #96BEE6;
+    $color-ps-coaly-gray: #54585A;
+        
+    $color-ps-keystone: #FFD100; /* yellow */
+    $color-ps-keystone-light: #FAE24C;
+    $color-ps-highlight-blue: #3DCBFF;
+    
+    $color-ps-perpetual-purple:  #491d70;
 
-	$color-ps-invent-orange: #E98300;
-	$color-ps-future-green: #99CC00;
-	
-	//
-	// Theme Color Variables
-	//
-	
-	$secondary:     rgba($white,0.5);
-	$light:         $color-ps-limestone-gray-light;
-	$warning:       $color-ps-keystone-light;
-	$info:          $color-ps-link-blue;
+    $color-ps-invent-orange: #E98300;
+    $color-ps-future-green: #99CC00;
+    
+    //
+    // Theme Color Variables
+    //
+    
+    $secondary:     rgba($white,0.5);
+    $light:         $color-ps-limestone-gray-light;
+    $warning:       $color-ps-keystone-light;
+    $info:          $color-ps-link-blue;
 
-	//
-	// Default Font Color
-	//
-	
-	$body-color:               $black;
-	
-	//
-	// Links
-	//
-	
-	$link-color:                $black;
-	$link-hover-color:          $black;
-	$link-hover-decoration:     none;
+    //
+    // Default Font Color
+    //
+    
+    $body-color:               $black;
+    
+    //
+    // Links
+    //
+    
+    $link-color:                $black;
+    $link-hover-color:          $black;
+    $link-hover-decoration:     none;
 
-	//
-	// Breakpoints and Container Max-Width Added XXl Breakpoint. 
-	//
-	
-	$grid-breakpoints: (
-	  xs: 0,
-	  sm: 576px,
-	  md: 768px,
-	  lg: 992px,
-	  xl: 1200px,
-	  xxl: 1440px,
-	 xxxl: 1800px
-	);
-	
-	$container-max-widths: (
-	  sm: 732px, /* 36px below next break with max 1680 */
-	  md: 956px,
-	  lg: 1164px,
-	  xl: 1280px,
-	  xxl: 1360px,
-	 xxxl: 1404px
-	);
+    //
+    // Breakpoints and Container Max-Width Added XXl Breakpoint. 
+    //
+    
+    $grid-breakpoints: (
+      xs: 0,
+      sm: 576px,
+      md: 768px,
+      lg: 992px,
+      xl: 1200px,
+      xxl: 1440px,
+     xxxl: 1800px
+    );
+    
+    $container-max-widths: (
+      sm: 732px, /* 36px below next break with max 1680 */
+      md: 956px,
+      lg: 1164px,
+      xl: 1280px,
+      xxl: 1360px,
+     xxxl: 1404px
+    );
 
-	//
-	// Grid Gutter
-	//
-	
-	$grid-gutter-width:           2rem;
+    //
+    // Grid Gutter
+    //
+    
+    $grid-gutter-width:           2rem;
 
-	//
-	// Additional line heights for flexibility
-	//
-	
-	$line-height-xl: 1.8;
-	$line-height-lg: 1.6;
-	$line-height-md: 1.4;
-	$line-height-sm: 1.2;
-	$line-height-xs: 1.0;
-	$line-height-micro: 0.8;
+    //
+    // Additional line heights for flexibility
+    //
+    
+    $line-height-xl: 1.8;
+    $line-height-lg: 1.6;
+    $line-height-md: 1.4;
+    $line-height-sm: 1.2;
+    $line-height-xs: 1.0;
+    $line-height-micro: 0.8;
 
-	//
-	// Add Letter Spacing utilities
-	//
-	
-	$letter-spacing-lg: 0.4em;
-	$letter-spacing-md: .025em;
-	$letter-spacing: 0;
-	$letter-spacing-sm: -.005em;
-	$letter-spacing-xs: -.015em;
+    //
+    // Add Letter Spacing utilities
+    //
+    
+    $letter-spacing-lg: 0.4em;
+    $letter-spacing-md: .025em;
+    $letter-spacing: 0;
+    $letter-spacing-sm: -.005em;
+    $letter-spacing-xs: -.015em;
 
-	//
-	// Change Default Border Color & add a default border
-	//
-	
-	$border-color: rgba($color-ps-creek, 0.25);
-	$border-base: 1px solid $border-color;
-	
-	//
-	// add short and long transtions
-	//
-	
-	$transition-short:             all .125s ease-in-out !default;
-	$transition-long:             all .375s ease-in-out !default;
+    //
+    // Change Default Border Color & add a default border
+    //
+    
+    $border-color: rgba($color-ps-creek, 0.25);
+    $border-base: 1px solid $border-color;
+    
+    //
+    // add short and long transtions
+    //
+    
+    $transition-short:             all .125s ease-in-out !default;
+    $transition-long:             all .375s ease-in-out !default;
 
-	//
-	// Import Google Fonts.
-	//
-	
-	@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
-	@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
-	
-	//
-	// Replace Default Font Stacks
-	//
-	
-	$font-family-sans-serif:      'Nunito Sans', sans-serif;
-	$font-family-base:            'Roboto Slab', serif;
-	$font-family-cursive:		  'Born Ready'; /* Test Script Font */
+    //
+    // Import Google Fonts.
+    //
+    
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+    @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+    
+    //
+    // Replace Default Font Stacks
+    //
+    
+    $font-family-sans-serif:      'Nunito Sans', sans-serif;
+    $font-family-base:            'Roboto Slab', serif;
+    $font-family-cursive:          'Born Ready'; /* Test Script Font */
 
-	//
-	// Increase line height base for paragraphs
-	//
-	
-	$font-weight-bold:            600;
-	$font-weight-bolder:          700;
-	$font-weight-boldest: 		  900;
-	$font-family-supporting:	  'Roboto Condensed', sans-serif;
-	$line-height-base:            1.6;
+    //
+    // Increase line height base for paragraphs
+    //
+    
+    $font-weight-bold:            600;
+    $font-weight-bolder:          700;
+    $font-weight-boldest:           900;
+    $font-family-supporting:      'Roboto Condensed', sans-serif;
+    $line-height-base:            1.6;
 
-	//
-	// Replace Default Header Styles and add small size utilities
-	//
-	
-	$h1-font-size:                $font-size-base * 2;
-	$h2-font-size:                $font-size-base * 1.75;
-	$h3-font-size:                $font-size-base * 1.25;
-	$h4-font-size:                $font-size-base * 1.1;
-	$h5-font-size:                $font-size-base * 0.9;
-	$h6-font-size:                $font-size-base !default;
-	
-	$small1-size:                 $font-size-base * .9;
-	$small2-size:                 $font-size-base * .825;
-	$small3-size:                 $font-size-base * .75;
-	$small4-size:                 $font-size-base * .675;
-	
-	$font-size-xl:                $font-size-base * 1.5;
+    //
+    // Replace Default Header Styles and add small size utilities
+    //
+    
+    $h1-font-size:                $font-size-base * 2;
+    $h2-font-size:                $font-size-base * 1.75;
+    $h3-font-size:                $font-size-base * 1.25;
+    $h4-font-size:                $font-size-base * 1.1;
+    $h5-font-size:                $font-size-base * 0.9;
+    $h6-font-size:                $font-size-base !default;
+    
+    $small1-size:                 $font-size-base * .9;
+    $small2-size:                 $font-size-base * .825;
+    $small3-size:                 $font-size-base * .75;
+    $small4-size:                 $font-size-base * .675;
+    
+    $font-size-xl:                $font-size-base * 1.5;
 
-	//
-	// Replace Display Font Size Defaults
-	//
-	
-	$display1-size:               3.25rem;
-	$display2-size:               3.125rem;
-	$display3-size:               2.75rem;
-	$display4-size:               2.25rem;
+    //
+    // Replace Display Font Size Defaults
+    //
+    
+    $display1-size:               3.25rem;
+    $display2-size:               3.125rem;
+    $display3-size:               2.75rem;
+    $display4-size:               2.25rem;
 
-	//
-	// Lead Font Size
-	//
-	
-	$lead-font-size:              ($font-size-base * 1.00);
+    //
+    // Lead Font Size
+    //
+    
+    $lead-font-size:              ($font-size-base * 1.00);
 
-	//
-	// Button Customization
-	//
-	
-	$btn-line-height: $line-height-sm;
-	$btn-border-radius:           0;
-	$btn-border-radius-lg:        0;
-	$btn-border-radius-sm:        0;
+    //
+    // Button Customization
+    //
+    
+    $btn-line-height: $line-height-sm;
+    $btn-border-radius:           0;
+    $btn-border-radius-lg:        0;
+    $btn-border-radius-sm:        0;
 
-	//
-	// Remove border-radius
-	//
-	
-	$input-border-radius:                   0;
+    //
+    // Remove border-radius
+    //
+    
+    $input-border-radius:                   0;
 
-	//
-	// Remove margin at top of dropdown
-	//
-	
-	$dropdown-spacer: 0;
+    //
+    // Remove margin at top of dropdown
+    //
+    
+    $dropdown-spacer: 0;
 
-	//
-	// Remove tab border radius
-	//
-	
-	$nav-tabs-border-width:             0;
-	$nav-link-padding-y:                .25rem;
-	$nav-tabs-border-radius:            0;
-	$nav-tabs-border-color:             transparent;
-	$nav-tabs-link-hover-border-color:  transparent;
-	$nav-tabs-link-active-border-color: transparent;
+    //
+    // Remove tab border radius
+    //
+    
+    $nav-tabs-border-width:             0;
+    $nav-link-padding-y:                .25rem;
+    $nav-tabs-border-radius:            0;
+    $nav-tabs-border-color:             transparent;
+    $nav-tabs-link-hover-border-color:  transparent;
+    $nav-tabs-link-active-border-color: transparent;
 
-	//
-	// Navbar Styles
-	//
-	
-	$navbar-padding-y:                  0;
-	$navbar-padding-x:                  0;
-	$navbar-toggler-padding-y:          0;
-	$navbar-toggler-padding-x:          0;
-	$navbar-light-color:                $black;
-	$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
-	$navbar-light-toggler-border-color: transparent;
-	$navbar-light-hover-color:          $color-ps-link-blue;
+    //
+    // Navbar Styles
+    //
+    
+    $navbar-padding-y:                  0;
+    $navbar-padding-x:                  0;
+    $navbar-toggler-padding-y:          0;
+    $navbar-toggler-padding-x:          0;
+    $navbar-light-color:                $black;
+    $navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
+    $navbar-light-toggler-border-color: transparent;
+    $navbar-light-hover-color:          $color-ps-link-blue;
 
-	//
-	// Decrease Jumbotron Padding for image-based jumbotrons
-	//
-	
-	$jumbotron-padding: 1rem; /* no way to have tb different from lr so override below */
-	$jumbotron-bg:                      transparent;
+    //
+    // Decrease Jumbotron Padding for image-based jumbotrons
+    //
+    
+    $jumbotron-padding: 1rem; /* no way to have tb different from lr so override below */
+    $jumbotron-bg:                      transparent;
 
-	//
-	// Card overrides
-	//
-	
-	$card-border-radius:                0;
-	$card-inner-border-radius:          0;
-	$card-bg:                           transparent;
-	$card-border-width:                 0;
-	$card-img-overlay-padding:          1.00rem;
-	// decrease card group margins so main grid has wider spread, but cards are tighter
-	$card-group-margin:                 ($grid-gutter-width / 2);
-	$card-columns-gap:                  1.5rem;
-	$card-deck-margin:                 $card-group-margin;
-	$card-columns-count:                2; /* then override to go to 3 at larger break */
+    //
+    // Card overrides
+    //
+    
+    $card-border-radius:                0;
+    $card-inner-border-radius:          0;
+    $card-bg:                           transparent;
+    $card-border-width:                 0;
+    $card-img-overlay-padding:          1.00rem;
+    // decrease card group margins so main grid has wider spread, but cards are tighter
+    $card-group-margin:                 ($grid-gutter-width / 2);
+    $card-columns-gap:                  1.5rem;
+    $card-deck-margin:                 $card-group-margin;
+    $card-columns-count:                2; /* then override to go to 3 at larger break */
 
-	//
-	// Popover overrides
-	//
-	
-	$popover-max-width:                 460px;
-	$zindex-popover:                    9999;
+    //
+    // Popover overrides
+    //
+    
+    $popover-max-width:                 460px;
+    $zindex-popover:                    9999;
 
-	//
-	// Increase Badge Size for Tags
-	//
-	
-	$badge-font-size:                   80%;
-	$badge-font-weight:                 $font-weight-base;
-	$badge-padding-y:                   .5em;
-	$badge-padding-x:                   1em;
+    //
+    // Increase Badge Size for Tags
+    //
+    
+    $badge-font-size:                   80%;
+    $badge-font-weight:                 $font-weight-base;
+    $badge-padding-y:                   .5em;
+    $badge-padding-x:                   1em;
 
-	//
-	// Modal
-	//
-	
-	$modal-lg: 1300px;
-	$modal-md: 1000px;
-	$modal-sm: 400px;
+    //
+    // Modal
+    //
+    
+    $modal-lg: 1300px;
+    $modal-md: 1000px;
+    $modal-sm: 400px;
 
-	$modal-backdrop-bg:                 $color-ps-nittany-navy;
-	$modal-backdrop-opacity:            .99;
-	
-	//
-	// Remove list group border color and radius
-	//
-	
-	$list-group-bg:                     rgba($white,0.1);
-	$list-group-border-color:           none;
-	$list-group-border-radius:          0;
-	$list-group-item-padding-y:         1.5rem;
-	$list-group-item-padding-x:         1.5;
-	$list-group-active-color:           $black;
-	$list-group-active-bg:              $white;
-	$list-group-action-color:           $white;
-	$list-group-action-hover-color:     $color-ps-highlight-blue;
-	$list-group-hover-bg:               transparent;
+    $modal-backdrop-bg:                 $color-ps-nittany-navy;
+    $modal-backdrop-opacity:            .99;
+    
+    //
+    // Remove list group border color and radius
+    //
+    
+    $list-group-bg:                     rgba($white,0.1);
+    $list-group-border-color:           none;
+    $list-group-border-radius:          0;
+    $list-group-item-padding-y:         1.5rem;
+    $list-group-item-padding-x:         1.5;
+    $list-group-active-color:           $black;
+    $list-group-active-bg:              $white;
+    $list-group-action-color:           $white;
+    $list-group-action-hover-color:     $color-ps-highlight-blue;
+    $list-group-hover-bg:               transparent;
 
-	//
-	// Breadcrumbs
-	//
-	
-	$breadcrumb-bg:                     none;
-	$breadcrumb-divider:                none;
+    //
+    // Breadcrumbs
+    //
+    
+    $breadcrumb-bg:                     none;
+    $breadcrumb-divider:                none;
 
 /* ----------------------------------------------------------
 
@@ -353,78 +353,78 @@ GENERAL CUSTOMIZATION
 ---------------------------------------------------------- */
 
 body {
-	text-rendering: optimizeLegibility; /* safari */
-	line-height: 1.0;
-	background-color: $white;
-	} 
+    text-rendering: optimizeLegibility; /* safari */
+    line-height: 1.0;
+    background-color: $white;
+    } 
 
 a.skip-to-main {
-	font-family: $font-family-sans-serif;
-	padding: 0.25rem;
-	}
+    font-family: $font-family-sans-serif;
+    padding: 0.25rem;
+    }
 
 #main {
-	position: relative;
-	}
-	
+    position: relative;
+    }
+    
 /* Responsive Typography - 
-	General increase in font size with breakpoint. 
-	Not handled universally by Bootstrap
+    General increase in font size with breakpoint. 
+    Not handled universally by Bootstrap
 --------------------------------------------- */
 
 html {
-	 	font-size: 1.083333rem;
-	}
+         font-size: 1.083333rem;
+    }
 
 @include media-breakpoint-up(sm) {
-	
-	html {
-    	font-size: 1.083333rem;
-  		}
-	}
+    
+    html {
+        font-size: 1.083333rem;
+          }
+    }
 
 @include media-breakpoint-up(md) {
-	
-	html {
-    	font-size: 1.16667rem;
-		}
-	}
+    
+    html {
+        font-size: 1.16667rem;
+        }
+    }
 
 @include media-breakpoint-up(lg) {
-	
-	html {
-    	font-size: 1.25rem;
-  		}
-	}
-			
+    
+    html {
+        font-size: 1.25rem;
+          }
+    }
+            
 /* ----------------------------------------------------------
 
 GENERIC FONT STYLES
 
----------------------------------------------------------- */	
-	
+---------------------------------------------------------- */    
+    
 /* Headers */
 
 h1, .h1 {
-	opacity: 1;
-	font-size: 2.25rem;
-	font-weight: $font-weight-base;
-	line-height: 1.1;
-	color: $color-ps-slate-gray;
-	position: relative;
-	
-	a {
-		color: $color-ps-slate-gray;
-		}
-	}
+    opacity: 1;
+    font-size: 2.25rem;
+    font-weight: $font-weight-base;
+    line-height: 1.1;
+    color: $color-ps-slate-gray;
+    position: relative;
+    
+    a {
+        color: $color-ps-slate-gray;
+        }
+    }
 
-h2, .h2 {	
-	margin-top: $spacer*3;
-	margin-bottom: 1.5rem;
-	line-height: 1.1;
-	position: relative;
-	font-size: 1.625rem;
-	}
+h2, .h2 {    
+    margin-top: $spacer*3;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    position: relative;
+    font-size: 1.625rem;
+    }
 
 h2::after,
 .h2::after {
@@ -436,164 +436,164 @@ h2::after,
     height: 1px;
     border-bottom: 4px solid $color-ps-creek;
     }
-		   
+           
 .journey-preview h2,
 .agsci-journey h2,
 h2.no-underline,
 .h2.no-underline  {
-	
-	&:after {
-		content: none;
-		}
-	}
+    
+    &:after {
+        content: none;
+        }
+    }
 
 .explore-options h2::after,
 h2.text-center::after,
 .text-center h2::after {
-	left: 0;
-	right: 0;
-	margin: auto;
-	}
+    left: 0;
+    right: 0;
+    margin: auto;
+    }
 
 @include media-breakpoint-up(md) {
-	
-	h1 {
-		font-size: $display1-size;
-		}
-	
-	h2, .h2 {
-		font-size: 1.875rem;
-		}
-	}
-		
+    
+    h1 {
+        font-size: $display1-size;
+        }
+    
+    h2, .h2 {
+        font-size: 1.875rem;
+        }
+    }
+        
 h2.h1::after {
-	content: none;
-	}
+    content: none;
+    }
 
 h3, .h3 {
-	margin: 1.5rem 0 0.5rem 0;
-	font-weight: $font-weight-light;
-	letter-spacing: $letter-spacing-sm;
-	font-family: $font-family-sans-serif;
-	font-weight: $font-weight-bold;
-	
-	&.option { /* used in options under individual major page */
-		position: relative;
-		display: block;
-		font-size: $font-size-lg;
-		color: darken($color-ps-creek,10%);
-		margin-bottom: 0.5rem;
-		margin-top: 0;
-		}
-	}
-	
+    margin: 1.5rem 0 0.5rem 0;
+    font-weight: $font-weight-light;
+    letter-spacing: $letter-spacing-sm;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    
+    &.option { /* used in options under individual major page */
+        position: relative;
+        display: block;
+        font-size: $font-size-lg;
+        color: darken($color-ps-creek,10%);
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+        }
+    }
+    
 h3.border-top {
-	padding-top: 1rem;
-	border-top: $border-base;
-	}
+    padding-top: 1rem;
+    border-top: $border-base;
+    }
 
 h4, .h4 {
-	font-family: $font-family-sans-serif;
-	}
+    font-family: $font-family-sans-serif;
+    }
 
 h4, .h5 {
-	font-family: $font-family-sans-serif;
-	}
+    font-family: $font-family-sans-serif;
+    }
 
 /* Paragraphs
 --------------------------------------------- */
-	
+    
 p {
-	font-family: $font-family-sans-serif;
-	font-size: $small1-size;
-	font-weight: $font-weight-base;
-	line-height: $line-height-xl;
-	}
-	
+    font-family: $font-family-sans-serif;
+    font-size: $small1-size;
+    font-weight: $font-weight-base;
+    line-height: $line-height-xl;
+    }
+    
 @include media-breakpoint-up(lg) {
-	
-	p {
-		font-size: $small1-size;	
-		}
-	}
-	
+    
+    p {
+        font-size: $small1-size;    
+        }
+    }
+    
 p.lead {
-	line-height: $line-height-base;
-	margin-top: 1.5rem;
-	font-size: $font-size-base;
-	font-weight: $font-weight-base;
-	}
+    line-height: $line-height-base;
+    margin-top: 1.5rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    }
 
 @include media-breakpoint-up(lg) {
-	
-	p.lead {
-		font-size: $h4-font-size;
-		}
-	}
+    
+    p.lead {
+        font-size: $h4-font-size;
+        }
+    }
 
 p.small {
-	line-height: $line-height-md;
-	margin-top: 0.25rem;
-	}
+    line-height: $line-height-md;
+    margin-top: 0.25rem;
+    }
 
 /* Section Crumb -
-	Utility for adding date 
-	or category above a header
+    Utility for adding date 
+    or category above a header
 --------------------------------------------- */
 p.section-crumb {
-	margin-bottom: 0;
-	padding-bottom: 0.25rem;
-	display: inline-block;
-	position: relative;
-	margin-top: 0;
-	/* 3rem margin top? where? */
-	text-transform: uppercase;
-	color: $color-ps-slate-gray;
-	font-family: $font-family-sans-serif;
-	font-weight: $font-weight-bold;
-	line-height: $line-height-sm;
-	font-size: $small3-size;
-	
-	&::after {
-	    content: "";
-	    position: absolute;
-	    bottom: -0.125rem;
-	    left: 0;
-	    width: 4rem;
-	    height: 1px;
-	    border-bottom: 2px solid transparent;
-	    }
-			   
-	& + p.h2,
-	& + p.h3 {
-		margin-top: 0;
-		}	
-	}
+    margin-bottom: 0;
+    padding-bottom: 0.25rem;
+    display: inline-block;
+    position: relative;
+    margin-top: 0;
+    /* 3rem margin top? where? */
+    text-transform: uppercase;
+    color: $color-ps-slate-gray;
+    font-family: $font-family-sans-serif;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-sm;
+    font-size: $small3-size;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.125rem;
+        left: 0;
+        width: 4rem;
+        height: 1px;
+        border-bottom: 2px solid transparent;
+        }
+               
+    & + p.h2,
+    & + p.h3 {
+        margin-top: 0;
+        }    
+    }
 
 /* Links
 --------------------------------------------- */
 
 a {
-	-moz-transition: $transition-base;
-	-webkit-transition: $transition-base;
-	transition: $transition-base; 
-	}
+    -moz-transition: $transition-base;
+    -webkit-transition: $transition-base;
+    transition: $transition-base; 
+    }
 
 ul a,
 ol a {
-	border-bottom: 1px solid transparent;
-	}
+    border-bottom: 1px solid transparent;
+    }
 
 .container-text p a:link:not(.btn),
 .container-text p a:visited:not(.btn) {
-	text-decoration: none;
-	color: #307e7a;
-	border-bottom: 1px solid transparent;
+    text-decoration: none;
+    color: #307e7a;
+    border-bottom: 1px solid transparent;
 
-	&:hover {
-		border-bottom: 1px solid $color-ps-creek;
-		}
-	}		
+    &:hover {
+        border-bottom: 1px solid $color-ps-creek;
+        }
+    }        
 
 /* ----------------------------------------------------------
 
@@ -601,46 +601,46 @@ TEXT WHITE - Generic Container Class to Reverse Color
 Already a Bootstrap Class - 
 These are additional customizations
 
----------------------------------------------------------- */	
-	
+---------------------------------------------------------- */    
+    
 .text-white {
 
-	h2.h1 {
-		text-shadow: 2px 4px 4px rgba($black,0.75);
-		}
-	
-	a {		
-		text-decoration: none;
-		
-		&:link {
-			color: $white;
-			}
-	
-		&:hover:not(.btn),
-		&:visited:hover:not(.btn) {
-			color: lighten($color-ps-creek,35%);
-			}
-		
-		&:active {
-			color: $color-ps-highlight-blue;
-			}
-		
-		&:visited {
-			color: $white;
-			}
-		
-		&:focus {
-			color: $white;
-			}
-		}	
-	}
+    h2.h1 {
+        text-shadow: 2px 4px 4px rgba($black,0.75);
+        }
+    
+    a {        
+        text-decoration: none;
+        
+        &:link {
+            color: $white;
+            }
+    
+        &:hover:not(.btn),
+        &:visited:hover:not(.btn) {
+            color: lighten($color-ps-creek,35%);
+            }
+        
+        &:active {
+            color: $color-ps-highlight-blue;
+            }
+        
+        &:visited {
+            color: $white;
+            }
+        
+        &:focus {
+            color: $white;
+            }
+        }    
+    }
 
 
 /* ----------------------------------------------------------
 
 PARTIALS
 
----------------------------------------------------------- */	
+---------------------------------------------------------- */    
 
 @import "_utility-classes";
 @import "_utility-classes-color";
@@ -732,27 +732,27 @@ STILL BE USED. REVIEW LATER
 
 
 .add-this {
-	position: absolute;
-	top: 1rem;
-	right: 0.5rem;
-	color: $white;
-	font-size: $small2-size;
-	font-family: $font-family-sans-serif;
-	}
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+    color: $white;
+    font-size: $small2-size;
+    font-family: $font-family-sans-serif;
+    }
 
 .addthis_inline_share_toolbox {
-	display: inline-block;
-	vertical-align: middle;
-	}
+    display: inline-block;
+    vertical-align: middle;
+    }
 
 @include media-breakpoint-up(sm) {
-	.add-this {
-		top: 1rem;
-		right: 1rem;
-		}
-	}
-	
-	
+    .add-this {
+        top: 1rem;
+        right: 1rem;
+        }
+    }
+    
+    
 
 /* ----------------------------------------------------------
 
@@ -760,22 +760,22 @@ BOOTSTRAP HOME CAROUSEL INITIAL IMPLEMENTATION
 
 ---------------------------------------------------------- */
 .carousel-caption {
-	left: 3rem;
-	bottom: 1rem;
-	right: 0;
-	text-align: left;
-	}
+    left: 3rem;
+    bottom: 1rem;
+    right: 0;
+    text-align: left;
+    }
 
 .carousel,.item,.active{height:75vh;}
 .carousel-inner{height:75vh;}
 .carousel-inner>.item>img {
     height:75vh;
-	}
-	
+    }
+    
 ol.carousel-indicators {
-	margin-bottom: 0;
-	}
-	
+    margin-bottom: 0;
+    }
+    
 /* ----------------------------------------------------------
 
 SIDEBAR STICKY TEST
@@ -783,10 +783,10 @@ SIDEBAR STICKY TEST
 ---------------------------------------------------------- */
 
 .sticky-test {
-	position: sticky;
-	top: 200px;
-	display: block;
-	}
+    position: sticky;
+    top: 200px;
+    display: block;
+    }
 
 /* ----------------------------------------------------------
 
@@ -795,116 +795,116 @@ FOR REMOVAL ???
 ---------------------------------------------------------- */
 
 .facultyStaffDirectory .bio ul.list-inline-expertise {
-	font-family: $font-family-sans-serif;
-	font-size: $small3-size;
-	padding-left: 0;
-	margin-bottom: 0;
-	margin-top: 0;
-	
-	li {
-		margin-top:0;
-		margin-bottom: 0.25rem;
-		display: inline-block;
-		margin-right: 0.25rem;
+    font-family: $font-family-sans-serif;
+    font-size: $small3-size;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    
+    li {
+        margin-top:0;
+        margin-bottom: 0.25rem;
+        display: inline-block;
+        margin-right: 0.25rem;
 
-		
-		&::before {
-			content: '\2022';
-			color: $color-ps-creek;
-			margin-right: 0.5rem;
-			}
-		
-		}
-	}
-		
+        
+        &::before {
+            content: '\2022';
+            color: $color-ps-creek;
+            margin-right: 0.5rem;
+            }
+        
+        }
+    }
+        
 /* tag style thing - not sure we are using this 
-	http://creativeservices.psu.edu/client/agsci/agsci-01-28-home.html
+    http://creativeservices.psu.edu/client/agsci/agsci-01-28-home.html
 */
 .list-inline-majors {
-	font-family: $font-family-sans-serif;
-	font-size: $small3-size;
-	padding-left: 0;
-	margin-bottom: 0;
-	margin-top: 1rem;
-	
-	li {
-		margin-top: 0.5rem;
-		margin-bottom: 0.5rem;
-		display: inline-block;
-	
-		a {
-			padding: 0.25rem 0.5rem;
-			background: lighten($color-ps-coaly-gray, 60%);
-			border-radius: 0.25rem;
-			}
-		}
-	}
+    font-family: $font-family-sans-serif;
+    font-size: $small3-size;
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    
+    li {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    
+        a {
+            padding: 0.25rem 0.5rem;
+            background: lighten($color-ps-coaly-gray, 60%);
+            border-radius: 0.25rem;
+            }
+        }
+    }
 
 /* renamed - now ul.list-checked
-*/	
+*/    
 .highlight-tag {
-	display: block;
-	font-family: $font-family-sans-serif;
-	font-size: $small1-size;
-	margin: 1rem 1rem 1rem 1.5rem;
-	padding-left: 1.5rem;
-	position: relative;
+    display: block;
+    font-family: $font-family-sans-serif;
+    font-size: $small1-size;
+    margin: 1rem 1rem 1rem 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
 
-	.fa-stack {
-		line-height: 1.4;
-		width: 1.6em;
-		height: 1.6em;
-		}
-	
-	.fa-square {
-		color: $black;
-		}
-	
-	.fa-check-circle {
-		color: $color-ps-creek;
-		position: absolute;
-		left: .125rem;
-		}
-	}
+    .fa-stack {
+        line-height: 1.4;
+        width: 1.6em;
+        height: 1.6em;
+        }
+    
+    .fa-square {
+        color: $black;
+        }
+    
+    .fa-check-circle {
+        color: $color-ps-creek;
+        position: absolute;
+        left: .125rem;
+        }
+    }
 
 .share-this-block {
-	padding: 0;
-	background: transparent;
-	}
-		
+    padding: 0;
+    background: transparent;
+    }
+        
 .at-share-tbx-element .at-share-btn {
-	margin-bottom: 0;
-	margin-left: 0.5rem;
-	}
-	
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    }
+    
 p.share-this {
-	margin-bottom: 0; 
-	margin-left: 0.75rem;
-	margin-right: 0.25rem;
-	font-size: $small2-size;
-	font-family: $font-family-sans-serif;
-	}
+    margin-bottom: 0; 
+    margin-left: 0.75rem;
+    margin-right: 0.25rem;
+    font-size: $small2-size;
+    font-family: $font-family-sans-serif;
+    }
 
 
 .content {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	}
-	
-	table {
-	
-	margin-top: 1rem;
-	
-	th {
-		font-size: $font-size-sm;
-		font-weight: $font-weight-base;
-		}
-	
-	td {
-		p {
-			font-family: $font-family-sans-serif;
-			}
-		}
-	}
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    }
+    
+    table {
+    
+    margin-top: 1rem;
+    
+    th {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-base;
+        }
+    
+    td {
+        p {
+            font-family: $font-family-sans-serif;
+            }
+        }
+    }
 

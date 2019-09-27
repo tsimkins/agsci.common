@@ -3,169 +3,169 @@
 JUMBOTRON HOME STYLE
 
 ---------------------------------------------------------- */
-	
-.jumbotron {
-	height: 60vh; /* setting to fixed height so bg image can be absolute */
-	margin-bottom: 0; /* override bs default */
-	padding: 0;
-	border-radius: 0;
     
-	h1, h2 {
-		margin-bottom: 0;
-		color: $white;
-		text-shadow: 4px 4px 8px rgba($black,0.75);
-		}
+.jumbotron {
+    height: 60vh; /* setting to fixed height so bg image can be absolute */
+    margin-bottom: 0; /* override bs default */
+    padding: 0;
+    border-radius: 0;
+    
+    h1, h2 {
+        margin-bottom: 0;
+        color: $white;
+        text-shadow: 4px 4px 8px rgba($black,0.75);
+        }
 
-	p {
-		margin-bottom: 0.5rem;
-		line-height: $line-height-base;
-		}
-	
-	p.lead {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-		color: $white;
-		font-size: $font-size-base;
-		}
-		
-	&.jumbotron-variable-height p.lead {
-		color: $black;
-		}
-	
-	&.jumbotron-img-based {
-		overflow: hidden;
-		}
+    p {
+        margin-bottom: 0.5rem;
+        line-height: $line-height-base;
+        }
+    
+    p.lead {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        color: $white;
+        font-size: $font-size-base;
+        }
+        
+    &.jumbotron-variable-height p.lead {
+        color: $black;
+        }
+    
+    &.jumbotron-img-based {
+        overflow: hidden;
+        }
 
-	&.jumbotron-variable-height .jumbotron-img {
-		height: 100%;
-		background-size: cover;
-		}
+    &.jumbotron-variable-height .jumbotron-img {
+        height: 100%;
+        background-size: cover;
+        }
 
-	&.jumbotron-full-height,
-	&.jumbotron-full-height .jumbotron-img,
-	&.jumbotron-full-height .jumbotron-header {
-		height: 75vh;
-		}
-	
-	&.jumbotron-mid {
-		height: 60vh;
-		}
-	
-	&.jumbotron-short-header {
-		height: 40vh;
-		}
-	}
+    &.jumbotron-full-height,
+    &.jumbotron-full-height .jumbotron-img,
+    &.jumbotron-full-height .jumbotron-header {
+        height: 75vh;
+        }
+    
+    &.jumbotron-mid {
+        height: 60vh;
+        }
+    
+    &.jumbotron-short-header {
+        height: 40vh;
+        }
+    }
 
 .jumbotron.jumbotron-variable-height {
-	height: auto;
+    height: auto;
 
-	h1 {
-		text-shadow: none;
-		}
-	
-	p.lead {
-		margin-left: 0;
-		line-height: $line-height-md;
-		
-		span {
-			padding: 0;
-			background: none;
-			box-shadow: none;
-			}
-		}
-	}
+    h1 {
+        text-shadow: none;
+        }
+    
+    p.lead {
+        margin-left: 0;
+        line-height: $line-height-md;
+        
+        span {
+            padding: 0;
+            background: none;
+            box-shadow: none;
+            }
+        }
+    }
 
 .article .jumbotron,
 .article .jumbotron .row,
 .article.jumbotron.jumbotron-img-based {
-	min-height: 60vh;
-	}	
+    min-height: 60vh;
+    }    
 
 .jumbotron-img {
-	position: absolute;
+    position: absolute;
     width: 100%;
-	height: 60vh;	
-	opacity: 1; 
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;	
+    height: 60vh;    
+    opacity: 1; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;    
 
-	&.fix-img-top {
-		background-position-y: top;
-		background-position-y: 20%;
-		}
-		
-	&.fix-img-bottom {
-		background-position-y: bottom;
-		background-position-y: 80%;
-		}
+    &.fix-img-top {
+        background-position-y: top;
+        background-position-y: 20%;
+        }
+        
+    &.fix-img-bottom {
+        background-position-y: bottom;
+        background-position-y: 80%;
+        }
 
-	&.fix-img-right {
-		background-position-x: right;
-		background-position-x: 80%;
-		}
-	
-	&.fix-img-left {
-		background-position-x: left;
-		background-position-x: 20%;
-		}
-	}
+    &.fix-img-right {
+        background-position-x: right;
+        background-position-x: 80%;
+        }
+    
+    &.fix-img-left {
+        background-position-x: left;
+        background-position-x: 20%;
+        }
+    }
 
 @media (min-aspect-ratio: 6/5) {
-	
-	.jumbotron-img.fix-img-right,
-	.jumbotron-img.fix-img-left {
-		background-position-x: initial;
-		}
-	}	
+    
+    .jumbotron-img.fix-img-right,
+    .jumbotron-img.fix-img-left {
+        background-position-x: initial;
+        }
+    }    
 
 .jumbotron p.section-callout {
-	font-size: $h4-font-size;
-	}
+    font-size: $h4-font-size;
+    }
 
 .jumbotron:hover,
 .jumbotron:focus {
     p.section-crumb::after {
-	   border-bottom: 2px solid $color-ps-creek;
+       border-bottom: 2px solid $color-ps-creek;
        }
-	}	
+    }    
 
 #portal-breadcrumbs {
-	line-height: $line-height-md;
-	}
-	
+    line-height: $line-height-md;
+    }
+    
 .jumbotron-img-based #portal-breadcrumbs {
-	
-	a {
-		color: $white;
-	
-		&::after {
-			color: $white;
-			}
-		}
-	}
+    
+    a {
+        color: $white;
+    
+        &::after {
+            color: $white;
+            }
+        }
+    }
 
 .jumbotron-variable-height #portal-breadcrumbs a {
-	color: $black;
-		
-	&::after {
-		color: black;
-		}
-	}
+    color: $black;
+        
+    &::after {
+        color: black;
+        }
+    }
 
 .jumbotron-full-height {
 #portal-breadcrumbs a {
-	color: $white;
-		border-bottom: 1px solid transparent;
-		
-		&:hover,
-		&:focus {
-			background-color: transparent;
-			border-bottom: 1px solid $color-ps-creek;
-			}
-		}
-	}
+    color: $white;
+        border-bottom: 1px solid transparent;
+        
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            border-bottom: 1px solid $color-ps-creek;
+            }
+        }
+    }
 
 .jumbotron.jumbotron-variable-height h1 {
-	color: $color-ps-slate-gray;
-	}
+    color: $color-ps-slate-gray;
+    }

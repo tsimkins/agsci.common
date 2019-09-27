@@ -1,84 +1,84 @@
 /* Element Invisible - 
-	Replacement for Bootstrap "invisible" which
-	hides element but takes up space and 
-	is not off canvas
+    Replacement for Bootstrap "invisible" which
+    hides element but takes up space and 
+    is not off canvas
 --------------------------------------------- */
 
 @mixin offscreen {
-	position: absolute;
+    position: absolute;
     top: auto;
     left: -10000px;
     overflow: hidden;
     width: 0px;
     height: 0px;
     margin: 0;
-	}
-	
+    }
+    
 .element-invisible,
 .pfgHidden,
 .icons-social-media span {
    @include offscreen;
    
-	&:active,
-	&:focus {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    overflow: visible;
-	    clip: auto;
-	    width: auto;
-	    height: auto;
-	    z-index: 999999;
-		}
-	}
+    &:active,
+    &:focus {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: visible;
+        clip: auto;
+        width: auto;
+        height: auto;
+        z-index: 999999;
+        }
+    }
 
 a.element-invisible:focus {
-	background-color: $color-ps-keystone;
-	color: $black;
-	}
+    background-color: $color-ps-keystone;
+    color: $black;
+    }
 
 @include media-breakpoint-up(sm) {
-	
-	.d-invisible-sm {
-		@include offscreen;
-		}
-	}
-	
+    
+    .d-invisible-sm {
+        @include offscreen;
+        }
+    }
+    
 @include media-breakpoint-up(md) {
-	
-	.d-invisible-md {
-		@include offscreen;
-		}
-	}
-	
+    
+    .d-invisible-md {
+        @include offscreen;
+        }
+    }
+    
 @include media-breakpoint-up(lg) {
-	
-	.d-invisible-lg {
-		@include offscreen;
-		}
-	}
+    
+    .d-invisible-lg {
+        @include offscreen;
+        }
+    }
 
 @include media-breakpoint-up(xl) {
-	
-	.d-invisible-xl {
-		@include offscreen;
-		}
-	}
-	
-	
+    
+    .d-invisible-xl {
+        @include offscreen;
+        }
+    }
+    
+    
 /* Fade In - 
-	Replace stock Bootstrap fade and scale
+    Replace stock Bootstrap fade and scale
 --------------------------------------------- */
 
 .fade-in {
-	transition: opacity 0.25s linear; 
-	}
+    transition: opacity 0.25s linear; 
+    }
 
 @media screen and (prefers-reduced-motion: reduce) { /* for users with vestibular disoreders */
 
-	.fade-in {
-	    	transition: none; 
-	    	} 
+    .fade-in {
+            transition: none; 
+            } 
     }
   
 .fade-in:not(.show) {
@@ -86,62 +86,62 @@ a.element-invisible:focus {
     }
 
 /* Margin - Too late to add to spacer map - so just adding
-	a couple of generica utilities
+    a couple of generica utilities
 --------------------------------------------- */
 
 .mb-2rem {
-	margin-bottom: 2rem;	
-	}
+    margin-bottom: 2rem;    
+    }
 
 .pb-2rem {
-	padding-bottom: 2rem;
-	}
+    padding-bottom: 2rem;
+    }
 
     
 /* Border - 
-	Top and Bottom Utility Class
+    Top and Bottom Utility Class
 --------------------------------------------- */
 
 .border-top {
-	border-top: $border-base;
-	}
+    border-top: $border-base;
+    }
 
 .border-bottom {
-	border-bottom: $border-base;
-	}
+    border-bottom: $border-base;
+    }
 
 /* Overflow - 
-	Hidden Utility
+    Hidden Utility
 --------------------------------------------- */
 
  .overflow-hidden {
-	overflow: hidden; 
- 	}
+    overflow: hidden; 
+     }
 
 /* Border Overlay -
-	Semi-transparent creek border inset
-	image overlay
+    Semi-transparent creek border inset
+    image overlay
 --------------------------------------------- */
 .img-border-overlay {
-		position: relative;
-		outline: 0.25rem solid rgba($color-ps-creek,0.5);
-		outline-offset: -1rem;
-	
-	img::before {
-		content: " ";
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		bottom: 1rem;
-		left: 1rem;
-		border: 0.5rem solid rgba($color-ps-creek,0.5);
-		z-index: 1;
-		}
-	}
+        position: relative;
+        outline: 0.25rem solid rgba($color-ps-creek,0.5);
+        outline-offset: -1rem;
+    
+    img::before {
+        content: " ";
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        left: 1rem;
+        border: 0.5rem solid rgba($color-ps-creek,0.5);
+        z-index: 1;
+        }
+    }
 
 /* Box Shadow
-	General Box Shadow 
-	and boxh shadow hover state for links
+    General Box Shadow 
+    and boxh shadow hover state for links
 --------------------------------------------- */
 
 $box-shadow-light: 0 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.25);
@@ -149,16 +149,16 @@ $box-shadow-medium: 0.25rem 0.25rem 0.75rem rgba($color-ps-slate-gray, 0.3);
 $box-shadow-dark: 0.25rem 0.25rem 1rem rgba($color-ps-slate-gray, 0.5);
 
 .agsci-box-shadow {
-		box-shadow: $box-shadow-light;
-		margin-bottom: $card-group-margin;
-		}
-		
+        box-shadow: $box-shadow-light;
+        margin-bottom: $card-group-margin;
+        }
+        
 a.agsci-box-shadow {
-		box-shadow: $box-shadow-light;
-		
-		&:hover,
-		&:focus { /* change body on hover only if wrapped in a */ 
-			box-shadow: $box-shadow-medium;
-			}
-		}
-				
+        box-shadow: $box-shadow-light;
+        
+        &:hover,
+        &:focus { /* change body on hover only if wrapped in a */ 
+            box-shadow: $box-shadow-medium;
+            }
+        }
+                

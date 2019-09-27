@@ -5,118 +5,118 @@ CARD DECK - EVENTS
 ---------------------------------------------------------- */
 
 .card-deck.card-deck-events {
-	margin-bottom: 0;
-	}
+    margin-bottom: 0;
+    }
 
 .card.card-event {
-	overflow: visible;	
-	margin-bottom: 1rem;
-	padding: 0;
-	background: none;
-	box-shadow: $box-shadow-light;
-	
-	.card-body {
-		padding: 0.875rem;	
-		background-color: $color-ps-coaly-gray-light35;
-		}
-	
-	.card-title p {
-		font-weight: $font-weight-bold; 
-		font-size: $font-size-base;
-		
-		@include media-breakpoint-up(lg) {
-			font-size: $small1-size;
-			}
-		}
+    overflow: visible;    
+    margin-bottom: 1rem;
+    padding: 0;
+    background: none;
+    box-shadow: $box-shadow-light;
+    
+    .card-body {
+        padding: 0.875rem;    
+        background-color: $color-ps-coaly-gray-light35;
+        }
+    
+    .card-title p {
+        font-weight: $font-weight-bold; 
+        font-size: $font-size-base;
+        
+        @include media-breakpoint-up(lg) {
+            font-size: $small1-size;
+            }
+        }
 
-	.card-text p {
-		font-family: $font-family-sans-serif;
-		line-height: $line-height-sm;
-		}
-	
-	&:hover,
-	&:focus {
-		background: none;
-		border: none;
-		box-shadow: $box-shadow-medium;
-		
-		.card-body {
-			background-color: $white;
-			}
-		}
-	
-	.event-date-block {
-		margin-right: 0;
-		}
-	
-	img {
-		object-fit: cover;
-		object-position: 50% 50%;
-		height: 100%;
-		width: 100%;
-		}
-			
-	.card-image {
-		overflow: hidden;
-		height: 5.25rem;
-		}
-	}
+    .card-text p {
+        font-family: $font-family-sans-serif;
+        line-height: $line-height-sm;
+        }
+    
+    &:hover,
+    &:focus {
+        background: none;
+        border: none;
+        box-shadow: $box-shadow-medium;
+        
+        .card-body {
+            background-color: $white;
+            }
+        }
+    
+    .event-date-block {
+        margin-right: 0;
+        }
+    
+    img {
+        object-fit: cover;
+        object-position: 50% 50%;
+        height: 100%;
+        width: 100%;
+        }
+            
+    .card-image {
+        overflow: hidden;
+        height: 5.25rem;
+        }
+    }
 
 .event-date-block {
-	display: block;
-	float: left;
-	margin-top: 0;	
-	margin-right: 1rem;
-	padding: 0.5rem;
-	width: 5.5rem;
-	height: 5.5rem;
-	max-width: 5.5rem;
-	background: $color-ps-creek-light25;
-	box-shadow: none;
-	color: $color-ps-nittany-navy;
-	text-align: center;
-	font-family: $font-family-sans-serif;
-	
-	div {
-		display: inline-block;
-		}
-	}
+    display: block;
+    float: left;
+    margin-top: 0;    
+    margin-right: 1rem;
+    padding: 0.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+    max-width: 5.5rem;
+    background: $color-ps-creek-light25;
+    box-shadow: none;
+    color: $color-ps-nittany-navy;
+    text-align: center;
+    font-family: $font-family-sans-serif;
+    
+    div {
+        display: inline-block;
+        }
+    }
 
 .event-day {
-	margin-bottom: 0.25rem;
-	padding-bottom: 0.25rem;
-	border-bottom: 1px solid $color-ps-creek;
-	font-size: $small3-size;
-	line-height: 1;
-	}
+    margin-bottom: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid $color-ps-creek;
+    font-size: $small3-size;
+    line-height: 1;
+    }
 
 .event-month {
-	width: 100%;
-	text-transform: uppercase;
-	font-size: $small1-size;
-	line-height: 1;
-	}
+    width: 100%;
+    text-transform: uppercase;
+    font-size: $small1-size;
+    line-height: 1;
+    }
 
 .event-date {
-	width: 100%;
-	font-weight: $font-weight-boldest;
-	font-size: $h2-font-size;
-	line-height: 1;
-	}
+    width: 100%;
+    font-weight: $font-weight-boldest;
+    font-size: $h2-font-size;
+    line-height: 1;
+    }
 
 .event-details p {
-	margin-bottom: 0;
-	font-size: $small3-size;
-	line-height: $line-height-md;
-	}
-	
+    margin-bottom: 0;
+    font-size: $small3-size;
+    line-height: $line-height-md;
+    }
+    
 .events-new {
-	.card.card-event {
-		box-shadow: $box-shadow-light;
-		
-		&:hover,
-		&:focus {
-			box-shadow: $box-shadow-medium;
-			}
-		}
-	}
+    .card.card-event {
+        box-shadow: $box-shadow-light;
+        
+        &:hover,
+        &:focus {
+            box-shadow: $box-shadow-medium;
+            }
+        }
+    }

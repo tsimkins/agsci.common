@@ -5,37 +5,37 @@ KNOCKOUT WIDTH - PUSHES INTO SECTION NAV AREA
 ---------------------------------------------------------- */
 
  @include media-breakpoint-up(lg) {
-	 
-	.knockout-width {
-		margin-right: calc(-50% - 1rem); 
-		/* width is based on parent width so it's not just 33.3333% -- it's 100/66.6666 * 33.3333% plus the margin */
-		}
-	
-	figure.float-half.knockout-width {
-		width: 83.3333%; 
-		/* same logic as above . . . need an additional 50% of 66.6666% plus original 50% to fill half the content column */
-		}
-	
-	figure.float-third.knockout-width {
-		width: 66.6666%; 
-		/* same logic as above . . . need an additional 50% of 66.6666% plus original 33.3333% to fill a third the content column */
-		}	
-	}
+     
+    .knockout-width {
+        margin-right: calc(-50% - 1rem); 
+        /* width is based on parent width so it's not just 33.3333% -- it's 100/66.6666 * 33.3333% plus the margin */
+        }
+    
+    figure.float-half.knockout-width {
+        width: 83.3333%; 
+        /* same logic as above . . . need an additional 50% of 66.6666% plus original 50% to fill half the content column */
+        }
+    
+    figure.float-third.knockout-width {
+        width: 66.6666%; 
+        /* same logic as above . . . need an additional 50% of 66.6666% plus original 33.3333% to fill a third the content column */
+        }    
+    }
 
  @include media-breakpoint-up(xl) {
-	 
-	.knockout-width {
-		margin-right: calc(-33.33% - 1rem); 
-		/* width is based on parent width so it's not just 25% -- it's 100/75 * 25% plus the margin */
-		}
-	
-	figure.float-half.knockout-width {
-		width: 87.5%; 
-		/* same logic as above . . . need an additional 50% of 75% plus original 50% to fill half the content column */
-		}
-	
-	figure.float-third.knockout-width {
-		width: 70.8333%; 
-		/* same logic as above . . . need an additional 50% of 75% plus original 33.3333% to fill a third the content column */
-		}
-	}
+     
+    .knockout-width {
+        margin-right: calc(-33.33% - 1rem); 
+        /* width is based on parent width so it's not just 25% -- it's 100/75 * 25% plus the margin */
+        }
+    
+    figure.float-half.knockout-width {
+        width: 87.5%; 
+        /* same logic as above . . . need an additional 50% of 75% plus original 50% to fill half the content column */
+        }
+    
+    figure.float-third.knockout-width {
+        width: 70.8333%; 
+        /* same logic as above . . . need an additional 50% of 75% plus original 33.3333% to fill a third the content column */
+        }
+    }

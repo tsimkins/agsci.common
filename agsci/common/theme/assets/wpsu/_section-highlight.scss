@@ -1,57 +1,57 @@
 .container-fluid.section-highlight {
-	background-color: $color-ps-coaly-gray-light35;
-	}
+    background-color: $color-ps-coaly-gray-light35;
+    }
 
 .container-fluid.section-highlight:nth-of-type(even) {
-	background-color: $color-ps-coaly-gray-light30;
-	}
-	
+    background-color: $color-ps-coaly-gray-light30;
+    }
+    
 .section-highlight {
-	
-	img {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		}
-	}
+    
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        }
+    }
 
 .section-highlight-text {
-	
-	h2 {
-		margin-top: 1rem;
-		font-size: 1.5rem;
-		}
-	
-	p.section-crumb {
-		margin-bottom: 0.75rem;
-		padding-bottom: 0;
-		font-weight: $font-weight-bold;
-		font-size: $h2-font-size;
-		text-transform: none;
+    
+    h2 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        }
+    
+    p.section-crumb {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0;
+        font-weight: $font-weight-bold;
+        font-size: $h2-font-size;
+        text-transform: none;
 
-		a {
-			color: $color-ps-creek-accessible;
-			}
-		
-		a:hover,
-		a:focus {
-			border-bottom: 1px solid $color-ps-creek-accessible;
-			color: $color-ps-creek;
-			}
-		}
-	
-	p {
-		font-size: $small1-size;
-		line-height: $line-height-base;	
-		}	
-	}
-		
+        a {
+            color: $color-ps-creek-accessible;
+            }
+        
+        a:hover,
+        a:focus {
+            border-bottom: 1px solid $color-ps-creek-accessible;
+            color: $color-ps-creek;
+            }
+        }
+    
+    p {
+        font-size: $small1-size;
+        line-height: $line-height-base;    
+        }    
+    }
+        
 @include media-breakpoint-up(xl) {
-		
-	.section-highlight-text {
-			
-		p {
-			font-size: $font-size-sm;
-			}
-		}
-	}
+        
+    .section-highlight-text {
+            
+        p {
+            font-size: $font-size-sm;
+            }
+        }
+    }

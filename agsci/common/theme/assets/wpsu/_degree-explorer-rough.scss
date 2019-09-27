@@ -6,377 +6,377 @@ DEGREE EXPLORER
 ---------------------------------------------------------- */
 
 .card-deck-4up-2min .card.card-visual {
-	 /* override typical card-visual position relative at mobile size to allow 2 cards up */
-	}
+     /* override typical card-visual position relative at mobile size to allow 2 cards up */
+    }
 
 .card-deck-4up-2min.card-deck {
-	flex-direction: row;
-	flex-wrap: wrap;
-	
-	.card {
-		margin-left: 0.5rem;
-		margin-right: 0.5rem;
-		
-		.card-img-overlay {
-			padding: 0.5rem;
-			}
-		}
-		
-	.opacity-dimmer-bottom-left {
-		position: absolute;
-	    z-index: 1;
-	    top: 0;
-	    left: 0;
-	    bottom: 0;
-	    right: 0;
-	    width: 100%;
-	    height: 101%;
-		background-position: center center, right center;
-		background:
-		linear-gradient(to bottom left, rgba(0,0,0,.125) 25%,rgba(0,0,0,0.95) 100%);
-		}
-	
-	&.visual-cards-imgs-cropped .card-image-top {
-		height: 5rem;
-		}
-	
-	}
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    .card {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        
+        .card-img-overlay {
+            padding: 0.5rem;
+            }
+        }
+        
+    .opacity-dimmer-bottom-left {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 101%;
+        background-position: center center, right center;
+        background:
+        linear-gradient(to bottom left, rgba(0,0,0,.125) 25%,rgba(0,0,0,0.95) 100%);
+        }
+    
+    &.visual-cards-imgs-cropped .card-image-top {
+        height: 5rem;
+        }
+    
+    }
 
 .card-deck-4up-2min .card .card-img-overlay h3.card-title {
-	font-size: $font-size-base;
-	margin-bottom: 0;
-	
-	&::after {
-		content: none;
-		}
-	}
+    font-size: $font-size-base;
+    margin-bottom: 0;
+    
+    &::after {
+        content: none;
+        }
+    }
 
 @include media-breakpoint-up(sm) {
 
-	.card-deck-4up-2min.card-deck.visual-cards-imgs-cropped .card-image-top {
-		height: 7rem;
-		}
-		
-	
-	}
-		
+    .card-deck-4up-2min.card-deck.visual-cards-imgs-cropped .card-image-top {
+        height: 7rem;
+        }
+        
+    
+    }
+        
 .card .highlight-tag {
-	margin: 0.5rem;
-	font-size: $small3-size;
-	}
+    margin: 0.5rem;
+    font-size: $small3-size;
+    }
 
 .degree-explorer {
-	
-	label {
-		font-family: $font-family-sans-serif;
-		font-size: $small3-size;
-		margin-left: 0.125rem;
-		margin-bottom: 0;
-		}
-	}
+    
+    label {
+        font-family: $font-family-sans-serif;
+        font-size: $small3-size;
+        margin-left: 0.125rem;
+        margin-bottom: 0;
+        }
+    }
 
 .degree-explorer-filters {
-	border-bottom: transparent;
-	padding: 0.25rem 1.5rem; /* wider x + y padding so you can grab for scrolling */
-	background: lighten($color-ps-coaly-gray,60%);
-	
-	.controls {
-		text-align: left;
-		}
-		
-	fieldset {
-		background-color: lighten($color-ps-coaly-gray,65%);
-		padding: 0.25rem 0.75rem;
-		margin-right: 0;
-		border: 1px solid rgba($color-ps-coaly-gray,.5);
-		margin-bottom: 1rem;
-		width: 100%;
-		max-height: 12rem;
-		overflow:scroll;
-		}
-	
-	ul {
-		list-style-type: none;
-		text-align: left;
-		padding-left: 0;
-		margin-bottom: 0;
-		
-		li {
-			display: flex;
-			align-items: baseline;
-			margin-top: .25rem;
-			margin-bottom: .25rem;
-			}
-		}
-	}
+    border-bottom: transparent;
+    padding: 0.25rem 1.5rem; /* wider x + y padding so you can grab for scrolling */
+    background: lighten($color-ps-coaly-gray,60%);
+    
+    .controls {
+        text-align: left;
+        }
+        
+    fieldset {
+        background-color: lighten($color-ps-coaly-gray,65%);
+        padding: 0.25rem 0.75rem;
+        margin-right: 0;
+        border: 1px solid rgba($color-ps-coaly-gray,.5);
+        margin-bottom: 1rem;
+        width: 100%;
+        max-height: 12rem;
+        overflow:scroll;
+        }
+    
+    ul {
+        list-style-type: none;
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 0;
+        
+        li {
+            display: flex;
+            align-items: baseline;
+            margin-top: .25rem;
+            margin-bottom: .25rem;
+            }
+        }
+    }
 
 
 @include media-breakpoint-up(md) {
-	.degree-explorer-filters {
-		padding: 0.25rem;
-		position: sticky;
-		top: 3rem;
-		}
-	}
+    .degree-explorer-filters {
+        padding: 0.25rem;
+        position: sticky;
+        top: 3rem;
+        }
+    }
 
 .card-deck .mix.card.card-visual .card-body {
-	padding: 0 0.5rem;
-	
-	.checkbox {
-		align-items: baseline; 
-		}
-	
-	}
+    padding: 0 0.5rem;
+    
+    .checkbox {
+        align-items: baseline; 
+        }
+    
+    }
 
 .mix {
-	position: relative;
-	}
+    position: relative;
+    }
 
 
 fieldset{
-	display: inline-block;
-	vertical-align: top;
-	border: 0;
-	}	
+    display: inline-block;
+    vertical-align: top;
+    border: 0;
+    }    
 
 .container .mix{
-	display: none;
-	}
+    display: none;
+    }
 
 .container .fail-message{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	opacity: 0;
-	-webkit-transition: 150ms;
-	-moz-transition: 150ms;
-	transition: 150ms;
-	text-align: center;
-	pointer-events: none;
-	}
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: 150ms;
+    -moz-transition: 150ms;
+    transition: 150ms;
+    text-align: center;
+    pointer-events: none;
+    }
 
 .container .fail-message:before{
-	content: '';
-	display: inline-block;
-	vertical-align: middle;
-	height: 100%;
-	}
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    }
 
 .container .fail-message span{
-	display: inline-block;
-	vertical-align: middle;
-	font-size: 20px;
-	font-weight: 700;
-	}
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 700;
+    }
 
 .container.fail .fail-message{
-	opacity: 1;
-	pointer-events: auto;
-	}
+    opacity: 1;
+    pointer-events: auto;
+    }
 
 button.filter {
-	border: transparent;
-	background: transparent;
-	text-align: left;
-	font-family: $font-family-sans-serif;
-	font-size: $small2-size;
-	width: 100%;
-	cursor: pointer;
-	}
+    border: transparent;
+    background: transparent;
+    text-align: left;
+    font-family: $font-family-sans-serif;
+    font-size: $small2-size;
+    width: 100%;
+    cursor: pointer;
+    }
 
 
 .comparison-container {
-	-webkit-overflow-scrolling: touch;
-	
-	p.h5 {
-		margin-top: 0.5rem;
-		padding-top: 0.5rem;
-		margin-bottom: 0;	
-		font-weight: $font-weight-bold;
-		}
-	
-	ul {
-		font-size: $small3-size;
-		padding-left: 1rem;
-		margin-bottom: 0;
-	
-		li {
-			margin: 0.25rem 0;
-			line-height: $line-height-md;
-		}
-	}
-	
+    -webkit-overflow-scrolling: touch;
+    
+    p.h5 {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        margin-bottom: 0;    
+        font-weight: $font-weight-bold;
+        }
+    
+    ul {
+        font-size: $small3-size;
+        padding-left: 1rem;
+        margin-bottom: 0;
+    
+        li {
+            margin: 0.25rem 0;
+            line-height: $line-height-md;
+        }
+    }
+    
 }
 
 /* standard table with scroll 
-	SIMPLE VERSION */
+    SIMPLE VERSION */
 
 .rtable {
-	margin-top: 0;
-	display: block;
-	vertical-align: top;
-	max-width: 100%;
-	width: 100%;
-	overflow-x: auto;
-	  
-	  // optional - looks better for small cell values
-	 /*  white-space: nowrap; */
-	
-	border-collapse: collapse;
-	border-spacing: 0;
-	-webkit-overflow-scrolling: touch;
-	
-	.card.card-visual {
-		margin: 0;
-		box-shadow: none;
-		
-		&:hover {
-			box-shadow: none;
-		}
-		
-		}
-	
+    margin-top: 0;
+    display: block;
+    vertical-align: top;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+      
+      // optional - looks better for small cell values
+     /*  white-space: nowrap; */
+    
+    border-collapse: collapse;
+    border-spacing: 0;
+    -webkit-overflow-scrolling: touch;
+    
+    .card.card-visual {
+        margin: 0;
+        box-shadow: none;
+        
+        &:hover {
+            box-shadow: none;
+        }
+        
+        }
+    
 }
 
 .rtable th,
 .rtable td {
-	padding: 0.5rem 1rem;
-	border: 1px solid lighten($color-ps-limestone-gray,35%);
-	font-size: $small3-size;
-	font-family: $font-family-sans-serif;
-	line-height: $line-height-md;
-	min-width: 15rem;
-	}
+    padding: 0.5rem 1rem;
+    border: 1px solid lighten($color-ps-limestone-gray,35%);
+    font-size: $small3-size;
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-md;
+    min-width: 15rem;
+    }
 
 .rtable tr:nth-of-type(odd) {
-	background: lighten($color-ps-limestone-gray,35%);
-	}
+    background: lighten($color-ps-limestone-gray,35%);
+    }
 
 .rtable tr:nth-of-type(even) {
-	
-	}
+    
+    }
 
 .rtable.rtable-mobile td,
 .rtable.rtable-mobile th {
-	min-width: 66.66%;
-	}
-	
+    min-width: 66.66%;
+    }
+    
 .rtable.rtable-mobile th:first-of-type {
-	min-width: 33.33%;
-	}
+    min-width: 33.33%;
+    }
 
 .rtable th:first-of-type {
-	font-weight: $font-weight-bold;
-	min-width: 10rem;
-	}
-	
+    font-weight: $font-weight-bold;
+    min-width: 10rem;
+    }
+    
 .rtable thead th {
-	text-align: left;
-	padding: 0;
-	
-	&:first-of-type {
-		border: transparent;
-		}
-	
-	}
+    text-align: left;
+    padding: 0;
+    
+    &:first-of-type {
+        border: transparent;
+        }
+    
+    }
 
 
 
 .comparison-container {
-	 position: fixed; 
-	 overflow: auto; 
-	 bottom: 0; 
-	 height: 95%; 
-	 background: $white;
-	 z-index: 9999;
-	 padding-left: 1.5%;
-	 padding-right: 1.5%;
+     position: fixed; 
+     overflow: auto; 
+     bottom: 0; 
+     height: 95%; 
+     background: $white;
+     z-index: 9999;
+     padding-left: 1.5%;
+     padding-right: 1.5%;
 }
 
 .close-comparison-bar {
-	position: fixed;
-	width: 100%;
-	z-index: 99;
-	left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    left: 0;
 }
 
 
 
 .rtable.rtable-mobile-labels {
-	
-	td, th, th:first-of-type {
-	min-width: 15rem;
-	width: 15rem;
+    
+    td, th, th:first-of-type {
+    min-width: 15rem;
+    width: 15rem;
 
-	}
-	
-	
-	
+    }
+    
+    
+    
 
-	
-	.explorer-label {
-		font-weight: $font-weight-bolder;
-		font-size: $small1-size;
-		display: block;
-		margin-bottom: 0.125rem;
-		}
-		
-	td {
-		vertical-align: top;
-		}
-	
-	th, td {
-		border: transparent;
-		}
-	
-	td {
-		padding: 1rem;
-		}
-	
-	tr:nth-of-type(odd) {
-	background: transparent;
-	}
-	
-	tr {
-		border-bottom: $border-base;
-	}
-		
-	}
+    
+    .explorer-label {
+        font-weight: $font-weight-bolder;
+        font-size: $small1-size;
+        display: block;
+        margin-bottom: 0.125rem;
+        }
+        
+    td {
+        vertical-align: top;
+        }
+    
+    th, td {
+        border: transparent;
+        }
+    
+    td {
+        padding: 1rem;
+        }
+    
+    tr:nth-of-type(odd) {
+    background: transparent;
+    }
+    
+    tr {
+        border-bottom: $border-base;
+    }
+        
+    }
 
 @include media-breakpoint-up(md) {
 
-		
-	.rtable.rtable-mobile-labels {
-	
+        
+    .rtable.rtable-mobile-labels {
+    
 
-	
-	thead {
-		position: fixed;
-		width: 97%; /* take into account 1.5% padding on comparison container */
-		z-index: 99;
-		}
-		
-			tbody {
-		display: block;
-		padding-top: 8rem;
-	}
-	
-	td, th, th:first-of-type {
-	min-width: 25%;
-	width: 25%;
+    
+    thead {
+        position: fixed;
+        width: 97%; /* take into account 1.5% padding on comparison container */
+        z-index: 99;
+        }
+        
+            tbody {
+        display: block;
+        padding-top: 8rem;
+    }
+    
+    td, th, th:first-of-type {
+    min-width: 25%;
+    width: 25%;
 
-	}
-	
-	tr td .explorer-label {
-		visibility: hidden;
-		}
-	
-	tr td:first-of-type .explorer-label {
-		visibility: visible;
-	}
-		
-	}
-	}
+    }
+    
+    tr td .explorer-label {
+        visibility: hidden;
+        }
+    
+    tr td:first-of-type .explorer-label {
+        visibility: visible;
+    }
+        
+    }
+    }
 

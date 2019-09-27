@@ -1,46 +1,46 @@
 #portal-breadcrumbs {
-	margin-top: 1rem;
-	margin-bottom: 0.5rem;
-	text-align: left;
-	font-size: $small3-size;
-	font-family: $font-family-sans-serif;
-	
-	a {
-		position: relative;
-		margin-right: 0.375rem;
-		padding: 0;
-		color: $white;
-		font-weight: $font-weight-base;
-		
-		&::after {
-			content: '\f054';
-			position: relative;
-			right: -0.275rem;
-			top: -0.05rem;
-			vertical-align: middle;
-			color: $white;			
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			-webkit-font-smoothing: antialiased;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 900;  
-		    font-size: 0.625rem;
-			}
-		}
-	
-	span:last-of-type a::after {
-		content: none;
-		}
-	}
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    font-size: $small3-size;
+    font-family: $font-family-sans-serif;
+    
+    a {
+        position: relative;
+        margin-right: 0.375rem;
+        padding: 0;
+        color: $white;
+        font-weight: $font-weight-base;
+        
+        &::after {
+            content: '\f054';
+            position: relative;
+            right: -0.275rem;
+            top: -0.05rem;
+            vertical-align: middle;
+            color: $white;            
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;  
+            font-size: 0.625rem;
+            }
+        }
+    
+    span:last-of-type a::after {
+        content: none;
+        }
+    }
 
 #portal-breadcrumbs {
-	
-	a {
-		color: $black-accessible-gray;
-		
-		&::after {
-			color: $black-accessible-gray;
-			}
-		}
-	}
+    
+    a {
+        color: $black-accessible-gray;
+        
+        &::after {
+            color: $black-accessible-gray;
+            }
+        }
+    }

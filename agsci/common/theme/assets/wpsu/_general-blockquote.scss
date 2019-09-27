@@ -1,58 +1,58 @@
 blockquote {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	padding: 2rem 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 2rem 0;
 
-	color: $color-ps-slate-gray;
-	text-align: left;
-	text-transform: none;
-	font-weight: $font-weight-base;
-	font-size: $h3-font-size;
-	font-family: $font-family-base;
-	line-height: $line-height-sm;
+    color: $color-ps-slate-gray;
+    text-align: left;
+    text-transform: none;
+    font-weight: $font-weight-base;
+    font-size: $h3-font-size;
+    font-family: $font-family-base;
+    line-height: $line-height-sm;
 
-	.fas {
-		vertical-align: sub;
-		color: rgba($color-ps-slate-gray,0.5);
-		}
+    .fas {
+        vertical-align: sub;
+        color: rgba($color-ps-slate-gray,0.5);
+        }
 
-	cite {
-		display: block;
-		margin-top: 0.5rem;
-		margin-right: 1rem;		
-		text-align: right;
-		color: $color-ps-slate-gray;
-		font-weight: $font-weight-bold;
-		font-style: normal;
-		font-size: $font-size-sm;
-		font-family: $font-family-sans-serif;
-		line-height: $line-height-sm;
-		
-		span {
-			font-style: italic;
-			}
-		}
-	}
+    cite {
+        display: block;
+        margin-top: 0.5rem;
+        margin-right: 1rem;        
+        text-align: right;
+        color: $color-ps-slate-gray;
+        font-weight: $font-weight-bold;
+        font-style: normal;
+        font-size: $font-size-sm;
+        font-family: $font-family-sans-serif;
+        line-height: $line-height-sm;
+        
+        span {
+            font-style: italic;
+            }
+        }
+    }
 
 @include media-breakpoint-up(sm) {
-	
-	blockquote {
-		padding: 1rem 3rem;
-		}
-	
-	.home blockquote {
-		padding: 1.5rem;
-		}
-	}
-	
+    
+    blockquote {
+        padding: 1rem 3rem;
+        }
+    
+    .home blockquote {
+        padding: 1.5rem;
+        }
+    }
+    
 @include media-breakpoint-up(lg) {
-	
-	blockquote {
-		padding: 1rem 3rem;
-		font-size: $h2-font-size;
-		}
-	
-	.home blockquote {
-		padding: 1.5rem;
-		}
-	}
+    
+    blockquote {
+        padding: 1rem 3rem;
+        font-size: $h2-font-size;
+        }
+    
+    .home blockquote {
+        padding: 1.5rem;
+        }
+    }

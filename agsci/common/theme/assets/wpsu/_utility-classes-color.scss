@@ -2,115 +2,115 @@
 
 COLOR Utility Classes
 
----------------------------------------------------------- */	
+---------------------------------------------------------- */    
 .white {
-	color: $white;
-	font-weight: $font-weight-light;
-	font-size: 1rem;
-	font-family: $font-family-sans-serif;
-	line-height: 2.5;
-	}	
+    color: $white;
+    font-weight: $font-weight-light;
+    font-size: 1rem;
+    font-family: $font-family-sans-serif;
+    line-height: 2.5;
+    }    
 
 .black {
-	color: $black;
-	font-weight: $font-weight-light;
-	font-size: 1rem;
-	font-family: $font-family-sans-serif;
-	line-height: 2.5;
-	}
-	
+    color: $black;
+    font-weight: $font-weight-light;
+    font-size: 1rem;
+    font-family: $font-family-sans-serif;
+    line-height: 2.5;
+    }
+    
 .nittany-navy {
-	color: $color-ps-nittany-navy;
-	}
+    color: $color-ps-nittany-navy;
+    }
 
 .beaver-blue {
-	color: $color-ps-beaver-blue;
-	}
-	
+    color: $color-ps-beaver-blue;
+    }
+    
 .slate-gray {
-	color: $color-ps-slate-gray;
-	}
+    color: $color-ps-slate-gray;
+    }
 
 .creek { 
-	color: $color-ps-creek-accessible;
-	}
+    color: $color-ps-creek-accessible;
+    }
 
 .limestone-gray {
-	color: $color-ps-limestone-gray;
-	}
+    color: $color-ps-limestone-gray;
+    }
 
 .coaly-gray {
-	color: $color-ps-coaly-gray;
-	}
+    color: $color-ps-coaly-gray;
+    }
 
 .perpetual-purple {
-	color: $color-ps-perpetual-purple;
-	}
+    color: $color-ps-perpetual-purple;
+    }
 
 .future-green {
-	color: darken($color-ps-future-green,15%);
-	}	
-	
+    color: darken($color-ps-future-green,15%);
+    }    
+    
 .invent-orange {
-	color: darken($color-ps-invent-orange,15%);
-	}
+    color: darken($color-ps-invent-orange,15%);
+    }
 
-.keystone {	
-	color: darken($color-ps-keystone,25%);	
-	}
+.keystone {    
+    color: darken($color-ps-keystone,25%);    
+    }
 
 .bg-nittany-navy {
-	background: $color-ps-nittany-navy;
-	}
-	
+    background: $color-ps-nittany-navy;
+    }
+    
 .bg-slate {
-	background: $color-ps-slate-gray;
-	}
+    background: $color-ps-slate-gray;
+    }
 
 .bg-white {
-	background: $white;
-	}
-	
+    background: $white;
+    }
+    
 .bg-light-gray {
-	background: $color-ps-coaly-gray-light35;
-	}
+    background: $color-ps-coaly-gray-light35;
+    }
 
 .bg-lightish-gray {
-	background: $color-ps-coaly-gray-light25;
-	}
-	
+    background: $color-ps-coaly-gray-light25;
+    }
+    
 .bg-future-green {
-	background: $color-ps-future-green;
-	}
+    background: $color-ps-future-green;
+    }
 
 .bg-dark-future-green {
-	background: darken($color-ps-future-green,10%);
-	}
+    background: darken($color-ps-future-green,10%);
+    }
 
 .bg-dark-orange {
-	background: darken($color-ps-invent-orange,10%);
-	}
+    background: darken($color-ps-invent-orange,10%);
+    }
 
 .bg-orange {
-	background: lighten($color-ps-invent-orange,10%);
-	}
-	
+    background: lighten($color-ps-invent-orange,10%);
+    }
+    
 .bg-dark-purple {
-	background: $color-ps-perpetual-purple;
-	}
+    background: $color-ps-perpetual-purple;
+    }
 
 .bg-light-creek {
-	background-color: $color-ps-creek-light35;
-	}
+    background-color: $color-ps-creek-light35;
+    }
 
 .bg-creek {
-	background-color: $color-ps-creek;
-	}
+    background-color: $color-ps-creek;
+    }
 
 .bg-keystone-yellow {
-	background-color: $color-ps-keystone;
-	}
+    background-color: $color-ps-keystone;
+    }
 
 .bg-dark-creek {
-	background: darken($color-ps-creek,15%);
-	}
+    background: darken($color-ps-creek,15%);
+    }

@@ -2,51 +2,51 @@
 
 ACCORDION - MAJOR OPTIONS
 
----------------------------------------------------------- */	
+---------------------------------------------------------- */    
 
 .accordion.accordion-options {
-	margin-bottom: 0;
-	
-	.btn {
-		position: relative;
-		margin-left: 1.5rem;
-		line-height: 1.2;
-		text-transform: none;
+    margin-bottom: 0;
+    
+    .btn {
+        position: relative;
+        margin-left: 1.5rem;
+        line-height: 1.2;
+        text-transform: none;
 
-		&::after {
-			content: "\f107";
-			position: absolute;
-		    top: 0;
-		    right: -3rem;
-		    bottom: 0;
-			display: block;			
-		    width: 3rem;
-		    border-left: 1px solid $white;
-		    background-color: $color-ps-creek-light15;
-			color: rgba($white,0.75);
-			font-weight: 900;  
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			-webkit-font-smoothing: antialiased;
-			font-size: $h3-font-size;	
-			font-family: 'Font Awesome 5 Free';
-			line-height: 2.5;	
-			}
-		
-		&[aria-expanded="true"] {
-			
-			&::after {
-				transform: rotate(180deg);
-				}
-			}
-		
-		&:hover,
-		&:focus {
-			
-			&::after {
-				color: $white;
-				}	
-			}
-		}
-	}
+        &::after {
+            content: "\f107";
+            position: absolute;
+            top: 0;
+            right: -3rem;
+            bottom: 0;
+            display: block;            
+            width: 3rem;
+            border-left: 1px solid $white;
+            background-color: $color-ps-creek-light15;
+            color: rgba($white,0.75);
+            font-weight: 900;  
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-size: $h3-font-size;    
+            font-family: 'Font Awesome 5 Free';
+            line-height: 2.5;    
+            }
+        
+        &[aria-expanded="true"] {
+            
+            &::after {
+                transform: rotate(180deg);
+                }
+            }
+        
+        &:hover,
+        &:focus {
+            
+            &::after {
+                color: $white;
+                }    
+            }
+        }
+    }

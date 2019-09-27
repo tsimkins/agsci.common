@@ -5,103 +5,103 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 ---------------------------------------------------------- */
 
 .offset-content {
-	position: relative;
-	margin: -3rem 1rem 1rem 1rem;
-	padding: 1.5rem;
-	background-color: $white;
-	z-index: 9;
-	
-	p {
-		line-height: $line-height-lg;
-		
-		&:last-child {
-			margin-bottom: 0;
-			}
-		}
-	}
+    position: relative;
+    margin: -3rem 1rem 1rem 1rem;
+    padding: 1.5rem;
+    background-color: $white;
+    z-index: 9;
+    
+    p {
+        line-height: $line-height-lg;
+        
+        &:last-child {
+            margin-bottom: 0;
+            }
+        }
+    }
 
 .offset-content h2 {
-	margin-bottom: 0.5rem;
-	}
+    margin-bottom: 0.5rem;
+    }
 
 .offset-content h2  {
-	
-	&:after {
-		content: none;
-		}
-	}
+    
+    &:after {
+        content: none;
+        }
+    }
 
 .offset-content a:not(.btn),
 .offset-content a:visited:not(.btn) {
-	border-bottom: $border-base;
-	color: #307e7a;
-	text-decoration: none;
+    border-bottom: $border-base;
+    color: #307e7a;
+    text-decoration: none;
 
-	&:hover,
-	&:focus {
-		border-bottom: 1px solid $color-ps-creek;
-		color: $black;
-		}
-	}
-	
+    &:hover,
+    &:focus {
+        border-bottom: 1px solid $color-ps-creek;
+        color: $black;
+        }
+    }
+    
 section.offset-previews {
-	
-	.container-fluid:nth-of-type(odd),
-	.container:nth-of-type(odd) {
-		
-		.row {
-			background: $color-ps-slate-gray;
-			}
-			
-		@include media-breakpoint-up(lg) {
-			.offset-content {
-				left: 3rem;
-				margin: 0;
-				order: 1;
-				}
-			
-			.offset-image {
-				order: 12;
-				}
-			}
-		}
-	
-	.container-fluid:nth-of-type(even),
-	.container:nth-of-type(even) {
-		
-		.row {
-			background: $color-ps-creek;
-			}
-		
-		@include media-breakpoint-up(lg) {	
-			
-			.offset-content {
-				left: -3rem;
-				margin: 0;
-				order: 12;
-				}
-			}
-		}
-	}
+    
+    .container-fluid:nth-of-type(odd),
+    .container:nth-of-type(odd) {
+        
+        .row {
+            background: $color-ps-slate-gray;
+            }
+            
+        @include media-breakpoint-up(lg) {
+            .offset-content {
+                left: 3rem;
+                margin: 0;
+                order: 1;
+                }
+            
+            .offset-image {
+                order: 12;
+                }
+            }
+        }
+    
+    .container-fluid:nth-of-type(even),
+    .container:nth-of-type(even) {
+        
+        .row {
+            background: $color-ps-creek;
+            }
+        
+        @include media-breakpoint-up(lg) {    
+            
+            .offset-content {
+                left: -3rem;
+                margin: 0;
+                order: 12;
+                }
+            }
+        }
+    }
 
-@include media-breakpoint-up(lg) {	
-	
-	section.offset-full-image {
-	
-		.position-absolute-bottom-left {
-			position: absolute;
-			top: unset;
-			right: unset;
-			bottom: 1.5rem;
-			left: 1.5rem;
-			}
-		
-		.position-absolute-bottom-right {
-			position: absolute;
-			top: unset;
-			right: 1.5rem;
-			bottom: 1.5rem;
-			left: unset;
-			}
-		}
-	}
+@include media-breakpoint-up(lg) {    
+    
+    section.offset-full-image {
+    
+        .position-absolute-bottom-left {
+            position: absolute;
+            top: unset;
+            right: unset;
+            bottom: 1.5rem;
+            left: 1.5rem;
+            }
+        
+        .position-absolute-bottom-right {
+            position: absolute;
+            top: unset;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            left: unset;
+            }
+        }
+    }

@@ -1,23 +1,23 @@
 .card-deck-text-only {
-	position: relative;
-	}
-	
+    position: relative;
+    }
+    
 .card.card-text-only {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	padding: 1rem;	
-	background: $color-ps-coaly-gray-light35;
-	box-shadow: $box-shadow-light;
-	transition: $transition-base;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;    
+    background: $color-ps-coaly-gray-light35;
+    box-shadow: $box-shadow-light;
+    transition: $transition-base;
 
-	&:hover,
-	&:focus {
-		background: $white;
-		box-shadow: $box-shadow-medium;
-		}
+    &:hover,
+    &:focus {
+        background: $white;
+        box-shadow: $box-shadow-medium;
+        }
 
-	.card-body {
-		padding: 0;
-		background: transparent;
-		}
-	}
+    .card-body {
+        padding: 0;
+        background: transparent;
+        }
+    }

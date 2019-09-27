@@ -1,116 +1,116 @@
 .card.card-cta {
-	margin-bottom: 0.5rem;
-	transition: $transition-base;
+    margin-bottom: 0.5rem;
+    transition: $transition-base;
 
-	.card-body {
-		position: relative;
-		padding: 3rem 1.25rem;	
-		background: transparent;
-		
-		p {
-			margin-bottom: 1rem;
-			padding: 0.5rem;
-			border: transparent;
-			font-size: $h4-font-size;
-			font-family: $font-family-sans-serif;
-			line-height: $line-height-sm;
-			}
+    .card-body {
+        position: relative;
+        padding: 3rem 1.25rem;    
+        background: transparent;
+        
+        p {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: transparent;
+            font-size: $h4-font-size;
+            font-family: $font-family-sans-serif;
+            line-height: $line-height-sm;
+            }
 
-		.btn {
-			position: relative;
-			padding: 0.5rem 1rem;
-			background: transparent;
-			border: 1px solid $white;
-			color: $white;
-			}
-	
-		&:hover,
-		&:focus {
-		    
-		    .btn {
-				background: $white;
-				border: 1px solid transparent;
-				}
-		    }
-		}
-			
-	&.bg-dark-slate {
-			
-		.card-body {
-			background: $color-ps-slate-gray;	
-			}
-		
-			&:hover,
-			&:focus {		
-				
-				.card-body {
-					background: lighten($color-ps-slate-gray,10%);
-					}
+        .btn {
+            position: relative;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid $white;
+            color: $white;
+            }
+    
+        &:hover,
+        &:focus {
+            
+            .btn {
+                background: $white;
+                border: 1px solid transparent;
+                }
+            }
+        }
+            
+    &.bg-dark-slate {
+            
+        .card-body {
+            background: $color-ps-slate-gray;    
+            }
+        
+            &:hover,
+            &:focus {        
+                
+                .card-body {
+                    background: lighten($color-ps-slate-gray,10%);
+                    }
 
-				.btn {
-					color: $color-ps-slate-gray;
-					}
-				}
-			}
-			
-	&.bg-dark-purple {
-			
-		.card-body {
-			background: $color-ps-perpetual-purple;	
-			}
-		
-			&:hover,
-			&:focus {		
-				
-				.card-body {
-					background: lighten($color-ps-perpetual-purple,10%);
-					}
+                .btn {
+                    color: $color-ps-slate-gray;
+                    }
+                }
+            }
+            
+    &.bg-dark-purple {
+            
+        .card-body {
+            background: $color-ps-perpetual-purple;    
+            }
+        
+            &:hover,
+            &:focus {        
+                
+                .card-body {
+                    background: lighten($color-ps-perpetual-purple,10%);
+                    }
 
-				.btn {
-					color: $color-ps-perpetual-purple;
-					}
-				}
-			}
-	
-	&.bg-dark-orange {
-		
-		.card-body {
-			background: darken($color-ps-invent-orange,10%);	
-			}
-			
-			&:hover,
-			&:focus {
-				
-				.card-body {
-					background: $color-ps-invent-orange;
-					}
+                .btn {
+                    color: $color-ps-perpetual-purple;
+                    }
+                }
+            }
+    
+    &.bg-dark-orange {
+        
+        .card-body {
+            background: darken($color-ps-invent-orange,10%);    
+            }
+            
+            &:hover,
+            &:focus {
+                
+                .card-body {
+                    background: $color-ps-invent-orange;
+                    }
 
-				.btn {
-					color: darken($color-ps-invent-orange,10%);
-					}
-				}
-			}
-	
-	&.bg-dark-green {
-		
-		.card-body {
-			background: darken($color-ps-future-green,10%);
-			}
-			
-			&:hover,
-			&:focus {
-				
-				.card-body {
-					background: darken($color-ps-future-green,5%);
-					}
+                .btn {
+                    color: darken($color-ps-invent-orange,10%);
+                    }
+                }
+            }
+    
+    &.bg-dark-green {
+        
+        .card-body {
+            background: darken($color-ps-future-green,10%);
+            }
+            
+            &:hover,
+            &:focus {
+                
+                .card-body {
+                    background: darken($color-ps-future-green,5%);
+                    }
 
-				.btn {
-					color: darken($color-ps-future-green,10%);
-					}
-				}
-			}
-		}
+                .btn {
+                    color: darken($color-ps-future-green,10%);
+                    }
+                }
+            }
+        }
 
 .container-text .cta-card { /* floated within content */
-	margin-bottom: 1rem;
-	}
+    margin-bottom: 1rem;
+    }

@@ -1,66 +1,66 @@
 .big-image {
-	
-	img {
-		object-fit: contain;
-		max-width: 100%;
-		}
-	}
+    
+    img {
+        object-fit: contain;
+        max-width: 100%;
+        }
+    }
 
 @include media-breakpoint-up(lg) {
-	
-	.big-image {
-		height: 80vh;
-		width: auto;
-		margin-top: 4rem;
-		
-		img {
-			margin-top: -3rem;
-			}
-		}
-	}
+    
+    .big-image {
+        height: 80vh;
+        width: auto;
+        margin-top: 4rem;
+        
+        img {
+            margin-top: -3rem;
+            }
+        }
+    }
 
 .big-image + .container h2 {
-	margin-top: 0;
+    margin-top: 0;
     margin-bottom: 0;
-	padding: 1rem;
-	box-shadow: -0.25rem 0.25rem 0.75rem rgba($color-ps-coaly-gray, 0.25);
+    padding: 1rem;
+    box-shadow: -0.25rem 0.25rem 0.75rem rgba($color-ps-coaly-gray, 0.25);
     font-size: $h2-font-size;
-	}
+    }
 
 @include media-breakpoint-up(md) {
-	
-	.offset-top {
-		margin-top: -4rem;	
-		}
-	
-	.big-image + .container h2 {
-		padding: 0.5rem 1rem;
-		}
-	}
-		
+    
+    .offset-top {
+        margin-top: -4rem;    
+        }
+    
+    .big-image + .container h2 {
+        padding: 0.5rem 1rem;
+        }
+    }
+        
 .bg-creek h2 {
-	background: $color-ps-creek-light15;  
+    background: $color-ps-creek-light15;  
     }
 
 .bg-nittany-navy h2 {
-	background: lighten($color-ps-nittany-navy, 15%);
-	color: $white;
-	}
+    background: lighten($color-ps-nittany-navy, 15%);
+    color: $white;
+    }
 
 .bg-slate h2 {
-	background: darken($color-ps-slate-gray, 10%);
-	color: $white;
-	}
-	
+    background: darken($color-ps-slate-gray, 10%);
+    color: $white;
+    }
+    
 @include media-breakpoint-up(md) {
-	
-	.big-image + .container h2 {
-		top: 2rem;
-		}
-	}
-		
+    
+    .big-image + .container h2 {
+        top: 2rem;
+        }
+    }
+        
 @include media-breakpoint-up(xl) {
-	 .big-image + .container h2 {
-		font-size: $h1-font-size;
-		}
-	}
+     .big-image + .container h2 {
+        font-size: $h1-font-size;
+        }
+    }

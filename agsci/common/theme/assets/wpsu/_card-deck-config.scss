@@ -2,11 +2,11 @@
 /* default bootstrap re-set to 2 */
 
 @include media-breakpoint-up(lg) {
-	.card-columns {
-		column-count: 3;
-		}
-	}
-	
+    .card-columns {
+        column-count: 3;
+        }
+    }
+    
 /* ----------------------------------------------------------
 
 CARD DECK GENERAL CONFIG
@@ -149,123 +149,123 @@ $cards-per-line-6up: (
 
 @each $name, $breakpoint in $grid-breakpoints {
 
-	@media (min-width: $breakpoint) {
-		
-		.card-deck .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
+    @media (min-width: $breakpoint) {
+        
+        .card-deck .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
 
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-1up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-1up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		
-		.card-deck.card-deck-1up.no-margin .card {
-			flex: 0 0 100%;
-			}
-		}
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-1up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-1up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        
+        .card-deck.card-deck-1up.no-margin .card {
+            flex: 0 0 100%;
+            }
+        }
 
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-1up-2up-1up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-1up-2up-1up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
-	
-		@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-1up-2up-1up-home-cta .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-1up-2up-1up-home-cta, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
-		
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-2up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-2up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		
-		.card-deck.no-margin.card-deck-2up .card {
-			flex: 0 0 50%;
-			}
-		}
-			
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-3up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-3up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-	
-		.card-deck.card-deck-3up.no-margin .card {
-			flex: 0 0 33.3333%;
-			}
-		}
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-1up-2up-1up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-1up-2up-1up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
+    
+        @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-1up-2up-1up-home-cta .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-1up-2up-1up-home-cta, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
+        
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-2up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-2up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        
+        .card-deck.no-margin.card-deck-2up .card {
+            flex: 0 0 50%;
+            }
+        }
+            
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-3up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-3up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+    
+        .card-deck.card-deck-3up.no-margin .card {
+            flex: 0 0 33.3333%;
+            }
+        }
 
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-3up-cta .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-3up-cta, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-	
-		.card-deck.card-deck-3up.no-margin .card {
-			flex: 0 0 33.3333%;
-			}
-		}
-		
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-3up-explorer .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-3up-explorer, $name)}% - #{$card-group-margin}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
-		
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-4up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-4up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-			
-		.card-deck.no-margin.card-deck-4up .card {
-			flex: 0 0 25%;
-			}
-		}
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-3up-cta .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-3up-cta, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+    
+        .card-deck.card-deck-3up.no-margin .card {
+            flex: 0 0 33.3333%;
+            }
+        }
+        
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-3up-explorer .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-3up-explorer, $name)}% - #{$card-group-margin}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
+        
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-4up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-4up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+            
+        .card-deck.no-margin.card-deck-4up .card {
+            flex: 0 0 25%;
+            }
+        }
 
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-4up-values .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-4up-values, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
-				
-		@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-4up-2min .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-4up-2min, $name)}% - #{$card-group-margin}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-			
-		.card-deck.no-margin.card-deck-4up-2min .card {
-			flex: 0 0 25%;
-			}
-		}
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-4up-values .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-4up-values, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
+                
+        @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-4up-2min .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-4up-2min, $name)}% - #{$card-group-margin}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+            
+        .card-deck.no-margin.card-deck-4up-2min .card {
+            flex: 0 0 25%;
+            }
+        }
 
-	/* statistics cards */
-		@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-5up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-5up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}		
-			
-	@media (min-width: $breakpoint) {
-		
-		.card-deck.card-deck-6up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-6up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-			
-		.card-deck.no-margin.card-deck-6up .card {
-			flex: 0 0 calc(#{100/map-get($cards-per-line-6up, $name)}% - #{$card-group-margin*0}); /* $card-group-margin is half of $grid-gutter-width */
-			}
-		}
-	}
+    /* statistics cards */
+        @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-5up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-5up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }        
+            
+    @media (min-width: $breakpoint) {
+        
+        .card-deck.card-deck-6up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-6up, $name)}% - #{$card-group-margin*2}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+            
+        .card-deck.no-margin.card-deck-6up .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line-6up, $name)}% - #{$card-group-margin*0}); /* $card-group-margin is half of $grid-gutter-width */
+            }
+        }
+    }

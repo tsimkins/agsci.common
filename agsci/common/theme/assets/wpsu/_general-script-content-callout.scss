@@ -1,33 +1,33 @@
 p.script-content-callout {
-	display: inline-block;
-	float: right;
-	width: 40%;
-	margin-left: 1rem;
-	color: $black-accessible-gray;
-	font-size: $h2-font-size;
-	font-family: $font-family-cursive;
-	line-height: $line-height-sm;
-	text-align: left;
-	transform: rotate(-6deg);
-	
-	span {
-		color: $color-ps-creek;
-	 	}
-	}
+    display: inline-block;
+    float: right;
+    width: 40%;
+    margin-left: 1rem;
+    color: $black-accessible-gray;
+    font-size: $h2-font-size;
+    font-family: $font-family-cursive;
+    line-height: $line-height-sm;
+    text-align: left;
+    transform: rotate(-6deg);
+    
+    span {
+        color: $color-ps-creek;
+         }
+    }
 
 @include media-breakpoint-up(sm) {
-	
-	p.script-content-callout {
-		width: 33.3333%;
-		}
-	}
+    
+    p.script-content-callout {
+        width: 33.3333%;
+        }
+    }
 
 @include media-breakpoint-up(lg) {
-	
-	p.script-content-callout {
-		position: absolute;
-		right: -27.5%;
-		z-index: 9;	
-		width: 27.5%;
-		}
-	}
+    
+    p.script-content-callout {
+        position: absolute;
+        right: -27.5%;
+        z-index: 9;    
+        width: 27.5%;
+        }
+    }
