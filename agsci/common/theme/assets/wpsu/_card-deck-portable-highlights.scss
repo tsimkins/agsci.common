@@ -3,7 +3,7 @@
 PORTABLE HIGHLIGHTS
 
 ---------------------------------------------------------- */
-            
+
 .card-deck.card-deck-portable-highlights {
     flex-flow: row wrap; /* override single column for mobile */
     margin-bottom: 0;
@@ -14,8 +14,8 @@ PORTABLE HIGHLIGHTS
 
     &:last-of-type {
         border-right: transparent;
-        }    
-    
+        }
+
     .card-body {
         padding: 1rem;
         background: transparent;
@@ -47,7 +47,7 @@ PORTABLE HIGHLIGHTS
 
 
 .bg-slate .card-deck.card-deck-portable-highlights {
-    
+
     .card,
     .card:nth-of-type(2),
     .card:nth-of-type(3) {
@@ -55,10 +55,10 @@ PORTABLE HIGHLIGHTS
         padding: 1rem;
         }
     }
-        
+
 .card.card-portable-highlight .card-body {
     padding: 0;
-    
+
     p {
         font-size: $font-size-lg;
         line-height: $line-height-sm;
@@ -70,14 +70,14 @@ PORTABLE HIGHLIGHTS
         margin-bottom: 0;
 
         span {
-            font-size: 3.2rem;            
+            font-size: 3.2rem;
             display: block;
             text-transform: uppercase;
             letter-spacing: -.025em;
             margin-top: 0;
             font-weight: $font-weight-bolder;
             line-height: 1;
-            
+
             sup {
                 display: inline-block;
                 font-size: 66.6666%;
@@ -85,7 +85,7 @@ PORTABLE HIGHLIGHTS
                 position: relative;
                 vertical-align: baseline;
                 }
-            
+
             sub {
                 display: block;
                 font-size: 66.6666%;
@@ -93,7 +93,7 @@ PORTABLE HIGHLIGHTS
                 position: relative;
                 margin-top: -.5rem;
                 margin-bottom: .75rem;
-                
+
                 }
             }
         }
@@ -112,18 +112,18 @@ PORTABLE HIGHLIGHTS
     top: 0; left: 0; bottom: 0; right: 0;
     padding: 1.5rem;
     border: transparent;
-    
+
     p.portable-highlight-content {
         transition: $transition-long;
         }
-    
+
     &:hover,
     &:focus {
-        p.portable-highlight-content {    
+        p.portable-highlight-content {
             opacity: 0;
-            }    
+            }
         }
-        
+
     .hover-content {
         width: 100%;
         height: 100%;
@@ -139,14 +139,14 @@ PORTABLE HIGHLIGHTS
         display: flex;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        
+
         p {
             font-size: $font-size-sm;
             color: $black;
             margin-bottom: 0;
             }
         }
-    
+
     &:hover,
     &:focus {
         .hover-content {
@@ -157,5 +157,5 @@ PORTABLE HIGHLIGHTS
             z-index: 9;
             }
         }
-        
-    }    
+
+    }

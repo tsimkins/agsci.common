@@ -9,7 +9,7 @@
 <section class="container-fluid bg-creek"
          tal:attributes="data-tile-type view/tile_type|nothing;
                          data-container-width view/container_width;">
-	
+
     <div class="d-block d-lg-flex big-image justify-content-center">
 
         <img tal:attributes="src view/img_src|nothing;
@@ -21,16 +21,16 @@
 
     <div class="row offset-top">
         <div class="col-12 col-md-4 px-0">
-			
+
         <h2 class="h1 creek-offset mt-0"><span tal:content="view/data/title" /></h2>
 
     </div>
 
     <div class="col-12 col-md-8 bg-white agsci-box-shadow mb-0">
-	
-	   <div class="container">
 
-        	<div class="row position-relative pb-2 mt-3">
+       <div class="container">
+
+            <div class="row position-relative pb-2 mt-3">
 
                 <tal:buttons tal:repeat="button view/values|nothing">
 
@@ -38,17 +38,17 @@
 
                         <a tal:attributes="href button/url;
                                            class string:card card-cta bg-dark-${button/color|nothing} px-0 reveal text-center">
-    	
-                    		<div class="card-body text-white">
-                        		<p class="h4 mt-0" tal:content="button/title|nothing" />
-                        		<div class="btn" tal:content="button/label|nothing" />		
-                    		</div>
 
-                    	</a>
+                            <div class="card-body text-white">
+                                <p class="h4 mt-0" tal:content="button/title|nothing" />
+                                <div class="btn" tal:content="button/label|nothing" />
+                            </div>
+
+                        </a>
 
                     </div>
                 </tal:buttons>
-        	</div>
+            </div>
         </div>
     </div>
 </section>

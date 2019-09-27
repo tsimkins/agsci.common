@@ -9,10 +9,10 @@
             <li tal:define="end repeat/i/end;
                             klass python: (not end) and 'li-separator' or ''"
                 tal:attributes="class klass">
-                <a tal:attributes="href i/link/cdata" 
+                <a tal:attributes="href i/link/cdata"
                     tal:content="i/title/cdata" />
             </li>
-                
+
         </tal:links>
 
     </ul>

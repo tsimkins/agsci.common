@@ -1,6 +1,6 @@
-/* Element Invisible - 
+/* Element Invisible -
     Replacement for Bootstrap "invisible" which
-    hides element but takes up space and 
+    hides element but takes up space and
     is not off canvas
 --------------------------------------------- */
 
@@ -13,12 +13,12 @@
     height: 0px;
     margin: 0;
     }
-    
+
 .element-invisible,
 .pfgHidden,
 .icons-social-media span {
    @include offscreen;
-   
+
     &:active,
     &:focus {
         position: absolute;
@@ -38,51 +38,51 @@ a.element-invisible:focus {
     }
 
 @include media-breakpoint-up(sm) {
-    
+
     .d-invisible-sm {
         @include offscreen;
         }
     }
-    
+
 @include media-breakpoint-up(md) {
-    
+
     .d-invisible-md {
         @include offscreen;
         }
     }
-    
+
 @include media-breakpoint-up(lg) {
-    
+
     .d-invisible-lg {
         @include offscreen;
         }
     }
 
 @include media-breakpoint-up(xl) {
-    
+
     .d-invisible-xl {
         @include offscreen;
         }
     }
-    
-    
-/* Fade In - 
+
+
+/* Fade In -
     Replace stock Bootstrap fade and scale
 --------------------------------------------- */
 
 .fade-in {
-    transition: opacity 0.25s linear; 
+    transition: opacity 0.25s linear;
     }
 
 @media screen and (prefers-reduced-motion: reduce) { /* for users with vestibular disoreders */
 
     .fade-in {
-            transition: none; 
-            } 
+            transition: none;
+            }
     }
-  
+
 .fade-in:not(.show) {
-    opacity: 0; 
+    opacity: 0;
     }
 
 /* Margin - Too late to add to spacer map - so just adding
@@ -90,15 +90,15 @@ a.element-invisible:focus {
 --------------------------------------------- */
 
 .mb-2rem {
-    margin-bottom: 2rem;    
+    margin-bottom: 2rem;
     }
 
 .pb-2rem {
     padding-bottom: 2rem;
     }
 
-    
-/* Border - 
+
+/* Border -
     Top and Bottom Utility Class
 --------------------------------------------- */
 
@@ -110,12 +110,12 @@ a.element-invisible:focus {
     border-bottom: $border-base;
     }
 
-/* Overflow - 
+/* Overflow -
     Hidden Utility
 --------------------------------------------- */
 
  .overflow-hidden {
-    overflow: hidden; 
+    overflow: hidden;
      }
 
 /* Border Overlay -
@@ -126,7 +126,7 @@ a.element-invisible:focus {
         position: relative;
         outline: 0.25rem solid rgba($color-ps-creek,0.5);
         outline-offset: -1rem;
-    
+
     img::before {
         content: " ";
         position: absolute;
@@ -140,7 +140,7 @@ a.element-invisible:focus {
     }
 
 /* Box Shadow
-    General Box Shadow 
+    General Box Shadow
     and boxh shadow hover state for links
 --------------------------------------------- */
 
@@ -152,13 +152,13 @@ $box-shadow-dark: 0.25rem 0.25rem 1rem rgba($color-ps-slate-gray, 0.5);
         box-shadow: $box-shadow-light;
         margin-bottom: $card-group-margin;
         }
-        
+
 a.agsci-box-shadow {
         box-shadow: $box-shadow-light;
-        
+
         &:hover,
-        &:focus { /* change body on hover only if wrapped in a */ 
+        &:focus { /* change body on hover only if wrapped in a */
             box-shadow: $box-shadow-medium;
             }
         }
-                
+

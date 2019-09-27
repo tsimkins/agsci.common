@@ -27,15 +27,15 @@ AGSCI VARIABLE CUSTOMIZATION
 @font-face {
   font-family: 'BornReady-Regular';
   src: url("../fonts/39629D_2_0.woff2") format("woff2"), url("../fonts/39629D_2_0.woff") format("woff"); }
-/*   
+/*
 @font-face {font-family: 'BornReadySlanted-Regular';src: url('webfonts/39629D_0_0.eot');src: url('webfonts/39629D_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_0_0.woff2') format('woff2'),url('webfonts/39629D_0_0.woff') format('woff'),url('webfonts/39629D_0_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'BornReadyUpright-Regular';src: url('webfonts/39629D_1_0.eot');src: url('webfonts/39629D_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_1_0.woff2') format('woff2'),url('webfonts/39629D_1_0.woff') format('woff'),url('webfonts/39629D_1_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'BornReady-Regular';src: url('webfonts/39629D_2_0.eot');src: url('webfonts/39629D_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_2_0.woff2') format('woff2'),url('webfonts/39629D_2_0.woff') format('woff'),url('webfonts/39629D_2_0.ttf') format('truetype');}
- 
+
  */
 /* Test Script Font */
 /* no way to have tb different from lr so override below */
@@ -7676,9 +7676,9 @@ a.skip-to-main {
 .print-only-logo {
   display: none; }
 
-/* Responsive Typography - 
-	General increase in font size with breakpoint. 
-	Not handled universally by Bootstrap
+/* Responsive Typography -
+    General increase in font size with breakpoint.
+    Not handled universally by Bootstrap
 --------------------------------------------- */
 html {
   font-size: 1.083333rem; }
@@ -7820,8 +7820,8 @@ p.small {
   margin-top: 0.25rem; }
 
 /* Section Crumb -
-	Utility for adding date 
-	or category above a header
+    Utility for adding date
+    or category above a header
 --------------------------------------------- */
 p.section-crumb {
   margin-bottom: 0;
@@ -7869,7 +7869,7 @@ ol a {
 /* ----------------------------------------------------------
 
 TEXT WHITE - Generic Container Class to Reverse Color
-Already a Bootstrap Class - 
+Already a Bootstrap Class -
 These are additional customizations
 
 ---------------------------------------------------------- */
@@ -7904,10 +7904,10 @@ FIXES - need to parse out. . .
 PARTIALS
 
 ---------------------------------------------------------- */
-/* Element Invisible - 
-	Replacement for Bootstrap "invisible" which
-	hides element but takes up space and 
-	is not off canvas
+/* Element Invisible -
+    Replacement for Bootstrap "invisible" which
+    hides element but takes up space and
+    is not off canvas
 --------------------------------------------- */
 .element-invisible,
 .pfgHidden,
@@ -7973,8 +7973,8 @@ a.element-invisible:focus {
     width: 0px;
     height: 0px;
     margin: 0; } }
-/* Fade In - 
-	Replace stock Bootstrap fade and scale
+/* Fade In -
+    Replace stock Bootstrap fade and scale
 --------------------------------------------- */
 .fade-in {
   transition: opacity 0.25s linear; }
@@ -7987,7 +7987,7 @@ a.element-invisible:focus {
   opacity: 0; }
 
 /* Margin - Too late to add to spacer map - so just adding
-	a couple of generica utilities
+    a couple of generica utilities
 --------------------------------------------- */
 .mb-2rem {
   margin-bottom: 2rem; }
@@ -7995,8 +7995,8 @@ a.element-invisible:focus {
 .pb-2rem {
   padding-bottom: 2rem; }
 
-/* Border - 
-	Top and Bottom Utility Class
+/* Border -
+    Top and Bottom Utility Class
 --------------------------------------------- */
 .border-top {
   border-top: 1px solid rgba(62, 163, 158, 0.25); }
@@ -8004,15 +8004,15 @@ a.element-invisible:focus {
 .border-bottom {
   border-bottom: 1px solid rgba(62, 163, 158, 0.25); }
 
-/* Overflow - 
-	Hidden Utility
+/* Overflow -
+    Hidden Utility
 --------------------------------------------- */
 .overflow-hidden {
   overflow: hidden; }
 
 /* Border Overlay -
-	Semi-transparent creek border inset
-	image overlay
+    Semi-transparent creek border inset
+    image overlay
 --------------------------------------------- */
 .img-border-overlay {
   position: relative;
@@ -8029,8 +8029,8 @@ a.element-invisible:focus {
     z-index: 1; }
 
 /* Box Shadow
-	General Box Shadow 
-	and boxh shadow hover state for links
+    General Box Shadow
+    and boxh shadow hover state for links
 --------------------------------------------- */
 .agsci-box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(49, 77, 100, 0.25);
@@ -9206,7 +9206,7 @@ header .form-inline .form-control {
     width: auto;
     margin-left: 1.75rem; } }
 /* .dept-level-college-options
-	Universal Top Bar with College Options
+    Universal Top Bar with College Options
 --------------------------------------------- */
 .department-level ul.dept-level-college-options {
   position: relative;
@@ -9251,14 +9251,14 @@ header .form-inline .form-control {
 @media (min-width: 992px) {
   .department-level ul.dept-level-college-options {
     padding: 0.5rem 0.5rem 0 0.5rem; } }
-/* 	Header
+/*     Header
 --------------------------------------------- */
 .department-level header {
   background: #00132b; }
 
-/* 	.department-bar
-	Department Bar - hold all branding 
-	and navigation
+/*     .department-bar
+    Department Bar - hold all branding
+    and navigation
 --------------------------------------------- */
 .department-bar .btn {
   padding: 0.25rem 0.5rem;
@@ -9329,7 +9329,7 @@ header .form-inline .form-control {
   z-index: 9; }
 
 /* .college-logo-block, .navbar-brand
-	College Logo
+    College Logo
 --------------------------------------------- */
 .department-level .navbar-brand {
   position: relative;
@@ -9361,7 +9361,7 @@ header .form-inline .form-control {
     width: auto;
     padding: 0 0 1rem 0; } }
 /* .department-brand-block, a.department-brand
-	Department Name
+    Department Name
 --------------------------------------------- */
 .department-brand-block {
   padding: 0 0 0 2rem;
@@ -9407,9 +9407,9 @@ header .form-inline .form-control {
   .affix .department-brand-block {
     padding: 0.25rem 0; } }
 /* .navbar, .navbar-collapse
-	.department-dropdowns, .dropdown-selectors,
-	.dropdown, .dropdown-toggle, 
-	.dropdown-toggle-button
+    .department-dropdowns, .dropdown-selectors,
+    .dropdown, .dropdown-toggle,
+    .dropdown-toggle-button
 --------------------------------------------- */
 .department-level header .navbar {
   min-height: auto;
@@ -9563,9 +9563,9 @@ header .form-inline .form-control {
 @media (min-width: 1200px) {
   .navbar .department-dropdowns .dropdown-menu::before {
     left: 1.5rem; } }
-/* List Group Tab Panel - 
-	Make this component responsive. 
-	It's not in the default Bootstrap setup.
+/* List Group Tab Panel -
+    Make this component responsive.
+    It's not in the default Bootstrap setup.
 --------------------------------------------- */
 .list-group {
   display: block; }
@@ -9580,9 +9580,9 @@ header .form-inline .form-control {
 
   .list-group-item {
     display: block; } }
-/* List Inline - 
-	Simply adding to ul level so we don't need 
-	list-inline-item on all sub li 
+/* List Inline -
+    Simply adding to ul level so we don't need
+    list-inline-item on all sub li
 --------------------------------------------- */
 .list-inline {
   margin-bottom: 0; }
@@ -9657,7 +9657,7 @@ ul.list-checked {
     line-height: 1; }
 
 /* Offset List with Left Border
-	e.g. Utilized on Major Pages - Alumni Lists
+    e.g. Utilized on Major Pages - Alumni Lists
 --------------------------------------------- */
 .list-offset-bordered {
   display: block;
@@ -12316,8 +12316,8 @@ button.filter {
       margin: 0.25rem 0;
       line-height: 1.4; }
 
-/* standard table with scroll 
-	SIMPLE VERSION */
+/* standard table with scroll
+    SIMPLE VERSION */
 .rtable {
   width: 100%; }
 
@@ -12493,7 +12493,7 @@ button.filter {
   margin-left: 0;
   margin-right: 0; }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Slide In Panel - by CodyHouse.co
 
@@ -14563,17 +14563,17 @@ body.portaltype-agsci_person .publications .journal-name {
 /* special octogonal shape for error
 .alert.status.alert-error,
 .portalMessage.error {
-	& > strong::before, & > dt::before {
-		border-radius: 8px; //soften border
-		background: $plone-alert-error-bullet;
-		background:
-			linear-gradient(135deg, transparent 4px, $plone-alert-error-bullet 0) top left,
-			linear-gradient(225deg, transparent 4px, $plone-alert-error-bullet 0) top right,
-			linear-gradient(315deg, transparent 4px, $plone-alert-error-bullet 0) bottom right,
-			linear-gradient(45deg,  transparent 4px, $plone-alert-error-bullet 0) bottom left;
-		background-size: 50% 50%;
-		background-repeat: no-repeat;
-	}
+    & > strong::before, & > dt::before {
+        border-radius: 8px; //soften border
+        background: $plone-alert-error-bullet;
+        background:
+            linear-gradient(135deg, transparent 4px, $plone-alert-error-bullet 0) top left,
+            linear-gradient(225deg, transparent 4px, $plone-alert-error-bullet 0) top right,
+            linear-gradient(315deg, transparent 4px, $plone-alert-error-bullet 0) bottom right,
+            linear-gradient(45deg,  transparent 4px, $plone-alert-error-bullet 0) bottom left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+    }
 }
 */
 

@@ -5,7 +5,7 @@ button {
         pointer-events: none;
         }
     }
-    
+
 .btn {
     position: relative;
     padding: 0.5rem 1rem;
@@ -15,14 +15,14 @@ button {
     font-family: $font-family-sans-serif;
     transition: $transition-base;
     }
-    
+
 .btn {
     white-space: normal; /* override bootstrap default so button text can break - otherwise it can fix width and add scrollbars */
     }
 
 .btn-large {
-    padding: 1rem 3rem;    
-    }     
+    padding: 1rem 3rem;
+    }
 
 .btn.btn-sm {
     padding: 0.25rem 0.75rem;
@@ -32,10 +32,10 @@ button {
 .btn.btn-primary {
     margin-bottom: 1rem;
     padding: 1rem 2rem;
-    border: 1px solid $color-ps-creek; 
+    border: 1px solid $color-ps-creek;
     background-color: $color-ps-creek;
     color: $white;
-    
+
     &:hover,
     &:focus {
         background-color: $color-ps-creek-light10;
@@ -46,25 +46,25 @@ button {
     font-size: $small3-size;
     }
 
-button.btn-link,    
+button.btn-link,
 .btn-link a,
 a.btn-link,
 a.card .btn-link {
     padding: 0;
     border: 1px solid transparent;
     color: $color-ps-creek-accessible;
-    
+
     &::after {
         content: "\f061";
         display: inline-block;
         margin-left: 0.25rem;
-        font-weight: 900;              
+        font-weight: 900;
         font-style: normal;
         font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         font-family: 'Font Awesome 5 Free';
-        line-height: $line-height-md;        
+        line-height: $line-height-md;
         }
     }
 
@@ -81,7 +81,7 @@ a.btn-link:focus {
     background: lighten($color-ps-limestone-gray,30%);
 
     color: $black;
-    
+
     &:hover,
     &:focus {
         background: lighten($color-ps-limestone-gray,35%);
@@ -92,28 +92,28 @@ a.btn-link:focus {
     background: $white;
     border: 1px solid $color-ps-creek-light30;
     color: $color-ps-creek-accessible;
-    
+
     &:hover,
     &:focus {
         background: $color-ps-creek;
         color: $white;
         }
     }
-    
+
 .btn.btn-creek {
     background: $color-ps-creek-accessible;
     color: $white;
-    
+
     &:hover,
     &:focus {
         background: $color-ps-creek;
         }
     }
-  
+
 .form-inline .btn.btn-creek {
     box-shadow: none;
     }
-    
+
 .btn.btn-cta {
     display: block;
     background: $color-ps-nittany-navy;
@@ -122,11 +122,11 @@ a.btn-link:focus {
     margin-left: 0.5rem;
     word-break: normal;
     }
-  
+
 .btn.btn-orange {
     background: darken($color-ps-invent-orange,10%);
     color: $white;
-    
+
     &:hover,
     &:focus {
         background: $color-ps-invent-orange;
@@ -136,17 +136,17 @@ a.btn-link:focus {
 .btn.btn-green {
     background: darken($color-ps-future-green,10%);
     color: $white;
-    
+
     &:hover,
     &:focus {
         background: darken($color-ps-future-green,5%)
         }
     }
-    
+
 .btn.btn-purple {
     background: lighten($color-ps-perpetual-purple,10%);
     color: $white;
-    
+
     &:hover,
     &:focus {
         background: lighten($color-ps-perpetual-purple,20%);
@@ -156,10 +156,9 @@ a.btn-link:focus {
 .btn.btn-slate {
     background: lighten($color-ps-slate-gray,10%);
     color: $white;
-    
+
     &:hover,
     &:focus {
         background: lighten($color-ps-slate-gray,20%);
         }
     }
-        

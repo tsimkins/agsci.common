@@ -12,18 +12,18 @@
                     data-container-width view/container_width;">
 
     <div class="row justify-content-center">
-    	<div class="container position-relative">
-    		<div class="row mx-0">
-    			<div class="col px-0">
+        <div class="container position-relative">
+            <div class="row mx-0">
+                <div class="col px-0">
                     <img tal:define="img_src view/img_src|nothing;
                                      img_alt view/img_alt|nothing;"
                          tal:condition="img_src"
                          class="w-100"
                          tal:attributes="src img_src;
                                          alt img_alt" />
-    			</div>
-    			<div class="overlay-content-block d-flex h-100 align-items-center">
-    				<div class="bg-white d-flex flex-column justify-content-center">
+                </div>
+                <div class="overlay-content-block d-flex h-100 align-items-center">
+                    <div class="bg-white d-flex flex-column justify-content-center">
                         <h2>
                             <tal:quote tal:condition="view/data/quote_title|nothing">&ldquo;</tal:quote><span tal:replace="view/data/title|nothing" /><tal:quote tal:condition="view/data/quote_title|nothing">&rdquo;</tal:quote>
                         </h2>
@@ -31,10 +31,10 @@
                         <p>
                             <tal:quote tal:condition="view/data/quote_description|nothing">&ldquo;</tal:quote><span tal:replace="view/data/description|nothing" /><tal:quote tal:condition="view/data/quote_description|nothing">&rdquo;</tal:quote>
                         </p>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </section>

@@ -9,25 +9,25 @@ p.script-content-callout {
     line-height: $line-height-sm;
     text-align: left;
     transform: rotate(-6deg);
-    
+
     span {
         color: $color-ps-creek;
          }
     }
 
 @include media-breakpoint-up(sm) {
-    
+
     p.script-content-callout {
         width: 33.3333%;
         }
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     p.script-content-callout {
         position: absolute;
         right: -27.5%;
-        z-index: 9;    
+        z-index: 9;
         width: 27.5%;
         }
     }

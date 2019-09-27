@@ -28,13 +28,13 @@
                     <a class="btn btn-creek"
                        tal:attributes="href view/data/url|nothing"
                        tal:content="view/data/label|nothing" />
-            
+
                 </div>
 
                 <div class="col-12 col-lg-6 order-1 px-0">
                     <img tal:attributes="src view/img_src|nothing" class="w-100" />
                 </div>
-    
+
             </div>
         </div>
     </div>

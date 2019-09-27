@@ -4,19 +4,19 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     background-color: transparent;
-    
+
     &.cta-bar-dark {
         background: darken($color-ps-nittany-navy,5%);
         }
-    
+
     &.cta-bar-light {
         background: $color-ps-coaly-gray-light30;
         }
-    
+
     .btn {
         margin: 0.5rem;
-        padding: 1.5vh 4.5vw; /* new padding to bulk up buttons */    
-        }    
+        padding: 1.5vh 4.5vw; /* new padding to bulk up buttons */
+        }
     }
 
 @include media-breakpoint-up(sm) {

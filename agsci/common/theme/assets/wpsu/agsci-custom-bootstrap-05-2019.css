@@ -26,15 +26,15 @@ AGSCI VARIABLE CUSTOMIZATION
 @font-face {
   font-family: 'BornReady-Regular';
   src: url("../fonts/39629D_2_0.woff2") format("woff2"), url("../fonts/39629D_2_0.woff") format("woff"); }
-/*   
+/*
 @font-face {font-family: 'BornReadySlanted-Regular';src: url('webfonts/39629D_0_0.eot');src: url('webfonts/39629D_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_0_0.woff2') format('woff2'),url('webfonts/39629D_0_0.woff') format('woff'),url('webfonts/39629D_0_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'BornReadyUpright-Regular';src: url('webfonts/39629D_1_0.eot');src: url('webfonts/39629D_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_1_0.woff2') format('woff2'),url('webfonts/39629D_1_0.woff') format('woff'),url('webfonts/39629D_1_0.ttf') format('truetype');}
- 
-  
+
+
 @font-face {font-family: 'BornReady-Regular';src: url('webfonts/39629D_2_0.eot');src: url('webfonts/39629D_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39629D_2_0.woff2') format('woff2'),url('webfonts/39629D_2_0.woff') format('woff'),url('webfonts/39629D_2_0.ttf') format('truetype');}
- 
+
  */
 /* Test Script Font */
 /* no way to have tb different from lr so override below */
@@ -7675,8 +7675,8 @@ a.skip-to-main {
 .print-only-logo {
   display: none; }
 
-/* Responsive Typography - 
-	General increase in font size with breakpoint. 
+/* Responsive Typography -
+	General increase in font size with breakpoint.
 	Not handled universally by Bootstrap
 --------------------------------------------- */
 html {
@@ -7819,7 +7819,7 @@ p.small {
   margin-top: 0.25rem; }
 
 /* Section Crumb -
-	Utility for adding date 
+	Utility for adding date
 	or category above a header
 --------------------------------------------- */
 p.section-crumb {
@@ -7868,7 +7868,7 @@ ol a {
 /* ----------------------------------------------------------
 
 TEXT WHITE - Generic Container Class to Reverse Color
-Already a Bootstrap Class - 
+Already a Bootstrap Class -
 These are additional customizations
 
 ---------------------------------------------------------- */
@@ -7903,9 +7903,9 @@ FIXES - need to parse out. . .
 PARTIALS
 
 ---------------------------------------------------------- */
-/* Element Invisible - 
+/* Element Invisible -
 	Replacement for Bootstrap "invisible" which
-	hides element but takes up space and 
+	hides element but takes up space and
 	is not off canvas
 --------------------------------------------- */
 .element-invisible,
@@ -7972,7 +7972,7 @@ a.element-invisible:focus {
     width: 0px;
     height: 0px;
     margin: 0; } }
-/* Fade In - 
+/* Fade In -
 	Replace stock Bootstrap fade and scale
 --------------------------------------------- */
 .fade-in {
@@ -7994,7 +7994,7 @@ a.element-invisible:focus {
 .pb-2rem {
   padding-bottom: 2rem; }
 
-/* Border - 
+/* Border -
 	Top and Bottom Utility Class
 --------------------------------------------- */
 .border-top {
@@ -8003,7 +8003,7 @@ a.element-invisible:focus {
 .border-bottom {
   border-bottom: 1px solid rgba(62, 163, 158, 0.25); }
 
-/* Overflow - 
+/* Overflow -
 	Hidden Utility
 --------------------------------------------- */
 .overflow-hidden {
@@ -8028,7 +8028,7 @@ a.element-invisible:focus {
     z-index: 1; }
 
 /* Box Shadow
-	General Box Shadow 
+	General Box Shadow
 	and boxh shadow hover state for links
 --------------------------------------------- */
 .agsci-box-shadow {
@@ -8611,7 +8611,7 @@ HEADER - COLLEGE LEVEL
 .hide-affix-inline-block {
   display: inline-block; }
 
-/* General Header 
+/* General Header
 --------------------------------------------- */
 header {
   transition: all 0.375s ease-in-out;
@@ -9246,7 +9246,7 @@ header .form-inline .form-control {
   background: #00132b; }
 
 /* 	.department-bar
-	Department Bar - hold all branding 
+	Department Bar - hold all branding
 	and navigation
 --------------------------------------------- */
 .department-bar .btn {
@@ -9397,7 +9397,7 @@ header .form-inline .form-control {
     padding: 0.25rem 0; } }
 /* .navbar, .navbar-collapse
 	.department-dropdowns, .dropdown-selectors,
-	.dropdown, .dropdown-toggle, 
+	.dropdown, .dropdown-toggle,
 	.dropdown-toggle-button
 --------------------------------------------- */
 .department-level header .navbar {
@@ -9552,8 +9552,8 @@ header .form-inline .form-control {
 @media (min-width: 1200px) {
   .navbar .department-dropdowns .dropdown-menu::before {
     left: 1.5rem; } }
-/* List Group Tab Panel - 
-	Make this component responsive. 
+/* List Group Tab Panel -
+	Make this component responsive.
 	It's not in the default Bootstrap setup.
 --------------------------------------------- */
 .list-group {
@@ -9569,9 +9569,9 @@ header .form-inline .form-control {
 
   .list-group-item {
     display: block; } }
-/* List Inline - 
-	Simply adding to ul level so we don't need 
-	list-inline-item on all sub li 
+/* List Inline -
+	Simply adding to ul level so we don't need
+	list-inline-item on all sub li
 --------------------------------------------- */
 .list-inline {
   margin-bottom: 0; }
@@ -12241,7 +12241,7 @@ button.filter {
       margin: 0.25rem 0;
       line-height: 1.4; }
 
-/* standard table with scroll 
+/* standard table with scroll
 	SIMPLE VERSION */
 .rtable {
   width: 100%; }
@@ -12418,7 +12418,7 @@ button.filter {
   margin-left: 0;
   margin-right: 0; }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Slide In Panel - by CodyHouse.co
 

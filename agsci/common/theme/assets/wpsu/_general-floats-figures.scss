@@ -25,48 +25,48 @@ figcaption {
 .float-right {
     float: none;
     }
-            
-@include media-breakpoint-up(sm) {    
+
+@include media-breakpoint-up(sm) {
 
     .float-left {
         float: left;
         margin-right: 1.5rem;
         }
-    
+
     .float-right {
         float: right;
         margin-left: 1.5rem;
         }
-    
+
     section.float-left,
     section.float-right { /* required for generic content page with visual header and sidenav - need to float in order to insert side nav after header */
         margin-right: 0;
         margin-left: 0;
         }
-                    
+
     figure.float-left figcaption {
         text-align: left;
         }
-        
+
     figure.float-right figcaption {
         text-align: right;
         }
-            
+
     .float-half,
     .float-third {
         width: 50%;
         }
-    
+
     .float-half.float-with-columns {
         width: 100%;
         }
     }
 
-@include media-breakpoint-up(xl) {    
+@include media-breakpoint-up(xl) {
     .float-third {
         width: 33.3333%;
         }
-    
+
     .float-half.float-with-columns {
         width: 50%;
         }

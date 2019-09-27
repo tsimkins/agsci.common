@@ -3,28 +3,28 @@
     }
 
 .bg-light-gray-patterned {
-    background-size: 240%, 100%;    
+    background-size: 240%, 100%;
     overflow: hidden;
     background: url(../images/honey-comb-corner-pattern.svg), $color-ps-coaly-gray-light30;
     background-repeat: no-repeat, repeat;
     background-position: -10px -10px, center center;
     }
-    
+
  @include media-breakpoint-up(sm) {
-    
+
     .bg-light-gray-patterned  {
         background-position: -10px -10px, center center;
-        background-size: 120%, 100%;    
+        background-size: 120%, 100%;
         }
-    } 
-            
+    }
+
  @include media-breakpoint-up(xl) {
-    
+
     .bg-light-gray-patterned  {
         background-position: -30px -20px, center center;
-        background-size: 90%, 100%;    
+        background-size: 90%, 100%;
         }
-    } 
+    }
 
 p.more-header {
     margin-bottom: 0;
@@ -32,7 +32,7 @@ p.more-header {
     font-size: $h3-font-size;
     font-family: $font-family-sans-serif;
     line-height: $line-height-sm;
-    
+
     + .row {
         margin-top: 0.5rem; /* directory img div in explore more block */
         }
@@ -41,9 +41,9 @@ p.more-header {
  .more-block-content {
     position: relative;
     margin-top: 0;
-    padding: 1rem;    
+    padding: 1rem;
     z-index: 9;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -57,18 +57,18 @@ p.more-header {
         z-index: -1;
         }
     }
-    
+
 .more-block:nth-of-type(2) {
     .more-block-content::after {
         background-color: $color-ps-invent-orange;
-        } 
+        }
     }
 
 .more-block:nth-of-type(3) {
-    
+
     .more-block-content::after {
         background-color: $color-ps-future-green;
-        } 
+        }
     }
 
 .more-block-content ul {
@@ -77,13 +77,13 @@ p.more-header {
     font-size: $small1-size;
 
     li {
-        margin-top: 0.5rem;        
+        margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         line-height: $line-height-md;
-        
+
         a {
             border-bottom: 1px solid $color-ps-creek;
-            
+
             &:hover,
             &:focus {
                 color: $color-ps-creek;
@@ -99,26 +99,26 @@ p.more-header {
 .more-block p {
     color: $black;
     }
-            
+
 .section-explore ul li {
     a:hover,
     a:focus {
        border-bottom: 1px solid $color-ps-creek;
        }
     }
-    
+
 .explore-more-link {
     line-height: $line-height-md;
-    
+
     a {
         border-bottom: 1px solid transparent;
         }
-    
+
     a:hover,
     a:focus {
         border-bottom: 1px solid $color-ps-creek;
         }
-    
+
         &::after {
             position: relative;
             right: -0.25rem;
@@ -127,11 +127,11 @@ p.more-header {
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
             color: $color-ps-creek;
-            font-weight: 900;  
+            font-weight: 900;
             font-size: 80%; /* match small class size */
             font-family: 'Font Awesome 5 Free';
             }
-        
+
         &.link-arrow::after {
             content: "\f061";
             }

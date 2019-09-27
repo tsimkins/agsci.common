@@ -10,10 +10,10 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
     padding: 1.5rem;
     background-color: $white;
     z-index: 9;
-    
+
     p {
         line-height: $line-height-lg;
-        
+
         &:last-child {
             margin-bottom: 0;
             }
@@ -25,7 +25,7 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
     }
 
 .offset-content h2  {
-    
+
     &:after {
         content: none;
         }
@@ -43,38 +43,38 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
         color: $black;
         }
     }
-    
+
 section.offset-previews {
-    
+
     .container-fluid:nth-of-type(odd),
     .container:nth-of-type(odd) {
-        
+
         .row {
             background: $color-ps-slate-gray;
             }
-            
+
         @include media-breakpoint-up(lg) {
             .offset-content {
                 left: 3rem;
                 margin: 0;
                 order: 1;
                 }
-            
+
             .offset-image {
                 order: 12;
                 }
             }
         }
-    
+
     .container-fluid:nth-of-type(even),
     .container:nth-of-type(even) {
-        
+
         .row {
             background: $color-ps-creek;
             }
-        
-        @include media-breakpoint-up(lg) {    
-            
+
+        @include media-breakpoint-up(lg) {
+
             .offset-content {
                 left: -3rem;
                 margin: 0;
@@ -84,10 +84,10 @@ section.offset-previews {
         }
     }
 
-@include media-breakpoint-up(lg) {    
-    
+@include media-breakpoint-up(lg) {
+
     section.offset-full-image {
-    
+
         .position-absolute-bottom-left {
             position: absolute;
             top: unset;
@@ -95,7 +95,7 @@ section.offset-previews {
             bottom: 1.5rem;
             left: 1.5rem;
             }
-        
+
         .position-absolute-bottom-right {
             position: absolute;
             top: unset;

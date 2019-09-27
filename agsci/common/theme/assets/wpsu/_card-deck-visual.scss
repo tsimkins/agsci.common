@@ -4,22 +4,22 @@
     margin-bottom: $card-group-margin;
     padding: 0;
     box-shadow: $box-shadow-light;
-        
+
     .card-image-top {
         position: relative;
         overflow: hidden;
-        background: $black;    
+        background: $black;
         }
-    
+
     img {
         transition: $transition-base
         }
-    
+
     .card-body {
         padding: 1rem;
         background-color: $color-ps-coaly-gray-light35;
         }
-        
+
     &:hover,
     &:focus {
         box-shadow: $box-shadow-medium;
@@ -27,12 +27,12 @@
         &::before {
             opacity: 1;
             }
-        
+
         .card-body {
             background-color: $white;
             }
         }
-    
+
     p.section-crumb {
         margin-top: 0;
         }
@@ -45,12 +45,12 @@
 
     &:hover,
     &:focus {
-        
+
         .opacity-dimmer-bottom {
             background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
             }
         }
-    
+
     h3.card-title::after {
         content: "";
         position: absolute;
@@ -74,9 +74,9 @@
         border-bottom: 2px solid transparent;
         z-index: 9999;
         }
-        
+
  /* when full card is not a link, option for links inside text */
-     
+
     a {
         border-bottom: $border-base;
         text-decoration: none;
@@ -91,43 +91,43 @@
 
 a.card.card-visual:hover,
 a.card.card-visual:focus {
-    
+
     h3.card-title::after {
         border-bottom: 2px solid $color-ps-creek;
-        }    
-       
+        }
+
     h3.text-center.card-title::after {
         border-bottom: 2px solid $color-ps-creek;
-        }    
+        }
     }
 
 div.card .card-text {
-    
+
     p {
         margin-bottom: 0.5rem;
-        
+
         @include media-breakpoint-up(md) {
             font-size: $small2-size;
             }
         }
-    
+
     ul {
         font-size: $small2-size;
-        
+
         li {
             margin-top: 1rem;
             margin-bottom: 0.5rem;
             font-weight: $font-weight-bold;
-            
+
             a {
                 border-bottom: $border-base;
                 color: $black;
                 }
-            
+
             ul {
                 padding-left: 1.25rem;
                 }
-            
+
             li {
                 margin-top: 0.5rem;
                 font-weight: $font-weight-base;
@@ -140,7 +140,7 @@ div.card .card-text {
     height: 8rem;
     overflow: hidden;
     }
-    
+
 .card-img-crop { /* more than square */
     position: relative;
     width: 100%;
@@ -150,7 +150,7 @@ div.card .card-text {
 
     img {
         position: absolute;
-        top: -10%;    
+        top: -10%;
         width: 100%;
         }
     }
@@ -159,7 +159,7 @@ div.card .card-text {
 .card .card-img-overlay {
     z-index: 2;
     padding: 0.5rem 1rem;
-    
+
     h3.card-title {
         position: relative;
         margin-bottom: 0.5rem;
@@ -170,44 +170,44 @@ div.card .card-text {
     }
 
 @include media-breakpoint-up(md) {
-    
-    .card-deck-2up .card .card-img-overlay h3.card-title { 
+
+    .card-deck-2up .card .card-img-overlay h3.card-title {
         font-size: $h2-font-size;
         }
     }
 
 .card.card-visual.card-horizontal {
-    
+
     .row {
         background-color: $color-ps-coaly-gray-light35;
         }
-    
+
     &:hover,
     &:focus {
         .row {
             background-color: $white;
             }
         }
-    
+
     h3.card-title {
         position: relative;
         font-size: $h4-font-size;
-        
+
         @include media-breakpoint-up(md) {
             font-size: $h5-font-size;
             }
-            
+
         &::after {
             border-bottom-color: $color-ps-creek;
             }
         }
-    
+
     p {
         margin-bottom: 0;
         padding-top: .125rem;
         font-size: $small1-size;
-        line-height: $line-height-base;        
-        
+        line-height: $line-height-base;
+
         @include media-breakpoint-up(md) {
             font-size: $small3-size;
             }

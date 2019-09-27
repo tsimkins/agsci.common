@@ -1,4 +1,4 @@
-<tal:css 
+<tal:css
     tal:define="portal_url view/portal_url|none;
                 editing view/editing|nothing;
                 editing_mosaic view/editing_mosaic|nothing">
@@ -7,7 +7,7 @@
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/featherlight/featherlight.min.css;
                         data-editing editing;
                         data-editing_mosaic editing_mosaic;" />
-    
+
     <link rel="stylesheet"
         tal:condition="editing"
         tal:attributes="href string:${portal_url}/++theme++barceloneta/less/barceloneta-compiled.css" />
@@ -21,8 +21,8 @@
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.css" />
 
 
-    <link rel="stylesheet" 
-          media="print" 
+    <link rel="stylesheet"
+          media="print"
             tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.print.css" />
 
 </tal:css>

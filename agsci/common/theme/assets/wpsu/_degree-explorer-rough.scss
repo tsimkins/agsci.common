@@ -12,16 +12,16 @@ DEGREE EXPLORER
 .card-deck-4up-2min.card-deck {
     flex-direction: row;
     flex-wrap: wrap;
-    
+
     .card {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
-        
+
         .card-img-overlay {
             padding: 0.5rem;
             }
         }
-        
+
     .opacity-dimmer-bottom-left {
         position: absolute;
         z-index: 1;
@@ -35,17 +35,17 @@ DEGREE EXPLORER
         background:
         linear-gradient(to bottom left, rgba(0,0,0,.125) 25%,rgba(0,0,0,0.95) 100%);
         }
-    
+
     &.visual-cards-imgs-cropped .card-image-top {
         height: 5rem;
         }
-    
+
     }
 
 .card-deck-4up-2min .card .card-img-overlay h3.card-title {
     font-size: $font-size-base;
     margin-bottom: 0;
-    
+
     &::after {
         content: none;
         }
@@ -56,17 +56,17 @@ DEGREE EXPLORER
     .card-deck-4up-2min.card-deck.visual-cards-imgs-cropped .card-image-top {
         height: 7rem;
         }
-        
-    
+
+
     }
-        
+
 .card .highlight-tag {
     margin: 0.5rem;
     font-size: $small3-size;
     }
 
 .degree-explorer {
-    
+
     label {
         font-family: $font-family-sans-serif;
         font-size: $small3-size;
@@ -79,11 +79,11 @@ DEGREE EXPLORER
     border-bottom: transparent;
     padding: 0.25rem 1.5rem; /* wider x + y padding so you can grab for scrolling */
     background: lighten($color-ps-coaly-gray,60%);
-    
+
     .controls {
         text-align: left;
         }
-        
+
     fieldset {
         background-color: lighten($color-ps-coaly-gray,65%);
         padding: 0.25rem 0.75rem;
@@ -94,13 +94,13 @@ DEGREE EXPLORER
         max-height: 12rem;
         overflow:scroll;
         }
-    
+
     ul {
         list-style-type: none;
         text-align: left;
         padding-left: 0;
         margin-bottom: 0;
-        
+
         li {
             display: flex;
             align-items: baseline;
@@ -121,11 +121,11 @@ DEGREE EXPLORER
 
 .card-deck .mix.card.card-visual .card-body {
     padding: 0 0.5rem;
-    
+
     .checkbox {
-        align-items: baseline; 
+        align-items: baseline;
         }
-    
+
     }
 
 .mix {
@@ -137,7 +137,7 @@ fieldset{
     display: inline-block;
     vertical-align: top;
     border: 0;
-    }    
+    }
 
 .container .mix{
     display: none;
@@ -189,28 +189,28 @@ button.filter {
 
 .comparison-container {
     -webkit-overflow-scrolling: touch;
-    
+
     p.h5 {
         margin-top: 0.5rem;
         padding-top: 0.5rem;
-        margin-bottom: 0;    
+        margin-bottom: 0;
         font-weight: $font-weight-bold;
         }
-    
+
     ul {
         font-size: $small3-size;
         padding-left: 1rem;
         margin-bottom: 0;
-    
+
         li {
             margin: 0.25rem 0;
             line-height: $line-height-md;
         }
     }
-    
+
 }
 
-/* standard table with scroll 
+/* standard table with scroll
     SIMPLE VERSION */
 
 .rtable {
@@ -220,24 +220,24 @@ button.filter {
     max-width: 100%;
     width: 100%;
     overflow-x: auto;
-      
+
       // optional - looks better for small cell values
      /*  white-space: nowrap; */
-    
+
     border-collapse: collapse;
     border-spacing: 0;
     -webkit-overflow-scrolling: touch;
-    
+
     .card.card-visual {
         margin: 0;
         box-shadow: none;
-        
+
         &:hover {
             box-shadow: none;
         }
-        
+
         }
-    
+
 }
 
 .rtable th,
@@ -255,14 +255,14 @@ button.filter {
     }
 
 .rtable tr:nth-of-type(even) {
-    
+
     }
 
 .rtable.rtable-mobile td,
 .rtable.rtable-mobile th {
     min-width: 66.66%;
     }
-    
+
 .rtable.rtable-mobile th:first-of-type {
     min-width: 33.33%;
     }
@@ -271,24 +271,24 @@ button.filter {
     font-weight: $font-weight-bold;
     min-width: 10rem;
     }
-    
+
 .rtable thead th {
     text-align: left;
     padding: 0;
-    
+
     &:first-of-type {
         border: transparent;
         }
-    
+
     }
 
 
 
 .comparison-container {
-     position: fixed; 
-     overflow: auto; 
-     bottom: 0; 
-     height: 95%; 
+     position: fixed;
+     overflow: auto;
+     bottom: 0;
+     height: 95%;
      background: $white;
      z-index: 9999;
      padding-left: 1.5%;
@@ -305,78 +305,78 @@ button.filter {
 
 
 .rtable.rtable-mobile-labels {
-    
+
     td, th, th:first-of-type {
     min-width: 15rem;
     width: 15rem;
 
     }
-    
-    
-    
 
-    
+
+
+
+
     .explorer-label {
         font-weight: $font-weight-bolder;
         font-size: $small1-size;
         display: block;
         margin-bottom: 0.125rem;
         }
-        
+
     td {
         vertical-align: top;
         }
-    
+
     th, td {
         border: transparent;
         }
-    
+
     td {
         padding: 1rem;
         }
-    
+
     tr:nth-of-type(odd) {
     background: transparent;
     }
-    
+
     tr {
         border-bottom: $border-base;
     }
-        
+
     }
 
 @include media-breakpoint-up(md) {
 
-        
-    .rtable.rtable-mobile-labels {
-    
 
-    
+    .rtable.rtable-mobile-labels {
+
+
+
     thead {
         position: fixed;
         width: 97%; /* take into account 1.5% padding on comparison container */
         z-index: 99;
         }
-        
+
             tbody {
         display: block;
         padding-top: 8rem;
     }
-    
+
     td, th, th:first-of-type {
     min-width: 25%;
     width: 25%;
 
     }
-    
+
     tr td .explorer-label {
         visibility: hidden;
         }
-    
+
     tr td:first-of-type .explorer-label {
         visibility: visible;
     }
-        
+
     }
     }
 

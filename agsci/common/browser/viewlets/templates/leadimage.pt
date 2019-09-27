@@ -4,14 +4,14 @@
 
     <a tal:attributes="href view/lightbox_url|nothing"
        data-featherlight="image">
-       
+
         <img tal:replace="structure view/adapted/tag" />
-    
+
     </a>
 
     <p class="discreet"
        tal:define="caption view/adapted/image_caption|nothing"
-       tal:condition="caption"       
+       tal:condition="caption"
        tal:content="caption" />
 
 </div>

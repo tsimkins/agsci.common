@@ -9,8 +9,8 @@
 
 <div class="widget-fieldset faceted-criteria filtered-tags">
     <span class="active-filters"
-          tal:define="title python:view.data.get('title', '')" 
-          tal:content="python:view.translate(title)" 
+          tal:define="title python:view.data.get('title', '')"
+          tal:content="python:view.translate(title)"
           i18n:translate="" />
 
   <span tal:attributes="id wid" />

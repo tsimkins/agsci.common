@@ -64,7 +64,7 @@
             <div class="cd-panel__content">
                 <nav id="degree-explorer-nav" class="navbar d-block degree-explorer-filters">
                     <metal:position use-macro="here/@@faceted_macros/macros/position" />
-            	</nav>
+                </nav>
             </div> <!-- cd-panel__content -->
 
         </div> <!-- cd-panel__container -->

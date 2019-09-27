@@ -77,14 +77,14 @@
             tal:define="registration_view python: context.restrictedTraverse('@@event_registration_view');
                         getEventByUID nocall: registration_view/getEventByUID;
                         item python: getEventByUID();">
-                        
+
         <h1 class="documentFirstHeading"
             tal:condition="nocall: item">
 
             <span class="register-header">Register for Event</span> <span tal:content="item/Title" />
 
         </h1>
-        
+
         <h1 class="documentFirstHeading"
             tal:condition="not: nocall: item">Event not found</h1>
 
@@ -129,7 +129,7 @@
                 <strong>When</strong>
                 <span tal:replace="python:toLocalizedTime(item_start, end_time=item_end, long_format=1)" />
             </p>
-        
+
             <p tal:condition="location">
                 <strong>Where</strong>
                 <span tal:content="location" />

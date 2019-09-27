@@ -2,14 +2,14 @@
 
 COLOR Utility Classes
 
----------------------------------------------------------- */    
+---------------------------------------------------------- */
 .white {
     color: $white;
     font-weight: $font-weight-light;
     font-size: 1rem;
     font-family: $font-family-sans-serif;
     line-height: 2.5;
-    }    
+    }
 
 .black {
     color: $black;
@@ -18,7 +18,7 @@ COLOR Utility Classes
     font-family: $font-family-sans-serif;
     line-height: 2.5;
     }
-    
+
 .nittany-navy {
     color: $color-ps-nittany-navy;
     }
@@ -26,12 +26,12 @@ COLOR Utility Classes
 .beaver-blue {
     color: $color-ps-beaver-blue;
     }
-    
+
 .slate-gray {
     color: $color-ps-slate-gray;
     }
 
-.creek { 
+.creek {
     color: $color-ps-creek-accessible;
     }
 
@@ -49,20 +49,20 @@ COLOR Utility Classes
 
 .future-green {
     color: darken($color-ps-future-green,15%);
-    }    
-    
+    }
+
 .invent-orange {
     color: darken($color-ps-invent-orange,15%);
     }
 
-.keystone {    
-    color: darken($color-ps-keystone,25%);    
+.keystone {
+    color: darken($color-ps-keystone,25%);
     }
 
 .bg-nittany-navy {
     background: $color-ps-nittany-navy;
     }
-    
+
 .bg-slate {
     background: $color-ps-slate-gray;
     }
@@ -70,7 +70,7 @@ COLOR Utility Classes
 .bg-white {
     background: $white;
     }
-    
+
 .bg-light-gray {
     background: $color-ps-coaly-gray-light35;
     }
@@ -78,7 +78,7 @@ COLOR Utility Classes
 .bg-lightish-gray {
     background: $color-ps-coaly-gray-light25;
     }
-    
+
 .bg-future-green {
     background: $color-ps-future-green;
     }
@@ -94,7 +94,7 @@ COLOR Utility Classes
 .bg-orange {
     background: lighten($color-ps-invent-orange,10%);
     }
-    
+
 .bg-dark-purple {
     background: $color-ps-perpetual-purple;
     }

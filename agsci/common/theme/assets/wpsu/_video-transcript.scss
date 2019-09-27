@@ -1,6 +1,6 @@
-.accordion.accordion-transcript {    
+.accordion.accordion-transcript {
     margin-bottom: 1.5rem;
-    
+
     .btn {
         margin: 0;
         border-radius: 0;
@@ -16,14 +16,14 @@
 .accordion-transcript .accordion-content {
     padding: 1rem;
     background-color: $color-ps-coaly-gray-light35;
-    
+
     p {
         font-size: $small3-size;
         }
     }
 
 .btn-transcript[aria-expanded="true"] {
-    
+
     .fas {
         transform: rotate(180deg);
         }

@@ -2,55 +2,55 @@
 
 //*// COLORS
 //grays
-$plone-gray-darker:							lighten(#000, 20%);   // #333
-$plone-gray-dark:							lighten(#000, 30%);   // #4c4c4c
-$plone-gray:								lighten(#000, 41%);   // #696969
-$plone-gray-light:							lighten(#000, 46.5%); // #767676 //discreet
-$plone-gray-lighter:						lighten(#000, 80%);   // #ccc //disableds like
+$plone-gray-darker:                            lighten(#000, 20%);   // #333
+$plone-gray-dark:                            lighten(#000, 30%);   // #4c4c4c
+$plone-gray:                                lighten(#000, 41%);   // #696969
+$plone-gray-light:                            lighten(#000, 46.5%); // #767676 //discreet
+$plone-gray-lighter:                        lighten(#000, 80%);   // #ccc //disableds like
 
 //colors
-$plone-link-color:							#007bb1; //plone blue made slightly darker for wcag 2.0
-$plone-link-color-on-dark:					#16a1e3; //plone blue
-											//if you need different contrast
-$plone-link-color-on-grey:		  			#086ca3; //valid wcag 2.0
-$plone-default-published-color:				$plone-link-color; //published and external same color
+$plone-link-color:                            #007bb1; //plone blue made slightly darker for wcag 2.0
+$plone-link-color-on-dark:                    #16a1e3; //plone blue
+                                            //if you need different contrast
+$plone-link-color-on-grey:                      #086ca3; //valid wcag 2.0
+$plone-default-published-color:                $plone-link-color; //published and external same color
 $plone-toolbar-draft-color:                 #fab82a; // lime-yellow //draft is visible
 $plone-toolbar-pending-color:               #e2e721;  // orange
 $plone-toolbar-private-color:               #c4183c;  // red
 $plone-toolbar-internal-color:              #fab82a;  // is draft
 $plone-toolbar-internally-published-color:  #883dfa; // is intranet
 
-$plone-default-draft-color:					darken($plone-toolbar-draft-color, 15%); // lime-yellow //draft is visible
-$plone-default-pending-color:				darken($plone-toolbar-pending-color, 15%); // orange
-$plone-default-private-color:				$plone-toolbar-private-color; // red
-$plone-default-internal-color:				darken($plone-toolbar-internal-color, 15%); // is draft
-$plone-default-internally-published-color:	darken($plone-toolbar-internally-published-color, 5%); // is intranet
+$plone-default-draft-color:                    darken($plone-toolbar-draft-color, 15%); // lime-yellow //draft is visible
+$plone-default-pending-color:                darken($plone-toolbar-pending-color, 15%); // orange
+$plone-default-private-color:                $plone-toolbar-private-color; // red
+$plone-default-internal-color:                darken($plone-toolbar-internal-color, 15%); // is draft
+$plone-default-internally-published-color:    darken($plone-toolbar-internally-published-color, 5%); // is intranet
 
 //** Disabled cursor for form controls and buttons.
 $cursor-disabled:                           not-allowed;
 
 
 //*// SCAFFOLDING
-$plone-body-bg:            				     #fafafa; //almost-white
-$plone-footer-bg:            				 #2e3133; //blued-darkgray
-$plone-text-color:           				 $plone-gray-dark;
-$plone-link-hover-color:     				 darken($plone-link-color, 15%);
+$plone-body-bg:                                 #fafafa; //almost-white
+$plone-footer-bg:                             #2e3133; //blued-darkgray
+$plone-text-color:                            $plone-gray-dark;
+$plone-link-hover-color:                      darken($plone-link-color, 15%);
 
-$plone-font-weight-light:		300;
-$plone-font-weight-regular:		400;
-$plone-font-weight-medium:		500;
+$plone-font-weight-light:        300;
+$plone-font-weight-regular:        400;
+$plone-font-weight-medium:        500;
 $plone-font-weight-bold: 700;
 
-$plone-border-base:							1px solid;
-$plone-portlet-header-bg:					#f2f1f1;
-$plone-portlet-header-color:				$plone-gray;
-$plone-portlet-content-bg:					#fff;
-$plone-portlet-footer-bg:					#fcfcfd;
-$plone-portlet-border:						$plone-border-base #e5e5e5;
-$plone-portlet-contrast-bg:					#e5e5e5;
-$plone-portlet-event-bullet:				#dbecfe;
-$plone-portlet-list-bullet:					#64bee8;
-$plone-portlet-list-hover-bg:				#fcfcfd;
+$plone-border-base:                            1px solid;
+$plone-portlet-header-bg:                    #f2f1f1;
+$plone-portlet-header-color:                $plone-gray;
+$plone-portlet-content-bg:                    #fff;
+$plone-portlet-footer-bg:                    #fcfcfd;
+$plone-portlet-border:                        $plone-border-base #e5e5e5;
+$plone-portlet-contrast-bg:                    #e5e5e5;
+$plone-portlet-event-bullet:                #dbecfe;
+$plone-portlet-list-bullet:                    #64bee8;
+$plone-portlet-list-hover-bg:                #fcfcfd;
 $plone-portlet-list-small-text: $plone-gray;
 
 //*// TYPOGRAPHY
@@ -77,31 +77,31 @@ $plone-line-height-base:        1.428571429; // 20/14
 $plone-line-height-computed:    floor(($plone-font-size-base * $plone-line-height-base)); // ~20px
 
 $plone-headings-font-family:    inherit;
-	$plone-headings-font-weight:    $plone-font-weight-regular;
-	$plone-headings-line-height:    1.1;
-	$plone-headings-color:          inherit;
+    $plone-headings-font-weight:    $plone-font-weight-regular;
+    $plone-headings-line-height:    1.1;
+    $plone-headings-color:          inherit;
 
-$plone-font-weight-light:		300;
-$plone-font-weight-regular:		400;
-$plone-font-weight-medium:		500;
-$plone-font-weight-bold:		700;
+$plone-font-weight-light:        300;
+$plone-font-weight-regular:        400;
+$plone-font-weight-medium:        500;
+$plone-font-weight-bold:        700;
 
 
 
 //*// COMPONENTS
 $plone-padding-base-vertical:     6px;
-	$plone-padding-base-horizontal:   12px;
-	$plone-padding-large-vertical:    10px;
-	$plone-padding-large-horizontal:  16px;
-	$plone-padding-small-vertical:    5px;
-	$plone-padding-small-horizontal:  10px;
-	$plone-padding-xs-vertical:       1px;
-	$plone-padding-xs-horizontal:     5px;
-	$plone-line-height-large:         1.33;
-	$plone-line-height-small:         1.5;
+    $plone-padding-base-horizontal:   12px;
+    $plone-padding-large-vertical:    10px;
+    $plone-padding-large-horizontal:  16px;
+    $plone-padding-small-vertical:    5px;
+    $plone-padding-small-horizontal:  10px;
+    $plone-padding-xs-vertical:       1px;
+    $plone-padding-xs-horizontal:     5px;
+    $plone-line-height-large:         1.33;
+    $plone-line-height-small:         1.5;
 $plone-border-radius-base:        4px;
-	$plone-border-radius-large:       6px;
-	$plone-border-radius-small:       2px;
+    $plone-border-radius-large:       6px;
+    $plone-border-radius-small:       2px;
 //** Global color for active items (e.g., navs or dropdowns).
 $plone-component-active-color:    #fff;
 //** Global background color for active items (e.g., navs or dropdowns).
@@ -125,18 +125,18 @@ $plone-table-border-color:            #e5e5e5;
 
 
 //*// STATES
-$plone-state-info-text:    		            rgba(0,0,0,.5);
-	$plone-state-info-bg:     		            #aad6ea;
-	$plone-state-info-border: 		            1px solid darken($plone-state-info-bg,4%);
-	$plone-state-info-bullet:					#3e7b91;
-$plone-state-warning-text:          	    rgba(0,0,0,.5);
-	$plone-state-warning-bg:          	 	    #ebd380;
-	$plone-state-warning-border:        	    1px solid darken($plone-state-warning-bg,6%);
-	$plone-state-warning-bullet:				#bc8d0d;
-$plone-state-error-text:              		rgba(0,0,0,.5);
-	$plone-state-error-bg:                		#EC9C8D;
-	$plone-state-error-border:            		1px solid darken($plone-state-error-bg,2%);
-	$plone-state-error-bullet:					#ac493f;
+$plone-state-info-text:                        rgba(0,0,0,.5);
+    $plone-state-info-bg:                         #aad6ea;
+    $plone-state-info-border:                     1px solid darken($plone-state-info-bg,4%);
+    $plone-state-info-bullet:                    #3e7b91;
+$plone-state-warning-text:                  rgba(0,0,0,.5);
+    $plone-state-warning-bg:                       #ebd380;
+    $plone-state-warning-border:                1px solid darken($plone-state-warning-bg,6%);
+    $plone-state-warning-bullet:                #bc8d0d;
+$plone-state-error-text:                      rgba(0,0,0,.5);
+    $plone-state-error-bg:                        #EC9C8D;
+    $plone-state-error-border:                    1px solid darken($plone-state-error-bg,2%);
+    $plone-state-error-bullet:                    #ac493f;
 
 
 //*// TOOLBAR
@@ -178,15 +178,15 @@ $plone-container-extra-large:         $plone-container-xl;
 
 
 //*// Buttons
-$plone-btn-standalone-color:          		$plone-gray-dark;
-	$plone-btn-standalone-bg:             	   	#e5e5e5;
-	$plone-btn-standalone-border:          	   	darken($plone-btn-standalone-bg, 20%);
-$plone-btn-context-color:              		#fff;
-	$plone-btn-context-bg:                 		#007bb1;
-	$plone-btn-context-border:             		darken($plone-btn-context-bg, 10%);
+$plone-btn-standalone-color:                  $plone-gray-dark;
+    $plone-btn-standalone-bg:                        #e5e5e5;
+    $plone-btn-standalone-border:                     darken($plone-btn-standalone-bg, 20%);
+$plone-btn-context-color:                      #fff;
+    $plone-btn-context-bg:                         #007bb1;
+    $plone-btn-context-border:                     darken($plone-btn-context-bg, 10%);
 $plone-btn-destructive-color:              #fff;
-	$plone-btn-destructive-bg:                 #bb4f45;
-	$plone-btn-destructive-border:             darken($plone-btn-destructive-bg, 10%);
+    $plone-btn-destructive-bg:                 #bb4f45;
+    $plone-btn-destructive-border:             darken($plone-btn-destructive-bg, 10%);
 
 //*// FORMS
 //** `<input>` background color
@@ -220,38 +220,38 @@ $plone-input-group-addon-border-color: $plone-input-border;
 
 
 //*// ALERTS
-$plone-alert-icon-size:							20px;
-$plone-alert-padding:							15px;
-	$plone-alert-border-radius:					4px;
-	$plone-alert-link-font-weight:				$plone-font-weight-regular; //it depends on your font-family
-$plone-alert-info-bg:						$plone-state-info-bg;
-	$plone-alert-info-text:						$plone-state-info-text; //the text on alert is black with opacity to use the same color and match the bg.
-	$plone-alert-info-border:					$plone-state-info-border;
-	$plone-alert-info-bullet:					$plone-state-info-bullet;
-$plone-alert-warning-bg:					$plone-state-warning-bg;
-	$plone-alert-warning-text:					$plone-state-warning-text;
-	$plone-alert-warning-border:				$plone-state-warning-border;
-	$plone-alert-warning-bullet:				$plone-state-warning-bullet;
-$plone-alert-error-bg:						$plone-state-error-bg;
-	$plone-alert-error-text:					$plone-state-error-text;
-	$plone-alert-error-border:					$plone-state-error-border;
-	$plone-alert-error-bullet:					$plone-state-error-bullet;
+$plone-alert-icon-size:                            20px;
+$plone-alert-padding:                            15px;
+    $plone-alert-border-radius:                    4px;
+    $plone-alert-link-font-weight:                $plone-font-weight-regular; //it depends on your font-family
+$plone-alert-info-bg:                        $plone-state-info-bg;
+    $plone-alert-info-text:                        $plone-state-info-text; //the text on alert is black with opacity to use the same color and match the bg.
+    $plone-alert-info-border:                    $plone-state-info-border;
+    $plone-alert-info-bullet:                    $plone-state-info-bullet;
+$plone-alert-warning-bg:                    $plone-state-warning-bg;
+    $plone-alert-warning-text:                    $plone-state-warning-text;
+    $plone-alert-warning-border:                $plone-state-warning-border;
+    $plone-alert-warning-bullet:                $plone-state-warning-bullet;
+$plone-alert-error-bg:                        $plone-state-error-bg;
+    $plone-alert-error-text:                    $plone-state-error-text;
+    $plone-alert-error-border:                    $plone-state-error-border;
+    $plone-alert-error-bullet:                    $plone-state-error-bullet;
 
 
 
 //*// PORTLETS
-$plone-border-base:							1px solid;
-$plone-portlet-header-bg:					#f2f1f1;
-$plone-portlet-header-color:				$plone-gray;
-$plone-portlet-content-bg:					#fff;
-$plone-portlet-footer-bg:					#fcfcfd;
-$plone-portlet-border:						$plone-border-base #e5e5e5;
-$plone-portlet-contrast-bg:					#e5e5e5;
-$plone-portlet-event-bullet:				#dbecfe;
-$plone-portlet-list-bullet:					#64bee8;
-$plone-portlet-list-hover-bg:				#fcfcfd;
-$plone-portlet-list-small-text:				$plone-gray;
-$plone-portlet-navtree-maxlevel:			5;
+$plone-border-base:                            1px solid;
+$plone-portlet-header-bg:                    #f2f1f1;
+$plone-portlet-header-color:                $plone-gray;
+$plone-portlet-content-bg:                    #fff;
+$plone-portlet-footer-bg:                    #fcfcfd;
+$plone-portlet-border:                        $plone-border-base #e5e5e5;
+$plone-portlet-contrast-bg:                    #e5e5e5;
+$plone-portlet-event-bullet:                #dbecfe;
+$plone-portlet-list-bullet:                    #64bee8;
+$plone-portlet-list-hover-bg:                #fcfcfd;
+$plone-portlet-list-small-text:                $plone-gray;
+$plone-portlet-navtree-maxlevel:            5;
 
 
 //*// THUMBS
@@ -283,29 +283,29 @@ $plone-breadcrumb-active-color:       $plone-gray-light;
 
 //*// SITE NAV
 $plone-sitenav-height:                        50px;
-	$plone-sitenav-margin-bottom:             $plone-line-height-computed;
-	$plone-sitenav-border-radius:             $plone-border-radius-base;
-	$plone-sitenav-padding-horizontal:        floor(($plone-grid-gutter-width / 2));
-	$plone-sitenav-padding-vertical:          (($plone-sitenav-height - $plone-line-height-computed) / 2);
-	$plone-sitenav-collapse-max-height:       340px;
-	$plone-sitenav-link-padding:              10px 15px;
-	$plone-sitenav-link-hover-bg:             #7099bf;
-	$plone-sitenav-bg:      			      $plone-link-color;
-	$plone-sitenav-hover-bg:      			  $plone-link-color;
+    $plone-sitenav-margin-bottom:             $plone-line-height-computed;
+    $plone-sitenav-border-radius:             $plone-border-radius-base;
+    $plone-sitenav-padding-horizontal:        floor(($plone-grid-gutter-width / 2));
+    $plone-sitenav-padding-vertical:          (($plone-sitenav-height - $plone-line-height-computed) / 2);
+    $plone-sitenav-collapse-max-height:       340px;
+    $plone-sitenav-link-padding:              10px 15px;
+    $plone-sitenav-link-hover-bg:             #7099bf;
+    $plone-sitenav-bg:                        $plone-link-color;
+    $plone-sitenav-hover-bg:                    $plone-link-color;
 
 //*// PAGINATION
 $plone-pagination-color:                     $plone-link-color;
-	$plone-pagination-bg:                        $plone-portlet-content-bg;
-	$plone-pagination-border:                    $plone-portlet-border;
+    $plone-pagination-bg:                        $plone-portlet-content-bg;
+    $plone-pagination-border:                    $plone-portlet-border;
 $plone-pagination-hover-color:               $plone-link-hover-color;
-	$plone-pagination-hover-bg:                  $plone-portlet-header-bg;
-	$plone-pagination-hover-border:              $plone-portlet-border;
+    $plone-pagination-hover-bg:                  $plone-portlet-header-bg;
+    $plone-pagination-hover-border:              $plone-portlet-border;
 $plone-pagination-active-color:              $plone-portlet-content-bg;
-	$plone-pagination-active-bg:                 $plone-link-color;
-	$plone-pagination-active-border:             $plone-border-base $plone-link-color;
+    $plone-pagination-active-bg:                 $plone-link-color;
+    $plone-pagination-active-border:             $plone-border-base $plone-link-color;
 $plone-pagination-disabled-color:            $plone-gray-lighter;
-	$plone-pagination-disabled-bg:               $plone-portlet-footer-bg;
-	$plone-pagination-disabled-border:           $plone-portlet-border;
+    $plone-pagination-disabled-bg:               $plone-portlet-footer-bg;
+    $plone-pagination-disabled-border:           $plone-portlet-border;
 
 
 

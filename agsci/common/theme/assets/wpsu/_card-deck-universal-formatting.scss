@@ -1,10 +1,10 @@
 .card-deck {
     margin-bottom: 1.5rem;
-    
+
     &.no-margin {
         margin: 0;
         }
-    
+
     .card {
         margin-right: 0;
         margin-bottom: $card-group-margin*2;
@@ -15,14 +15,14 @@
 .card-body {
     background: $white;
     }
-    
+
 @include media-breakpoint-up(sm) {
-    
+
     .card-deck .card {
         margin-right: $card-group-margin;
         margin-left: $card-group-margin;
         }
-    
+
     .card-deck.no-margin .card {
         margin-right: 0;
         margin-left: 0;
@@ -31,31 +31,31 @@
 
 .card {
     overflow: hidden;
-    
+
     h3 {
         margin-top: 0;
         margin-bottom: $spacer/2;
         transition: $transition-long;
         }
-    
+
     img {
         transition: $transition-long;
         transform-origin: top right;
         }
-    
+
     .card-body {
         transition: $transition-long;
         }
-        
+
     &:hover,
     &:focus {
-        
+
         a {
             text-decoration: none;
             }
         }
     }
-    
+
 .card-title p {
     position: relative;
     margin-bottom: 0.75rem;
@@ -63,7 +63,7 @@
     font-size: $font-size-base;
     font-family: $font-family-sans-serif;
     line-height: $line-height-sm;
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -81,19 +81,19 @@
         border-bottom: 2px solid $color-ps-creek;
         }
     }
-    
+
 .card-text p {
     margin-bottom: 0;
     font-size: $small1-size;
     line-height: $line-height-base;
     }
-    
+
 @include media-breakpoint-up(md) {
     .card-text p {
         font-size: $small3-size;
         }
-    
+
     .card-deck-2up .card-text p {
         font-size: $small1-size;
-        }    
+        }
     }

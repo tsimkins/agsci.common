@@ -10,19 +10,19 @@
     tal:define="title view/data/title|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
-    
+
     <div class="container"
          tal:omit-tag="view/is_portlet">
 
         <h2 class="mt-0"
             tal:condition="title"
             tal:content="title" />
-    
+
         <div tal:attributes="class string:card-deck card-deck-${view/data/count}up card-deck-text-only">
-    
+
             <tal:items
                 tal:repeat="i view/items|nothing">
-    
+
                 <a tal:attributes="href i/getURL|nothing"
                    class="card card-text-only">
                     <div class="card-body">
@@ -34,9 +34,9 @@
                         </div>
                     </div>
                 </a>
-    
+
             </tal:items>
-    
+
         </div>
     </div>
 

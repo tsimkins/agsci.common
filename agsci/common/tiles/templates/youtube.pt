@@ -14,7 +14,7 @@
     <div class="container">
         <p>No valid video.</p>
     </div>
-    
+
 </section>
 
 <section tal:define="iframe_url view/iframe_url|nothing"
@@ -27,19 +27,19 @@
         <h2 class="mt-0"
             tal:condition="view/data/title|nothing"
             tal:content="view/data/title" />
-    
+
         <div class="col-12 col-lg-10 offset-lg-1">
-    
+
             <div
                 tal:attributes="class view/wrapper_klass|nothing">
-    
+
                 <iframe
                     tal:attributes="src iframe_url" />
             </div>
         </div>
 
     </div>
-    
+
 </section>
 
 

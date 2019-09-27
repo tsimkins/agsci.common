@@ -13,7 +13,7 @@ class Renderer(TilePortletRenderer):
 
 class AddForm(base.AddForm):
     schema = ITileInterface
-    
+
     label = _(u"Add CTA Block Portlet")
     description = _(u"This portlet displays CTA blocks.")
 

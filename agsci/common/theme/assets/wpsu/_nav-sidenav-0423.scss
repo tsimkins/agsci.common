@@ -8,67 +8,67 @@
     .btn {
         margin-bottom: 0;
         }
-    
+
     .side-nav {
         padding-top: 0;
-        
+
         ul {
             margin-bottom: 0;
             }
         }
-    
+
     .navbar {
         box-shadow: none;
         border-bottom: transparent;
         }
-    
+
     .navbar-collapse {
         background: transparent;
         padding-left: 0;
-        padding-right: 0;    
+        padding-right: 0;
         align-items:flex-start;
         margin-top: 0;
         max-height: none;
         }
-    
+
     [data-toggle="collapse"] {
         padding: 0.75rem 1rem;
         display: block;
-        cursor: pointer;    
+        cursor: pointer;
         border-left: none;
         }
-    
+
     .dropdown-menu {
         border: transparent;
         width: 100%;
         }
-        
+
     .navbar .dropdown-menu div[class*="col"] {
         margin-bottom: 0;
         }
     }
-    
+
 .sidebar {
     background-color: $color-ps-coaly-gray-light35;
-    
+
     p {
         font-size: $small3-size;
         }
     }
-    
+
     .side-nav {
         padding-top: 1rem;
         width: 100%;
-    
+
         a {
             font-family: $font-family-sans-serif;
             font-size: $small2-size;
             }
-    
+
         p {
             margin-bottom: 0;
             line-height: $line-height-sm;
-            
+
             a {
                 color: $white;
                 font-size: $font-size-sm;
@@ -86,11 +86,11 @@
 @include media-breakpoint-up(lg) {
 
     .side-nav {
-        
+
         a {
             font-size: $small3-size;
             }
-                
+
         .dropdown-menu {
             width: auto;
             }
@@ -99,35 +99,35 @@
 
 /* Nav List -
 --------------------------------------------- */
-        
+
     ul {
         padding-left: 0;
         list-style-type: none;
         margin-top: 1px;
         }
-    
+
     li.section-level-1.navTreeCurrentNode {
 
         > a {
             font-weight: $font-weight-bold;
             border-left: 0.5rem solid $color-ps-creek;
             background: rgba($color-ps-coaly-gray,0.075);
-            } 
+            }
         }
-    
+
      a {
         display: block;
         background: $color-ps-coaly-gray-light35;
         border-left:  0.5rem solid $color-ps-coaly-gray-light30;
         padding: 0.75rem .875rem;
         margin-bottom: 1px;
-        
+
         &:hover {
             background: $color-ps-coaly-gray-light30;
-            color: darken($color-ps-coaly-gray,35%);    
+            color: darken($color-ps-coaly-gray,35%);
             border-left: 0.5rem solid $color-ps-creek;
             }
-            
+
         &.dropdown-toggle:hover {
             border-left: 0;
             }
@@ -136,7 +136,7 @@
     .dropdown-menu {
         display: none;
         transition-delay: 0.375s;
-    
+
         &.show {
             display: block;
             }
@@ -148,7 +148,7 @@
     margin-top: 0.75rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
-    }    
+    }
 
 .navTree {
     position: relative;
@@ -159,14 +159,14 @@
         margin-top: 0;
         border: 0.5rem solid $color-ps-coaly-gray-light30;
         border-top: none;
-        
+
         li a {
             border-left: none;
             padding-left: .5rem;
             background-color: $white;
             margin-left: 1rem;
             margin-right: 1rem;
-                        
+
             &:hover {
                 background-color: $color-ps-coaly-gray-light30;
                 }
@@ -179,7 +179,7 @@
 
     li a.navTreeCurrentNode {
         font-weight: $font-weight-bold;
-                
+
         &::before {
             content: '\f061';
             font-style: normal;
@@ -187,11 +187,11 @@
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
             font-family: 'Font Awesome 5 Free';
-            font-weight: 900;  
+            font-weight: 900;
             margin-right: 0.25rem;
             position: relative;
             color: $color-ps-creek;
-            
+
             }
         }
     }
@@ -201,16 +201,16 @@
 .navbar.collapsing-sidenav ul.navTreeLevel2 {
     border: none;
     margin-bottom: 0.25rem;
-    border-left: 1px solid $color-ps-coaly-gray-light15; 
+    border-left: 1px solid $color-ps-coaly-gray-light15;
     margin-left: 2rem;
 
-    li a {            
+    li a {
         margin-left: 0;
         margin-right: 0.5rem;
         font-style: italic;
         }
     }
-        
+
 .side-nav .dropdown {
     position: relative;
 
@@ -223,33 +223,33 @@
         width: 100%;
         justify-content: space-between;
         font-size: $small2-size;
-        
+
         span {
             color: $black;
             }
-        
+
         &:focus {
             outline: none;
             }
-            
+
         i {
             color: $color-ps-creek;
             position: relative;
             }
-        
+
         &:hover {
-            
+
             i {
                 color: $color-ps-creek-light10;
                 }
             }
-        
+
         &[aria-expanded="true"] i {
             transform: rotate(180deg);
             color: $color-ps-invent-orange;
             }
     }
-    
+
     &.section-level-1 [data-toggle="collapse"] {
         background-color: $color-ps-coaly-gray-light35;
         border-left:  0.5rem solid $color-ps-coaly-gray-light30;
@@ -260,28 +260,28 @@
         background-color: transparent;
         border-left:  0;
         }
-    
+
     .dropdown-menu.show {
         width: 100%;
         position: relative;
         z-index: 0;
         }
-    
+
     .dropdown-menu {
         padding: 0;
         border-bottom: none;
         box-shadow: none;
-        
+
         a {
             margin-left: 0;
             margin-right: 1rem;
             padding-left: 0.5rem;
             }
-        
+
         a:hover {
             border-bottom: 1px solid $color-ps-creek;
             }
-        
+
         &:after {
             content: none;
             }
@@ -290,7 +290,7 @@
 
 @include media-breakpoint-up(lg) { /* toggle converts to button only at large break */
     .side-nav .dropdown {
-        
+
         [data-toggle="collapse"] {
             background-color: transparent;
             position: absolute;
@@ -299,19 +299,19 @@
             border: transparent;
             width: auto;
             }
-            
+
             &.section-level-1 [data-toggle="collapse"] {
             background-color: transparent;
             border-left:  transparent;
             }
         }
     }
-    
-    
+
+
 .side-nav .dropdown .dropdown-menu .nav-level2 a.dropdown-toggle {
     margin-left: 0;
     margin-right: 0;
-    
+
     &:hover {
         border: none;
         }
@@ -321,7 +321,7 @@
 .sidebar-contact { /* need div to hold contact card to prevent collapsing on mobile */
     width: 100%;
     display: block;
-    
+
     .card.test-sq-img {
         margin-top: 0;
         width: 100%;
@@ -330,19 +330,18 @@
 
 @include media-breakpoint-up(sm) {
     .sidebar-contact {
-        width: 66.66%;    
-        }    
+        width: 66.66%;
+        }
     }
 
 @include media-breakpoint-up(md) {
     .sidebar-contact {
-        width: 50%;    
-        }    
+        width: 50%;
+        }
     }
-    
+
 @include media-breakpoint-up(lg) {
     .sidebar-contact {
-        width: 100%;    
-        }    
+        width: 100%;
+        }
     }
-    

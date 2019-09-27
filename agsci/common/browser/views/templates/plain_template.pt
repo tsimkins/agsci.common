@@ -168,15 +168,15 @@
 
                         <hr size="1" />
 
-                    	<p class="copyright">
-                    		&copy;
+                        <p class="copyright">
+                            &copy;
                             <span tal:omit-tag=""
                                 tal:define="now modules/DateTime/DateTime"
                                 tal:content="now/year">[date last modified]</span>
-                    		
-                    	      <a href="http://agsci.psu.edu">Penn State College of Agricultural Sciences</a>
-                    		
-                    	</p>
+
+                              <a href="http://agsci.psu.edu">Penn State College of Agricultural Sciences</a>
+
+                        </p>
 
                         <p class="legal">
 

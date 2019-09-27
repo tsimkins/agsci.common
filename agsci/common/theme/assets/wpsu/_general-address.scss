@@ -3,7 +3,7 @@ address {
     font-size: $small1-size;
     font-family: $font-family-sans-serif;
     line-height: $line-height-md;
-    
+
     a {
         border-bottom: 1px solid transparent;
         text-decoration: none;
@@ -22,7 +22,7 @@ address {
         border-bottom: 1px solid $color-ps-creek;
         }
     }
-    
+
 .address-generic {
     position: relative;
     margin-top: 1rem;
@@ -34,12 +34,12 @@ address {
     .card-title p {
         font-size: $font-size-lg;
         }
-    
+
     address {
         padding-top: 0;
         padding-bottom: 0;
         }
-    
+
     .address-contact {
         margin-top: 0;
         font-size: $small3-size;
@@ -47,7 +47,7 @@ address {
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     .address-generic {
         display: inline-block;
         }

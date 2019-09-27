@@ -10,10 +10,10 @@
     class="container-fluid px-0 pt-3 pb-0 bg-lightish-gray"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
-	<div class="container-fluid px-0">
-		<div class="row mx-0 justify-content-center">
-			<div class="col-12">
-				<div class="card-deck card-deck-4up-values card-deck-visual card-deck-values card-deck-values-2">
+    <div class="container-fluid px-0">
+        <div class="row mx-0 justify-content-center">
+            <div class="col-12">
+                <div class="card-deck card-deck-4up-values card-deck-visual card-deck-values card-deck-values-2">
 <tal:item tal:repeat="i view/values|nothing">
 <button
     class="card card-visual hoverable reveal"
@@ -26,31 +26,31 @@
                 _img_src python:view.get_img_src(_serial);
                 _img_alt python:view.get_img_alt(_serial);">
 
-	<div class="card-image-top">
-		<div class="opacity-dimmer opacity-dimmer-bottom-left-short">
-			&nbsp;
-		</div>
+    <div class="card-image-top">
+        <div class="opacity-dimmer opacity-dimmer-bottom-left-short">
+            &nbsp;
+        </div>
         <img tal:attributes="src _img_src;
                              alt _img_alt;"
                 tal:condition="_img_src"
                 class="w-100" />
-		<div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
-			<h3 class="card-title">
-				<span tal:content="_title" />
-				<span tal:replace="_description" />
-			</h3>
-		</div>
-	</div>
+        <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+            <h3 class="card-title">
+                <span tal:content="_title" />
+                <span tal:replace="_description" />
+            </h3>
+        </div>
+    </div>
 
-	<div class="hover-content d-flex align-items-center">
-		<p tal:replace="structure _text|nothing" />
-	</div>
+    <div class="hover-content d-flex align-items-center">
+        <p tal:replace="structure _text|nothing" />
+    </div>
 </button>
 </tal:item>
-				</div>
-			</div>
-		</div>
-	</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 </body>

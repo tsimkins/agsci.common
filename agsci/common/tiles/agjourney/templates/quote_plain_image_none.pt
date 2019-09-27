@@ -13,11 +13,11 @@
 
     <div class="row justify-content-center">
         <section class="container agsci-overview m-0">
-        	<div class="row position-relative feature-side-by-side mx-0 bg-white">
-        		<div class="col-12 col-lg-4 py-3">
+            <div class="row position-relative feature-side-by-side mx-0 bg-white">
+                <div class="col-12 col-lg-4 py-3">
                     <div class="position-relative overflow-hidden angle-corner"></div>
-        		</div>
-        		<div class="col-12 col-lg-8 feature-content px-lg-5 py-4 order-1 order-lg-12">
+                </div>
+                <div class="col-12 col-lg-8 feature-content px-lg-5 py-4 order-1 order-lg-12">
                     <h2>
                         <tal:quote tal:condition="view/data/quote_title|nothing">&ldquo;</tal:quote><span tal:replace="view/data/title|nothing" /><tal:quote tal:condition="view/data/quote_title|nothing">&rdquo;</tal:quote>
                     </h2>
@@ -35,8 +35,8 @@
 
                     <tal:text
                         tal:replace="structure view/data/text/output|nothing" />
-        		</div>
-        	</div>
+                </div>
+            </div>
         </section>
 
     </div>

@@ -78,7 +78,7 @@
                         <title>Alumni</title>
                         <link>alumni</link>
                         <items>
-            	            <item>
+                            <item>
                                 <title>Get Involved</title>
                                 <link>alumni/membership</link>
                             </item>
@@ -108,7 +108,7 @@
                         <title>Visitors &amp; Public</title>
                         <link>visitors-and-public</link>
                         <items>
-            	            <item>
+                            <item>
                                 <title>Places to Visit</title>
                                 <link>visitors-and-public/places-to-visit</link>
                             </item>

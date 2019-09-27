@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object 
-    name="portal_workflow" 
+<object
+    name="portal_workflow"
     meta_type="Plone Workflow Tool"
     purge="False">
 
@@ -9,7 +9,7 @@
     <object name="simple_publication_workflow" meta_type="Workflow" />
     <object name="restricted_content_workflow" meta_type="Workflow" />
     <object name="person_workflow" meta_type="Workflow" />
-    
+
     <bindings
         purge="False">
         <default>

@@ -12,14 +12,14 @@ PRINT ONLY
     height: auto;
     display: block;
     }
-        
+
 html {
     font-size: 1.75rem;
       }
-              
-header, 
-nav, 
-.navbar, 
+
+header,
+nav,
+.navbar,
 a.navbar-brand,
 .collapse:not(.show) {
     display: block;
@@ -99,7 +99,7 @@ body,
         text-shadow: none;
         }
     }
-        
+
 .text-white {
     color: #000000;
     }
@@ -110,7 +110,7 @@ body,
     opacity: 1 !important;
     transform: none !important;
     }
-        
+
 .collapse {
     display: block !important;
     height: auto !important;
@@ -134,7 +134,7 @@ body,
 
 .card-cta {
     border: 1px solid #333 !important;
-    
+
     p, .btn {
         color: #000;
         }
@@ -174,15 +174,15 @@ p,
 .card-deck.card-deck-3up .card.card-short-bio {
     flex: none;
     width: 33.33%; /* not respecting print media query */
-    }    
+    }
 
 @media (min-width: 768px) {
-    
+
     .card-deck.card-deck-4up .card,
     .card-deck.card-deck-3up .card {
         flex: 0 0 calc(33.33333% - 2rem);
         }
-    }    
+    }
 
 .card-deck.card-deck-3up .card.card-short-bio {
     flex: 0 0 calc(25%-2rem);
@@ -215,15 +215,15 @@ p,
     }
 
 .card-news {
-    
+
     .profile-img {
         flex: 0 0 15%;
         max-width: 15%;
         }
-    
+
     .profile-copy {
         flex: 0 0 85%;
-        max-width: 85%;    
+        max-width: 85%;
         }
     }
 

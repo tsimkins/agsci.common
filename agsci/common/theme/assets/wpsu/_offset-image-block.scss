@@ -1,5 +1,5 @@
 .big-image {
-    
+
     img {
         object-fit: contain;
         max-width: 100%;
@@ -7,12 +7,12 @@
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     .big-image {
         height: 80vh;
         width: auto;
         margin-top: 4rem;
-        
+
         img {
             margin-top: -3rem;
             }
@@ -28,18 +28,18 @@
     }
 
 @include media-breakpoint-up(md) {
-    
+
     .offset-top {
-        margin-top: -4rem;    
+        margin-top: -4rem;
         }
-    
+
     .big-image + .container h2 {
         padding: 0.5rem 1rem;
         }
     }
-        
+
 .bg-creek h2 {
-    background: $color-ps-creek-light15;  
+    background: $color-ps-creek-light15;
     }
 
 .bg-nittany-navy h2 {
@@ -51,14 +51,14 @@
     background: darken($color-ps-slate-gray, 10%);
     color: $white;
     }
-    
+
 @include media-breakpoint-up(md) {
-    
+
     .big-image + .container h2 {
         top: 2rem;
         }
     }
-        
+
 @include media-breakpoint-up(xl) {
      .big-image + .container h2 {
         font-size: $h1-font-size;

@@ -11,22 +11,22 @@
                          data-container-width view/container_width;">
 
     <div class="container-fluid bg-light-gray-patterned position-relative py-3">
-    
+
         <div class="container explore-options pt-5 pb-3 px-0">
-    
+
         <h2 class="centered-callout-header slide-down text-center mt-0"
             tal:content="view/data/title|noting">
-    
+
             <div class="row align-items-stretch row-more-block justify-content-center">
 
                 <tal:col tal:repeat="i view/values|nothing">
-    
+
                     <div class="col-12 col-sm-6 col-lg-4 mt-4 more-block"
                          tal:define="_title i/title|nothing;
                                      _description i/description|nothing;
                                      _text i/text/output|nothing;">
-    
-    
+
+
                         <div class="more-block-content agsci-box-shadow html">
 
                             <p class="more-header"
@@ -39,7 +39,7 @@
                             <div tal:replace="structure _text" />
 
                         </div>
-    
+
                     </div>
                 </tal:col>
             </div>

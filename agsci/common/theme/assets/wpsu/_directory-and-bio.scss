@@ -4,9 +4,9 @@
 BIO -- body class .template-person_view
 
 ---------------------------------------------------------- */
-            
+
 .card-deck-agsci-directory {
-    
+
     .card .card-body {
         padding: 1rem;
         }
@@ -18,64 +18,64 @@ BIO -- body class .template-person_view
 
 .bio {
     padding: 1rem 0;
-    
+
     ul.jobTitle li {
         font-size: $font-size-lg;
         }
-    
+
     address {
         font-size: $small1-size;
         border-bottom: transparent;
         }
-    
+
     h1 {
         margin-bottom: 1.5rem;
         font-size: $h1-font-size;
         }
-    
+
     p {
         font-family: $font-family-sans-serif;
         }
-    
+
     ul {
         margin-bottom: 0;
         }
-        
+
     img {
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         }
-    
+
     .card-deck {
         margin-bottom: 0;
         }
-    
+
     h2, .h2 {
         margin-top: 0.5rem;
-        
+
         a:hover,
         a:focus {
             color: $color-ps-creek-accessible;
             }
         }
-    
+
     address {
         margin-bottom: 0.5rem;
         padding: 0.75rem 0;
         line-height: $line-height-md;
         }
-        
+
     .expertise h3 {
         margin-top: 0.5rem;
         }
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     .facultyStaffDirectory .bio address {
         border: $border-base;
         }
-    
+
     .bio h1 {
         font-size: $display4-size;
         }
@@ -88,13 +88,13 @@ BIO -- body class .template-person_view
 .bio address ul {
     padding-left: 0;
     }
-    
+
 ul.list-bio-contact {
-    
+
     li {
         margin-right: 0.625rem;
         margin-bottom: 0.5rem;
-        
+
         span {
             margin-right: .1rem;
             color: $color-ps-creek-accessible;
@@ -103,32 +103,32 @@ ul.list-bio-contact {
             font-size: 90%;
             }
         }
-        
+
     .fa-file-pdf {
         margin-right: .1rem;
         color: $color-ps-creek-accessible;
         }
-    }        
+    }
 
 .card.card-short-bio ul.list-bio-contact li span {
         display: block;
-        
+
         @include media-breakpoint-up(sm) {
             display: inline;
             }
         }
-        
+
 @include media-breakpoint-up(md) {
-    
+
     ul.list-bio-contact li span {
         font-size: 75%;
-        }    
-    
+        }
+
     .facultyStaffDirectory ul.list-bio-contact li span {
         font-size: 85%;
-        }    
+        }
     }
-    
+
 .bio ul.jobTitle {
     margin-top: 0.5rem;
     padding-left: 0;
@@ -136,12 +136,12 @@ ul.list-bio-contact {
     font-style: italic;
     font-family: $font-family-sans-serif;
     }
-    
+
 /* Bio in Directory Format
 --------------------------------------------- */
 
 .facultyStaffDirectory .bio {
-    
+
     h3 {
         margin-top: 0.5rem;
         font-size: $font-size-base;
@@ -152,24 +152,24 @@ ul.list-bio-contact {
         font-size: $small2-size;
         line-height: 1.4;
         }
-    
+
     ul.jobTitle li {
         font-size: $small1-size;
         }
-    
+
     address {
         font-size: $small3-size;
 
         ul {
-            
+
             li {
                 margin-bottom: 0.5rem;
                 line-height: $line-height-md;
-                
+
                 span {
                     font-weight: $font-weight-bolder;
                     }
-                
+
                 &:last-of-type {
                     margin-bottom: 0;
                     padding-bottom: 0;
@@ -182,15 +182,15 @@ ul.list-bio-contact {
 
 
 @include media-breakpoint-up(lg) {
-    
+
     .facultyStaffDirectory .bio {
-        
+
         address {
             margin-top: 0.75rem;
-        
+
             ul {
-                text-align: center;    
-            
+                text-align: center;
+
                 li {
                     margin-bottom: 0.5rem;
                     padding-bottom: 0.5rem;
@@ -198,30 +198,30 @@ ul.list-bio-contact {
                     }
                 }
             }
-        
+
         ul.jobTitle li {
             font-size: $small2-size;
             }
-            
+
         ul li {
             font-size: $small3-size;
             }
         }
     }
-            
+
 .facultyStaffDirectory .bio {
 
     address {
         margin-bottom: 0;
         }
     }
-    
+
 .facultyStaffDirectory .tileTitle,
 .facultyStaffDirectory .tileHeadline,
 address .tileHeadline {
     margin-bottom: 1rem;
     font-size: $h5-font-size;
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -230,7 +230,7 @@ address .tileHeadline {
         width: 25%;
         height: 1px;
         border-bottom: 2px solid $color-ps-creek;
-        }     
+        }
     }
 
 .card-body p.jobTitle,
@@ -263,27 +263,27 @@ Headers pulled out to the left
 ---------------------------------------------------------- */
 
 .bio-side-by-side {
-    
+
     .row {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         border-bottom: $border-base;
         }
-    
+
     h3 {
         margin-top: 0;
         color: $color-ps-slate-gray;
         font-weight: $font-weight-bolder;
         }
     }
-    
+
     ul.list-three-col {
         margin-bottom: 0;
         text-indent: -.25rem;
         }
 
 @include media-breakpoint-up(md) {
-    
+
     ul.list-three-col {
         columns: 2;
         -webkit-columns: 2;
@@ -293,16 +293,16 @@ Headers pulled out to the left
         padding-right: 2rem;
         padding-left: 2rem;
         }
-      
+
     ul.list-two-col {
         columns: 2;
         -webkit-columns: 2;
         -moz-columns: 2;
         }
     }
-  
+
 @include media-breakpoint-up(xl) {
-    
+
     ul.list-three-col {
         columns: 3;
         -webkit-columns: 3;
@@ -315,30 +315,30 @@ Headers pulled out to the left
     flex-direction: row;
     align-items: center;
     border: $border-base;
-    
+
     a.email, a.phone, a.fax, a.pdf {
         margin-top: 0;
         margin-bottom: 0;
         }
-        
+
     address {
         margin-top: 0;
         margin-bottom: 0;
         padding: 0;
         }
     }
-    
+
 .bio h2 {
     font-size: 1.5rem;
     }
 
 @include media-breakpoint-up(md) {
-    
+
     .bio h2 {
         font-size: $font-size-xl;
         }
     }
-    
+
 .bio h1:after {
     content: "";
     position: absolute;
@@ -348,9 +348,9 @@ Headers pulled out to the left
     height: 1px;
     border-bottom: 4px solid $color-ps-creek;
     }
-        
+
 .bio {
-    
+
     ul.list-inline.list-inline-social {
         margin-top: 0.75rem;
         }

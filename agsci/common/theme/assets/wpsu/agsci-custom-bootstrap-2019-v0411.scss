@@ -18,35 +18,35 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Custom Colors
     //
-    
+
     $black: #231e20;
     $black-accessible-gray: #4D565B;
     $white: #ffffff;
-    
+
     $color-ps-nittany-navy: #001E44; /* darker navy */
     $color-ps-beaver-blue: #1E417B; /* logo navy */
     $color-ps-sky-blue: #009CDE; /* PA Sky Blue */
     $color-ps-link-blue: #266EC0; /* accessible wcag AA */
-    
+
     $color-ps-slate-gray: #314D64;
     $color-ps-creek: #3EA39E; /* teal */
     $color-ps-creek-accessible: #2f7a77; /*calculated version for WCAG AA */
 
-    $color-ps-limestone-gray: #91959C; 
+    $color-ps-limestone-gray: #91959C;
     $color-ps-limestone-gray-light: #E9EBEA;
-    
+
     $color-ps-pugh-blue: #96BEE6;
     $color-ps-coaly-gray: #54585A;
-        
+
     $color-ps-keystone: #FFD100; /* yellow */
     $color-ps-keystone-light: #FAE24C;
     $color-ps-highlight-blue: #3DCBFF;
-    
+
     $color-ps-perpetual-purple:  #491d70;
 
     $color-ps-invent-orange: #E98300;
     $color-ps-future-green: #99CC00;
-    
+
     //
     // Calculated Light Shades 5%-35% - % equal additional white
     // Lighten makes colors too vibrant - use these calculated values instead
@@ -59,7 +59,7 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-limestone-gray-light25: #d6d7da;
     $color-ps-limestone-gray-light30: #e4e5e6;
     $color-ps-limestone-gray-light35: #f1f2f3;
-    
+
     $color-ps-creek-light5: #56afaa;
     $color-ps-creek-light10: #6ebab6;
     $color-ps-creek-light15: #86c6c2;
@@ -67,7 +67,7 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-creek-light25: #b7dddb;
     $color-ps-creek-light30: #cfe8e7;
     $color-ps-creek-light35: #e7f4f3;
-    
+
     $color-ps-slate-gray-light5: #4b6377;
     $color-ps-slate-gray-light10: #657a8b;
     $color-ps-slate-gray-light15: #7e909e;
@@ -75,7 +75,7 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-slate-gray-light25: #b2bcc5;
     $color-ps-slate-gray-light30: #ccd3d8;
     $color-ps-slate-gray-light35: #e5e9ec;
-    
+
     /* in this case lighten casts a better blue-ish tint */
     $color-ps-coaly-gray-light5:  lighten($color-ps-coaly-gray,32.5%);
     $color-ps-coaly-gray-light10: lighten($color-ps-coaly-gray,37.5%);
@@ -84,11 +84,11 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-coaly-gray-light25: lighten($color-ps-coaly-gray,52.5%);
     $color-ps-coaly-gray-light30: lighten($color-ps-coaly-gray,57.5%);
     $color-ps-coaly-gray-light35: lighten($color-ps-coaly-gray,62.5%);
-    
+
     //
     // Theme Color Variables
     //
-    
+
     $secondary:     rgba($white,0.5);
     $light:         $color-ps-limestone-gray-light;
     $warning:       $color-ps-keystone-light;
@@ -97,21 +97,21 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Default Font Color
     //
-    
+
     $body-color:               $black;
-    
+
     //
     // Links
     //
-    
+
     $link-color:                $black;
     $link-hover-color:          $black;
     $link-hover-decoration:     none;
 
     //
-    // Breakpoints and Container Max-Width Added XXl Breakpoint. 
+    // Breakpoints and Container Max-Width Added XXl Breakpoint.
     //
-    
+
     $grid-breakpoints: (
       xs: 0,
       sm: 576px,
@@ -121,7 +121,7 @@ AGSCI VARIABLE CUSTOMIZATION
       xxl: 1440px,
      xxxl: 1800px
     );
-    
+
     $container-max-widths: (
       sm: 732px, /* 36px below next break with max 1680 */
       md: 956px,
@@ -134,13 +134,13 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Grid Gutter
     //
-    
+
     $grid-gutter-width:           2rem;
 
     //
     // Additional line heights for flexibility
     //
-    
+
     $line-height-xl: 1.8;
     $line-height-lg: 1.6;
     $line-height-md: 1.4;
@@ -151,7 +151,7 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Add Letter Spacing utilities
     //
-    
+
     $letter-spacing-lg: 0.4em;
     $letter-spacing-md: .025em;
     $letter-spacing: 0;
@@ -161,28 +161,28 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Change Default Border Color & add a default border
     //
-    
+
     $border-color: rgba($color-ps-creek, 0.25);
     $border-base: 1px solid $border-color;
-    
+
     //
     // add short and long transtions
     //
-    
+
     $transition-short:             all .125s ease-in-out !default;
     $transition-long:             all .375s ease-in-out !default;
 
     //
     // Import Google Fonts.
     //
-    
+
     @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
     @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,600i,700,700i,900,900i');
-    
+
     //
     // Replace Default Font Stacks
     //
-    
+
     $font-family-sans-serif:      'Nunito Sans', sans-serif;
     $font-family-base:            'Roboto Slab', serif;
     $font-family-cursive:          'Born Ready'; /* Test Script Font */
@@ -190,7 +190,7 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Increase line height base for paragraphs
     //
-    
+
     $font-weight-bold:            600;
     $font-weight-bolder:          700;
     $font-weight-boldest:          900;
@@ -200,25 +200,25 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Replace Default Header Styles and add small size utilities
     //
-    
+
     $h1-font-size:                $font-size-base * 2;
     $h2-font-size:                $font-size-base * 1.75;
     $h3-font-size:                $font-size-base * 1.25;
     $h4-font-size:                $font-size-base * 1.1;
     $h5-font-size:                $font-size-base * 0.9;
     $h6-font-size:                $font-size-base !default;
-    
+
     $small1-size:                 $font-size-base * .9;
     $small2-size:                 $font-size-base * .825;
     $small3-size:                 $font-size-base * .75;
     $small4-size:                 $font-size-base * .675;
-    
+
     $font-size-xl:                $font-size-base * 1.5;
 
     //
     // Replace Display Font Size Defaults
     //
-    
+
     $display1-size:               3.125rem;
     $display2-size:               2.875rem;
     $display3-size:               2.625rem;
@@ -227,13 +227,13 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Lead Font Size
     //
-    
+
     $lead-font-size:              ($font-size-base * 1.00);
 
     //
     // Button Customization
     //
-    
+
     $btn-line-height: $line-height-sm;
     $btn-border-radius:           0;
     $btn-border-radius-lg:        0;
@@ -242,19 +242,19 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Remove border-radius
     //
-    
+
     $input-border-radius:                   0;
 
     //
     // Remove margin at top of dropdown
     //
-    
+
     $dropdown-spacer: 0;
 
     //
     // Remove tab border radius
     //
-    
+
     $nav-tabs-border-width:             0;
     $nav-link-padding-y:                .25rem;
     $nav-tabs-border-radius:            0;
@@ -265,7 +265,7 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Navbar Styles
     //
-    
+
     $navbar-padding-y:                  0;
     $navbar-padding-x:                  0;
     $navbar-toggler-padding-y:          0;
@@ -278,14 +278,14 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Decrease Jumbotron Padding for image-based jumbotrons
     //
-    
+
     $jumbotron-padding: 1rem; /* no way to have tb different from lr so override below */
     $jumbotron-bg:                      transparent;
 
     //
     // Card overrides
     //
-    
+
     $card-border-radius:                0;
     $card-inner-border-radius:          0;
     $card-bg:                           transparent;
@@ -300,14 +300,14 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Popover overrides
     //
-    
+
     $popover-max-width:                 460px;
     $zindex-popover:                    9999;
 
     //
     // Increase Badge Size for Tags
     //
-    
+
     $badge-font-size:                   80%;
     $badge-font-weight:                 $font-weight-base;
     $badge-padding-y:                   .5em;
@@ -316,18 +316,18 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Modal
     //
-    
+
     $modal-lg: 1300px;
     $modal-md: 1000px;
     $modal-sm: 400px;
 
     $modal-backdrop-bg:                 $color-ps-nittany-navy;
     $modal-backdrop-opacity:            .99;
-    
+
     //
     // Remove list group border color and radius
     //
-    
+
     $list-group-bg:                     rgba($white,0.1);
     $list-group-border-color:           none;
     $list-group-border-radius:          0;
@@ -342,7 +342,7 @@ AGSCI VARIABLE CUSTOMIZATION
     //
     // Breadcrumbs
     //
-    
+
     $breadcrumb-bg:                     none;
     $breadcrumb-divider:                none;
 
@@ -396,7 +396,7 @@ body {
     text-rendering: optimizeLegibility; /* safari */
     line-height: 1.0;
     background-color: $white;
-    } 
+    }
 
 a.skip-to-main {
     font-family: $font-family-sans-serif;
@@ -410,9 +410,9 @@ a.skip-to-main {
 .print-only-logo {
     display: none;
     }
-    
-/* Responsive Typography - 
-    General increase in font size with breakpoint. 
+
+/* Responsive Typography -
+    General increase in font size with breakpoint.
     Not handled universally by Bootstrap
 --------------------------------------------- */
 
@@ -421,32 +421,32 @@ html {
     }
 
 @include media-breakpoint-up(sm) {
-    
+
     html {
             font-size: 1.083333rem;
           }
     }
 
 @include media-breakpoint-up(md) {
-    
+
     html {
             font-size: 1.16667rem;
         }
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     html {
             font-size: 1.25rem;
           }
     }
-            
+
 /* ----------------------------------------------------------
 
 GENERIC FONT STYLES
 
----------------------------------------------------------- */    
-    
+---------------------------------------------------------- */
+
 /* Headers */
 
 h1, .h1 {
@@ -456,7 +456,7 @@ h1, .h1 {
     line-height: 1.1;
     color: $color-ps-slate-gray;
     position: relative;
-    
+
     a {
         color: $color-ps-slate-gray;
         }
@@ -466,13 +466,13 @@ h1, .h1 {
     font-size: 1.5rem;
     margin-bottom: 0;
     margin-top: 0;
-    
+
     @include media-breakpoint-up(md) {
         font-size: $display4-size;
         }
     }
 
-h2, .h2 {    
+h2, .h2 {
     margin-top: $spacer*3;
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -491,12 +491,12 @@ h2::after,
     border-bottom: 4px solid $color-ps-creek;
     z-index: 1;
     }
-           
+
 .journey-preview h2,
 .agsci-journey h2,
 h2.no-underline,
 .h2.no-underline  {
-    
+
     &:after {
         content: none;
         }
@@ -511,27 +511,27 @@ h2.text-center::after,
     }
 
 @include media-breakpoint-up(md) {
-    
+
     h1 {
         font-size: $display3-size;
         }
-    
+
     h2, .h2 {
         font-size: 1.75rem;
         }
     }
-    
+
 @include media-breakpoint-up(xl) {
-    
+
     h1 {
         font-size: $display1-size;
         }
-    
+
     h2, .h2 {
         font-size: 1.875rem;
         }
     }
-        
+
 h2.h1::after {
     content: none;
     }
@@ -542,7 +542,7 @@ h3, .h3 {
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-bold;
     line-height: $line-height-sm;
-    
+
     &.option { /* used in options under individual major page */
         position: relative;
         display: block;
@@ -558,7 +558,7 @@ h3.card-preview-h3 {
     font-size: 1.5rem;
     margin-bottom: 0;
     }
-    
+
 h3.border-top {
     padding-top: 1rem;
     border-top: $border-base;
@@ -574,21 +574,21 @@ h4, .h5 {
 
 /* Paragraphs
 --------------------------------------------- */
-    
+
 p {
     font-family: $font-family-sans-serif;
     font-size: $small1-size;
     font-weight: $font-weight-base;
     line-height: $line-height-xl;
     }
-    
+
 @include media-breakpoint-up(lg) {
-    
+
     p {
-        font-size: $small1-size;    
+        font-size: $small1-size;
         }
     }
-    
+
 p.lead {
     line-height: $line-height-base;
     margin-top: 1.5rem;
@@ -597,7 +597,7 @@ p.lead {
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     p.lead {
         font-size: $h4-font-size;
         }
@@ -609,7 +609,7 @@ p.small {
     }
 
 /* Section Crumb -
-    Utility for adding date 
+    Utility for adding date
     or category above a header
 --------------------------------------------- */
 p.section-crumb {
@@ -624,7 +624,7 @@ p.section-crumb {
     font-weight: $font-weight-bold;
     line-height: $line-height-sm;
     font-size: $small3-size;
-    
+
     &::after {
         content: "";
         position: absolute;
@@ -634,11 +634,11 @@ p.section-crumb {
         height: 1px;
         border-bottom: 2px solid transparent;
         }
-               
+
     & + p.h2,
     & + p.h3 {
         margin-top: 0;
-        }    
+        }
     }
 
 /* Links
@@ -647,7 +647,7 @@ p.section-crumb {
 a {
     -moz-transition: $transition-base;
     -webkit-transition: $transition-base;
-    transition: $transition-base; 
+    transition: $transition-base;
     }
 
 ul a,
@@ -664,46 +664,46 @@ ol a {
     &:hover {
         border-bottom: 1px solid $color-ps-creek;
         }
-    }        
+    }
 
 /* ----------------------------------------------------------
 
 TEXT WHITE - Generic Container Class to Reverse Color
-Already a Bootstrap Class - 
+Already a Bootstrap Class -
 These are additional customizations
 
----------------------------------------------------------- */    
-    
+---------------------------------------------------------- */
+
 .text-white {
 
     h2.h1 {
         text-shadow: 2px 4px 4px rgba($black,0.75);
         }
-    
-    a {        
+
+    a {
         text-decoration: none;
-        
+
         &:link {
             color: $white;
             }
-    
+
         &:hover:not(.btn),
         &:visited:hover:not(.btn) {
             color: $color-ps-creek-light20;
             }
-        
+
         &:active {
             color: $color-ps-highlight-blue;
             }
-        
+
         &:visited {
             color: $white;
             }
-        
+
         &:focus {
             color: $white;
             }
-        }    
+        }
     }
 
 
@@ -711,7 +711,7 @@ These are additional customizations
 
 PARTIALS
 
----------------------------------------------------------- */    
+---------------------------------------------------------- */
 
 @import "_utility-classes";
 @import "_utility-classes-color";
@@ -838,11 +838,11 @@ BOOTSTRAP HOME CAROUSEL INITIAL IMPLEMENTATION
 .carousel-inner>.item>img {
     height:75vh;
     }
-    
+
 ol.carousel-indicators {
     margin-bottom: 0;
     }
-    
+
 /* ----------------------------------------------------------
 
 FOR REMOVAL ???
@@ -853,14 +853,14 @@ FOR REMOVAL ???
     padding: 0;
     background: transparent;
     }
-        
+
 .at-share-tbx-element .at-share-btn {
     margin-bottom: 0;
     margin-left: 0.5rem;
     }
-    
+
 p.share-this {
-    margin-bottom: 0; 
+    margin-bottom: 0;
     margin-left: 0.75rem;
     margin-right: 0.25rem;
     font-size: $small2-size;

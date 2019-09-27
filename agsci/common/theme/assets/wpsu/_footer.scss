@@ -13,11 +13,11 @@ footer { /* relative and high z-index to mask any affixed nav */
         width: 300px;
         height: auto;
         }
-        
+
     .fa-stack {
         text-align: center;
         }
-    
+
     li.footer-list-head {
         display: block;
         font-weight: $font-weight-base;
@@ -28,14 +28,14 @@ footer { /* relative and high z-index to mask any affixed nav */
     .footer-details-block {
         padding-bottom: 0.5rem;
         }
-    
+
     p.footerLinks {
         margin-bottom: 0.25rem;
         font-size: $small4-size;
         font-family: $font-family-sans-serif;
         line-height: $line-height-md;
         }
-        
+
     ul {
         margin-bottom: 0;
         padding-left: 0;
@@ -50,21 +50,21 @@ footer { /* relative and high z-index to mask any affixed nav */
             padding-top: 0.25rem;
             }
         }
-    
+
     ul.list-inline li {
         margin-left: 0;
         margin-right: 0;
         }
-    
+
     ul.list-inline.list-inline-contact {
         margin-bottom: 0;
         font-size: $small3-size;
         }
-        
+
     abbr[title] {
         text-decoration: none;
         }
-            
+
     abbr:hover,
     abbr:focus {
         cursor: default;
@@ -80,9 +80,9 @@ footer { /* relative and high z-index to mask any affixed nav */
         text-align: left;
         }
     }
-    
+
 @include media-breakpoint-up(lg) {
-    
+
     footer ul.list-inline-social {
         border-left: transparent;
         }
@@ -97,14 +97,14 @@ li.li-separator::after {
         font-weight: $font-weight-light;
         font-size: $font-size-base;
         }
-        
+
 /* Footer - Department Level
 --------------------------------------------- */
 
 .department-level {
     footer {
         background-color: darken($color-ps-nittany-navy,5%);
-        
+
         img.agsci-logo {
             width: 224px;
             height: 40px;
@@ -113,7 +113,7 @@ li.li-separator::after {
     }
 
 @include media-breakpoint-up(md) {
-    
+
     .department-level footer img.agsci-logo {
         width: 280px;
         height: 50px;
@@ -123,26 +123,26 @@ li.li-separator::after {
 .footer-department-level {
     padding: 1rem 0;
     background-color: darken($color-ps-nittany-navy,5%);
-    
+
     p.department-name {
         display: inline-block;
-        margin-bottom: 0.25rem;    
+        margin-bottom: 0.25rem;
         padding-bottom: 0.5rem;
-        border-bottom: $border-base;        
+        border-bottom: $border-base;
         color: $white;
         font-size: $h4-font-size;
         font-family: $font-family-base;
         line-height: $line-height-sm;
 
         }
-    
+
     ul li {
         padding-top: 0;
         }
-    
+
     ul.list-inline-dept-links {
         font-size: $small2-size;
-        
+
         li {
             margin: 0 0 0.5rem 0;
             }

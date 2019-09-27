@@ -9,15 +9,15 @@
 <section
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
-	
+
     <div class="container container-text position-relative">
 
         <div class="row">
-	
+
             <div class="col-12 col-lg-7 drop-cap order-12 order-lg-1">
-	
+
                 <h2 class="h2-divider mt-0"><span tal:content="view/data/title|nothing" /></h2>
-	
+
                 <p tal:condition="view/data/description|nothing"
                    tal:content="view/data/description|nothing" />
 
@@ -39,8 +39,8 @@
 
                 </tal:row>
 
-        	</div>
-	
+            </div>
+
         </div>
 
     </div>

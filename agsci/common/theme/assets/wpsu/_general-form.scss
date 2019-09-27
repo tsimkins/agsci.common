@@ -8,7 +8,7 @@ FORM - BASIC
 .pfg-form {
     padding: 1rem;
     background: $color-ps-coaly-gray-light30;
-    
+
     fieldset {
         width: 100%;
         margin-right: 0;
@@ -17,7 +17,7 @@ FORM - BASIC
         background-color: $color-ps-coaly-gray-light35;
         border: 1px solid $color-ps-coaly-gray-light20;
         }
-    
+
     legend {
         position: relative;
         display: block;
@@ -29,33 +29,33 @@ FORM - BASIC
         letter-spacing: $letter-spacing-sm;
         font-family: $font-family-sans-serif;
         }
-    
+
     .formHelp {
         font-style: italic;
         font-family: $font-family-sans-serif;
         }
-    
+
     .formQuestion {
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
         font-size: $font-size-sm;
         }
-    
+
     .ArchetypesMultiSelectionValue {
         display: flex;
         align-items: baseline;
         margin-bottom: 0.5rem;
-        
+
         input {
             margin-right: 0.25rem;
             margin-left: 0.5rem;
             }
-        
+
         label {
             margin-bottom: 0;
             }
         }
-    
+
     label {
         display: block;
         margin-bottom: 0.25rem;
@@ -63,15 +63,15 @@ FORM - BASIC
         font-size: $small2-size;
         font-family: $font-family-sans-serif;
         }
-    
+
     input[type=checkbox] + label {
         display: inline-block;
         }
-    
+
     div.field {
         margin-top: 1rem;
         }
-    
+
     input[type=text],
     textarea {
         padding: 0.25rem;
@@ -80,17 +80,17 @@ FORM - BASIC
         font-size: $small3-size;
         font-family: $font-family-sans-serif;
         }
-        
+
     textarea {
         width: 100%;
         }
-    
+
     select {
         max-width: 100%; /* prevent scroll on moblie with wide select menu */
         font-size: $small2-size;
         font-family: $font-family-sans-serif;
         }
-    
+
     .btn {
         margin-top: 1rem;
         }

@@ -1,11 +1,11 @@
 <section class="degree-explorer-header-new banner">
     <div class="container px-0 py-0 py-md-3">
-    	<div class="row mx-0 align-items-left">
-        	<div class="col-12">	
-        		<h1 tal:content="context/Title|nothing" />
-        		<p class="lead"
-        		   tal:content="context/Description|nothing" />							
-        	</div>	
-    	</div>
+        <div class="row mx-0 align-items-left">
+            <div class="col-12">
+                <h1 tal:content="context/Title|nothing" />
+                <p class="lead"
+                   tal:content="context/Description|nothing" />
+            </div>
+        </div>
     </div>
 </section>

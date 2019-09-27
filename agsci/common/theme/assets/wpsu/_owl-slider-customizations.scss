@@ -11,7 +11,7 @@ PHOTO STRIP OWL SLIDER CUSTOMIZATIONS
     -webkit-overflow-scrolling: touch;
     margin-top: 1px;
     margin-bottom: 1px;
-    
+
     img {
         height: 100%;
         width: auto;
@@ -29,12 +29,12 @@ PHOTO STRIP OWL SLIDER CUSTOMIZATIONS
 
 .owl-carousel.owl-photo-strip {
     height: 25vh;
-    
+
     .owl-item.active,
     .item {
         height: 25vh;
         }
-    
+
     .owl-item img {
         height: 25vh;
         width: auto;
@@ -42,15 +42,15 @@ PHOTO STRIP OWL SLIDER CUSTOMIZATIONS
     }
 
 @include media-breakpoint-up(lg) {
-    
+
     .owl-carousel.owl-photo-strip {
         height: 35vh;
-        
+
         .owl-item.active,
         .item {
             height: 35vh;
             }
-        
+
         .owl-item img {
             height: 35vh;
             width: auto;

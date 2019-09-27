@@ -141,7 +141,7 @@
       </tal:listing>
 
       <metal:empty metal:define-slot="no_items_in_listing">
-        <tal:empty 
+        <tal:empty
             tal:condition="not: view/anonymous|nothing">
 
         <p class="discreet"
@@ -151,7 +151,7 @@
         </p>
 
         </tal:empty>
-        
+
       </metal:empty>
     </metal:listingmacro>
   </tal:results>

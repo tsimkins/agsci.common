@@ -16,25 +16,25 @@
         <div class="opacity-dimmer opacity-dimmer-bottom"></div>
 
         <div class="container mb-4">
-        	<div class="row align-items-end">
-            	<div class="col-11 col-lg-9">
-            				
-            		<div id="portal-breadcrumbs"
-            		  tal:condition="view/data/show_breadcrumbs|nothing"
-            		  tal:replace="structure view/breadcrumbs|nothing" />
-           				
-            		<div class="affix-placeholder" style="height: auto;"></div>
-            		
-            		<h1 data-toggle="affix" class=""
-            		  tal:condition="view/data/show_title|nothing"            		
-            		  tal:content="view/data/title|context/Title|nothing">
+            <div class="row align-items-end">
+                <div class="col-11 col-lg-9">
 
-            		<p
-            		  tal:condition="view/data/show_description|nothing"            		
-            		  tal:content="view/data/description|context/Description|nothing">
-            				
-            	</div>
-            	
+                    <div id="portal-breadcrumbs"
+                      tal:condition="view/data/show_breadcrumbs|nothing"
+                      tal:replace="structure view/breadcrumbs|nothing" />
+
+                    <div class="affix-placeholder" style="height: auto;"></div>
+
+                    <h1 data-toggle="affix" class=""
+                      tal:condition="view/data/show_title|nothing"
+                      tal:content="view/data/title|context/Title|nothing">
+
+                    <p
+                      tal:condition="view/data/show_description|nothing"
+                      tal:content="view/data/description|context/Description|nothing">
+
+                </div>
+
             </div>
         </div>
 

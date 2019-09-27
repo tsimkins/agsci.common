@@ -1,5 +1,5 @@
-/* List Group Tab Panel - 
-    Make this component responsive. 
+/* List Group Tab Panel -
+    Make this component responsive.
     It's not in the default Bootstrap setup.
 --------------------------------------------- */
 
@@ -16,44 +16,44 @@
     .list-group {
         display: flex;
         }
-        
+
     .list-group-item {
         display: block;
         }
     }
-    
-/* List Inline - 
-    Simply adding to ul level so we don't need 
-    list-inline-item on all sub li 
+
+/* List Inline -
+    Simply adding to ul level so we don't need
+    list-inline-item on all sub li
 --------------------------------------------- */
 
 .list-inline {
     margin-bottom: 0;
-    
+
     li {
         display: inline-block;
         }
     }
 
 .list-inline-not-mobile {
-    
+
     li {
         display: block;
         }
     }
-    
+
 @include media-breakpoint-up(lg) {
-        
+
         .list-inline-not-mobile li {
             display: inline-block;
             }
-        
+
         }
 
 /* General UL/OL
---------------------------------------------- */    
+--------------------------------------------- */
 ul, ol {
-    font-weight: $font-weight-base;    
+    font-weight: $font-weight-base;
     font-family: $font-family-sans-serif;
     }
 
@@ -64,20 +64,20 @@ ul, ol {
     font-size: $small1-size;
 
     li {
-        margin-top: 0.5rem;        
+        margin-top: 0.5rem;
         margin-bottom: 0.5rem;
         line-height: $line-height-md;
-        
+
         a {
             border-bottom: 1px solid $color-ps-creek;
-            
+
             &:hover,
             &:focus {
                 color: $color-ps-creek;
                 }
             }
         }
-    
+
     li:nth-of-type(even) p {
         background-color: rgba($white, 0.15);
         }
@@ -87,17 +87,17 @@ ul, ol {
 .container-text ol {
     padding-left: 3rem;
     }
-    
+
 .container-text ol {
     margin-right: 2rem;
     }
-    
-.container-text {        
-    
+
+.container-text {
+
     ul {
         margin-bottom: 1rem;
         text-indent: -0.25rem;
-        
+
         li {
             margin-bottom: 0.375rem;
             }
@@ -119,16 +119,16 @@ ul.list-checked {
         display: inline-block;
         margin-right: 0.25rem;
         color: $color-ps-creek;
-        font-weight: 900;  
+        font-weight: 900;
         font-style: normal;
         font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
         font-family: 'Font Awesome 5 Free';
-        line-height: 1;    
+        line-height: 1;
         }
     }
-    
+
 /* Offset List with Left Border
     e.g. Utilized on Major Pages - Alumni Lists
 --------------------------------------------- */
@@ -145,7 +145,7 @@ ul.list-checked {
         margin-bottom: 0;
         padding-left: 1.5rem;
         }
-    
+
     p.offset-left {
         position: relative;
         display: inline-block;

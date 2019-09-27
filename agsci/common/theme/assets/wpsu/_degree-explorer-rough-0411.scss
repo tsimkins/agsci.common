@@ -6,8 +6,8 @@ DEGREE EXPLORER
 ---------------------------------------------------------- */
 
 h1 span {
-    font-family: 'Born Ready'; 
-    font-weight: 100; 
+    font-family: 'Born Ready';
+    font-weight: 100;
     font-size: 12vw;
     line-height: 1.0;
     margin-left: 3rem;
@@ -22,7 +22,7 @@ h1 span {
 
 .offset-explorer {
     text-align: center;
-    
+
     h1 {
         margin-left: -1rem;
         border-bottom: $border-base;
@@ -31,12 +31,12 @@ h1 span {
 
 @include media-breakpoint-up(md) {
     .offset-explorer {
-    
+
         text-align: left;
-    
+
         h1 {
             margin-left: -1rem;
-            
+
             span {
                 top: -0.25rem;
                 font-size: 7vw;
@@ -47,8 +47,8 @@ h1 span {
     }
 
 @include media-breakpoint-up(xl) {
-    
-    
+
+
     .offset-explorer {
         margin-left: -1rem;
 
@@ -61,7 +61,7 @@ h1 span {
 .degree-explorer-header p.lead {
     padding: 0.125rem 0;
     margin-top: 0.75rem;
-    
+
     span {
         display: inline-block;
         color: $color-ps-creek-accessible;
@@ -70,7 +70,7 @@ h1 span {
         padding: 0.125rem 0.25rem;
         background: $color-ps-creek-light35;
         }
-    
+
     }
 
 @include media-breakpoint-up(md) {
@@ -86,16 +86,16 @@ h1 span {
 .card-deck-4up-2min.card-deck {
     flex-direction: row;
     flex-wrap: wrap;
-    
+
     .card {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
-        
+
         .card-img-overlay {
             padding: 0.5rem;
             }
         }
-        
+
     .opacity-dimmer-bottom-left {
         position: absolute;
         z-index: 1;
@@ -109,17 +109,17 @@ h1 span {
         background:
         linear-gradient(to bottom left, rgba(0,0,0,.125) 25%,rgba(0,0,0,0.95) 100%);
         }
-    
+
     &.visual-cards-imgs-cropped .card-image-top {
         height: 5rem;
         }
-    
+
     }
 
 .card-deck-4up-2min .card .card-img-overlay h3.card-title {
     font-size: $font-size-base;
     margin-bottom: 0;
-    
+
     &::after {
         content: none;
         }
@@ -131,24 +131,24 @@ h1 span {
         height: 7rem;
         }
     }
-        
+
 .card .highlight-tag {
     margin: 0.5rem;
     font-size: $small2-size;
-    
+
     @include media-breakpoint-up(sm) {
         font-size: $small3-size;
         }
     }
 
 .degree-explorer {
-    
+
     label {
         font-family: $font-family-sans-serif;
         font-size: $small2-size;
         margin-left: 0.125rem;
         margin-bottom: 0;
-        
+
         @include media-breakpoint-up(sm) {
             font-size: $small3-size;
             }
@@ -159,36 +159,36 @@ h1 span {
     border-bottom: transparent;
     padding: 0.25rem 1.5rem; /* wider x + y padding so you can grab for scrolling */
     background: $white;
-    
+
     .controls {
         text-align: left;
         }
-        
+
     fieldset {
         padding: 0;
         margin-right: 0;
         border: 1px solid $color-ps-coaly-gray-light15;
         margin-bottom: 1rem;
         width: 100%;
-        
+
         &:nth-of-type(2) {
             margin-bottom: 3rem;
             }
-        
+
         }
-    
+
     legend.h5 {
         background-color: $color-ps-slate-gray;
         color: $white;
         padding: 0.5rem;
         }
-    
+
     ul {
         list-style-type: none;
         text-align: left;
         padding-left: 0;
         margin-bottom: 0;
-        
+
         li {
             display: flex;
             align-items: baseline;
@@ -199,9 +199,9 @@ h1 span {
     }
 
 @include media-breakpoint-up(md) {
-    
+
     .degree-explorer-filters {
-        
+
         padding: 0.25rem;
 /*        position: sticky;
         top: 3rem; */
@@ -210,9 +210,9 @@ h1 span {
 
 .card-deck .mix.card.card-visual .card-body {
     padding: 0 0.5rem;
-    
+
     .checkbox {
-        align-items: baseline; 
+        align-items: baseline;
         }
     }
 
@@ -225,9 +225,9 @@ fieldset{
     display: inline-block;
     vertical-align: top;
     border: 0;
-    
-    
-    }    
+
+
+    }
 
 .container .mix{
     display: none;
@@ -278,32 +278,32 @@ button.filter {
 
 .comparison-container {
     -webkit-overflow-scrolling: touch;
-    
+
     p.h5 {
         margin-top: 0.5rem;
         padding-top: 0.5rem;
-        margin-bottom: 0;    
+        margin-bottom: 0;
         font-weight: $font-weight-bold;
         }
-    
+
     ul {
         font-size: $small2-size;
         padding-left: 1rem;
         margin-bottom: 0;
-        
+
         @include media-breakpoint-up(sm) {
             font-size: $small3-size;
             }
-        
+
         li {
             margin: 0.25rem 0;
             line-height: $line-height-md;
             }
     }
-    
+
 }
 
-/* standard table with scroll 
+/* standard table with scroll
     SIMPLE VERSION */
 
 .rtable {
@@ -315,7 +315,7 @@ button.filter {
         width: 92vw;
         }
     }
-    
+
 .rtable {
     margin-top: 0;
     margin-bottom: 3rem;
@@ -323,18 +323,18 @@ button.filter {
     vertical-align: top;
 
     overflow-x: auto;
-      
+
       // optional - looks better for small cell values
      /*  white-space: nowrap; */
-    
+
     border-collapse: collapse;
     border-spacing: 0;
     -webkit-overflow-scrolling: touch;
-    
+
     .card.card-visual {
         box-shadow: none;
         margin: 0;
-        
+
         &:hover {
             box-shadow: none;
             }
@@ -348,7 +348,7 @@ button.filter {
     font-size: $small2-size;
     font-family: $font-family-sans-serif;
     line-height: $line-height-md;
-    
+
     @include media-breakpoint-up(sm) {
         font-size: $small3-size;
         }
@@ -361,17 +361,17 @@ button.filter {
 .rtable th:first-of-type {
     font-weight: $font-weight-bold;
     }
-    
+
 .rtable thead th {
     text-align: left;
     padding: 0;
     }
 
 .comparison-container {
-     position: fixed; 
-     overflow: auto; 
-     bottom: 0; 
-     height: 95%; 
+     position: fixed;
+     overflow: auto;
+     bottom: 0;
+     height: 95%;
      background: $white;
      z-index: 9999;
     }
@@ -385,90 +385,90 @@ button.filter {
     }
 
 .rtable.rtable-mobile-labels {
-    
+
     .explorer-label {
         font-weight: $font-weight-bolder;
         font-size: $font-size-base;
         display: block;
         }
-        
+
     td {
         vertical-align: top;
         }
-    
+
 
     tbody tr:first-of-type td p {
             font-size: $font-size-base;
             margin-bottom: 0.5rem;
             font-weight: $font-weight-bold;
-            
+
             @include media-breakpoint-up(md) {
                 font-size: $small1-size;
                 }
-    
+
         }
-        
+
     td {
         padding: 0.75rem;
-        
+
         @include media-breakpoint-up(md) {
             padding: 0;
             }
-        
-        
+
+
         p {
             margin-top: 0.5rem;
             font-size: $small2-size;
             line-height: $line-height-md;
-            
+
             @include media-breakpoint-up(sm) {
                 font-size: $small3-size;
                 }
-        
+
             strong {
                 color: $color-ps-creek-accessible;
                 display: block;
                 }
-            
+
         }
-        
+
         div {
             padding: 0 1rem 1rem 1rem;
-            
+
             @include media-breakpoint-up(md) {
                 padding: 0.75rem 1rem 1rem 1rem;
                 }
             }
         }
-    
+
     tr:first-of-type td div {
         padding: 0.75rem 0;
-        
+
         @include media-breakpoint-up(md) {
                 padding: 0.75rem 1rem;
                 }
-                
+
         }
-    
+
     td.major-details {
-    
+
         padding: 0.75rem;
         text-align: center;
         vertical-align: middle;
         }
-    
+
     tr:nth-of-type(odd) td.major-details {
         margin-top: 0.75rem;
         border: transparent;
-    
+
         @include media-breakpoint-up(md) {
-            
+
             .btn {
                 margin-top: 0.5rem;
                 }
             }
         }
-        
+
         div.number-scholarship {
             color: $color-ps-creek-accessible;
             font-weight: $font-weight-bold;
@@ -477,7 +477,7 @@ button.filter {
             padding-right: 1rem;
             text-align: center;
             line-height: 1.0;
-            
+
             span {
                 font-size: $h3-font-size;
                 font-weight: $font-weight-bolder;
@@ -485,7 +485,7 @@ button.filter {
                 line-height: 1.0;
                 }
             }
-        
+
         div.number-dollars {
             color: $color-ps-creek-accessible;
             font-weight: $font-weight-bold;
@@ -494,51 +494,51 @@ button.filter {
             padding-right: 1rem;
             text-align: center;
             line-height: 1.0;
-            
+
             span {
                 font-size: $h3-font-size;
                 font-weight: $font-weight-bolder;
                 display: block;
                 line-height: 1.0;
-        
+
                 }
-            
+
             sup {
                 position: relative;
                 top: -.15rem;
             }
-            
+
             }
-        
+
     }
 
 .rtable.rtable-mobile-labels {
-    
+
     div.explorer-label {
         padding: 0.75rem 0;
-        
+
         @include media-breakpoint-up(md) {
                 padding: 0.75rem;
                 }
-        
+
         span {
-            
+
             display: block;
             }
-        }    
-    }
-    
-@include media-breakpoint-up(md) {
-    
-    .rtable.rtable-mobile-labels {
-    
-    tr {
-        
-        td div.explorer-label { 
-            background-color: $color-ps-creek-light35;    
-            }    
         }
-    
+    }
+
+@include media-breakpoint-up(md) {
+
+    .rtable.rtable-mobile-labels {
+
+    tr {
+
+        td div.explorer-label {
+            background-color: $color-ps-creek-light35;
+            }
+        }
+
     thead {
         position: fixed;
         width: 92vw;
@@ -546,65 +546,65 @@ button.filter {
         background: $white;
         padding-top: 1rem;
         }
-        
+
         tbody {
             display: block;
             padding-top: 9rem;
             }
-    
+
         td, th, th:first-of-type {
             min-width: 25%;
             width: 25%;
             }
-        
+
         tr td .explorer-label span {
             visibility: hidden;
             }
-        
+
         tr td:first-of-type .explorer-label span {
             visibility: visible;
             }
         }
-        
-    
+
+
     .rtable.rtable-mobile-labels.table-gradient {
-        
+
         div.explorer-label {
             padding: 0.75rem 0.75rem 0 0.75rem;
             }
-        
+
         td {
             border: 1px solid $color-ps-coaly-gray-light20;
             }
-            
+
         tr {
-        
+
             &:last-of-type td {
                 padding: 1.5rem;
                 }
-        
+
             td {
-                background: linear-gradient(to bottom, rgba($color-ps-coaly-gray-light25,0.5) 0%,rgba($color-ps-coaly-gray-light25,0) 100%); 
+                background: linear-gradient(to bottom, rgba($color-ps-coaly-gray-light25,0.5) 0%,rgba($color-ps-coaly-gray-light25,0) 100%);
                 background-size: auto 4rem;
                 background-repeat: no-repeat;
                 }
-        
-            td div.explorer-label { 
+
+            td div.explorer-label {
                 background-color: transparent;
-                }    
-                
+                }
+
             }
         }
-        
-        
-        
+
+
+
     }
 
 .degree-explorer {
-    position: relative;    
+    position: relative;
     min-height: 90vh;
     }
-    
+
 #degree-explorer-filters {
     position: absolute;
     top: 0;
@@ -623,13 +623,13 @@ button.filter {
     background: $white;
     margin-bottom: 0.25rem;
     margin-bottom: 0;
-    
+
     .view-filters,
     .compare-selections {
         margin-bottom: 0;
         margin: 0 0.5rem;
         }
-    
+
     span {
         font-family: $font-family-sans-serif;
         font-size: $font-size-sm;
@@ -647,8 +647,8 @@ button.filter {
     margin-left: 0;
     margin-right: 0;
     }
-    
-    /* -------------------------------- 
+
+    /* --------------------------------
 
 Slide In Panel - by CodyHouse.co
 
@@ -669,7 +669,7 @@ Slide In Panel - by CodyHouse.co
     }
 
 @media only screen and (min-width: 1170px) {
-    
+
     .cd-main-content h1 {
         font-size: 3.2rem;
         }
@@ -724,7 +724,7 @@ Slide In Panel - by CodyHouse.co
 /* ABOVE SM - PANEL IN VIEW */
 
 @include media-breakpoint-up(lg) {
-    
+
     .cd-panel {
         position: relative;
         top: 0;
@@ -735,13 +735,13 @@ Slide In Panel - by CodyHouse.co
         float: left;
         z-index: 99;
         }
-      
+
     .cd-panel--from-left .cd-panel__container {
         left: 0;
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         }
-    
+
     .cd-panel__container {
         position: relative;
         width: auto;
@@ -750,7 +750,7 @@ Slide In Panel - by CodyHouse.co
         background: transparent;
         z-index: 1;
         }
-    
+
     .cd-panel__content {
         width: auto;
         height: 100%;
@@ -794,7 +794,7 @@ Slide In Panel - by CodyHouse.co
     width: 100%;
     z-index: 9999;
     padding: 1rem;
-    
+
     a {
         font-family: $font-family-sans-serif;
         font-size: $small1-size;
@@ -803,7 +803,7 @@ Slide In Panel - by CodyHouse.co
 
 .panel-close-view,
 .comparison-container {
-    
+
     .fas {
         pointer-events: none; /* click on icon doesn't work - so pass click through */
         }
@@ -815,7 +815,7 @@ Slide In Panel - by CodyHouse.co
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
     }
-    
+
 main {
     overflow: visible;
     }
@@ -825,18 +825,18 @@ main {
     margin-top: 1rem;
     border-bottom: $border-base;
     padding-bottom: 0.5rem;
-    
+
     .active-filters {
         font-family: $font-family-sans-serif;
         font-size: $small3-size;
         font-weight: $font-weight-bolder;
-        
+
     @include media-breakpoint-up(lg) {
         font-size: $small4-size;
-        }    
-        
         }
-    
+
+        }
+
     span {
         margin-right: 0.25rem;
         padding-top: 0.25rem;
@@ -846,26 +846,26 @@ main {
         display: inline-block;
         line-height: 1.2;
         }
-    
+
     .btn {
         font-size: $small3-size;
         border-radius: 0.75rem;
         padding: 0.25rem 0.75rem;
         margin-bottom: 0.25rem;
-        
+
         @include media-breakpoint-up(lg) {
         font-size: $small4-size;
-        }    
-        
+        }
+
         &.btn-link {
             border-radius: 0;
             font-style: italic;
             }
-        
+
         &::after {
             content: none;
             }
-        
+
         .fas {
             margin-left: 0.25rem;
             }
@@ -873,18 +873,18 @@ main {
     }
 
 .degree-explorer {
-    
+
     .card-deck .mix.card.card-visual .card-body {
         padding: 0;
         }
-    
+
     .checkbox{
         display: block;
         position: relative;
         cursor: pointer;
         margin: 0 0.5rem 0.5rem 0.5rem;
         }
-    
+
     .card-body .checkbox {
         margin: 0;
         padding: 0.5rem;
@@ -924,7 +924,7 @@ main {
         font-size: $small3-size;
         }
     }
-    
+
 .checkbox label:before,
 .checkbox label:after{
     content: '';
@@ -997,7 +997,7 @@ input[type=checkbox]:checked ~div {
     font-weight: $font-weight-bold;
     font-style: italic;
     }
-    
+
 .checkbox input:checked ~ label:after{
     opacity: 1;
     }
@@ -1019,19 +1019,19 @@ input[type=checkbox]:checked ~div {
     padding: 1rem;
     text-align: left;
     margin-top: 0;
-    
+
     h1 {
         color: $white;
         margin-bottom: 0;
         }
-    
+
     p.lead {
         color: $white;
         margin-top: 0.75rem;
         margin-bottom: 0;
         font-size: $font-size-sm;
         }
-    
+
     span {
         display: inline-block;
         color: $color-ps-creek-light25;
@@ -1042,11 +1042,10 @@ input[type=checkbox]:checked ~div {
 
     @include media-breakpoint-up(md) {
         .degree-explorer-header-new {
-            padding: 2rem 1rem 2rem 1rem;     
+            padding: 2rem 1rem 2rem 1rem;
             }
-        
+
         p.lead {
             font-size: $font-size-base;
         }
     }
-    

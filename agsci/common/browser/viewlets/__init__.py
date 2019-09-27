@@ -214,13 +214,13 @@ class NavigationViewlet(ViewletBase):
     @property
     def department_id(self):
         _ = self.registry.get('agsci.common.department_id', None)
-        
+
         if _ in [
-            'abe', 'aese', 'animalscience', 'ecosystems', 'ento', 
+            'abe', 'aese', 'animalscience', 'ecosystems', 'ento',
             'foodscience', 'plantpath', 'plantscience', 'vbs'
         ]:
             return safe_unicode(_).encode('utf-8')
-        
+
     @property
     def is_department(self):
         return not not self.department_id
@@ -234,7 +234,7 @@ class AudienceNavigationViewlet(NavigationViewlet):
     nav_id = 'audience'
 
 class DepartmentNavigationViewlet(NavigationViewlet):
-    
+
     @property
     def xml_file(self):
         return '++resource++agsci.common/configuration/navigation-%s.xml' % self.department_id
@@ -242,7 +242,7 @@ class DepartmentNavigationViewlet(NavigationViewlet):
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
     nav_id = 'primary'
-    
+
     @property
     def nav(self):
         nav = super(PrimaryDepartmentNavigationViewlet, self).nav

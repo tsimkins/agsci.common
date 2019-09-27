@@ -4,7 +4,7 @@
     <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar navbar-dropdown">
 
         <div class="row mx-0 align-items-center">
-        
+
             <div class="col-9 offset-3 text-right">
 
                 <ul class="audience-dropdowns dropdown-selectors justify-content-end">
@@ -34,7 +34,7 @@
                                    <div class="container px-0">
 
                                     <div class="row justify-content-center">
-                    
+
                                         <div class="col-12">
                                             <ul class="nav flex-column">
                                                 <li tal:repeat="link l1/items/item|nothing"

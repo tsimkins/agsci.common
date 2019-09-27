@@ -14,24 +14,24 @@
     <div tal:attributes="style string:background-image: url(${view/img_src|nothing});"
             class="jumbotron-img bg-center-center fix-img-right"></div>
 
-	<div class="opacity-dimmer opacity-dimmer-top-right">
-		&nbsp;
-	</div>
+    <div class="opacity-dimmer opacity-dimmer-top-right">
+        &nbsp;
+    </div>
 
-	<div class="opacity-dimmer opacity-dimmer-bottom-right">
-		&nbsp;
-	</div>
+    <div class="opacity-dimmer opacity-dimmer-bottom-right">
+        &nbsp;
+    </div>
 
-	<p class="agsci-journeys d-block">
-		<span tal:replace="view/data/title|nothing" />
-	</p>
-	
-	<div class="agsci-journeys-overlay agsci-journeys-overlay2">
-		<p class="agsci-journeys-intro-quote">
-			&ldquo;<span tal:replace="view/data/description|nothing" />&rdquo;
-		</p>
+    <p class="agsci-journeys d-block">
+        <span tal:replace="view/data/title|nothing" />
+    </p>
 
-	</div>
+    <div class="agsci-journeys-overlay agsci-journeys-overlay2">
+        <p class="agsci-journeys-intro-quote">
+            &ldquo;<span tal:replace="view/data/description|nothing" />&rdquo;
+        </p>
+
+    </div>
 </section>
   </body>
 </html>

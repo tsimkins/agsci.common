@@ -444,7 +444,7 @@ table td.footer .email-footer h2 {
         tal:define="hide_header_graphic context/hide_header_graphic|nothing">
 
 
-    	<div class="graphic-header-agsci">
+        <div class="graphic-header-agsci">
             <a href="http://agsci.psu.edu">
             <img tal:attributes="src string:${portal_url}/++resource++agsci.common/assets/images/college-newsletter-header.png"
                                  alt="Penn State College of Agricultural Sciences" width="600"

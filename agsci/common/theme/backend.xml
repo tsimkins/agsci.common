@@ -92,7 +92,7 @@
                 </div>
                 <!--/row-->
             </replace>
-            
+
             <!-- Alert message -->
             <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
 

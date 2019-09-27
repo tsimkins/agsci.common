@@ -15,7 +15,7 @@
             <link>https://www.psu.edu/hotlines</link>
         </item>
     </nav>
-    
+
     <nav id="contact">
         <item>
             <title>Directory</title>
@@ -26,5 +26,5 @@
             <link>https://agsci.psu.edu/contact</link>
         </item>
     </nav>
-    
+
 </config>

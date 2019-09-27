@@ -9,7 +9,7 @@
 
   <body>
 
-    <metal:main fill-slot="main" 
+    <metal:main fill-slot="main"
                 tal:define="view context/@@plone_context_state;
                             registration_view python: context.restrictedTraverse('@@event_registration_view');
                             getEventByUID nocall: registration_view/getEventByUID;
@@ -41,15 +41,15 @@
                 <dl>
                     <tal:block repeat="field python:here.displayInputs(request)">
                         <dt tal:content="field/label" />
-                        <dd tal:condition="python: field['label'] not in ['Confirmation Message']"> 
-                            <a tal:attributes="href field/value" 
-                               tal:omit-tag="python: not field.get('value', '').startswith('http')"><span 
-                                           tal:replace="structure field/value" /></a> 
+                        <dd tal:condition="python: field['label'] not in ['Confirmation Message']">
+                            <a tal:attributes="href field/value"
+                               tal:omit-tag="python: not field.get('value', '').startswith('http')"><span
+                                           tal:replace="structure field/value" /></a>
                         </dd>
 
-                        <dd tal:condition="python: field['label'] == 'Confirmation Message'" 
+                        <dd tal:condition="python: field['label'] == 'Confirmation Message'"
                             tal:define="msg python: unescapeHTML(field.get('value', ''))"
-                            tal:content="structure msg" /> 
+                            tal:content="structure msg" />
 
                     </tal:block>
                 </dl>
@@ -58,7 +58,7 @@
             <p tal:replace="structure here/getThanksEpilogue | nothing" />
 
         </div>
-        
+
         <p tal:condition="item|nothing">Return to the <a tal:attributes="href item/absolute_url" tal:content="item/Title" /> event.</p>
 
         <div tal:condition="not: exists:request/form/fieldset" tal:replace="structure here/noSubmitMessage | nothing">
