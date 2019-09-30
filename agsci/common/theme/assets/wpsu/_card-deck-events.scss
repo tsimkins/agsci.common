@@ -20,14 +20,17 @@ CARD DECK - EVENTS
         background-color: $color-ps-coaly-gray-light35;
         }
 
-    .card-title p {
-        font-weight: $font-weight-bold;
-        font-size: $font-size-base;
+    .card-title {
+        p,
+        h3.p {
+            font-weight: $font-weight-bold;
+            font-size: $font-size-base;
 
-        @include media-breakpoint-up(lg) {
-            font-size: $small1-size;
+            @include media-breakpoint-up(lg) {
+                font-size: $small1-size;
+                }
             }
-        }
+    }
 
     .card-text p {
         font-family: $font-family-sans-serif;

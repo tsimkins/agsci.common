@@ -56,22 +56,25 @@
         }
     }
 
-.card-title p {
-    position: relative;
-    margin-bottom: 0.75rem;
-    font-weight: $font-weight-base;
-    font-size: $font-size-base;
-    font-family: $font-family-sans-serif;
-    line-height: $line-height-sm;
+.card-title {
+    p,
+    h3.p {
+        position: relative;
+        margin-bottom: 0.75rem;
+        font-weight: $font-weight-base;
+        font-size: $font-size-base;
+        font-family: $font-family-sans-serif;
+        line-height: $line-height-sm;
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -0.375rem;
-        left: 0;
-        width: 4rem;
-        height: 1px;
-        border-bottom: 2px solid $border-color;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.375rem;
+            left: 0;
+            width: 4rem;
+            height: 1px;
+            border-bottom: 2px solid $border-color;
+            }
         }
     }
 

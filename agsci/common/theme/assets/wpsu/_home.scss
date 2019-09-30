@@ -296,7 +296,9 @@ CTAs
             font-family: $font-family-base;
             }
 
-        p {
+        p,
+        h2.h4,
+        h3.h4 {
             margin-bottom: 0.25rem;
             font-size: $font-size-lg;
             font-family: $font-family-base;
@@ -364,7 +366,8 @@ NEWS & EVENTS
             }
         }
 
-    p.h3 {
+    p.h3,
+    h3.h3 {
         display: block;
         margin-bottom: 0.25rem;
         font-size: $font-size-sm;

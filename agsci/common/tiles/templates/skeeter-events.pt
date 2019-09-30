@@ -25,7 +25,7 @@
             <div class="col-12 col-md-6 order-12"
                  tal:define="start i/start|nothing;
                              end i/end|nothing">
-                <p class="h2"
+                <h3 class="h2"
                    tal:content="i/Title|nothing" />
 
                 <p>
@@ -88,7 +88,7 @@
 
                     <div class="card-body">
                         <div class="card-title">
-                            <p tal:content="i/Title|nothing" />
+                            <h3 class="p" tal:content="i/Title|nothing" />
                         </div>
 
                         <div class="card-text">

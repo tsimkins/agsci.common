@@ -75,7 +75,6 @@
         for="*"
     />
 
-
     <plone:tile
         name="agsci.common.tiles.large_cta"
         title="Large CTA"
@@ -88,7 +87,6 @@
         layer=".interfaces.IAgsciTilesLayer"
         for="*"
     />
-
 
     <plone:tile
         name="agsci.common.tiles.kermit"

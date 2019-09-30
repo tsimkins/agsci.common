@@ -24,7 +24,7 @@
 
             <div class="col-12 col-md-6 profile-copy order-12">
 
-                <p class="h2"
+                <h3 class="h2"
                    tal:content="i/Title|nothing" />
 
                 <p tal:content="i/Description|nothing" />
@@ -52,8 +52,8 @@
                         <div class="container">
                             <div class="row mt-3">
                                 <div class="col-12 col-md-${view/page_items_cols} profile-copy order-12 mt-3">
-                                    <p class="h3" tal:content="i/Title|nothing" />
-                                    <p></p>
+                                    <h3 class="h3" tal:content="i/Title|nothing" />
+
                                     <p><a class="btn btn-creek"
                                           tal:attributes="href i/getURL"><span>Read More</span></a></p>
                                 </div>

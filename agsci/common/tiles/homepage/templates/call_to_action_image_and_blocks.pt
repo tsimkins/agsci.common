@@ -24,7 +24,7 @@
        tal:attributes="href i/url|nothing;
                        class string:card card-cta bg-dark-${color} px-0 reveal text-center my-3">
         <div class="d-flex flex-column card-body text-white align-items-center justify-content-center">
-            <p class="h4 mt-0"
+            <h2 class="h4 mt-0"
                tal:content="i/title|nothing" />
             <div class="btn"
                  tal:content="i/label|nothing" />

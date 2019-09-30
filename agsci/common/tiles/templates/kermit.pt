@@ -40,7 +40,7 @@
                                            class string:card card-cta bg-dark-${button/color|nothing} px-0 reveal text-center">
 
                             <div class="card-body text-white">
-                                <p class="h4 mt-0" tal:content="button/title|nothing" />
+                                <h3 class="h4 mt-0" tal:content="button/title|nothing" />
                                 <div class="btn" tal:content="button/label|nothing" />
                             </div>
 

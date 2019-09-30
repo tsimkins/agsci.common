@@ -29,10 +29,9 @@
 
                                 <div class="col-8 col-lg-9 news-story-copy order-12 mt-0">
                                     <p class="section-crumb" tal:content="python: view.date_format(i.effective)" />
-                                    <p class="h3 mt-0"
+                                    <h3 class="h3 mt-0"
                                         tal:condition="title"
                                         tal:content="title" />
-
                                     <p class="d-none d-md-block"
                                         tal:condition="description"
                                         tal:content="description" />

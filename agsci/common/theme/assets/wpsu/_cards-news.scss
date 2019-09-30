@@ -46,13 +46,15 @@ CARDS
         padding-bottom: 1rem;
         }
 
-    p.h3 {
+    p.h3,
+    h3.h3 {
         font-size: $font-size-sm;
         }
 
     &:hover,
     &:focus {
-        p.h3 {
+        p.h3,
+        h3.h3 {
             color: $color-ps-creek-accessible;
             text-decoration: underline $color-ps-creek;
             }
@@ -69,7 +71,8 @@ CARDS
     .card.card-news {
         flex-direction: column;
 
-        p.h3 {
+        p.h3,
+        h3.h3 {
             font-size: $font-size-base;
             }
         }
@@ -77,10 +80,13 @@ CARDS
 
 @include media-breakpoint-up(lg) {
 
-    .card.card-news p.h3 {
+    .card.card-news {
+        p.h3,
+        h3.h3 {
             font-size: $font-size-sm;
             }
         }
+    }
 
 
 /* ----------------------------------------------------------
