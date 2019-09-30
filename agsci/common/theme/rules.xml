@@ -145,6 +145,9 @@
             <drop css:content="head link[rel='apple-touch-icon']" />
             <drop css:content="head link[rel='shortcut icon']" />
 
+            <!-- No generator tag -->
+            <drop css:content="head meta[name='generator']" />
+
             <!-- CSS -->
             <after css:theme-children="head" css:content="head link" />
             <after css:theme-children="head" css:content="head style" />
