@@ -29,7 +29,7 @@
 
                         <div class="more-block-content agsci-box-shadow html">
 
-                            <p class="more-header"
+                            <h3 class="more-header"
                                tal:condition="_title"
                                tal:content="_title">
 

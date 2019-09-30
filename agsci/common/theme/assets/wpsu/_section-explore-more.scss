@@ -26,7 +26,8 @@
         }
     }
 
-p.more-header {
+p.more-header,
+h3.more-header {
     margin-bottom: 0;
     font-weight: $font-weight-bolder;
     font-size: $h3-font-size;
@@ -37,6 +38,11 @@ p.more-header {
         margin-top: 0.5rem; /* directory img div in explore more block */
         }
     }
+
+h3.more-header {
+    margin-top: 0;
+    letter-spacing: normal;
+}
 
  .more-block-content {
     position: relative;
