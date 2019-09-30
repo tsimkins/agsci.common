@@ -10534,7 +10534,8 @@ CARD DECK GENERAL CONFIG
   font-weight: 400;
   font-size: 1rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.2; }
+  line-height: 1.2;
+  letter-spacing: normal; }
   .card-title p::after,
   .card-title h3.p::after {
     content: "";

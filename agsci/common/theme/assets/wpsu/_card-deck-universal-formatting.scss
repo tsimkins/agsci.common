@@ -65,6 +65,7 @@
         font-size: $font-size-base;
         font-family: $font-family-sans-serif;
         line-height: $line-height-sm;
+        letter-spacing: normal;
 
         &::after {
             content: "";

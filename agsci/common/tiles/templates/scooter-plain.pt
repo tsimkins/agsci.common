@@ -27,7 +27,7 @@
                    class="card card-text-only">
                     <div class="card-body">
                         <div class="card-title">
-                            <p tal:content="i/Title|nothing">
+                            <h3 class="p" tal:content="i/Title|nothing">
                         </div>
                         <div class="card-text">
                             <p tal:content="i/Description|nothing">
