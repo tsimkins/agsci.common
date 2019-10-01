@@ -65,10 +65,11 @@ class ImportNewsView(ImportContentView):
         'department-of-veterinary-and-biomedical-sciences' : 'department-veterinary-and-biomedical-sciences',
         'penn-state-master-gardeners' : 'master-gardeners',
         'penn-state-extension' : 'extension',
+        'student-stories' : 'students',
     }
 
     conditional_transforms = {
-        ('student-stories',) : {
+        ('student-stories', 'students') : {
             'agribusiness-management' : 'majors-agribusiness-management',
             'agricultural-and-extension-education' : 'majors-agricultural-and-extension-education',
             'agricultural-science' : 'majors-agricultural-science',
