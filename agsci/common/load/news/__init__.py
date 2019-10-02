@@ -204,14 +204,6 @@ class ImportNewsView(ImportContentView):
 
         return localize(DateTime(dateStamp))
 
-    @property
-    def portal_catalog(self):
-        return getToolByName(self.context, 'portal_catalog')
-
-    @property
-    def wftool(self):
-        return getToolByName(self.context, 'portal_workflow')
-
     def import_content(self):
 
         rv = ["Syncing RSS feeds from %s" % self.url]

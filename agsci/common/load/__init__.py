@@ -644,14 +644,24 @@ class ContentImporter(object):
 
 class ImportContentView(BrowserView):
 
+    roles = ['Contributor', 'Reader', 'Editor', 'Member']
+
     def __call__(self):
 
         alsoProvides(self.request, IDisableCSRFProtection)
 
         try:
-            # Running importContent as Contributor so we can do this anonymously.
-            return execute_under_special_role(['Contributor', 'Reader', 'Editor', 'Member'],
-                                                self.import_content)
+            if self.roles:
+
+                # Running importContent as Contributor so we can do this anonymously.
+                return execute_under_special_role(
+                    self.roles,
+                    self.import_content
+                )
+
+            else:
+                self.import_content()
+
         except Exception as e:
             return '%s: %s' % (type(e).__name__, e.message)
 
@@ -665,6 +675,10 @@ class ImportContentView(BrowserView):
     @property
     def portal_catalog(self):
         return getToolByName(self.site, 'portal_catalog')
+
+    @property
+    def wftool(self):
+        return getToolByName(self.context, 'portal_workflow')
 
     @property
     def site(self):
