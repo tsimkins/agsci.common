@@ -421,11 +421,10 @@ class BodyTextCheck(ContentCheck):
     def getHeadings(self):
         return self.soup.findAll(self.all_heading_tags)
 
-    def uid_to_brain(self, uid):
-        _ = self.portal_catalog.searchResults({'UID' : uid})
-
-        if _:
-            return _[0]
+    @property
+    @context_memoize
+    def uid_to_brain(self):
+        return dict([(x.UID, x) for x in self.portal_catalog.searchResults()])
 
 
 # Checks for appropriate heading level hierarchy, e.g. h2 -> h3 -> h4
@@ -1043,7 +1042,7 @@ class InternalLinkByUID(BodyLinkCheck):
                         linked_uid = m.group(1)
 
                         # Grab the catalog brain by the UID
-                        linked_brain = self.uid_to_brain(linked_uid)
+                        linked_brain = self.uid_to_brain.get(linked_uid, None)
 
                         # If we found a brain, get the linked object
                         if linked_brain:
