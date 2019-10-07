@@ -9,7 +9,8 @@
 <section
     tal:condition="view/show_tile|nothing"
     tal:attributes="class view/section_class|nothing;
-                    data-tile-type view/tile_type|nothing">
+                    data-tile-type view/tile_type|nothing"
+    tal:define="light_version view/light_version|nothing">
 
     <div class="container-text content-primary">
         <h2 class="mt-0"
@@ -28,6 +29,7 @@
 
                         <div class="col-8 col-lg-9 news-story-copy order-12 mt-0">
                             <p class="section-crumb"
+                                tal:condition="not:light_version"
                                 tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
                             <h3 class="h3 mt-0"
                                 tal:content="i/Title|nothing" />
@@ -37,7 +39,7 @@
                                tal:condition="description"
                                tal:content="description" />
 
-                            <span>Read More</span>
+                            <span tal:condition="not:light_version">Read More</span>
 
                         </div>
 
@@ -61,7 +63,8 @@
                 </div>
             </a>
         </tal:items>
-        <div class="container">
+        <div class="container"
+            tal:condition="not:light_version">
             <div class="row">
                 <div class="col text-right">
                     <a class="btn btn-sm btn-link mb-0"

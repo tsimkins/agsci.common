@@ -516,13 +516,6 @@ class ISkeeterTile(IBorderTile):
         required=False,
     )
 
-    show_description = schema.Bool(
-        title=_(u"Show Item Description?"),
-        description=_(u""),
-        required=False,
-        default=False,
-    )
-
     featured_id = schema.TextLine(
         title=_(u"Featured Item Id"),
         description=_(u"Short name of featured item"),
@@ -546,6 +539,13 @@ class ISkeeterTile(IBorderTile):
         title=_(u"Filter By Public Tag(s)"),
         value_type=schema.Choice(vocabulary="agsci.common.tiles.public_tags"),
         required=False,
+    )
+
+    light_version = schema.Bool(
+        title=_(u"Light Version? (for News Condensed)"),
+        description=_(u""),
+        required=False,
+        default=False,
     )
 
 class IAnimalTile(Interface):

@@ -401,6 +401,10 @@ class SkeeterTile(ConditionalTemplateTile):
         return 'container-fluid'
 
     @property
+    def light_version(self):
+        return not not self.get_valid_value('light_version')
+
+    @property
     def filter_tags(self):
         _ = self.get_valid_value('filter_tags')
 
@@ -426,7 +430,7 @@ class SkeeterTile(ConditionalTemplateTile):
     @property
     def max_items(self):
 
-        if self.no_max:
+        if self.no_max or self.light_version:
             return 99999
 
         return {
