@@ -1,16 +1,10 @@
-from Acquisition import aq_chain
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.interfaces import IPloneSiteRoot
-from zope.component import getUtility, getUtilitiesFor
 from zope.component.hooks import getSite
-from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implements
 
 from agsci.common.interfaces import ITagsAdapter
-
-from ..behaviors.tags import ITagsRoot
 
 class BaseVocabulary(object):
 

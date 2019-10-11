@@ -1,13 +1,10 @@
 from eea.facetednavigation.criteria.handler import Criteria as _Criteria
 from eea.facetednavigation.criteria.interfaces import ICriteria
-from zope.interface import implementer
 from eea.facetednavigation.widgets.storage import Criterion
-from eea.facetednavigation.config import ANNO_CRITERIA
-from zope.annotation.interfaces import IAnnotations
 from persistent.list import PersistentList
-from eea.facetednavigation.settings.interfaces import IDontInheritConfiguration
+from zope.annotation.interfaces import IAnnotations
 from zope.globalrequest import getRequest
-from Products.CMFCore.utils import getToolByName
+from zope.interface import implementer
 
 from ..content.degrees import IDegree
 from ..indexer import degree_index_field

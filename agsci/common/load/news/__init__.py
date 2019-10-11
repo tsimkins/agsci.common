@@ -1,17 +1,12 @@
-from AccessControl.SecurityManagement import newSecurityManager
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
-from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from calendar import timegm
 from datetime import datetime
 from plone.app.textfield.value import RichTextValue
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
-from urllib2 import HTTPError
-from zope.component import getUtility
-from zope.component.hooks import getSite
 
 try:
     from urllib.parse import urljoin
@@ -22,7 +17,6 @@ import feedparser
 import re
 import requests
 import time
-import urllib2
 
 from agsci.common.constants import DEFAULT_TIMEZONE
 from agsci.common.utilities import localize, ploneify
@@ -302,7 +296,7 @@ class ImportNewsView(ImportContentView):
 
         # Remove related nodes
         for _ in soup.findAll("div", {'class' : 'related-nodes'}):
-            __ = _.extract()
+            undef = _.extract()
 
         for div in soup.findAll("div", attrs={'class' : re.compile('image')}):
 

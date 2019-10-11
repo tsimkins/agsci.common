@@ -1,15 +1,11 @@
-from Products.CMFCore.utils import getToolByName
-from Products.CMFCore.WorkflowCore import WorkflowException
-from Products.statusmessages.interfaces import IStatusMessage
-from Products.Five import BrowserView
 from plone.batching import Batch
 from plone.memoize.view import memoize
 from zope.component import subscribers
 
-from agsci.common.content.check import IContentCheck, getValidationErrors
-from . import FolderView
-
 import urllib
+
+from agsci.common.content.check import IContentCheck
+from . import FolderView
 
 class ContentTypeChecks(object):
 

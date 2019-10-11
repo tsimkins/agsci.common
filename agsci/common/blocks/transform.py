@@ -81,7 +81,7 @@ class BlockTransformer(object):
                         else:
                             _el.insert_before(*__)
 
-                    _ = _el.extract()
+                    undef = _el.extract()
 
                     found = True
 

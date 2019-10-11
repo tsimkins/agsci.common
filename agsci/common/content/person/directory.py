@@ -1,9 +1,7 @@
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
-from plone import api
-from Products.membrane.interfaces import IGroup
-from Products.membrane.interfaces import IMembraneUserAuth
-from dexterity.membrane.behavior.group import IMembraneGroup, MembraneGroup
 from Products.CMFCore.utils import getToolByName
+from Products.membrane.interfaces import IGroup
+from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from dexterity.membrane.behavior.group import IMembraneGroup, MembraneGroup
 from plone.autoform import directives as form
 from plone.dexterity.content import Container
 from plone.supermodel import model
@@ -73,9 +71,9 @@ class PersonListing(Container):
     def order(self):
         order = {}
 
-        for _ in self.people_config:
-            _username = _.get('username', None)
-            _order = _.get('order', None)
+        for _config in self.people_config:
+            _username = _config.get('username', None)
+            _order = _config.get('order', None)
 
             if _username and _order:
 

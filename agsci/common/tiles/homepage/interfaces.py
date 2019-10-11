@@ -1,16 +1,15 @@
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from plone.app.contenttypes.interfaces import ICollection
 from plone.app.textfield import RichText
-from plone.autoform import directives as form
 from plone.app.vocabularies.catalog import CatalogSource
+from plone.autoform import directives as form
 from plone.namedfile.field import NamedBlobImage
 from z3c.relationfield.schema import RelationChoice
 from zope import schema
 from zope.interface import Interface
-from plone.app.contenttypes.interfaces import ICollection
 
 from agsci.common import AgsciMessageFactory as _
 
-from .. import IBorderTile
 from ..interfaces import IDropdownAccordionRowSchema, IButtonBlockTileRowSchema
 
 class IJumbotronTile(Interface):

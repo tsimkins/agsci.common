@@ -1,7 +1,6 @@
 from Acquisition import aq_base
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer import indexer
-from plone.namedfile.file import NamedBlobFile
 from zope.component import provideAdapter
 
 from .content.behaviors import IAlwaysExcludeFromNavigation, ISEO

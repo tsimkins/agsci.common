@@ -1,6 +1,5 @@
 from Acquisition import aq_base
 from plone.app.querystring.querybuilder import QueryBuilder as _QueryBuilder
-from plone.app.contenttypes.behaviors.collection import ICollection
 from plone.batching import Batch
 
 import re

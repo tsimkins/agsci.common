@@ -4,7 +4,7 @@ import logging
 from plone.registry.interfaces import IRegistry
 from plone.registry.record import Record
 from plone.registry import field
-from zope.component import getUtility, getUtilitiesFor
+from zope.component import getUtility
 from Products.CMFCore.utils import getToolByName
 
 # The profile id of your package:

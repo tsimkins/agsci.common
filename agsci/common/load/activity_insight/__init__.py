@@ -1,20 +1,9 @@
-from plone.dexterity.utils import createContentInContainer
-from plone.event.interfaces import IEventAccessor
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-from Products.Five import BrowserView
-from AccessControl.SecurityManagement import newSecurityManager
-from HTMLParser import HTMLParseError
-from bs4 import BeautifulSoup
 from DateTime import DateTime
+from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
-from time import strptime, strftime
-import urllib2
-import sys
-import re
+
 import requests
 
-from agsci.common.utilities import localize
 from .. import ImportContentView
 
 class ImportFacultyPublicationsView(ImportContentView):
@@ -37,7 +26,7 @@ class ImportFacultyPublicationsView(ImportContentView):
         api_url = "".join([api_host, url % params])
 
         if not api_key:
-            raise Exception('%s not set in registry.' % api_key_id)
+            raise Exception('%s not set in registry.' % self.api_key_id)
 
         headers = {'X-API-Key' : api_key}
 

@@ -1,5 +1,3 @@
-from Products.CMFPlone.utils import safe_unicode
-
 try:
     from urllib.parse import urlparse
 except ImportError:

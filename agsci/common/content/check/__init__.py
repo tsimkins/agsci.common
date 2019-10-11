@@ -1,17 +1,14 @@
-from Acquisition import aq_chain, aq_base
-from bs4 import BeautifulSoup, Tag, NavigableString
-from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
-from datetime import datetime, timedelta
+from bs4 import BeautifulSoup, Tag, NavigableString
+from datetime import datetime
 from plone.app.linkintegrity.utils import getIncomingLinks
 from plone.registry.interfaces import IRegistry
 from zope.annotation.interfaces import IAnnotations
-from zope.component import subscribers, getAdapters, getUtility, queryMultiAdapter
+from zope.component import subscribers, getUtility, queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
-from zope.schema.interfaces import IVocabularyFactory
 from zope.interface import Interface
 
 try:
@@ -576,7 +573,6 @@ class HeadingLength(BodyHeadingCheck):
 
         for i in headings:
             text = self.soup_to_text(i)
-            warning_length = self.warning_levels.get(i.name, 99999)
 
             v = len(text)
 

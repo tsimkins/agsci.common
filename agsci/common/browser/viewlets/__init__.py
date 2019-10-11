@@ -1,22 +1,22 @@
-from Products.CMFPlone.utils import safe_unicode
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
+from plone import api
 from plone.app.blocks.layoutbehavior import ILayoutAware
+from plone.app.contenttypes.interfaces import INewsItem
 from plone.app.layout.viewlets.common import PathBarViewlet as _PathBarViewlet
 from plone.app.layout.viewlets.common import TitleViewlet as _TitleViewlet
 from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
-from plone.i18n.normalizer.interfaces import IIDNormalizer
-from plone.registry.interfaces import IRegistry
-from plone import api
-from zope.component import getUtility, queryUtility, getMultiAdapter, queryMultiAdapter
-from zope.component.hooks import getSite
-from plone.app.contenttypes.interfaces import INewsItem
 from plone.event.interfaces import IEvent
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.memoize.instance import memoize
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility, queryUtility, getMultiAdapter
+from zope.component.hooks import getSite
 
 try:
     from urllib.parse import urlparse
@@ -26,13 +26,12 @@ except ImportError:
 import json
 import untangle
 
-from agsci.common.content.check import TileLinksCheck
-from agsci.common.interfaces import ICollegeHomepage
-from agsci.common.utilities import ploneify, localize
-from agsci.common import object_factory
 from agsci.common.content.behaviors.leadimage import LeadImage
+from agsci.common.content.check import TileLinksCheck
 from agsci.common.content.check import getValidationErrors
 from agsci.common.content.person.person import IPerson
+from agsci.common.interfaces import ICollegeHomepage
+from agsci.common.utilities import ploneify, localize
 
 try:
     from html import escape

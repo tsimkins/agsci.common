@@ -10,7 +10,6 @@ from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.i18n.normalizer import idnormalizer, filenamenormalizer
 from plone.portlets.interfaces import ILocalPortletAssignmentManager
-from plone.portlets.interfaces import IPortletAssignment
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from zope.component import getUtility, getMultiAdapter
@@ -248,28 +247,6 @@ def toBool(_):
     if isinstance(_, int):
         return bool(_)
     return False
-
-# This makes the 'getURL' and 'absolute_url', etc. methods return the proper
-# URL through the debug prompt.
-def setSiteURL(site, domain='trs22.psu.edu:5051', path='', https=True):
-
-    if path and not path.startswith('/'):
-        path = '/%s' % path
-
-    if https:
-        url = 'https://%s%s' % (domain, path)
-    else:
-        url = 'http://%s%s' % (domain, path)
-
-    if url.endswith('/'):
-        url = url[:-1]
-
-    site.REQUEST['SERVER_URL'] = url
-
-    site.REQUEST.other['VirtualRootPhysicalPath'] = site.getPhysicalPath()
-
-    if site.REQUEST.get('_ec_cache', None):
-        site.REQUEST['_ec_cache'] = {}
 
 def truncate_text(v, max_chars=200, el='...'):
 

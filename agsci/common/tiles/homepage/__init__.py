@@ -1,5 +1,4 @@
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from .. import BaseTile, ConditionalTemplateTile
+from .. import BaseTile
 
 class JumbotronTile(BaseTile):
     __full_width__ = True

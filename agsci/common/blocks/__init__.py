@@ -2,11 +2,9 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
-from zope.component.hooks import getSite
 from zope.component import queryMultiAdapter
+from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
-
-import json
 
 from ..utilities import toBool
 

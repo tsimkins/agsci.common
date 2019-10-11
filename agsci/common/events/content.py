@@ -162,7 +162,7 @@ def onSubsiteCreate(context, event, add_group=True):
 
     # Add group for subsite and set permissions
     if add_group:
-        editors_group = add_editors_group(context)
+        undef = add_editors_group(context)
 
     # Create News folder
     if 'news' not in context.objectIds():

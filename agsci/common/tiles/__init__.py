@@ -5,16 +5,14 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from plone.app.contenttypes.interfaces import ICollection
-from plone.app.layout.navigation.interfaces import INavtreeStrategy
 from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.portlets.portlets.navigation import NavtreeStrategy
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
-from plone.app.textfield.value import RichTextValue
 from plone.dexterity.interfaces import IDexterityContainer
 from plone.memoize.instance import memoize
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
-from zope.component import getMultiAdapter, getUtility
+from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.schema import getFields
 from zope.schema.interfaces import IVocabularyFactory

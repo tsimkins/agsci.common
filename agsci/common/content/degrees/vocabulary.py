@@ -1,8 +1,6 @@
-from Products.CMFCore.utils import getToolByName
+from zope.interface import implements
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import directlyProvides, implements
-from datetime import datetime, timedelta
 
 class StaticVocabulary(object):
 

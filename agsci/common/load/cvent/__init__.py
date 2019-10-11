@@ -1,18 +1,10 @@
+from DateTime import DateTime
+from Products.CMFPlone.utils import safe_unicode
+from email.mime.text import MIMEText
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
-from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
-from Products.Five import BrowserView
-from AccessControl.SecurityManagement import newSecurityManager
-from HTMLParser import HTMLParseError
-from bs4 import BeautifulSoup
-from DateTime import DateTime
-from time import strptime, strftime
-import urllib2
-import sys
-import re
+
 import requests
-from email.mime.text import MIMEText
 
 from agsci.common.utilities import localize
 from .. import ImportContentView

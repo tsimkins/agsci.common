@@ -1,23 +1,19 @@
 from AccessControl import ClassSecurityInfo
-from Acquisition import aq_acquire, aq_inner
-from bs4 import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
-from zope.component import getUtility, getMultiAdapter
-from zope.interface import implements, Interface
-from zope.security import checkPermission
-from Products.CMFPlone.utils import safe_unicode
+from bs4 import BeautifulSoup
 from plone.app.contenttypes.interfaces import INewsItem, ILink, ICollection
 from urllib import quote, urlencode
-from zope.intid.interfaces import IIntIds
-from z3c.relationfield.event import addRelations, _relations
 from z3c.relationfield.relation import RelationValue
+from zope.component import getUtility
+from zope.intid.interfaces import IIntIds
+from zope.security import checkPermission
 
 try:
-    from urllib.parse import urljoin, urlparse, urlunparse
+    from urllib.parse import urlparse, urlunparse
 except ImportError:
-    from urlparse import urljoin, urlparse, urlunparse
+    from urlparse import urlparse, urlunparse
 
 import premailer
 import re

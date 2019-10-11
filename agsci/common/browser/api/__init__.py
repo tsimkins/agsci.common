@@ -1,30 +1,25 @@
 from Acquisition import ImplicitAcquisitionWrapper
-from bs4 import BeautifulSoup
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
-from Products.Five.utilities.interfaces import IMarkerInterfaces
+from bs4 import BeautifulSoup
 from plone.app.blob.field import BlobWrapper
 from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage
 from z3c.relationfield.relation import RelationValue
-from zope.component import queryAdapter, getAdapters, getUtilitiesFor, getMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.interface.interface import Method
-from zope.component import queryUtility
 
 try:
     from urllib.parse import urljoin
 except ImportError:
     from urlparse import urljoin
 
-import Missing
 import base64
 import json
 import re
-import urllib2
 
 from agsci.common.utilities import get_fields_by_type, toISO
 

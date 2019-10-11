@@ -1,13 +1,12 @@
 from AccessControl import ClassSecurityInfo
-from DateTime import DateTime
 from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from StringIO import StringIO
 from datetime import datetime
-from zope.interface import implements, Interface
 from plone import api
+from zope.interface import implements, Interface
 
 import HTMLParser
 import csv
@@ -15,11 +14,6 @@ import csv
 from agsci.common.utilities import localize, toLocalizedTime
 
 from . import BaseView
-
-try:
-    from zope.app.component.hooks import getSite
-except ImportError:
-    from zope.component.hooks import getSite
 
 class IRegistrationView(Interface):
 

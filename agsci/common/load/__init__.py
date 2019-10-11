@@ -1,25 +1,25 @@
 from DateTime import DateTime
-from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.WorkflowCore import WorkflowException
+from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from plone.app.linkintegrity.handlers import modifiedContent
 from plone.app.textfield import RichText
 from plone.app.textfield.value import RichTextValue
-from plone.behavior.interfaces import IBehaviorAssignable, IBehavior
+from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
 from plone.namedfile.file import NamedBlobImage, NamedBlobFile
+from plone.protect.interfaces import IDisableCSRFProtection
 from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import ATTRIBUTE_NAME
 from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.component.interfaces import ComponentLookupError
-from zope.schema import getFieldsInOrder
-from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
+from zope.schema import getFieldsInOrder
 
 try:
     from urllib.parse import urljoin, urlparse
