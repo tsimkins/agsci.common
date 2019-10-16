@@ -228,7 +228,7 @@ class BaseTile(PersistentTile):
         target_object = self.get_target_object(field)
 
         if ICollection.providedBy(target_object):
-            return [x for x in target_object.queryCatalog()]
+            return [x for x in target_object.queryCatalog(batch=False)]
 
         elif IDexterityContainer.providedBy(target_object):
             # Folder Contents
@@ -496,6 +496,14 @@ class SkeeterTile(ConditionalTemplateTile):
 
                 return items[0]
 
+    def get_public_tags(self, o):
+        _ = getattr(o, 'public_tags', [])
+
+        if isinstance(_, (list, tuple)):
+            return list(_)
+
+        return []
+
     @property
     def items(self):
 
@@ -510,7 +518,7 @@ class SkeeterTile(ConditionalTemplateTile):
             items = [x for x in items if any([y in x.Subject() for y in filter_tags])]
 
         if filter_public_tags:
-            items = [x for x in items if any([y in getattr(x, 'public_tags', []) for y in filter_public_tags])]
+            items = [x for x in items if any([y in self.get_public_tags(x) for y in filter_public_tags])]
 
         if featured:
             items = [x for x in items if x.UID != featured.UID]
