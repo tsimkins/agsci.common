@@ -258,6 +258,12 @@ jq3(document).ready(function() {
             jq3(this).addClass('show');
         }
     );
+
+    jq3('#navbarSectionNav li.navTreeCurrentItem > button, #navbarSectionNav li.navTreeItemInPath > button, #navbarSectionNav li.navTreeCurrentNode > button').each(
+        function () {
+            jq3(this).attr('aria-expanded', true);
+        }
+    );
 });
 
 
