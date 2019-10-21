@@ -86,7 +86,7 @@
     &.bg-dark-orange {
 
         .card-body {
-            background: darken($color-ps-invent-orange,10%);
+            background: darken($color-ps-invent-orange,11%);
             }
 
             &:hover,
@@ -97,7 +97,7 @@
                     }
 
                 .btn {
-                    color: darken($color-ps-invent-orange,10%);
+                    color: darken($color-ps-invent-orange,11%);
                     }
                 }
             }
@@ -105,18 +105,18 @@
     &.bg-dark-green {
 
         .card-body {
-            background: darken($color-ps-future-green,10%);
+            background: darken($color-ps-future-green,16%);
             }
 
             &:hover,
             &:focus {
 
                 .card-body {
-                    background: darken($color-ps-future-green,5%);
+                    background: darken($color-ps-future-green,10%);
                     }
 
                 .btn {
-                    color: darken($color-ps-future-green,10%);
+                    color: darken($color-ps-future-green,16%);
                     }
                 }
             }

@@ -8083,7 +8083,7 @@ COLOR Utility Classes
   color: #491d70; }
 
 .future-green {
-  color: #608000; }
+  color: #5c7a00; }
 
 .invent-orange {
   color: #9d5800; }
@@ -8110,13 +8110,13 @@ COLOR Utility Classes
   background: #99CC00; }
 
 .bg-dark-future-green {
-  background: #739900; }
+  background: #5c7a00; }
 
 .bg-dark-orange {
-  background: #b66600; }
+  background: #b16300; }
 
 .bg-orange {
-  background: #ff9c1d; }
+  background: #ff9e22; }
 
 .bg-dark-purple {
   background: #491d70; }
@@ -8322,13 +8322,13 @@ a.btn-link:focus {
   word-break: normal; }
 
 .btn.btn-orange {
-  background: #b66600;
+  background: #b16300;
   color: #ffffff; }
   .btn.btn-orange:hover, .btn.btn-orange:focus {
     background: #E98300; }
 
 .btn.btn-green {
-  background: #739900;
+  background: #5c7a00;
   color: #ffffff; }
   .btn.btn-green:hover, .btn.btn-green:focus {
     background: #86b300; }
@@ -10817,17 +10817,17 @@ PORTABLE HIGHLIGHTS
   .card.card-cta.bg-dark-purple:hover .btn, .card.card-cta.bg-dark-purple:focus .btn {
     color: #491d70; }
   .card.card-cta.bg-dark-orange .card-body {
-    background: #b66600; }
+    background: #b16300; }
   .card.card-cta.bg-dark-orange:hover .card-body, .card.card-cta.bg-dark-orange:focus .card-body {
     background: #E98300; }
   .card.card-cta.bg-dark-orange:hover .btn, .card.card-cta.bg-dark-orange:focus .btn {
-    color: #b66600; }
+    color: #b16300; }
   .card.card-cta.bg-dark-green .card-body {
-    background: #739900; }
+    background: #5c7a00; }
   .card.card-cta.bg-dark-green:hover .card-body, .card.card-cta.bg-dark-green:focus .card-body {
-    background: #86b300; }
+    background: #739900; }
   .card.card-cta.bg-dark-green:hover .btn, .card.card-cta.bg-dark-green:focus .btn {
-    color: #739900; }
+    color: #5c7a00; }
 
 .container-text .cta-card {
   /* floated within content */

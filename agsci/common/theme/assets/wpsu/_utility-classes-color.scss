@@ -48,7 +48,7 @@ COLOR Utility Classes
     }
 
 .future-green {
-    color: darken($color-ps-future-green,15%);
+    color: darken($color-ps-future-green,16%);
     }
 
 .invent-orange {
@@ -84,15 +84,15 @@ COLOR Utility Classes
     }
 
 .bg-dark-future-green {
-    background: darken($color-ps-future-green,10%);
+    background: darken($color-ps-future-green,16%);
     }
 
 .bg-dark-orange {
-    background: darken($color-ps-invent-orange,10%);
+    background: darken($color-ps-invent-orange,11%);
     }
 
 .bg-orange {
-    background: lighten($color-ps-invent-orange,10%);
+    background: lighten($color-ps-invent-orange,11%);
     }
 
 .bg-dark-purple {
