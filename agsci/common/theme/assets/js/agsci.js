@@ -261,58 +261,29 @@ jq3(document).ready(function() {
 });
 
 
-/* Set nav behavior */
-// less than this uses "mobile" click nav behavior
-var navBreakPointPx = 991; // pixels
+//BOOTSTRAP HOVER OR CLICK NAV
+//on load, if window 992px or less, set click behavior
+if(window.innerWidth <= 992){
+    //add click behavior
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
+}else{
+    //add default hover behavior
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
+}
 
-/*
-* Set the Main Menu Navigation Behavior
-*     hover or click
-*/
-function setNavBehavior()
-{
-    if (window.innerWidth < navBreakPointPx)
-    {
-        setNavClick();
+//on window resize, if window 992px or less, set click behaviour
+window.addEventListener('resize', function(event){
+    if(window.innerWidth <= 992){
+        //destroy previous call to script
+        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+        //add click behavior
+        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
+
+    }else{
+         //destroy previous call to script
+        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+         //add default hover behavior
+        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
+		jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable').on('click', function(){ if (jq3(this).attr('aria-expanded')=='true') {window.location = jq3(this).attr('href');} } );
     }
-    else
-    {
-        setNavHover();
-    }
-}
-
-/*
-* Set Nav Click Behavior
-*
-*/
-function setNavClick()
-{
-    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
-}
-
-/*
-* Set Nav Hover Behavior
-*
-*/
-function setNavHover()
-{
-    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-    jq3('header .navbar-dropdown [data-toggle="dropdown"]').bootstrapDropdownHover({});
-    jq3('header .navbar-dropdown .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
-    jq3('header .navbar-dropdown .nav-external-link').on('click', function()
-    {
-        if (jq3(this).attr('aria-expanded')=='true' && window.innerWidth >= navBreakPointPx)
-        {
-            window.location = jq3(this).attr('href');
-        }
-    });
-}
-
-/*
-* Attach behavior calls to resize, ready, load
-* Do NOT remove any of these.
-*/
-window.addEventListener('resize', function(event) { setNavBehavior(); });
-jq3( window ).on( "load", function() { setNavBehavior(); });
-setNavBehavior();
+});

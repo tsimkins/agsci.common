@@ -2,7 +2,7 @@
     tal:define="nav view/nav|nothing"
     tal:condition="not: view/is_department|nothing">
 
-    <nav class="navbar navbar-expand-lg navbar-dropdown college-level">
+    <nav class="navbar navbar-expand-lg college-level">
 
         <button
             class="btn btn-primary btn-toggle-mobile-nav"

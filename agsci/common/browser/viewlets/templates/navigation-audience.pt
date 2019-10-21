@@ -1,7 +1,7 @@
 <div id="audience-nav-viewlet"
     tal:define="nav view/nav|nothing">
 
-    <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar navbar-dropdown">
+    <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar">
 
         <div class="row mx-0 align-items-center">
 
