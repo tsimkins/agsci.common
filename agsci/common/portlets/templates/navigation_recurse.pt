@@ -54,7 +54,8 @@
 
                 <button
                     tal:attributes="data-target string:#collapse_${item/UID};
-                                    aria-controls string:collapse_${item/UID}"
+                                    aria-controls string:collapse_${item/UID};
+                                    aria-label string:${item/Title} Subnavigation"
                     tal:condition="children"
                     role="button"
                     data-toggle="collapse"
