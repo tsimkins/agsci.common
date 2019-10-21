@@ -19,7 +19,7 @@
                             <a tal:attributes="id item_id;
                                                href python:view.link(l1)"
                                tal:content="l1/title/cdata"
-                               class="dropdown-toggle nav-external-link"
+                               class="dropdown-toggle"
                                role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true"
