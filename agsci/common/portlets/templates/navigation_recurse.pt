@@ -35,23 +35,14 @@
         <li tal:attributes="class string:navTreeItem visualNoMarker${li_class}${li_extr_class}${li_folder_class} section-${node/normalized_id} dropdown;
                             id string:sidebarNav_${item/UID}">
 
-            <button
-                tal:attributes="data-target string:#collapse_${item/UID};
-                                aria-controls string:collapse_${item/UID}"
-                tal:condition="children"
-                role="button"
-                data-toggle="collapse"
-                aria-expanded="false"
-                aria-haspopup="true" >
-                <span class="d-block d-lg-none"
-                    tal:content="string:${node/Title}" />
-                <i class="fa fa-angle-down"></i>
-            </button>
+
 
             <tal:level define="item_class string:state-${node/normalized_review_state};
                                 item_type_class python:'contenttype-%s' % normalizeString(item_type) if not supress_icon else '';
                                 item_class python:'%s navTreeCurrentItem' % item_class if is_current else item_class"
                         condition="not:exclude_from_nav">
+
+
 
                 <a tal:define="display_class python: view.link_class(level, children)"
                    tal:attributes="href  python:item_remote_url if use_remote_url else item_url;
@@ -60,6 +51,19 @@
 
                     <span tal:replace="string:${node/Title}" />
                 </a>
+
+                <button
+                    tal:attributes="data-target string:#collapse_${item/UID};
+                                    aria-controls string:collapse_${item/UID}"
+                    tal:condition="children"
+                    role="button"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    aria-haspopup="true" >
+                    <span class="d-block d-lg-none"
+                        tal:content="string:${node/Title}" />
+                    <i class="fa fa-angle-down"></i>
+                </button>
 
                 <ul tal:condition="python: children and show_children and bottomLevel and level < bottomLevel or bottomLevel == 0"
                     tal:attributes="data-parent string:#sidebarNav_${item/UID};
