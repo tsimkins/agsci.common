@@ -270,9 +270,6 @@ jq3(document).ready(function() {
 
 function setNav() {
 
-    //destroy previous call to script
-    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-
     // Width-dependent config
     if (window.innerWidth <= 992) {
 
@@ -282,27 +279,34 @@ function setNav() {
     } else {
 
         //add default hover behavior
-        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
 
         jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
 
-        // Pass in method for clicking the header link
-        jq3('header .nav-external-link').on('click',
-            function() {
-
-                if (jq3(this).attr('aria-expanded')=='true') {
-                    window.location = jq3(this).attr('href');
-                }
-            }
-        );
+        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
 
     }
 }
 
 jq3(window).resize( function(){
-    setNav()
+
+    //destroy previous call to script
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+
+    setNav();
+
 });
 
 jq3(document).ready(function() {
-    setNav()
+
+    // Pass in method for clicking the header link
+    jq3('header .nav-external-link').on('click',
+        function() {
+
+            if (window.innerWidth > 992) {
+                window.location = jq3(this).attr('href');
+            }
+        }
+    );
+
+    setNav();
 });
