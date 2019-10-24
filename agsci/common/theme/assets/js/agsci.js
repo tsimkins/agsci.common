@@ -266,30 +266,43 @@ jq3(document).ready(function() {
     );
 });
 
+// Bootstrap hover or click navigation.
 
-//BOOTSTRAP HOVER OR CLICK NAV
-//on load, if window 992px or less, set click behavior
-if(window.innerWidth <= 992){
-    //add click behavior
-    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
-}else{
-    //add default hover behavior
-    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
-}
+function setNav() {
 
-//on window resize, if window 992px or less, set click behaviour
-window.addEventListener('resize', function(event){
-    if(window.innerWidth <= 992){
-        //destroy previous call to script
-        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    //destroy previous call to script
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+
+    // Width-dependent config
+    if (window.innerWidth <= 992) {
+
         //add click behavior
         jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
 
-    }else{
-         //destroy previous call to script
-        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
-         //add default hover behavior
+    } else {
+
+        //add default hover behavior
         jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
-		jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable').on('click', function(){ if (jq3(this).attr('aria-expanded')=='true') {window.location = jq3(this).attr('href');} } );
+
+        jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
+
+        // Pass in method for clicking the header link
+        jq3('header .nav-external-link').on('click',
+            function() {
+
+                if (jq3(this).attr('aria-expanded')=='true') {
+                    window.location = jq3(this).attr('href');
+                }
+            }
+        );
+
     }
+}
+
+jq3(window).resize( function(){
+    setNav()
+});
+
+jq3(document).ready(function() {
+    setNav()
 });
