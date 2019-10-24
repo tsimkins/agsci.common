@@ -21,12 +21,13 @@
 
                     <li tal:attributes="class klass"
                         tal:define="item_id python:view.label(l1.title.cdata);
+                                    item_href python: view.link(l1);
                                     hidden l1/hidden/cdata|nothing;
                                     klass python: hidden and 'dropdown d-lg-none' or 'dropdown'">
 
                         <a tal:content="l1/title/cdata"
                            tal:attributes="id item_id;
-                                           href python: view.link(l1)"
+                                           href item_href"
                            class="nav-link dropdown-toggle nav-external-link"
                            role="button"
                            data-toggle="dropdown"
@@ -51,9 +52,12 @@
 
                                     <div class="col-12 col-md-6 col-lg-3 d-none d-lg-block">
 
-                                        <p
-                                            tal:content="l1/title/cdata"
-                                            class="main-nav-section-head" />
+                                        <p class="main-nav-section-head">
+                                            <a tal:attributes="href item_href">
+                                                <span tal:replace="l1/title/cdata" />
+                                                <span class="hiddenStructure">Overview</span>
+                                            </a>
+                                        </p>
 
                                         <div tal:condition="l1/image|nothing">
 

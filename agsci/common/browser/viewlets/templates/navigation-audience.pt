@@ -14,12 +14,14 @@
 
                         <li
                            class="dropdown"
-                           tal:define="item_id python:view.label(l1.title.cdata)">
+                           tal:define="item_id python:view.label(l1.title.cdata);
+                                       item_href python:view.link(l1);
+                                       item_title l1/title/cdata;">
 
                             <a tal:attributes="id item_id;
-                                               href python:view.link(l1)"
-                               tal:content="l1/title/cdata"
-                               class="dropdown-toggle"
+                                               href item_href"
+                               tal:content="item_title"
+                               class="dropdown-toggle nav-external-link"
                                role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true"
@@ -43,6 +45,11 @@
                                                        tal:content="link/title/cdata|nothing"
                                                        tal:attributes="href python:view.link(link);
                                                                        class string:nav-link ${link_class}" />
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link"
+                                                       tal:content="string:All Information for ${item_title}"
+                                                       tal:attributes="href item_href" />
                                                 </li>
                                             </ul>
                                         </div>
