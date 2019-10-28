@@ -17,7 +17,8 @@ BACK TO TOP BUTTON
     color: $white;
     }
 
-.btn.btn-primary.back-to-top.affix {
+.btn.btn-primary.back-to-top.affix,
+.btn.btn-primary.back-to-top.btn-show {
     position: fixed;
     bottom: 0.5rem;
     left: 0.5rem;
