@@ -6,7 +6,7 @@
       i18n:domain="agsci.common">
   <body>
 <section
-    class="section-explore container-fluid px-0 px-lg-5 mb-0 mb-lg-5"
+    class="section-explore container-fluid px-0 px-lg-5 mb-0 mb-lg-5 mt-5"
     tal:attributes="data-tile-type view/tile_type|nothing;
                     data-container-width view/container_width;">
 
