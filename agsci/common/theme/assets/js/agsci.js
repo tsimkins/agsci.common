@@ -3,16 +3,29 @@ var jq3 = $.noConflict(true);
 /* replacement for old Bootstrap 3 affix */
 jq3(document).ready(function() {
 
+    //caches a jQuery object containing the header element
+    var bttbtn = jq3(".back-to-top");
+
+    jq3(window).scroll(function() {
+        var scroll = jq3(window).scrollTop();
+
+        if (scroll >= 1000) {
+            bttbtn.removeClass('btn-hidden').addClass("btn-show");
+        } else {
+            bttbtn.removeClass("btn-show").addClass('btn-hidden');
+        }
+    });
+
     var toggleAffix = function(affixElement, scrollElement, wrapper) {
 
-        var height = affixElement.outerHeight() / 3,
-            /* added /3 so the white space gap is not huge */
-            top = wrapper.offset().top + 1;
+        var height = affixElement.outerHeight(),
+            top = wrapper.offset().top + 2;
 
-        if (scrollElement.scrollTop() >= top) {
+        if (scrollElement.scrollTop() >= top){
             wrapper.height(height);
             affixElement.addClass("affix");
-        } else {
+        }
+        else {
             affixElement.removeClass("affix");
             wrapper.height('auto');
         }
@@ -24,6 +37,7 @@ jq3(document).ready(function() {
             wrapper = jq3('<div class="affix-placeholder"></div>');
 
         ele.before(wrapper);
+
         jq3(window).on('scroll resize', function() {
             toggleAffix(ele, jq3(this), wrapper);
         });
