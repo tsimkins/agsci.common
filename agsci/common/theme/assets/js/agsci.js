@@ -266,47 +266,42 @@ jq3(document).ready(function() {
     );
 });
 
-// Bootstrap hover or click navigation.
-
-function setNav() {
-
-    // Width-dependent config
-    if (window.innerWidth <= 992) {
-
-        //add click behavior
-        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
-
-    } else {
-
-        //add default hover behavior
-
-        jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'disable');
-
-        jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover({});
-
-    }
+//BOOTSTRAP HOVER OR CLICK NAV
+//on load, if window 992px or less, set click behavior
+if(window.innerWidth <= 992){
+    mobileHover();
+}else{
+    desktopHover();
 }
 
-jq3(window).resize( function(){
+//on window resize, if window 992px or less, set click behaviour
+window.addEventListener('resize', function(event){
+    if(window.innerWidth <= 992){
+        mobileHover();
+    }else{
+        desktopHover();
+    }
+});
+
+function mobileHover(){
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('setClickBehavior', 'default');
+}
+
+function desktopHover(){
 
     //destroy previous call to script
     jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover('destroy');
 
-    setNav();
+    jq3('header [data-toggle="dropdown"]').bootstrapDropdownHover();
 
-});
+    //enable click behavior on external links only
+    jq3('header .nav-external-link').bootstrapDropdownHover('setClickBehavior', 'enable');
 
-jq3(document).ready(function() {
-
-    // Pass in method for clicking the header link
-    jq3('header .nav-external-link').on('click',
-        function() {
-
-            if (window.innerWidth > 992) {
-                window.location = jq3(this).attr('href');
-            }
+    //on "click" and expanded, then go to link
+    jq3('header .nav-external-link').on('click', function(){
+        if (jq3(this).attr('aria-expanded')=='true') {
+            window.location = jq3(this).attr('href');
         }
-    );
-
-    setNav();
-});
+    });
+}
