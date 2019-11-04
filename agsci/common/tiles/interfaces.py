@@ -542,7 +542,7 @@ class ISkeeterTile(IBorderTile):
     )
 
     light_version = schema.Bool(
-        title=_(u"Light Version? (for News Condensed)"),
+        title=_(u"Light Version? (for News Condensed and Events)"),
         description=_(u""),
         required=False,
         default=False,

@@ -1,9 +1,24 @@
 from Products.CMFPlone import PloneMessageFactory as _
+from plone.autoform import directives as form
+from plone.app.contenttypes.interfaces import ICollection
 from plone.app.portlets.portlets import base
+from plone.app.vocabularies.catalog import CatalogSource
 from zope.interface import implements
+from zope import schema
 
-from ..tiles.interfaces import ISkeeterTile as ITileInterface
+from ..tiles.interfaces import ISkeeterTile
 from . import TilePortletAssignment, TilePortletRenderer
+
+class ITileInterface(ISkeeterTile):
+
+    form.order_after(target='title')
+    form.omitted('featured_id')
+
+    target = schema.Choice(
+        title=_(u"Target Collection"),
+        source=CatalogSource(object_provides=ICollection.__identifier__),
+        required=False,
+    )
 
 class Assignment(TilePortletAssignment):
     implements(ITileInterface)

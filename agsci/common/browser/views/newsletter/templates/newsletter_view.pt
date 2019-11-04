@@ -414,6 +414,27 @@ table td.footer .email-footer h2 {
     line-height: 12pt;
 }
 
+/* Style the events portlet */
+
+.card-event {
+    text-decoration: none;
+}
+
+.card-event .card-title h3 {
+    color: #265FCF;
+    text-decoration: underline;
+}
+
+.card-event .card-text,
+.card-event .card-text p {
+    color: #000000;
+    font-size: 10pt;
+}
+
+.btn-sm {
+    font-size: 10pt;
+}
+
 </style>
 
 <metal:local_style_slot define-slot="local_style_slot">

@@ -8,6 +8,7 @@
 
 <section
     tal:condition="view/show_tile|nothing"
+    tal:define="light_version view/light_version|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
@@ -48,8 +49,6 @@
 
         </div>
 
-
-
     </div>
 
     <div>
@@ -63,7 +62,8 @@
                                 end i/end|nothing"
                     tal:attributes="href i/getURL|nothing">
 
-                    <div class="card-image d-flex">
+                    <div class="card-image d-flex"
+                        tal:condition="not: light_version">
                         <div class="event-date-block">
                             <div class="event-day"
                                  tal:content="python: view.date_format(start, format='%a')" />

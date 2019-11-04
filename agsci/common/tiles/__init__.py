@@ -8,6 +8,7 @@ from plone.app.contenttypes.interfaces import ICollection
 from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.portlets.portlets.navigation import NavtreeStrategy
 from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
+from plone.app.uuid.utils import uuidToObject
 from plone.dexterity.interfaces import IDexterityContainer
 from plone.memoize.instance import memoize
 from plone.tiles.interfaces import ITileDataManager
@@ -27,6 +28,7 @@ from .links import link_factory
 
 from .. import object_factory
 from ..content.adapters import LocationAdapter
+from ..content.check import uid_re
 from ..utilities import toLocalizedTime, getVocabularyTerms, ploneify, toBool
 from ..browser.viewlets import PathBarViewlet
 
@@ -223,6 +225,9 @@ class BaseTile(PersistentTile):
 
         if target and hasattr(target, 'to_object'):
             return target.to_object
+        elif isinstance(target, (unicode, str)):
+            if uid_re.match(target):
+                return uuidToObject(target)
 
     def get_items(self, field='target'):
         target_object = self.get_target_object(field)
