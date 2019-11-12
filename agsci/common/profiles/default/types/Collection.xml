@@ -34,6 +34,7 @@
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.collection.ICollectionFields" />
         <element value="agsci.common.content.behaviors.collection.ICollection" />
+        <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.layoutaware"/>
     </property>
     <property name="schema" />

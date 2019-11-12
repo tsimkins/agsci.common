@@ -24,6 +24,7 @@
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
+        <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
     </property>
     <property name="schema">agsci.common.content.degrees.IDegree</property>
     <property name="schema_policy">dexterity</property>

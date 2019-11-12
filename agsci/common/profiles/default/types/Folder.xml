@@ -51,6 +51,7 @@
         <element value="agsci.common.content.behaviors.tags.IFolderTagsRoot" />
         <element value="agsci.common.content.behaviors.ISEO" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
+        <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
         <element value="plone.layoutaware"/>
         <element value="plone.draftable"/>
     </property>
