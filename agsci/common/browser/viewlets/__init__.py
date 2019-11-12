@@ -296,8 +296,19 @@ class CSSViewlet(ViewletBase):
         'plone-site-setup-tinymce',
         'plone-site-setup-types',
         'plone-site-setup-users-and-groups',
-        'sharing-page-delegate-roles'
+        'sharing-page-delegate-roles',
+        'cmfeditions-access-previous-versions',
+        'modify-constrain-types',
     ]
+
+    edit_templates = [
+        'confirm-action',
+        'historyview',
+    ]
+
+    @property
+    def template(self):
+        return self.view.__name__
 
     @property
     def permissions(self):
@@ -330,7 +341,9 @@ class CSSViewlet(ViewletBase):
 
     @property
     def editing(self):
-        return any([x in self.permissions for x in self.edit_permissions])
+        is_edit_permissions = any([x in self.permissions for x in self.edit_permissions])
+        is_edit_template = self.template in self.edit_templates
+        return is_edit_permissions or is_edit_template
 
 class JavaScriptViewlet(ViewletBase):
 

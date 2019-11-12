@@ -311,11 +311,21 @@ body.viewpermission-plone-site-setup-themes,
 body.viewpermission-plone-site-setup-tinymce,
 body.viewpermission-plone-site-setup-types,
 body.viewpermission-plone-site-setup-users-and-groups,
-body.viewpermission-sharing-page-delegate-roles {
+body.viewpermission-sharing-page-delegate-roles,
+body.viewpermission-cmfeditions-access-previous-versions,
+body.viewpermission-modify-constrain-types,
+body.template-confirm-action,
+body.template-historyview {
+
     #content {
         margin-top: 2em;
     }
-    #viewlet-below-content {
+
+    .element-invisible,
+    #portal-breadcrumbs,
+    #viewlet-below-content,
+    #page-header h1.documentFirstHeading,
+    #data-check {
         display: none;
     }
 
