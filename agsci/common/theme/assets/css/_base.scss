@@ -638,12 +638,14 @@ body.template-image_view #content-core {
 
         p {
             margin-bottom: 0;
+            color: #000000;
 
             line-height: 1.5;
 
             strong:after {
                 content: ": ";
             }
+
         }
     }
 
@@ -684,6 +686,9 @@ body.template-image_view #content-core {
             .summary {
                 color: $link-text-hover-color !important;
                 border-bottom: 1px solid #0078ab !important;
+            }
+            .event.summary {
+                border-bottom: none !important;
             }
         }
 

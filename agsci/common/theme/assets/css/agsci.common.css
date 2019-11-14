@@ -14329,6 +14329,7 @@ body.template-image_view #content-core {
   margin-bottom: 1rem; }
   #content-core .event.summary p {
     margin-bottom: 0;
+    color: #000000;
     line-height: 1.5; }
     #content-core .event.summary p strong:after {
       content: ": "; }
@@ -14354,6 +14355,9 @@ body.template-image_view #content-core {
   #content-core .entries a.card.state-published:focus .summary {
     color: #093c79 !important;
     border-bottom: 1px solid #0078ab !important; }
+  #content-core .entries a.card.state-published:hover .event.summary,
+  #content-core .entries a.card.state-published:focus .event.summary {
+    border-bottom: none !important; }
   #content-core .entries .entry .documentByLine {
     font-size: 0.6875em;
     margin: 1em 0 0.5em 1em;

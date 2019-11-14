@@ -18,7 +18,11 @@
 
     <p tal:condition="data/location">
         <strong>Where</strong>
-        <span tal:content="data/location" />
+        <a tal:define="map_link view/map_link|nothing"
+           tal:omit-tag="not: map_link"
+           tal:attributes="href map_link">
+            <span tal:content="data/location" />
+        </a>
     </p>
 
 

@@ -15,6 +15,7 @@ from plone.app.event.browser.event_view import EventView as _EventView
 from plone.app.layout.sitemap.sitemap import SiteMapView as _SiteMapView
 from plone.batching import Batch
 from plone.dexterity.interfaces import IDexterityFTI
+from plone.event.interfaces import IEvent
 from plone.memoize.view import memoize
 from plone.registry.interfaces import IRegistry
 from zope import schema
@@ -622,6 +623,11 @@ class EventSummaryView(_EventSummaryView, BaseView):
     @property
     def event_date(self):
         return self.get_event_date_range(self.context)
+
+    @property
+    def map_link(self):
+        if IEvent.providedBy(self.context):
+            return getattr(self.context, 'map_link', None)
 
 class SocialMediaView(BaseView):
     pass
