@@ -830,6 +830,21 @@ body.template-content_checks {
     }
 }
 
+body.template-content_check_items {
+
+    .px-0,
+    .entry.container.mx-0 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .contenttype-event {
+        .event.summary {
+            display: none;
+        }
+    }
+}
+
 .address {
     p, li {
         font-size: 0.825rem;

@@ -14463,6 +14463,13 @@ body.template-content_checks td,
 body.template-content_checks th {
   font-size: 1.5rem; }
 
+body.template-content_check_items .px-0,
+body.template-content_check_items .entry.container.mx-0 {
+  padding-left: 0;
+  padding-right: 0; }
+body.template-content_check_items .contenttype-event .event.summary {
+  display: none; }
+
 .address p, .address li {
   font-size: 0.825rem;
   line-height: 1.4; }
