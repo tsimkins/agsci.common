@@ -258,7 +258,7 @@ jq3(document).ready(function() {
     // Add margin class for sections that are inside a first 3/4 width cell
     jq3('.mosaic-grid-cell.mosaic-position-leftmost.mosaic-width-three-quarters section').each(
         function() {
-            jq3(this).addClass('mr-lg-5');
+            jq3(this).addClass('mr-lg-5').removeClass('container');
         }
     );
 });
