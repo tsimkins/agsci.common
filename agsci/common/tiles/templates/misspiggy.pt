@@ -26,19 +26,22 @@
 
             </div>
 
-            <div class="col-12 col-lg-5 order-1 order-lg-12">
+            <div class="col-12 col-lg-5 order-1 order-lg-12 mb-md-4">
 
-                <tal:row tal:repeat="serial python: range(4)">
+                <div class="row">
 
-                    <img tal:define="img_src python:view.get_img_src(serial);
-                                     img_alt python:view.get_img_alt(serial);"
-                         tal:condition="img_src"
-                         class="w-100"
-                         tal:attributes="src img_src;
-                                         alt img_alt" />
+                    <div tal:attributes="class view/image_col_class"
+                         tal:repeat="serial python: range(4)">
 
-                </tal:row>
+                        <img tal:define="img_src python:view.get_img_src(serial);
+                                         img_alt python:view.get_img_alt(serial);"
+                             tal:condition="img_src"
+                             class="w-100"
+                             tal:attributes="src img_src;
+                                             alt img_alt" />
+                    </div>
 
+                </div>
             </div>
 
         </div>

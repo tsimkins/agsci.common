@@ -34,6 +34,8 @@ from ..browser.viewlets import PathBarViewlet
 
 class BaseTile(PersistentTile):
 
+    image_scale = None
+
     __full_width__ = False
 
     __section_class__ = ''
@@ -188,7 +190,7 @@ class BaseTile(PersistentTile):
             images = self.publishTraverse(self.request, '@@images')
 
             try:
-                return images.scale(field).url
+                return images.scale(field, scale=self.image_scale).url
             except AttributeError:
                 pass
 
@@ -345,7 +347,14 @@ class KermitTile(BaseTile):
     pass
 
 class MissPiggyTile(BaseTile):
-    pass
+    image_scale = 'large'
+
+    @property
+    def image_col_class(self):
+        images = [self.get_img_src(x) for x in range(4)]
+        image_count = len([x for x in images if x])
+        return "col-12 col-lg-12 col-md-%d" % (12/image_count)
+
 
 class FozzieBearTile(ConditionalTemplateTile):
     __full_width__ = False
@@ -374,6 +383,8 @@ class GonzoTile(ConditionalTemplateTile):
 class RowlfTile(BaseTile):
     __section_class__ = 'journey-preview'
     __border_top__ = __border_bottom__ = True
+
+    image_scale = 'large'
 
 class ScooterTile(ConditionalTemplateTile):
     pb = 3
