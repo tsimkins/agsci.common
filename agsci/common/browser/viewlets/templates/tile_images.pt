@@ -1,0 +1,35 @@
+<div tal:condition="images"
+     tal:define="images view/images|nothing"
+     id="tile-images"
+     class="m-5 html">
+
+    <h2 class="mt-0">Tile Images</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Tile Type</th>
+                <th>Thumbnail</th>
+                <th>Errors</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr tal:repeat="i images">
+                <td tal:content="i/tile_type|nothing" />
+                <td>
+                    <a tal:attributes="href i/url|nothing">
+                        <img alt=""
+                             tal:attributes="src i/thumbnail|nothing" />
+                    </a>
+                </td>
+                <td>
+                    <p tal:repeat="j python: view.check_image(i)"
+                       tal:content="j" />
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

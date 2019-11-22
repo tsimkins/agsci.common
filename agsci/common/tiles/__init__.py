@@ -11,6 +11,7 @@ from plone.app.standardtiles.navigation import NavigationTile as _NavigationTile
 from plone.app.uuid.utils import uuidToObject
 from plone.dexterity.interfaces import IDexterityContainer
 from plone.memoize.instance import memoize
+from plone.namedfile.field import NamedBlobImage
 from plone.tiles.interfaces import ITileDataManager
 from plone.tiles.tile import PersistentTile
 from zope.component import getUtility
@@ -177,9 +178,13 @@ class BaseTile(PersistentTile):
 
         return ''
 
-    def get_img_src(self, serial=None):
+    def get_img_src(self, serial=None, field='image', image_scale=None, full=False):
 
-        field = 'image'
+        if not image_scale:
+            image_scale = self.image_scale
+
+        if full:
+            image_scale=None
 
         if isinstance(serial, int):
             field = '%s_%d' % (field, serial)
@@ -190,7 +195,7 @@ class BaseTile(PersistentTile):
             images = self.publishTraverse(self.request, '@@images')
 
             try:
-                return images.scale(field, scale=self.image_scale).url
+                return images.scale(field, scale=image_scale).url
             except AttributeError:
                 pass
 
@@ -291,10 +296,28 @@ class BaseTile(PersistentTile):
     @property
     def links(self):
 
-        for lf in link_factory(self.__name__):
+        for _f in link_factory(self.__name__):
 
-            for _ in lf(self)():
+            for _ in _f(self)():
                 yield _
+    @property
+    def images(self):
+
+        for (field_name, field_type) in self.schema.namesAndDescriptions():
+
+            if isinstance(field_type, NamedBlobImage):
+
+                field = self.get_field(field_name, None)
+
+                if field:
+                    yield object_factory(
+                        name=self.__name__,
+                        tile_type=self.tile_type,
+                        image=field,
+                        thumbnail=self.get_img_src(field=field_name, image_scale='mini'),
+                        url=self.get_img_src(field=field_name, full=True),
+                        id=self.id,
+                    )
 
 class ConditionalTemplateTile(BaseTile):
 

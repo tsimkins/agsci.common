@@ -27,7 +27,7 @@ import json
 import untangle
 
 from agsci.common.content.behaviors.leadimage import LeadImage
-from agsci.common.content.check import TileLinksCheck
+from agsci.common.content.check import TileLinksCheck, TileImagesCheck
 from agsci.common.content.check import getValidationErrors
 from agsci.common.content.person.person import IPerson
 from agsci.common.interfaces import ICollegeHomepage
@@ -622,6 +622,20 @@ class TileLinksViewlet(ViewletBase):
     @property
     @memoize
     def links(self):
+        return self.check.value()
+
+class TileImagesViewlet(ViewletBase):
+
+    @property
+    def check(self):
+        return TileImagesCheck(self.context)
+
+    def check_image(self, image):
+        return self.check.check_image(image)
+
+    @property
+    @memoize
+    def images(self):
         return self.check.value()
 
 class CourseSyllabusViewlet(ViewletBase):

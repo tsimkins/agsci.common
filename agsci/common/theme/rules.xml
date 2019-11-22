@@ -325,6 +325,7 @@
         <replace css:theme="#footer-links" css:content-children="#footer-links" />
 
         <after css:theme="#main" css:content="#tile-links" />
+        <after css:theme="#main" css:content="#tile-images" />
     </rules>
 
 </rules>

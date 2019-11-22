@@ -1527,3 +1527,58 @@ class TileLinksCheck(BodyTextCheck):
 
             for _ in self.check_link(link):
                 yield _
+
+class TileImagesCheck(TileLinksCheck):
+
+    title = "Tile Images"
+    description = "Checks for large images within a Mosaic tile"
+    action = "Use a smaller image in tile."
+
+    @property
+    def images(self):
+
+        for tile in self.tiles:
+            if hasattr(tile, 'images'):
+                for _ in tile.images:
+                    yield _
+
+
+    def value(self):
+        return [x for x in self.images]
+
+    def check_image(self, _):
+        image = _.image
+
+        max_size = 2 # megabytes
+        max_pixel_ratio = 0.5
+        max_dimension = 2000
+
+        (w,h) = image.getImageSize()
+        size = image.size
+        pixels = w*h
+        pixel_ratio = (1.0*size)/pixels
+
+        if size > max_size*1024*1024:
+            yield ContentCheckError(
+                self,
+                u"Large Image (%0.1f KB)" % (size/(1024.0)),
+            )
+
+        if pixel_ratio > max_pixel_ratio:
+            yield ContentCheckError(
+                self,
+                u"Potential uncompressed image (c=%0.2f)" % pixel_ratio,
+            )
+
+        if w > max_dimension or h > max_dimension:
+            yield ContentCheckError(
+                self,
+                u"Large dimensions (%d, %d) > %d" % (w, h, max_dimension),
+            )
+
+    def check(self):
+
+        for _ in self.value():
+
+            for _ in self.check_image(_):
+                yield _

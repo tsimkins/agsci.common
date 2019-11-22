@@ -201,6 +201,16 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Tile Images Viewlet -->
+    <browser:viewlet
+        name="agsci.common.tile_images"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".TileImagesViewlet"
+        permission="cmf.ModifyPortalContent"
+        template="templates/tile_images.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Digital Learning Course Syllabus Viewlet -->
     <browser:viewlet
         name="agsci.common.syllabus"
