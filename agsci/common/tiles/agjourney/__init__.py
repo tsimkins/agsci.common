@@ -6,11 +6,14 @@ class AgJourneyJumbotronTile(BaseTile):
     __full_width__ = True
 
 class AgJourneyBioTile(YouTubeTile):
-    pass
+
+    image_scale = 'large'
 
 class QuoteAndImageTile(ConditionalTemplateTile):
 
     __full_width__ = True
+
+    image_scale = 'large'
 
     @property
     def padding(self):
