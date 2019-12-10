@@ -589,7 +589,7 @@ class DirectoryView(FolderView):
         return not not getattr(self.context, 'show_short_bio', False)
 
     def jump_links(self, results):
-        _ = OrderedDict([(x, None) for x in list("ABCDEFGHIJKL4MNOPQRSTUVWXYZ")])
+        _ = OrderedDict([(x, None) for x in list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")])
 
         for r in results:
             _letter = r.last_name[0].upper()
