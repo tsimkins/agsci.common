@@ -58,6 +58,13 @@ class IPersonListing(model.Schema):
         required=False,
     )
 
+    show_jump_links = schema.Bool(
+        title=_(u"Show Jump Links"),
+        description=_(u"Only works on table view, not detail view."),
+        default=False,
+        required=False,
+    )
+
 class PersonListing(Container):
 
     @property
@@ -157,6 +164,13 @@ class IDirectory(model.Schema):
         title=_(u"Show Classifications"),
         required=False,
         value_type=schema.Choice(vocabulary="agsci.common.person.classifications"),
+    )
+
+    show_jump_links = schema.Bool(
+        title=_(u"Show Jump Links"),
+        description=_(u"Only works on table view, not detail view."),
+        default=True,
+        required=False,
     )
 
 class Directory(PersonListing):

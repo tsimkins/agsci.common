@@ -5,6 +5,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from collections import OrderedDict
 from collective.z3cform.datagridfield import DictRow
 from jinja2 import Environment, FileSystemLoader
 from plone import api
@@ -586,6 +587,23 @@ class DirectoryView(FolderView):
 
     def show_short_bio(self):
         return not not getattr(self.context, 'show_short_bio', False)
+
+    def jump_links(self, results):
+        _ = OrderedDict([(x, None) for x in list("ABCDEFGHIJKL4MNOPQRSTUVWXYZ")])
+
+        for r in results:
+            _letter = r.last_name[0].upper()
+
+            if _letter in _ and not _[_letter]:
+                _[_letter] = r.UID()
+
+        return _
+
+    def anchor(self, jump_links, r):
+        _letter = r.last_name[0].upper()
+
+        if _letter in jump_links and jump_links[_letter] == r.UID():
+            return _letter
 
 class EventView(_EventView, BaseView):
 

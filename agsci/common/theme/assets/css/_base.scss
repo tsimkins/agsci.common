@@ -632,6 +632,26 @@ body.template-image_view #content-core {
 
 #content-core {
 
+    .alphabetLinks {
+
+        text-align: center;
+
+        ol {
+
+            padding: 0;
+
+            li {
+                display: inline-block;
+                list-style-type: none;
+                padding: 0 0.125em;
+            }
+
+            span {
+                color: #999999;
+            }
+        }
+    }
+
     .event.summary {
 
         margin-bottom: 1rem;

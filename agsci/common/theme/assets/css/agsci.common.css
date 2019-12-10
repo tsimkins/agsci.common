@@ -14325,6 +14325,16 @@ body.template-image_view #content-core {
   body.template-image_view #content-core [align="center"] {
     text-align: left !important; }
 
+#content-core .alphabetLinks {
+  text-align: center; }
+  #content-core .alphabetLinks ol {
+    padding: 0; }
+    #content-core .alphabetLinks ol li {
+      display: inline-block;
+      list-style-type: none;
+      padding: 0 0.125em; }
+    #content-core .alphabetLinks ol span {
+      color: #999999; }
 #content-core .event.summary {
   margin-bottom: 1rem; }
   #content-core .event.summary p {

@@ -9,12 +9,28 @@
 
     <metal:content-core fill-slot="content-core">
 
-<section class="col-12 px-0 col-lg-12 col-xl-12 px-lg-3 pb-4 order-12 order-lg-1 facultyStaffDirectory">
+<section
+    tal:define="results view/results|nothing;
+                jump_links python:view.jump_links(results)"
+    class="col-12 px-0 col-lg-12 col-xl-12 px-lg-3 pb-4 order-12 order-lg-1 facultyStaffDirectory">
 
     <div id="parent-fieldname-text"
         tal:define="text context/text|nothing"
         tal:condition="text"
         tal:content="structure python:context.text.output_relative_to(view.context)" />
+
+        <div class="alphabetLinks html"
+             tal:condition="context/show_jump_links|nothing">
+            <ol>
+                <li tal:repeat="letter jump_links">
+                    <a tal:attributes="href python:u'%s#%s' % (context.absolute_url(), letter);"
+                       tal:omit-tag="python: not jump_links[letter]">
+                       <span tal:content="letter"
+                             tal:omit-tag="python: jump_links[letter]" />
+                    </a>
+                </li>
+            </ol>
+        </div>
 
     <table>
         <thead>
@@ -29,7 +45,7 @@
 
 
     <tal:people
-        tal:repeat="context view/results">
+        tal:repeat="context results">
 
         <tal:person
             tal:define="person_view python:view.person_view(context);
@@ -39,7 +55,8 @@
             <tr class="html">
                 <td>
                     <a
-                        tal:attributes="href context/absolute_url|nothing"
+                        tal:attributes="href context/absolute_url|nothing;
+                                        name python:view.anchor(jump_links, context)"
                         tal:content="person_view/name/title" />
                 </td>
                 <td>
