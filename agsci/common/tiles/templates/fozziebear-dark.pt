@@ -10,7 +10,7 @@
     data-container-width="full"
     tal:attributes="data-tile-type view/tile_type|nothing">
 
-    <div class="card-deck card-deck-4up justify-content-center card-deck-portable-highlights text-center mx-0">
+    <div class="card-deck card-deck-${view/count}up justify-content-center card-deck-portable-highlights text-center mx-0">
 
         <tal:items tal:repeat="item view/values|nothing">
 

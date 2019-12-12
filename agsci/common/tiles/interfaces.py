@@ -379,6 +379,13 @@ class IFozzieBearTile(IBorderTile):
         required=False
     )
 
+    count = schema.Choice(
+        title=_(u"Count"),
+        values=[1,2,3,4],
+        required=False,
+        default=4,
+    )
+
 class IGonzoTile(Interface):
 
     title = schema.TextLine(

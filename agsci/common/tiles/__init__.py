@@ -75,17 +75,33 @@ class BaseTile(PersistentTile):
             field = getFields(schema).get(field_name, None)
 
             if field:
+
+                values = []
+
                 if hasattr(field, 'vocabularyName'):
                     vocabulary_name = field.vocabularyName
 
                     if vocabulary_name:
-                        values = getVocabularyTerms(self.context, vocabulary_name)
+                        values = getVocabularyTerms(
+                            self.context,
+                            vocabulary_name=vocabulary_name
+                        )
 
-                        if values:
-                            if value in values:
-                                return value
+                    elif hasattr(field, 'vocabulary'):
 
-                            return field.default
+                        vocabulary = field.vocabulary
+
+                        if vocabulary:
+                            values = getVocabularyTerms(
+                                self.context,
+                                vocabulary=vocabulary
+                            )
+
+                if values:
+                    if value in values:
+                        return value
+
+                    return field.default
 
         return value
 
@@ -392,6 +408,10 @@ class FozzieBearTile(ConditionalTemplateTile):
     @property
     def template(self):
         return 'fozziebear-%s.pt' % self.style
+
+    @property
+    def count(self):
+        return self.get_valid_value('count')
 
 class GonzoTile(ConditionalTemplateTile):
 

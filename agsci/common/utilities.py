@@ -205,10 +205,16 @@ def toLocalizedTime(time, long_format=None, time_only=None, end_time=None, forma
         except ValueError:
             return ''
 
-def getVocabularyTerms(context, vocabulary_name):
-    factory = getUtility(IVocabularyFactory, vocabulary_name)
-    vocab = factory(context)
-    return [x.value for x in vocab._terms]
+def getVocabularyTerms(context, vocabulary_name=None, vocabulary=None):
+
+    if vocabulary_name:
+        factory = getUtility(IVocabularyFactory, vocabulary_name)
+        _ = factory(context)
+
+    elif vocabulary:
+        _ = vocabulary
+
+    return [x.value for x in _._terms]
 
 def getBases(_):
     rv = []
