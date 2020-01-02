@@ -1,0 +1,7 @@
+<tal:noindex
+    tal:condition="view/noindex|nothing">
+
+    <!-- Do not index this page -->
+    <meta name="robots" content="noindex">
+
+</tal:noindex>

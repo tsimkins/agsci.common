@@ -181,6 +181,16 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- SEO metadata -->
+    <browser:viewlet
+        name="agsci.common.htmlhead.seo"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        class=".SEOViewlet"
+        permission="zope2.View"
+        template="templates/seo.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
     <!-- Facebook Open Graph metadata -->
     <browser:viewlet
         name="agsci.common.htmlhead.opengraph"

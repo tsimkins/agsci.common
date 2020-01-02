@@ -1,3 +1,4 @@
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
@@ -507,6 +508,25 @@ class StructuredDataViewlet(ViewletBase):
 
         if data:
             return json.dumps(data, indent=4)
+
+class SEOViewlet(ViewletBase):
+
+    def noindex(self):
+
+        if hasattr(self.context, 'Type'):
+            if self.context.Type() in ['Event',]:
+
+                if hasattr(self.context, 'end'):
+                    end = self.context.end
+
+                    if end and isinstance(end, datetime):
+                        return DateTime(end) < DateTime()
+
+        if hasattr(self.context, 'expires'):
+            expires = self.context.expires()
+
+            if expires and isinstance(expires, DateTime):
+                return expires < DateTime()
 
 class TitleViewlet(ViewletBase, _TitleViewlet):
 
