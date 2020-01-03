@@ -709,6 +709,13 @@ class SiteMapView(_SiteMapView):
             {
                 'review_state' : ['private',],
             },
+            {
+                'Type' : 'Event',
+                'end' : {
+                    'query' : DateTime(),
+                    'range' : 'max',
+                }
+            }
         ]
 
         paths = []
