@@ -26,12 +26,12 @@
 
   <metal:block fill-slot="content-title"
          tal:define="st python:request.get('SearchableText', '');">
-            <h1 class="documentFirstHeading mt-3  display-4"
+            <h1 class="documentFirstHeading mt-3 display-5"
                 i18n:translate=""
                 tal:condition="not:st">
               Search
             </h1>
-            <h1 class="documentFirstHeading mt-3 display-4"
+            <h1 class="documentFirstHeading mt-3 display-5"
                 i18n:translate=""
                 tal:condition="st">
               Search results for
