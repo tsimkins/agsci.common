@@ -14625,6 +14625,10 @@ body.template-search ol.searchResults {
   padding-left: 0; }
   body.template-search ol.searchResults li {
     list-style-type: none; }
+body.template-search #sorting-options a.active {
+  font-weight: bold; }
+body.template-search #search-results .result-title a {
+  font-size: 1rem; }
 
 .required::after {
   content: "\25A0";

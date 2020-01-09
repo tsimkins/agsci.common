@@ -84,6 +84,10 @@ class ViewletBase(_ViewletBase):
 
         return (self.context.id == parent_default_page_id)
 
+    @property
+    def template(self):
+        return self.view.__name__
+
 class LogoViewlet(ViewletBase):
     pass
 
@@ -306,10 +310,6 @@ class CSSViewlet(ViewletBase):
         'confirm-action',
         'historyview',
     ]
-
-    @property
-    def template(self):
-        return self.view.__name__
 
     @property
     def permissions(self):
@@ -561,6 +561,15 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
         items = sorted(set(_), key=lambda x: _.index(x))
 
         return items
+
+    @property
+    @memoize
+    def page_title(self):
+        if IPloneSiteRoot.providedBy(self.context):
+            return {
+                'search' : 'Search'
+            }.get(self.template, u'')
+        return super(self, TitleViewlet).page_title
 
     @property
     def site_title(self):

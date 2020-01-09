@@ -26,12 +26,12 @@
 
   <metal:block fill-slot="content-title"
          tal:define="st python:request.get('SearchableText', '');">
-            <h1 class="documentFirstHeading mt-3"
+            <h1 class="documentFirstHeading mt-3  display-4"
                 i18n:translate=""
                 tal:condition="not:st">
               Search results
             </h1>
-            <h1 class="documentFirstHeading mt-3"
+            <h1 class="documentFirstHeading mt-3 display-4"
                 i18n:translate=""
                 tal:condition="st">
               Search results for
@@ -98,15 +98,16 @@
               <metal:searchresults define-macro="search_results">
                 <div class="autotabs">
                   <nav class="autotoc-nav my-3" id="searchResultsSort">
-                    <span i18n:translate="sort_by" class="autotab-heading">Sort by</span>
+                    <span i18n:translate="sort_by" class="autotab-heading">Sort by:</span>
                       <span id="sorting-options">
                         <metal:sorting define-macro="sorting">
                           <tal:block repeat="item view/sort_options">
-                            <a data-sort="" tal:content="item/title"
+                            <a data-sort="" tal:content="item/title/title"
+                               tal:define="selected item/selected|nothing"
                                tal:attributes="href item/url;
                                                data-sort python:item.sortkey and item.sortkey or None;
                                                data-order python: item.reverse and 'reverse' or '';
-                                               class python: item.selected and 'active' or ''"></a>
+                                               class python: selected and 'active mx-3' or 'mx-3'"></a>
                           </tal:block>
                         </metal:sorting>
                       </span>
@@ -126,10 +127,10 @@
                                                  allowAnonymousViewAbout python:context.portal_registry['plone.allow_anon_views_about'];
                                                  show_about python:not isAnon or allowAnonymousViewAbout;
                                                  image_scale portal/@@image_scale">
-                        <ol class="searchResults html">
+                        <ol class="searchResults html mt-5">
                           <tal:results repeat="item batch">
                             <li tal:define="hasIcon item/getIcon"
-                                class="mb-2">
+                                class="mb-5">
                               <span class="result-title">
 
                                 <a href="#"
@@ -190,15 +191,12 @@
                                   </span>
                                 </span>
                               </span>
-                              <p class="discreet croppedDescription"
-                                 tal:condition="item/Description" tal:content="item/Description">
-                                Cropped description
-                              </p>
 
-                              <cite class="documentLocation link-location"
+                              <div class="documentLocation link-location mb-2 small"
                                     tal:define="breadcrumbs python: view.breadcrumbs(item);
                                                 is_rtl context/@@plone_portal_state/is_rtl;"
                                     tal:condition='breadcrumbs'>
+                                <em>
                                 <span i18n:translate="text_searchitem_location">
                                   Located in
                                 </span>
@@ -214,7 +212,15 @@
                                     </span>
                                   </tal:item>
                                 </span>
-                              </cite>
+                                </em>
+                              </div>
+
+                              <p class="discreet croppedDescription"
+                                 tal:condition="item/Description" tal:content="item/Description">
+                                Cropped description
+                              </p>
+
+
                             </li>
                           </tal:results>
                         </ol>
