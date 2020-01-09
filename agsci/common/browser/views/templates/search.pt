@@ -29,7 +29,7 @@
             <h1 class="documentFirstHeading mt-3  display-4"
                 i18n:translate=""
                 tal:condition="not:st">
-              Search results
+              Search
             </h1>
             <h1 class="documentFirstHeading mt-3 display-4"
                 i18n:translate=""
@@ -80,6 +80,7 @@
             <div class="visualClear"><!-- --></div>
             <div id="search-results-wrapper"
                  class="html mt-5"
+                 tal:condition="python: st or batch"
                  tal:define="b_start python:0;
                              b_start request/b_start | b_start;
                              batch python: view.results(b_start=b_start);
