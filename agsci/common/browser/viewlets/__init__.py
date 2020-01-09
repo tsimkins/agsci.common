@@ -569,7 +569,8 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
             return {
                 'search' : 'Search'
             }.get(self.template, u'')
-        return super(self, TitleViewlet).page_title
+
+        return super(TitleViewlet, self).page_title
 
     @property
     def site_title(self):
