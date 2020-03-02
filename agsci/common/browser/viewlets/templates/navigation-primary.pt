@@ -184,11 +184,18 @@
                           tal:attributes="action string:${view/site/absolute_url}/search">
 
                         <input
-                           class="form-control"
-                           type="search"
-                           name="SearchableText"
-                           placeholder="Search"
-                           aria-label="Text to search for">
+                            tal:attributes="placeholder view/search_placeholder|nothing"
+                            class="form-control"
+                            type="search"
+                            name="SearchableText"
+                            aria-label="Text to search for">
+
+                        <input
+                            tal:define="search_path view/search_path|nothing"
+                            tal:condition="search_path"
+                            tal:attributes="value search_path"
+                            type="hidden"
+                            name="path" />
 
                         <button
                          aria-label="Submit Search"

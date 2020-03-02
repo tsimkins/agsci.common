@@ -2,6 +2,7 @@ from Acquisition import aq_base, aq_inner
 from BTrees.OOBTree import OOBTree
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.browser.search import Search as _SearchView
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -914,3 +915,22 @@ class TileLinksDataView(TileLinksView):
 
         self.request.response.setHeader('Content-Type', 'application/json')
         return json.dumps(data, indent=4)
+
+class SearchView(_SearchView, BaseView):
+
+    @property
+    def search_path_title(self):
+        search_path = self.request.get('path', None)
+
+        if search_path:
+
+            site_path = '/'.join(self.site.getPhysicalPath())
+
+            path = search_path[len(site_path)+1:]
+
+            try:
+                o = self.site.restrictedTraverse(path)
+            except:
+                pass
+            else:
+                return o.Title()

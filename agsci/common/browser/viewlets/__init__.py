@@ -1,3 +1,4 @@
+from Acquisition import aq_base
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
@@ -87,6 +88,38 @@ class ViewletBase(_ViewletBase):
     @property
     def template(self):
         return self.view.__name__
+
+    @property
+    @memoize
+    def search_section(self):
+
+        if hasattr(self.context, 'aq_chain'):
+
+            for o in self.context.aq_chain:
+
+                if IPloneSiteRoot.providedBy(o):
+                    break
+
+                _ = getattr(o.aq_base, 'search_section', False)
+
+                if _:
+                    return o
+
+    @property
+    def search_path(self):
+        _ = self.search_section
+
+        if _:
+            return '/'.join(_.getPhysicalPath())
+
+    @property
+    def search_placeholder(self):
+        _ = self.search_section
+
+        if _:
+            return u'Search %s' % _.Title()
+
+        return u'Search'
 
 class LogoViewlet(ViewletBase):
     pass

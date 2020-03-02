@@ -60,19 +60,39 @@
         <input type="hidden" name="sort_order" value="" />
 
         <div class="input-group">
-          <input class="searchPage form-control"
-                 name="SearchableText"
-                 type="text"
-                 size="25"
-                 title="Search Site"
-                 i18n:attributes="title title_search_title;"
-                 tal:attributes="value st;"
-                 />
-          <span class="input-group-btn">
+            <input class="searchPage form-control"
+                name="SearchableText"
+                type="text"
+                size="25"
+                title="Search Site"
+                i18n:attributes="title title_search_title;"
+                tal:attributes="value st;"
+                />
+
+            <span class="input-group-btn">
             <input class="searchPage allowMultiSubmit btn btn-primary mb-0" type="submit"
-                   value="Search"
-                   i18n:attributes="value label_search;" />
-          </span>
+                    value="Search"
+                    i18n:attributes="value label_search;" />
+            </span>
+
+        </div>
+
+        <div
+            tal:define="request_path python:request.get('path', None)"
+            tal:condition="request_path">
+
+            <p>
+
+                <input
+                    tal:attributes="value request_path"
+                    checked="checked"
+                    type="checkbox"
+                    name="path" />
+
+                Search only within <span tal:replace="view/search_path_title|nothing" />.
+
+            </p>
+
         </div>
 
         <div>

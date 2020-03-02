@@ -81,6 +81,8 @@ class INewsItemFields(model.Schema):
 @provider(IFormFieldProvider)
 class IFolderFields(model.Schema):
 
+    form.write_permission(search_section="cmf.ManagePortal")
+
     model.fieldset(
         'settings',
         label=_(u'Settings'),
@@ -88,6 +90,7 @@ class IFolderFields(model.Schema):
             'show_date',
             'show_description',
             'show_image',
+            'search_section',
         ],
     )
 
@@ -110,6 +113,13 @@ class IFolderFields(model.Schema):
         description=_(u"This will show the lead image for each item in the folder listing."),
         required=False,
         default=True,
+    )
+
+    search_section = schema.Bool(
+        title=_(u"Search section"),
+        description=_(u"This defaults the search to searching this section rather than site-wide."),
+        required=False,
+        default=False,
     )
 
 @provider(IFormFieldProvider)

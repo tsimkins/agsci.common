@@ -459,7 +459,7 @@
     <!-- Search View -->
     <browser:page
         name="search"
-        class="Products.CMFPlone.browser.search.Search"
+        class=".SearchView"
         permission="zope2.View"
         for="plone.app.layout.navigation.interfaces.INavigationRoot"
         template="templates/search.pt"
