@@ -78,8 +78,9 @@
         </div>
 
         <div
-            tal:define="request_path python:request.get('path', None)"
-            tal:condition="request_path">
+            tal:define="request_path python:request.get('path', None);
+                        search_path_title view/search_path_title|nothing"
+            tal:condition="search_path_title">
 
             <p>
 
@@ -89,7 +90,7 @@
                     type="checkbox"
                     name="path" />
 
-                Search only within <span tal:replace="view/search_path_title|nothing" />.
+                Search only within <strong tal:content="search_path_title" />
 
             </p>
 

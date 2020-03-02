@@ -928,9 +928,11 @@ class SearchView(_SearchView, BaseView):
 
             path = search_path[len(site_path)+1:]
 
-            try:
-                o = self.site.restrictedTraverse(path)
-            except:
-                pass
-            else:
-                return o.Title()
+            if path:
+
+                try:
+                    o = self.site.restrictedTraverse(path)
+                except:
+                    pass
+                else:
+                    return o.Title()
