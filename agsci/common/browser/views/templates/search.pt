@@ -88,9 +88,12 @@
                     tal:attributes="value request_path"
                     checked="checked"
                     type="checkbox"
+                    id="search_path"
                     name="path" />
 
-                Search only within <strong tal:content="search_path_title" />
+                <label for="search_path">
+                    Search only within <strong tal:content="search_path_title" />
+                </label>
 
             </p>
 
