@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ABE Navigation -->
+
+<config>
+
+    <nav id="audience">
+        <item>
+            <title>Audience</title>
+            <items>
+                <group>
+                    <item>
+                        <title>Students</title>
+                        <link>students</link>
+                        <items>
+                            <item>
+                                <title>Academic Advising</title>
+                                <link>students/advising</link>
+                            </item>
+                            <item>
+                                <title>Career Services and Internships</title>
+                                <link>students/careers</link>
+                            </item>
+                            <item>
+                                <title>Clubs and Organizations</title>
+                                <link>students/clubs</link>
+                            </item>
+                            <item>
+                                <title>Entrepreneurship and Innovation</title>
+                                <link>entrepreneur</link>
+                            </item>
+                            <item>
+                                <title>Graduate Student Resources</title>
+                                <link>students/graduate</link>
+                            </item>
+                            <item>
+                                <title>Research Opportunities</title>
+                                <link>students/research</link>
+                            </item>
+                            <item>
+                                <title>Scholarships</title>
+                                <link>students/scholarships</link>
+                            </item>
+                            <item>
+                                <title>Study Abroad</title>
+                                <link>international/study-abroad</link>
+                            </item>
+                            <item>
+                                <title>Student Life</title>
+                                <link>students/life</link>
+                            </item>
+                        </items>
+                    </item>
+                    <item>
+                        <title>Industry</title>
+                        <link>industry</link>
+                        <items>
+                            <item>
+                                <title>Penn State Ag Council</title>
+                                <link>industry/agcouncil</link>
+                            </item>
+                            <item>
+                                <title>Ag Action Network</title>
+                                <link>industry/ag-action-network</link>
+                            </item>
+                            <item>
+                                <title>Recruitment and Employer Relations</title>
+                                <link>students/careers/information-for-employers</link>
+                            </item>
+                            <item>
+                                <title>Continuing Education</title>
+                                <link>industry/continuing-education</link>
+                            </item>
+                            <item>
+                                <title>Labs and Services</title>
+                                <link>industry/services</link>
+                            </item>
+                        </items>
+                    </item>
+                    <item>
+                        <title>Alumni</title>
+                        <link>alumni</link>
+                        <items>
+                            <item>
+                                <title>Get Involved</title>
+                                <link>alumni/membership</link>
+                            </item>
+                            <item>
+                                <title>Awards and Recognition</title>
+                                <link>alumni/awards</link>
+                            </item>
+                            <item>
+                                <title>Armsby Honor Society</title>
+                                <link>alumni/armsby</link>
+                            </item>
+                        </items>
+                    </item>
+
+                    <item>
+                        <title>Faculty &amp; Staff</title>
+                        <link>faculty-staff</link>
+                        <items>
+                            <item>
+                                <title>Faculty &amp; Staff Resources</title>
+                                <link>faculty-staff</link>
+                            </item>
+                        </items>
+                    </item>
+
+                    <item>
+                        <title>Visitors &amp; Public</title>
+                        <link>visitors-and-public</link>
+                        <items>
+                            <item>
+                                <title>Places to Visit</title>
+                                <link>visitors-and-public/places-to-visit</link>
+                            </item>
+                            <item>
+                                <title>Service Laboratories</title>
+                                <link>visitors-and-public/service-laboratories</link>
+                            </item>
+                            <item>
+                                <title>Programs and Events</title>
+                                <link>visitors-and-public/programs-and-events</link>
+                            </item>
+                            <item>
+                                <title>Youth Opportunities</title>
+                                <link>visitors-and-public/youth-opportunities</link>
+                            </item>
+
+                        </items>
+                    </item>
+
+                </group>
+            </items>
+        </item>
+    </nav>
+
+    <nav id="primary">
+        <items>
+            <item>
+                <title>Undergraduate</title>
+                <link>undergraduate</link>
+                <items>
+                    <item>
+                        <title>Student Resources</title>
+                        <link>undergraduate/resources</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>undergraduate/contact</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Graduate</title>
+                <link>graduate</link>
+                <items>
+                    <item>
+                        <title>Common Degree Requirements</title>
+                        <link>graduate/degree-requirements</link>
+                    </item>
+                    <item>
+                        <title>Master of Science</title>
+                        <link>graduate/degree-ms</link>
+                    </item>
+                    <item>
+                        <title>Doctor of Philosophy</title>
+                        <link>graduate/degree-phd</link>
+                    </item>
+                    <item>
+                        <title>Funding Opportunities</title>
+                        <link>graduate/apply</link>
+                    </item>
+                    <item>
+                        <title>Student Resources</title>
+                        <link>graduate/resources</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>graduate/contact</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>People</title>
+                <link>directory</link>
+                <items>
+                    <item>
+                        <title>Faculty</title>
+                        <link>directory/faculty</link>
+                    </item>
+                    <item>
+                        <title>Staff</title>
+                        <link>directory/staff</link>
+                    </item>
+                    <item>
+                        <title>Gradiate Students</title>
+                        <link>directory/graduate-students</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Research</title>
+                <link>research</link>
+                <items>
+                    <item>
+                        <title>Research Areas</title>
+                        <link>research/areas</link>
+                    </item>
+                    <item>
+                        <title>Research Centers</title>
+                        <link>research/centers</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Extension &amp; Outreach</title>
+                <link>extension</link>
+                <items>
+                    <item>
+                        <title>Extension Programs</title>
+                        <link>extension/programs</link>
+                    </item>
+                    <item>
+                        <title>Youth Resources</title>
+                        <link>extension/youth</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>About</title>
+                <link>about</link>
+                <items>
+                    <item>
+                        <title>News</title>
+                        <link>news</link>
+                    </item>
+                    <item>
+                        <title>Events</title>
+                        <link>events</link>
+                    </item>
+                    <item>
+                        <title>Facilities</title>
+                        <link>about/facilities</link>
+                    </item>
+                    <item>
+                        <title>Alumni and Friends</title>
+                        <link>about/alumni</link>
+                    </item>
+                    <item>
+                        <title>Support the Department</title>
+                        <link>about/support</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>contact</link>
+                    </item>
+                </items>
+            </item>
+        </items>
+    </nav>
+</config>

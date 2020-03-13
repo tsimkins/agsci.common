@@ -206,21 +206,38 @@
         height: 40px;
         margin-left: 1rem;
         }
+    img.psu-logo {
+        width: 128.8px;
+        height: 40px;
+        margin-left: 1rem;
+        }
     }
 
 @include media-breakpoint-up(md) {
 
-    .department-level img.agsci-logo {
-        width: 280px;
-        height: 50px;
+    .department-level {
+        img.agsci-logo {
+            width: 280px;
+            height: 50px;
+            }
+        img.psu-logo {
+            width: 161px;
+            height: 50px;
+            }
         }
     }
 
 @include media-breakpoint-up(lg) {
 
-    .department-level img.agsci-logo {
-        width: 300px;
-        height: 54px;
+    .department-level {
+        img.agsci-logo {
+            width: 300px;
+            height: 54px;
+            }
+        img.psu-logo {
+            width: 172.5px;
+            height: 54px;
+            }
         }
 
     .department-level .college-logo-block {
@@ -283,9 +300,16 @@
         padding-bottom: 0;
         }
 
-    .department-level .affix img.agsci-logo { /* px required for svg, specific ht required for smoother transition */
-        width: 260px;
-        height: 47px;
+    /* px required for svg, specific ht required for smoother transition */
+    .department-level .affix {
+        img.agsci-logo {
+            width: 260px;
+            height: 47px;
+            }
+        img.psu-logo {
+            width: 149.5px;
+            height: 47px;
+            }
         }
 
     .department-level .affix .college-logo-block {

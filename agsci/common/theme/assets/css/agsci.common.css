@@ -8651,6 +8651,10 @@ header.affix {
     width: 224px;
     height: 40px;
     margin-left: 1rem; }
+  .college-level header img.psu-logo {
+    width: 128.8px;
+    height: 40px;
+    margin-left: 1rem; }
 
 .college-level .navbar-brand {
   position: absolute;
@@ -8661,20 +8665,30 @@ header.affix {
 @media (min-width: 768px) {
   .college-level header img.agsci-logo {
     width: 280px;
+    height: 50px; }
+  .college-level header img.psu-logo {
+    width: 161px;
     height: 50px; } }
 @media (min-width: 992px) {
   .college-level header img.agsci-logo {
     width: 300px;
     height: 57px; }
+  .college-level header img.psu-logo {
+    width: 172.5px;
+    height: 57px; }
 
   .college-level header.affix img.agsci-logo {
     width: 280px;
+    height: 50px; }
+  .college-level header.affix img.psu-logo {
+    width: 161px;
     height: 50px; }
 
   .college-level .affix .navbar-brand {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem; } }
 img.agsci-logo,
+img.psu-logo,
 .navbar-brand {
   transition: all 0.375s ease-in-out; }
 
@@ -9347,14 +9361,24 @@ header .form-inline .form-control {
   width: 224px;
   height: 40px;
   margin-left: 1rem; }
+.department-level img.psu-logo {
+  width: 128.8px;
+  height: 40px;
+  margin-left: 1rem; }
 
 @media (min-width: 768px) {
   .department-level img.agsci-logo {
     width: 280px;
+    height: 50px; }
+  .department-level img.psu-logo {
+    width: 161px;
     height: 50px; } }
 @media (min-width: 992px) {
   .department-level img.agsci-logo {
     width: 300px;
+    height: 54px; }
+  .department-level img.psu-logo {
+    width: 172.5px;
     height: 54px; }
 
   .department-level .college-logo-block {
@@ -9395,9 +9419,12 @@ header .form-inline .form-control {
   .department-level header.affix {
     padding-bottom: 0; }
 
+  /* px required for svg, specific ht required for smoother transition */
   .department-level .affix img.agsci-logo {
-    /* px required for svg, specific ht required for smoother transition */
     width: 260px;
+    height: 47px; }
+  .department-level .affix img.psu-logo {
+    width: 149.5px;
     height: 47px; }
 
   .department-level .affix .college-logo-block {
@@ -11638,6 +11665,9 @@ footer {
   footer img.agsci-logo {
     width: 300px;
     height: auto; }
+  footer img.psu-logo {
+    width: 172.5px;
+    height: auto; }
   footer .fa-stack {
     text-align: center; }
   footer li.footer-list-head {
@@ -11700,10 +11730,16 @@ li.li-separator::after {
   .department-level footer img.agsci-logo {
     width: 224px;
     height: 40px; }
+  .department-level footer img.psu-logo {
+    width: 128.8px;
+    height: 40px; }
 
 @media (min-width: 768px) {
   .department-level footer img.agsci-logo {
     width: 280px;
+    height: 50px; }
+  .department-level footer img.psu-logo {
+    width: 161px;
     height: 50px; } }
 .footer-department-level {
   padding: 1rem 0;
@@ -13060,6 +13096,9 @@ main {
   .department-level .modal img.agsci-logo {
     width: 224px;
     height: 40px; }
+  .department-level .modal img.psu-logo {
+    width: 128.8px;
+    height: 40px; }
   .department-level .modal .navbar-brand {
     margin-bottom: 0.5rem; }
   .department-level .modal p.modal-nav-section {
@@ -13101,11 +13140,17 @@ main {
   .department-level .modal img.agsci-logo {
     width: 280px;
     height: 50px; }
+  .department-level .modal img.psu-logo {
+    width: 161px;
+    height: 50px; }
   .department-level .modal p.modal-nav-section {
     text-align: left; } }
 @media (min-width: 768px) {
   .department-level .modal img.agsci-logo {
     width: 300px;
+    height: 57px; }
+  .department-level .modal img.psu-logo {
+    width: 172.5px;
     height: 57px; } }
 .audience-modal-bar {
   margin-bottom: 2rem; }
@@ -13116,6 +13161,8 @@ main {
     font-family: "Nunito Sans", sans-serif; }
 
 .department-level .modal img.agsci-logo {
+  margin-left: 0; }
+.department-level .modal img.psu-logo {
   margin-left: 0; }
 
 /* ----------------------------------------------------------

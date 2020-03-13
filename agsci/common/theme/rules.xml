@@ -94,6 +94,8 @@
         </rules>
 
         <drop css:content="#audience-nav-viewlet" />
+        <drop css:content=".dept-level-college-options" />
+        <drop css:content="#navigation-modal" />
         <drop css:content="#primary-nav-viewlet" />
 
     </rules>
@@ -174,10 +176,25 @@
         <replace css:content="#viewlet-above-content" css:theme="#above-content" />
 
         <!-- Navigation -->
-        <replace css:content-children="#logo-viewlet" css:theme="#logo-viewlet" />
+        <replace
+            css:content-children="#logo-viewlet"
+            css:theme="#logo-viewlet" />
 
-        <replace css:content-children="#audience-nav-viewlet" css:theme="#audience-nav-viewlet" />
-        <replace css:content-children="#primary-nav-viewlet" css:theme="#primary-nav-viewlet" />
+        <replace
+            css:content-children="#audience-nav-viewlet"
+            css:theme="#audience-nav-viewlet" />
+
+        <replace
+            css:content-children="#audience-department-nav-viewlet"
+            css:theme="#audience-department-nav-viewlet" />
+
+        <replace
+            css:content-children="#primary-nav-viewlet"
+            css:theme="#primary-nav-viewlet" />
+
+        <replace
+            css:content-children="#navigation-modal-viewlet"
+            css:theme="#navigation-modal-viewlet" />
 
         <!--
             If we have a nav portlet, drop the first child in column one.
@@ -320,6 +337,7 @@
         <!-- Footer -->
         <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 
+        <replace css:theme="#footer-logo-viewlet" css:content-children="#footer-logo-viewlet" />
         <replace css:theme="#footer-contact" css:content-children="#footer-contact" />
         <replace css:theme="#footer-social" css:content-children="#footer-social" />
         <replace css:theme="#footer-links" css:content-children="#footer-links" />

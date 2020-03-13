@@ -6,11 +6,13 @@
 
         <div class="department-branding d-lg-none">
 
-            <a class="navbar-brand">
+            <a class="navbar-brand"
+               tal:attributes="href view/logo_href|nothing">
 
-                <img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png"
-                     class="agsci-logo pl-3"
-                     alt="Penn State College of Agricultural Science Logo" />
+                <img
+                    tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                                    alt view/logo_alt|nothing"
+                     class="${view/logo_class} pl-3" />
 
             </a>
 

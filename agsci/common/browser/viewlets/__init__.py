@@ -60,6 +60,13 @@ class ViewletBase(_ViewletBase):
     def portal_url(self):
         return self.context.portal_url()
 
+    @property
+    def portal_title(self):
+        portal_state = getMultiAdapter((self.context, self.request),
+                                       name=u'plone_portal_state')
+
+        return portal_state.navigation_root_title()
+
     def normalize(self, _):
         normalizer = queryUtility(IIDNormalizer)
         return normalizer.normalize(_)
@@ -121,8 +128,87 @@ class ViewletBase(_ViewletBase):
 
         return u'Search'
 
+    @property
+    def department_id(self):
+        _ = self.registry.get('agsci.common.department_id', None)
+
+        if _ in [
+            'abe', 'aese', 'animalscience', 'ecosystems', 'ento',
+            'foodscience', 'plantpath', 'plantscience', 'vbs'
+        ]:
+            return safe_unicode(_).encode('utf-8')
+
+    @property
+    def is_department(self):
+        return not not self.department_id
+
+    @property
+    def use_psu_logo(self):
+        return self.department_id in ('abe',)
+
+    @property
+    def is_edit(self):
+        domain = self.parse_url(self.portal_url)[1]
+        return domain.startswith('edit.')
+
+    @property
+    def logo_src(self):
+
+        if self.use_psu_logo:
+            return 'psu-hor-rgb-rev-2c.png'
+
+        return 'psu-agr-logo-rev-single.png'
+
+    @property
+    def logo_alt(self):
+
+        if self.use_psu_logo:
+            return 'Penn State Logo'
+
+        return 'Penn State College of Agricultural Science Logo'
+
+    @property
+    def logo_src(self):
+
+        if self.use_psu_logo:
+            return 'psu-hor-rgb-rev-2c.png'
+
+        return 'psu-agr-logo-rev-single.png'
+
+    @property
+    def logo_class(self):
+
+        if self.use_psu_logo:
+            return 'psu-logo'
+
+        return 'agsci-logo'
+
+    @property
+    def logo_href(self):
+        if self.use_psu_logo:
+            return 'https://www.psu.edu'
+
+        if self.is_edit:
+            return 'https://edit.agsci.psu.edu'
+
+        return 'https://agsci.psu.edu'
+
+    def parse_url(self, url, strip_slash=True):
+        parsed_url = urlparse(url.strip())
+
+        domain = parsed_url.netloc
+        path = parsed_url.path
+        scheme = parsed_url.scheme
+
+        if strip_slash:
+            if path.endswith('/'):
+                path = path[:-1]
+
+        return (scheme, domain, path)
+
 class LogoViewlet(ViewletBase):
     pass
+
 
 class NavigationViewlet(ViewletBase):
 
@@ -158,19 +244,6 @@ class NavigationViewlet(ViewletBase):
             return _.lower().strip()
 
         return 'nav'
-
-    def parse_url(self, url, strip_slash=True):
-        parsed_url = urlparse(url.strip())
-
-        domain = parsed_url.netloc
-        path = parsed_url.path
-        scheme = parsed_url.scheme
-
-        if strip_slash:
-            if path.endswith('/'):
-                path = path[:-1]
-
-        return (scheme, domain, path)
 
     def link_class(self, item):
 
@@ -248,20 +321,6 @@ class NavigationViewlet(ViewletBase):
             if nav['id'] == self.nav_id:
                 return nav
 
-    @property
-    def department_id(self):
-        _ = self.registry.get('agsci.common.department_id', None)
-
-        if _ in [
-            'abe', 'aese', 'animalscience', 'ecosystems', 'ento',
-            'foodscience', 'plantpath', 'plantscience', 'vbs'
-        ]:
-            return safe_unicode(_).encode('utf-8')
-
-    @property
-    def is_department(self):
-        return not not self.department_id
-
 class PrimaryNavigationViewlet(NavigationViewlet):
 
     nav_id = 'primary'
@@ -275,6 +334,12 @@ class DepartmentNavigationViewlet(NavigationViewlet):
     @property
     def xml_file(self):
         return '++resource++agsci.common/configuration/navigation-%s.xml' % self.department_id
+
+class DepartmentAudienceNavigationViewlet(NavigationViewlet):
+
+    @property
+    def xml_file(self):
+        return '++resource++agsci.common/configuration/audience-department.xml'
 
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
@@ -308,6 +373,10 @@ class FooterLinksViewlet(NavigationViewlet):
 class FooterContactViewlet(FooterLinksViewlet):
 
     nav_id = 'contact'
+
+class ModalNavigationViewlet(NavigationViewlet):
+    pass
+    #xml_file = '++resource++agsci.common/configuration/footer.xml'
 
 class CSSViewlet(ViewletBase):
 
@@ -582,12 +651,7 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
     @memoize
     def site_title_data(self):
 
-        portal_state = getMultiAdapter((self.context, self.request),
-                                       name=u'plone_portal_state')
-
-        portal_title = portal_state.navigation_root_title()
-
-        _ = [self.page_title, portal_title, self.org_title]
+        _ = [self.page_title, self.portal_title, self.org_title]
         _ = [x for x in _ if x]
         _ = [escape(safe_unicode(x)) for x in _]
 

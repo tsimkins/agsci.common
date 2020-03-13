@@ -1,0 +1,33 @@
+<div id="audience-department-nav-viewlet"
+    tal:condition="view/is_department|nothing">
+
+    <ul
+        class="text-white dept-level-college-options list-inline list-inline-divided justify-content-end"
+        style="z-index: 99;">
+
+        <li>
+            <a class="btn-small"
+               href="https://agsci.psu.edu/admissions/undergraduate/request">Request Info</a>
+        </li>
+
+        <li>
+            <a class="btn-small"
+               href="https://agsci.psu.edu/admissions/undergraduate/visit">Schedule a Visit</a>
+        </li>
+
+        <li>
+            <a class="btn-small"
+               href="https://admissions.psu.edu/apply/">Apply</a>
+        </li>
+
+        <li>
+            <button
+                class=""
+                type="button"
+                data-toggle="modal"
+                data-target="#navigation-modal">College of Ag Menu <i class="fas fa-bars"></i>
+            </button>
+        </li>
+
+    </ul>
+</div>

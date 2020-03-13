@@ -1,11 +1,42 @@
-<div id="logo-viewlet">
+<div id="logo-viewlet"
+    tal:define="is_department view/is_department|nothing">
 
-    <a tal:attributes="href view/portal_url"
-       class="navbar-brand">
+	<!-- LOGO AND BRANDING BAR -->
+	<div class="d-none d-lg-block container-fluid position-relative px-0 brand-bar department-bar department-bar-test"
+	     tal:omit-tag="not:is_department">
+		<div class="row mx-0 align-items-center"
+		     tal:omit-tag="not:is_department">
+			<div class="d-block d-lg-inline-flex pr-3 college-logo-block"
+			     tal:omit-tag="not:is_department">
+                <a tal:attributes="href view/logo_href|nothing"
+                   class="navbar-brand">
 
-        <img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/psu-agr-logo-rev-single.png"
-             alt="Penn State College of Agricultural Science Logo"
-             class="agsci-logo">
+                    <img
+                        tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                                        class view/logo_class|nothing;
+                                        alt view/logo_alt|nothing" />
+
+                </a>
+			</div>
+			<div class="col-12 col-lg d-flex align-items-center pl-0 pr-5 department-brand-block"
+			     tal:condition="is_department">
+				<a class="department-brand"
+				   tal:attributes="href view/portal_url"
+				   tal:content="view/portal_title|nothing" />
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div id="footer-logo-viewlet">
+
+    <a tal:attributes="href view/logo_href|nothing">
+
+        <img
+            tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                            class view/logo_class|nothing;
+                            alt view/logo_alt|nothing" />
 
     </a>
 

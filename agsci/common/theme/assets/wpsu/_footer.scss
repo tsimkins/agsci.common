@@ -14,6 +14,11 @@ footer { /* relative and high z-index to mask any affixed nav */
         height: auto;
         }
 
+    img.psu-logo {
+        width: 172.5px;
+        height: auto;
+        }
+
     .fa-stack {
         text-align: center;
         }
@@ -109,14 +114,27 @@ li.li-separator::after {
             width: 224px;
             height: 40px;
             }
+
+        img.psu-logo {
+            width: 128.8px;
+            height: 40px;
+            }
         }
     }
 
 @include media-breakpoint-up(md) {
 
-    .department-level footer img.agsci-logo {
-        width: 280px;
-        height: 50px;
+    .department-level footer {
+
+        img.agsci-logo {
+            width: 280px;
+            height: 50px;
+            }
+
+        img.psu-logo {
+            width: 161px;
+            height: 50px;
+            }
         }
     }
 

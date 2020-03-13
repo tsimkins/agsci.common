@@ -48,6 +48,15 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <browser:viewlet
+        name="agsci.common.navigation.audience.department"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".DepartmentAudienceNavigationViewlet"
+        permission="zope2.View"
+        template="templates/navigation-audience-department.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Primary Navigation -->
 
     <browser:viewlet
@@ -78,6 +87,17 @@
         class=".SocialFooterViewlet"
         permission="zope2.View"
         template="templates/footer-social.pt"
+        layer="..interfaces.IThemeSpecific"
+    />
+
+    <!-- Modal Navigation -->
+
+    <browser:viewlet
+        name="agsci.common.navigation.modal"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".ModalNavigationViewlet"
+        permission="zope2.View"
+        template="templates/navigation-modal.pt"
         layer="..interfaces.IThemeSpecific"
     />
 

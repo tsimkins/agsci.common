@@ -80,6 +80,11 @@ header.affix {
         height: 40px;
         margin-left: 1rem;
         }
+    img.psu-logo {
+        width: 128.8px;
+        height: 40px;
+        margin-left: 1rem;
+        }
     }
 
     .college-level .navbar-brand {
@@ -91,9 +96,15 @@ header.affix {
 
 @include media-breakpoint-up(md) {
 
-    .college-level header img.agsci-logo {
-        width: 280px;
-        height: 50px;
+    .college-level header {
+        img.agsci-logo {
+            width: 280px;
+            height: 50px;
+            }
+        img.psu-logo {
+            width: 161px;
+            height: 50px;
+            }
         }
     }
 
@@ -105,12 +116,21 @@ header.affix {
             width: 300px;
             height: 57px;
             }
+
+        img.psu-logo {
+            width: 172.5px;
+            height: 57px;
+            }
         }
 
     .college-level header.affix {
 
         img.agsci-logo {
             width: 280px;
+            height: 50px;
+            }
+        img.psu-logo {
+            width: 161px;
             height: 50px;
             }
         }
@@ -122,6 +142,7 @@ header.affix {
     }
 
 img.agsci-logo,
+img.psu-logo,
 .navbar-brand {
     transition: $transition-long;
     }

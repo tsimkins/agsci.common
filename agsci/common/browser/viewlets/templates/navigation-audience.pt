@@ -1,4 +1,5 @@
 <div id="audience-nav-viewlet"
+    tal:condition="not: view/is_department|nothing"
     tal:define="nav view/nav|nothing">
 
     <div class="d-none d-lg-block container-fluid position-relative px-0 audience-bar">
