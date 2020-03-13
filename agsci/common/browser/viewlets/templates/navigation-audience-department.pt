@@ -1,9 +1,7 @@
 <div id="audience-department-nav-viewlet"
     tal:condition="view/is_department|nothing">
 
-    <ul
-        class="text-white dept-level-college-options list-inline list-inline-divided justify-content-end"
-        style="z-index: 99;">
+    <ul class="text-white dept-level-college-options list-inline">
 
         <li>
             <a class="btn-small"
@@ -22,11 +20,9 @@
 
         <li>
             <button
-                class=""
                 type="button"
                 data-toggle="modal"
-                data-target="#navigation-modal">College of Ag Menu <i class="fas fa-bars"></i>
-            </button>
+                data-target="#navigation-modal">College of Ag Menu</button>
         </li>
 
     </ul>

@@ -4,209 +4,151 @@
     <div
         id="navigation-modal"
         class="modal fade-in"
+        style="display: none;"
         tabindex="-1"
         role="dialog"
         aria-labelledby="navigation-modal"
         aria-hidden="true">
 
-        <button
-           class="close"
-           style="margin-top: 1rem; margin-right: 1rem;"
-           type="button"
-           data-dismiss="modal"
-           aria-label="Close">
-
-            <span style="color: white; font-size: 3rem;" aria-hidden="true">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
                 &times;
             </span>
-
         </button>
 
         <div
             class="modal-dialog modal-lg modal-dialog-centered"
             role="document">
 
-            <div class="modal-content"
-                 style="background-color: transparent; border-color: transparent;">
+            <div
+                class="modal-content"
+                style="background-color: transparent; border-color: transparent;">
 
                 <div class="modal-body">
-
-                    <div class="audience-modal-bar">
-                        <span>Info For...</span>
-
-                        <a href="https://agsci.psu.edu/students">
-                            Students
-                        </a>
-                        <a href="https://agsci.psu.edu/industry">
-                            Industry
-                        </a>
-                        <a href="https://agsci.psu.edu/alumni">
-                            Alumni
-                        </a>
-                        <a href="https://agsci.psu.edu/faculty-staff">
-                            Faculty &amp; Staff
-                        </a>
-                        <a href="https://agsci.psu.edu/visitors-and-public">
-                            Visitors &amp; Public
-                        </a>
-                    </div>
-
-                    <div class="container-fluid section-modal-nav">
+                    <div class="container-fluid section-modal-nav px-0">
                         <div class="row">
-                            <div class="col-12 col-md-3">
-                                <p class="modal-nav-section">
-                                    <a href="https://agsci.psu.edu/academics">
-                                        Degrees &amp; Programs
-                                    </a>
-                                </p>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a href="https://agsci.psu.edu/academics/undergraduate"
-                                           class="nav-link">
-                                            Undergraduate Degrees
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="https://agsci.psu.edu/academics/graduate"
-                                           class="nav-link">
-                                            Graduate Degree Programs
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="https://agsci.psu.edu/academics/departments">
-                                            Academic Departments
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <p class="modal-nav-section">
-                                    <a href="https://agsci.psu.edu/admissions">
-                                        Admissions
-                                    </a>
-                                </p>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Undergraduate
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Graduate
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <p class="modal-nav-section">
-                                    <a href="">
-                                        Research
-                                    </a>
-                                </p>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Research Areas
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Highlights
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Opportunities
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Centers &amp; Institutes
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Ag Experiment Stations
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-12 col-md-3">
-                                <p class="modal-nav-section">
-                                    <a href=""
-                                           href="">
-                                        About
-                                    </a>
-                                </p>
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Leadership
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Mission &amp; Strategic Plan
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Industry Relations
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Diversity
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                           href="">
-                                            Development
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="col-12 col-md-8 offset-md-2">
+                                <a tal:attributes="href view/logo_href|nothing"
+                                   class="navbar-brand">
+
+                                    <img
+                                        tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                                                        class view/logo_class|nothing;
+                                                        alt view/logo_alt|nothing" />
+
+                                </a>
                             </div>
                         </div>
-                        <p>
-                            <a href="https://agsci.psu.edu/directory">
-                                Directory
+                        <div class="row justify-content-center text-white">
+                            <div class="col-12 col-md-4 mt-2">
+                                <div class="container border-top">
+                                    <div class="row mt-2">
+                                        <div class="col-3 px-0 offset-1 col-md-12">
+                                            <p class="modal-nav-section">
+                                                Explore
+                                            </p>
+                                        </div>
+                                        <div class="col-8 col-md-12">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Degrees &amp; Programs
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Admissions
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Research
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Extension
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        About
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        College Directory
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Contact Us
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 mt-2">
+                                <div class="container border-top">
+                                    <div class="row mt-2">
+                                        <div class="col-3 px-0 offset-1 col-md-12">
+                                            <p class="modal-nav-section">
+                                                Information for
+                                            </p>
+                                        </div>
+                                        <div class="col-8 col-md-12">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Students
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Industry
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Alumni
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Faculty &amp; Staff
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link">
+                                                        Visitors &amp; Public
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row d-flex modal-cta-btns">
+                            <a class="btn btn-orange" href="">
+                                Request Info
                             </a>
-                        </p>
-
-                        <a class="btn btn-primary"
-                           href="https://agsci.psu.edu/contact">
-                            Contact
-                        </a>
-
-                        <a class="btn btn-primary"
-                           href="https://agsci.psu.edu/admissions/undergraduate/visit">
-                            Visit
-                        </a>
-                        <a
-                            class="btn btn-primary"
-                            href="https://admissions.psu.edu/apply/">
-                            Apply
-                        </a>
-                        <p class="icons-social">
+                            <a class="btn btn-green" href="">
+                                Schedule a Visit
+                            </a>
+                            <a class=" btn btn-purple" href="">
+                                Apply
+                            </a>
+                        </div>
+                        <div class="row d-flex justify-content-center">
                             &nbsp;
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
