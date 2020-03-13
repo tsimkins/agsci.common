@@ -1,0 +1,87 @@
+<div id="footer-department-viewlet"
+    tal:condition="view/is_department|nothing">
+
+    <section class="container-fluid footer-department-level py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col text-white text-center">
+                    <p class="department-name">
+
+        				<a tal:attributes="href view/portal_url"
+        				   tal:content="view/portal_title|nothing" />
+
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <ul class="list-inline list-inline-dept-links text-center mt-2">
+                        <li class="li-separator">
+                            <a>
+                                About
+                            </a>
+                        </li>
+                        <li class="li-separator">
+                            <a>
+                                Directory
+                            </a>
+                        </li>
+                        <li class="li-separator">
+                            <span class="element-invisible">
+                                Department Telephone
+                            </span>
+                            <a href="tel:+814-865-1362">
+                                814-865-1362
+                            </a>
+                        </li>
+                        <li class="li-separator">
+                            <span class="element-invisible">
+                                Department Email
+                            </span>
+                            <a href="mailto:AskDAS@psu.edu">
+                                AskDAS@psu.edu
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid footer-college-level">
+        <div class="row copyright-legal pb-3">
+            <!-- footer logo and links -->
+            <div class="col col-auto mx-auto px-0">
+                <a tal:attributes="href view/logo_href|nothing"
+                   class="navbar-brand">
+
+                    <img
+                        tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                                        class view/logo_class|nothing;
+                                        alt view/logo_alt|nothing" />
+
+                </a>
+            </div>
+            <!-- end logo link column -->
+        </div>
+        <div class="row pb-1">
+            <div class="col-12 pr-0 text-center">
+                <p class="footerLinks">
+
+                    <tal:links tal:repeat="i view/footer_links/item|nothing">
+                        <a tal:attributes="href i/link/cdata"
+                           tal:content="i/title/cdata" />
+
+                        <span class="footerSeparator">—</span>
+
+                    </tal:links>
+
+                    <abbr title="Copyright">&copy;</abbr>
+                    <tal:year tal:replace="view/year|nothing" /> The Pennsylvania State University
+
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>

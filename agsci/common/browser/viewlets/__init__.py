@@ -341,6 +341,13 @@ class DepartmentAudienceNavigationViewlet(NavigationViewlet):
     def xml_file(self):
         return '++resource++agsci.common/configuration/audience-department.xml'
 
+class DepartmentFooterViewlet(DepartmentNavigationViewlet):
+
+    @property
+    def footer_links(self):
+        _ =  FooterLinksViewlet(self.context, self.request, self.manager)
+        return _.nav
+
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
     nav_id = 'primary'

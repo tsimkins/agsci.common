@@ -1,4 +1,5 @@
-<div id="footer-contact">
+<div id="footer-contact"
+    tal:condition="not: view/is_department|nothing">
 
     <ul class="list-inline list-inline-contact">
         <li class="li-separator">
@@ -18,5 +19,3 @@
     </ul>
 
 </div>
-
-

@@ -334,13 +334,23 @@
             <drop css:theme="section.banner" />
         </rules>
 
-        <!-- Footer -->
+        <!-- College Footer -->
         <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 
         <replace css:theme="#footer-logo-viewlet" css:content-children="#footer-logo-viewlet" />
         <replace css:theme="#footer-contact" css:content-children="#footer-contact" />
         <replace css:theme="#footer-social" css:content-children="#footer-social" />
         <replace css:theme="#footer-links" css:content-children="#footer-links" />
+
+        <!-- Department Footer### -->
+        <rules css:if-content="nav.department-level">
+            <drop css:theme="[data-template='college']" />
+
+            <replace
+                css:theme="#footer-department-viewlet"
+                css:content-children="#footer-department-viewlet" />
+
+        </rules>
 
         <after css:theme="#main" css:content="#tile-links" />
         <after css:theme="#main" css:content="#tile-images" />
