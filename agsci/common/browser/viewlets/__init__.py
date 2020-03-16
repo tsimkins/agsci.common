@@ -367,7 +367,6 @@ class DepartmentFooterViewlet(DepartmentNavigationViewlet):
     @property
     def contact_links(self):
         _ =  DepartmentContactViewlet(self.context, self.request, self.manager)
-        import pdb; pdb.set_trace()
         return _.nav
 
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
