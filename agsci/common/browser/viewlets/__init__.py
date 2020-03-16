@@ -206,6 +206,11 @@ class ViewletBase(_ViewletBase):
 
         return (scheme, domain, path)
 
+    @property
+    def year(self):
+        return datetime.now().year
+
+
 class LogoViewlet(ViewletBase):
     pass
 
@@ -341,11 +346,28 @@ class DepartmentAudienceNavigationViewlet(NavigationViewlet):
     def xml_file(self):
         return '++resource++agsci.common/configuration/audience-department.xml'
 
+class DepartmentSocialViewlet(DepartmentNavigationViewlet):
+    nav_id = 'social'
+
+class DepartmentContactViewlet(DepartmentNavigationViewlet):
+    nav_id = 'contact'
+
 class DepartmentFooterViewlet(DepartmentNavigationViewlet):
 
     @property
     def footer_links(self):
         _ =  FooterLinksViewlet(self.context, self.request, self.manager)
+        return _.nav
+
+    @property
+    def social_links(self):
+        _ =  DepartmentSocialViewlet(self.context, self.request, self.manager)
+        return _.nav
+
+    @property
+    def contact_links(self):
+        _ =  DepartmentContactViewlet(self.context, self.request, self.manager)
+        import pdb; pdb.set_trace()
         return _.nav
 
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
@@ -372,10 +394,6 @@ class FooterLinksViewlet(NavigationViewlet):
     xml_file = '++resource++agsci.common/configuration/footer.xml'
 
     nav_id = 'links'
-
-    @property
-    def year(self):
-        return datetime.now().year
 
 class FooterContactViewlet(FooterLinksViewlet):
 
