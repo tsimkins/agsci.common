@@ -46,9 +46,10 @@
                                     klass python: hidden and 'dropdown d-lg-none' or 'dropdown'">
 
                         <a tal:content="l1/title/cdata"
+                           tal:define="klass python: view.link_class(l1)"
                            tal:attributes="id item_id;
-                                           href python: view.link(l1)"
-                           class="dropdown-toggle"
+                                           href python: view.link(l1);
+                                           class string:dropdown-toggle ${klass}"
                            role="button"
                            data-toggle="dropdown"
                            data-click-behavior="default"
@@ -70,7 +71,9 @@
 
                                             <li class="nav-item">
                                                 <a class="nav-link"
-                                                   tal:attributes="href l2/link/cdata|nothing"
+                                                   tal:define="klass python: view.link_class(l2)"
+                                                   tal:attributes="href l2/link/cdata|nothing;
+                                                                   class string:nav-link ${klass}"
                                                    tal:content="l2/title/cdata|nothing" />
                                             </li>
 
