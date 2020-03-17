@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ABE Navigation -->
+<!-- Ecosystems Navigation -->
 
 <config>
 
@@ -166,7 +166,7 @@
                     </item>
                     <item>
                         <title>Contact Us</title>
-                        <link>contact</link>
+                        <link>about/contact</link>
                     </item>
                 </items>
             </item>
