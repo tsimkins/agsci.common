@@ -15,8 +15,9 @@ from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.event.interfaces import IEvent
 from plone.i18n.normalizer.interfaces import IIDNormalizer
-from plone.memoize.instance import memoize
+from plone.memoize.view import memoize_contextless as memoize
 from plone.registry.interfaces import IRegistry
+from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility, queryUtility, getMultiAdapter
 from zope.component.hooks import getSite
 
@@ -47,6 +48,16 @@ except ImportError:
         return x
 
 class ViewletBase(_ViewletBase):
+
+    XML_CONFIG_DIR = "++resource++agsci.common/configuration"
+
+    @property
+    def cache(self):
+        return IAnnotations(self.request)
+
+    @property
+    def xml_file_path(self):
+        return "%s/%s" % (self.XML_CONFIG_DIR, self.xml_file)
 
     @property
     def site(self):
@@ -97,7 +108,6 @@ class ViewletBase(_ViewletBase):
         return self.view.__name__
 
     @property
-    @memoize
     def search_section(self):
 
         if hasattr(self.context, 'aq_chain'):
@@ -128,15 +138,44 @@ class ViewletBase(_ViewletBase):
 
         return u'Search'
 
+    def is_valid_department_id(self, department_id):
+
+        if department_id:
+
+            if isinstance(department_id, (str, unicode)):
+
+                xml_file = u"%s/navigation-%s.xml" % (
+                    safe_unicode(self.XML_CONFIG_DIR),
+                    safe_unicode(department_id)
+                )
+
+                xml_file = xml_file.encode('utf-8')
+
+                try:
+                    config = self.get_xml_config(xml_file)
+                except:
+                    pass
+                else:
+                    return hasattr(config, 'type') and \
+                           isinstance(config.type.cdata, (str, unicode)) \
+                           and config.type.cdata.strip() in ('department',)
+
     @property
+    @memoize
     def department_id(self):
+        cache_key = 'department_id'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
         _ = self.registry.get('agsci.common.department_id', None)
 
-        if _ in [
-            'abe', 'aese', 'animalscience', 'ecosystems', 'ento',
-            'foodscience', 'plantpath', 'plantscience', 'vbs'
-        ]:
-            return safe_unicode(_).encode('utf-8')
+        if self.is_valid_department_id(_):
+            self.cache[cache_key] = safe_unicode(_).encode('utf-8')
+        else:
+            self.cache[cache_key] = None
+
+        return self.cache[cache_key]
 
     @property
     def is_department(self):
@@ -144,7 +183,18 @@ class ViewletBase(_ViewletBase):
 
     @property
     def use_psu_logo(self):
-        return self.department_id in ('abe',)
+        cache_key = 'use_psu_logo'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        config = self.config
+
+        self.cache[cache_key] = hasattr(config, 'logo') and \
+            isinstance(config.logo.cdata, (str, unicode)) and \
+            config.logo.cdata.strip() in ('psu',)
+
+        return self.cache[cache_key]
 
     @property
     def is_edit(self):
@@ -211,13 +261,15 @@ class ViewletBase(_ViewletBase):
         return datetime.now().year
 
 
-class LogoViewlet(ViewletBase):
-    pass
-
-
 class NavigationViewlet(ViewletBase):
 
-    xml_file = '++resource++agsci.common/configuration/navigation.xml'
+    @property
+    def xml_file(self):
+
+        if self.department_id:
+            return 'navigation-%s.xml' % self.department_id
+
+        return 'navigation.xml'
 
     def get_paths(self):
         results = self.portal_catalog.searchResults({
@@ -314,8 +366,21 @@ class NavigationViewlet(ViewletBase):
 
     @property
     def config(self):
+        cache_key = 'xml_config|%s' % self.xml_file_path
 
-        resource = self.site.restrictedTraverse(self.xml_file)
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        self.cache[cache_key] = self.get_xml_config(self.xml_file_path)
+
+        return self.cache[cache_key]
+
+
+    def get_xml_config(self, xml_file):
+        try:
+            resource = self.site.restrictedTraverse(xml_file)
+        except:
+            raise Exception("Can't find XML config file %s" % xml_file)
         xml = untangle.parse(resource.context.path)
         return xml.config
 
@@ -326,6 +391,9 @@ class NavigationViewlet(ViewletBase):
             if nav['id'] == self.nav_id:
                 return nav
 
+class LogoViewlet(NavigationViewlet):
+    pass
+
 class PrimaryNavigationViewlet(NavigationViewlet):
 
     nav_id = 'primary'
@@ -335,16 +403,11 @@ class AudienceNavigationViewlet(NavigationViewlet):
     nav_id = 'audience'
 
 class DepartmentNavigationViewlet(NavigationViewlet):
-
-    @property
-    def xml_file(self):
-        return '++resource++agsci.common/configuration/navigation-%s.xml' % self.department_id
+    pass
 
 class DepartmentAudienceNavigationViewlet(NavigationViewlet):
 
-    @property
-    def xml_file(self):
-        return '++resource++agsci.common/configuration/audience-department.xml'
+    xml_file = 'audience-department.xml'
 
 class DepartmentSocialViewlet(DepartmentNavigationViewlet):
     nav_id = 'social'
@@ -384,13 +447,13 @@ class AudienceDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
 class SocialFooterViewlet(NavigationViewlet):
 
-    xml_file = '++resource++agsci.common/configuration/social.xml'
+    xml_file = 'social.xml'
 
     nav_id = 'social'
 
 class FooterLinksViewlet(NavigationViewlet):
 
-    xml_file = '++resource++agsci.common/configuration/footer.xml'
+    xml_file = 'footer.xml'
 
     nav_id = 'links'
 
@@ -400,7 +463,6 @@ class FooterContactViewlet(FooterLinksViewlet):
 
 class ModalNavigationViewlet(NavigationViewlet):
     pass
-    #xml_file = '++resource++agsci.common/configuration/footer.xml'
 
 class CSSViewlet(ViewletBase):
 

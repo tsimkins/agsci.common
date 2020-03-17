@@ -3,6 +3,14 @@
 
 <config>
 
+    <type>
+        department
+    </type>
+
+    <logo>
+        psu
+    </logo>
+
     <nav id="audience">
         <item>
             <title>Audience</title>

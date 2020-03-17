@@ -3,6 +3,14 @@
 
 <config>
 
+    <type>
+        department
+    </type>
+
+    <logo>
+        college
+    </logo>
+
     <nav id="contact">
         <items>
             <item>
