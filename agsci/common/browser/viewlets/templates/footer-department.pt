@@ -42,13 +42,16 @@
 
                                 <a tal:attributes="href i/link/cdata">
 
+                                    <span class="fa-stack">
+                                        <em class="fas fa-lg fa-square fa-fw fa-stack-1x fa-inverse"></em>
+                                        <em class="title fab fa-lg fa-fw ${i/icon/cdata|nothing} fa-stack-1x"></em>
+                                    </span>
+
                                     <span
                                         class="element-invisible"
-                                        tal:condition="i/label/cdata|nothing"
-                                        tal:content="i/label/cdata" />
-                                    <span
                                         tal:condition="i/title/cdata|nothing"
-                                        tal:replace="i/title/cdata" />
+                                        tal:content="i/title/cdata" />
+
                                 </a>
 
                             </li>

@@ -24,12 +24,12 @@
     <nav id="social">
         <items>
             <item>
-                <icon>fa-facebook</icon>
+                <icon>fa-facebook-square</icon>
                 <title>Facebook</title>
                 <link>https://www.facebook.com/PSUecosystems/</link>
             </item>
             <item>
-                <icon>fa-twitter</icon>
+                <icon>fa-twitter-square</icon>
                 <title>Twitter</title>
                 <link>https://twitter.com/PSUecosystems</link>
             </item>
