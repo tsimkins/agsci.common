@@ -76,6 +76,7 @@
             <drop css:theme="#theme-javascript" />
             <drop css:theme="a.back-to-top" />
             <drop css:theme="[data-component='portlets']" />
+            <drop css:theme="[data-component='menu']" />
 
         </rules>
 
@@ -94,7 +95,6 @@
         </rules>
 
         <drop css:content="#audience-nav-viewlet" />
-        <drop css:content=".dept-level-college-options" />
         <drop css:content="#navigation-modal" />
         <drop css:content="#primary-nav-viewlet" />
 
