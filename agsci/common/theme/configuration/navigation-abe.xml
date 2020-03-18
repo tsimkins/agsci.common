@@ -11,6 +11,10 @@
         psu
     </logo>
 
+    <audience-department>
+        department
+    </audience-department>
+
     <nav id="audience">
         <item>
             <title>Audience</title>

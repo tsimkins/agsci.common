@@ -1,7 +1,10 @@
 <div id="audience-department-nav-viewlet"
-    tal:condition="view/is_department|nothing">
+    tal:define="show view/show|nothing;
+                is_department view/is_department|nothing"
+    tal:condition="is_department">
 
-    <ul class="text-white dept-level-college-options list-inline">
+    <ul class="text-white dept-level-college-options list-inline"
+        tal:condition="show">
 
         <li>
             <a class="btn-small"
@@ -25,5 +28,14 @@
                 data-target="#navigation-modal">College of Ag Menu</button>
         </li>
 
+    </ul>
+
+    <ul class="text-white dept-level-college-options list-inline"
+        tal:condition="not: show">
+        <!--
+            This is an empty list where we have a 'department'
+            template that shouldn't have the department links
+            above the header. It adds visual padding.
+        -->
     </ul>
 </div>

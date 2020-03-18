@@ -15,7 +15,7 @@ from plone.app.layout.viewlets.common import ViewletBase as _ViewletBase
 from plone.dexterity.utils import getAdditionalSchemata
 from plone.event.interfaces import IEvent
 from plone.i18n.normalizer.interfaces import IIDNormalizer
-from plone.memoize.view import memoize_contextless as memoize
+from plone.memoize.instance import memoize
 from plone.registry.interfaces import IRegistry
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility, queryUtility, getMultiAdapter
@@ -156,12 +156,9 @@ class ViewletBase(_ViewletBase):
                 except:
                     pass
                 else:
-                    return hasattr(config, 'type') and \
-                           isinstance(config.type.cdata, (str, unicode)) \
-                           and config.type.cdata.strip() in ('department',)
+                    return self.get_config('type', config=config) in ('department',)
 
     @property
-    @memoize
     def department_id(self):
         cache_key = 'department_id'
 
@@ -190,9 +187,7 @@ class ViewletBase(_ViewletBase):
 
         config = self.config
 
-        self.cache[cache_key] = hasattr(config, 'logo') and \
-            isinstance(config.logo.cdata, (str, unicode)) and \
-            config.logo.cdata.strip() in ('psu',)
+        self.cache[cache_key] = self.get_config('logo') in ('psu',)
 
         return self.cache[cache_key]
 
@@ -375,6 +370,14 @@ class NavigationViewlet(ViewletBase):
 
         return self.cache[cache_key]
 
+    def get_config(self, v, config=None):
+
+        if not isinstance(config, untangle.Element):
+            config = self.config
+
+        if hasattr(config, v) and \
+           isinstance(config.__dict__[v].cdata, (str, unicode)):
+            return config.__dict__[v].cdata.strip()
 
     def get_xml_config(self, xml_file):
         try:
@@ -407,7 +410,14 @@ class DepartmentNavigationViewlet(NavigationViewlet):
 
 class DepartmentAudienceNavigationViewlet(NavigationViewlet):
 
-    xml_file = 'audience-department.xml'
+    @property
+    def audience(self):
+        return self.get_config('audience-department')
+
+    @property
+    def show(self):
+        if self.is_department:
+            return self.audience in ('department',)
 
 class DepartmentSocialViewlet(DepartmentNavigationViewlet):
     nav_id = 'social'

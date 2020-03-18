@@ -11,6 +11,10 @@
         college
     </logo>
 
+    <audience-department>
+        department
+    </audience-department>
+
     <nav id="contact">
         <items>
             <item>
