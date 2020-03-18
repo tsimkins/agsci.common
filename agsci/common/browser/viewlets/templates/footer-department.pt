@@ -43,7 +43,8 @@
                                 <a tal:attributes="href i/link/cdata">
 
                                     <span class="fa-stack">
-                                        <em class="fas fa-lg fa-square fa-fw fa-stack-1x fa-inverse"></em>
+                                        <em class="fas fa-lg fa-square fa-fw fa-stack-1x fa-inverse"
+                                            tal:condition="not: i/inverse/cdata|nothing"></em>
                                         <em class="title fab fa-lg fa-fw ${i/icon/cdata|nothing} fa-stack-1x"></em>
                                     </span>
 
