@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Food Science Navigation -->
+
+<config>
+
+    <type>
+        department
+    </type>
+
+    <logo>
+        college
+    </logo>
+
+    <nav id="contact">
+        <items>
+            <item>
+                <title>About</title>
+                <link>https://agsci.psu.edu/about</link>
+            </item>
+            <item>
+                <title>Directory</title>
+                <link>https://agsci.psu.edu/directory</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.linkedin.com/company/penn-state-college-of-agricultural-sciences</link>
+            </item>
+            <item>
+                <icon>fa-twitter-square</icon>
+                <title>Twitter</title>
+                <link>http://twitter.com/agsciences</link>
+            </item>
+            <item>
+                <inverse>false</inverse>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>http://instagram.com/agsciences</link>
+            </item>
+            <item>
+                <icon>fa-linkedin</icon>
+                <title>LinkedIn</title>
+                <link>https://www.linkedin.com/company/penn-state-college-of-agricultural-sciences</link>
+            </item>
+            <item>
+                <icon>fa-youtube-square</icon>
+                <title>YouTube</title>
+                <link>http://www.youtube.com/c/PennStateAgSciences</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="primary">
+        <items>
+            <item>
+                <title>News</title>
+                <link>news</link>
+                <items>
+                    <item>
+                        <title>News</title>
+                        <link>news</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Knowledgebase</title>
+                <link>knowledgebase</link>
+                <items>
+                    <item>
+                        <title>Knowledgebase</title>
+                        <link>knowledgebase</link>
+                    </item>
+                    <item>
+                        <title>Marketing and Communications</title>
+                        <link>https://agsci.psu.edu/communications/how-to</link>
+                    </item>
+                    <item>
+                        <title>Information Technologies</title>
+                        <link>https://agsci.psu.edu/it/how-to</link>
+                    </item>
+                    <item>
+                        <title>Human Resources</title>
+                        <link>https://agsci.psu.edu/faculty-staff/hr/how-to</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>People</title>
+                <link>https://agsci.psu.edu/directory</link>
+                <items>
+                    <item>
+                        <title>Faculty</title>
+                        <link>https://agsci.psu.edu/directory/faculty</link>
+                    </item>
+                    <item>
+                        <title>Staff</title>
+                        <link>https://agsci.psu.edu/directory/staff</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Administrative and Service Units</title>
+                <link>areas</link>
+                <items>
+                    <item>
+                        <title>Administrative Services</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Communications and Marketing</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Conferences and Short Courses</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Digital Education Group</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Facilities and Safety</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Grants and Contracts</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Human Resources</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Information Technologies (IT)</title>
+                        <link></link>
+                    </item>                    <item>
+                        <title>Operations and Services</title>
+                        <link></link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Awards and Committees</title>
+                <link>awards-committees</link>
+                <items>
+                    <item>
+                        <title>Awards</title>
+                        <link>awards</link>
+                    </item>
+                    <item>
+                        <title>Committees</title>
+                        <link>committees</link>
+                    </item>
+                </items>
+            </item>
+        </items>
+    </nav>
+</config>
