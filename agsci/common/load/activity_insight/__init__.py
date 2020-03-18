@@ -19,7 +19,8 @@ class ImportFacultyPublicationsView(ImportContentView):
         url,
         params=[],
         method='GET',
-        format='json'
+        format='json',
+        body={},
     ):
         api_key = self.api_key
         api_host = "https://metadata.libraries.psu.edu"
@@ -36,7 +37,8 @@ class ImportFacultyPublicationsView(ImportContentView):
         if method.upper() in ('POST',):
             response = requests.post(
                 api_url,
-                headers = headers
+                headers = headers,
+                json=body,
             )
 
         else:
@@ -120,3 +122,15 @@ class ImportFacultyPublicationsView(ImportContentView):
                             mimeType=u'text/html',
                             outputMimeType='text/x-html-safe'
                         )
+
+    @property
+    def department_publications(self):
+        faculty_ids = [x.getId for x in self.faculty]
+
+        api_url = '/v1/users/publications?order_first_by=publication_date_desc&order_second_by=title_asc'
+
+        return self.get_api_data(
+            api_url,
+            method='post',
+            body=faculty_ids
+        )
