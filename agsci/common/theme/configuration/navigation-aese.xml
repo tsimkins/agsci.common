@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Ecosystems Navigation -->
+<!-- Food Science Navigation -->
 
 <config>
 
@@ -8,7 +8,7 @@
     </type>
 
     <logo>
-        psu
+        college
     </logo>
 
     <audience-department>
@@ -26,14 +26,9 @@
                 <link>directory</link>
             </item>
             <item>
-                <title>814-865-7792</title>
-                <link>tel:+814-865-7792</link>
+                <title>814-865-5461</title>
+                <link>tel:+814-865-5461</link>
                 <label>Department Telephone</label>
-            </item>
-            <item>
-                <title>abedept@psu.edu</title>
-                <link>mailto:abedept@psu.edu</link>
-                <label>Department Email</label>
             </item>
         </items>
     </nav>
@@ -43,7 +38,7 @@
             <item>
                 <icon>fa-facebook-square</icon>
                 <title>Facebook</title>
-                <link>https://www.facebook.com/PennStateABE</link>
+                <link>https://www.facebook.com/PSU.AESE</link>
             </item>
         </items>
     </nav>
@@ -55,8 +50,8 @@
                 <link>undergraduate</link>
                 <items>
                     <item>
-                        <title>Student Resources</title>
-                        <link>undergraduate/resources</link>
+                        <title>Degree Offerings</title>
+                        <link>undergraduate/degrees</link>
                     </item>
                     <item>
                         <title>Contact Us</title>
@@ -69,24 +64,24 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Agricultural and Biological Engineering</title>
-                        <link>graduate/abe</link>
+                        <title>Energy, Environmental, and Food Economics</title>
+                        <link>graduate/eefe</link>
                     </item>
                     <item>
-                        <title>BioRenewable Systems</title>
-                        <link>graduate/brs</link>
+                        <title>Rural Sociology</title>
+                        <link>graduate/rural-sociology</link>
                     </item>
                     <item>
-                        <title>Admissions</title>
-                        <link>graduate/admissions</link>
+                        <title>Agricultural and Extension Education</title>
+                        <link>graduate/aee</link>
                     </item>
                     <item>
-                        <title>Funding Opportunities</title>
-                        <link>graduate/funding</link>
+                        <title>Applied Youth, Family, and Community Education</title>
+                        <link>graduate/ayfce</link>
                     </item>
                     <item>
-                        <title>Student Resources</title>
-                        <link>graduate/resources</link>
+                        <title>Community and Economic Development</title>
+                        <link>graduate/cedev</link>
                     </item>
                     <item>
                         <title>Contact Us</title>
@@ -117,20 +112,16 @@
                 <link>research</link>
                 <items>
                     <item>
-                        <title>Agricultural Production</title>
-                        <link>research/agricultural-production</link>
+                        <title>Research Areas</title>
+                        <link>research/areas</link>
                     </item>
                     <item>
-                        <title>Biological Processing and Bioproducts</title>
-                        <link>research/biobased-products</link>
+                        <title>Research Centers</title>
+                        <link>research/centers</link>
                     </item>
                     <item>
-                        <title>Natural Resources Engineering and Protection</title>
-                        <link>research/natural-resource-protection</link>
-                    </item>
-                    <item>
-                        <title>Publications</title>
-                        <link>research/publications</link>
+                        <title>Projects</title>
+                        <link>research/projects</link>
                     </item>
                 </items>
             </item>
@@ -139,12 +130,8 @@
                 <link>outreach</link>
                 <items>
                     <item>
-                        <title>Extension Programs</title>
-                        <link>outreach/extension</link>
-                    </item>
-                    <item>
-                        <title>Industry Relations</title>
-                        <link>outreach/industry</link>
+                        <title>Extension &amp; Outreach</title>
+                        <link>outreach</link>
                     </item>
                 </items>
             </item>
