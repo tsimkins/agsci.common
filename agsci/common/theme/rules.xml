@@ -5,6 +5,9 @@
        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
        xmlns:xi="http://www.w3.org/2001/XInclude">
 
+    <!-- Don't show alert (yet) -->
+    <drop css:theme="body > a.alert-bar" />
+
     <replace css:content="#content-core table, .mosaic-grid-cell table">
         <xsl:copy>
             <xsl:attribute name="class">table table-bordered table-striped</xsl:attribute>
