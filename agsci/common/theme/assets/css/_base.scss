@@ -691,6 +691,8 @@ body.template-image_view #content-core {
     .event.summary {
 
         margin-bottom: 1rem;
+        float: none;
+        clear: both;
 
         p {
             margin-bottom: 0;
