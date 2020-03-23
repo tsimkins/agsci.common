@@ -72,7 +72,7 @@
                                             <li class="nav-item">
                                                 <a class="nav-link"
                                                    tal:define="klass python: view.link_class(l2)"
-                                                   tal:attributes="href l2/link/cdata|nothing;
+                                                   tal:attributes="href python: view.link(l2);
                                                                    class string:nav-link ${klass}"
                                                    tal:content="l2/title/cdata|nothing" />
                                             </li>
