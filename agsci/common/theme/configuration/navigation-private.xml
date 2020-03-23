@@ -76,10 +76,6 @@
                 <link>knowledgebase</link>
                 <items>
                     <item>
-                        <title>Knowledgebase</title>
-                        <link>knowledgebase</link>
-                    </item>
-                    <item>
                         <title>Marketing and Communications</title>
                         <link>https://agsci.psu.edu/communications/how-to</link>
                     </item>
@@ -91,19 +87,35 @@
                         <title>Human Resources</title>
                         <link>https://agsci.psu.edu/faculty-staff/hr/how-to</link>
                     </item>
+                    <item>
+                        <title>International Programs Resources for Faculty</title>
+                        <link>knowledgebase/international-faculty</link>
+                    </item>
+                    <item>
+                        <title>Teaching, Learning, and Curriculum</title>
+                        <link>knowledgebase/teaching-and-learning</link>
+                    </item>
+                    <item>
+                        <title>Research Support</title>
+                        <link>knowledgebase/research-support</link>
+                    </item>
+                    <item>
+                        <title>HR Information for Faculty</title>
+                        <link>knowledgebase/faculty</link>
+                    </item>
                 </items>
             </item>
             <item>
-                <title>People</title>
-                <link>https://agsci.psu.edu/directory</link>
+                <title>Training and Professional Development</title>
+                <link>professional-development</link>
                 <items>
                     <item>
-                        <title>Faculty</title>
-                        <link>https://agsci.psu.edu/directory/faculty</link>
+                        <title>Training Opportunities</title>
+                        <link>professional-development/events</link>
                     </item>
                     <item>
-                        <title>Staff</title>
-                        <link>https://agsci.psu.edu/directory/staff</link>
+                        <title>Learning Resources</title>
+                        <link>professional-development/learning</link>
                     </item>
                 </items>
             </item>
