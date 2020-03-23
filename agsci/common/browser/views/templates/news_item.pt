@@ -33,15 +33,32 @@
 
 </metal:status>
 
+<metal:content-description fill-slot="content-description">
+
+    <p class="discreet"
+       id="effective-date"
+       tal:define="item_date view/item_date|nothing"
+       tal:condition="item_date">
+
+        Posted: <span tal:replace="item_date" />
+
+    </p>
+
+    <div class="documentDescription description"
+        tal:define="description context/Description|nothing"
+        tal:content="description"
+        tal:condition="description" />
+
+</metal:content-description>
+
 <metal:content-core fill-slot="content-core">
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-
-  <div id="parent-fieldname-text"
-      tal:condition="context/text"
-      tal:content="structure python:context.text.output_relative_to(view.context)"
-      tal:attributes="class python: toc and 'pat-autotoc' or ''" />
+    <div id="parent-fieldname-text"
+        tal:condition="context/text"
+        tal:content="structure python:context.text.output_relative_to(view.context)"
+        tal:attributes="class python: toc and 'pat-autotoc' or ''" />
 
 </metal:content-core>
 </metal:content-core>

@@ -672,6 +672,8 @@ class NewsItemView(BaseView):
     def article_link(self):
         return getattr(self.context, 'article_link', None)
 
+    def item_date(self, item=None):
+        return super(NewsItemView, self).item_date(self.context)
 
     def __call__(self):
 
