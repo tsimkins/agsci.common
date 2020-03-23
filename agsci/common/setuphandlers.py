@@ -76,6 +76,11 @@ def create_registry_keys(site, logger):
             Record(field.TextLine(title=u'Department Id')),
             u''
         ),
+        (
+            'agsci.common.global_public_tags',
+            Record(field.Tuple(title=u'Global Public Tags', value_type=field.TextLine())),
+            ()
+        ),
     ]
 
     for (key, record, value) in keys:

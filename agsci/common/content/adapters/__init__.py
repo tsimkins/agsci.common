@@ -3,6 +3,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFCore.utils import getToolByName
 from plone.app.contenttypes.interfaces import ICollection
 from plone.i18n.normalizer.interfaces import IIDNormalizer
+from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
 
 from agsci.common.content.behaviors.tags import ITags, ITagsRoot
@@ -11,6 +12,10 @@ class BaseAdapter(object):
 
     def __init__(self, context):
         self.context = context
+
+    @property
+    def registry(self):
+        return getUtility(IRegistry)
 
 class TagsAdapter(BaseAdapter):
 
@@ -41,16 +46,33 @@ class TagsAdapter(BaseAdapter):
 
         return tag_root
 
+    # This is a way to provide common, site-wide public tags in one place in the registry.
+    @property
+    def global_tags(self):
+        _ = self.registry.get('agsci.common.global_public_tags', [])
+
+        if _ and isinstance(_, (tuple, list)):
+            return list(_)
+
+        return []
+
     @property
     def available_tags(self):
 
         p = self.tag_root
 
+        _tags = []
+
+        _tags.extend(self.global_tags)
+
         if p:
             v = getattr(p, 'available_public_tags', [])
 
-            if v:
-                return sorted(v)
+            if v and isinstance(v, (tuple, list)):
+                _tags.extend(v)
+
+        if _tags:
+            return sorted(set([x for x in _tags if x]))
 
         return []
 
