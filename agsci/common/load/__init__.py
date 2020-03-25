@@ -412,7 +412,7 @@ class ContentImporter(object):
     def data_to_image_field(self, data, contentType='', filename=None):
 
         if filename:
-            filename = filename.decode('utf-8')
+            filename = safe_unicode(filename)
         else:
             filename = u'image'
 
@@ -424,7 +424,7 @@ class ContentImporter(object):
     def data_to_file_field(self, data, contentType='', filename=None):
 
         if filename:
-            filename = filename.decode('utf-8')
+            filename = safe_unicode(filename)
 
         return NamedBlobFile(
             filename=filename,
