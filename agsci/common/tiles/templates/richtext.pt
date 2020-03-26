@@ -9,11 +9,13 @@
 <section
     tal:define="title view/data/title|nothing;"
     tal:attributes="class view/section_class|nothing;
+                    data-container-width view/container_width;
                     data-tile-type view/tile_type|nothing;">
 
     <div class="container-fluid">
 
         <h2 class="mt-0"
+            tal:attributes="id view/title_id|nothing"
             tal:condition="title"
             tal:content="title" />
 

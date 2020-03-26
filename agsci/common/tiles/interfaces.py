@@ -801,6 +801,13 @@ class IRichTextTile(IBorderTile):
         required=False,
     )
 
+    full_width = schema.Bool(
+        title=_(u"Full Width?"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
 class IPullQuoteTile(Interface):
 
     quote = schema.TextLine(

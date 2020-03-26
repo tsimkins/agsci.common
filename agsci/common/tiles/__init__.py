@@ -335,6 +335,15 @@ class BaseTile(PersistentTile):
                         id=self.id,
                     )
 
+    @property
+    def title_id(self):
+        _ = self.get_valid_value('title')
+
+        if _ and isinstance(_, (unicode, str)):
+            return "tile-%s" % ploneify(_)
+
+        return ''
+
 class ConditionalTemplateTile(BaseTile):
 
     def __call__(self, *args, **kwargs):
