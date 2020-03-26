@@ -829,7 +829,14 @@ class PortletsTile(BaseTile):
     pass
 
 class RichTextTile(BaseTile):
-    pass
+
+    @property
+    def container_class(self):
+
+        if self.get_valid_value('full_width'):
+            return 'container-fluid'
+
+        return 'container'
 
 class PullQuoteTile(BaseTile):
     pass
