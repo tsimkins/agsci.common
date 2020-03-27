@@ -167,7 +167,7 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                             )
 
                         publications.append({
-                            'ai_id' : _.get('id', None),
+                            'ai_id' : __.get('id', None),
                             'title' : _.get('title', None),
                             'doi' : _.get('doi', None),
                             'journal_title' : _.get('journal_title', None),
@@ -180,3 +180,35 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                     transaction.commit()
 
                     self.log(u"Imported %d publications for %s" % (len(publications), username))
+
+class ImportSitePublicationsView(ImportDirectoryPublicationsView):
+
+    @property
+    def publications(self):
+
+        data = {}
+
+        for r in self.faculty:
+            o = r.getObject()
+
+            publications = getattr(o, 'publications', [])
+
+            if publications and isinstance(publications, (list, tuple)):
+
+                for _ in publications:
+                    if isinstance(_, dict):
+                        _id = _.get('ai_id', None)
+
+                        if _id and _id not in data:
+                            data[_id] = _
+
+        return sorted(data.values(), key=lambda x: x.get('published_on', None), reverse=True)
+
+    def import_content(self):
+
+        publications = self.publications
+
+        try:
+            context = site.restrictedTraverse('research/publications')
+        except:
+            self.log(u"No research publications page found.")

@@ -1,0 +1,6 @@
+{% for _ in data %}
+<p>
+    {% if _.doi %}<a href="{{_.doi}}">{% endif %}<span class="publication-title">{{ _.title }}</span>{% if _.doi %}</a>{% endif %}{% if _.journal_title %}, <span class="journal-name">{{_.journal_title}}</span>{% endif %}{% if _.published_on %}, {{_.published_on.year}}{% endif %}
+
+</p>
+{% endfor %}

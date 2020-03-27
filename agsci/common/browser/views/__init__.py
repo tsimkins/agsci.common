@@ -227,6 +227,29 @@ class BaseView(BrowserView):
 
         return toLocalizedTime(start, end_time=end, long_format=True)
 
+    def render_j2(self, template=None, item=None, data=[]):
+        resource = self.site.restrictedTraverse(self.j2_template_base)
+
+        loader = FileSystemLoader(resource.context.path)
+
+        env = Environment(
+            loader=loader,
+            trim_blocks=True,
+            lstrip_blocks=True,
+        )
+
+        _template = env.get_template(template)
+
+        return _template.render(view=self, item=item, data=data)
+
+    def publications_html(self, publications=[]):
+
+        if not publications:
+            if hasattr(self.context, 'publications') and isinstance(self.context.publications, (list, tuple)):
+                publications = self.context.publications
+
+        return self.render_j2(template='publications.j2', data=publications)
+
 class DegreeListingView(BaseView):
 
     image_size = None
@@ -480,20 +503,6 @@ class FolderView(_FolderView, BaseView):
         if item.portal_type in ['Event',]:
             return self.render_j2(template='event_listing.j2', item=item)
 
-    def render_j2(self, template=None, item=None):
-        resource = self.site.restrictedTraverse(self.j2_template_base)
-
-        loader = FileSystemLoader(resource.context.path)
-
-        env = Environment(
-            loader=loader,
-            trim_blocks=True,
-            lstrip_blocks=True,
-        )
-
-        _template = env.get_template(template)
-
-        return _template.render(view=self, item=item)
 
 class SubfolderView(FolderView):
 

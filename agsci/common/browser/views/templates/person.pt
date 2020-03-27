@@ -290,17 +290,7 @@
 
                 <div class="col-12 col-md-9 html">
 
-                    <p tal:repeat="i publications">
-
-                        <a tal:attributes="href i/doi|nothing"
-                            tal:omit-tag="not: i/doi|nothing"><span class="publication-title"
-                                tal:content="i/title" /></a><span class="journal_name"
-                            tal:condition="i/journal_title|nothing"
-                            tal:content="string:, ${i/journal_title}" /><span
-                            tal:condition="i/published_on|nothing"
-                            tal:replace="string:, ${i/published_on/year}" />
-
-                    </p>
+                    <tal:pubs replace="structure view/publications_html|nothing" />
 
                 </div>
 
