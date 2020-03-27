@@ -38,6 +38,38 @@ professional_fields = [
     'groups',
 ]
 
+class IPublicationRowSchema(Interface):
+
+    ai_id = schema.TextLine(
+        title=_(u"ai_id"),
+        required=False
+    )
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    doi = schema.TextLine(
+        title=_(u"URL"),
+        required=False
+    )
+
+    journal_title = schema.TextLine(
+        title=_(u"Journal Title"),
+        required=False
+    )
+
+    published_on = schema.Datetime(
+        title=_(u'Published On'),
+        required=False,
+    )
+
+    abstract = RichText(
+        title=_(u"Abstract"),
+        required=False,
+   )
+
 class ILinkRowSchema(Interface):
 
     title = schema.TextLine(
@@ -100,7 +132,10 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     )
 
     # Grid Fields
-    form.widget(websites=DataGridFieldFactory)
+    form.widget(
+        websites=DataGridFieldFactory,
+        publications=DataGridFieldFactory
+    )
 
     # Only allow Directory Editors to write to these fields
     form.write_permission(username=DIRECTORY_EDITOR)
@@ -221,11 +256,13 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         required=False,
     )
 
-    publications = RichText(
-        title=_(u"Publications"),
-        description=_(u"Publication list from Asset Insight."),
-        required=False,
+    publications = schema.List(
+        title=u"Publications",
+        description=_(u"Publication list from Activity Insight."),
+        value_type=DictRow(title=u"Publication", schema=IPublicationRowSchema),
+        required=False
     )
+
 
 # Configuring default roles with Dexterity
 # http://docs.plone.org/develop/plone/members/membrane.html#id11

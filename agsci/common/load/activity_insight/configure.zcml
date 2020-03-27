@@ -4,11 +4,20 @@
            xmlns:browser="http://namespaces.zope.org/browser"
            i18n_domain="agsci.common">
 
-    <!-- Import Publications View -->
+    <!-- Import Publications Views -->
+
     <browser:page
-        for="*"
-        name="import_faculty_publications"
-        class=".ImportFacultyPublicationsView"
+        for="agsci.common.content.person.directory.IDirectory"
+        name="import_publications"
+        class=".ImportDirectoryPublicationsView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="import_publications"
+        class=".ImportPersonPublicationsView"
         permission="zope2.View"
         layer="agsci.common.browser.interfaces.IThemeSpecific"
     />

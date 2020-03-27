@@ -280,16 +280,29 @@
 
         <!-- Publications -->
         <div class="row align-items-start publications"
-                tal:define="i context/publications|nothing"
-                tal:condition="i">
+                tal:define="publications context/publications|nothing"
+                tal:condition="publications">
 
                 <div class="col-12 col-md-3">
                     <h3>Publications</h3>
                     <p class="discreet">Only visible to logged-in users.</p>
                 </div>
 
-                <div class="col-12 col-md-9"
-                    tal:content="structure i/output" />
+                <div class="col-12 col-md-9 html">
+
+                    <p tal:repeat="i publications">
+
+                        <a tal:attributes="href i/doi|nothing"
+                            tal:omit-tag="not: i/doi|nothing"><span class="publication-title"
+                                tal:content="i/title" /></a><span class="journal_name"
+                            tal:condition="i/journal_title|nothing"
+                            tal:content="string:, ${i/journal_title}" /><span
+                            tal:condition="i/published_on|nothing"
+                            tal:replace="string:, ${i/published_on/year}" />
+
+                    </p>
+
+                </div>
 
         </div>
 

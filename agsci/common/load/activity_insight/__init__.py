@@ -3,10 +3,13 @@ from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
 
 import requests
+import transaction
+
+from agsci.common.utilities import localize
 
 from .. import ImportContentView
 
-class ImportFacultyPublicationsView(ImportContentView):
+class ImportDirectoryPublicationsView(ImportContentView):
 
     api_key_id = 'agsci.common.ai_api_key'
 
@@ -55,7 +58,7 @@ class ImportFacultyPublicationsView(ImportContentView):
 
         return response.text
 
-    def _get_publications(self, user_id):
+    def get_publications_html(self, user_id):
 
         pubs_api_url = "/v1/users/%s/publications"
         publications = self.get_api_data(pubs_api_url, user_id, format='html')
@@ -63,6 +66,17 @@ class ImportFacultyPublicationsView(ImportContentView):
         soup.html.hidden = True
         soup.body.hidden = True
         return unicode(soup.find('ul'))
+
+    def get_publications_json(self, user_id):
+
+        pubs_api_url = "/v1/users/%s/publications"
+        data = self.get_api_data(pubs_api_url, user_id)
+
+        if isinstance(data, dict):
+
+            return data.get('data', [])
+
+        return []
 
     def get_publications(self, user_id):
 
@@ -107,30 +121,62 @@ class ImportFacultyPublicationsView(ImportContentView):
 
         for r in self.faculty:
             o = r.getObject()
-            username = getattr(o, 'username', None)
 
-            if username:
-                try:
-                    data = self.get_publications(username)
-                except:
-                    pass
-                else:
-                    if data:
-                        html = "".join([u"<p>%s</p>" % x for x in data[:25]])
-                        o.publications = RichTextValue(
-                            raw=html,
-                            mimeType=u'text/html',
-                            outputMimeType='text/x-html-safe'
-                        )
+            v = ImportPersonPublicationsView(o, self.request)
 
-    @property
-    def department_publications(self):
-        faculty_ids = [x.getId for x in self.faculty]
+            try:
+                v()
+            except:
+                self.log("Error importing publications for %s" % r.getURL())
+            else:
+                self.log("Successfully imported publications for %s" % r.getURL())
 
-        api_url = '/v1/users/publications?order_first_by=publication_date_desc&order_second_by=title_asc'
+class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
 
-        return self.get_api_data(
-            api_url,
-            method='post',
-            body=faculty_ids
-        )
+    def import_content(self):
+
+        username = getattr(self.context, 'username', None)
+
+        if username:
+            try:
+                data = self.get_publications_json(username)
+            except:
+                pass
+            else:
+                if data and isinstance(data, (list, tuple)):
+                    publications = []
+
+                    for __ in data:
+
+                        _ = __.get('attributes', {})
+
+                        try:
+                            published_on = localize(
+                                DateTime("%s 00:00:00 US/Eastern" % _['published_on'])
+                            )
+                        except:
+                            published_on = None
+
+                        abstract = _.get('abstract', None)
+
+                        if abstract:
+                            abstract = RichTextValue(
+                                raw=abstract,
+                                mimeType=u'text/html',
+                                outputMimeType='text/x-html-safe'
+                            )
+
+                        publications.append({
+                            'ai_id' : _.get('id', None),
+                            'title' : _.get('title', None),
+                            'doi' : _.get('doi', None),
+                            'journal_title' : _.get('journal_title', None),
+                            'published_on' : published_on,
+                            'abstract' : abstract,
+                        })
+
+                    self.context.publications = sorted(publications, key=lambda x: x.get('published_on'), reverse=True)
+                    self.context.reindexObject()
+                    transaction.commit()
+
+                    self.log(u"Imported %d publications for %s" % (len(publications), username))

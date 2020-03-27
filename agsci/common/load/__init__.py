@@ -3,6 +3,7 @@ from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
+from zLOG import LOG, INFO, ERROR
 from bs4 import BeautifulSoup
 from plone.app.linkintegrity.handlers import modifiedContent
 from plone.app.textfield import RichText
@@ -15,6 +16,7 @@ from plone.namedfile.file import NamedBlobImage, NamedBlobFile
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import ATTRIBUTE_NAME
+from random import random
 from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.component.interfaces import ComponentLookupError
@@ -30,6 +32,7 @@ import base64
 import json
 import re
 import requests
+import time
 
 from ..utilities import scrub_html, localize, execute_under_special_role
 
@@ -646,6 +649,20 @@ class ImportContentView(BrowserView):
 
     roles = ['Contributor', 'Reader', 'Editor', 'Member']
 
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+        # Generated at call time.
+        self.entry_id = self._entry_id
+
+    # Same format method as Products.SiteErrorLog
+    # Low chance of collision
+    @property
+    def _entry_id(self):
+        now = time.time()
+        return str(now) + str(random())
+
     def __call__(self):
 
         alsoProvides(self.request, IDisableCSRFProtection)
@@ -683,3 +700,27 @@ class ImportContentView(BrowserView):
     @property
     def site(self):
         return getSite()
+
+    @property
+    def remote_ip(self):
+
+        ip = None
+
+        if "HTTP_X_FORWARDED_FOR" in self.request.environ:
+            # Virtual host
+            ip = self.request.environ["HTTP_X_FORWARDED_FOR"]
+
+            # If ip format is 'x, y', return x.
+            if ', ' in ip:
+                ip = ip.split(', ')[0]
+
+        elif "HTTP_HOST" in self.request.environ:
+            # Non-virtualhost
+            ip = self.request.environ["REMOTE_ADDR"]
+
+        return ip
+
+    # Log messages to Zope log
+    def log(self, summary, severity=INFO, detail=''):
+        subsystem = '%s %s (IP: %s)' % (self.__class__.__name__, self.entry_id, self.remote_ip)
+        LOG(subsystem, severity, summary, detail)
