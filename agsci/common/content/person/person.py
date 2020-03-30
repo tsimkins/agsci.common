@@ -68,7 +68,13 @@ class IPublicationRowSchema(Interface):
     abstract = RichText(
         title=_(u"Abstract"),
         required=False,
-   )
+    )
+
+    contributors = schema.List(
+        title=_(u"Contributors"),
+        value_type=schema.TextLine(required=True),
+        required=False,
+    )
 
 class ILinkRowSchema(Interface):
 

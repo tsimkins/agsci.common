@@ -151,6 +151,14 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
 
                         _ = __.get('attributes', {})
 
+                        contributors = [
+                            "%s, %s" % (
+                                x.get('last_name', ''),
+                                x.get('first_name', ''),
+                            ) for x in _.get('contributors', [])
+                            if x.get('last_name', '')
+                        ]
+
                         try:
                             published_on = localize(
                                 DateTime("%s 00:00:00 US/Eastern" % _['published_on'])
@@ -174,6 +182,7 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                             'journal_title' : _.get('journal_title', None),
                             'published_on' : published_on,
                             'abstract' : abstract,
+                            'contributors' : contributors,
                         })
 
                     self.context.publications = sorted(publications, key=lambda x: x.get('published_on'), reverse=True)
