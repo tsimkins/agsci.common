@@ -1183,13 +1183,12 @@ body.template-search {
     padding-left: 0.2em;
 }
 
-body.portaltype-agsci_person {
-    .publications {
-        .publication-title {
-            font-weight: bold;
-        }
-        .journal-name {
-            font-style: italic;
-        }
+body.portaltype-agsci_person .publications,
+body.section-research {
+    .publication-title {
+        font-weight: bold;
+    }
+    .journal-name {
+        font-style: italic;
     }
 }

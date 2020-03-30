@@ -5,6 +5,7 @@ from plone.app.textfield.value import RichTextValue
 import requests
 import transaction
 
+from agsci.common.browser.views import BaseView
 from agsci.common.utilities import localize
 
 from .. import ImportContentView
@@ -206,9 +207,23 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
 
     def import_content(self):
 
-        publications = self.publications
-
         try:
-            context = site.restrictedTraverse('research/publications')
+            context = self.site.restrictedTraverse('research/publications')
         except:
             self.log(u"No research publications page found.")
+        else:
+            publications = self.publications
+
+            v = BaseView(self.context, self.request)
+
+            html = v.publications_html(publications=publications[0:500])
+
+            context.text = RichTextValue(
+                raw=html,
+                mimeType=u'text/html',
+                outputMimeType='text/x-html-safe'
+            )
+
+            context.reindexObject()
+
+            transaction.commit()
