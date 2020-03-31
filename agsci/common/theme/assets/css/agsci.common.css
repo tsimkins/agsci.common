@@ -13611,21 +13611,31 @@ a.alert-bar:hover {
   margin-right: auto; }
   .mosaic-grid-row .mosaic-grid-cell {
     padding: 0; }
-  .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
-    margin-top: 0.5rem !important; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
-    color: #ffffff;
-    background-color: transparent; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron-standard p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
-    color: #ffffff;
-    font-size: 1.25em; }
-  .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
-    color: #4D565B; }
-  .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
-    margin-top: 0.5rem; }
-  .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
-    border-bottom: none;
-    font-size: 64px; }
+  .mosaic-grid-row .mosaic-tile-content {
+    /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
+    /* Ref: https://css-tricks.com/hash-tag-links-padding/ */ }
+    .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
+      margin-top: 0.5rem !important; }
+    .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
+      color: #ffffff;
+      background-color: transparent; }
+    .mosaic-grid-row .mosaic-tile-content .jumbotron-standard p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
+      color: #ffffff;
+      font-size: 1.25em; }
+    .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
+      color: #4D565B; }
+    .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
+      margin-top: 0.5rem; }
+    .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
+      border-bottom: none;
+      font-size: 64px; }
+    .mosaic-grid-row .mosaic-tile-content h2[id^=tile]::before {
+      display: block;
+      content: " ";
+      margin-top: -125px;
+      height: 125px;
+      visibility: hidden;
+      pointer-events: none; }
 
 body.userrole-manager.mosaic-grid .mosaic-grid-row,
 body.template-edit.mosaic-enabled .mosaic-grid-row {
@@ -15020,11 +15030,9 @@ body.template-search #search-results .result-title a {
   color: #FF0000;
   padding-left: 0.2em; }
 
-body.portaltype-agsci_person .publications .publication-title,
-body.section-research .publication-title {
+p.publication .publication-title {
   font-weight: bold; }
-body.portaltype-agsci_person .publications .journal-name,
-body.section-research .journal-name {
+p.publication .journal-name {
   font-style: italic; }
 
 .alert.status,

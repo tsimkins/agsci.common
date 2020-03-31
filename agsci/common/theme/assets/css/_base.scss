@@ -118,6 +118,18 @@ $display-line-height: 1.2 !default;
             font-size: 64px;
         }
 
+        /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
+        /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
+
+        h2[id^=tile]::before {
+            display: block;
+            content: " ";
+            margin-top: -125px;
+            height: 125px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
     }
 }
 
