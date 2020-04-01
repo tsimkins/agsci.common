@@ -17,10 +17,17 @@
         <tbody>
             <tr tal:repeat="i images">
                 <td tal:content="i/tile_type|nothing" />
-                <td>
-                    <a tal:attributes="href i/url|nothing">
+                <td
+                    tal:define="url i/url|nothing;
+                                src i/thumbnail|nothing;
+                                filename i/filename|nothing">
+                    <a tal:attributes="href url">
                         <img alt=""
-                             tal:attributes="src i/thumbnail|nothing" />
+                             tal:attributes="src src" />
+                        <br />
+                        <span
+                            tal:condition="filename"
+                            tal:content="filename" />
                     </a>
                 </td>
                 <td>

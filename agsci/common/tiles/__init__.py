@@ -217,6 +217,17 @@ class BaseTile(PersistentTile):
 
         return ''
 
+    def get_img_filename(self, serial=None, field='image'):
+
+        if isinstance(serial, int):
+            field = '%s_%d' % (field, serial)
+
+        img = self.get_field(field, None)
+
+        if img and hasattr(img, 'filename') and img.filename:
+            return img.filename
+
+
     def background_style(self):
         return "background-image: url(%s);" % self.img_src
 
@@ -332,6 +343,7 @@ class BaseTile(PersistentTile):
                         image=field,
                         thumbnail=self.get_img_src(field=field_name, image_scale='mini'),
                         url=self.get_img_src(field=field_name, full=True),
+                        filename=self.get_img_filename(field=field_name),
                         id=self.id,
                     )
 
