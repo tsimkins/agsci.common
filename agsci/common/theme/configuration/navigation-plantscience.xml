@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AESE Navigation -->
+<!-- Plant Science Navigation -->
 
 <config>
 
@@ -26,8 +26,8 @@
                 <link>directory</link>
             </item>
             <item>
-                <title>814-865-5461</title>
-                <link>tel:+814-865-5461</link>
+                <title>814-865-2571</title>
+                <link>tel:+814-865-2571</link>
                 <label>Department Telephone</label>
             </item>
         </items>
@@ -38,7 +38,18 @@
             <item>
                 <icon>fa-facebook-square</icon>
                 <title>Facebook</title>
-                <link>https://www.facebook.com/PSU.AESE</link>
+                <link>https://www.facebook.com/PSUPlantScience/</link>
+            </item>
+            <item>
+                <icon>fa-twitter-square</icon>
+                <title>Twitter</title>
+                <link>https://twitter.com/psuplantscience</link>
+            </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>https://www.instagram.com/psuplantscience/</link>
             </item>
         </items>
     </nav>
@@ -54,8 +65,8 @@
                         <link>undergraduate/degrees</link>
                     </item>
                     <item>
-                        <title>Contact Us</title>
-                        <link>undergraduate/contact</link>
+                        <title>Student Resources</title>
+                        <link>undergraduate/resources</link>
                     </item>
                 </items>
             </item>
@@ -64,24 +75,24 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Energy, Environmental, and Food Economics</title>
-                        <link>graduate/eefe</link>
+                        <title>Agronomy</title>
+                        <link>graduate/agronomy</link>
                     </item>
                     <item>
-                        <title>Rural Sociology</title>
-                        <link>graduate/rural-sociology</link>
+                        <title>Horticulture</title>
+                        <link>graduate/hort</link>
                     </item>
                     <item>
-                        <title>Agricultural and Extension Education</title>
-                        <link>graduate/aee</link>
+                        <title>Turfgrass Management</title>
+                        <link>graduate/turfgrass</link>
                     </item>
                     <item>
-                        <title>Applied Youth, Family, and Community Education</title>
-                        <link>graduate/ayfce</link>
+                        <title>Inter-college Degree Programs</title>
+                        <link>graduate/inter-college</link>
                     </item>
                     <item>
-                        <title>Community and Economic Development</title>
-                        <link>graduate/cedev</link>
+                        <title>Student Resources</title>
+                        <link>graduate/resources</link>
                     </item>
                     <item>
                         <title>Contact Us</title>
@@ -120,8 +131,8 @@
                         <link>research/centers</link>
                     </item>
                     <item>
-                        <title>Projects</title>
-                        <link>research/projects</link>
+                        <title>Publications</title>
+                        <link>research/publications</link>
                     </item>
                 </items>
             </item>
@@ -130,8 +141,8 @@
                 <link>outreach</link>
                 <items>
                     <item>
-                        <title>Extension &amp; Outreach</title>
-                        <link>outreach</link>
+                        <title>Extension Programs</title>
+                        <link>outreach/extension</link>
                     </item>
                 </items>
             </item>
@@ -146,6 +157,10 @@
                     <item>
                         <title>Events</title>
                         <link>events</link>
+                    </item>
+                    <item>
+                        <title>Facilities</title>
+                        <link>about/facilities</link>
                     </item>
                     <item>
                         <title>Alumni and Friends</title>

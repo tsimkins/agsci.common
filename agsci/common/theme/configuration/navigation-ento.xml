@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AESE Navigation -->
+<!-- Entomology Navigation -->
 
 <config>
 
@@ -26,9 +26,14 @@
                 <link>directory</link>
             </item>
             <item>
-                <title>814-865-5461</title>
-                <link>tel:+814-865-5461</link>
+                <title>814-865-1895</title>
+                <link>tel:+814-865-1895</link>
                 <label>Department Telephone</label>
+            </item>
+            <item>
+                <title>entomology@psu.edu</title>
+                <link>mailto:entomology@psu.edu</link>
+                <label>Department Email</label>
             </item>
         </items>
     </nav>
@@ -38,7 +43,7 @@
             <item>
                 <icon>fa-facebook-square</icon>
                 <title>Facebook</title>
-                <link>https://www.facebook.com/PSU.AESE</link>
+                <link>https://www.facebook.com/PennStateEntomology</link>
             </item>
         </items>
     </nav>
@@ -54,8 +59,8 @@
                         <link>undergraduate/degrees</link>
                     </item>
                     <item>
-                        <title>Contact Us</title>
-                        <link>undergraduate/contact</link>
+                        <title>Student Resources</title>
+                        <link>undergraduate/resources</link>
                     </item>
                 </items>
             </item>
@@ -64,24 +69,20 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Energy, Environmental, and Food Economics</title>
-                        <link>graduate/eefe</link>
+                        <title>Degree and Course Information</title>
+                        <link>graduate/degrees</link>
                     </item>
                     <item>
-                        <title>Rural Sociology</title>
-                        <link>graduate/rural-sociology</link>
+                        <title>Funding Opportunities</title>
+                        <link>graduate/funding</link>
                     </item>
                     <item>
-                        <title>Agricultural and Extension Education</title>
-                        <link>graduate/aee</link>
+                        <title>International Focus</title>
+                        <link>graduate/international</link>
                     </item>
                     <item>
-                        <title>Applied Youth, Family, and Community Education</title>
-                        <link>graduate/ayfce</link>
-                    </item>
-                    <item>
-                        <title>Community and Economic Development</title>
-                        <link>graduate/cedev</link>
+                        <title>Student Resources</title>
+                        <link>graduate/resources</link>
                     </item>
                     <item>
                         <title>Contact Us</title>
@@ -120,8 +121,12 @@
                         <link>research/centers</link>
                     </item>
                     <item>
-                        <title>Projects</title>
-                        <link>research/projects</link>
+                        <title>Faculty Labs</title>
+                        <link>research/labs</link>
+                    </item>
+                    <item>
+                        <title>Publications</title>
+                        <link>research/publications</link>
                     </item>
                 </items>
             </item>
@@ -130,8 +135,12 @@
                 <link>outreach</link>
                 <items>
                     <item>
-                        <title>Extension &amp; Outreach</title>
-                        <link>outreach</link>
+                        <title>Extension Programs</title>
+                        <link>outreach/extension</link>
+                    </item>
+                    <item>
+                        <title>Youth Programs</title>
+                        <link>outreach/youth</link>
                     </item>
                 </items>
             </item>
@@ -146,6 +155,10 @@
                     <item>
                         <title>Events</title>
                         <link>events</link>
+                    </item>
+                    <item>
+                        <title>Facilities</title>
+                        <link>about/facilities</link>
                     </item>
                     <item>
                         <title>Alumni and Friends</title>
