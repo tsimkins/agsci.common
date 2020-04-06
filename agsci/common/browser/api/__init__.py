@@ -4,6 +4,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
 from bs4 import BeautifulSoup
+from datetime import datetime
 from plone.app.blob.field import BlobWrapper
 from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage
@@ -68,7 +69,7 @@ class CustomEncoder(JSONEncoder):
 
             return None
 
-        elif isinstance(o, DateTime):
+        elif isinstance(o, (datetime, DateTime)):
             return toISO(o)
 
         elif isinstance(o, (RelationValue,)):
