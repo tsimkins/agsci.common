@@ -108,6 +108,10 @@ class JSONDumpView(BrowserView):
 
     recursive = True
 
+    exclude_fields = [
+        'publications',
+    ]
+
     # http://stackoverflow.com/questions/1175208/elegant-python-function-to-convert-camelcase-to-camel-case
     def format_key(self, name):
         s1 = first_cap_re.sub(r'\1_\2', name)
@@ -179,6 +183,10 @@ class JSONDumpView(BrowserView):
             fields['subject'] = fields['subjects']
 
         for (_name, _field) in fields.iteritems():
+
+            # Don't provide explicitly excluded fields
+            if _name in self.exclude_fields:
+                continue
 
             if isinstance(_field, Method):
                 continue
