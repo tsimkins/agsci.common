@@ -413,8 +413,9 @@ class MissPiggyTile(BaseTile):
     def image_col_class(self):
         images = [self.get_img_src(x) for x in range(4)]
         image_count = len([x for x in images if x])
-        return "col-12 col-lg-12 col-md-%d" % (12/image_count)
 
+        if image_count:
+            return "col-12 col-lg-12 col-md-%d" % (12/image_count)
 
 class FozzieBearTile(ConditionalTemplateTile):
     __full_width__ = False
