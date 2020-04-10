@@ -124,7 +124,7 @@ $display-line-height: 1.2 !default;
         /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 
         /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */
-        .mosaic-agsci\.common\.tiles\.richtext-tile {
+        div[class~="mosaic-agsci.common.tiles.richtext-tile"] {
             position: relative;
             z-index: -1;
 
