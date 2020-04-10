@@ -140,6 +140,9 @@ a.alert-bar:hover {
   /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */ }
   .mosaic-grid-row .mosaic-grid-cell {
     padding: 0; }
+  .mosaic-grid-row .mosaic-tile-content > section {
+    position: relative;
+    z-index: 1; }
   .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
     margin-top: 0.5rem !important; }
   .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {

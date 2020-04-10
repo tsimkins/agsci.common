@@ -87,6 +87,11 @@ $display-line-height: 1.2 !default;
 
     .mosaic-tile-content {
 
+        > section {
+            position: relative;
+            z-index: 1;
+        }
+
         .btn-link a, a.btn-link {
             margin-top: 0.5rem !important;
         }
