@@ -13625,8 +13625,10 @@ a.alert-bar:hover {
       font-size: 1.25em; }
     .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
       color: #4D565B; }
-    .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
-      margin-top: 0.5rem; }
+    .mosaic-grid-row .mosaic-tile-content .cta-bar {
+      z-index: 1; }
+      .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
+        margin-top: 0.5rem; }
     .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
       border-bottom: none;
       font-size: 64px; }

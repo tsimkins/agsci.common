@@ -109,8 +109,13 @@ $display-line-height: 1.2 !default;
             }
         }
 
-        .cta-bar .btn {
-            margin-top: 0.5rem;
+        .cta-bar {
+
+            z-index: 1;
+
+            .btn {
+                margin-top: 0.5rem;
+            }
         }
 
         h1.documentFirstHeading {
