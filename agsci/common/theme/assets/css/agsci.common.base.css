@@ -156,10 +156,11 @@ a.alert-bar:hover {
     .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
       border-bottom: none;
       font-size: 64px; }
-    .mosaic-grid-row .mosaic-tile-content .mosaic-agsci.common.tiles.richtext-tile {
-      position: relative; }
-      .mosaic-grid-row .mosaic-tile-content .mosaic-agsci.common.tiles.richtext-tile h2[id^=tile]::before,
-      .mosaic-grid-row .mosaic-tile-content .mosaic-agsci.common.tiles.richtext-tile h3[id^=heading]::before {
+    .mosaic-grid-row .mosaic-tile-content .mosaic-agsci\.common\.tiles\.richtext-tile {
+      position: relative;
+      z-index: -1; }
+      .mosaic-grid-row .mosaic-tile-content .mosaic-agsci\.common\.tiles\.richtext-tile h2[id^=tile]::before,
+      .mosaic-grid-row .mosaic-tile-content .mosaic-agsci\.common\.tiles\.richtext-tile h3[id^=heading]::before {
         display: block;
         content: " ";
         margin-top: -125px;
