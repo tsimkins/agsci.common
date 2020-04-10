@@ -13613,7 +13613,8 @@ a.alert-bar:hover {
     padding: 0; }
   .mosaic-grid-row .mosaic-tile-content {
     /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
-    /* Ref: https://css-tricks.com/hash-tag-links-padding/ */ }
+    /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
+    /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */ }
     .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
       margin-top: 0.5rem !important; }
     .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
@@ -13637,6 +13638,9 @@ a.alert-bar:hover {
       height: 125px;
       visibility: hidden;
       pointer-events: none; }
+    .mosaic-grid-row .mosaic-tile-content h2[id^=tile],
+    .mosaic-grid-row .mosaic-tile-content h3[id^=heading] {
+      z-index: -1; }
 
 body.userrole-manager.mosaic-grid .mosaic-grid-row,
 body.template-edit.mosaic-enabled .mosaic-grid-row {

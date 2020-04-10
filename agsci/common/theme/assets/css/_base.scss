@@ -131,6 +131,12 @@ $display-line-height: 1.2 !default;
             pointer-events: none;
         }
 
+        /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */
+        h2[id^=tile],
+        h3[id^=heading] {
+            z-index: -1;
+        }
+
     }
 }
 
