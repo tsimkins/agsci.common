@@ -110,9 +110,6 @@ $display-line-height: 1.2 !default;
         }
 
         .cta-bar {
-
-            z-index: 1;
-
             .btn {
                 margin-top: 0.5rem;
             }
@@ -126,20 +123,19 @@ $display-line-height: 1.2 !default;
         /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
         /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 
-        h2[id^=tile]::before,
-        h3[id^=heading]::before {
-            display: block;
-            content: " ";
-            margin-top: -125px;
-            height: 125px;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
         /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */
-        h2[id^=tile],
-        h3[id^=heading] {
-            z-index: -1;
+        .mosaic-agsci.common.tiles.richtext-tile {
+            position: relative;
+
+            h2[id^=tile]::before,
+            h3[id^=heading]::before {
+                display: block;
+                content: " ";
+                margin-top: -125px;
+                height: 125px;
+                visibility: hidden;
+                pointer-events: none;
+            }
         }
 
     }
