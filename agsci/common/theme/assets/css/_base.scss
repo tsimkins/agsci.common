@@ -120,25 +120,25 @@ $display-line-height: 1.2 !default;
             font-size: 64px;
         }
 
-        /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
-        /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
+    }
 
-        /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */
-        div[class~="mosaic-agsci.common.tiles.richtext-tile"] {
-            position: relative;
-            z-index: -1;
+    /* Puts an invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
+    /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 
-            h2[id^=tile]::before,
-            h3[id^=heading]::before {
-                display: block;
-                content: " ";
-                margin-top: -125px;
-                height: 125px;
-                visibility: hidden;
-                pointer-events: none;
-            }
+    /* Push these tiles back to z-index of -1 to prevent invisible margin from being 'in front' of buttons */
+    div[class~="mosaic-agsci.common.tiles.richtext-tile"] {
+        position: relative;
+        z-index: -1;
+
+        h2[id^=tile]::before,
+        h3[id^=heading]::before {
+            display: block;
+            content: " ";
+            margin-top: -125px;
+            height: 125px;
+            visibility: hidden;
+            pointer-events: none;
         }
-
     }
 }
 
