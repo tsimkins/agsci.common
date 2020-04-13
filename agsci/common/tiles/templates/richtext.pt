@@ -14,8 +14,11 @@
     <div
         tal:attributes="class view/container_class|nothing">
 
+        <span
+            tal:condition="view/title_id|nothing"
+            tal:attributes="id view/title_id|nothing" />
+
         <h2 class="mt-0"
-            tal:attributes="id view/title_id|nothing"
             tal:condition="title"
             tal:content="title" />
 
