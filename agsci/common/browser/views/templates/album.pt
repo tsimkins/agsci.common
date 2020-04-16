@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="plone">
+<body>
+
+<metal:content-core fill-slot="content-core">
+<metal:block use-macro="context/folder_base/macros/content-core">
+<metal:entries fill-slot="entries">
+
+<tal:results define="batch view/batch|nothing">
+    <tal:listing condition="batch">
+
+        <div tal:attributes="class string:card-deck card-deck-5up agsci-visual-cards html"
+             tal:define="normalizeString nocall: context/plone_utils/normalizeString;">
+
+            <tal:repeat repeat="item batch" metal:define-macro="entries">
+                <tal:block tal:define="obj item/getObject;
+                    item_url item/getURL;
+                    item_href python:view.getItemURL(item);
+                    item_id item/getId;
+                    item_title item/Title;
+                    item_description item/Description;
+                    item_type item/Type;
+                    item_modified item/ModificationDate;
+                    item_created item/CreationDate;
+                    item_type_class python:'contenttype-' + normalizeString(item_type);
+                    item_wf_state item/review_state;
+                    item_wf_state_class python:'state-' + normalizeString(item_wf_state);
+                    item_creator item/Creator;
+                    item_has_image python:item.getIcon">
+
+                    <a tal:attributes="href item_href"
+                       class="card card-visual">
+
+                        <div class="card-image-top"
+                            tal:condition="item_has_image">
+
+                            <img tal:attributes="src string:${item_url}/@@images/image/thumb"
+                                alt=""
+                                title=""
+                                class="w-100" />
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="card-text">
+                                <p tal:content="item_title|nothing" />
+                            </div>
+                        </div>
+                     </a>
+
+                </tal:block>
+            </tal:repeat>
+
+        </div>
+    </tal:listing>
+</tal:results>
+
+
+
+</metal:entries>
+</metal:block>
+</metal:content-core>
+
+</body>
+</html>

@@ -120,6 +120,16 @@
         template="templates/folder.pt"
     />
 
+    <!-- Album View -->
+    <browser:page
+        for="plone.dexterity.interfaces.IDexterityContainer"
+        name="album_view"
+        class=".FolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/album.pt"
+    />
+
     <!-- Default Container View -->
     <browser:page
         for="plone.dexterity.interfaces.IDexterityContainer"
