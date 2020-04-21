@@ -452,6 +452,9 @@ class RowlfTile(BaseTile):
     image_scale = 'large'
 
 class ScooterTile(ConditionalTemplateTile):
+
+    show_image_wrapper = False
+
     pb = 3
 
     def get_items(self):
@@ -466,6 +469,9 @@ class ScooterTile(ConditionalTemplateTile):
     @property
     def template(self):
         return 'scooter-%s.pt' % self.style
+
+    def get_img_src(self, brain, field='image', image_scale='large', **kwargs):
+        return u"%s/@@images/%s/%s" % (brain.getURL(), field, image_scale)
 
 class SkeeterTile(ConditionalTemplateTile):
 

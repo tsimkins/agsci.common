@@ -13,6 +13,7 @@
         <element value="agsci_directory_person_listing" />
         <element value="agsci_blog" />
         <element value="agsci_homepage" />
+        <element value="agsci_homepage_extension" />
         <element value="agsci_subsite" />
         <element value="agsci_section" />
         <element value="Folder" />

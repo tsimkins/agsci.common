@@ -1,4 +1,5 @@
 from agsci.common.content.vocabulary import StaticVocabulary, KeyValueVocabulary
+from agsci.common.utilities import getExtensionConfig
 
 class ButtonColorsVocabulary(KeyValueVocabulary):
     items = [
@@ -112,6 +113,13 @@ class AgJourneyQuoteStyleVocabulary(KeyValueVocabulary):
         ('handwriting_large', 'Handwriting (Large)'),
     ]
 
+class ExtensionListingProductTypesVocabulary(StaticVocabulary):
+
+    @property
+    def items(self):
+        config = getExtensionConfig()
+        return sorted(set([x.get('product_type', None) for x in config if x.get('product_type', None)]))
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
@@ -125,3 +133,4 @@ VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()
 AgJourneyQuoteStyleVocabularyFactory = AgJourneyQuoteStyleVocabulary()
+ExtensionListingProductTypesVocabularyFactory = ExtensionListingProductTypesVocabulary()

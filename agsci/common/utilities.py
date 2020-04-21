@@ -14,17 +14,18 @@ from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from zope.component import getUtility, getMultiAdapter
 from zope.component.hooks import getSite
+from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
 
 import pytz
 import re
+import requests
 import unicodedata
 
 try:
     from AccessControl.User import Super as BaseUnrestrictedUser
 except ImportError:
     from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
-
 
 try:
     import  html.entities as htmlentitydefs
@@ -34,6 +35,8 @@ except ImportError:
 from .constants import DEFAULT_TIMEZONE
 
 DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
+
+DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/@@department_config'
 
 #Ploneify
 def ploneify(toPlone, filename=False):
@@ -522,3 +525,34 @@ def setSiteURL(site, domain=None, path='', https=True):
 def toISO(_):
     _date = localize(_)
     return _date.isoformat()
+
+def getExtensionConfig():
+
+    rv = []
+
+    # Avoid circular import
+    from .browser.viewlets import NavigationViewlet
+
+    # Get department id from registry
+    viewlet = NavigationViewlet(getSite(), getRequest(), None)
+    department_id = viewlet.department_id
+
+    # If we have a department id, get the config from the CMS
+    if department_id:
+
+        try:
+            data = requests.get(DEPARTMENT_CONFIG_URL).json()
+
+        except:
+            pass
+
+        else:
+
+            if department_id in data:
+
+                for k in ('categories', 'products'):
+
+                    if k in data[department_id]:
+                        rv.extend(data[department_id][k])
+
+    return rv

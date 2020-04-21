@@ -16,3 +16,10 @@ class ICollegeHomepage(IHomepage):
 
 class CollegeHomepage(Homepage):
     pass
+
+@provider(IFormFieldProvider)
+class IExtensionHomepage(IHomepage):
+    pass
+
+class ExtensionHomepage(Homepage):
+    pass

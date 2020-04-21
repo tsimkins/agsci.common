@@ -31,21 +31,26 @@
                          tal:define="item_title i/Title|nothing;
                                      alt_text python: not show_item_title and item_title or ''">
 
-                        <div class="opacity-dimmer opacity-dimmer-bottom"
-                             tal:condition="show_item_title"></div>
+                        <div class="image-wrapper"
+                            tal:omit-tag="not: view/show_image_wrapper|nothing">
 
-                        <img tal:condition="i/hasLeadImage|nothing"
-                             tal:attributes="src string:${i/getURL}/@@images/image/large;
-                                             alt alt_text;"
-                             title=""
-                             class="w-100" />
+                            <div class="opacity-dimmer opacity-dimmer-bottom"
+                                 tal:condition="show_item_title"></div>
 
-                        <img tal:condition="not: i/hasLeadImage|nothing"
-                                tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg;
-                                                alt alt_text;"
+                            <img tal:condition="i/hasLeadImage|nothing"
+                                 tal:attributes="src python: view.get_img_src(i);
+                                                 alt alt_text;"
+                                 title=""
+                                 class="w-100" />
 
-                                title=""
-                                class="w-100" />
+                            <img tal:condition="not: i/hasLeadImage|nothing"
+                                    tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg;
+                                                    alt alt_text;"
+
+                                    title=""
+                                    class="w-100" />
+
+                        </div>
 
                         <div class="card-img-overlay d-flex align-items-center justify-content-center text-white"
                              tal:condition="show_item_title">

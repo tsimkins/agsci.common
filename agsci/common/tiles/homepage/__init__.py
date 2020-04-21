@@ -1,4 +1,7 @@
-from .. import BaseTile
+from agsci.common import object_factory
+from agsci.common.utilities import getExtensionConfig
+
+from .. import BaseTile, ScooterTile
 
 class JumbotronTile(BaseTile):
     __full_width__ = True
@@ -35,3 +38,39 @@ class NewsAndEventsTile(BaseTile):
     @property
     def more_events_link(self):
         return self.get_more_items_link('target_events')
+
+class ExtensionListingTile(ScooterTile):
+
+    show_image_wrapper = True
+
+    def to_brain(self, config=[]):
+        rv = []
+
+        for _ in config:
+            __ = {
+                'Title' : _.get('name', None),
+                'Description' : _.get('description', None),
+                'getURL' : _.get('url', None),
+                'thumbnail' : _.get('thumbnail', None),
+                'hasLeadImage' : not not _.get('thumbnail', None),
+            }
+
+            rv.append(object_factory(**__))
+
+        return rv
+
+    def get_items(self):
+        config = getExtensionConfig()
+
+        if config:
+            product_types = self.get_valid_value('product_types')
+
+            if product_types:
+                return self.to_brain([x for x in config if x.get('product_type', None) in product_types])
+
+            return self.to_brain(config)
+
+        return []
+
+    def get_img_src(self, brain, **kwargs):
+        return brain.thumbnail

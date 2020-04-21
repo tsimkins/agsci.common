@@ -80,4 +80,10 @@
         component=".AgJourneyQuoteStyleVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.extension_homepage.product_types"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ExtensionListingProductTypesVocabularyFactory"
+    />
+
 </configure>

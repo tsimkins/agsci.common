@@ -57,5 +57,18 @@
         for="agsci.common.content.homepage.ICollegeHomepage"
     />
 
+    <!-- Extension Product/Category Listing -->
+
+    <plone:tile
+        name="agsci.common.tiles.homepage_extension.listing"
+        title="Extension Product/Category Listing"
+        description=""
+        schema=".interfaces.IExtensionListingTile"
+        class=".ExtensionListingTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.homepage.IExtensionHomepage"
+    />
 
 </configure>

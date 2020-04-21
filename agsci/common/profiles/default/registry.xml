@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <registry>
 
-    <record    name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.use_email_as_username">
+    <record name="dexterity.membrane.behavior.settings.IDexterityMembraneSettings.use_email_as_username">
         <field type="plone.registry.field.Bool"/>
         <value>False</value>
     </record>
@@ -327,6 +327,14 @@
             prefix="plone.app.mosaic.tiles_categories.homepage_college">
         <value key="name">homepage_college</value>
         <value key="label">College Homepage</value>
+        <value key="weight">5</value>
+    </records>
+
+    <!-- Add an Extension Homepage category -->
+    <records interface="plone.app.mosaic.interfaces.IWeightedDict"
+            prefix="plone.app.mosaic.tiles_categories.homepage_extension">
+        <value key="name">homepage_extension</value>
+        <value key="label">Extension Homepage</value>
         <value key="weight">5</value>
     </records>
 
@@ -811,6 +819,21 @@
         <value key="name">agsci.common.tiles.homepage_college.news_and_events</value>
         <value key="label">News and Events</value>
         <value key="category">homepage_college</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
+    <!-- Extension Homepage: Extension Listing -->
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_homepage_extension_listing"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.homepage_extension.listing</value>
+        <value key="label">Extension Product/Category Listing</value>
+        <value key="category">homepage_extension</value>
         <value key="tile_type">app</value>
         <value key="default_value"></value>
         <value key="read_only">false</value>

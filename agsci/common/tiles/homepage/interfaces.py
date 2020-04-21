@@ -129,3 +129,37 @@ class INewsAndEventsTile(Interface):
         source=CatalogSource(object_provides=ICollection.__identifier__),
         required=False,
     )
+
+
+class IExtensionListingTile(Interface):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    product_types = schema.List(
+        title=_(u"Show Product Types"),
+        value_type=schema.Choice(vocabulary="agsci.common.tiles.extension_homepage.product_types"),
+        required=False,
+    )
+
+    count = schema.Choice(
+        title=_(u"Count"),
+        values=[1,2,3,4],
+        required=False,
+    )
+
+    style = schema.Choice(
+        title=_(u"Card Style"),
+        vocabulary='agsci.common.tiles.card_style',
+        default=u'image',
+        required=False,
+    )
+
+    show_item_title = schema.Bool(
+        title=_(u"Show Item Title?"),
+        description=_(u"(For Image card style)"),
+        required=False,
+        default=True,
+    )

@@ -1382,6 +1382,28 @@ body.template-image_view #content-core {
 .card-deck-link a:focus {
   border-bottom: none !important; }
 
+/* Forced 3:2 ratio cards */
+.card.card-visual .image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 66.67%;
+  margin: 0;
+  clear: both;
+  transform: translateY(50%); }
+  .card.card-visual .image-wrapper .opacity-dimmer {
+    top: -50%; }
+  .card.card-visual .image-wrapper img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    width: 100%;
+    height: auto;
+    transform: translateY(-50%); }
+
 /* Navbar Invalid Links */
 header a.invalid {
   text-decoration: underline;
@@ -1535,6 +1557,11 @@ body:not(.portaltype-agsci_agjourney) .mosaic-option-group-agjourney {
 
 /* Hide College Homepage tile group on non-College Homepage types */
 body:not(.portaltype-agsci_homepage_college) .mosaic-option-group-homepage-college {
+  color: #888888;
+  display: none; }
+
+/* Hide Extension Homepage tile group on non-Extension Homepage types */
+body:not(.portaltype-agsci_homepage_extension) .mosaic-option-group-homepage-extension {
   color: #888888;
   display: none; }
 

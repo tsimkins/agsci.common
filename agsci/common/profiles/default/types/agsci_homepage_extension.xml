@@ -1,49 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<object xmlns:i18n="http://xml.zope.org/namespaces/i18n" name="Subsite" meta_type="Dexterity FTI" i18n:domain="plone">
-    <property name="title" i18n:translate="">Subsite</property>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n" name="Extension Homepage" meta_type="Dexterity FTI" i18n:domain="plone">
+    <property name="title" i18n:translate="">Extension Homepage</property>
     <property name="description" i18n:translate="" />
     <property name="icon_expr">string:${portal_url}/document_icon.png</property>
-    <property name="factory">agsci_subsite</property>
-    <property name="add_view_expr">string:${folder_url}/++add++agsci_subsite</property>
+    <property name="factory">agsci_homepage_extension</property>
+    <property name="add_view_expr">string:${folder_url}/++add++agsci_homepage_extension</property>
     <property name="link_target" />
     <property name="immediate_view">view</property>
     <property name="global_allow">True</property>
     <property name="filter_content_types">True</property>
     <property name="allowed_content_types">
-        <element value="agsci_directory_person_listing" />
-        <element value="agsci_blog" />
-        <element value="agsci_homepage" />
-        <element value="agsci_homepage_extension" />
-        <element value="agsci_subsite" />
-        <element value="agsci_section" />
-        <element value="Folder" />
-        <element value="File" />
-        <element value="Image" />
-        <element value="Document" />
-        <element value="Link" />
-        <element value="Collection" />
-        <element value="FormFolder"/>
     </property>
     <property name="allow_discussion">False</property>
-    <property name="default_view">view</property>
+    <property name="default_view">layout_view</property>
     <property name="view_methods">
         <element value="view" />
+        <element value="layout_view"/>
     </property>
     <property name="default_view_fallback">False</property>
     <property name="add_permission">agsci.common.restricted_types</property>
-    <property name="klass">agsci.common.content.subsite.Subsite</property>
+    <property name="klass">agsci.common.content.homepage.ExtensionHomepage</property>
     <property name="behaviors">
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
+        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
         <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
-        <element value="agsci.common.content.behaviors.IFolderFields" />
-        <element value="agsci.common.content.behaviors.ISEO" />
-        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
+        <element value="agsci.common.content.behaviors.IHomepageFields" />
+        <element value="plone.layoutaware"/>
     </property>
-    <property name="schema">agsci.common.content.subsite.ISubsite</property>
+    <property name="schema">agsci.common.content.homepage.IExtensionHomepage</property>
     <property name="schema_policy">dexterity</property>
     <alias from="(Default)" to="(dynamic view)" />
     <alias from="edit" to="@@edit" />
@@ -53,6 +39,6 @@
         <permission value="View" />
     </action>
     <action title="Edit" action_id="edit" category="object" condition_expr="" description="" icon_expr="" link_target="" url_expr="string:${object_url}/edit" visible="True">
-        <permission value="Modify portal content" />
+        <permission value="agsci.common.restricted_types" />
     </action>
 </object>

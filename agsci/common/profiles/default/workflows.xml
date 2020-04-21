@@ -56,6 +56,14 @@
             <bound-workflow workflow_id="restricted_content_workflow" />
         </type>
 
+        <type type_id="agsci_homepage_college">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
+        <type type_id="agsci_homepage_extension">
+            <bound-workflow workflow_id="restricted_content_workflow" />
+        </type>
+
         <type type_id="agsci_major">
             <bound-workflow workflow_id="restricted_content_workflow" />
         </type>
@@ -81,4 +89,3 @@
         </type>
     </bindings>
 </object>
-
