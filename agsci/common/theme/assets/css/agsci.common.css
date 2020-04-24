@@ -14729,7 +14729,8 @@ body.template-image_view #content-core {
     background: #EEEEEE;
     padding: 1em;
     border-left: 1em solid #CCCCCC;
-    clear: both; }
+    clear: both;
+    margin-bottom: 1rem; }
 
 #content-core .alphabetLinks {
   text-align: center; }

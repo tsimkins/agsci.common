@@ -6,6 +6,7 @@ img.mce-object[data-mce-p-type="block"] {
   background: #EEEEEE;
   padding: 1em;
   border-left: 1em solid #CCCCCC;
-  clear: both; }
+  clear: both;
+  margin-bottom: 1rem; }
 
 /*# sourceMappingURL=tinymce.css.map */
