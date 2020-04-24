@@ -118,15 +118,15 @@
                 <items>
                     <item>
                         <title>Agricultural Production</title>
-                        <link>research/agricultural-production</link>
+                        <link>research/areas/agricultural-production</link>
                     </item>
                     <item>
                         <title>Biological Processing and Bioproducts</title>
-                        <link>research/bio-based-products</link>
+                        <link>research/areas/bio-based-products</link>
                     </item>
                     <item>
                         <title>Natural Resources Engineering and Protection</title>
-                        <link>research/natural-resource-protection</link>
+                        <link>research/areas/natural-resource-protection</link>
                     </item>
                     <item>
                         <title>Publications</title>
