@@ -684,6 +684,13 @@ body.template-image_view #content-core {
     [align="center"] {
         text-align: left !important;
     }
+
+    .callout {
+        background: #EEEEEE;
+        padding: 1em;
+        border-left: 1em solid #CCCCCC;
+        clear: both;
+    }
 }
 
 #content-core {

@@ -14719,6 +14719,17 @@ body.template-image_view #content-core {
   body.template-file_view #content-core [align="center"],
   body.template-image_view #content-core [align="center"] {
     text-align: left !important; }
+  #parent-fieldname-text .callout,
+  .html .callout,
+  body.template-default_error_message #content-core .callout,
+  body.template-fg_thankspage_view_p3 #content-core .callout,
+  body.template-fg_base_view_p3 #content-core .callout,
+  body.template-file_view #content-core .callout,
+  body.template-image_view #content-core .callout {
+    background: #EEEEEE;
+    padding: 1em;
+    border-left: 1em solid #CCCCCC;
+    clear: both; }
 
 #content-core .alphabetLinks {
   text-align: center; }
