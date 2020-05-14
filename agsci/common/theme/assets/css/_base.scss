@@ -692,6 +692,11 @@ body.template-image_view #content-core {
         clear: both;
         margin-bottom: 1rem;
     }
+    
+    strong.lead,
+    b.lead {
+        font-weight: bolder !important;
+    }
 }
 
 #content-core {

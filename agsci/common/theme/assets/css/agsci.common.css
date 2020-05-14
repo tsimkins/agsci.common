@@ -14731,6 +14731,21 @@ body.template-image_view #content-core {
     border-left: 1em solid #CCCCCC;
     clear: both;
     margin-bottom: 1rem; }
+  #parent-fieldname-text strong.lead,
+  #parent-fieldname-text b.lead,
+  .html strong.lead,
+  .html b.lead,
+  body.template-default_error_message #content-core strong.lead,
+  body.template-default_error_message #content-core b.lead,
+  body.template-fg_thankspage_view_p3 #content-core strong.lead,
+  body.template-fg_thankspage_view_p3 #content-core b.lead,
+  body.template-fg_base_view_p3 #content-core strong.lead,
+  body.template-fg_base_view_p3 #content-core b.lead,
+  body.template-file_view #content-core strong.lead,
+  body.template-file_view #content-core b.lead,
+  body.template-image_view #content-core strong.lead,
+  body.template-image_view #content-core b.lead {
+    font-weight: bolder !important; }
 
 #content-core .alphabetLinks {
   text-align: center; }
