@@ -130,6 +130,26 @@
         template="templates/album.pt"
     />
 
+    <!-- Collection Album View (ISyndicatableCollection) -->
+    <browser:page
+        for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+        name="album_view"
+        class=".CollectionView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeContentTypes"
+        template="templates/album.pt"
+    />
+
+    <!-- Collection Album View -->
+    <browser:page
+        for="plone.app.contenttypes.interfaces.ICollection"
+        name="album_view"
+        class=".CollectionView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeContentTypes"
+        template="templates/album.pt"
+    />
+
     <!-- Default Container View -->
     <browser:page
         for="plone.dexterity.interfaces.IDexterityContainer"
