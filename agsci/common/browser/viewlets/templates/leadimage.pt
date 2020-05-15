@@ -14,4 +14,9 @@
        tal:condition="caption"
        tal:content="caption" />
 
+    <p tal:condition="view/crop_image|nothing"
+        class="discreet html">
+        <a tal:attributes="href string:${context/absolute_url}/@@crop-image">[Crop Image]</a>
+    </p>
+
 </div>

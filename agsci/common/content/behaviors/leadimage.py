@@ -10,6 +10,7 @@ from zope.interface import provider, implementer
 
 from agsci.common import AgsciMessageFactory as _
 from agsci.common.constants import IMAGE_FORMATS
+from agsci.common.interfaces import ILeadImageMarker
 from ..person.person import IPerson
 
 @provider(IFormFieldProvider)
@@ -46,8 +47,8 @@ class ILeadImageExtra(ILeadImage):
         required=False,
     )
 
-@implementer(ILeadImage)
 @adapter(IDexterityContent)
+@implementer(ILeadImageMarker)
 class LeadImage(object):
 
     exclude_interfaces = [
@@ -100,8 +101,7 @@ class LeadImage(object):
         return None
 
     def set_image(self, data):
-        field = _NamedBlobImage(filename=u'image')
-        field.data = data
+        field = _NamedBlobImage(filename=u'image', data=data)
         self.context.image = field
 
     @property

@@ -6,3 +6,6 @@ RESTRICTED_TYPES = 'agsci.common.restricted_types'
 
 # Directory Editor
 DIRECTORY_EDITOR = 'agsci.common.directory_editor'
+
+# Crop Image
+CROP_IMAGE = 'agsci.common.crop_image'

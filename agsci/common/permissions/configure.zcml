@@ -27,6 +27,11 @@
         title="agsci.common.directory_editor"
         />
 
+    <permission
+        id="agsci.common.crop_image"
+        title="agsci.common.crop_image"
+        />
+
     <!-- Roles for Sharing tab -->
     <utility name="Collection Editor" factory=".sharing.CollectionEditorRole"/>
     <utility name="Restricted Types" factory=".sharing.RestrictedTypes"/>

@@ -19,6 +19,8 @@
         provides=".leadimage.ILeadImageNoCaption"
     />
 
+    <adapter factory=".leadimage.LeadImage" />
+
     <!-- Exclude from nav hardcode -->
     <plone:behavior
         title="Exclude from Navigation (Always)"

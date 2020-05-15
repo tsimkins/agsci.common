@@ -524,4 +524,15 @@
         permission="zope2.View"
     />
 
+    <!-- Cropped Image Views -->
+
+    <browser:page
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+        name="crop-image"
+        template="templates/crop-image.pt"
+        class=".crop_image.CropImageView"
+        permission="agsci.common.crop_image"
+    />
+
+
 </configure>

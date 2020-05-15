@@ -574,6 +574,10 @@ class LeadImageViewlet(ViewletBase):
 
         return 'mb-4 ml-lg-3 float-lg-right col-lg-6 px-0'
 
+    def crop_image(self):
+        crop_image_view = getMultiAdapter((self.context, self.request), name="crop-image")
+        return crop_image_view.allowCrop()
+
 class DataCheckViewlet(ViewletBase):
 
     def data(self):

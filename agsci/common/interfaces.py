@@ -14,3 +14,6 @@ class ICourseSyllabus(Interface):
 
 class ICourseSyllabusDigital(Interface):
     pass
+
+class ILeadImageMarker(Interface):
+    pass
