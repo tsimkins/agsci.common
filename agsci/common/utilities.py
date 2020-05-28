@@ -502,7 +502,22 @@ def setSiteURL(site, domain=None, path='', https=True):
     if not domain:
         domain = {
             'agsci' : 'agsci.psu.edu',
+            'private-internal': "agsci.psu.edu",
+            'ento.psu.edu': 'dev.ento.psu.edu',
+            'plantscience.psu.edu': 'dev.plantscience.psu.edu',
+            'foodscience.psu.edu': 'dev.foodscience.psu.edu',
+            'aese.psu.edu': 'dev.aese.psu.edu',
+            'abe.psu.edu': 'dev.abe.psu.edu',
+            'animalscience.psu.edu': 'dev.animalscience.psu.edu',
+            'ecosystems.psu.edu': 'dev.ecosystems.psu.edu',
+            'plantpath.psu.edu': 'dev.plantpath.psu.edu',
+            'vbs.psu.edu': 'dev.vbs.psu.edu'
         }.get(site.getId(), 'nohost_%s_' % site.getId())
+
+    if not path:
+        path = {
+            'private-internal' : '/inside',
+        }.get(site.getId(), path)
 
     if path and not path.startswith('/'):
         path = '/%s' % path
