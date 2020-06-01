@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from plone.app.blob.field import BlobWrapper
 from plone.app.textfield.value import RichTextValue
-from plone.namedfile.file import NamedBlobImage
+from plone.namedfile.file import NamedBlobImage, NamedBlobFile
 from z3c.relationfield.relation import RelationValue
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
@@ -49,7 +49,7 @@ class CustomEncoder(JSONEncoder):
 
         # If blob field type, encode binary data and
         # include mime type
-        if isinstance(o, (BlobWrapper, NamedBlobImage)):
+        if isinstance(o, (BlobWrapper, NamedBlobImage, NamedBlobFile)):
 
             # Skip if we're not providing binary info
             if self.bin:
