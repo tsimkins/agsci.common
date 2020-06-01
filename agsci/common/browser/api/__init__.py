@@ -38,7 +38,7 @@ class CustomEncoder(JSONEncoder):
 
     @property
     def bin(self):
-        return not not self.request.form.get('bin', False)
+        return self.request.form.get('bin', '').lower() not in ('0', 'false')
 
     def html_to_text(self, html):
         portal_transforms = getToolByName(self.site, 'portal_transforms')
