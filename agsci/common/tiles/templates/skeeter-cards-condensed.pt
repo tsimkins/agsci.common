@@ -11,12 +11,12 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
-    <h2 class="mt-0"
-        tal:define="title view/data/title|nothing"
-        tal:condition="title"
-        tal:content="title" />
-
     <div class="container px-0">
+
+        <h2 class="mt-0"
+            tal:define="title view/data/title|nothing"
+            tal:condition="title"
+            tal:content="title" />
 
         <div class="card-deck card-deck-2up agsci-visual-cards">
             <tal:items tal:repeat="i view/items|nothing">
