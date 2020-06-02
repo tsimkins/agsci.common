@@ -48,6 +48,8 @@ class FeatureCardStyleVocabulary(KeyValueVocabulary):
         ('news-condensed', 'News Items (Condensed)'),
         ('events', 'Events'),
         ('pages', 'Pages'),
+        ('cards', 'Cards'),
+        ('cards-condensed', 'Cards (Condensed)'),
     ]
 
 class PeopleVocabulary(KeyValueVocabulary):

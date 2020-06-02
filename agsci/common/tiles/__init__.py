@@ -451,20 +451,23 @@ class RowlfTile(BaseTile):
 
     image_scale = 'large'
 
-class ScooterTile(ConditionalTemplateTile):
+# Conditional-Collection-Container-Template
 
-    show_image_wrapper = False
-
-    pb = 3
+class CCCT_Tile(ConditionalTemplateTile):
 
     def get_items(self):
-        items = super(ScooterTile, self).get_items('target')
+        items = super(CCCT_Tile, self).get_items('target')
 
         if items:
             return items
 
-        return super(ScooterTile, self).get_items('target_container')
+        return super(CCCT_Tile, self).get_items('target_container')
 
+class ScooterTile(CCCT_Tile):
+
+    show_image_wrapper = False
+
+    pb = 3
 
     @property
     def template(self):
@@ -473,7 +476,7 @@ class ScooterTile(ConditionalTemplateTile):
     def get_img_src(self, brain, field='image', image_scale='large', **kwargs):
         return u"%s/@@images/%s/%s" % (brain.getURL(), field, image_scale)
 
-class SkeeterTile(ConditionalTemplateTile):
+class SkeeterTile(CCCT_Tile):
 
     @property
     def __section_class__(self):
@@ -521,6 +524,8 @@ class SkeeterTile(ConditionalTemplateTile):
         return {
             'pages' : 4,
             'news' : 3,
+            'cards' : 99999,
+            'cards-condensed' : 99999,
         }.get(self.style, 4)
 
     @property

@@ -523,6 +523,12 @@ class ISkeeterTile(IBorderTile):
         required=False,
     )
 
+    target_container = RelationChoice(
+        title=_(u"Target Container"),
+        source=CatalogSource(object_provides=IDexterityContainer.__identifier__),
+        required=False,
+    )
+
     featured_id = schema.TextLine(
         title=_(u"Featured Item Id"),
         description=_(u"Short name of featured item"),
