@@ -36,7 +36,6 @@
 
                         <div class="col-12 col-lg-5 order-1 px-0">
                             <img alt=""
-                                 class="w-100"
                                  tal:attributes="src string:${i/getURL}/@@images/image/large" >
                         </div>
                     </div>

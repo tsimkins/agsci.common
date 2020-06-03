@@ -484,7 +484,14 @@ class SkeeterTile(CCCT_Tile):
         if self.style in [
             'news-condensed',
         ]:
+
             return 'container'
+
+        elif self.style in [
+            'cards',
+            'cards-condensed',
+        ]:
+            return 'container-fluid section-highlight py-4'
 
         return 'container-fluid'
 
