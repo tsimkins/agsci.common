@@ -479,6 +479,20 @@ class ScooterTile(CCCT_Tile):
 class SkeeterTile(CCCT_Tile):
 
     @property
+    def mt(self):
+        if self.style in [
+            'cards',
+            'cards-condensed',
+        ]:
+            return 0
+
+        return 5
+
+    @property
+    def mb(self):
+        return self.mt
+
+    @property
     def __section_class__(self):
 
         if self.style in [
@@ -491,7 +505,7 @@ class SkeeterTile(CCCT_Tile):
             'cards',
             'cards-condensed',
         ]:
-            return 'container-fluid section-highlight py-4'
+            return 'container-fluid section-highlight py-5'
 
         return 'container-fluid'
 
