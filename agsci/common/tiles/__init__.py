@@ -284,6 +284,11 @@ class BaseTile(PersistentTile):
             if _id:
                 _ = [x for x in _ if _id != x.getId()]
 
+                # If the box for hiding items that are excluded
+                # from navigation is checked, filter them out.
+                if self.get_valid_value('exclude_navigation'):
+                    _ = [x for x in _ if not x.exclude_from_nav]
+
             return _
 
     @property

@@ -490,6 +490,12 @@ class IScooterTile(IBorderTile):
         required=False,
     )
 
+    exclude_navigation = schema.Bool(
+        title=_(u"Hide items excluded from navigation"),
+        required=False,
+        default=False,
+    )
+
     count = schema.Choice(
         title=_(u"Count"),
         values=[1,2,3,4],
@@ -527,6 +533,12 @@ class ISkeeterTile(IBorderTile):
         title=_(u"Target Container"),
         source=CatalogSource(object_provides=IDexterityContainer.__identifier__),
         required=False,
+    )
+
+    exclude_navigation = schema.Bool(
+        title=_(u"Hide items excluded from navigation"),
+        required=False,
+        default=False,
     )
 
     featured_id = schema.TextLine(
