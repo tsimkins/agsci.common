@@ -36,7 +36,7 @@ from .constants import DEFAULT_TIMEZONE
 
 DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
 
-DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/@@department_config'
+DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/config.json'
 
 #Ploneify
 def ploneify(toPlone, filename=False):
