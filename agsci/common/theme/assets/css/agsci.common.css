@@ -15091,6 +15091,9 @@ p.publication .publication-title {
 p.publication .journal-name {
   font-style: italic; }
 
+@media (min-width: 992px) {
+  .card.card-visual.card-horizontal.container .row.align-items-stretch {
+    height: 100%; } }
 .alert.status,
 .portalMessage {
   padding: 15px;
