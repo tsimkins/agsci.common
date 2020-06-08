@@ -80,6 +80,7 @@ class ContentImporter(object):
         'Home Page' : 'agsci_homepage',
         'Photo Folder' : 'agsci_photofolder',
         'Form Folder' : 'Folder',
+        'Faculty/Staff Directory' : 'agsci_directory',
     }
 
     # new : old
