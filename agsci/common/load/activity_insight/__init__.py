@@ -13,6 +13,8 @@ from .. import ImportContentView
 
 class ImportDirectoryPublicationsView(ImportContentView):
 
+    roles = ['Contributor', 'Reader', 'Editor', 'Member', 'Directory Editor']
+
     api_key_id = 'agsci.common.ai_api_key'
 
     @property
@@ -242,7 +244,7 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
 
             v = BaseView(self.context, self.request)
 
-            html = v.publications_html(publications=publications[0:500])
+            html = v.publications_html(publications=publications)
 
             context.text = RichTextValue(
                 raw=html,
