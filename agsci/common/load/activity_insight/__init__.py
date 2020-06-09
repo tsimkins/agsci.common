@@ -1,5 +1,6 @@
 from DateTime import DateTime
 from bs4 import BeautifulSoup
+from datetime import datetime
 from plone.app.textfield.value import RichTextValue
 
 import requests
@@ -123,14 +124,17 @@ class ImportDirectoryPublicationsView(ImportContentView):
         for r in self.faculty:
             o = r.getObject()
 
-            v = ImportPersonPublicationsView(o, self.request)
+            # Skip faculty who have a profile outside the department
+            if not getattr(o, 'primary_profile_url', None):
 
-            try:
-                v()
-            except:
-                self.log("Error importing publications for %s" % r.getURL())
-            else:
-                self.log("Successfully imported publications for %s" % r.getURL())
+                v = ImportPersonPublicationsView(o, self.request)
+
+                try:
+                    v()
+                except:
+                    self.log("Error importing publications for %s" % r.getURL())
+                else:
+                    self.log("Successfully imported publications for %s" % r.getURL())
 
 class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
 
@@ -201,18 +205,31 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
         for r in self.faculty:
             o = r.getObject()
 
-            publications = getattr(o, 'publications', [])
+            # Skip faculty who have a profile outside the department
+            if not getattr(o, 'primary_profile_url', None):
 
-            if publications and isinstance(publications, (list, tuple)):
+                publications = getattr(o, 'publications', [])
 
-                for _ in publications:
-                    if isinstance(_, dict):
-                        _id = _.get('ai_id', None)
+                if publications and isinstance(publications, (list, tuple)):
 
-                        if _id and _id not in data:
-                            data[_id] = _
+                    for _ in publications:
+                        if isinstance(_, dict):
+                            _id = _.get('ai_id', None)
 
-        return sorted(data.values(), key=lambda x: x.get('published_on', None), reverse=True)
+                            if _id and _id not in data:
+                                data[_id] = _
+
+        # Sort by the publishing date
+        _ = sorted(data.values(), key=lambda x: x.get('published_on', None), reverse=True)
+
+        # Filter by a minimum date to ensure only recent ones are returned
+        return [x for x in _ if isinstance(x.get('published_on', None), datetime) and x['published_on'] >= self.min_pub_date]
+
+
+    @property
+    def min_pub_date(self):
+        # Five years ago
+        return localize(DateTime() - (365.25*5))
 
     def import_content(self):
 
