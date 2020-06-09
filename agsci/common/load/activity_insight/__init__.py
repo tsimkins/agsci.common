@@ -17,6 +17,31 @@ class ImportDirectoryPublicationsView(ImportContentView):
 
     api_key_id = 'agsci.common.ai_api_key'
 
+    years = 5
+
+    # Start date of publications to show. Includes anything published after 1/1
+    # because the publication date isn't always precise.
+    @property
+    def min_pub_date(self):
+        _ = DateTime() - (365.25*self.years)
+        _ = DateTime('%d-01-01' % _.year())
+        return localize(_)
+
+    # Sorts the publication data by date, and filters by year
+    def sort_filter(self, data=[]):
+
+        min_pub_date = self.min_pub_date
+
+        data = sorted(data, key=lambda x: x.get('published_on', None), reverse=True)
+
+        # Filter by a minimum date to ensure only recent ones are returned
+        return [
+            x for x in data \
+            if x.get('published_on', None) and \
+            isinstance(x['published_on'], datetime) and \
+            x['published_on'] >= min_pub_date
+        ]
+
     @property
     def api_key(self):
         return self.registry.get(self.api_key_id, None)
@@ -105,10 +130,10 @@ class ImportDirectoryPublicationsView(ImportContentView):
             return self.get_api_data(pubs_api_url, _id)
 
     @property
-    def faculty(self):
+    def people(self):
         return self.portal_catalog.searchResults({
             'Type' : 'Person',
-            'DirectoryClassification' : 'Faculty',
+            'DirectoryClassification' : ['Faculty', 'Staff'],
             'review_state' : 'published',
             'expires' : {
                 'range' : 'min',
@@ -123,7 +148,7 @@ class ImportDirectoryPublicationsView(ImportContentView):
 
     def import_content(self):
 
-        for r in self.faculty:
+        for r in self.people:
             o = r.getObject()
 
             # Skip faculty who have a profile outside the department
@@ -139,6 +164,8 @@ class ImportDirectoryPublicationsView(ImportContentView):
                     self.log("Successfully imported publications for %s" % r.getURL())
 
 class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
+
+    years = 10
 
     def import_content(self):
 
@@ -191,7 +218,7 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                             'contributors' : contributors,
                         })
 
-                    self.context.publications = sorted(publications, key=lambda x: x.get('published_on'), reverse=True)
+                    self.context.publications = self.sort_filter(publications)
                     self.context.reindexObject()
                     transaction.commit()
 
@@ -204,7 +231,7 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
 
         data = {}
 
-        for r in self.faculty:
+        for r in self.people:
             o = r.getObject()
 
             # Skip faculty who have a profile outside the department
@@ -221,17 +248,7 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
                             if _id and _id not in data:
                                 data[_id] = _
 
-        # Sort by the publishing date
-        _ = sorted(data.values(), key=lambda x: x.get('published_on', None), reverse=True)
-
-        # Filter by a minimum date to ensure only recent ones are returned
-        return [x for x in _ if isinstance(x.get('published_on', None), datetime) and x['published_on'] >= self.min_pub_date]
-
-
-    @property
-    def min_pub_date(self):
-        # Five years ago
-        return localize(DateTime() - (365.25*5))
+        return self.sort_filter(data.values())
 
     def import_content(self):
 
