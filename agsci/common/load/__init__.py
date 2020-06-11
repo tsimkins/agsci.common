@@ -96,6 +96,7 @@ class ContentImporter(object):
         'phone_number' : 'office_phone',
         'primary_profile_url' : 'primary_profile',
         'username' : 'id',
+        'imageCaption' : 'image_caption',
     }
 
     valid_layouts = [
