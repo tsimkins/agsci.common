@@ -534,5 +534,13 @@
         permission="agsci.common.crop_image"
     />
 
+    <!-- Hide Children From Nav -->
+    <browser:page
+        for="plone.dexterity.interfaces.IDexterityContainer"
+        name="hide-children"
+        class=".HideChildrenView"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
+    />
 
 </configure>

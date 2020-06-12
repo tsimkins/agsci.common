@@ -19,10 +19,11 @@ from plone.batching import Batch
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.event.interfaces import IEvent
 from plone.memoize.view import memoize
+from plone.protect.interfaces import IDisableCSRFProtection
 from plone.registry.interfaces import IRegistry
 from zope import schema
 from zope.component import getUtility
-from zope.interface import implementer
+from zope.interface import implementer, alsoProvides
 from zope.publisher.interfaces import IPublishTraverse
 
 from agsci.common import object_factory
@@ -947,3 +948,46 @@ class SearchView(_SearchView, BaseView):
                     pass
                 else:
                     return o.Title()
+
+class HideChildrenView(BrowserView):
+
+    @property
+    def preview(self):
+        return not not self.request.form.get('preview', None)
+
+    @property
+    def exclude(self):
+        return not self.request.form.get('show', False)
+
+    def __call__(self):
+
+        alsoProvides(self.request, IDisableCSRFProtection)
+
+        exclude = self.exclude
+        preview = self.preview
+
+        rv = []
+
+        if hasattr(self.context, 'listFolderContents'):
+
+            for o in self.context.listFolderContents():
+
+                _ = getattr(o.aq_base, 'exclude_from_nav', False)
+
+                if not _:
+                    rv.append("Visible: %s" % o.absolute_url())
+                else:
+                    rv.append("Hidden: %s" % o.absolute_url())
+
+                if exclude != _:
+                    rv.append("Setting 'exclude from nav' to %r" % exclude)
+
+                    if not preview:
+                        setattr(o.aq_base, 'exclude_from_nav', exclude)
+                        o.reindexObject()
+
+                rv.append("-" * 20)
+        else:
+            return "Not folderish."
+
+        return '\n'.join(rv)
