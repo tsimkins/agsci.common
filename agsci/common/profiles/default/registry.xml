@@ -292,6 +292,7 @@
             <element>agsci_blog</element>
             <element>Collection</element>
             <element>Folder</element>
+            <element>FormFolder</element>
             <element>Document</element>
             <element>Link</element>
             <element>agsci_section</element>
@@ -301,6 +302,14 @@
             <element>agsci_directory_group</element>
             <element>agsci_directory_person_listing</element>
         </value>
+    </record>
+
+    <!-- Don't show items normally excluded from navigation if viewing their children -->
+    <record
+        name="plone.show_excluded_items"
+        interface="Products.CMFPlone.interfaces.controlpanel.INavigationSchema"
+        field="show_excluded_items">
+        <value>False</value>
     </record>
 
     <!-- Tile Configuration -->
