@@ -437,11 +437,26 @@ class BodyImageCheck(BodyTextCheck):
         return self.soup.findAll('img')
 
 
-# Generic Image check that returns all <img> tags as the value()
+# Generic Body Link Check
 class BodyLinkCheck(BodyTextCheck):
 
     bad_domains = []
     ok_urls = []
+
+    @property
+    def site_domains(self):
+
+        site_url = self.site.absolute_url()
+        site_domain = self.parse_url(site_url)[1]
+
+        _ = [
+            site_domain,
+        ]
+
+        if site_domain.startswith('dev.'):
+            _.append(site_domain[4:])
+
+        return _
 
     def parse_url(self, url, strip_slash=False):
         parsed_url = urlparse(url)
@@ -484,9 +499,11 @@ class BodyLinkCheck(BodyTextCheck):
             # Handle no-domain cases
             if not domain:
 
-                # Mailto is fine
-                if scheme == 'mailto':
+                # mailto: is fine, file:// isn't.
+                if scheme in ('doi', 'mailto', 'tel'):
                     return False
+                elif scheme in ('file',):
+                    return True
 
                 # URLs with 'resolveuid' are OK
                 if resolveuid_re.match(path):
@@ -505,6 +522,34 @@ class BodyLinkCheck(BodyTextCheck):
                         return False
 
                 return True
+
+            # Shouldn't link within site to a FQDN URL
+            elif domain in self.site_domains:
+                return True
+
+# Ensures any internal links are using the resolveuid functionality
+class ValidInternalLinkCheck(BodyLinkCheck):
+
+    title = 'HTML: Internal Links By Plone Id rather than path'
+
+    description = "Validates that links are using the Plone Id rather than a path."
+
+    action = "Update link to use the 'internal link' instead of the path."
+
+    def check(self):
+
+        for a in self.value():
+            href = a.get('href', None)
+            text = a.text
+            if not text:
+                text = '[N/A]'
+            if href and isinstance(href, (str, unicode)):
+                if self.is_bad_url(href):
+                    yield ContentCheckError(
+                        self,
+                        u"URL '%s' (%s) should be using an internal Plone Id." % (href, text),
+                        data = self.object_factory(url=href, text=text),
+                    )
 
 # Checks for appropriate heading level hierarchy, e.g. h2 -> h3 -> h4
 class HeadingLevels(BodyHeadingCheck):

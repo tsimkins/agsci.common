@@ -149,6 +149,14 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
+    <!-- Body Text: Internal Links By Plone Id rather than path -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".ValidInternalLinkCheck"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
+
     <!--
          Validate that images are not too large (size/dimensions)
     -->
