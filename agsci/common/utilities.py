@@ -541,16 +541,20 @@ def toISO(_):
     _date = localize(_)
     return _date.isoformat()
 
-def getExtensionConfig():
-
-    rv = []
+def getDepartmentId():
 
     # Avoid circular import
     from .browser.viewlets import NavigationViewlet
 
     # Get department id from registry
     viewlet = NavigationViewlet(getSite(), getRequest(), None)
-    department_id = viewlet.department_id
+    return viewlet.department_id
+
+def getExtensionConfig():
+
+    rv = []
+
+    department_id = getDepartmentId()
 
     # If we have a department id, get the config from the CMS
     if department_id:
