@@ -24,4 +24,13 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- News Feed -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="tagged-news-feed"
+        class=".news.TaggedNewsFeedView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>
