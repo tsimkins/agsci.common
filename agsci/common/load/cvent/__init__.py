@@ -6,6 +6,7 @@ from plone.event.interfaces import IEventAccessor
 
 import requests
 
+from agsci.common.constants import AGSCI_DOMAIN
 from agsci.common.utilities import localize
 from .. import ImportContentView
 
@@ -17,7 +18,7 @@ class ImportCventView(ImportContentView):
 
     conference_url = "https://edit.agsci.psu.edu/conferences/event-calendar"
 
-    calendar_url = "https://mS5J5CtL4kuPKm7P.agsci.psu.edu/cvent.json"
+    calendar_url = "https://%s/cvent.json" % AGSCI_DOMAIN
 
     email_users = ['trs22', 'kkw115', 'buh22', 'nmk107', 'sko2']
 

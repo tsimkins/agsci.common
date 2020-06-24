@@ -1,3 +1,5 @@
+from agsci.common.constants import DEFAULT_TIMEZONE
+
 from . import JSONDumpView
 
 class TaggedNewsFeedView(JSONDumpView):
@@ -9,7 +11,9 @@ class TaggedNewsFeedView(JSONDumpView):
         return self.portal_catalog.searchResults({
             'portal_type' : 'News Item',
             'id' : numeric_ids,
-            'SearchText' : 'news.psu.edu'
+            'SearchText' : 'news.psu.edu',
+            'sort_on' : 'effective',
+            'sort_order' : 'descending',
         })
 
     @property
@@ -25,12 +29,20 @@ class TaggedNewsFeedView(JSONDumpView):
 
             if subject and isinstance(subject, (list, tuple)):
 
+                o = r.getObject()
+
+                link = getattr(o.aq_base, 'article_link', None)
+
                 data.append({
                     'getId' : r.getId,
                     'path' : r.getPath()[len(site_path):],
                     'Subject' : subject,
+                    'link' : link,
+                    'title' : r.Title,
+                    'summary_detail' : {
+                        'value' : r.Description,
+                    },
+                    'effective' : r.effective.ISO8601(),
                 })
-
-        data.sort(key=lambda x: x['getId'], reverse=True)
 
         return data

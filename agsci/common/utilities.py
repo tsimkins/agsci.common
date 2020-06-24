@@ -28,15 +28,13 @@ except ImportError:
     from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
 
 try:
-    import  html.entities as htmlentitydefs
+    import html.entities as htmlentitydefs
 except ImportError:
     import htmlentitydefs
 
-from .constants import DEFAULT_TIMEZONE
+from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL
 
 DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
-
-DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/config.json'
 
 #Ploneify
 def ploneify(toPlone, filename=False):

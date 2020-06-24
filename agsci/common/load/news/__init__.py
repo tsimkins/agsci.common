@@ -14,18 +14,19 @@ except ImportError:
     from urlparse import urljoin
 
 import feedparser
+import json
 import re
 import requests
 import time
 
-from agsci.common.constants import DEFAULT_TIMEZONE
-from agsci.common.utilities import localize, ploneify
+from agsci.common.constants import DEFAULT_TIMEZONE, AGSCI_DOMAIN
+from agsci.common.utilities import localize, ploneify, getDepartmentId
 
 from .. import ImportContentView
 
 class ImportNewsView(ImportContentView):
 
-    url = 'http://news.psu.edu/rss/college/agricultural-sciences'
+    url = 'https://news.psu.edu/rss/college/agricultural-sciences'
 
     user_agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0"
 
@@ -84,6 +85,53 @@ class ImportNewsView(ImportContentView):
         }
     }
 
+    department_tag_config = {
+        "abe": [
+            "department-agricultural-and-biological-engineering",
+            "majors-biological-engineering",
+            "majors-biorenewable-systems",
+        ],
+        "aese": [
+            "department-agricultural-economics-sociology-and-education",
+            "majors-agribusiness-management",
+            "majors-agricultural-and-extension-education",
+            "majors-agricultural-science",
+            "majors-community-environment-and-development",
+        ],
+        "animalscience": [
+            "department-animal-science",
+            "majors-animal-science",
+        ],
+        "ecosystems": [
+            "department-ecosystem-science-and-management",
+            "majors-forest-ecosystem-management",
+            "majors-environmental-resource-management",
+            "majors-wildlife-and-fisheries-science",
+        ],
+        "ento": [
+            "department-entomology",
+        ],
+        "foodscience": [
+            "department-food-science",
+            "majors-food-science",
+        ],
+        "plantpath": [
+            "department-plant-pathology-and-environmental-microbiology",
+            "majors-plant-sciences",
+        ],
+        "plantscience": [
+            "department-plant-science",
+            "majors-landscape-contracting",
+            "majors-plant-sciences",
+            "majors-turfgrass-science",
+        ],
+        "vbs": [
+            "department-veterinary-and-biomedical-sciences",
+            "majors-immunology-and-infectious-disease",
+            "majors-toxicology",
+            "majors-veterinary-and-biomedical-sciences",
+        ]
+    }
 
     def transform_tag(self, _, tags=[]):
         _ = self.tag_transforms.get(_, _)
@@ -114,6 +162,14 @@ class ImportNewsView(ImportContentView):
 
         # Unique values to prevent duplicates
         return list(set(tags))
+
+    @property
+    def department_id(self):
+        return getDepartmentId()
+
+    @property
+    def department_tags(self):
+        return self.department_tag_config.get(self.department_id, [])
 
     def create_news_item(self, **kwargs):
 
@@ -181,13 +237,17 @@ class ImportNewsView(ImportContentView):
 
         date_published_parsed = _.get('published_parsed')
         updated_parsed = _.get('updated_parsed')
+        effective = _.get('effective', None)
 
         fmt = '%%Y-%%m-%%d %%H:%%M %s' % DEFAULT_TIMEZONE
 
         now = datetime.now()
         dateStamp = now.strftime(fmt)
 
-        if date_published_parsed:
+        if effective:
+            dateStamp = effective
+
+        elif date_published_parsed:
 
             local_time = time.localtime(timegm(date_published_parsed))
             dateStamp = time.strftime(fmt, local_time)
@@ -198,17 +258,67 @@ class ImportNewsView(ImportContentView):
 
         return localize(DateTime(dateStamp))
 
+    @property
+    def news_items(self):
+        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
+
+        return self.portal_catalog.searchResults({
+            'portal_type' : 'News Item',
+            'id' : numeric_ids,
+            'SearchText' : 'news.psu.edu'
+        })
+
+    @property
+    def department_news_feed(self):
+
+        data = []
+
+        url = "https://%s/@@tagged-news-feed" % AGSCI_DOMAIN
+
+        department_tags = self.department_tags
+
+        if department_tags:
+
+            response = requests.get(
+                url,
+                headers={
+                    'User-Agent': self.user_agent
+                },
+                verify=False
+            )
+
+            if response.status_code == 200:
+
+                for _ in response.json():
+
+                    subject = _.get('Subject', [])
+
+                    if subject and any([x in subject for x in department_tags]):
+                        data.append(_)
+
+        return data
+
+    @property
+    def news_feed(self):
+        feed = feedparser.parse(self.url)
+        return feed['entries']
+
+    @property
+    def feed(self):
+
+        if self.department_id:
+
+            return self.department_news_feed
+
+        return self.news_feed
+
     def import_content(self):
 
         rv = ["Syncing RSS feeds from %s" % self.url]
 
-        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
+        news_ids = [x.getId for x in self.news_items]
 
-        news_ids = [x.getId for x in self.portal_catalog.searchResults({'portal_type' : 'News Item', 'id' : numeric_ids, 'SearchText' : 'news.psu.edu'})]
-
-        feed = feedparser.parse(self.url)
-
-        for item in feed['entries']:
+        for item in self.feed:
 
             _link = item.get('link', '')
             _id = str(_link.split("/")[4]).split('#')[0]
@@ -231,7 +341,7 @@ class ImportNewsView(ImportContentView):
             else:
                 rv.append("Skipped %s" % _id)
 
-        return rv
+        return json.dumps(rv, indent=4)
 
     def getBodyText(self, html):
         soup = BeautifulSoup(html, features='lxml')

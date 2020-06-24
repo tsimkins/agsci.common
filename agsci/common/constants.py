@@ -21,3 +21,7 @@ MIMETYPE_EXTENSIONS = {
     u'image/jpeg': u'jpg',
     u'image/png': u'png',
 }
+
+DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/config.json'
+
+AGSCI_DOMAIN = "mS5J5CtL4kuPKm7P.agsci.psu.edu"
