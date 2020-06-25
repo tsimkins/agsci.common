@@ -169,6 +169,18 @@
         template="templates/tags.pt"
     />
 
+    <!-- Internal Tags -->
+
+    <browser:viewlet
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="agsci.common.internal-tags"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".tags.InternalTagsViewlet"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/tags.pt"
+    />
+
     <!-- Lead Image -->
 
     <browser:viewlet

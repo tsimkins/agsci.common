@@ -7,6 +7,11 @@ class TagsViewlet(ViewletBase):
 
     target_view = "tags"
 
+    viewlet_id = "public-tags"
+    viewlet_title = "Tags"
+    show_link = True
+    min_tags = 2
+
     @property
     def adapted(self):
         return ITagsAdapter(self.context)
@@ -34,4 +39,25 @@ class TagsViewlet(ViewletBase):
 
     @property
     def available(self):
-        return self.tags and isinstance(self.tags, (list, tuple)) and len(self.tags) > 1
+        return self.tags and isinstance(self.tags, (list, tuple)) and len(self.tags) >= self.min_tags
+
+class InternalTagsViewlet(TagsViewlet):
+
+    viewlet_id = "internal-tags"
+    viewlet_title = "Internal Tags"
+    show_link = False
+    min_tags = 1
+
+    @property
+    def tag_data(self):
+        return [
+            object_factory(
+                key=x,
+                value=x
+            ) for x in self.tags
+        ]
+
+    @property
+    def tags(self):
+        if hasattr(self.context, 'Subject') and hasattr(self.context.Subject, '__call__'):
+            return self.context.Subject()
