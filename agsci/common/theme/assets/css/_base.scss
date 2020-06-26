@@ -1271,3 +1271,17 @@ p.publication {
         }
     }
 }
+
+#edit-zone nav > ul #plone-contentmenu-display {
+    ul li > a.actionMenuSelected {
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+    ul li > a.actionMenuSelected:after {
+        font-size: 20px;
+        position: absolute;
+        right: 15px;
+        content: '•';
+        color: #FFFFFF;
+    }
+}

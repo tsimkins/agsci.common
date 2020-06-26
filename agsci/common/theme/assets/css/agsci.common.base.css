@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------------------
 
 ALERT BAR - Universal Header Alert Bar - Jan 2020
@@ -1620,6 +1621,16 @@ p.publication .journal-name {
 @media (min-width: 992px) {
   .card.card-visual.card-horizontal.container .row.align-items-stretch {
     height: 100%; } }
+#edit-zone nav > ul #plone-contentmenu-display ul li > a.actionMenuSelected {
+  color: #FFFFFF;
+  font-weight: bold; }
+#edit-zone nav > ul #plone-contentmenu-display ul li > a.actionMenuSelected:after {
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  content: '•';
+  color: #FFFFFF; }
+
 .print-only-logo {
   display: none; }
 
