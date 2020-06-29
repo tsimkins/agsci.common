@@ -697,6 +697,13 @@ body.template-image_view #content-core {
     b.lead {
         font-weight: bolder !important;
     }
+
+}
+
+#parent-fieldname-text {
+    img {
+        max-width: 100%;
+    }
 }
 
 #content-core {
