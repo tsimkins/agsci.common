@@ -324,6 +324,15 @@ class PersonView(BaseView):
     def show_profile(self):
         return (self.is_expired and not self.anonymous) or not self.is_expired
 
+    @property
+    def show_publications(self):
+        return not not getattr(self.context, 'show_publications', True)
+
+    @property
+    def show_publications_block(self):
+        # Always show when logged in
+        return self.show_publications or not self.anonymous
+
     def __call__(self):
 
         if self.anonymous and self.primary_profile_url and not self.card:

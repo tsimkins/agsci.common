@@ -1617,7 +1617,7 @@ body.template-search #search-results .result-title a {
   padding-left: 0.2em; }
 
 p.publication .publication-title {
-  font-weight: bold; }
+  font-size: 1.125em; }
 p.publication .journal-name {
   font-style: italic; }
 

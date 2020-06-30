@@ -35,7 +35,7 @@ professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
     'hr_department', 'all_emails', 'sso_principal_name', 'bio', 'short_bio',
     'education', 'cv_file', 'websites', 'areas_expertise', 'research_areas',
-    'groups',
+    'groups', 'show_publications',
 ]
 
 class IPublicationRowSchema(Interface):
@@ -269,6 +269,12 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         required=False
     )
 
+    show_publications = schema.Bool(
+        title=_(u"Show publications listing from Activity Insight"),
+        description=_(u"These always show on the logged-in view. Checking this box will also show them on the public view."),
+        required=False,
+        default=True,
+    )
 
 # Configuring default roles with Dexterity
 # http://docs.plone.org/develop/plone/members/membrane.html#id11

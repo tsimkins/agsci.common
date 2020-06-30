@@ -276,7 +276,7 @@
         </div>
 
         <tal:anonymous
-            tal:condition="not: view/anonymous">
+            tal:condition="view/show_publications_block|nothing">
 
         <!-- Publications -->
         <div class="row align-items-start publications"
@@ -285,7 +285,8 @@
 
                 <div class="col-12 col-md-3">
                     <h3>Publications</h3>
-                    <p class="discreet">Only visible to logged-in users.</p>
+                    <p tal:condition="not: show_publications|nothing"
+                       class="discreet">Only visible to logged-in users.</p>
                 </div>
 
                 <div class="col-12 col-md-9 html">
