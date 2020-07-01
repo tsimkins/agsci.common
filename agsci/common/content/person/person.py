@@ -337,7 +337,8 @@ class Person(Item):
 
     def getSortableName(self):
         fields = ['last_name', 'first_name', 'middle_name', ]
-        return tuple([getattr(self, x, '') for x in fields])
+        values = [getattr(self, x, '') for x in fields]
+        return tuple([x.lower() for x in values if isinstance(x, (str, unicode))])
 
     def getLastFirstName(self):
         fields = ['last_name', 'first_name']
