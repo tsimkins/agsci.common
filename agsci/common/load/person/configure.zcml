@@ -6,9 +6,18 @@
 
     <!-- Import Person View -->
     <browser:page
-        for="*"
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="import_person"
         class=".ImportPersonView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <!-- Import Classifications View -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="import_classifications"
+        class=".ImportClassificationsView"
         permission="zope2.View"
         layer="agsci.common.browser.interfaces.IThemeSpecific"
     />

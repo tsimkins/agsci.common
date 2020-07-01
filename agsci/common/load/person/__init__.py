@@ -1,8 +1,14 @@
 from plone.dexterity.utils import createContentInContainer
+from zope.component import getUtility
+from zope.schema.interfaces import IVocabularyFactory
 
 from agsci.common.content.person import LDAPInfo
+from agsci.common.indexer import PersonSortableTitle
+from agsci.common.utilities import ploneify
 
 from .. import ImportContentView
+
+import json
 
 class ImportPersonView(ImportContentView):
 
@@ -96,3 +102,96 @@ class ImportPersonView(ImportContentView):
             raise TypeError("Directory portal_type of %s not %s"  % (context.portal_type, directory_type))
 
         return context
+
+class ImportClassificationsView(ImportPersonView):
+
+    vocabulary_name = "agsci.common.person.classifications"
+
+    @property
+    def vocabulary_factory(self):
+        return getUtility(IVocabularyFactory, self.vocabulary_name)
+
+    @property
+    def missing_classifications(self):
+        vocab = self.vocabulary_factory
+
+        # Classificationis that physically exist
+        directory_classifications = vocab.directory_classifications
+
+        # Classifications that are actually used
+        used_classifications = vocab.used_classifications
+
+        # Classifications that are used, but don't physically exist
+        _ = set(used_classifications) - set(directory_classifications)
+
+        # Intersection with valid vocabulary items
+        return list(_ & set(vocab.items))
+
+    def create_classification(self, **kwargs):
+
+        title = kwargs.get('title', None)
+
+        if title:
+            _id = ploneify(title)
+
+            context = self.directory
+
+            if _id not in context.objectIds():
+
+                item = createContentInContainer(
+                    context,
+                    "agsci_directory_classification",
+                    id=_id,
+                    exclude_from_nav=False,
+                    checkConstraints=False,
+                    **kwargs
+                )
+
+                item.reindexObject()
+
+                return item
+
+    def reorder_directory(self):
+        groups = self.directory.listFolderContents({
+            'Type' : [
+                'Classification',
+                'Person Listing',
+                'DirectoryGroup',
+            ]
+        })
+
+        people = self.directory.listFolderContents({
+            'Type' : [
+                'Person',
+            ]
+        })
+
+        people.sort(key=lambda x: x.getSortableName())
+
+        group_ids = [x.getId() for x in groups]
+        people_ids = [x.getId() for x in people]
+
+        _ids = []
+        _ids.extend(group_ids)
+        _ids.extend(people_ids)
+
+        for i in range(0, len(_ids)):
+            self.directory.moveObjectToPosition(_ids[i], i)
+
+    def import_content(self):
+
+        rv = []
+
+        for _ in self.missing_classifications:
+            item = self.create_classification(title=_)
+
+            if item:
+                rv.append([_, item.absolute_url()])
+
+        # Pull classifications and person listings to the top
+        self.reorder_directory()
+
+        if rv:
+            return "Created %s" % json.dumps(rv, indent=4)
+
+        return "No missing classifications"
