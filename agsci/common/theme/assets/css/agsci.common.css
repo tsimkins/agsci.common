@@ -14763,7 +14763,7 @@ body.template-image_view #content-core {
 #content-core .event.summary {
   margin-bottom: 1rem;
   float: none;
-  clear: both; }
+  clear: left; }
   #content-core .event.summary p {
     margin-bottom: 0;
     color: #000000;
