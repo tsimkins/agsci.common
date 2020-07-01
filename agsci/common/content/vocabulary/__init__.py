@@ -1,3 +1,4 @@
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from zope.component.hooks import getSite
 from zope.schema.interfaces import IVocabularyFactory
@@ -96,10 +97,80 @@ class AllPublicTagsVocabulary(BaseVocabulary):
 # Directory classifications for people
 class PersonClassificationsVocabulary(StaticVocabulary):
 
+    preserve_order = True
+
+    defaults = [
+        "Adjunct Faculty",
+        "Affiliate Faculty",
+        "Emeritus Faculty",
+        "Faculty",
+        "Graduate Students",
+        "Instructors",
+        "Post-Doctoral Scholars",
+        "Researchers",
+        "Staff",
+        "Undergraduate Students",
+        "Visiting Scholars"
+    ]
+
+    def sort_key(self, x):
+
+        if x in ('Faculty',):
+            return 0
+
+        elif x in ('Staff',):
+            return 1
+
+        elif 'Faculty' in x:
+            return 2
+
+        elif 'Staff' in x:
+            return 3
+
+        elif 'Student' in x:
+            return 5
+
+        return 4
+
+    # All classifications that exist as objects
     @property
-    def items(self):
+    def directory_classifications(self):
         results = self.portal_catalog.searchResults({'Type' : 'Classification'})
         return [x.Title for x in results]
+
+    # All classifications that are selected on people
+    @property
+    def used_classifications(self):
+        _ = []
+
+        results = self.portal_catalog.searchResults({
+            'Type' : 'Person',
+            'expires' : {
+                'range' : 'min',
+                'query' : DateTime(),
+            }
+        })
+
+        for r in results:
+            c = r.DirectoryClassification
+            if c and isinstance(c, (list, tuple)):
+                _.extend(c)
+
+        return sorted(set(_))
+
+    @property
+    def items(self):
+
+        _ = self.directory_classifications
+
+        _.extend(self.defaults)
+
+        # Alphabetical sort first
+        _ = sorted(set(_)) 
+
+        # Sort by faculty/staff second
+        return sorted(_, key=self.sort_key)
+
 
 # Directory groups for people
 class PersonGroupsVocabulary(StaticVocabulary):
