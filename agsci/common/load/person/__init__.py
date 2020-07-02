@@ -107,6 +107,20 @@ class ImportClassificationsView(ImportPersonView):
 
     vocabulary_name = "agsci.common.person.classifications"
 
+    group_order = [
+        'Faculty',
+        'Adjunct Faculty',
+        'Affiliate Faculty',
+        'Emeritus Faculty',
+        'Instructors',
+        'Researchers',
+        'Post-Doctoral Scholars',
+        'Visiting Scholars',
+        'Staff',
+        'Graduate Students',
+        'Undergraduate Students',
+    ]
+
     @property
     def vocabulary_factory(self):
         return getUtility(IVocabularyFactory, self.vocabulary_name)
@@ -152,6 +166,13 @@ class ImportClassificationsView(ImportPersonView):
                 return item
 
     def reorder_directory(self):
+
+        def sort_key(x):
+            if x.Title() in self.group_order:
+                return self.group_order.index(x.Title())
+
+            return 99999
+
         groups = self.directory.listFolderContents({
             'Type' : [
                 'Classification',
@@ -159,6 +180,8 @@ class ImportClassificationsView(ImportPersonView):
                 'DirectoryGroup',
             ]
         })
+
+        groups.sort(key=sort_key)
 
         people = self.directory.listFolderContents({
             'Type' : [
