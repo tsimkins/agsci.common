@@ -29,6 +29,7 @@
     <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
     <element value="plone.app.content.interfaces.INameFromTitle" />
     <element value="dexterity.membrane.behavior.group.IMembraneGroup" />
+    <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
  </property>
 
   <property name="schema">agsci.common.content.person.directory.IDirectory</property>

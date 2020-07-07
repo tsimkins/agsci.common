@@ -1292,3 +1292,10 @@ p.publication {
         color: #FFFFFF;
     }
 }
+
+/* Remove padding from leadimage jumbotron */
+section.jumbotron.banner {
+    .jumbotron-text {
+        padding: 0;
+    }
+}

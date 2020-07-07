@@ -18,7 +18,7 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 from plone.memoize.instance import memoize
 from plone.registry.interfaces import IRegistry
 from zope.annotation.interfaces import IAnnotations
-from zope.component import getUtility, queryUtility, getMultiAdapter
+from zope.component import getUtility, queryUtility, getMultiAdapter, queryMultiAdapter
 from zope.component.hooks import getSite
 
 try:
@@ -577,6 +577,36 @@ class LeadImageViewlet(ViewletBase):
     def crop_image(self):
         crop_image_view = getMultiAdapter((self.context, self.request), name="crop-image")
         return crop_image_view.allowCrop()
+
+class LeadImageJumbotronViewlet(LeadImageViewlet):
+
+    tile_name = 'agsci.common.tiles.leadimage_jumbotron'
+
+    @property
+    def show_image(self):
+        return self.adapted.has_image and self.adapted.image_show_jumbotron
+
+    @property
+    def img_src(self):
+        return self.adapted.img_src
+
+    @property
+    def tile(self):
+        return queryMultiAdapter((self.site, self.request), name=self.tile_name)
+
+    def render_tile(self):
+        tile = self.tile
+
+        if tile:
+
+            tile.set_data({
+                'show_title' : True,
+                'title' : self.context.Title(),
+                'img_src'  : self.img_src,
+            })
+
+            return tile()
+
 
 class DataCheckViewlet(ViewletBase):
 

@@ -1634,6 +1634,10 @@ p.publication .journal-name {
   content: '•';
   color: #FFFFFF; }
 
+/* Remove padding from leadimage jumbotron */
+section.jumbotron.banner .jumbotron-text {
+  padding: 0; }
+
 .print-only-logo {
   display: none; }
 

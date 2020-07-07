@@ -1,0 +1,3 @@
+<section class="jumbotron banner"
+     tal:condition="view/show_image|nothing"
+     tal:content="structure view/render_tile|nothing" />

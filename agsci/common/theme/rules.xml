@@ -339,6 +339,11 @@
             <drop css:theme="section.banner" />
         </rules>
 
+        <!-- Jumbotron Banner -->
+        <rules css:if-content="section.jumbotron.banner">
+            <drop css:theme="#page-header" />
+        </rules>
+
         <!-- College Footer -->
         <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
 

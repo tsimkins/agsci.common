@@ -37,6 +37,19 @@
     />
 
     <plone:tile
+        name="agsci.common.tiles.leadimage_jumbotron"
+        title="Lead ImageJumbotron"
+        description=""
+        schema=".interfaces.IJumbotronTile"
+        class=".LeadImageJumbotronTile"
+        template="templates/jumbotron.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
+    <plone:tile
         name="agsci.common.tiles.short_jumbotron"
         title="Short Jumbotron"
         description=""

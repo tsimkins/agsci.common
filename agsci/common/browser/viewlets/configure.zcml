@@ -193,6 +193,18 @@
         template="templates/leadimage.pt"
     />
 
+    <!-- Lead Image Jumbotron -->
+
+    <browser:viewlet
+        name="agsci.common.leadimage_jumbotron"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".LeadImageJumbotronViewlet"
+        permission="zope2.View"
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/leadimage_jumbotron.pt"
+    />
+
     <!-- Data Check -->
 
     <browser:viewlet

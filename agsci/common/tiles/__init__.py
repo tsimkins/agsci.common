@@ -388,6 +388,12 @@ class JumbotronTile(BaseTile):
 class ShortJumbotronTile(JumbotronTile):
     pass
 
+class LeadImageJumbotronTile(JumbotronTile):
+
+    def get_img_src(self, **kwargs):
+
+        return self.get_field('img_src', None)
+
 class CalloutBlockTile(BaseTile):
     pass
 

@@ -24,12 +24,15 @@ class ILeadImageNoCaption(ILeadImage):
 @provider(IFormFieldProvider)
 class ILeadImageExtra(ILeadImage):
 
+    form.write_permission(image_show_jumbotron="cmf.ManagePortal")
+
     model.fieldset(
         'settings',
         label=_(u'Settings'),
         fields=(
             'image_full_width',
             'image_show',
+            'image_show_jumbotron',
         ),
     )
 
@@ -44,6 +47,13 @@ class ILeadImageExtra(ILeadImage):
         title=_(u"Show Lead Image on this item"),
         description=_(u"This will show the lead image on the object display."),
         default=True,
+        required=False,
+    )
+
+    image_show_jumbotron = schema.Bool(
+        title=_(u"Show Lead Image as Jumbtron"),
+        description=_(u"Shows the image above the content as a jumbotron."),
+        default=False,
         required=False,
     )
 
@@ -69,8 +79,18 @@ class LeadImage(object):
     @property
     def image_show(self):
 
+        if not self.image_show_jumbotron:
+
+            if not any([x.providedBy(self.context) for x in self.exclude_interfaces]):
+                return getattr(self.context, "image_show", True)
+
+        return False
+
+    @property
+    def image_show_jumbotron(self):
+
         if not any([x.providedBy(self.context) for x in self.exclude_interfaces]):
-            return getattr(self.context, "image_show", True)
+            return getattr(self.context, "image_show_jumbotron", True)
 
         return False
 
@@ -83,14 +103,30 @@ class LeadImage(object):
 
         return False
 
+    @property
+    def images(self):
+        return self.context.restrictedTraverse('@@images')
+
     def tag(self, css_class='w-100', scale='large'):
 
-        alt = getattr(self.context, 'image_caption', '')
+        if self.has_image:
 
-        images = self.context.restrictedTraverse('@@images')
+            alt = getattr(self.context, 'image_caption', '')
+
+            return self.images.tag('image', scale=scale, alt=alt, css_class=css_class)
+
+        return None
+
+    @property
+    def img_src(self):
+
+        return self.get_img_src()
+
+    def get_img_src(self, scale=None):
 
         if self.has_image:
-            return images.tag('image', scale=scale, alt=alt, css_class=css_class)
+
+            return self.images.scale('image', scale=scale).url
 
         return None
 
