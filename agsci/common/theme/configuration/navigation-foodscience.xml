@@ -69,11 +69,11 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Master of Science</title>
+                        <title>Master of Science Degree</title>
                         <link>graduate/ms</link>
                     </item>
                     <item>
-                        <title>Doctor of Philosophy</title>
+                        <title>Doctor of Philosophy Degree</title>
                         <link>graduate/phd</link>
                     </item>
                     <item>
