@@ -77,8 +77,17 @@
                         <link>graduate/brs</link>
                     </item>
                     <item>
-                        <title>Admissions</title>
-                        <link>graduate/admissions</link>
+                        <title>Operations Research</title>
+                        <link>graduate/or</link>
+                    </item>
+                    <item>
+                        <title>International Agriculture and Development</title>
+                        <link>graduate/intad</link>
+                    </item>
+
+                    <item>
+                        <title>Renewable Energy and Sustainability Systems</title>
+                        <link>graduate/ress</link>
                     </item>
                     <item>
                         <title>Funding Opportunities</title>
@@ -97,20 +106,6 @@
             <item>
                 <title>People</title>
                 <link>directory</link>
-                <items>
-                    <item>
-                        <title>Faculty</title>
-                        <link>directory/faculty</link>
-                    </item>
-                    <item>
-                        <title>Staff</title>
-                        <link>directory/staff</link>
-                    </item>
-                    <item>
-                        <title>Graduate Students</title>
-                        <link>directory/grad-students</link>
-                    </item>
-                </items>
             </item>
             <item>
                 <title>Research</title>

@@ -64,12 +64,6 @@
             <item>
                 <title>News</title>
                 <link>news</link>
-                <items>
-                    <item>
-                        <title>News</title>
-                        <link>news</link>
-                    </item>
-                </items>
             </item>
             <item>
                 <title>Knowledgebase</title>

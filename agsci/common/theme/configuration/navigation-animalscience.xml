@@ -101,20 +101,6 @@
             <item>
                 <title>People</title>
                 <link>directory</link>
-                <items>
-                    <item>
-                        <title>Faculty</title>
-                        <link>directory/faculty</link>
-                    </item>
-                    <item>
-                        <title>Staff</title>
-                        <link>directory/staff</link>
-                    </item>
-                    <item>
-                        <title>Graduate Students</title>
-                        <link>directory/grad-students</link>
-                    </item>
-                </items>
             </item>
             <item>
                 <title>Research</title>

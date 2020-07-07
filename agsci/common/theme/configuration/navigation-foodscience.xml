@@ -69,10 +69,6 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>General Degree Requirements</title>
-                        <link>graduate/general-degree-requirements</link>
-                    </item>
-                    <item>
                         <title>Master of Science</title>
                         <link>graduate/ms</link>
                     </item>
@@ -81,16 +77,20 @@
                         <link>graduate/phd</link>
                     </item>
                     <item>
+                        <title>General Degree Requirements</title>
+                        <link>graduate/general-degree-requirements</link>
+                    </item>
+                    <item>
                         <title>Funding Opportunities</title>
                         <link>graduate/funding</link>
                     </item>
                     <item>
-                        <title>Student Resources</title>
-                        <link>graduate/resources</link>
-                    </item>
-                    <item>
                         <title>How to Apply</title>
                         <link>graduate/apply</link>
+                    </item>
+                    <item>
+                        <title>Student Resources</title>
+                        <link>graduate/resources</link>
                     </item>
                     <item>
                         <title>Contact Us</title>
@@ -101,27 +101,17 @@
             <item>
                 <title>People</title>
                 <link>directory</link>
-                <items>
-                    <item>
-                        <title>Faculty</title>
-                        <link>directory/faculty</link>
-                    </item>
-                    <item>
-                        <title>Staff</title>
-                        <link>directory/staff</link>
-                    </item>
-                    <item>
-                        <title>Graduate Students</title>
-                        <link>directory/grad-students</link>
-                    </item>
-                </items>
             </item>
             <item>
                 <title>Research</title>
                 <link>research</link>
                 <items>
                     <item>
-                        <title>Research Areas</title>
+                        <title>Cross-Cutting Themes</title>
+                        <link>research/themes</link>
+                    </item>
+                    <item>
+                        <title>Signature Research Areas</title>
                         <link>research/areas</link>
                     </item>
                     <item>

@@ -56,7 +56,33 @@
                            aria-haspopup="true"
                            aria-expanded="false" />
 
+                        <div class="dropdown-menu d-lg-none"
+                             tal:condition="not: l1/items|nothing"
+                             tal:attributes="aria-labelledby item_id">
+
+                            <div class="container px-0">
+
+                                <div class="row justify-content-center">
+
+                                    <div class="col-12">
+                                        <ul class="nav flex-column">
+
+                                            <li class="nav-item">
+                                                <a class="nav-link"
+                                                   tal:define="klass python: view.link_class(l1)"
+                                                   tal:attributes="href python: view.link(l1);
+                                                                   class string:nav-link ${klass}"
+                                                   tal:content="l1/title/cdata|nothing" />
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="dropdown-menu"
+                             tal:condition="l1/items|nothing"
                              tal:attributes="aria-labelledby item_id">
 
                             <div class="container px-0">
