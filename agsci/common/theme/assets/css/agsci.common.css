@@ -15111,6 +15111,16 @@ p.publication .journal-name {
 section.jumbotron.banner .jumbotron-text {
   padding: 0; }
 
+body.portaltype-agsci_directory span.anchor {
+  position: relative; }
+  body.portaltype-agsci_directory span.anchor span {
+    position: absolute;
+    display: block;
+    content: " ";
+    top: -125px;
+    visibility: hidden;
+    pointer-events: none; }
+
 .alert.status,
 .portalMessage {
   padding: 15px;

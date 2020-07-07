@@ -43,7 +43,6 @@
         </thead>
         <tbody>
 
-
     <tal:people
         tal:repeat="context results">
 
@@ -54,9 +53,18 @@
 
             <tr class="html">
                 <td>
+                    <span
+                        class="anchor"
+                        tal:define="jump_links_id python:view.anchor(jump_links, context)"
+                        tal:condition="jump_links_id">
+
+                        <span
+                            tal:attributes="id jump_links_id" />
+
+                    </span>
+
                     <a
-                        tal:attributes="href context/absolute_url|nothing;
-                                        name python:view.anchor(jump_links, context)"
+                        tal:attributes="href context/absolute_url|nothing;"
                         tal:content="person_view/name/title" />
                 </td>
                 <td>

@@ -1299,3 +1299,19 @@ section.jumbotron.banner {
         padding: 0;
     }
 }
+
+body.portaltype-agsci_directory {
+
+    span.anchor {
+        position: relative;
+
+        span {
+            position: absolute;
+            display: block;
+            content: " ";
+            top: -125px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+}
