@@ -28,6 +28,7 @@ from .interfaces import IBorderTile
 from .links import link_factory
 
 from .. import object_factory
+from ..constants import ASSETS_DOMAIN
 from ..content.adapters import LocationAdapter
 from ..content.check import uid_re
 from ..utilities import toLocalizedTime, getVocabularyTerms, ploneify, toBool
@@ -360,6 +361,10 @@ class BaseTile(PersistentTile):
             return "tile-%s" % ploneify(_)
 
         return ''
+
+    @property
+    def assets_url(self):
+        return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
 
 class ConditionalTemplateTile(BaseTile):
 

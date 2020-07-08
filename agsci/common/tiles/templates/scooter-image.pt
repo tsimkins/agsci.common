@@ -44,7 +44,7 @@
                                  class="w-100" />
 
                             <img tal:condition="not: i/hasLeadImage|nothing"
-                                    tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/card-placeholder.jpg;
+                                    tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
                                                     alt alt_text;"
 
                                     title=""

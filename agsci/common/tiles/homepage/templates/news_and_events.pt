@@ -86,7 +86,7 @@
 
                                         <img alt=""
                                             tal:condition="not:i/hasLeadImage|nothing"
-                                            tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/fpo-calendar.jpg" />
+                                            tal:attributes="src string:${view/assets_url}/images/fpo-calendar.jpg" />
 
                                     </div>
                                 </div>

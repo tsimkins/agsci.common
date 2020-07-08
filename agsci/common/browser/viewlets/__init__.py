@@ -29,6 +29,7 @@ except ImportError:
 import json
 import untangle
 
+from agsci.common.constants import ASSETS_DOMAIN
 from agsci.common.content.behaviors.leadimage import LeadImage
 from agsci.common.content.check import TileLinksCheck, TileImagesCheck
 from agsci.common.content.check import getValidationErrors
@@ -255,6 +256,9 @@ class ViewletBase(_ViewletBase):
     def year(self):
         return datetime.now().year
 
+    @property
+    def assets_url(self):
+        return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
 
 class NavigationViewlet(ViewletBase):
 

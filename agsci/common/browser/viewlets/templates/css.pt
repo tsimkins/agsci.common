@@ -4,7 +4,7 @@
                 editing_mosaic view/editing_mosaic|nothing">
 
     <link rel="stylesheet"
-        tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/featherlight/featherlight.min.css;
+        tal:attributes="href string:${view/assets_url}/featherlight/featherlight.min.css;
                         data-editing editing;
                         data-editing_mosaic editing_mosaic;" />
 

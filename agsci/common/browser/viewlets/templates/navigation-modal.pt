@@ -32,7 +32,7 @@
                                    class="navbar-brand">
 
                                     <img
-                                        tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                                        tal:attributes="src string:${view/assets_url}/images/${view/logo_src};
                                                         class view/logo_class|nothing;
                                                         alt view/logo_alt|nothing" />
 

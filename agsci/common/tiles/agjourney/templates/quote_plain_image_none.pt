@@ -29,7 +29,7 @@
                     <div class="journey-divider mx-auto">
                         <span>
                             <img alt=""
-                                 tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/icon-divider-hexagon.svg" />
+                                 tal:attributes="src string:${view/assets_url}/images/icon-divider-hexagon.svg" />
                         </span>
                     </div>
 

@@ -77,7 +77,7 @@
                                              class="w-100"
                                              tal:condition="i/hasLeadImage|nothing" />
 
-                                        <img tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/fpo-newspaper.jpg"
+                                        <img tal:attributes="src string:${view/assets_url}/images/fpo-newspaper.jpg"
                                              alt=""
                                              title=""
                                              class="w-100"

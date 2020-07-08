@@ -10,7 +10,7 @@
                tal:attributes="href view/logo_href|nothing">
 
                 <img
-                    tal:attributes="src string:${view/portal_url}/++resource++agsci.common/assets/images/${view/logo_src};
+                    tal:attributes="src string:${view/assets_url}/images/${view/logo_src};
                                     alt view/logo_alt|nothing"
                      class="${view/logo_class} pl-3" />
 
