@@ -133,6 +133,10 @@ a.alert-bar:hover {
   .pagination li.previous,
   .pagination li.next {
     display: inline; } }
+.banner .jumbotron-standard #portal-breadcrumbs {
+  color: #ffffff;
+  background-color: transparent; }
+
 .mosaic-grid-row {
   margin-left: auto;
   margin-right: auto;
@@ -1633,10 +1637,6 @@ p.publication .journal-name {
   right: 15px;
   content: '•';
   color: #FFFFFF; }
-
-/* Remove padding from leadimage jumbotron */
-section.jumbotron.banner .jumbotron-text {
-  padding: 0; }
 
 body.portaltype-agsci_directory span.anchor {
   position: relative; }

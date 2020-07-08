@@ -592,7 +592,7 @@ class LeadImageJumbotronViewlet(LeadImageViewlet):
 
     @property
     def tile(self):
-        return queryMultiAdapter((self.site, self.request), name=self.tile_name)
+        return queryMultiAdapter((self.context, self.request), name=self.tile_name)
 
     def render_tile(self):
         tile = self.tile
@@ -603,6 +603,7 @@ class LeadImageJumbotronViewlet(LeadImageViewlet):
                 'show_title' : True,
                 'title' : self.context.Title(),
                 'img_src'  : self.img_src,
+                'show_breadcrumbs' : True,
             })
 
             return tile()

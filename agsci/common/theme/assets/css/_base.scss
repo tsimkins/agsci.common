@@ -76,6 +76,13 @@ $display-line-height: 1.2 !default;
     z-index: 1;
 }
 
+.banner .jumbotron-standard {
+    #portal-breadcrumbs {
+        color: #ffffff;
+        background-color: transparent;
+    }
+}
+
 .mosaic-grid-row {
 
     margin-left: auto;
@@ -1290,13 +1297,6 @@ p.publication {
         right: 15px;
         content: '•';
         color: #FFFFFF;
-    }
-}
-
-/* Remove padding from leadimage jumbotron */
-section.jumbotron.banner {
-    .jumbotron-text {
-        padding: 0;
     }
 }
 
