@@ -22,6 +22,7 @@ import base64
 import json
 import re
 
+from agsci.common.content.check import ExternalLinkCheck
 from agsci.common.utilities import get_fields_by_type, toISO
 
 from json import JSONEncoder
@@ -341,5 +342,35 @@ class PloneSiteJSONDumpView(JSONDumpView):
 
         # Sort by the length of the path
         data.sort(key=lambda x: (len(x['path']), x['getId']))
+
+        return data
+
+class ExternalLinksView(JSONDumpView):
+
+    @property
+    def data(self):
+
+        # Return value
+        data = []
+
+        results = self.portal_catalog.searchResults({
+            'ContentErrorCodes' : 'ExternalLinkCheck',
+        })
+
+        for r in results:
+
+            o = r.getObject()
+
+            c = ExternalLinkCheck(o)
+
+            links = [x for x in c.getExternalLinks()]
+
+            if links:
+                data.append({
+                    'uid' : r.UID,
+                    'url' : r.getURL(),
+                    'title' : r.Title,
+                    'links' : [dict(zip(['href', 'label'], x)) for x in links],
+                })
 
         return data

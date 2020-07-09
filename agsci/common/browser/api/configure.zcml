@@ -33,4 +33,13 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Site External Links -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="external_links"
+        class=".ExternalLinksView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>
