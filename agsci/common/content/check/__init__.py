@@ -1242,10 +1242,10 @@ class ExternalLinkCheck(BodyLinkCheck):
         try:
 
             if head:
-                data = requests.head(url, timeout=30, headers=headers)
+                data = requests.head(url, timeout=self.timeout, headers=headers)
 
             else:
-                data = requests.get(url, timeout=30, headers=headers)
+                data = requests.get(url, timeout=self.timeout, headers=headers)
 
         except requests.exceptions.HTTPError:
             return (404, url)
