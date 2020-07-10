@@ -1,10 +1,15 @@
+from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
+from Queue import Queue
 from bs4 import BeautifulSoup, Tag, NavigableString
 from datetime import datetime
 from plone.app.linkintegrity.utils import getIncomingLinks
 from plone.registry.interfaces import IRegistry
+from threading import Thread
+from time import sleep
+from zLOG import LOG, INFO, ERROR
 from zope.annotation.interfaces import IAnnotations
 from zope.component import subscribers, getUtility, queryMultiAdapter
 from zope.component.hooks import getSite
@@ -23,7 +28,9 @@ from agsci.common.utilities import ploneify, truncate_text, localize
 from .error import ContentCheckError, ManualCheckError
 from ..behaviors.leadimage import LeadImage
 
+import json
 import pytz
+import random
 import re
 import requests
 
@@ -136,6 +143,7 @@ class ContentCheck(object):
 
     def __init__(self, context):
         self.context = context
+        self.start_time = DateTime()
 
     @property
     def registry(self):
@@ -1192,7 +1200,10 @@ class ExternalLinkCheck(BodyLinkCheck):
         return "<a href=\"%s/@@link_check\">Run an external link check.</a>" % self.context.absolute_url()
 
     # Timeout
-    timeout = 20
+    TIMEOUT = 20
+
+    # Maximum threads
+    MAX_THREADS = 25
 
     # Render message as HTML
     render = True
@@ -1220,20 +1231,11 @@ class ExternalLinkCheck(BodyLinkCheck):
     def value(self):
         return list(set(self.getExternalLinks()))
 
-    # Given a URL, check the whitelist, then the cache, then actualy check it
-    def check_link(self, url):
-
-        # Check for whitelist
-        if url in self.whitelisted_urls:
-            return (200, url)
-
-        # If not, cache it and return it.
-        data = self._check_link(url)
-
-        return data
-
     # Performs the "real" URL check
-    def _check_link(self, url, head=False):
+    def check_link(self, url, head=False):
+
+        # Sleep half a second. This won't matter in 'live' checks, and reduces the rate in threaded ones
+        sleep(0.5)
 
         # Set Firefox UA
         headers = requests.utils.default_headers()
@@ -1242,10 +1244,10 @@ class ExternalLinkCheck(BodyLinkCheck):
         try:
 
             if head:
-                data = requests.head(url, timeout=self.timeout, headers=headers)
+                data = requests.head(url, timeout=self.TIMEOUT, headers=headers)
 
             else:
-                data = requests.get(url, timeout=self.timeout, headers=headers)
+                data = requests.get(url, timeout=self.TIMEOUT, headers=headers)
 
         except requests.exceptions.HTTPError:
             return (404, url)
@@ -1282,10 +1284,16 @@ class ExternalLinkCheck(BodyLinkCheck):
 
     def manual_check(self):
 
+        urls = sorted(set([x[0] for x in self.value()]))
+
+        results = self.check_links(urls)
+
         for (url, link_text) in self.value():
 
-            (return_code, return_url) = self.check_link(url)
+            (return_code, return_url) = (999, 'ERROR')
 
+            if url in results:
+                (return_code, return_url) = results.get(url)
 
             if not link_text:
                 link_text = url
@@ -1322,6 +1330,73 @@ class ExternalLinkCheck(BodyLinkCheck):
                     u"""<a href=\"%s\">%s</a> had a return code of <strong>%d</strong>.""" %
                     (url, link_text, return_code), data=data,
                 )
+
+    # Queued Link Check
+    def stats(self, result):
+        elapsed = 86400*(DateTime() - self.start_time)
+        processed = len([x for x in result if x])
+        total = len(result)
+        percent = (100.0*processed)/total
+        return "%d/%d (%0.2f%%) [Elapsed %0.3f]" % (processed, total, percent, elapsed)
+
+    def q_check_link(self, q, result):
+
+        while not q.empty():
+
+            work = q.get()
+
+            url = work[1]
+
+            LOG(self.error_code, INFO, 'Queued Checking link %s' % url)
+
+            result[work[0]] = (url, self.check_link(url))
+
+            LOG(self.error_code, INFO, 'Stats: %s' % self.stats(result))
+
+            q.task_done()
+
+        return True
+
+    def get_max_threads(self, urls):
+        return min(self.MAX_THREADS, len(urls))
+
+    def check_links(self, urls=[]):
+
+        LOG(self.error_code, INFO, 'Starting thread Link Check')
+
+        q = Queue(maxsize=0)
+
+        # Don't check URLs that are explicitly whitelisted
+        whitelisted_urls = set(self.whitelisted_urls) & set(urls)
+
+        urls = list(set(urls) - whitelisted_urls)
+
+        # Randomize order of URLs
+        random.shuffle(urls)
+
+        result = [{} for x in urls]
+
+        for (i, url) in enumerate(urls):
+            q.put((i,url))
+
+        for i in range(self.get_max_threads(urls)):
+            LOG(self.error_code, INFO, 'Starting thread %d' % i)
+            worker = Thread(target=self.q_check_link, args=(q, result))
+            worker.setDaemon(True)    #setting threads as "daemon" allows main program to
+                                      #exit eventually even if these dont finish
+                                      #correctly.
+            worker.start()
+
+        q.join()
+
+        LOG(self.error_code, INFO, 'All tasks completed.')
+
+        # Stuff 200s in for whitelisted URLs
+        result.extend([
+            (x, (200, x)) for x in whitelisted_urls
+        ])
+
+        return dict(result)
 
 # Warn if Publishing Dates are in the future
 class FuturePublishingDate(ContentCheck):
