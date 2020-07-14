@@ -85,6 +85,14 @@
                         <link>graduate/inter-college-degree-programs</link>
                     </item>
                     <item>
+                        <title>Funding Opportunities</title>
+                        <link>graduate/funding</link>
+                    </item>
+                    <item>
+                        <title>How to Apply</title>
+                        <link>graduate/apply</link>
+                    </item>
+                    <item>
                         <title>Student Resources</title>
                         <link>graduate/resources</link>
                     </item>
@@ -103,16 +111,24 @@
                 <link>research</link>
                 <items>
                     <item>
-                        <title>Research Areas</title>
-                        <link>research/areas</link>
+                        <title>Forest Health</title>
+                        <link>research/areas/forest-health</link>
                     </item>
                     <item>
-                        <title>Research Centers</title>
+                        <title>Restoring Ecosystem Function and Service</title>
+                        <link>research/areas/restoring-ecosystem-function-and-service</link>
+                    </item>
+                    <item>
+                        <title>Scaling Up Ecosystem Management</title>
+                        <link>research/areas/scaling-up-ecosystem-management</link>
+                    </item>
+                    <item>
+                        <title>Watershed Resilience</title>
+                        <link>research/areas/watershed-resilience</link>
+                    </item>
+                    <item>
+                        <title>Research Centers and Institutes</title>
                         <link>research/centers</link>
-                    </item>
-                    <item>
-                        <title>Faculty Labs and Projects</title>
-                        <link>research/labs-projects</link>
                     </item>
                     <item>
                         <title>Our Partners</title>
