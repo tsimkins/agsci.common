@@ -57,6 +57,8 @@ class ExtensionListingTile(ScooterTile):
 
             rv.append(object_factory(**__))
 
+        rv.sort(key=lambda x: x.Title)
+
         return rv
 
     def get_items(self):
