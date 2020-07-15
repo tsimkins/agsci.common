@@ -552,10 +552,12 @@ class SkeeterTile(CCCT_Tile):
         if self.style in ('events',) and self.filter_public_tags:
             return True
 
+        return self.light_version
+
     @property
     def max_items(self):
 
-        if self.no_max or self.light_version:
+        if self.no_max:
             return 99999
 
         return {
