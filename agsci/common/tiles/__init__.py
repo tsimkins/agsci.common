@@ -343,6 +343,14 @@ class BaseTile(PersistentTile):
                 field = self.get_field(field_name, None)
 
                 if field:
+                    dimensions = size = None
+
+                    if hasattr(field, 'getImageSize'):
+                        dimensions = field.getImageSize()
+
+                    if hasattr(field, 'size'):
+                        size = field.size
+
                     yield object_factory(
                         name=self.__name__,
                         tile_type=self.tile_type,
@@ -351,6 +359,8 @@ class BaseTile(PersistentTile):
                         url=self.get_img_src(field=field_name, full=True),
                         filename=self.get_img_filename(field=field_name),
                         id=self.id,
+                        dimensions=dimensions,
+                        size=size
                     )
 
     @property

@@ -900,6 +900,15 @@ class TileImagesViewlet(ViewletBase):
     def images(self):
         return self.check.value()
 
+    def getDimensions(self, _=None):
+        if isinstance(_, (list, tuple)):
+            return " x ".join(['%d' %x for x in _])
+
+    def getSize(self, _=None):
+        if isinstance(_, (int, float)):
+            return "(%0.1f KB)" % (_/(1024.0))
+
+
 class CourseSyllabusViewlet(ViewletBase):
     pass
 

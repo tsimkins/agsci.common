@@ -20,7 +20,12 @@
                 <td
                     tal:define="url i/url|nothing;
                                 src i/thumbnail|nothing;
-                                filename i/filename|nothing">
+                                filename i/filename|nothing;
+                                dimensions i/dimensions|nothing;
+                                dimensions python: view.getDimensions(dimensions);
+                                size i/size|nothing;
+                                size python: view.getSize(size)">
+
                     <a tal:attributes="href url">
                         <img alt=""
                              tal:attributes="src src" />
@@ -29,6 +34,17 @@
                             tal:condition="filename"
                             tal:content="filename" />
                     </a>
+
+                    <p class="discreet"
+                       tal:condition="dimensions">
+
+                        <span tal:replace="dimensions" />
+
+                        <span tal:condition="size"
+                            tal:replace="size" />
+
+                    </p>
+
                 </td>
                 <td>
                     <p tal:repeat="j python: view.check_image(i)"
