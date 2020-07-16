@@ -800,7 +800,7 @@ class AppropriateLinkText(BodyLinkCheck):
 
     action = "Linked text should be a few words that describe the content that exists at the link."
 
-    find_words = ['click', 'http://', 'https://', 'here',]
+    find_words = ['click', 'http', 'https', 'here',]
 
     find_words = [x.lower() for x in find_words]
 
