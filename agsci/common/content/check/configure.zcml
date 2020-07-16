@@ -79,6 +79,14 @@
     />
 
 
+    <!-- Body Text: Appropriate Link Target -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".AppropriateLinkTarget"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
+
     <!-- Body Text: Image with an external or absolute URL -->
 
     <subscriber

@@ -791,6 +791,7 @@ class LeadImageWidth(LeadImageOrientation):
 
             yield ContentCheckError(self, 'Lead image width is %d pixels.' % w)
 
+
 # Checks for instances of inappropriate link text in body
 class AppropriateLinkText(BodyLinkCheck):
 
@@ -812,6 +813,7 @@ class AppropriateLinkText(BodyLinkCheck):
         for a in super(AppropriateLinkText, self).value():
             label = self.soup_to_text(a)
             href = a.get('href', '')
+            target = a.get('target', '')
 
             # Check for a special case where an image is the link, and use the alt text.
             if not label:
@@ -821,14 +823,14 @@ class AppropriateLinkText(BodyLinkCheck):
                         label = alt
                         break
 
-            data.append((label, href))
+            data.append((label, href, target))
 
         return data
 
     def check(self):
 
         # Iterate through link text for document
-        for (label, href) in self.value():
+        for (label, href, target) in self.value():
 
             # Minimum length check
             if len(label) < self.min_chars:
@@ -842,6 +844,22 @@ class AppropriateLinkText(BodyLinkCheck):
                 if j in self.find_words:
                     yield ContentCheckError(self, 'Inappropriate Link Text "%s" (found "%s") for %s' % (label, j, href))
 
+# Link target should not open windows in a new tab
+class AppropriateLinkTarget(AppropriateLinkText):
+
+    title = 'HTML: Appropriate Link Target'
+
+    description = "Links should never force opening in a new window"
+
+    action = "Remove the link target attribute."
+
+    def check(self):
+
+        # Iterate through link text for document
+        for (label, href, target) in self.value():
+
+            if target and target not in ('_self',):
+                yield ContentCheckError(self, 'Link "%s" (%s) has target of %s' % (label, href, target))
 
 # Checks for cases where an image is linked to something
 class ExternalAbsoluteImage(BodyImageCheck):
