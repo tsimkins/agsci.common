@@ -66,10 +66,6 @@
                 <link>undergraduate</link>
                 <items>
                     <item>
-                        <title>Degree Offerings</title>
-                        <link>undergraduate/degrees</link>
-                    </item>
-                    <item>
                         <title>Student Resources</title>
                         <link>undergraduate/resources</link>
                     </item>
@@ -144,6 +140,10 @@
                     <item>
                         <title>Centers and Institutes</title>
                        <link>research/centers</link>
+                    </item>
+                    <item>
+                        <title>Publications</title>
+                        <link>research/publications</link>
                     </item>
                 </items>
             </item>
