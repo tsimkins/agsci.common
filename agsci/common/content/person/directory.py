@@ -65,6 +65,19 @@ class IPersonListing(model.Schema):
         required=False,
     )
 
+class IPersonPublicationListing(IPersonListing):
+
+    form.omitted(
+        'show_classifications', 'show_groups', 'show_short_bio', 'show_jump_links',
+    )
+
+    show_people = schema.List(
+        title=u"People",
+        description=u"Configure the People for whom to show publications.",
+        value_type=DictRow(title=u"Person", schema=IPersonOrderRowSchema),
+        required=False
+    )
+
 class PersonListing(Container):
 
     @property
@@ -155,7 +168,8 @@ class PersonListing(Container):
 
         return self.sort(_)
 
-
+class PersonPublicationListing(PersonListing):
+    pass
 
 # Directory
 class IDirectory(model.Schema):

@@ -7,6 +7,7 @@ import requests
 import transaction
 
 from agsci.common.browser.views import BaseView
+from agsci.common.content.person.directory import IPersonPublicationListing
 from agsci.common.utilities import localize
 
 from .. import ImportContentView
@@ -226,13 +227,12 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
 
 class ImportSitePublicationsView(ImportDirectoryPublicationsView):
 
-    @property
-    def publications(self):
+    # people is a list of *objects* not brains
+    def get_publications_for_people(self, people=[]):
 
         data = {}
 
-        for r in self.people:
-            o = r.getObject()
+        for o in people:
 
             # Skip faculty who have a profile outside the department
             if not getattr(o, 'primary_profile_url', None):
@@ -250,25 +250,59 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
 
         return self.sort_filter(data.values())
 
-    def import_content(self):
+    @property
+    def publication_listings(self):
+        results = self.portal_catalog.searchResults({
+            'object_provides' : 'agsci.common.content.person.directory.IPersonPublicationListing',
+        })
+
+        _ = [x.getObject() for x in results]
 
         try:
             context = self.site.restrictedTraverse('research/publications')
         except:
-            self.log(u"No research publications page found.")
+            pass
         else:
-            publications = self.publications
+            _.append(context)
 
-            v = BaseView(self.context, self.request)
+        if not _:
+            self.log(u"No research publications page found.")
 
-            html = v.publications_html(publications=publications)
+        return _
 
-            context.text = RichTextValue(
-                raw=html,
-                mimeType=u'text/html',
-                outputMimeType='text/x-html-safe'
-            )
 
-            context.reindexObject()
+    def import_content(self):
 
-            transaction.commit()
+        v = BaseView(self.context, self.request)
+
+        for context in self.publication_listings:
+
+            self.log(u"Populating publications listing for %s." % context.absolute_url())
+
+            people = []
+
+            # People Publication listing specifies people
+            if IPersonPublicationListing.providedBy(context):
+                people = context.people()
+
+            # All people
+            else:
+                people = [x.getObject() for x in self.people]
+
+            if people:
+
+                publications = self.get_publications_for_people(people)
+
+                if publications:
+
+                    html = v.publications_html(publications=publications)
+
+                    context.text = RichTextValue(
+                        raw=html,
+                        mimeType=u'text/html',
+                        outputMimeType='text/x-html-safe'
+                    )
+
+                    context.reindexObject()
+
+                    transaction.commit()

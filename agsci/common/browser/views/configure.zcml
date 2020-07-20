@@ -283,6 +283,16 @@
         template="templates/person_card.pt"
     />
 
+    <!-- Person Publication Listing View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IPersonPublicationListing"
+        name="view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_publication_listing.pt"
+    />
+
     <!-- Person Listing View -->
     <browser:page
         for="agsci.common.content.person.directory.IPersonListing"

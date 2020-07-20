@@ -16,6 +16,7 @@
     <object name="agsci_directory_classification" meta_type="Dexterity FTI" />
     <object name="agsci_directory_group" meta_type="Dexterity FTI" />
     <object name="agsci_directory_person_listing" meta_type="Dexterity FTI" />
+    <object name="agsci_directory_person_publication_listing" meta_type="Dexterity FTI" />
     <object name="agsci_major" meta_type="Dexterity FTI" />
     <object name="agsci_minor" meta_type="Dexterity FTI" />
     <object name="agsci_person" meta_type="Dexterity FTI" />
