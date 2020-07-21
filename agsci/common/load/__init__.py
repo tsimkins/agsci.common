@@ -494,7 +494,7 @@ class ContentImporter(object):
 
         return value
 
-    def __call__(self):
+    def __call__(self, force=False):
 
         if not self.data.data:
             raise Exception("No data provided.")
@@ -533,7 +533,7 @@ class ContentImporter(object):
         else:
 
             # If the item exists, and it's published, no further changes
-            if self.review_state in ['published',]:
+            if self.review_state in ['published',] and not force:
                 return
 
             item = self.context
