@@ -43,7 +43,12 @@
             <item>
                 <icon>fa-linkedin</icon>
                 <title>LinkedIn</title>
-                <link>https://www.linkedin.com/groups/1843840/</link>
+                <link>https://www.linkedin.com/company/penn-state-food-science/</link>
+            </item>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/groups/56467916726/</link>
             </item>
         </items>
     </nav>
