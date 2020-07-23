@@ -43,6 +43,10 @@ class ExtensionListingTile(ScooterTile):
 
     show_image_wrapper = True
 
+    @property
+    def config(self):
+        return getExtensionConfig()
+
     def to_brain(self, config=[]):
         rv = []
 
@@ -62,7 +66,7 @@ class ExtensionListingTile(ScooterTile):
         return rv
 
     def get_items(self):
-        config = getExtensionConfig()
+        config = self.config
 
         if config:
             product_types = self.get_valid_value('product_types')
@@ -76,3 +80,20 @@ class ExtensionListingTile(ScooterTile):
 
     def get_img_src(self, brain, **kwargs):
         return brain.thumbnail
+
+class ExtensionFilteredListingTile(ExtensionListingTile):
+
+    @property
+    def department_id(self):
+        return self.get_valid_value('department_id')
+
+    @property
+    def category(self):
+        return self.get_valid_value('category')
+
+    @property
+    def config(self):
+        return getExtensionConfig(
+            department_id=self.department_id,
+            category=self.category
+        )

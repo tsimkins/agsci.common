@@ -86,4 +86,16 @@
         component=".ExtensionListingProductTypesVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.extension_homepage.l1_categories"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ExtensionListingL1CategoriesVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.tiles.extension_homepage.departments"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ExtensionListingDepartmentsVocabularyFactory"
+    />
+
 </configure>

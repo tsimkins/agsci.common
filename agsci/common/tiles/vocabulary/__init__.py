@@ -122,6 +122,37 @@ class ExtensionListingProductTypesVocabulary(StaticVocabulary):
         config = getExtensionConfig()
         return sorted(set([x.get('product_type', None) for x in config if x.get('product_type', None)]))
 
+class ExtensionListingL1CategoriesVocabulary(StaticVocabulary):
+
+    items = [
+        "Animals and Livestock",
+        "Business and Operations",
+        "Community Development",
+        "Energy",
+        "Food Safety and Quality",
+        "Forage and Food Crops",
+        "Forests and Wildlife",
+        "Insects, Pests, and Diseases",
+        "Trees, Lawns, and Landscaping",
+        "Water",
+        "Youth, Family, and Health"
+    ]
+
+class ExtensionListingDepartmentsVocabulary(KeyValueVocabulary):
+
+    items = [
+        ('aese', 'Agricultural Economics, Sociology, and Education'),
+        ('abe', 'Agricultural and Biological Engineering'),
+        ('animalscience', 'Animal Science'),
+        ('ecosystems', 'Ecosystem Science and Management'),
+        ('ento', 'Entomology'),
+        ('foodscience', 'Food Science'),
+        ('plantpath', 'Plant Pathology and Environmental Microbiology'),
+        ('plantscience', 'Plant Science'),
+        ('vbs', 'Veterinary and Biomedical Sciences'),
+        ('apd', 'Ag Progess Days'),
+    ]
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
@@ -136,3 +167,5 @@ HVOrientationVocabularyFactory = HVOrientationVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()
 AgJourneyQuoteStyleVocabularyFactory = AgJourneyQuoteStyleVocabulary()
 ExtensionListingProductTypesVocabularyFactory = ExtensionListingProductTypesVocabulary()
+ExtensionListingL1CategoriesVocabularyFactory = ExtensionListingL1CategoriesVocabulary()
+ExtensionListingDepartmentsVocabularyFactory = ExtensionListingDepartmentsVocabulary()

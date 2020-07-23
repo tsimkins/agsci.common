@@ -853,6 +853,21 @@
         <value key="weight">100</value>
     </records>
 
+    <!-- Extension Homepage: Extension Filtered Listing -->
+    <records prefix="plone.app.mosaic.app_tiles.agsci_common_tiles_homepage_extension_filtered_listing"
+             interface="plone.app.mosaic.interfaces.ITile">
+        <value key="name">agsci.common.tiles.homepage_extension.filtered_listing</value>
+        <value key="label">Extension Product Filtered Listing</value>
+        <value key="category">homepage_extension</value>
+        <value key="tile_type">app</value>
+        <value key="default_value"></value>
+        <value key="read_only">false</value>
+        <value key="settings">true</value>
+        <value key="favorite">false</value>
+        <value key="rich_text">false</value>
+        <value key="weight">100</value>
+    </records>
+
     <!-- getId Query field for collection -->
     <records interface="plone.app.querystring.interfaces.IQueryField"
             prefix="plone.app.querystring.field.getId">

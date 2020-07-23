@@ -163,3 +163,18 @@ class IExtensionListingTile(Interface):
         required=False,
         default=True,
     )
+
+class IExtensionFilteredListingTile(IExtensionListingTile):
+
+
+    department_id = schema.Choice(
+        title=_(u"Department"),
+        vocabulary='agsci.common.tiles.extension_homepage.departments',
+        required=False,
+    )
+
+    category = schema.Choice(
+        title=_(u"Category"),
+        vocabulary='agsci.common.tiles.extension_homepage.l1_categories',
+        required=False,
+    )

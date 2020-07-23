@@ -71,4 +71,18 @@
         for="agsci.common.content.homepage.IExtensionHomepage"
     />
 
+    <!-- Extension Product Filtered Listing -->
+
+    <plone:tile
+        name="agsci.common.tiles.homepage_extension.filtered_listing"
+        title="Extension Product Filtered Listing"
+        description=""
+        schema=".interfaces.IExtensionFilteredListingTile"
+        class=".ExtensionFilteredListingTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.homepage.IExtensionHomepage"
+    />
+
 </configure>

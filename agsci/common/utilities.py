@@ -548,11 +548,12 @@ def getDepartmentId():
     viewlet = NavigationViewlet(getSite(), getRequest(), None)
     return viewlet.department_id
 
-def getExtensionConfig():
+def getExtensionConfig(department_id=None, category=None):
 
     rv = []
 
-    department_id = getDepartmentId()
+    if not department_id:
+        department_id = getDepartmentId()
 
     # If we have a department id, get the config from the CMS
     if department_id:
@@ -570,6 +571,14 @@ def getExtensionConfig():
                 for k in ('categories', 'products'):
 
                     if k in data[department_id]:
-                        rv.extend(data[department_id][k])
+
+                        # If there's a category provided, filter by category
+                        if category:
+                            for _ in data[department_id][k]:
+                                _l1 = _.get('CategoryLevel1', [])
+                                if _l1 and category in _l1:
+                                    rv.append(_)
+                        else:
+                            rv.extend(data[department_id][k])
 
     return rv
