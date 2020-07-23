@@ -55,12 +55,16 @@
                 <link>undergraduate</link>
                 <items>
                     <item>
-                        <title>Degree Offerings</title>
-                        <link>undergraduate/degrees</link>
+                        <title>Degree Options</title>
+                        <link>undergraduate</link>
                     </item>
                     <item>
                         <title>Student Resources</title>
                         <link>undergraduate/resources</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>undergraduate/contact</link>
                     </item>
                 </items>
             </item>
@@ -85,8 +89,16 @@
                         <link>graduate/minor</link>
                     </item>
                     <item>
-                        <title>Inter-college Graduate Programs</title>
+                        <title>Inter-College Degree Programs</title>
                         <link>graduate/inter-college</link>
+                    </item>
+                    <item>
+                        <title>Español</title>
+                        <link>graduate/espanol</link>
+                    </item>
+                    <item>
+                        <title>Admission to the Program</title>
+                        <link>graduate/admissions</link>
                     </item>
                     <item>
                         <title>Student Resources</title>
@@ -109,10 +121,6 @@
                     <item>
                         <title>Research Areas</title>
                         <link>research/areas</link>
-                    </item>
-                    <item>
-                        <title>Research Centers</title>
-                        <link>research/centers</link>
                     </item>
                     <item>
                         <title>Publications</title>
@@ -145,6 +153,10 @@
                     <item>
                         <title>Events</title>
                         <link>events</link>
+                    </item>
+                    <item>
+                        <title>Farms and Facilities</title>
+                        <link>about/facilities</link>
                     </item>
                     <item>
                         <title>Alumni and Friends</title>
