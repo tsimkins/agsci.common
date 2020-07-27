@@ -43,9 +43,24 @@ class ExtensionListingTile(ScooterTile):
 
     show_image_wrapper = True
 
+    sku_order = []
+
     @property
     def config(self):
         return getExtensionConfig()
+
+    def sku_sort_key(self, x):
+
+        sku = x.sku
+
+        if sku:
+
+            try:
+                return self.sku_order.index(sku)
+            except:
+                pass
+
+        return 99999
 
     def to_brain(self, config=[]):
         rv = []
@@ -57,11 +72,15 @@ class ExtensionListingTile(ScooterTile):
                 'getURL' : _.get('url', None),
                 'thumbnail' : _.get('thumbnail', None),
                 'hasLeadImage' : not not _.get('thumbnail', None),
+                'sku' : _.get('sku', None),
             }
 
             rv.append(object_factory(**__))
 
         rv.sort(key=lambda x: x.Title)
+
+        if self.sku_order:
+            rv.sort(key=self.sku_sort_key)
 
         return rv
 
@@ -99,6 +118,10 @@ class ExtensionFilteredListingTile(ExtensionListingTile):
         )
 
 class ExtensionSKUFilteredListingTile(ExtensionFilteredListingTile):
+
+    @property
+    def sku_order(self):
+        return self.get_valid_value('sku_order')
 
     @property
     def skus(self):

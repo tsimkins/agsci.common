@@ -191,3 +191,9 @@ class IExtensionSKUFilteredListingTile(IExtensionListingTile):
         value_type=schema.TextLine(required=True),
         required=False
     )
+
+    sku_order = schema.List(
+        title=u"SKU Order",
+        value_type=schema.TextLine(required=True),
+        required=False
+    )
