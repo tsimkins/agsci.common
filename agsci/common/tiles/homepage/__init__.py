@@ -97,3 +97,23 @@ class ExtensionFilteredListingTile(ExtensionListingTile):
             department_id=self.department_id,
             category=self.category
         )
+
+class ExtensionSKUFilteredListingTile(ExtensionFilteredListingTile):
+
+    @property
+    def skus(self):
+        return self.get_valid_value('skus')
+
+    @property
+    def config(self):
+        _ = getExtensionConfig(
+            department_id=self.department_id,
+        )
+
+        skus = self.skus
+
+        # Filter by SKUs
+        if skus:
+            _ = [x for x in _ if x.get('sku', None) in skus]
+
+        return _

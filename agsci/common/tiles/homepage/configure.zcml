@@ -85,4 +85,18 @@
         for="agsci.common.content.homepage.IExtensionHomepage"
     />
 
+    <!-- Extension Product SKU Filtered Listing -->
+
+    <plone:tile
+        name="agsci.common.tiles.homepage_extension.sku_filtered_listing"
+        title="Extension Product SKU Filtered Listing"
+        description=""
+        schema=".interfaces.IExtensionSKUFilteredListingTile"
+        class=".ExtensionSKUFilteredListingTile"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer="..interfaces.IAgsciTilesLayer"
+        for="agsci.common.content.homepage.IExtensionHomepage"
+    />
+
 </configure>
