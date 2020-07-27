@@ -50,6 +50,10 @@
                 <link>undergraduate</link>
                 <items>
                     <item>
+                        <title>Degree Options</title>
+                        <link>undergraduate</link>
+                    </item>
+                    <item>
                         <title>Student Resources</title>
                         <link>undergraduate/resources</link>
                     </item>
