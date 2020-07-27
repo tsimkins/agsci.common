@@ -80,20 +80,8 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Master of Science</title>
-                       <link>graduate/masters</link>
-                    </item>
-                    <item>
-                        <title>Doctor of Philosophy</title>
-                       <link>graduate/phd</link>
-                    </item>
-                    <item>
-                        <title>Dual-Title Degree Programs</title>
-                       <link>graduate/dual-title</link>
-                    </item>
-                    <item>
-                        <title>Inter-College Degree Programs</title>
-                       <link>graduate/inter-college</link>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
                     </item>
                     <item>
                         <title>Funding Opportunities</title>

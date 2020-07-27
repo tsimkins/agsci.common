@@ -73,20 +73,8 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Agricultural and Biological Engineering</title>
-                        <link>graduate/abe</link>
-                    </item>
-                    <item>
-                        <title>BioRenewable Systems</title>
-                        <link>graduate/brs</link>
-                    </item>
-                    <item>
-                        <title>Operations Research</title>
-                        <link>graduate/or</link>
-                    </item>
-                    <item>
-                        <title>International Agriculture and Development</title>
-                        <link>graduate/intad</link>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
                     </item>
                     <item>
                         <title>Funding Opportunities</title>

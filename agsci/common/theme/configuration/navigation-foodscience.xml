@@ -78,12 +78,8 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Master of Science Degree</title>
-                        <link>graduate/ms</link>
-                    </item>
-                    <item>
-                        <title>Doctor of Philosophy Degree</title>
-                        <link>graduate/phd</link>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
                     </item>
                     <item>
                         <title>General Degree Requirements</title>

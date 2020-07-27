@@ -73,20 +73,8 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Forest Resources</title>
-                        <link>graduate/forest-resources</link>
-                    </item>
-                    <item>
-                        <title>Soil Science</title>
-                        <link>graduate/soil-science</link>
-                    </item>
-                    <item>
-                        <title>Wildlife and Fisheries Science</title>
-                        <link>graduate/wfs</link>
-                    </item>
-                    <item>
-                        <title>Inter-College Degree Programs</title>
-                        <link>graduate/inter-college-degree-programs</link>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
                     </item>
                     <item>
                         <title>Funding Opportunities</title>

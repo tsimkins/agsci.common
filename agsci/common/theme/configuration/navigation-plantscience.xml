@@ -75,20 +75,8 @@
                 <link>graduate</link>
                 <items>
                     <item>
-                        <title>Agronomy</title>
-                        <link>graduate/agronomy</link>
-                    </item>
-                    <item>
-                        <title>Horticulture</title>
-                        <link>graduate/hort</link>
-                    </item>
-                    <item>
-                        <title>Turfgrass Management</title>
-                        <link>graduate/turfgrass</link>
-                    </item>
-                    <item>
-                        <title>Inter-college Degree Programs</title>
-                        <link>graduate/inter-college</link>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
                     </item>
                     <item>
                         <title>Student Resources</title>
