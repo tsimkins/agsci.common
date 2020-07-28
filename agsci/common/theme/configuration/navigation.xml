@@ -54,6 +54,14 @@
                                 <title>Student Life</title>
                                 <link>students/life</link>
                             </item>
+                            <item>
+                                <title>Contact Undergraduate Education</title>
+                                <link>students/contact</link>
+                            </item>
+                            <item>
+                                <title>Contact Graduate Education</title>
+                                <link>students/graduate/contact</link>
+                            </item>
                         </items>
                     </item>
                     <item>
