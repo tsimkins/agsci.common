@@ -357,6 +357,18 @@
         title="Table View"
     />
 
+    <!-- DirectoryGroup View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IDirectoryGroup"
+        name="view"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+        menu="plone_displayviews"
+        title="View"
+    />
+
     <!-- DirectoryGroup Table View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectoryGroup"
