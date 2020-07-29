@@ -112,12 +112,12 @@
                 <link>research</link>
                 <items>
                     <item>
-                        <title>Cross-Cutting Themes</title>
-                        <link>research/themes</link>
-                    </item>
-                    <item>
                         <title>Signature Research Areas</title>
                         <link>research/areas</link>
+                    </item>
+                    <item>
+                        <title>Cross-Cutting Themes</title>
+                        <link>research/themes</link>
                     </item>
                     <item>
                         <title>Research Centers</title>
