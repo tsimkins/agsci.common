@@ -319,3 +319,9 @@ function desktopHover(){
         }
     });
 }
+
+// Prevent multiple PFG form submissions
+// https://gist.github.com/toddlahman/6302114
+jq3('body.portaltype-formfolder .pfg-form form').submit(function(){
+    jq3(this).find(':submit').attr( 'disabled','disabled' );
+});
