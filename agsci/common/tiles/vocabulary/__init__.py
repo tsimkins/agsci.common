@@ -72,6 +72,7 @@ class TagsVocabulary(StaticVocabulary):
     prefixes = [
         'majors',
         'news',
+        'workshop',
     ]
 
     @property
