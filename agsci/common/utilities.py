@@ -503,7 +503,7 @@ def setSiteURL(site, domain=None, path='', https=True):
             'private-internal': "agsci.psu.edu",
             'ento.psu.edu': 'dev.ento.psu.edu',
             'plantscience.psu.edu': 'dev.plantscience.psu.edu',
-            'foodscience.psu.edu': 'dev.foodscience.psu.edu',
+            'foodscience.psu.edu': 'foodscience.psu.edu',
             'aese.psu.edu': 'dev.aese.psu.edu',
             'abe.psu.edu': 'abe.psu.edu',
             'animalscience.psu.edu': 'dev.animalscience.psu.edu',
