@@ -670,6 +670,16 @@ class IYouTubeTile(IBorderTile):
         required=False
     )
 
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
     url = schema.TextLine(
         title=_(u"Video URL"),
         required=True,
@@ -680,6 +690,13 @@ class IYouTubeTile(IBorderTile):
         vocabulary="agsci.common.tiles.video_aspect_ratio",
         required=True,
         default=u"16:9",
+    )
+
+    full_width = schema.Bool(
+        title=_(u"Full Width?"),
+        description=_(u""),
+        required=False,
+        default=False,
     )
 
 class IDropdownAccordionTile(IBorderTile):

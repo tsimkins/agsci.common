@@ -28,7 +28,12 @@
             tal:condition="view/data/title|nothing"
             tal:content="view/data/title" />
 
-        <div class="col-12 col-lg-10 offset-lg-1">
+        <p class="lead"
+            tal:condition="view/data/description|nothing"
+            tal:content="view/data/description|nothing" />
+
+        <div class="col-12 col-lg-10 offset-lg-1"
+            tal:omit-tag="view/data/full_width|nothing">
 
             <div
                 tal:attributes="class view/wrapper_klass|nothing">
@@ -37,6 +42,9 @@
                     tal:attributes="src iframe_url" />
             </div>
         </div>
+
+        <div class="html"
+                tal:content="structure view/data/text/output|nothing" />
 
     </div>
 
