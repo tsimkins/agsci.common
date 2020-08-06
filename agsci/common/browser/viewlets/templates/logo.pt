@@ -2,11 +2,21 @@
     tal:define="is_department view/is_department|nothing">
 
 	<!-- LOGO AND BRANDING BAR -->
-	<div class="d-none d-lg-block container-fluid position-relative px-0 brand-bar department-bar department-bar-test"
+	<div class="container-fluid position-relative px-0 brand-bar department-bar"
 	     tal:omit-tag="not:is_department">
 		<div class="row mx-0 align-items-center"
 		     tal:omit-tag="not:is_department">
-			<div class="d-block d-lg-inline-flex pr-3 college-logo-block"
+		
+        <button
+            class="btn btn-primary btn-toggle-mobile-nav"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+		
+			<div class="d-lg-inline-flex pr-3 college-logo-block"
 			     tal:omit-tag="not:is_department">
                 <a tal:attributes="href view/logo_href|nothing"
                    class="navbar-brand">

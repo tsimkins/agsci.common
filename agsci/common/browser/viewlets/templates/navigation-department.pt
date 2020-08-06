@@ -4,35 +4,6 @@
 
     <nav class="navbar navbar-expand-lg pb-0 department-level">
 
-        <div class="department-branding d-lg-none">
-
-            <a class="navbar-brand"
-               tal:attributes="href view/logo_href|nothing">
-
-                <img
-                    tal:attributes="src string:${view/assets_url}/images/${view/logo_src};
-                                    alt view/logo_alt|nothing"
-                     class="${view/logo_class} pl-3" />
-
-            </a>
-
-        </div>
-
-        <a class="department-brand department-brand-creek d-block department-brand-mobile d-lg-none">
-            <span tal:content="view/site/Title|nothing" />
-
-        </a>
-
-        <button
-           class="btn btn-primary btn-toggle-mobile-nav"
-           type="button"
-           data-toggle="collapse"
-           data-target="#navbarSupportedContent"
-           aria-controls="navbarSupportedContent"
-           aria-expanded="false"
-           aria-label="Toggle navigation">
-        </button>
-
         <div id="navbarSupportedContent"
            class="collapse navbar-collapse py-0">
 
