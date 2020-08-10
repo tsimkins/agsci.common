@@ -66,13 +66,14 @@ class ExtensionListingTile(ScooterTile):
         rv = []
 
         for _ in config:
+            # Present URL Key as SKU if no SKU for sorting/filtering purposes.
             __ = {
                 'Title' : _.get('name', None),
                 'Description' : _.get('description', None),
                 'getURL' : _.get('url', None),
                 'thumbnail' : _.get('thumbnail', None),
                 'hasLeadImage' : not not _.get('thumbnail', None),
-                'sku' : _.get('sku', None),
+                'sku' : _.get('sku', _.get('url_key', None)),
             }
 
             rv.append(object_factory(**__))
