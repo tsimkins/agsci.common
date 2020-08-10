@@ -40,31 +40,32 @@ def setPersonUsername(context, event):
 def onPersonCreateEdit(context, event):
     setPersonUsername(context, event)
 
-def onBlogCreate(context, event):
-
-    # Calculate dates
-    now = DateTime()
+def onBlogCreate(context, event, sample=True):
 
     # Create sample news item and set publishing date to 01-01-YYYY
-    item = createContentInContainer(
-        context,
-        "News Item",
-        id="sample",
-        title="Sample News Item",
-        description="This is a sample News Item",
-        checkConstraints=False
-    )
+    if sample:
 
-    item.text = RichTextValue(
-        raw='<p>You may delete this item</p>',
-        mimeType=u'text/html',
-        outputMimeType='text/x-html-safe'
-    )
+        # Calculate dates
+        now = DateTime()
 
-    item.setEffectiveDate(now)
+        item = createContentInContainer(
+            context,
+            "News Item",
+            id="sample",
+            title="Sample News Item",
+            description="This is a sample News Item",
+            checkConstraints=False
+        )
+
+        item.text = RichTextValue(
+            raw='<p>You may delete this item</p>',
+            mimeType=u'text/html',
+            outputMimeType='text/x-html-safe'
+        )
+
+        item.setEffectiveDate(now)
 
     # create 'latest' collection
-
     if 'latest' not in context.objectIds():
         item = createContentInContainer(
             context,
@@ -95,12 +96,7 @@ def onBlogCreate(context, event):
     # Set default page to the latest news collection
     context.setDefaultPage('latest')
 
-def onEventsFolderCreate(context, event):
-
-    # Calculate dates
-    now = DateTime()
-    start_date = DateTime() + 30
-    end_date = start_date + 1.0/24
+def onEventsFolderCreate(context, event, sample=True):
 
     # restrict what this folder can contain
     behavior = ISelectableConstrainTypes(context)
@@ -109,29 +105,35 @@ def onEventsFolderCreate(context, event):
     behavior.setLocallyAllowedTypes(['Event', 'Collection'])
 
     # Create sample event and set publishing date to 01-01-YYYY
-    item = createContentInContainer(
-        context,
-        "Event",
-        id="sample",
-        title="Sample Event",
-        description="This is a sample Event",
-        checkConstraints=False
-    )
+    if sample:
 
-    item.text = RichTextValue(
-        raw='<p>You may delete this item</p>',
-        mimeType=u'text/html',
-        outputMimeType='text/x-html-safe'
-    )
+        # Calculate dates
+        now = DateTime()
+        start_date = DateTime() + 30
+        end_date = start_date + 1.0/24
 
-    item.setEffectiveDate(now)
+        item = createContentInContainer(
+            context,
+            "Event",
+            id="sample",
+            title="Sample Event",
+            description="This is a sample Event",
+            checkConstraints=False
+        )
 
-    acc = IEventAccessor(item)
-    acc.start = localize(start_date)
-    acc.end = localize(end_date)
+        item.text = RichTextValue(
+            raw='<p>You may delete this item</p>',
+            mimeType=u'text/html',
+            outputMimeType='text/x-html-safe'
+        )
+
+        item.setEffectiveDate(now)
+
+        acc = IEventAccessor(item)
+        acc.start = localize(start_date)
+        acc.end = localize(end_date)
 
     # create 'upcoming' collection
-
     if 'upcoming' not in context.objectIds():
         item = createContentInContainer(
             context,
