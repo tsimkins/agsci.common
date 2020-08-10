@@ -51,6 +51,7 @@
                 <link>https://twitter.com/VBSatPennState</link>
             </item>
             <item>
+                <inverse>true</inverse>
                 <icon>fa-instagram</icon>
                 <title>Instagram</title>
                 <link>https://www.instagram.com/VBSatPennState/</link>
