@@ -50,6 +50,11 @@
                 <title>Twitter</title>
                 <link>https://twitter.com/VBSatPennState</link>
             </item>
+            <item>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>https://www.instagram.com/VBSatPennState/</link>
+            </item>
         </items>
     </nav>
 
