@@ -43,6 +43,6 @@
  <action title="Edit" action_id="edit" category="object" condition_expr=""
     description="" icon_expr="" link_target=""
     url_expr="string:${object_url}/edit" visible="True">
-  <permission value="agsci.common.directory_editor"/>
+  <permission value="cmf.ManagePortal"/>
  </action>
 </object>
