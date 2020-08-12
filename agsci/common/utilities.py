@@ -504,10 +504,10 @@ def setSiteURL(site, domain=None, path='', https=True):
             'ento.psu.edu': 'dev.ento.psu.edu',
             'plantscience.psu.edu': 'dev.plantscience.psu.edu',
             'foodscience.psu.edu': 'foodscience.psu.edu',
-            'aese.psu.edu': 'dev.aese.psu.edu',
+            'aese.psu.edu': 'aese.psu.edu',
             'abe.psu.edu': 'abe.psu.edu',
             'animalscience.psu.edu': 'dev.animalscience.psu.edu',
-            'ecosystems.psu.edu': 'dev.ecosystems.psu.edu',
+            'ecosystems.psu.edu': 'ecosystems.psu.edu',
             'plantpath.psu.edu': 'dev.plantpath.psu.edu',
             'vbs.psu.edu': 'dev.vbs.psu.edu'
         }.get(site.getId(), 'nohost_%s_' % site.getId())
