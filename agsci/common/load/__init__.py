@@ -471,7 +471,16 @@ class ContentImporter(object):
                 pass
 
     def getId(self):
-        return safe_unicode(self.data.id).encode('utf-8')
+
+        _id = u""
+
+        for _ in (self.data.id, self.data.username):
+
+            if _:
+                _id = _
+                break
+
+        return safe_unicode(_id).encode('utf-8')
 
     def transform_value(self, field=None, field_name=None, value=None):
 
