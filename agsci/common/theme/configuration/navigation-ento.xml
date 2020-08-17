@@ -62,6 +62,10 @@
                         <title>Student Resources</title>
                         <link>undergraduate/resources</link>
                     </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>undergraduate/contact</link>
+                    </item>
                 </items>
             </item>
             <item>
@@ -79,6 +83,22 @@
                     <item>
                         <title>International Focus</title>
                         <link>graduate/international</link>
+                    </item>
+                    <item>
+                        <title>Prospective Graduate Students</title>
+                        <link>graduate/prospective</link>
+                    </item>
+                    <item>
+                        <title>Degree and Course Information</title>
+                        <link>graduate/degrees</link>
+                    </item>
+                    <item>
+                        <title>Funding Opportunities</title>
+                        <link>graduate/funding</link>
+                    </item>
+                    <item>
+                        <title>How to Apply</title>
+                        <link>graduate/prospective/apply</link>
                     </item>
                     <item>
                         <title>Student Resources</title>
@@ -105,6 +125,10 @@
                     <item>
                         <title>Research Centers</title>
                         <link>research/centers</link>
+                    </item>
+                    <item>
+                        <title>Research Projects</title>
+                        <link>research/projects</link>
                     </item>
                     <item>
                         <title>Faculty Labs</title>
