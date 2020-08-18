@@ -159,8 +159,11 @@ a.alert-bar:hover {
   .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
     border-bottom: none;
     font-size: 64px; }
+  .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] section > .container,
   .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container {
     position: relative; }
+  .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=tile],
+  .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=heading],
   .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=tile],
   .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=heading] {
     position: absolute;

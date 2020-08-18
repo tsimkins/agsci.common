@@ -130,6 +130,7 @@ $display-line-height: 1.2 !default;
     /* Puts a span withn invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
     /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 
+    div[class~="mosaic-agsci.common.tiles.youtube-tile"],
     div[class~="mosaic-agsci.common.tiles.richtext-tile"] {
 
         section > .container {
