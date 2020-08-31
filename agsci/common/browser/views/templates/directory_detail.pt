@@ -107,9 +107,19 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-lg-2 pr-lg-0 order-1">
-                                <div class="headshot card-img-crop">
-                                    <img tal:condition="image"
-                                         tal:attributes="alt person_view/name/title|nothing;
+
+                                <div tal:condition="not:image"
+                                     class="headshot card-img-crop placeholder d-sm-block d-none">
+
+                                    <img tal:attributes="alt person_view/name/title|nothing;
+                                                         title person_view/name/title|nothing;
+                                                         src string:${view/assets_url}/images/user-image.jpg"
+                                         class="w-100 photo" />
+                                </div>
+
+                                <div tal:condition="image"
+                                     class="headshot card-img-crop">
+                                    <img tal:attributes="alt person_view/name/title|nothing;
                                                          title person_view/name/title|nothing;
                                                          src image"
                                          class="w-100 photo" />

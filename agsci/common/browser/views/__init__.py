@@ -27,6 +27,7 @@ from zope.interface import implementer, alsoProvides
 from zope.publisher.interfaces import IPublishTraverse
 
 from agsci.common import object_factory
+from agsci.common.constants import ASSETS_DOMAIN
 from agsci.common.content.check import ExternalLinkCheck, TileLinksCheck
 from agsci.common.content.degrees import IDegree
 from agsci.common.content.major import IMajor
@@ -250,6 +251,10 @@ class BaseView(BrowserView):
                 publications = self.context.publications
 
         return self.render_j2(template='publications.j2', data=publications)
+
+    @property
+    def assets_url(self):
+        return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
 
 class DegreeListingView(BaseView):
 

@@ -14757,78 +14757,82 @@ body.template-image_view #content-core {
 #parent-fieldname-text img {
   max-width: 100%; }
 
-#content-core .alphabetLinks {
-  text-align: center; }
-  #content-core .alphabetLinks ol {
-    padding: 0; }
-    #content-core .alphabetLinks ol li {
-      display: inline-block;
-      list-style-type: none;
-      padding: 0 0.125em; }
-    #content-core .alphabetLinks ol span {
-      color: #999999; }
-#content-core .event.summary {
-  margin-bottom: 1rem;
-  float: none;
-  clear: left; }
-  #content-core .event.summary p {
-    margin-bottom: 0;
-    color: #000000;
-    line-height: 1.5; }
-    #content-core .event.summary p strong:after {
-      content: ": "; }
-#content-core .entries {
-  padding-top: 1em; }
-  #content-core .entries a.card.state-private .summary,
-  #content-core .entries a.card.state-private:hover .summary,
-  #content-core .entries a.card.state-private:focus .summary,
-  #content-core .entries a.card.state-private:visited .summary,
-  #content-core .entries a.card.state-private:link .summary {
-    color: #FF0000 !important; }
-  #content-core .entries a.card.state-pending .summary,
-  #content-core .entries a.card.state-pending:hover .summary,
-  #content-core .entries a.card.state-pending:focus .summary,
-  #content-core .entries a.card.state-pending:visited .summary,
-  #content-core .entries a.card.state-pending:link .summary {
-    color: #FFA500 !important; }
-  #content-core .entries a.card.state-published .summary,
-  #content-core .entries a.card.state-published:visited .summary,
-  #content-core .entries a.card.state-published:link .summary {
-    color: #4373B6 !important; }
-  #content-core .entries a.card.state-published:hover .summary,
-  #content-core .entries a.card.state-published:focus .summary {
-    color: #093c79 !important;
-    border-bottom: 1px solid #0078ab !important; }
-  #content-core .entries a.card.state-published:hover .event.summary,
-  #content-core .entries a.card.state-published:focus .event.summary {
-    border-bottom: none !important; }
-  #content-core .entries .entry .documentByLine {
-    font-size: 0.6875em;
-    margin: 1em 0 0.5em 1em;
-    color: #575757; }
-  #content-core .entries .entry div.a.summary {
-    padding-bottom: 0.25rem !important;
-    font-size: 1.25em;
-    display: inline-block; }
-  #content-core .entries .entry a, #content-core .entries .entry a:visited,
-  #content-core .entries .entry a:active,
-  #content-core .entries .entry .a {
-    color: #4373B6 !important;
-    border-bottom: 1px solid #E9E9E9 !important;
-    padding-bottom: 0.0625em !important; }
-  #content-core .entries .entry a:hover,
-  #content-core .entries .entry .a:hover,
-  #content-core .entries .entry a:focus,
-  #content-core .entries .entry .a:focus {
-    color: #093c79 !important;
-    border-bottom: 1px solid #0078ab !important; }
-  #content-core .entries .entry a.no-border, #content-core .entries .entry a.no-border:visited,
-  #content-core .entries .entry a.no-border:active, #content-core .entries .entry a.no-border:hover,
-  #content-core .entries .entry a.no-border:focus, #content-core .entries .entry .a.no-border {
-    border-bottom: none !important;
-    padding-bottom: 0 !important; }
-  #content-core .entries .entry .description {
-    line-height: 1.8; }
+#content-core {
+  /* Placeholder image does not need a negative top margin. */ }
+  #content-core .alphabetLinks {
+    text-align: center; }
+    #content-core .alphabetLinks ol {
+      padding: 0; }
+      #content-core .alphabetLinks ol li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 0.125em; }
+      #content-core .alphabetLinks ol span {
+        color: #999999; }
+  #content-core .event.summary {
+    margin-bottom: 1rem;
+    float: none;
+    clear: left; }
+    #content-core .event.summary p {
+      margin-bottom: 0;
+      color: #000000;
+      line-height: 1.5; }
+      #content-core .event.summary p strong:after {
+        content: ": "; }
+  #content-core .entries {
+    padding-top: 1em; }
+    #content-core .entries a.card.state-private .summary,
+    #content-core .entries a.card.state-private:hover .summary,
+    #content-core .entries a.card.state-private:focus .summary,
+    #content-core .entries a.card.state-private:visited .summary,
+    #content-core .entries a.card.state-private:link .summary {
+      color: #FF0000 !important; }
+    #content-core .entries a.card.state-pending .summary,
+    #content-core .entries a.card.state-pending:hover .summary,
+    #content-core .entries a.card.state-pending:focus .summary,
+    #content-core .entries a.card.state-pending:visited .summary,
+    #content-core .entries a.card.state-pending:link .summary {
+      color: #FFA500 !important; }
+    #content-core .entries a.card.state-published .summary,
+    #content-core .entries a.card.state-published:visited .summary,
+    #content-core .entries a.card.state-published:link .summary {
+      color: #4373B6 !important; }
+    #content-core .entries a.card.state-published:hover .summary,
+    #content-core .entries a.card.state-published:focus .summary {
+      color: #093c79 !important;
+      border-bottom: 1px solid #0078ab !important; }
+    #content-core .entries a.card.state-published:hover .event.summary,
+    #content-core .entries a.card.state-published:focus .event.summary {
+      border-bottom: none !important; }
+    #content-core .entries .entry .documentByLine {
+      font-size: 0.6875em;
+      margin: 1em 0 0.5em 1em;
+      color: #575757; }
+    #content-core .entries .entry div.a.summary {
+      padding-bottom: 0.25rem !important;
+      font-size: 1.25em;
+      display: inline-block; }
+    #content-core .entries .entry a, #content-core .entries .entry a:visited,
+    #content-core .entries .entry a:active,
+    #content-core .entries .entry .a {
+      color: #4373B6 !important;
+      border-bottom: 1px solid #E9E9E9 !important;
+      padding-bottom: 0.0625em !important; }
+    #content-core .entries .entry a:hover,
+    #content-core .entries .entry .a:hover,
+    #content-core .entries .entry a:focus,
+    #content-core .entries .entry .a:focus {
+      color: #093c79 !important;
+      border-bottom: 1px solid #0078ab !important; }
+    #content-core .entries .entry a.no-border, #content-core .entries .entry a.no-border:visited,
+    #content-core .entries .entry a.no-border:active, #content-core .entries .entry a.no-border:hover,
+    #content-core .entries .entry a.no-border:focus, #content-core .entries .entry .a.no-border {
+      border-bottom: none !important;
+      padding-bottom: 0 !important; }
+    #content-core .entries .entry .description {
+      line-height: 1.8; }
+  #content-core .bio .headshot.card-img-crop.placeholder img {
+    top: 0; }
 
 /* This fixes the 'Properties' not showing up when the button is clicked
    in the Mosaic editor. */
