@@ -1359,7 +1359,12 @@ body.template-image_view #content-core {
     #content-core .entries .entry .description {
       line-height: 1.8; }
   #content-core .bio .headshot.card-img-crop.placeholder img {
-    top: 0; }
+    top: 0;
+    opacity: 0.25;
+    /* // for IE8 */
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+    /* //for IE5-7 */
+    filter: alpha(opacity=25); }
 
 /* This fixes the 'Properties' not showing up when the button is clicked
    in the Mosaic editor. */

@@ -825,6 +825,13 @@ body.template-image_view #content-core {
     .bio .headshot.card-img-crop.placeholder {
         img {
             top: 0;
+            opacity: 0.25;
+
+            /* // for IE8 */
+        	-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+
+            /* //for IE5-7 */
+        	filter: alpha(opacity= 25);
         }
     }
 }
