@@ -205,6 +205,18 @@
         template="templates/leadimage_jumbotron.pt"
     />
 
+    <!-- History Link -->
+
+    <browser:viewlet
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="agsci.common.history"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+        class=".HistoryViewlet"
+        permission="cmf.ManagePortal"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/history.pt"
+    />
+
     <!-- Data Check -->
 
     <browser:viewlet
@@ -213,6 +225,7 @@
         manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         class=".DataCheckViewlet"
         permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
         template="templates/data_check.pt"
     />
 

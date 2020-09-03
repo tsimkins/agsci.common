@@ -914,3 +914,6 @@ class CourseSyllabusViewlet(ViewletBase):
 
 class CourseSyllabusDigitalViewlet(CourseSyllabusViewlet):
     pass
+
+class HistoryViewlet(ViewletBase):
+    pass

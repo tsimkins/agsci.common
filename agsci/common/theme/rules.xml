@@ -280,6 +280,7 @@
             <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />
                 <xsl:apply-templates css:select="h1.documentFirstHeading" />
+                <xsl:apply-templates css:select="#viewlet-below-content-title" />
             </replace>
 
             <replace css:theme="#content-container" method="raw">
