@@ -501,7 +501,7 @@ def setSiteURL(site, domain=None, path='', https=True):
         domain = {
             'agsci' : 'agsci.psu.edu',
             'private-internal': "agsci.psu.edu",
-            'ento.psu.edu': 'dev.ento.psu.edu',
+            'ento.psu.edu': 'ento.psu.edu',
             'plantscience.psu.edu': 'dev.plantscience.psu.edu',
             'foodscience.psu.edu': 'foodscience.psu.edu',
             'aese.psu.edu': 'aese.psu.edu',
