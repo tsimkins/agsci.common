@@ -400,6 +400,22 @@ class JumbotronTile(BaseTile):
         viewlet.update()
         return viewlet.render()
 
+    @property
+    def align_class(self):
+
+        klass = []
+
+        vertical_align = self.get_valid_value('vertical_align')
+        horizontal_align = self.get_valid_value('horizontal_align')
+
+        if vertical_align in ('top', 'bottom'):
+            klass.append('fix-img-%s' % vertical_align)
+
+        if horizontal_align in ('left', 'right'):
+            klass.append('fix-img-%s' % horizontal_align)
+
+        return " ".join(klass)
+
 class ShortJumbotronTile(JumbotronTile):
     pass
 

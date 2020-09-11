@@ -27,6 +27,22 @@ class LCAlignVocabulary(KeyValueVocabulary):
         ('center', 'Center'),
     ]
 
+class CLRAlignVocabulary(KeyValueVocabulary):
+
+    items = [
+        ('center', 'Center'),
+        ('left', 'Left'),
+        ('right', 'Right'),
+    ]
+
+class CTBAlignVocabulary(KeyValueVocabulary):
+
+    items = [
+        ('center', 'Center'),
+        ('top', 'Top'),
+        ('bottom', 'Bottom'),
+    ]
+
 class HVOrientationVocabulary(KeyValueVocabulary):
     items = [
         ('vertical', 'Vertical'),
@@ -158,6 +174,8 @@ ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
 LCAlignVocabularyFactory = LCAlignVocabulary()
+CLRAlignVocabularyFactory = CLRAlignVocabulary()
+CTBAlignVocabularyFactory = CTBAlignVocabulary()
 CardStyleVocabularyFactory = CardStyleVocabulary()
 FeatureCardStyleVocabularyFactory = FeatureCardStyleVocabulary()
 PeopleVocabularyFactory = PeopleVocabulary()

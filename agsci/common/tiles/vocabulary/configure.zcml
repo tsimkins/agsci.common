@@ -27,6 +27,18 @@
     />
 
     <utility
+        name="agsci.common.tiles.clr_align"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".CLRAlignVocabularyFactory"
+    />
+
+    <utility
+        name="agsci.common.tiles.ctb_align"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".CTBAlignVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.hv_orientation"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".HVOrientationVocabularyFactory"
