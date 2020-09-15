@@ -31,9 +31,8 @@
                 <label>Department Telephone</label>
             </item>
             <item>
-                <title>ppath@psu.edu</title>
-                <link>mailto:ppath@psu.edu</link>
-                <label>Department Email</label>
+                <title>Contact Us</title>
+                <link>about/contact</link>
             </item>
         </items>
     </nav>
