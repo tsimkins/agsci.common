@@ -138,6 +138,6 @@ class ExtensionSKUFilteredListingTile(ExtensionFilteredListingTile):
 
         # Filter by SKUs
         if skus:
-            _ = [x for x in _ if x.get('sku', None) in skus]
+            _ = [x for x in _ if x.get('sku', x.get('url_key', None)) in skus]
 
         return _
