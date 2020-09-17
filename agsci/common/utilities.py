@@ -508,7 +508,7 @@ def setSiteURL(site, domain=None, path='', https=True):
             'abe.psu.edu': 'abe.psu.edu',
             'animalscience.psu.edu': 'dev.animalscience.psu.edu',
             'ecosystems.psu.edu': 'ecosystems.psu.edu',
-            'plantpath.psu.edu': 'dev.plantpath.psu.edu',
+            'plantpath.psu.edu': 'plantpath.psu.edu',
             'vbs.psu.edu': 'vbs.psu.edu'
         }.get(site.getId(), 'nohost_%s_' % site.getId())
 
