@@ -706,6 +706,30 @@ body.template-image_view #content-core {
         font-weight: bolder !important;
     }
 
+    a.state-private,
+    a.state-private:hover,
+    a.state-private:focus,
+    a.state-private:visited,
+    a.state-private:link {
+        color: #FF0000 !important;
+    }
+
+    a.state-pending,
+    a.state-pending:hover,
+    a.state-pending:focus,
+    a.state-pending:visited,
+    a.state-pending:link {
+        color: #FFA500 !important;
+    }
+
+    a.state-published,
+    a.state-published:visited,
+    a.state-published:link,
+    a.state-published:hover,
+    a.state-published:focus {
+        color: $link-text-color !important;
+    }
+
 }
 
 #parent-fieldname-text {
@@ -834,6 +858,15 @@ body.template-image_view #content-core {
         	filter: alpha(opacity= 25);
         }
     }
+
+    #search-filter {
+        @include body_font();
+
+        legend {
+            font-size: 1.25rem;
+        }
+    }
+
 }
 
 /* This fixes the 'Properties' not showing up when the button is clicked

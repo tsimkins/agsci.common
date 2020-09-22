@@ -143,6 +143,10 @@ class BaseView(BrowserView):
         return getToolByName(self.context, 'portal_catalog')
 
     @property
+    def portal_types(self):
+        return getToolByName(self.context, 'portal_types')
+
+    @property
     def anonymous(self):
         return api.user.is_anonymous()
 
@@ -943,6 +947,26 @@ class TileLinksDataView(TileLinksView):
         return json.dumps(data, indent=4)
 
 class SearchView(_SearchView, BaseView):
+
+    def types_list(self):
+
+        def sort_key(x):
+            return self.portal_types.getTypeInfo(x).Title()
+
+        def allowed_types(x):
+            product = self.portal_types.getTypeInfo(x).product
+
+            if product in ('PloneFormGen',):
+                if self.portal_types.getTypeInfo(x).Title() not in ('FormFolder'):
+                    return False
+
+            return True
+
+        _ = super(SearchView, self).types_list()
+
+        _ = [x for x in _ if allowed_types(x)]
+
+        return sorted(_, key=sort_key)
 
     @property
     def search_path_title(self):

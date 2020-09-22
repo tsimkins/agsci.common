@@ -29,6 +29,10 @@ button {
     font-size: $small3-size;
     }
 
+.btn.btn-secondary {
+    color: $white !important;
+}
+
 .btn.btn-primary {
     margin-bottom: 1rem;
     padding: 1rem 2rem;

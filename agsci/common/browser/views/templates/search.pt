@@ -77,6 +77,85 @@
 
         </div>
 
+        <!-- Search -->
+
+        <div class="mt-3"
+            tal:condition="not: view/anonymous|nothing">
+
+            <a
+                class="btn btn-secondary"
+                data-toggle="collapse"
+                data-target="#search-filter"
+                aria-expanded="false"
+                aria-controls="search-filter">
+                  Filters
+            </a>
+
+            <div id="search-filter" class="collapse mt-2">
+              <fieldset class="noborder">
+                <legend i18n:translate="label_item_type">Item type</legend>
+                  <div class="field"
+                       tal:define="portal_types portal/portal_types;
+                                   types_list view/types_list;
+                                   all_checked python:False;
+                                   toggle_select_state python:all_checked and 'true' or 'false';">
+                    <div class="search-type-options">
+                      <div tal:repeat="type types_list">
+                        <input type="checkbox" name="portal_type:list" value="#" class="noborder" checked="checked"
+                               tal:attributes="value type;
+                                               id string:portal_type_${repeat/type/number};
+                                               checked python:((type in request.get('portal_type', [])) or all_checked) and 'checked' or ''"/>
+                          <label for="" i18n:translate=""
+                                 tal:attributes="for string:portal_type_${repeat/type/number}"
+                                 tal:content="python: portal_types.getTypeInfo(type).Title()" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="noborder">
+                  <legend i18n:translate="label_new_items_since">New items since</legend>
+                  <div class="field">
+                    <div class="search-date-options">
+                      <tal:datetime define="today python:DateTime().earliestTime();
+                                            yesterday python:(today-1).Date();
+                                            lastweek python:(today-7).Date();
+                                            lastmonth python:(today-31).Date();
+                                            ever string:1970-01-02;
+                                            checked python:request.get('created', []);
+                                            checked python:(len(checked) == 1) and checked[0] or ever">
+                        <div>
+                          <input type="radio" id="query-date-yesterday" name="created.query:record:list:date"
+                                 tal:attributes="value yesterday;
+                                                 checked python:checked==yesterday and 'checked' or '';" />
+                          <label for="query-date-yesterday" i18n:translate="time_yesterday">Yesterday</label>
+                        </div>
+                        <div>
+                          <input type="radio" id="query-date-lastweek" name="created.query:record:list:date"
+                                 tal:attributes="value lastweek;
+                                                 checked python:checked==lastweek and 'checked' or '';" />
+                          <label for="query-date-lastweek" i18n:translate="time_last_week">Last week</label>
+                        </div>
+                        <div>
+                          <input type="radio" id="query-date-lastmonth" name="created.query:record:list:date"
+                                 tal:attributes="value lastmonth;
+                                                 checked python:checked==lastmonth and 'checked' or '';" />
+                          <label for="query-date-lastmonth" i18n:translate="time_last_month">Last month</label>
+                        </div>
+                        <div>
+                          <input type="radio" id="query-date-ever" name="created.query:record:list:date"
+                                 tal:attributes="value ever;
+                                                 checked python:checked==ever and 'checked' or '';" />
+                          <label for="query-date-ever" i18n:translate="time_ever">Ever</label>
+                        </div>
+                      </tal:datetime>
+                    </div>
+                    <input type="hidden" name="created.range:record" value="min" />
+                  </div>
+                </fieldset>
+              </div>
+
+        </div>
+        <!-- End Search -->
         <div
             tal:define="request_path python:request.get('path', None);
                         search_path_title view/search_path_title|nothing"
