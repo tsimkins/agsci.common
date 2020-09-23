@@ -90,7 +90,7 @@ class ImportDirectoryPublicationsView(ImportContentView):
 
     def get_publications_html(self, user_id):
 
-        pubs_api_url = "/v1/users/%s/publications"
+        pubs_api_url = "/v1/users/%s/publications?limit=10000"
         publications = self.get_api_data(pubs_api_url, user_id, format='html')
         soup = BeautifulSoup(publications, features="lxml")
         soup.html.hidden = True
@@ -99,7 +99,7 @@ class ImportDirectoryPublicationsView(ImportContentView):
 
     def get_publications_json(self, user_id):
 
-        pubs_api_url = "/v1/users/%s/publications"
+        pubs_api_url = "/v1/users/%s/publications?limit=10000"
         data = self.get_api_data(pubs_api_url, user_id)
 
         if isinstance(data, dict):
