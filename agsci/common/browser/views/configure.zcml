@@ -565,4 +565,13 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Robots.txt -->
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="robots.txt"
+        class=".RobotsView"
+        permission="zope.Public"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>

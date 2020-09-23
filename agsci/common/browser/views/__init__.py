@@ -22,9 +22,10 @@ from plone.memoize.view import memoize
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.registry.interfaces import IRegistry
 from zope import schema
-from zope.component import getUtility
+from zope.component import getMultiAdapter, getUtility
 from zope.interface import implementer, alsoProvides
 from zope.publisher.interfaces import IPublishTraverse
+from Products.CMFPlone.interfaces.controlpanel import ISiteSchema
 
 from agsci.common import object_factory
 from agsci.common.constants import ASSETS_DOMAIN
@@ -1029,3 +1030,27 @@ class HideChildrenView(BrowserView):
             return "Not folderish."
 
         return '\n'.join(rv)
+
+class RobotsView(BaseView):
+
+    @property
+    def exclude_paths(self):
+        site_url = self.site.absolute_url()
+        v = SiteMapView(self.context, self.request)
+        _ = [x[len(site_url):] for x in v.exclude_paths]
+        return sorted(_)
+
+    def __call__(self):
+
+        portal_state = getMultiAdapter(
+            (self.context, self.request), name='plone_portal_state')
+
+        portal_url = portal_state.portal_url()
+
+        return self.render_j2(
+            template='robots.j2',
+            data={
+                'portal_url' : portal_url,
+                'paths' : self.exclude_paths,
+            },
+        )
