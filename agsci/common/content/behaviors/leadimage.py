@@ -11,6 +11,7 @@ from zope.interface import provider, implementer
 from agsci.common import AgsciMessageFactory as _
 from agsci.common.constants import IMAGE_FORMATS
 from agsci.common.interfaces import ILeadImageMarker
+from agsci.common.permissions import DIRECTORY_EDITOR
 from ..person.person import IPerson
 
 @provider(IFormFieldProvider)
@@ -20,6 +21,7 @@ class ILeadImage(_ILeadImage):
 @provider(IFormFieldProvider)
 class ILeadImageNoCaption(ILeadImage):
     form.omitted('image_caption')
+    form.write_permission(image=DIRECTORY_EDITOR)
 
 @provider(IFormFieldProvider)
 class ILeadImageExtra(ILeadImage):
