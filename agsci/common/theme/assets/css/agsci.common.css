@@ -14206,6 +14206,16 @@ body .youtube-video-embed.aspect-3-2 {
     border-color: #CCCCCC; }
 
 @media (max-width: 768px) {
+  #content-core .pat-autotoc nav.autotoc-nav {
+    float: none;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0; }
+
   .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
     position: static !important; }
 
@@ -14870,6 +14880,24 @@ body.template-image_view #content-core {
 
 #content-core {
   /* Placeholder image does not need a negative top margin. */ }
+  #content-core .pat-autotoc .autotoc-nav::before {
+    content: "Table of Contents";
+    font-weight: bold;
+    font-size: 1.25em; }
+  #content-core .pat-autotoc .autotoc-nav {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.9rem;
+    max-width: 33%;
+    padding: 1rem; }
+    #content-core .pat-autotoc .autotoc-nav a {
+      border-bottom: none !important;
+      margin: 0.375rem 0; }
+    #content-core .pat-autotoc .autotoc-nav a.autotoc-level-2 {
+      margin-top: 1.25rem; }
+    #content-core .pat-autotoc .autotoc-nav a.autotoc-level-3 {
+      margin-left: 1rem; }
+    #content-core .pat-autotoc .autotoc-nav a.autotoc-level-4 {
+      margin-left: 2rem; }
   #content-core .alphabetLinks {
     text-align: center; }
     #content-core .alphabetLinks ol {

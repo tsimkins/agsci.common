@@ -25,4 +25,8 @@
           media="print"
             tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.print.css" />
 
+    <script type="text/javascript"
+        data-bundle="portal-url"
+        tal:content="string:PORTAL_URL = '${portal_url}';"></script>
+
 </tal:css>

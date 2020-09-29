@@ -169,6 +169,24 @@
             <after css:theme-children="#theme-javascript" css:content="head script" />
         </rules>
 
+        <!-- Include extra JavaScript for table of contents -->
+
+        <rules css:if-content=".pat-autotoc">
+
+            <after
+                css:theme-children="#theme-javascript"
+                css:content="script[data-bundle='portal-url']" />
+
+            <after
+                css:theme-children="#theme-javascript"
+                css:content="head script[data-bundle='basic']" />
+
+            <after
+                css:theme-children="#theme-javascript"
+                css:content="head script[data-bundle='plone']" />
+
+        </rules>
+
         <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
         <append attributes="*" css:content="body" css:theme="body" />
 
