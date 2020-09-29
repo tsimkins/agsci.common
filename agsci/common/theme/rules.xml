@@ -179,6 +179,10 @@
 
             <after
                 css:theme-children="#theme-javascript"
+                css:content="script[data-bundle='production']" />
+
+            <after
+                css:theme-children="#theme-javascript"
                 css:content="head script[data-bundle='basic']" />
 
             <after
