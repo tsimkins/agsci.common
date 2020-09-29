@@ -560,7 +560,7 @@ body {
 
     #content-core {
 
-        .pat-autotoc {
+        #parent-fieldname-text.pat-autotoc {
             nav.autotoc-nav {
                 float: none;
                 margin: 0;
@@ -758,7 +758,7 @@ body.template-image_view #content-core {
 
 #content-core {
 
-    .pat-autotoc {
+    #parent-fieldname-text.pat-autotoc {
 
         .autotoc-nav::before {
             content: "Table of Contents";
