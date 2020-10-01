@@ -14141,6 +14141,33 @@ body .youtube-video-embed.aspect-4-3 {
   padding-bottom: 75%; }
 body .youtube-video-embed.aspect-3-2 {
   padding-bottom: 66.6666666667%; }
+body .youtube-video-embed.w-25 {
+  width: 25%;
+  padding-bottom: 14.0625%; }
+body .youtube-video-embed.aspect-16-9.w-25 {
+  padding-bottom: 14.0625%; }
+body .youtube-video-embed.aspect-4-3.w-25 {
+  padding-bottom: 18.75%; }
+body .youtube-video-embed.aspect-3-2.w-25 {
+  padding-bottom: 16.6666666667%; }
+body .youtube-video-embed.w-50 {
+  width: 50%;
+  padding-bottom: 28.125%; }
+body .youtube-video-embed.aspect-16-9.w-50 {
+  padding-bottom: 28.125%; }
+body .youtube-video-embed.aspect-4-3.w-50 {
+  padding-bottom: 37.5%; }
+body .youtube-video-embed.aspect-3-2.w-50 {
+  padding-bottom: 33.3333333333%; }
+body .youtube-video-embed.w-75 {
+  width: 75%;
+  padding-bottom: 42.1875%; }
+body .youtube-video-embed.aspect-16-9.w-75 {
+  padding-bottom: 42.1875%; }
+body .youtube-video-embed.aspect-4-3.w-75 {
+  padding-bottom: 56.25%; }
+body .youtube-video-embed.aspect-3-2.w-75 {
+  padding-bottom: 50%; }
 
 /* Pending updates to CSS from Steve */
 .dropdown-menu-right {
@@ -14206,6 +14233,17 @@ body .youtube-video-embed.aspect-3-2 {
     border-color: #CCCCCC; }
 
 @media (max-width: 768px) {
+  /* Ignore iframe widths if mobile */
+  body #content-core #parent-fieldname-text .youtube-video-embed {
+    width: 100% !important;
+    padding-bottom: 56.25% !important; }
+  body #content-core #parent-fieldname-text .youtube-video-embed.aspect-16-9 {
+    padding-bottom: 56.25% !important; }
+  body #content-core #parent-fieldname-text .youtube-video-embed.aspect-4-3 {
+    padding-bottom: 75% !important; }
+  body #content-core #parent-fieldname-text .youtube-video-embed.aspect-3-2 {
+    padding-bottom: 66.6666666667% !important; }
+
   #content-core #parent-fieldname-text.pat-autotoc nav.autotoc-nav {
     float: none;
     margin: 0;

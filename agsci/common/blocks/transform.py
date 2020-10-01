@@ -1,10 +1,30 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 from plone.app.textfield.value import RichTextValue
 from zope.component import getAdapter
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 from .interfaces import IBlock
 
 class BlockTransformer(object):
+
+    iframe_domains = [
+        'calendar.google.com',
+        'maps.google.com',
+        'player.vimeo.com',
+        'www.google.com',
+        'www.youtube.com',
+        'youtube.com',
+    ]
+
+    iframe_classes = {
+        'calendar.google.com' : 'aspect-4-3',
+        'maps.google.com' : 'aspect-3-2',
+        'www.google.com' : 'aspect-3-2',
+    }
 
     def __init__(self, context):
         self.context = context
@@ -55,6 +75,7 @@ class BlockTransformer(object):
 
         found = False
 
+        # Handle 'object' blocks
         for _el in soup.findAll('object', attrs={'type' : 'block'}):
 
             _name = _el.get('name', None)
@@ -84,6 +105,65 @@ class BlockTransformer(object):
                     undef = _el.extract()
 
                     found = True
+
+        # Handle Youtube iframes
+        for _el in soup.findAll('iframe'):
+
+            _src = _el.get('src', None)
+            _class = _el.get('class', None)
+
+            if isinstance(_class, (str, unicode)):
+                _class = _class.split()
+            elif isinstance(_class, (list, tuple)):
+                _class = list(_class)
+            else:
+                _class = []
+
+            if _src:
+
+                # Get the domain from the iframe source and see if it's one
+                # that we want to make responsive
+                domain = urlparse(_src).netloc
+
+                if domain and domain in self.iframe_domains or \
+                    any([x.startswith('w-') for x in _class]):
+
+                    # Transfer the iframe class to the wrapper
+
+                    # Get default aspect ration class
+                    if not _class:
+                        iframe_class = self.iframe_classes.get(domain, None)
+                        if iframe_class:
+                            _class.append(iframe_class)
+
+                    _class.append("youtube-video-embed")
+
+                    # Create a wrapper and set the class
+                    wrapper = Tag(name='div')
+                    wrapper['class'] = " ".join(_class)
+
+                    # Remove the iframe class
+                    _el['class'] = []
+
+                    # Remove the iframe's parent if it's a <p> tag
+                    parent = _el.parent
+
+                    # If the object is the only thing inside the parent.
+                    if parent.name in ('p',) and len(parent.contents) == 1:
+                        parent.insert_before(wrapper)
+                        parent = parent.extract()
+                    else:
+                        # Put the wrapper into the DOM before the iframe
+                        _el.insert_before(wrapper)
+
+                    # Pull the iframe out of the DOM
+                    _el = _el.extract()
+
+                    # Append the iframe to the wrapper
+                    wrapper.append(_el)
+
+                    found = True
+
 
         if found:
             return soup.prettify()
