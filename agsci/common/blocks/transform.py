@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
 from zope.component import getAdapter
 
@@ -139,8 +139,12 @@ class BlockTransformer(object):
                     _class.append("youtube-video-embed")
 
                     # Create a wrapper and set the class
-                    wrapper = Tag(name='div')
-                    wrapper['class'] = " ".join(_class)
+                    wrapper = soup.new_tag(
+                        name='div',
+                        attrs={
+                            'class' : " ".join(_class),
+                        },
+                    )
 
                     # Remove the iframe class
                     _el['class'] = []
