@@ -6,6 +6,7 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implements
 
 from agsci.common.interfaces import ITagsAdapter
+from agsci.common.utilities import getDepartmentId
 
 class BaseVocabulary(object):
 
@@ -18,6 +19,10 @@ class BaseVocabulary(object):
     @property
     def portal_catalog(self):
         return getToolByName(self.site, 'portal_catalog')
+
+    @property
+    def department_id(self):
+        return getDepartmentId()
 
 class StaticVocabulary(BaseVocabulary):
 
@@ -166,7 +171,7 @@ class PersonClassificationsVocabulary(StaticVocabulary):
         _.extend(self.defaults)
 
         # Alphabetical sort first
-        _ = sorted(set(_)) 
+        _ = sorted(set(_))
 
         # Sort by faculty/staff second
         return sorted(_, key=self.sort_key)

@@ -2,11 +2,31 @@ from agsci.common.content.vocabulary import StaticVocabulary, KeyValueVocabulary
 from agsci.common.utilities import getExtensionConfig
 
 class ButtonColorsVocabulary(KeyValueVocabulary):
-    items = [
-        ('orange', 'Orange'),
-        ('green', 'Green'),
-        ('purple', 'Purple'),
-    ]
+
+    @property
+    def items(self):
+
+        department_id = self.department_id
+
+        if self.department_id in ('4-h', 'abe'):
+            return [
+                ('lime', 'Lime'),
+                ('dark-teal', 'Dark Teal'),
+                ('light-teal', 'Light Teal'),
+            ]
+
+        elif self.department_id in ('mg',):
+            return [
+                ('red', 'Red'),
+                ('green', 'Green'),
+                ('blue', 'Blue'),
+            ]
+
+        return [
+            ('orange', 'Orange'),
+            ('green', 'Green'),
+            ('purple', 'Purple'),
+        ]
 
 class CTABackgroundVocabulary(KeyValueVocabulary):
     items = [

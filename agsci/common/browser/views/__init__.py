@@ -14,6 +14,7 @@ from plone.app.contenttypes.behaviors.collection import ICollection
 from plone.app.dexterity.browser.folder_listing import FolderView as _FolderView
 from plone.app.event.browser.event_summary import EventSummaryView as _EventSummaryView
 from plone.app.event.browser.event_view import EventView as _EventView
+from plone.app.layout.globals.layout import LayoutPolicy as _LayoutPolicy
 from plone.app.layout.sitemap.sitemap import SiteMapView as _SiteMapView
 from plone.batching import Batch
 from plone.dexterity.interfaces import IDexterityFTI
@@ -35,7 +36,8 @@ from agsci.common.content.major import IMajor
 from agsci.common.indexer import degree_index_field
 from agsci.common.interfaces import ILocationAdapter
 from agsci.common.interfaces import ITagsAdapter
-from agsci.common.utilities import get_fields_by_type, toLocalizedTime
+from agsci.common.utilities import get_fields_by_type, toLocalizedTime, \
+    getDepartmentId
 
 try:
     from zope.app.component.hooks import getSite
@@ -260,6 +262,10 @@ class BaseView(BrowserView):
     @property
     def assets_url(self):
         return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
+
+    @property
+    def department_id(self):
+        return getDepartmentId()
 
 class DegreeListingView(BaseView):
 
@@ -1054,3 +1060,17 @@ class RobotsView(BaseView):
                 'paths' : self.exclude_paths,
             },
         )
+
+class LayoutPolicy(_LayoutPolicy, BaseView):
+
+    def bodyClass(self, template, view):
+        _ = super(LayoutPolicy, self).bodyClass(template, view)
+
+        department_id = self.department_id
+
+        if department_id:
+            _ = _.split()
+            _.append('department-%s' % department_id)
+            return " ".join(_)
+
+        return _

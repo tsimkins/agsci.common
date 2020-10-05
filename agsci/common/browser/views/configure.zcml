@@ -574,4 +574,15 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Plone Layout Customizations -->
+    <browser:page
+        name="plone_layout"
+        for="*"
+        permission="zope.Public"
+        class=".LayoutPolicy"
+        allowed_interface="plone.app.layout.globals.interfaces.ILayoutPolicy"
+        layer="..interfaces.IThemeSpecific"
+        />
+
+
 </configure>
