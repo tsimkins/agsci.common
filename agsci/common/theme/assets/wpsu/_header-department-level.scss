@@ -21,22 +21,22 @@ body.header-department-level ul.dept-level-college-options {
 
         span {
             display: none;
-            }
+        }
 
         &::after {
             color: $white;
-            }
+        }
 
         &:last-of-type {
             border-right: transparent;
-            }
         }
+    }
 
     a, button {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         border-right: 1px solid $white;
-        }
+    }
 
     button { /* college modal */
         background: transparent;
@@ -48,9 +48,9 @@ body.header-department-level ul.dept-level-college-options {
         &:hover,
         &:focus {
             color: lighten($color-ps-creek,35%);
-            }
         }
     }
+}
 
 @include media-breakpoint-up(sm) {
 
@@ -59,22 +59,22 @@ body.header-department-level ul.dept-level-college-options {
 
         li span {
             display: inline;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     body.header-department-level ul.dept-level-college-options {
         padding: 0.5rem 0.5rem 0 0.5rem;
-        }
     }
+}
 
 /*     Header
 --------------------------------------------- */
 body.header-department-level header {
     background: #00132b;
-    }
+}
 
 /*     .department-bar
     Department Bar - hold all branding
@@ -84,7 +84,7 @@ body.header-department-level header {
 .department-bar .btn {
     padding: 0.25rem 0.5rem;
     font-size: $small4-size;
-    }
+}
 
 .department-bar {
     padding: 0;
@@ -99,24 +99,24 @@ body.header-department-level header {
         color: $white;
         font-size: $small1-size;
         line-height: 1.2;
-        }
     }
+}
 
 @include media-breakpoint-up(md) {
 
     .department-bar a.department-brand {
         padding-left: 4rem;
         font-size: $h4-font-size;
-        }
     }
+}
 
 .affix .department-bar a.department-brand { /* stick department branding w/out PSAg logo */
     padding-left: 1rem;
 
     @include media-breakpoint-up(md) {
         padding-left: 1rem;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -126,8 +126,8 @@ body.header-department-level header {
         padding-left: 1rem;
         border-left: 2px solid $color-ps-creek;
         font-size: $h3-font-size;
-        }
     }
+}
 
 .department-bar ul.list-inline {
     position: absolute;
@@ -139,7 +139,7 @@ body.header-department-level header {
 
     li {
         margin: 0;
-        }
+    }
 
     button {
         background: transparent;
@@ -147,17 +147,17 @@ body.header-department-level header {
         color: $white;
         font-size: $small4-size;
         cursor: pointer;
-        }
     }
+}
 
 .department-bar {
     span, a {
         color: $white;
-        }
+    }
 
     a.navbar-brand::after {
         content: none;
-        }
+    }
 
     span {
         color: $white;
@@ -165,9 +165,9 @@ body.header-department-level header {
 
         &:after {
             content: none;
-            }
         }
     }
+}
 
 
 /* Mobile Department Hamburger Button
@@ -177,7 +177,7 @@ body.header-department-level header .btn.btn-primary.btn-toggle-mobile-nav {
     top: 0;
     right: 0.75rem;
     z-index: 9;
-    }
+}
 
 /* .college-logo-block, .navbar-brand
     College Logo
@@ -193,30 +193,30 @@ body.header-department-level {
         margin-right: 0;
         padding-top: 0;
         padding-bottom: 0;
-        }
+    }
 
     .college-logo-block {
         position:relative;
         width: 100%;
         padding: 0;
-        }
+    }
 
     img.agsci-logo {
         width: 224px;
         height: 40px;
         margin-left: 1rem;
-        }
+    }
     img.psu-logo {
         width: 128.8px;
         height: 40px;
         margin-left: 1rem;
-        }
+    }
     img.extension-logo {
         width: 212px;
         height: 40px;
         margin-left: 1rem;
-        }
     }
+}
 
 @include media-breakpoint-up(md) {
 
@@ -224,17 +224,17 @@ body.header-department-level {
         img.agsci-logo {
             width: 280px;
             height: 50px;
-            }
+        }
         img.psu-logo {
             width: 161px;
             height: 50px;
-            }
+        }
         img.extension-logo {
             width: 265px;
             height: 50px;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -242,22 +242,22 @@ body.header-department-level {
         img.agsci-logo {
             width: 300px;
             height: 54px;
-            }
+        }
         img.psu-logo {
             width: 172.5px;
             height: 54px;
-            }
+        }
 
         img.extension-logo {
             width: 287px;
             height: 54px;
-            }
         }
-    body.header-department-level .college-logo-block {
-        width: auto;
-        padding:0 0 1rem 0;
+        .college-logo-block {
+            width: auto;
+            padding:0 0 1rem 0;
         }
     }
+}
 
 /* .department-brand-block, a.department-brand
     Department Name
@@ -265,14 +265,14 @@ body.header-department-level {
 
 .department-brand-block {
     padding: 0 0 0 2rem; /* decrease top padding on mobile to tuck title up under college logo */
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     .department-brand-block {
         padding: 0 0 1rem 0;
-        }
     }
+}
 
 /* .affix States
 --------------------------------------------- */
@@ -281,63 +281,63 @@ body.header-department-level header.affix {
 
     .btn.btn-primary.btn-toggle-mobile-nav {
         margin-top: 0.75rem;
-        }
     }
+}
 
 .affix .department-bar a.department-brand {
     padding-top: 1rem;
     padding-bottom: 1rem;
 
-    }
+}
 
 body.header-department-level .affix .college-logo-block {
     display: none;
-    }
+}
 
 .affix .department-bar {
     padding: 0;
 
     ul.list-inline {
         display: none;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     .affix .department-bar a.department-brand {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        }
+    }
 
     body.header-department-level header.affix {
         padding-bottom: 0;
-        }
+    }
 
     /* px required for svg, specific ht required for smoother transition */
     body.header-department-level .affix {
         img.agsci-logo {
             width: 260px;
             height: 47px;
-            }
+        }
         img.psu-logo {
             width: 149.5px;
             height: 47px;
-            }
         }
+
         img.extension-logo {
             width: 249px;
             height: 47px;
-            }
-
+        }
+    }
     body.header-department-level .affix .college-logo-block {
         padding: 0.25rem 0;
         display: block;
-        }
+    }
 
     .affix .department-brand-block {
         padding: 0.25rem 0;
-        }
     }
+}
 
 /* .navbar, .navbar-collapse
     .department-dropdowns, .dropdown-selectors,
@@ -352,14 +352,14 @@ header nav.department-level {
         padding-top: 0;
         padding-bottom: 2rem; /* get search box above control bar on mobile */
         border-bottom: none;
-        }
+    }
 
     .navbar-collapse {
         margin-top: 0;
         padding-bottom: 2rem;
         background: darken($color-ps-creek,10%);
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -371,9 +371,9 @@ header nav.department-level {
         ul li.dropdown {
             margin-bottom: 0;
             border-bottom: transparent;
-            }
         }
     }
+}
 
 /* Department Dropdown Main Menu Options
 --------------------------------------------- */
@@ -388,7 +388,7 @@ header nav.department-level {
 
     .btn {
         font-size: $small3-size;
-        }
+    }
 
     a.nav-link {
         margin-right: 0;
@@ -398,8 +398,8 @@ header nav.department-level {
         &:hover,
         &:focus {
             background-color: $white;
-            }
         }
+    }
 
     .dropdown-toggle {
         display: block;
@@ -410,8 +410,8 @@ header nav.department-level {
         color: $white;
         font-weight: $font-weight-bold;
         transition: $transition-base;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -423,27 +423,27 @@ header nav.department-level {
             padding: 0.5rem 0.875rem 0.75rem 0.875rem;/* .25 less on top for hover border */
             font-weight: $font-weight-base;
             font-size: $small2-size;
-            }
+        }
 
         .dropdown-toggle:focus,
         .dropdown-toggle:hover  {
             border-top: 0.25rem solid $color-ps-creek;
             outline: transparent;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(xl) {
     .department-dropdowns .dropdown-toggle {
         padding: 0.5rem 1.25rem 0.75rem 1.25rem; /* .25 less on top for hover border */
-        }
     }
+}
 
 @include media-breakpoint-up(xxl) {
     .department-dropdowns .dropdown-toggle {
         padding: 0.5rem 1.75rem 0.75rem 1.75rem; /* .25 less on top for hover border */
-        }
     }
+}
 
 header nav.department-level ul {
     width: 100%;
@@ -452,7 +452,7 @@ header nav.department-level ul {
 
     li {
         line-height: $line-height-sm;
-        }
+    }
 
     li.dropdown {
         position: relative;
@@ -462,20 +462,20 @@ header nav.department-level ul {
 
         &:last-of-type {
             border-bottom: transparent !important;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     body.header-department-level header ul {
         font-size: $small1-size;
-        }
+    }
 
     body.header-department-level header ul li.dropdown {
         border-bottom: none !important;
-        }
     }
+}
 
 /* Department Dropdown Menus - UNDER Toggle
 --------------------------------------------- */
@@ -487,8 +487,8 @@ header nav.department-level ul {
         &:hover,
         &:focus {
             background-color: transparent;
-            }
         }
+    }
 
     .dropdown-menu {
         position: relative;
@@ -504,32 +504,32 @@ header nav.department-level ul {
             margin-bottom: 0.5rem;
             margin-left: 1rem;
             font-size: $small1-size;
-            }
         }
+    }
 
     li.dropdown {
         margin-right: 0;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     .navbar .department-dropdowns .dropdown-menu ul {
         margin-bottom: 0;
         font-size: $small2-size;
-        }
     }
+}
 
 /* Mobile Dropdown Carat Toggles
 --------------------------------------------- */
 body.header-department-level button.dropdown-toggle-button {
     top: 1.1rem;
     color: $white;
-    }
+}
 
 body.header-department-level button.dropdown-toggle-button[aria-expanded="true"] i {
     color: $white;
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -544,7 +544,7 @@ body.header-department-level button.dropdown-toggle-button[aria-expanded="true"]
 
             ul {
                 margin-left: 0;
-                }
+            }
 
             &::before {
                 content:"";
@@ -557,12 +557,12 @@ body.header-department-level button.dropdown-toggle-button[aria-expanded="true"]
                 border-width: 0 10px 10px 10px;
                 border-color: transparent transparent lighten($white,60%) transparent;
                 z-index:9999;
-                }
             }
+        }
 
         .nav-item:first-of-type a.nav-link {
             border-top: transparent;
-            }
+        }
 
         a.nav-link {
             display: block;
@@ -573,14 +573,14 @@ body.header-department-level button.dropdown-toggle-button[aria-expanded="true"]
             &:focus {
                 background: lighten($color-ps-coaly-gray,60%);
                 color: darken($color-ps-coaly-gray,35%);
-                }
             }
         }
     }
+}
 
 @include media-breakpoint-up(xl) {
 
     .navbar .department-dropdowns .dropdown-menu::before {
         left: 1.5rem;
-        }
     }
+}

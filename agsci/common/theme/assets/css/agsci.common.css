@@ -9426,7 +9426,6 @@ body.header-department-level img.extension-logo {
   body.header-department-level img.extension-logo {
     width: 287px;
     height: 54px; }
-
   body.header-department-level .college-logo-block {
     width: auto;
     padding: 0 0 1rem 0; } }
@@ -9472,8 +9471,7 @@ body.header-department-level .affix .college-logo-block {
   body.header-department-level .affix img.psu-logo {
     width: 149.5px;
     height: 47px; }
-
-  img.extension-logo {
+  body.header-department-level .affix img.extension-logo {
     width: 249px;
     height: 47px; }
 
@@ -13574,6 +13572,54 @@ a.alert-bar:hover {
 
   a.alert-bar p.alert-bar-text {
     margin: 0 0 0 3.75rem; } }
+body.department-4-h header .navbar {
+  background-color: #339966; }
+  body.department-4-h header .navbar .navbar-collapse {
+    background-color: #339966; }
+  body.department-4-h header .navbar .cta i {
+    color: #339966; }
+body.department-4-h header .btn.btn-primary {
+  background-color: #339966;
+  border-color: #339966; }
+body.department-4-h header .btn.btn-primary:hover, body.department-4-h header .btn.btn-primary:focus {
+  background-color: #53c68c; }
+body.department-4-h header li.nav-item .btn.btn-primary {
+  background-color: #00132b;
+  border-color: #00132b; }
+body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4-h header li.nav-item .btn.btn-primary:focus {
+  background-color: #1E417B; }
+
+@media (min-width: 992px) {
+  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
+    color: #ffffff; }
+  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
+    color: #ffffff; }
+  body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
+  body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
+    border-bottom-color: #53c68c;
+    background-color: #339966; } }
+@media (max-width: 991.98px) {
+  body.department-4-h header .navbar.college-level {
+    border-bottom: none;
+    min-height: 0; }
+    body.department-4-h header .navbar.college-level .cta i {
+      color: #ffffff; }
+    body.department-4-h header .navbar.college-level button.btn-toggle-mobile-nav {
+      display: none; }
+    body.department-4-h header .navbar.college-level .navbar-collapse {
+      margin-top: 0; }
+      body.department-4-h header .navbar.college-level .navbar-collapse .dropdown > .nav-link.dropdown-toggle {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        border-top-width: 0.25rem;
+        padding: 0.75rem; }
+    body.department-4-h header .navbar.college-level .dropdown-menu {
+      background-color: transparent !important; }
+      body.department-4-h header .navbar.college-level .dropdown-menu a {
+        color: #ffffff; }
+    body.department-4-h header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
+      border-bottom-color: #53c68c; } }
 .display-5 {
   font-size: 1.875rem;
   font-weight: 300;

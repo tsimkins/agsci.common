@@ -10,27 +10,27 @@ HEADER - COLLEGE LEVEL
 
 .affix-placeholder {
     display: none;
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     .affix-placeholder {
         display: block;
-        }
     }
+}
 
 .show-affix {
     display: none;
-    }
+}
 
 .hide-affix {
     display: block;
-    }
+}
 
 .btn.hide-affix,
 .hide-affix-inline-block {
     display: inline-block;
-    }
+}
 
 
 /* General Header
@@ -40,34 +40,34 @@ header {
     transition: $transition-long;
     z-index: 99;
     position: relative;
-    }
+}
 
 body.header-college-level header {
      position: fixed;
 
     @include media-breakpoint-up(lg) {
         position: relative;
-        }
-
     }
+
+}
 
 header.affix {
     position: fixed;  /* this breaks scrolling of nav on mobile - this needs to be remedied  */
     top: 0;
     left: 0;
     box-shadow: 0 0 1rem rgba($color-ps-coaly-gray,0.85);
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     header {
         position: relative;
-        }
+    }
 
     header.affix {
         position: fixed;
-        }
     }
+}
 
 /* Brand - Agsci Logo
 --------------------------------------------- */
@@ -79,25 +79,25 @@ body.header-college-level header {
         width: 224px;
         height: 40px;
         margin-left: 1rem;
-        }
+    }
     img.psu-logo {
         width: 128.8px;
         height: 40px;
         margin-left: 1rem;
-        }
+    }
     img.extension-logo {
         width: 212px;
         height: 40px;
         margin-left: 1rem;
-        }
     }
+}
 
     body.header-college-level .navbar-brand {
         position: absolute;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
         z-index: 9;
-        }
+    }
 
 @include media-breakpoint-up(md) {
 
@@ -105,17 +105,17 @@ body.header-college-level header {
         img.agsci-logo {
             width: 280px;
             height: 50px;
-            }
+        }
         img.psu-logo {
             width: 161px;
             height: 50px;
-            }
+        }
         img.extension-logo {
             width: 265px;
             height: 50px;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -124,47 +124,47 @@ body.header-college-level header {
         img.agsci-logo {
             width: 300px;
             height: 57px;
-            }
+        }
 
         img.psu-logo {
             width: 172.5px;
             height: 57px;
-            }
+        }
 
         img.extension-logo {
             width: 302px;
             height: 57px;
-            }
         }
+    }
 
     body.header-college-level header.affix {
 
         img.agsci-logo {
             width: 280px;
             height: 50px;
-            }
+        }
         img.psu-logo {
             width: 161px;
             height: 50px;
-            }
+        }
         img.extension-logo {
             width: 265px;
             height: 50px;
-            }
         }
+    }
 
     body.header-college-level .affix .navbar-brand {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        }
     }
+}
 
 img.agsci-logo,
 img.psu-logo,
 img.extension-logo,
 .navbar-brand {
     transition: $transition-long;
-    }
+}
 
 
 /* Mobile College Hamburger Button
@@ -177,7 +177,7 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
     margin-bottom: 0;
     padding: 0.5rem 0.675rem 0.325rem 0.675rem;
     font-size: $small3-size;
-    }
+}
 
 
 /* Audience Bar and Main Toggles
@@ -194,31 +194,31 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 
         li {
             line-height: $line-height-sm;
-            }
+        }
 
         li.dropdown {
             display: block;
             margin-bottom: 0.25rem;
             border-bottom: none;
-            }
+        }
 
         .dropdown-toggle {
             color: $white;
             font-family: $font-family-sans-serif;
-            }
         }
     }
+}
 
 .affix .audience-bar {
     padding: 0 0 0.5rem 0;
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     .audience-bar a {
         font-size: $small2-size;
-        }
     }
+}
 
 .audience-dropdowns {
     display: flex;
@@ -226,7 +226,7 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
     margin-top: 0.5rem; /* needed to make vertical alignment with logo "look" centered */
     margin-bottom: 0;
     list-style-type: none;
-    }
+}
 
 .audience-bar .audience-dropdowns a.nav-link {
     margin-right: 0;
@@ -240,19 +240,19 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
     &:focus {
         background: lighten($color-ps-coaly-gray,60%);
         color: darken($color-ps-coaly-gray,35%);
-        }
     }
+}
 
 .audience-bar .audience-dropdowns .nav-item:first-of-type a.nav-link {
     border-top: transparent;
-    }
+}
 
 @include media-breakpoint-up(sm) {
 
     .audience-bar ul {
         font-size: $small2-size;
-        }
     }
+}
 
 @include media-breakpoint-up(md) {
 
@@ -261,9 +261,9 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
 
         &::after {
             content: none;
-            }
         }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -272,7 +272,7 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
         li.dropdown {
             display: list-item;
             margin-bottom: 0;
-            }
+        }
 
         .nav-link {
             display: block;
@@ -280,10 +280,10 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
             &:hover,
             &:focus {
                 background-color: $white;
-                }
             }
         }
     }
+}
 
 .audience-dropdowns {
 
@@ -292,7 +292,7 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
         padding: 0.5rem 0;
         background: transparent;
         transition: $transition-base;
-        }
+    }
 
     .dropdown-toggle::before {
         position: absolute;
@@ -303,19 +303,19 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
         height: 1px;
         border-top: 0.25rem solid $color-ps-creek;
         transition-delay: 0.375s;
-        }
+    }
 
     .dropdown-toggle:focus,
     .dropdown-toggle:hover  {
         outline: none;
-        }
+    }
 
     .dropdown-toggle:hover::before,
     .dropdown-toggle:focus::before {
         visibility: visible;
         opacity: 1;
-        }
     }
+}
 
 /* Audience Dropdown Menus - UNDER Toggle
 --------------------------------------------- */
@@ -342,18 +342,18 @@ header .btn.btn-primary.btn-toggle-mobile-nav {
             border-width: 0 10px 10px 10px;
             border-color: transparent transparent $white transparent;
             z-index:9999;
-            }
+        }
 
         ul {
             margin-top: 0;
             margin-bottom: 0;
-            }
         }
+    }
 
     li.dropdown {
         margin-right: 0;
-        }
     }
+}
 
 /* ----------------------------------------------------------
 
@@ -370,8 +370,8 @@ header .navbar {
 
     .navbar-collapse {
         background-color: $white;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -380,17 +380,17 @@ header .navbar {
         padding-top: 0;
         padding-bottom: 0;
         background-color: $white;
-        }
+    }
 
     header .navbar .navbar-collapse {
         margin-top: 0;
-        }
+    }
 
     .navbar-expand-lg {
         flex-flow: row;
         justify-content: flex-start;
-        }
     }
+}
 
 /* Mega Menu Toggles
 --------------------------------------------- */
@@ -403,14 +403,14 @@ button.dropdown-toggle-button {
     background: none;
     border: transparent;
     color: $color-ps-creek;
-    }
+}
 
 button.dropdown-toggle  i { /* arrow after mega nav toggle */
     margin-left: 0.125rem;
     color: $color-ps-creek;
     font-weight: $font-weight-bold;
     /* for mobile state click toggles */
-    }
+}
 
 .dropdown.show button.dropdown-toggle-button i {
     color: $color-ps-invent-orange;
@@ -418,15 +418,15 @@ button.dropdown-toggle  i { /* arrow after mega nav toggle */
 
     &.fas-search {
         transform: none;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     button.dropdown-toggle-button {
         display: none;
-        }
     }
+}
 
 /* Mega Menu Dropdowns
 --------------------------------------------- */
@@ -440,12 +440,12 @@ button.dropdown-toggle  i { /* arrow after mega nav toggle */
     &:hover,
     &:focus     {
         background-color: lighten($color-ps-coaly-gray, 60%);
-        }
+    }
 
     img {
         position: relative;
         transition: $transition-base;
-        }
+    }
 
     p {
         position: relative;
@@ -455,27 +455,27 @@ button.dropdown-toggle  i { /* arrow after mega nav toggle */
         font-size: $small2-size;
         font-family: $font-family-sans-serif;
         line-height: $line-height-md;
-        }
     }
+}
 
 .navbar .dropdown-menu {
     padding: 0;
     background-color: $white !important;
     border:none;
     border-radius: 0;
-    }
+}
 
 .dropdown-toggle::after {
     content: none;
-    }
+}
 
 header .btn { /* menu toggle */
     display: block;
-    }
+}
 
 header .btn[type="submit"] {
     margin: 0;
-    }
+}
 
 .navbar-collapse {
     position: relative;
@@ -487,7 +487,7 @@ header .btn[type="submit"] {
     padding-left: 1rem;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
-    }
+}
 
 @include media-breakpoint-up(md) {
 
@@ -497,8 +497,8 @@ header .btn[type="submit"] {
         padding-right: 2rem;
         padding-bottom: 1rem;
         padding-left: 2rem;
-        }
     }
+}
 
 p.main-nav-section-head {
     margin-top: 0.75rem;
@@ -508,11 +508,11 @@ p.main-nav-section-head {
     font-size: $h3-font-size;
     font-family: $font-family-sans-serif;
     line-height: $line-height-xs;
-    }
+}
 
 .nav-link.dropdown-toggle {
     font-family: $font-family-sans-serif;
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -521,49 +521,49 @@ p.main-nav-section-head {
         border-bottom: 0.25rem solid $color-ps-creek;
         outline: none;
         transition-delay: 0.375s;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     header .btn[data-toggle="collapse"] {
         display: none;
-         }
+     }
 
      .navbar .dropdown-menu {
         padding: 1.5rem 0;
         border-top: $border-base;
-        }
+    }
 
      .navbar-collapse {
          top: 0; /* only offset for mobile */
         padding-right: 0;
         padding-bottom: 0;
          padding-left: 0;
-         }
+     }
 
      header.mega .container .row div {
 
         &:nth-of-type(even) {
             border-right: 1px solid $color-ps-pugh-blue;
-            }
+        }
 
         &:last-of-type {
             border-right: transparent;
-            }
         }
+    }
 
     .dropdown-toggle {
         border-bottom: 1px solid transparent;
-        }
+    }
 
     .show .dropdown-toggle .fa-angle-down {
         transform: rotate(180deg);
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle {
         font-size: $small2-size;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .nav-link {
         margin-right: 0;
@@ -571,33 +571,33 @@ p.main-nav-section-head {
         padding: 0.5rem 0.125rem;
         color: $color-ps-nittany-navy;
         font-family: $font-family-sans-serif;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
         margin: 0;
         line-height: 1.2;
-        }
+    }
 
     .navbar li.nav-item {
         padding-bottom: 0;
-        }
+    }
 
     /* makes the dropdown full width  */
     .navbar .dropdown {
         position:static;
-        }
+    }
 
     header .navbar.college-level .dropdown-menu {
         right:0;
         left:0;
         width:100%;
         box-shadow: 10px 20px 30px -20px rgba($color-ps-coaly-gray,1);
-        }
+    }
 
     header .navbar.department-level .dropdown-menu {
         min-width: 250px;
-        }
     }
+}
 
 @include media-breakpoint-up(sm) {
 
@@ -605,35 +605,35 @@ p.main-nav-section-head {
         margin-right: 0.125rem;
         margin-left: 0.125rem;
         padding: 0.25rem;
-        }
     }
+}
 
 .nav-item {
     position: relative;
-    }
+}
 
 body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) { /* hide ALL non-dropdown or non-section header nav item links for desktop */
     display: none;
 
     @include media-breakpoint-up(lg) { /* show all nav in mega menu for expanded menu */
         display: block;
-        }
     }
+}
 
 .nav-link {
     display: inline-block;
     padding: 0.5rem 0.75rem;
-    }
+}
 
 .nav-link span {
     /* color: darken($color-ps-creek,10%); */
     display: block;
     margin-bottom: 0.125rem;
-    }
+}
 
 .cta-block {
     margin-top: 0.5rem;
-    }
+}
 
 .cta {
     display: block;
@@ -649,21 +649,21 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
     &:focus {
         background: lighten($color-ps-coaly-gray,60%);
         color: darken($color-ps-coaly-gray,35%);
-        }
+    }
 
     .fa-fw {
         width: 1.5em;
-        }
+    }
 
     i {
         min-width: 1.75rem;
         color: $color-ps-creek;
         text-align: center;
-        }
+    }
 
     em {
         font-style: normal;
-        }
+    }
 
     span {
         display: block;
@@ -671,14 +671,14 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
         color: $black-accessible-gray;
         font-family: $font-family-sans-serif;
         font-size: $small3-size;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     .nav-item:not(.dropdown):not(.section-header) {
         display: list-item; /* re-display ALL non-dropdown or non-section header nav item links for desktop */
-        }
+    }
 
     .cta {
         font-size: $small1-size;
@@ -686,9 +686,9 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
         i {
             min-width: 1.75rem;
             padding-right: 0.25rem;
-            }
         }
     }
+}
 
 .dropdown-selectors li.dropdown {
     margin-bottom: 0.25rem;
@@ -697,33 +697,33 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
 
     &:last-of-type {
         border-bottom: none;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     .dropdown-selectors li.dropdown {
         margin-bottom: 0;
         border-bottom: none;
-        }
     }
+}
 
 .dropdown-toggle i {
     color: $color-ps-creek;
-    }
+}
 
 .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link {
     display: block;
     padding: 0.75rem 0.125rem;
     font-size: $small1-size;
     transition: $transition-base;
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header {
         margin-top: 0.5rem;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
         margin-top: 0.5rem;
@@ -731,12 +731,12 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
         font-weight: $font-weight-bold;
         font-family: $font-family-sans-serif;
         font-size: $font-size-base;
-        }
     }
+}
 
 .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
     padding: 0.5rem 0.75rem;
-    }
+}
 
 /* display for main dropdown in mobile view */
 .dropdown-menu {
@@ -745,19 +745,19 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
 
     &.show {
         display: block;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     .navbar-expand-lg .navbar-nav .nav-link {
         font-size: $small2-size;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
         font-size: $small3-size; /* mega menu link size */
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
@@ -771,14 +771,14 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
                 transition-delay: 0.375s;
                 visibility: visible;
                 opacity: 1;
-                }
             }
+        }
 
     .dropdown-menu {
 
         div.col-lg-3 {
             padding-top: 0.5rem;
-            }
+        }
 
         .col-12 {
             border-top: transparent;
@@ -786,36 +786,36 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
 
             &:last-of-type {
                 border-right: transparent;
-                }
             }
         }
+    }
 
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-left: 1.125rem;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link {
         display: inline-block;
         padding: 0.75rem 1rem 0.5rem 1rem;
         border-bottom: 0.25rem solid transparent;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .section-header .nav-link {
         margin-top: 0;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .dropdown-menu .nav-link {
         padding: 0.375rem;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true] {
         background-color: $white;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
         border-bottom: 0;
         font-size: $small4-size;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu {
         left: 0;
@@ -827,16 +827,16 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
         &.dropdown-menu-right {
             right: 0;
             left: auto;
-            }
+        }
 
         div {
             margin-bottom: 0;
 
             &.cta-block {
                 margin-bottom: 1rem;
-                }
             }
         }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
         padding: 0.375rem;
@@ -848,32 +848,32 @@ body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.sect
         &:focus {
             background: lighten($color-ps-coaly-gray,60%);
             color: darken($color-ps-coaly-gray,35%);
-            }
         }
     }
+}
 
 
 @include media-breakpoint-up(xl) {
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle {
         padding: 0.75rem 1.25rem 0.5rem 1.25rem;
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .nav-link {
         font-size: $small1-size; /* dropdown selector size  */
-        }
+    }
 
     .navbar-expand-lg .navbar-nav .dropdown-menu .nav-link {
         font-size: $small3-size; /* mega menu link size */
-        }
     }
+}
 
 @include media-breakpoint-up(xxl) {
 
     .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle {
         padding: 0.75rem 1.75rem 0.5rem 1.75rem;
-        }
     }
+}
 
 /* Search Box
 --------------------------------------------- */
@@ -883,7 +883,7 @@ header form .btn.btn-primary {
     padding: 0.5rem 0.5rem;
     border-radius: 0;
     font-size: $small2-size;
-    }
+}
 
 header .form-control {
     margin-left: 0.5rem;
@@ -895,32 +895,32 @@ header .form-control {
     &:focus,
     &:active {
         background: $white;
-        }
     }
+}
 
 header .form-inline .form-control {
     width: 12rem;
     margin-left: 0.75rem; /* match toggle margin in mobile */
-    }
+}
 
 @include media-breakpoint-up(lg) {
 
     header .form-inline .form-control {
     width: 8rem;
     margin-left: 1rem;
-    }
+}
 
     header .form-control,
     header form .btn.btn-primary {
         padding: 0.25rem 0.5rem;
         font-size: $small3-size;
-        }
     }
+}
 
 @include media-breakpoint-up(xl) {
 
     header .form-inline .form-control {
         width: auto;
         margin-left: 1.75rem;
-        }
     }
+}

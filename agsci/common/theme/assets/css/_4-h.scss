@@ -1,0 +1,100 @@
+body.department-4-h {
+    header {
+        .navbar {
+            background-color: $color-ps-clover;
+
+            .navbar-collapse {
+                background-color: $color-ps-clover;
+            }
+            .cta i {
+                color: $color-ps-clover;
+            }
+        }
+
+        .btn.btn-primary {
+            background-color: $color-ps-clover;
+            border-color: $color-ps-clover;
+        }
+
+        .btn.btn-primary:hover, .btn.btn-primary:focus {
+            background-color: $color-ps-clover-light;
+        }
+
+        li.nav-item {
+            .btn.btn-primary {
+                background-color: $color-ps-dark-nittany-navy;
+                border-color: $color-ps-dark-nittany-navy;
+            }
+
+            .btn.btn-primary:hover, .btn.btn-primary:focus {
+                background-color: $color-ps-beaver-blue;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    body.department-4-h {
+        .navbar-expand-lg .navbar-nav > {
+            .dropdown > .nav-link.dropdown-toggle {
+                color: $white;
+            }
+
+            .dropdown.show > .nav-link.dropdown-toggle {
+                color: $white;
+            }
+        }
+
+        .navbar-expand-lg .navbar-nav.dropdown-selectors {
+            .nav-link[aria-expanded=true],
+            .nav-link.dropdown-toggle:focus {
+                border-bottom-color: $color-ps-clover-light;
+                background-color: $color-ps-clover;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+
+    body.department-4-h {
+
+        header .navbar.college-level {
+
+            border-bottom: none;
+
+            min-height: 0;
+
+            .cta i {
+                color: $white;
+            }
+
+            button.btn-toggle-mobile-nav {
+                display: none;
+            }
+            .navbar-collapse {
+                margin-top: 0;
+                .dropdown > .nav-link.dropdown-toggle {
+                    color: $white;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    border-top-width: 0.25rem;
+                    padding: 0.75rem;
+                }
+            }
+            .dropdown-menu {
+                background-color: transparent !important;
+
+                a {
+                    color: $white;
+                }
+            }
+            .navbar-nav.dropdown-selectors {
+
+                li.dropdown {
+                    border-bottom-color: $color-ps-clover-light;
+                }
+            }
+        }
+    }
+}
