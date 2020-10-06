@@ -27,3 +27,4 @@ DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/
 AGSCI_DOMAIN = "mS5J5CtL4kuPKm7P.agsci.psu.edu"
 
 ASSETS_DOMAIN = "assets.agsci.psu.edu"
+ASSETS_DOMAIN = "localhost:5051"

@@ -157,10 +157,11 @@ class ViewletBase(_ViewletBase):
                 except:
                     pass
                 else:
-                    return self.get_config('type', config=config) in ('department',)
+                    return True
 
     @property
     def department_id(self):
+
         cache_key = 'department_id'
 
         if cache_key in self.cache:
@@ -174,6 +175,40 @@ class ViewletBase(_ViewletBase):
             self.cache[cache_key] = None
 
         return self.cache[cache_key]
+
+    @property
+    def menu_type(self):
+        cache_key = 'menu_type'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        config = self.config
+
+        self.cache[cache_key] = self.get_config('type')
+
+        return self.cache[cache_key]
+
+    @property
+    def header_type(self):
+        cache_key = 'header_type'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        config = self.config
+
+        self.cache[cache_key] = self.get_config('header')
+
+        return self.cache[cache_key]
+
+    @property
+    def is_department_menu(self):
+        return self.menu_type in ('department',)
+
+    @property
+    def is_department_header(self):
+        return self.header_type in ('department',)
 
     @property
     def is_department(self):
@@ -193,23 +228,31 @@ class ViewletBase(_ViewletBase):
         return self.cache[cache_key]
 
     @property
+    def use_extension_logo(self):
+        cache_key = 'use_extension_logo'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        config = self.config
+
+        self.cache[cache_key] = self.get_config('logo') in ('extension',)
+
+        return self.cache[cache_key]
+
+    @property
     def is_edit(self):
         domain = self.parse_url(self.portal_url)[1]
         return domain.startswith('edit.')
-
-    @property
-    def logo_src(self):
-
-        if self.use_psu_logo:
-            return 'psu-hor-rgb-rev-2c.png'
-
-        return 'psu-agr-logo-rev-single.png'
 
     @property
     def logo_alt(self):
 
         if self.use_psu_logo:
             return 'Penn State Logo'
+
+        elif self.use_extension_logo:
+            return 'Penn State Extension Logo'
 
         return 'Penn State College of Agricultural Science Logo'
 
@@ -219,6 +262,9 @@ class ViewletBase(_ViewletBase):
         if self.use_psu_logo:
             return 'psu-hor-rgb-rev-2c.png'
 
+        elif self.use_extension_logo:
+            return 'psu-ext-1-rgb-rev-2c.png'
+
         return 'psu-agr-logo-rev-single.png'
 
     @property
@@ -227,12 +273,18 @@ class ViewletBase(_ViewletBase):
         if self.use_psu_logo:
             return 'psu-logo'
 
+        elif self.use_extension_logo:
+            return 'extension-logo'
+
         return 'agsci-logo'
 
     @property
     def logo_href(self):
         if self.use_psu_logo:
             return 'https://www.psu.edu'
+
+        elif self.use_extension_logo:
+            return 'https://extension.psu.edu'
 
         if self.is_edit:
             return 'https://edit.agsci.psu.edu'

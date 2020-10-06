@@ -1066,11 +1066,15 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
     def bodyClass(self, template, view):
         _ = super(LayoutPolicy, self).bodyClass(template, view)
 
+        _ = _.split()
+
         department_id = self.department_id
 
         if department_id:
-            _ = _.split()
+            _.append('header-department-level')
             _.append('department-%s' % department_id)
-            return " ".join(_)
 
-        return _
+        else:
+            _.append('header-college-level')
+
+        return " ".join(_)

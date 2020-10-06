@@ -1,5 +1,5 @@
 <div id="logo-viewlet"
-    tal:define="is_department view/is_department|nothing">
+    tal:define="is_department view/is_department_header|nothing">
 
 	<!-- LOGO AND BRANDING BAR -->
 	<div class="container-fluid position-relative px-0 brand-bar department-bar"

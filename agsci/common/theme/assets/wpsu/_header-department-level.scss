@@ -2,7 +2,7 @@
     Universal Top Bar with College Options
 --------------------------------------------- */
 
-.department-level ul.dept-level-college-options {
+body.header-department-level ul.dept-level-college-options {
     position: relative;
     top: 0;
     right: 0;
@@ -54,7 +54,7 @@
 
 @include media-breakpoint-up(sm) {
 
-    .department-level ul.dept-level-college-options {
+    body.header-department-level ul.dept-level-college-options {
         justify-content: flex-end;
 
         li span {
@@ -65,14 +65,14 @@
 
 @include media-breakpoint-up(lg) {
 
-    .department-level ul.dept-level-college-options {
+    body.header-department-level ul.dept-level-college-options {
         padding: 0.5rem 0.5rem 0 0.5rem;
         }
     }
 
 /*     Header
 --------------------------------------------- */
-.department-level header {
+body.header-department-level header {
     background: #00132b;
     }
 
@@ -173,7 +173,7 @@
 /* Mobile Department Hamburger Button
 --------------------------------------------- */
 
-.department-level header .btn.btn-primary.btn-toggle-mobile-nav {
+body.header-department-level header .btn.btn-primary.btn-toggle-mobile-nav {
     top: 0;
     right: 0.75rem;
     z-index: 9;
@@ -183,7 +183,7 @@
     College Logo
 --------------------------------------------- */
 
-.department-level {
+body.header-department-level {
 
     .navbar-brand {
         position: relative;
@@ -211,11 +211,16 @@
         height: 40px;
         margin-left: 1rem;
         }
+    img.extension-logo {
+        width: 212px;
+        height: 40px;
+        margin-left: 1rem;
+        }
     }
 
 @include media-breakpoint-up(md) {
 
-    .department-level {
+    body.header-department-level {
         img.agsci-logo {
             width: 280px;
             height: 50px;
@@ -224,12 +229,16 @@
             width: 161px;
             height: 50px;
             }
+        img.extension-logo {
+            width: 265px;
+            height: 50px;
+            }
         }
     }
 
 @include media-breakpoint-up(lg) {
 
-    .department-level {
+    body.header-department-level {
         img.agsci-logo {
             width: 300px;
             height: 54px;
@@ -238,9 +247,13 @@
             width: 172.5px;
             height: 54px;
             }
-        }
 
-    .department-level .college-logo-block {
+        img.extension-logo {
+            width: 287px;
+            height: 54px;
+            }
+        }
+    body.header-department-level .college-logo-block {
         width: auto;
         padding:0 0 1rem 0;
         }
@@ -264,7 +277,7 @@
 /* .affix States
 --------------------------------------------- */
 
-.department-level header.affix {
+body.header-department-level header.affix {
 
     .btn.btn-primary.btn-toggle-mobile-nav {
         margin-top: 0.75rem;
@@ -277,7 +290,7 @@
 
     }
 
-.department-level .affix .college-logo-block {
+body.header-department-level .affix .college-logo-block {
     display: none;
     }
 
@@ -296,12 +309,12 @@
         padding-bottom: 0.5rem;
         }
 
-    .department-level header.affix {
+    body.header-department-level header.affix {
         padding-bottom: 0;
         }
 
     /* px required for svg, specific ht required for smoother transition */
-    .department-level .affix {
+    body.header-department-level .affix {
         img.agsci-logo {
             width: 260px;
             height: 47px;
@@ -311,8 +324,12 @@
             height: 47px;
             }
         }
+        img.extension-logo {
+            width: 249px;
+            height: 47px;
+            }
 
-    .department-level .affix .college-logo-block {
+    body.header-department-level .affix .college-logo-block {
         padding: 0.25rem 0;
         display: block;
         }
@@ -328,7 +345,7 @@
     .dropdown-toggle-button
 --------------------------------------------- */
 
-.department-level header {
+header nav.department-level {
 
     .navbar {
         min-height: auto;
@@ -346,13 +363,15 @@
 
 @include media-breakpoint-up(lg) {
 
-    .department-level header .navbar-collapse {
-        padding-bottom: 0;
+    header nav.department-level {
+        .navbar-collapse {
+            padding-bottom: 0;
         }
 
-    .department-level header ul li.dropdown {
-        margin-bottom: 0;
-        border-bottom: transparent;
+        ul li.dropdown {
+            margin-bottom: 0;
+            border-bottom: transparent;
+            }
         }
     }
 
@@ -426,7 +445,7 @@
         }
     }
 
-.department-level header ul {
+header nav.department-level ul {
     width: 100%;
     font-size: $font-size-base;
     font-family: $font-family-sans-serif;
@@ -449,11 +468,11 @@
 
 @include media-breakpoint-up(lg) {
 
-    .department-level header ul {
+    body.header-department-level header ul {
         font-size: $small1-size;
         }
 
-    .department-level header ul li.dropdown {
+    body.header-department-level header ul li.dropdown {
         border-bottom: none !important;
         }
     }
@@ -503,12 +522,12 @@
 
 /* Mobile Dropdown Carat Toggles
 --------------------------------------------- */
-.department-level button.dropdown-toggle-button {
+body.header-department-level button.dropdown-toggle-button {
     top: 1.1rem;
     color: $white;
     }
 
-.department-level button.dropdown-toggle-button[aria-expanded="true"] i {
+body.header-department-level button.dropdown-toggle-button[aria-expanded="true"] i {
     color: $white;
     }
 

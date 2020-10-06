@@ -42,7 +42,7 @@ header {
     position: relative;
     }
 
-.college-level header {
+body.header-college-level header {
      position: fixed;
 
     @include media-breakpoint-up(lg) {
@@ -72,7 +72,7 @@ header.affix {
 /* Brand - Agsci Logo
 --------------------------------------------- */
 
-.college-level header {
+body.header-college-level header {
     min-height: 3.75rem;
 
     img.agsci-logo {
@@ -85,9 +85,14 @@ header.affix {
         height: 40px;
         margin-left: 1rem;
         }
+    img.extension-logo {
+        width: 212px;
+        height: 40px;
+        margin-left: 1rem;
+        }
     }
 
-    .college-level .navbar-brand {
+    body.header-college-level .navbar-brand {
         position: absolute;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
@@ -96,7 +101,7 @@ header.affix {
 
 @include media-breakpoint-up(md) {
 
-    .college-level header {
+    body.header-college-level header {
         img.agsci-logo {
             width: 280px;
             height: 50px;
@@ -105,12 +110,16 @@ header.affix {
             width: 161px;
             height: 50px;
             }
+        img.extension-logo {
+            width: 265px;
+            height: 50px;
+            }
         }
     }
 
 @include media-breakpoint-up(lg) {
 
-    .college-level header {
+    body.header-college-level header {
 
         img.agsci-logo {
             width: 300px;
@@ -121,9 +130,14 @@ header.affix {
             width: 172.5px;
             height: 57px;
             }
+
+        img.extension-logo {
+            width: 302px;
+            height: 57px;
+            }
         }
 
-    .college-level header.affix {
+    body.header-college-level header.affix {
 
         img.agsci-logo {
             width: 280px;
@@ -133,9 +147,13 @@ header.affix {
             width: 161px;
             height: 50px;
             }
+        img.extension-logo {
+            width: 265px;
+            height: 50px;
+            }
         }
 
-    .college-level .affix .navbar-brand {
+    body.header-college-level .affix .navbar-brand {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         }
@@ -143,6 +161,7 @@ header.affix {
 
 img.agsci-logo,
 img.psu-logo,
+img.extension-logo,
 .navbar-brand {
     transition: $transition-long;
     }
@@ -568,14 +587,14 @@ p.main-nav-section-head {
         position:static;
         }
 
-    .college-level .navbar .dropdown-menu {
+    header .navbar.college-level .dropdown-menu {
         right:0;
         left:0;
         width:100%;
         box-shadow: 10px 20px 30px -20px rgba($color-ps-coaly-gray,1);
         }
 
-    .department-level .navbar .dropdown-menu {
+    header .navbar.department-level .dropdown-menu {
         min-width: 250px;
         }
     }
@@ -593,7 +612,7 @@ p.main-nav-section-head {
     position: relative;
     }
 
-.college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) { /* hide ALL non-dropdown or non-section header nav item links for desktop */
+body.header-college-level .dropdown-selectors .nav-item:not(.dropdown):not(.section-header) { /* hide ALL non-dropdown or non-section header nav item links for desktop */
     display: none;
 
     @include media-breakpoint-up(lg) { /* show all nav in mega menu for expanded menu */

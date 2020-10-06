@@ -26,8 +26,6 @@
             balanced plone-toolbar-left plone-toolbar-expanded
             <xsl:value-of select="/html/body/@class" />
             <xsl:if css:test="textarea.pat-layout"> mosaic-editor</xsl:if>
-            <xsl:if css:test="nav.college-level"> college-level</xsl:if>
-            <xsl:if css:test="nav.department-level"> department-level</xsl:if>
             <xsl:if css:test="body.portaltype-agsci_agjourney"> agsci-journey</xsl:if>
             <xsl:if css:test="body.portaltype-agsci_homepage_college"> home</xsl:if>
         </xsl:attribute>
