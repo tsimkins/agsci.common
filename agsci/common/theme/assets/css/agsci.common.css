@@ -13604,6 +13604,8 @@ body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4
     border-bottom-color: #53c68c;
     background-color: #339966; } }
 @media (max-width: 991.98px) {
+  body.department-4-h header.affix .department-brand-block {
+    background-image: none; }
   body.department-4-h header .department-brand-block {
     background-size: auto 80%;
     background-position: 98.25% 10%;
