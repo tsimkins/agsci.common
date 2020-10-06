@@ -1,5 +1,13 @@
 body.department-4-h {
     header {
+
+        .department-brand-block {
+            background-image: url(../images/4hlogo.png);
+            background-repeat: no-repeat;
+            background-size: auto 75%;
+            background-position: 99% 25%;
+        }
+
         .navbar {
             background-color: $color-ps-clover;
 
@@ -59,40 +67,49 @@ body.department-4-h {
 
     body.department-4-h {
 
-        header .navbar.college-level {
+        header {
 
-            border-bottom: none;
-
-            min-height: 0;
-
-            .cta i {
-                color: $white;
+            .department-brand-block {
+                background-size: auto 80%;
+                background-position: 98.25% 10%;
+                padding-bottom: 0.25rem;
             }
 
-            button.btn-toggle-mobile-nav {
-                display: none;
-            }
-            .navbar-collapse {
-                margin-top: 0;
-                .dropdown > .nav-link.dropdown-toggle {
-                    color: $white;
-                    font-weight: 600;
-                    font-size: 1rem;
-                    border-top-width: 0.25rem;
-                    padding: 0.75rem;
-                }
-            }
-            .dropdown-menu {
-                background-color: transparent !important;
+            .navbar.college-level {
 
-                a {
+                border-bottom: none;
+
+                min-height: 0;
+
+                .cta i {
                     color: $white;
                 }
-            }
-            .navbar-nav.dropdown-selectors {
 
-                li.dropdown {
-                    border-bottom-color: $color-ps-clover-light;
+                button.btn-toggle-mobile-nav {
+                    display: none;
+                }
+                .navbar-collapse {
+                    margin-top: 0;
+                    .dropdown > .nav-link.dropdown-toggle {
+                        color: $white;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        border-top-width: 0.25rem;
+                        padding: 0.75rem;
+                    }
+                }
+                .dropdown-menu {
+                    background-color: transparent !important;
+
+                    a {
+                        color: $white;
+                    }
+                }
+                .navbar-nav.dropdown-selectors {
+
+                    li.dropdown {
+                        border-bottom-color: $color-ps-clover-light;
+                    }
                 }
             }
         }

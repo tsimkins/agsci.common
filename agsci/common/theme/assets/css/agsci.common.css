@@ -13572,6 +13572,11 @@ a.alert-bar:hover {
 
   a.alert-bar p.alert-bar-text {
     margin: 0 0 0 3.75rem; } }
+body.department-4-h header .department-brand-block {
+  background-image: url(../images/4hlogo.png);
+  background-repeat: no-repeat;
+  background-size: auto 75%;
+  background-position: 99% 25%; }
 body.department-4-h header .navbar {
   background-color: #339966; }
   body.department-4-h header .navbar .navbar-collapse {
@@ -13599,6 +13604,10 @@ body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4
     border-bottom-color: #53c68c;
     background-color: #339966; } }
 @media (max-width: 991.98px) {
+  body.department-4-h header .department-brand-block {
+    background-size: auto 80%;
+    background-position: 98.25% 10%;
+    padding-bottom: 0.25rem; }
   body.department-4-h header .navbar.college-level {
     border-bottom: none;
     min-height: 0; }

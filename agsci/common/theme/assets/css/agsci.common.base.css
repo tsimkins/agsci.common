@@ -1,17 +1,11 @@
 /*
 Error: Undefined variable: "$color-ps-clover".
-        on line 4 of _4-h.scss
+        on line 12 of _4-h.scss
         from line 2 of _base.scss
         from line 1 of ./agsci.common.base.scss
 
-1: @import 'base';
-2: 
-3: .print-only-logo {
-4:     display: none;
-5: }
-
 Backtrace:
-_4-h.scss:4
+_4-h.scss:12
 _base.scss:2
 ./agsci.common.base.scss:1
 /var/lib/gems/2.3.0/gems/sass-3.7.3/lib/sass/script/tree/variable.rb:49:in `_perform'
@@ -115,4 +109,4 @@ _base.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$color-ps-clover\".\A         on line 4 of _4-h.scss\A         from line 2 of _base.scss\A         from line 1 of ./agsci.common.base.scss\A \A 1: @import 'base';\A 2: \A 3: .print-only-logo {\A 4:     display: none;\A 5: }"; }
+  content: "Error: Undefined variable: \"$color-ps-clover\".\A         on line 12 of _4-h.scss\A         from line 2 of _base.scss\A         from line 1 of ./agsci.common.base.scss"; }
