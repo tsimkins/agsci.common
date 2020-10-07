@@ -68,11 +68,11 @@
         <items>
             <!-- Programs Dropdown -->
             <item>
-                <title>Academics</title>
-                <link>academics</link>
+                <title>Get Involved</title>
+                <link></link>
                 <image>
-                    <title>Compare our 17 diverse majors and find the best fit for you!</title>
-                    <link>academics/undergraduate/degree-explorer</link>
+                    <title>4-H Programs teach young people how to put their heads, hands, and health to work in their own lives and in their communities.</title>
+                    <link></link>
                     <src>
                         ++resource++agsci.common/assets/images/navigation/spotlight-academics-explorer.jpg
                     </src>
@@ -80,70 +80,42 @@
                 <items>
                     <group>
                         <item>
-                            <title>Undergraduate Degrees</title>
-                            <link>academics/undergraduate</link>
+                            <title>Join or Volunteer</title>
+                            <link></link>
                             <items>
                                 <item>
-                                    <title>Majors</title>
-                                    <link>academics/undergraduate/majors</link>
+                                    <title>Opportunities</title>
+                                    <link></link>
                                 </item>
                                 <item>
-                                    <title>Minors</title>
-                                    <link>academics/undergraduate/minors</link>
+                                    <title>Resources</title>
+                                    <link></link>
                                 </item>
                                 <item>
-                                    <title>Associate Degrees</title>
-                                    <link>academics/undergraduate/associate-degrees</link>
+                                    <title>Guidelines and Policies</title>
+                                    <link></link>
                                 </item>
                                 <item>
-                                    <title>Certificates</title>
-                                    <link>academics/undergraduate/certificates</link>
-                                </item>
-                                <item>
-                                    <title>Online Degrees</title>
-                                    <link>academics/undergraduate/online-degrees</link>
-                                </item>
-                                <item>
-                                    <title>Study Abroad</title>
-                                    <link>international/study-abroad</link>
+                                    <title>4-H Online</title>
+                                    <link></link>
                                 </item>
                             </items>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Graduate Degree Programs</title>
-                            <link>academics/graduate</link>
+                            <title>Give to 4-H</title>
+                            <link></link>
                             <items>
                                 <item>
-                                    <title>Our Graduate Degree Programs</title>
-                                    <link>academics/graduate/programs</link>
-                                </item>
-                                <item>
-                                    <title>Intercollege Degree Programs</title>
-                                    <link>academics/graduate/intercollege-degree-programs</link>
-                                </item>
-                                <item>
-                                    <title>Dual-Title Degree Programs</title>
-                                    <link>academics/graduate/dual-title-degree-programs</link>
-                                </item>
-                                <item>
-                                    <title>Online Degree Programs</title>
-                                    <link>academics/graduate/online-degree-programs</link>
+                                    <title>Opportunities</title>
+                                    <link></link>
                                 </item>
                             </items>
                         </item>
                         <item>
-                            <title>International Programs</title>
-                            <link>international</link>
-                        </item>
-                        <item>
-                            <title>Academic Departments</title>
-                            <link>academics/departments</link>
-                        </item>
-                        <item>
-                            <title>Student Resources</title>
-                            <link>academics/student-resources</link>
+                            <title>Find Your County 4-H</title>
+                            <link></link>
                         </item>
                     </group>
                     <group>
@@ -151,28 +123,22 @@
                             <title hidden="True">Links</title>
                             <items>
                                 <item>
-                                    <link>admissions/undergraduate/request</link>
-                                    <title>Request Information</title>
-                                    <description>Explore Majors and Career Pathways</description>
+                                    <link></link>
+                                    <title>Join 4-H</title>
+                                    <description></description>
                                     <icon>fa-info-circle</icon>
                                 </item>
                                 <item>
-                                    <link>admissions/undergraduate/visit</link>
-                                    <title>Schedule a Visit</title>
-                                    <description>Come to University Park</description>
+                                    <link></link>
+                                    <title>Volunteer</title>
+                                    <description></description>
                                     <icon>fa-map-marked-alt</icon>
                                 </item>
                                 <item>
-                                    <link>https://admissions.psu.edu/apply/</link>
-                                    <title>Application Procedures</title>
-                                    <description>Learn More about How to Apply</description>
+                                    <link></link>
+                                    <title>Give to 4-H</title>
+                                    <description></description>
                                     <icon>fa-list-alt</icon>
-                                </item>
-                                <item>
-                                    <title>Compare our Undergraduate Degrees</title>
-                                    <description />
-                                    <link>academics/undergraduate/degree-explorer</link>
-                                    <icon>fa-atlas</icon>
                                 </item>
                             </items>
                         </item>
@@ -181,8 +147,8 @@
             </item>
             <!-- Admissions Dropdown -->
             <item>
-                <title>Admissions</title>
-                <link>admissions</link>
+                <title>Programs and Opportunities</title>
+                <link></link>
                 <image>
                     <title>Interested in pursuing undergraduate education at Penn State? Learn about admission requirements, important dates, and other information to get you ready to apply.</title>
                     <link>admissions/undergraduate</link>
@@ -290,8 +256,8 @@
             </item>
             <!-- Research Dropdown -->
             <item>
-                <title>Research</title>
-                <link>research</link>
+                <title>Volunteer Resources</title>
+                <link></link>
                 <image>
                     <title>Ag Sciences Research is impacting real-world problems in Pennsylvania and around the globe.</title>
                     <link>research/impacts</link>
@@ -373,8 +339,8 @@
             </item>
             <!-- Extension Dropdown -->
             <item>
-                <title>Extension</title>
-                <link>extension</link>
+                <title>About 4-H</title>
+                <link></link>
                 <image>
                     <link>https://extension.psu.edu/spotted-lanternfly</link>
                     <src>++resource++agsci.common/assets/images/navigation/slf.jpg</src>
@@ -429,8 +395,8 @@
             </item>
             <!-- About Dropdown -->
             <item>
-                <title>About</title>
-                <link>about</link>
+                <title>Events and News</title>
+                <link></link>
                 <image>
                     <title>It all started with Penn State's land-grant mission.</title>
                     <link>about/history</link>
@@ -505,8 +471,8 @@
             </item>
             <!-- Resources Dropdown -->
             <item>
-                <title>Resources For</title>
-                <hidden>True</hidden>
+                <title>Contact Us</title>
+                <link></link>
                 <items>
                     <group>
                         <item>
