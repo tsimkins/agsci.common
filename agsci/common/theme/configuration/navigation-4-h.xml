@@ -13,144 +13,55 @@
         extension
     </logo>
 
-    <nav id="audience">
-        <item>
-            <title>Audience</title>
-            <items>
-                <group>
-                    <item>
-                        <title>Students</title>
-                        <link>students</link>
-                        <items>
-                            <item>
-                                <title>Academic Advising</title>
-                                <link>students/advising</link>
-                            </item>
-                            <item>
-                                <title>Career Services and Internships</title>
-                                <link>students/careers</link>
-                            </item>
-                            <item>
-                                <title>Clubs and Organizations</title>
-                                <link>students/clubs</link>
-                            </item>
-                            <item>
-                                <title>Entrepreneurship and Innovation</title>
-                                <link>entrepreneur</link>
-                            </item>
-                            <item>
-                                <title>Graduate Student Resources</title>
-                                <link>students/graduate</link>
-                            </item>
-                            <item>
-                                <title>Research Opportunities</title>
-                                <link>students/research</link>
-                            </item>
-                            <item>
-                                <title>Scholarships and Financial Aid</title>
-                                <link>students/scholarships</link>
-                            </item>
-                            <item>
-                                <title>Study Abroad</title>
-                                <link>international/study-abroad</link>
-                            </item>
-                            <item>
-                                <title>Student Life</title>
-                                <link>students/life</link>
-                            </item>
-                            <item>
-                                <title>Contact Undergraduate Education</title>
-                                <link>students/contact</link>
-                            </item>
-                            <item>
-                                <title>Contact Graduate Education</title>
-                                <link>students/graduate/contact</link>
-                            </item>
-                        </items>
-                    </item>
-                    <item>
-                        <title>Industry</title>
-                        <link>industry</link>
-                        <items>
-                            <item>
-                                <title>Penn State Ag Council</title>
-                                <link>industry/agcouncil</link>
-                            </item>
-                            <item>
-                                <title>Ag Action Network</title>
-                                <link>industry/ag-action-network</link>
-                            </item>
-                            <item>
-                                <title>Recruitment and Employer Relations</title>
-                                <link>students/careers/information-for-employers</link>
-                            </item>
-                            <item>
-                                <title>Continuing Education</title>
-                                <link>industry/continuing-education</link>
-                            </item>
-                            <item>
-                                <title>Labs and Services</title>
-                                <link>industry/services</link>
-                            </item>
-                        </items>
-                    </item>
-                    <item>
-                        <title>Alumni</title>
-                        <link>alumni</link>
-                        <items>
-                            <item>
-                                <title>Get Involved</title>
-                                <link>alumni/membership</link>
-                            </item>
-                            <item>
-                                <title>Awards and Recognition</title>
-                                <link>alumni/awards</link>
-                            </item>
-                            <item>
-                                <title>Armsby Honor Society</title>
-                                <link>alumni/armsby</link>
-                            </item>
-                        </items>
-                    </item>
+    <footer_logo>
+        4-h
+    </footer_logo>
 
-                    <item>
-                        <title>Faculty &amp; Staff</title>
-                        <link>faculty-staff</link>
-                        <items>
-                            <item>
-                                <title>Faculty &amp; Staff Resources</title>
-                                <link>faculty-staff</link>
-                            </item>
-                        </items>
-                    </item>
+    <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/Pennsylvania4H/</link>
+            </item>
+            <item>
+                <icon>fa-twitter-square</icon>
+                <title>Twitter</title>
+                <link>http://twitter.com/pa4h</link>
+            </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>https://www.instagram.com/penn4h/</link>
+            </item>
+        </items>
+    </nav>
 
-                    <item>
-                        <title>Visitors &amp; Public</title>
-                        <link>visitors-and-public</link>
-                        <items>
-                            <item>
-                                <title>Places to Visit</title>
-                                <link>visitors-and-public/places-to-visit</link>
-                            </item>
-                            <item>
-                                <title>Service Laboratories</title>
-                                <link>visitors-and-public/service-laboratories</link>
-                            </item>
-                            <item>
-                                <title>Programs and Events</title>
-                                <link>visitors-and-public/programs-and-events</link>
-                            </item>
-                            <item>
-                                <title>Youth Opportunities</title>
-                                <link>visitors-and-public/youth-opportunities</link>
-                            </item>
+    <nav id="links">
+        <items>
+            <item>
+                <title>Contact Us</title>
+                <link>contact</link>
+            </item>
+        </items>
+    </nav>
 
-                        </items>
-                    </item>
-
-                </group>
-            </items>
-        </item>
+    <nav id="footer">
+        <items>
+            <item>
+                <title>Youth Safety</title>
+                <link>//extension.psu.edu/youth-safety</link>
+            </item>
+            <item>
+                <title>Privacy and Legal Statements</title>
+                <link>//www.psu.edu/legal-statements</link>
+            </item>
+            <item>
+                <title>Accessibility</title>
+                <link>//agsci.psu.edu/accessibility</link>
+            </item>
+        </items>
     </nav>
 
     <nav id="primary">

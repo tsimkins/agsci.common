@@ -12,34 +12,39 @@ footer { /* relative and high z-index to mask any affixed nav */
     img.agsci-logo {
         width: 300px;
         height: auto;
-        }
+    }
 
     img.psu-logo {
         width: 172.5px;
         height: auto;
-        }
+    }
+
+    img.fourh-logo {
+        width: 300px;
+        height: auto;
+    }
 
     .fa-stack {
         text-align: center;
-        }
+    }
 
     li.footer-list-head {
         display: block;
         font-weight: $font-weight-base;
         font-size: $font-size-sm;
         font-family: $font-family-base;
-        }
+    }
 
     .footer-details-block {
         padding-bottom: 0.5rem;
-        }
+    }
 
     p.footerLinks {
         margin-bottom: 0.25rem;
         font-size: $small4-size;
         font-family: $font-family-sans-serif;
         line-height: $line-height-md;
-        }
+    }
 
     ul {
         margin-bottom: 0;
@@ -53,45 +58,45 @@ footer { /* relative and high z-index to mask any affixed nav */
             margin-right: 0.25rem;
             padding-bottom: 0.25rem;
             padding-top: 0.25rem;
-            }
         }
+    }
 
     ul.list-inline li {
         margin-left: 0;
         margin-right: 0;
-        }
+    }
 
     ul.list-inline.list-inline-contact {
         margin-bottom: 0;
         font-size: $small3-size;
-        }
+    }
 
     abbr[title] {
         text-decoration: none;
-        }
+    }
 
     abbr:hover,
     abbr:focus {
         cursor: default;
-        }
     }
+}
 
-    footer ul.list-inline-social {
-        text-align: center;
-        }
+footer ul.list-inline-social {
+    text-align: center;
+}
 
 @include media-breakpoint-up(sm) {
     footer ul.list-inline-social {
         text-align: left;
-        }
     }
+}
 
 @include media-breakpoint-up(lg) {
 
     footer ul.list-inline-social {
         border-left: transparent;
-        }
     }
+}
 
 li.li-separator::after {
         content: '|';
@@ -101,7 +106,7 @@ li.li-separator::after {
         color: $color-ps-creek;
         font-weight: $font-weight-light;
         font-size: $font-size-base;
-        }
+}
 
 /* Footer - Department Level
 --------------------------------------------- */
@@ -113,14 +118,19 @@ li.li-separator::after {
         img.agsci-logo {
             width: 224px;
             height: 40px;
-            }
+        }
 
         img.psu-logo {
             width: 128.8px;
             height: 40px;
-            }
+        }
+
+        img.fourh-logo {
+            width: 187.5px;
+            height: 40px;
         }
     }
+}
 
 @include media-breakpoint-up(md) {
 
@@ -129,16 +139,22 @@ li.li-separator::after {
         img.agsci-logo {
             width: 280px;
             height: 50px;
-            }
+        }
 
         img.psu-logo {
             width: 161px;
             height: 50px;
-            }
         }
-    }
 
-.footer-department-level {
+        img.fourh-logo {
+            width: 234.375px;
+            height: 50px;
+        }
+
+    }
+}
+
+footer .footer-department-level {
     padding: 1rem 0;
     background-color: darken($color-ps-nittany-navy,5%);
 
@@ -152,17 +168,17 @@ li.li-separator::after {
         font-family: $font-family-base;
         line-height: $line-height-sm;
 
-        }
+    }
 
     ul li {
         padding-top: 0;
-        }
+    }
 
     ul.list-inline-dept-links {
         font-size: $small2-size;
 
         li {
             margin: 0 0 0.5rem 0;
-            }
         }
     }
+}

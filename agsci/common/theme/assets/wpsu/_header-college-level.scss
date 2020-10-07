@@ -363,10 +363,8 @@ HEADER - MAIN MENU - .navbar - main navbar with mega menu dropdown
 
 header .navbar {
     position: relative;
-    min-height: 3.75rem;
     padding-bottom: 0;
     background-color: $color-ps-nittany-navy;
-    border-bottom: $border-base;
 
     .navbar-collapse {
         background-color: $white;

@@ -228,6 +228,19 @@ class ViewletBase(_ViewletBase):
         return self.cache[cache_key]
 
     @property
+    def use_4h_footer(self):
+        cache_key = 'use_4h_footer'
+
+        if cache_key in self.cache:
+            return self.cache[cache_key]
+
+        config = self.config
+
+        self.cache[cache_key] = self.get_config('footer_logo') in ('4-h',)
+
+        return self.cache[cache_key]
+
+    @property
     def use_extension_logo(self):
         cache_key = 'use_extension_logo'
 
@@ -266,6 +279,18 @@ class ViewletBase(_ViewletBase):
             return 'psu-ext-1-rgb-rev-2c.png'
 
         return 'psu-agr-logo-rev-single.png'
+
+    @property
+    def footer_logo_src(self):
+
+        if self.use_4h_footer:
+            return '4h-mark.png'
+
+    @property
+    def footer_logo_class(self):
+
+        if self.use_4h_footer:
+            return 'fourh-logo'
 
     @property
     def logo_class(self):
@@ -445,9 +470,11 @@ class NavigationViewlet(ViewletBase):
 
     @property
     def nav(self):
+        return self.get_nav_by_id(self.nav_id)
 
+    def get_nav_by_id(self, nav_id):
         for nav in self.config.nav:
-            if nav['id'] == self.nav_id:
+            if nav['id'] == nav_id:
                 return nav
 
 class LogoViewlet(NavigationViewlet):
@@ -485,18 +512,31 @@ class DepartmentFooterViewlet(DepartmentNavigationViewlet):
 
     @property
     def footer_links(self):
-        _ =  FooterLinksViewlet(self.context, self.request, self.manager)
+        nav = self.get_nav_by_id('footer')
+
+        if nav:
+            return nav
+
+        _ = FooterLinksViewlet(self.context, self.request, self.manager)
+
         return _.nav
 
     @property
     def social_links(self):
-        _ =  DepartmentSocialViewlet(self.context, self.request, self.manager)
+        _ = DepartmentSocialViewlet(self.context, self.request, self.manager)
         return _.nav
 
     @property
     def contact_links(self):
-        _ =  DepartmentContactViewlet(self.context, self.request, self.manager)
+        _ = DepartmentContactViewlet(self.context, self.request, self.manager)
         return _.nav
+
+    @property
+    def first_line_contact_links(self):
+        nav = self.get_nav_by_id('links')
+
+        if nav:
+            return nav
 
 class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 
@@ -521,7 +561,7 @@ class FooterLinksViewlet(NavigationViewlet):
 
     xml_file = 'footer.xml'
 
-    nav_id = 'links'
+    nav_id = 'footer'
 
 class FooterContactViewlet(FooterLinksViewlet):
 

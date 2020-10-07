@@ -8857,10 +8857,8 @@ HEADER - MAIN MENU - .navbar - main navbar with mega menu dropdown
 ---------------------------------------------------------- */
 header .navbar {
   position: relative;
-  min-height: 3.75rem;
   padding-bottom: 0;
-  background-color: #001E44;
-  border-bottom: 1px solid rgba(62, 163, 158, 0.25); }
+  background-color: #001E44; }
   header .navbar .navbar-collapse {
     background-color: #ffffff; }
 
@@ -11715,6 +11713,9 @@ footer {
   footer img.psu-logo {
     width: 172.5px;
     height: auto; }
+  footer img.fourh-logo {
+    width: 300px;
+    height: auto; }
   footer .fa-stack {
     text-align: center; }
   footer li.footer-list-head {
@@ -11780,6 +11781,9 @@ li.li-separator::after {
   .department-level footer img.psu-logo {
     width: 128.8px;
     height: 40px; }
+  .department-level footer img.fourh-logo {
+    width: 187.5px;
+    height: 40px; }
 
 @media (min-width: 768px) {
   .department-level footer img.agsci-logo {
@@ -11787,11 +11791,14 @@ li.li-separator::after {
     height: 50px; }
   .department-level footer img.psu-logo {
     width: 161px;
+    height: 50px; }
+  .department-level footer img.fourh-logo {
+    width: 234.375px;
     height: 50px; } }
-.footer-department-level {
+footer .footer-department-level {
   padding: 1rem 0;
   background-color: #00132b; }
-  .footer-department-level p.department-name {
+  footer .footer-department-level p.department-name {
     display: inline-block;
     margin-bottom: 0.25rem;
     padding-bottom: 0.5rem;
@@ -11800,11 +11807,11 @@ li.li-separator::after {
     font-size: 1.1rem;
     font-family: "Roboto Slab", serif;
     line-height: 1.2; }
-  .footer-department-level ul li {
+  footer .footer-department-level ul li {
     padding-top: 0; }
-  .footer-department-level ul.list-inline-dept-links {
+  footer .footer-department-level ul.list-inline-dept-links {
     font-size: 0.825rem; }
-    .footer-department-level ul.list-inline-dept-links li {
+    footer .footer-department-level ul.list-inline-dept-links li {
       margin: 0 0 0.5rem 0; }
 
 /* ----------------------------------------------------------
@@ -13583,7 +13590,7 @@ body.department-4-h {
 
     ---------------------------------------------------------- */ }
   body.department-4-h header .department-brand-block {
-    background-image: url(../images/4hlogo.png);
+    background-image: url(../images/4h-logo.png);
     background-repeat: no-repeat;
     background-size: auto 75%;
     background-position: 99% 25%; }

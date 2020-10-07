@@ -4,8 +4,27 @@
     <section class="container-fluid footer-department-level py-3">
         <div class="container">
             <div class="row">
-                <div class="col text-white text-center">
-                    <p class="department-name">
+                <div class="col text-white text-center"
+                    tal:define="footer_logo_src view/logo_src|nothing">
+
+                    <tal:logo
+                        tal:condition="footer_logo_src">
+                        <!-- footer logo and links -->
+                        <div class="col col-auto mx-auto px-0">
+                            <a tal:attributes="href view/portal_url"
+                               class="navbar-brand">
+
+                                <img
+                                    tal:attributes="src string:${view/assets_url}/images/${view/footer_logo_src};
+                                                    class view/footer_logo_class|nothing;
+                                                    alt view/portal_title|nothing" />
+
+                            </a>
+                        </div>
+                    </tal:logo>
+
+                    <p class="department-name"
+                       tal:condition="not: footer_logo_src">
 
         				<a tal:attributes="href view/portal_url"
         				   tal:content="view/portal_title|nothing" />
@@ -14,14 +33,36 @@
                 </div>
             </div>
             <div class="row">
+
                 <div class="col text-center">
+
+                    <ul class="list-inline list-inline-contact mt-2"
+                        tal:define="first_line_contact_links view/first_line_contact_links|nothing"
+                        tal:condition="first_line_contact_links">
+                        <li class="li-separator">
+                            University Park, PA 16802
+                        </li>
+
+                        <tal:links tal:repeat="i first_line_contact_links/items/item|nothing">
+                            <li tal:define="end repeat/i/end;
+                                            klass python: (not end) and 'li-separator' or ''"
+                                tal:attributes="class klass">
+                                <a tal:attributes="href i/link/cdata|nothing"
+                                    tal:content="i/title/cdata" />
+                            </li>
+
+                        </tal:links>
+
+                    </ul>
+
                     <ul class="list-inline list-inline-dept-links text-center mt-2">
 
                         <tal:contact tal:repeat="i view/contact_links/items/item|nothing">
 
                             <li class="li-separator">
 
-                                <a tal:attributes="href i/link/cdata">
+                                <a tal:attributes="href i/link/cdata|nothing"
+                                   tal:omit-tag="not: i/link/cdata|nothing">
 
                                     <span
                                         class="element-invisible"
@@ -65,7 +106,7 @@
         </div>
     </section>
 
-    <section class="container-fluid footer-college-level">
+    <section class="container-fluid footer-department-level">
         <div class="row copyright-legal pb-3">
             <!-- footer logo and links -->
             <div class="col col-auto mx-auto px-0">
@@ -85,7 +126,7 @@
             <div class="col-12 pr-0 text-center">
                 <p class="footerLinks">
 
-                    <tal:links tal:repeat="i view/footer_links/item|nothing">
+                    <tal:links tal:repeat="i view/footer_links/items/item|nothing">
                         <a tal:attributes="href i/link/cdata"
                            tal:content="i/title/cdata" />
 

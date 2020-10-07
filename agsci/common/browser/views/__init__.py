@@ -37,7 +37,7 @@ from agsci.common.indexer import degree_index_field
 from agsci.common.interfaces import ILocationAdapter
 from agsci.common.interfaces import ITagsAdapter
 from agsci.common.utilities import get_fields_by_type, toLocalizedTime, \
-    getDepartmentId
+    getNavigationViewlet
 
 try:
     from zope.app.component.hooks import getSite
@@ -264,8 +264,12 @@ class BaseView(BrowserView):
         return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
 
     @property
+    def navigation_viewlet(self):
+        return getNavigationViewlet()
+
+    @property
     def department_id(self):
-        return getDepartmentId()
+        return self.navigation_viewlet.department_id
 
 class DegreeListingView(BaseView):
 
@@ -1064,6 +1068,7 @@ class RobotsView(BaseView):
 class LayoutPolicy(_LayoutPolicy, BaseView):
 
     def bodyClass(self, template, view):
+
         _ = super(LayoutPolicy, self).bodyClass(template, view)
 
         _ = _.split()
@@ -1073,8 +1078,10 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
         if department_id:
             _.append('header-department-level')
             _.append('department-%s' % department_id)
+            _.append('footer-department-level')
 
         else:
             _.append('header-college-level')
+            _.append('footer-college-level')
 
         return " ".join(_)

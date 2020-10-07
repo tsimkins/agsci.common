@@ -539,13 +539,16 @@ def toISO(_):
     _date = localize(_)
     return _date.isoformat()
 
-def getDepartmentId():
-
+def getNavigationViewlet():
     # Avoid circular import
     from .browser.viewlets import NavigationViewlet
 
-    # Get department id from registry
-    viewlet = NavigationViewlet(getSite(), getRequest(), None)
+    # Call navigation viewlet
+    return NavigationViewlet(getSite(), getRequest(), None)
+
+def getDepartmentId():
+
+    viewlet = getNavigationViewlet()
     return viewlet.department_id
 
 def getExtensionConfig(department_id=None, category=None):

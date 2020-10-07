@@ -373,8 +373,8 @@
         <replace css:theme="#footer-social" css:content-children="#footer-social" />
         <replace css:theme="#footer-links" css:content-children="#footer-links" />
 
-        <!-- Department Footer### -->
-        <rules css:if-content="nav.department-level">
+        <!-- Department Footer -->
+        <rules css:if-not-content="body.footer-college-level">
             <drop css:theme="[data-template='college']" />
 
             <replace

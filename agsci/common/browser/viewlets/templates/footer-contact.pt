@@ -6,11 +6,11 @@
             University Park, PA 16802
         </li>
 
-        <tal:links tal:repeat="i view/nav/item|nothing">
+        <tal:links tal:repeat="i view/nav/items/item|nothing">
             <li tal:define="end repeat/i/end;
                             klass python: (not end) and 'li-separator' or ''"
                 tal:attributes="class klass">
-                <a tal:attributes="href i/link/cdata"
+                <a tal:attributes="href i/link/cdata|nothing"
                     tal:content="i/title/cdata" />
             </li>
 
