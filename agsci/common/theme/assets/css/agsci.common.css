@@ -13572,27 +13572,64 @@ a.alert-bar:hover {
 
   a.alert-bar p.alert-bar-text {
     margin: 0 0 0 3.75rem; } }
-body.department-4-h header .department-brand-block {
-  background-image: url(../images/4hlogo.png);
-  background-repeat: no-repeat;
-  background-size: auto 75%;
-  background-position: 99% 25%; }
-body.department-4-h header .navbar {
-  background-color: #339966; }
-  body.department-4-h header .navbar .navbar-collapse {
+body.department-4-h {
+  /* H2 */
+  /* Buttons */
+  /* Links */
+  /* Borders */
+    /* ----------------------------------------------------------
+
+    OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+    ---------------------------------------------------------- */ }
+  body.department-4-h header .department-brand-block {
+    background-image: url(../images/4hlogo.png);
+    background-repeat: no-repeat;
+    background-size: auto 75%;
+    background-position: 99% 25%; }
+  body.department-4-h header .navbar {
     background-color: #339966; }
-  body.department-4-h header .navbar .cta i {
-    color: #339966; }
-body.department-4-h header .btn.btn-primary {
-  background-color: #339966;
-  border-color: #339966; }
-body.department-4-h header .btn.btn-primary:hover, body.department-4-h header .btn.btn-primary:focus {
-  background-color: #53c68c; }
-body.department-4-h header li.nav-item .btn.btn-primary {
-  background-color: #00132b;
-  border-color: #00132b; }
-body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4-h header li.nav-item .btn.btn-primary:focus {
-  background-color: #1E417B; }
+    body.department-4-h header .navbar .navbar-collapse {
+      background-color: #339966; }
+    body.department-4-h header .navbar .cta i {
+      color: #339966; }
+  body.department-4-h header li.nav-item .btn.btn-primary {
+    background-color: #00132b;
+    border-color: #00132b; }
+  body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4-h header li.nav-item .btn.btn-primary:focus {
+    background-color: #1E417B; }
+  body.department-4-h h2::after, body.department-4-h .h2::after {
+    border-bottom-color: #339966; }
+  body.department-4-h .btn.btn-primary {
+    background-color: #339966;
+    border-color: #339966; }
+  body.department-4-h .btn.btn-primary:hover, body.department-4-h .btn.btn-primary:focus {
+    background-color: #53c68c; }
+  body.department-4-h .btn.btn-creek {
+    background: #206040; }
+  body.department-4-h .btn.btn-creek:hover,
+  body.department-4-h .btn.btn-creek:focus {
+    background: #339966; }
+  body.department-4-h button.btn-link,
+  body.department-4-h .btn-link a,
+  body.department-4-h a.btn-link,
+  body.department-4-h a.card .btn-link {
+    color: #206040; }
+  body.department-4-h .border-bottom {
+    border-bottom-color: #53c68c !important; }
+  body.department-4-h .border-top {
+    border-top-color: #53c68c !important; }
+  body.department-4-h .offset-content a:not(.btn),
+  body.department-4-h .offset-content a:visited:not(.btn) {
+    border-bottom: #206040; }
+    body.department-4-h .offset-content a:not(.btn):hover, body.department-4-h .offset-content a:not(.btn):focus,
+    body.department-4-h .offset-content a:visited:not(.btn):hover,
+    body.department-4-h .offset-content a:visited:not(.btn):focus {
+      border-bottom: 1px solid #339966;
+      color: #231e20; }
+  body.department-4-h section.offset-previews .container-fluid:nth-of-type(even) .row,
+  body.department-4-h section.offset-previews .container:nth-of-type(even) .row {
+    background: #339966; }
 
 @media (min-width: 992px) {
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {

@@ -19,15 +19,6 @@ body.department-4-h {
             }
         }
 
-        .btn.btn-primary {
-            background-color: $color-ps-clover;
-            border-color: $color-ps-clover;
-        }
-
-        .btn.btn-primary:hover, .btn.btn-primary:focus {
-            background-color: $color-ps-clover-light;
-        }
-
         li.nav-item {
             .btn.btn-primary {
                 background-color: $color-ps-dark-nittany-navy;
@@ -37,6 +28,77 @@ body.department-4-h {
             .btn.btn-primary:hover, .btn.btn-primary:focus {
                 background-color: $color-ps-beaver-blue;
             }
+        }
+    }
+
+    /* H2 */
+    h2::after, .h2::after {
+        border-bottom-color: $color-ps-clover;
+    }
+
+    /* Buttons */
+
+    .btn.btn-primary {
+        background-color: $color-ps-clover;
+        border-color: $color-ps-clover;
+    }
+
+    .btn.btn-primary:hover, .btn.btn-primary:focus {
+        background-color: $color-ps-clover-light;
+    }
+
+    .btn.btn-creek {
+        background: $color-ps-clover-dark;
+    }
+
+    .btn.btn-creek:hover,
+    .btn.btn-creek:focus {
+        background: $color-ps-clover;
+    }
+
+    /* Links */
+    button.btn-link,
+    .btn-link a,
+    a.btn-link,
+    a.card .btn-link {
+        color: $color-ps-clover-dark;
+    }
+
+    /* Borders */
+    .border-bottom {
+        border-bottom-color: $color-ps-clover-light !important;
+    }
+
+    .border-top {
+        border-top-color: $color-ps-clover-light !important;
+    }
+
+    /* ----------------------------------------------------------
+
+    OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+    ---------------------------------------------------------- */
+
+    .offset-content a:not(.btn),
+    .offset-content a:visited:not(.btn) {
+        border-bottom: $color-ps-clover-dark;
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $color-ps-clover;
+            color: $black;
+        }
+    }
+
+    section.offset-previews {
+
+        .container-fluid:nth-of-type(even),
+        .container:nth-of-type(even) {
+
+            .row {
+                background: $color-ps-clover;
+            }
+
         }
     }
 }
