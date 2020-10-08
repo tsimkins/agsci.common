@@ -48,12 +48,12 @@ body.department-4-h {
     }
 
     .btn.btn-creek {
-        background: $color-ps-clover-dark;
+        background: $color-ps-clover;
     }
 
     .btn.btn-creek:hover,
     .btn.btn-creek:focus {
-        background: $color-ps-clover;
+        background: $color-ps-clover-dark;
     }
 
     /* Links */
@@ -183,10 +183,90 @@ body.department-4-h {
             }
         }
     }
+
+    /* SideNav
+    --------------------------------------------- */
+
+    .side-nav {
+
+        p {
+
+            a {
+                background-color: $color-ps-clover-light30;
+            }
+        }
+
+        li.section-level-1.navTreeCurrentNode {
+            > a {
+                border-left: 0.5rem solid $color-ps-clover;
+            }
+        }
+
+        a {
+
+            &:hover,
+            &:focus {
+                border-left-color: $color-ps-clover;
+            }
+
+        }
+
+    }
+
+    .navbar.collapsing-sidenav ul.navTreeLevel1 {
+        li a.navTreeCurrentNode {
+
+            &::before {
+                color: $color-ps-clover;
+            }
+        }
+    }
+
+    /* dropdown level 2 */
+    .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 {
+
+        li a {
+
+            &.navTreeCurrentNode {
+                border-left-color: $color-ps-clover;
+            }
+        }
+    }
+
+    .side-nav .dropdown {
+
+        [data-toggle="collapse"] {
+
+            i {
+                color: $color-ps-clover;
+            }
+
+            &:hover,
+            &:focus {
+                i {
+                    color: $color-ps-clover-light10;
+                }
+            }
+
+        }
+
+        .dropdown-menu {
+
+            a:hover,
+            a:focus {
+                border-bottom: 1px solid $color-ps-clover;
+            }
+
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
     body.department-4-h {
+
+        .department-bar a.department-brand {
+            border-left-color: $color-ps-clover;
+        }
         .navbar-expand-lg .navbar-nav > {
             .dropdown > .nav-link.dropdown-toggle {
                 color: $white;

@@ -32,6 +32,7 @@ class CTABackgroundVocabulary(KeyValueVocabulary):
     items = [
         ('light', 'Light'),
         ('dark', 'Dark'),
+        ('medium', 'Medium'),
         ('none', 'No Background'),
     ]
 

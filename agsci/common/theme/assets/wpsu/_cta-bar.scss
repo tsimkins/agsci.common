@@ -7,26 +7,30 @@
 
     &.cta-bar-dark {
         background: darken($color-ps-nittany-navy,5%);
-        }
+    }
+
+    &.cta-bar-medium {
+        background: $color-ps-coaly-gray;
+    }
 
     &.cta-bar-light {
         background: $color-ps-coaly-gray-light30;
-        }
+    }
 
     .btn {
         margin: 0.5rem;
         padding: 1.5vh 4.5vw; /* new padding to bulk up buttons */
-        }
     }
+}
 
 @include media-breakpoint-up(sm) {
     .cta-bar .btn {
         padding: 2vh 8vw; /* new padding to bulk up buttons */
-        }
     }
+}
 
 @include media-breakpoint-up(xxl) {
     .cta-bar .btn {
         padding: 2vh 6vw;
-        }
     }
+}

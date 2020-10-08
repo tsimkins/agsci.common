@@ -11166,6 +11166,8 @@ div.card .card-text ul {
   background-color: transparent; }
   .cta-bar.cta-bar-dark {
     background: #00132b; }
+  .cta-bar.cta-bar-medium {
+    background: #54585A; }
   .cta-bar.cta-bar-light {
     background: #e9eaea; }
   .cta-bar .btn {
@@ -15542,7 +15544,10 @@ body.department-4-h {
 
     NEWS & EVENTS
 
-    ---------------------------------------------------------- */ }
+    ---------------------------------------------------------- */
+  /* SideNav
+  --------------------------------------------- */
+  /* dropdown level 2 */ }
   body.department-4-h header .department-brand-block {
     background-image: url(../images/4h-logo.png);
     background-repeat: no-repeat;
@@ -15567,10 +15572,10 @@ body.department-4-h {
   body.department-4-h .btn.btn-primary:hover, body.department-4-h .btn.btn-primary:focus {
     background-color: #8cd9b3; }
   body.department-4-h .btn.btn-creek {
-    background: #206040; }
+    background: #339966; }
   body.department-4-h .btn.btn-creek:hover,
   body.department-4-h .btn.btn-creek:focus {
-    background: #339966; }
+    background: #206040; }
   body.department-4-h button.btn-link,
   body.department-4-h .btn-link a,
   body.department-4-h a.btn-link,
@@ -15615,8 +15620,27 @@ body.department-4-h {
   body.department-4-h .card.card-news:focus h3.h3 {
     color: #2C8559;
     text-decoration: underline #339966; }
+  body.department-4-h .side-nav p a {
+    background-color: #8cd9b3; }
+  body.department-4-h .side-nav li.section-level-1.navTreeCurrentNode > a {
+    border-left: 0.5rem solid #339966; }
+  body.department-4-h .side-nav a:hover, body.department-4-h .side-nav a:focus {
+    border-left-color: #339966; }
+  body.department-4-h .navbar.collapsing-sidenav ul.navTreeLevel1 li a.navTreeCurrentNode::before {
+    color: #339966; }
+  body.department-4-h .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 li a.navTreeCurrentNode {
+    border-left-color: #339966; }
+  body.department-4-h .side-nav .dropdown [data-toggle="collapse"] i {
+    color: #339966; }
+  body.department-4-h .side-nav .dropdown [data-toggle="collapse"]:hover i, body.department-4-h .side-nav .dropdown [data-toggle="collapse"]:focus i {
+    color: #40bf80; }
+  body.department-4-h .side-nav .dropdown .dropdown-menu a:hover,
+  body.department-4-h .side-nav .dropdown .dropdown-menu a:focus {
+    border-bottom: 1px solid #339966; }
 
 @media (min-width: 992px) {
+  body.department-4-h .department-bar a.department-brand {
+    border-left-color: #339966; }
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
     color: #ffffff; }
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
