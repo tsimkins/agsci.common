@@ -259,6 +259,10 @@ body.department-4-h {
 
         }
     }
+
+    li.li-separator::after {
+        color: $color-ps-clover;
+    }
 }
 
 @include media-breakpoint-up(lg) {

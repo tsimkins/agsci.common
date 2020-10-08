@@ -8135,7 +8135,7 @@ COLOR Utility Classes
   background: #296c68; }
 
 .bg-dark-clover {
-  background: #004d2d; }
+  background: #206040; }
 
 .bg-dark-lime {
   background: #8a951f; }
@@ -15554,93 +15554,95 @@ body.department-4-h {
     background-size: auto 75%;
     background-position: 99% 25%; }
   body.department-4-h header .navbar {
-    background-color: #009959; }
+    background-color: #339966; }
     body.department-4-h header .navbar .navbar-collapse {
-      background-color: #009959; }
+      background-color: #339966; }
     body.department-4-h header .navbar .cta i {
-      color: #009959; }
+      color: #339966; }
   body.department-4-h header li.nav-item .btn.btn-primary {
     background-color: #00132b;
     border-color: #00132b; }
   body.department-4-h header li.nav-item .btn.btn-primary:hover, body.department-4-h header li.nav-item .btn.btn-primary:focus {
     background-color: #1E417B; }
   body.department-4-h h2::after, body.department-4-h .h2::after {
-    border-bottom-color: #009959; }
+    border-bottom-color: #339966; }
   body.department-4-h .btn.btn-primary {
-    background-color: #009959;
-    border-color: #009959; }
+    background-color: #339966;
+    border-color: #339966; }
   body.department-4-h .btn.btn-primary:hover, body.department-4-h .btn.btn-primary:focus {
     background-color: #8cd9b3; }
   body.department-4-h .btn.btn-creek {
-    background: #009959; }
+    background: #339966; }
   body.department-4-h .btn.btn-creek:hover,
   body.department-4-h .btn.btn-creek:focus {
-    background: #004d2d; }
+    background: #206040; }
   body.department-4-h button.btn-link,
   body.department-4-h .btn-link a,
   body.department-4-h a.btn-link,
   body.department-4-h a.card .btn-link {
-    color: #004d2d; }
+    color: #206040; }
   body.department-4-h .border-bottom {
     border-bottom-color: #8cd9b3 !important; }
   body.department-4-h .border-top {
     border-top-color: #8cd9b3 !important; }
   body.department-4-h .offset-content a:not(.btn),
   body.department-4-h .offset-content a:visited:not(.btn) {
-    border-bottom: #004d2d; }
+    border-bottom: #206040; }
     body.department-4-h .offset-content a:not(.btn):hover, body.department-4-h .offset-content a:not(.btn):focus,
     body.department-4-h .offset-content a:visited:not(.btn):hover,
     body.department-4-h .offset-content a:visited:not(.btn):focus {
-      border-bottom: 1px solid #009959;
+      border-bottom: 1px solid #339966;
       color: #231e20; }
   body.department-4-h section.offset-previews .container-fluid:nth-of-type(even) .row,
   body.department-4-h section.offset-previews .container:nth-of-type(even) .row {
-    background: #009959; }
+    background: #339966; }
   body.department-4-h .home .jumbotron blockquote.home-quote strong {
-    color: #00cc77; }
+    color: #40bf80; }
   body.department-4-h .home .jumbotron blockquote.home-quote .fas {
-    color: #009959; }
+    color: #339966; }
   body.department-4-h .card-deck-values .card .card-image-top {
-    background-color: #009959; }
+    background-color: #339966; }
   body.department-4-h .card-deck-values span {
-    color: #00e686; }
+    color: #53c68c; }
   body.department-4-h .card-deck-values.card-deck-values-2 .card .hover-content strong {
-    color: #00ff94; }
+    color: #66cc99; }
   body.department-4-h .home .card-news span,
   body.department-4-h .content-primary .card-news span {
     color: #00884F; }
   body.department-4-h .home .card-news:hover span, body.department-4-h .home .card-news:focus span,
   body.department-4-h .content-primary .card-news:hover span,
   body.department-4-h .content-primary .card-news:focus span {
-    border-bottom: 1px solid #009959; }
+    border-bottom: 1px solid #339966; }
   body.department-4-h .event-date-block {
     background-color: #8cd9b3; }
   body.department-4-h .card.card-news:hover p.h3,
   body.department-4-h .card.card-news:hover h3.h3, body.department-4-h .card.card-news:focus p.h3,
   body.department-4-h .card.card-news:focus h3.h3 {
     color: #00884F;
-    text-decoration: underline #009959; }
+    text-decoration: underline #339966; }
   body.department-4-h .side-nav p a {
     background-color: #8cd9b3; }
   body.department-4-h .side-nav li.section-level-1.navTreeCurrentNode > a {
-    border-left: 0.5rem solid #009959; }
+    border-left: 0.5rem solid #339966; }
   body.department-4-h .side-nav a:hover, body.department-4-h .side-nav a:focus {
-    border-left-color: #009959; }
+    border-left-color: #339966; }
   body.department-4-h .navbar.collapsing-sidenav ul.navTreeLevel1 li a.navTreeCurrentNode::before {
-    color: #009959; }
+    color: #339966; }
   body.department-4-h .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 li a.navTreeCurrentNode {
-    border-left-color: #009959; }
+    border-left-color: #339966; }
   body.department-4-h .side-nav .dropdown [data-toggle="collapse"] i {
-    color: #009959; }
+    color: #339966; }
   body.department-4-h .side-nav .dropdown [data-toggle="collapse"]:hover i, body.department-4-h .side-nav .dropdown [data-toggle="collapse"]:focus i {
-    color: #00cc77; }
+    color: #40bf80; }
   body.department-4-h .side-nav .dropdown .dropdown-menu a:hover,
   body.department-4-h .side-nav .dropdown .dropdown-menu a:focus {
-    border-bottom: 1px solid #009959; }
+    border-bottom: 1px solid #339966; }
+  body.department-4-h li.li-separator::after {
+    color: #339966; }
 
 @media (min-width: 992px) {
   body.department-4-h .department-bar a.department-brand {
-    border-left-color: #009959; }
+    border-left-color: #339966; }
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
     color: #ffffff; }
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
@@ -15648,7 +15650,7 @@ body.department-4-h {
   body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
   body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
     border-bottom-color: #8cd9b3;
-    background-color: #009959; } }
+    background-color: #339966; } }
 @media (max-width: 991.98px) {
   body.department-4-h header.affix .department-brand-block {
     background-image: none; }
