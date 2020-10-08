@@ -15532,6 +15532,16 @@ body.department-4-h {
 
     OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
 
+    ---------------------------------------------------------- */
+    /* ----------------------------------------------------------
+
+    VALUE PROPOSITIONS
+
+    ---------------------------------------------------------- */
+    /* ----------------------------------------------------------
+
+    NEWS & EVENTS
+
     ---------------------------------------------------------- */ }
   body.department-4-h header .department-brand-block {
     background-image: url(../images/4h-logo.png);
@@ -15555,7 +15565,7 @@ body.department-4-h {
     background-color: #339966;
     border-color: #339966; }
   body.department-4-h .btn.btn-primary:hover, body.department-4-h .btn.btn-primary:focus {
-    background-color: #53c68c; }
+    background-color: #8cd9b3; }
   body.department-4-h .btn.btn-creek {
     background: #206040; }
   body.department-4-h .btn.btn-creek:hover,
@@ -15567,9 +15577,9 @@ body.department-4-h {
   body.department-4-h a.card .btn-link {
     color: #206040; }
   body.department-4-h .border-bottom {
-    border-bottom-color: #53c68c !important; }
+    border-bottom-color: #8cd9b3 !important; }
   body.department-4-h .border-top {
-    border-top-color: #53c68c !important; }
+    border-top-color: #8cd9b3 !important; }
   body.department-4-h .offset-content a:not(.btn),
   body.department-4-h .offset-content a:visited:not(.btn) {
     border-bottom: #206040; }
@@ -15581,6 +15591,30 @@ body.department-4-h {
   body.department-4-h section.offset-previews .container-fluid:nth-of-type(even) .row,
   body.department-4-h section.offset-previews .container:nth-of-type(even) .row {
     background: #339966; }
+  body.department-4-h .home .jumbotron blockquote.home-quote strong {
+    color: #40bf80; }
+  body.department-4-h .home .jumbotron blockquote.home-quote .fas {
+    color: #339966; }
+  body.department-4-h .card-deck-values .card .card-image-top {
+    background-color: #339966; }
+  body.department-4-h .card-deck-values span {
+    color: #53c68c; }
+  body.department-4-h .card-deck-values.card-deck-values-2 .card .hover-content strong {
+    color: #66cc99; }
+  body.department-4-h .home .card-news span,
+  body.department-4-h .content-primary .card-news span {
+    color: #2C8559; }
+  body.department-4-h .home .card-news:hover span, body.department-4-h .home .card-news:focus span,
+  body.department-4-h .content-primary .card-news:hover span,
+  body.department-4-h .content-primary .card-news:focus span {
+    border-bottom: 1px solid #339966; }
+  body.department-4-h .event-date-block {
+    background-color: #8cd9b3; }
+  body.department-4-h .card.card-news:hover p.h3,
+  body.department-4-h .card.card-news:hover h3.h3, body.department-4-h .card.card-news:focus p.h3,
+  body.department-4-h .card.card-news:focus h3.h3 {
+    color: #2C8559;
+    text-decoration: underline #339966; }
 
 @media (min-width: 992px) {
   body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
@@ -15589,7 +15623,7 @@ body.department-4-h {
     color: #ffffff; }
   body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
   body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
-    border-bottom-color: #53c68c;
+    border-bottom-color: #8cd9b3;
     background-color: #339966; } }
 @media (max-width: 991.98px) {
   body.department-4-h header.affix .department-brand-block {
@@ -15618,6 +15652,6 @@ body.department-4-h {
       body.department-4-h header .navbar.college-level .dropdown-menu a {
         color: #ffffff; }
     body.department-4-h header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
-      border-bottom-color: #53c68c; } }
+      border-bottom-color: #8cd9b3; } }
 
 /*# sourceMappingURL=agsci.common.css.map */

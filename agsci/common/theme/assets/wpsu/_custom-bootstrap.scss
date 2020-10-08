@@ -50,8 +50,14 @@ AGSCI VARIABLE CUSTOMIZATION
 
     /* 4-H Colors */
     $color-ps-clover: #339966;
-    $color-ps-clover-light: lighten($color-ps-clover,15%);
+    $color-ps-clover-light: #8cd9b3; // lighten($color-ps-clover,15%);
     $color-ps-clover-dark: darken($color-ps-clover,15%);
+
+    $color-ps-clover-light10: lighten($color-ps-clover,10%);
+    $color-ps-clover-light15: lighten($color-ps-clover,15%);
+    $color-ps-clover-light20: lighten($color-ps-clover,20%);
+
+    $color-ps-clover-accessible: #2C8559;
 
     $color-ps-dark-teal: #0d8383;
     $color-ps-light-teal: #08b7b2;

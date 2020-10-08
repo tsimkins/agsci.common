@@ -101,6 +101,88 @@ body.department-4-h {
 
         }
     }
+
+    .home .jumbotron {
+
+        blockquote.home-quote {
+
+            strong {
+                color: $color-ps-clover-light10;
+            }
+
+            .fas {
+                color: $color-ps-clover;
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------
+
+    VALUE PROPOSITIONS
+
+    ---------------------------------------------------------- */
+
+    .card-deck-values {
+
+        .card {
+
+            .card-image-top {
+                background-color: $color-ps-clover;
+            }
+
+         }
+
+        span {
+            color: $color-ps-clover-light15;
+        }
+    }
+
+    .card-deck-values.card-deck-values-2 {
+
+        .card .hover-content {
+
+            strong {
+                color: $color-ps-clover-light20;
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------
+
+    NEWS & EVENTS
+
+    ---------------------------------------------------------- */
+
+    .home .card-news,
+    .content-primary .card-news {
+
+        span {
+            color: $color-ps-clover-accessible;
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                border-bottom: 1px solid $color-ps-clover;
+            }
+        }
+    }
+
+    .event-date-block {
+        background-color: $color-ps-clover-light;
+    }
+
+    .card.card-news {
+
+        &:hover,
+        &:focus {
+            p.h3,
+            h3.h3 {
+                color: $color-ps-clover-accessible;
+                text-decoration: underline $color-ps-clover;
+            }
+        }
+    }
 }
 
 @include media-breakpoint-up(lg) {
