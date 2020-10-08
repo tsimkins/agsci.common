@@ -16,7 +16,7 @@
             font-size: $h4-font-size;
             font-family: $font-family-sans-serif;
             line-height: $line-height-sm;
-            }
+        }
 
         h2.h4 {
             text-shadow: none;
@@ -33,7 +33,7 @@
             background: transparent;
             border: 1px solid $white;
             color: $white;
-            }
+        }
 
         &:hover,
         &:focus {
@@ -41,87 +41,145 @@
             .btn {
                 background: $white;
                 border: 1px solid transparent;
-                }
             }
         }
+    }
 
     &.bg-dark-slate {
 
         .card-body {
             background: $color-ps-slate-gray;
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: lighten($color-ps-slate-gray,10%);
             }
 
-            &:hover,
-            &:focus {
-
-                .card-body {
-                    background: lighten($color-ps-slate-gray,10%);
-                    }
-
-                .btn {
-                    color: $color-ps-slate-gray;
-                    }
-                }
+            .btn {
+                color: $color-ps-slate-gray;
             }
+        }
+    }
 
     &.bg-dark-purple {
 
         .card-body {
             background: $color-ps-perpetual-purple;
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: lighten($color-ps-perpetual-purple,10%);
             }
 
-            &:hover,
-            &:focus {
-
-                .card-body {
-                    background: lighten($color-ps-perpetual-purple,10%);
-                    }
-
-                .btn {
-                    color: $color-ps-perpetual-purple;
-                    }
-                }
+            .btn {
+                color: $color-ps-perpetual-purple;
             }
+        }
+    }
 
     &.bg-dark-orange {
 
         .card-body {
             background: darken($color-ps-invent-orange,11%);
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: $color-ps-invent-orange;
             }
 
-            &:hover,
-            &:focus {
-
-                .card-body {
-                    background: $color-ps-invent-orange;
-                    }
-
-                .btn {
-                    color: darken($color-ps-invent-orange,11%);
-                    }
-                }
+            .btn {
+                color: darken($color-ps-invent-orange,11%);
             }
+        }
+    }
 
     &.bg-dark-green {
 
         .card-body {
             background: darken($color-ps-future-green,16%);
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: darken($color-ps-future-green,10%);
             }
 
-            &:hover,
-            &:focus {
-
-                .card-body {
-                    background: darken($color-ps-future-green,10%);
-                    }
-
-                .btn {
-                    color: darken($color-ps-future-green,16%);
-                    }
-                }
+            .btn {
+                color: darken($color-ps-future-green,16%);
             }
         }
+    }
+
+
+    &.bg-dark-lime {
+
+        .card-body {
+            background: darken($color-ps-lime,16%);
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: darken($color-ps-lime,10%);
+            }
+
+            .btn {
+                color: darken($color-ps-lime,16%);
+            }
+        }
+    }
+
+    &.bg-dark-dark-teal {
+
+        .card-body {
+            background: darken($color-ps-dark-teal,16%);
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: darken($color-ps-dark-teal,10%);
+            }
+
+            .btn {
+                color: darken($color-ps-dark-teal,16%);
+            }
+        }
+    }
+
+    &.bg-dark-light-teal {
+
+        .card-body {
+            background: darken($color-ps-light-teal,16%);
+        }
+
+        &:hover,
+        &:focus {
+
+            .card-body {
+                background: darken($color-ps-light-teal,10%);
+            }
+
+            .btn {
+                color: darken($color-ps-light-teal,16%);
+            }
+        }
+    }
+}
 
 .container-text .cta-card { /* floated within content */
     margin-bottom: 1rem;
-    }
+}

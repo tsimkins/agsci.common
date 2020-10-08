@@ -57,6 +57,15 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-light-teal: #08b7b2;
     $color-ps-lime: #c4d32e;
 
+    $color-ps-lime-light: lighten($color-ps-lime,15%);
+    $color-ps-lime-dark: darken($color-ps-lime,15%);
+
+    $color-ps-dark-teal-light: lighten($color-ps-dark-teal,15%);
+    $color-ps-dark-teal-dark: darken($color-ps-dark-teal,15%);
+
+    $color-ps-light-teal-light: lighten($color-ps-light-teal,15%);
+    $color-ps-light-teal-dark: darken($color-ps-light-teal,15%);
+
     $color-ps-dark-teal-accessible: #0b7575;
     $color-ps-light-teal-accessible: #07A6A1;
     $color-ps-lime-accessible: #909A22;
