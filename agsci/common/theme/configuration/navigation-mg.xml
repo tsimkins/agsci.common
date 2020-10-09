@@ -54,8 +54,8 @@
     <nav id="primary">
         <items>
             <item>
-                <title>Undergraduate</title>
-                <link>undergraduate</link>
+                <title>About</title>
+                <link>about</link>
                 <items>
                     <item>
                         <title>Degree Options</title>
@@ -72,8 +72,8 @@
                 </items>
             </item>
             <item>
-                <title>Graduate</title>
-                <link>graduate</link>
+                <title>Educational Outreach</title>
+                <link>outreach</link>
                 <items>
                     <item>
                         <title>Degree Options</title>
@@ -90,8 +90,8 @@
                 </items>
             </item>
             <item>
-                <title>People</title>
-                <link>directory</link>
+                <title>Become a Master Gardener</title>
+                <link>volunteer</link>
             </item>
             <item>
                 <title>Research</title>
@@ -124,12 +124,12 @@
                 </items>
             </item>
             <item>
-                <title>Extension &amp; Outreach</title>
-                <link>outreach</link>
+                <title>Advanced Training</title>
+                <link>training</link>
             </item>
             <item>
-                <title>About</title>
-                <link>about</link>
+                <title>Awards</title>
+                <link>awards</link>
                 <items>
                     <item>
                         <title>News</title>
@@ -152,6 +152,10 @@
                         <link>about/contact</link>
                     </item>
                 </items>
+            </item>
+            <item>
+                <title>County Programs</title>
+                <link>counties</link>
             </item>
         </items>
     </nav>
