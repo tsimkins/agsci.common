@@ -94,36 +94,6 @@
                 <link>volunteer</link>
             </item>
             <item>
-                <title>Research</title>
-                <link>research</link>
-                <items>
-                    <item>
-                        <title>Agricultural and Food Systems</title>
-                        <link>research/areas/agriculture-and-food-systems</link>
-                    </item>
-                    <item>
-                        <title>Community Development and Engagement</title>
-                        <link>research/areas/community-development</link>
-                    </item>
-                    <item>
-                        <title>Environment and Natural Resources</title>
-                        <link>research/areas/environment-and-natural-resources</link>
-                    </item>
-                    <item>
-                        <title>Population Processes in Global Perspective</title>
-                        <link>research/areas/population-processes</link>
-                    </item>
-                    <item>
-                        <title>Centers and Institutes</title>
-                        <link>research/centers</link>
-                    </item>
-                    <item>
-                        <title>Publications</title>
-                        <link>research/publications</link>
-                    </item>
-                </items>
-            </item>
-            <item>
                 <title>Advanced Training</title>
                 <link>training</link>
             </item>
