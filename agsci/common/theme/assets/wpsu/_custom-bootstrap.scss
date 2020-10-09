@@ -78,6 +78,21 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-light-teal-accessible: #07A6A1;
     $color-ps-lime-accessible: #909A22;
 
+    /* Extension Program Site Colors */
+    $color-ps-sky-blue-light: #12b9ff;
+    $color-ps-sky-blue-dark: #0078ab;
+    $color-ps-sky-blue-accessible: #007DB3;
+    $color-ps-sky-blue-light-accessible: #def5ff;
+
+    $color-ps-sky-blue-light10: lighten($color-ps-sky-blue,10%);
+    $color-ps-sky-blue-light15: lighten($color-ps-sky-blue,15%);
+    $color-ps-sky-blue-light20: lighten($color-ps-sky-blue,20%);
+    $color-ps-sky-blue-light30: lighten($color-ps-sky-blue,30%);
+
+    /* Extension Program Site Accent Colors */
+    $color-ep-accent-1: #CA4E28; // Red
+    $color-ep-accent-2: #336A8B; // Blue
+    $color-ep-accent-3: #A46921; // Brown
     //
     // Calculated Light Shades 5%-35% - % equal additional white
     // Lighten makes colors too vibrant - use these calculated values instead

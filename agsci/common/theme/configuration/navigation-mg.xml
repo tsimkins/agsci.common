@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MG Navigation -->
+
+<config>
+
+    <type>
+        department
+    </type>
+
+    <header>
+        department
+    </header>
+
+    <navigation-theme>
+        extension-program
+    </navigation-theme>
+
+    <logo>
+        extension
+    </logo>
+
+    <audience-department>
+        department
+    </audience-department>
+
+    <nav id="contact">
+        <items>
+            <item>
+                <title>About</title>
+                <link>about</link>
+            </item>
+            <item>
+                <title>Directory</title>
+                <link>directory</link>
+            </item>
+            <item>
+                <title>814-865-5461</title>
+                <link>tel:+814-865-5461</link>
+                <label>Department Telephone</label>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/PSU.AESE</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="primary">
+        <items>
+            <item>
+                <title>Undergraduate</title>
+                <link>undergraduate</link>
+                <items>
+                    <item>
+                        <title>Degree Options</title>
+                        <link>undergraduate</link>
+                    </item>
+                    <item>
+                        <title>Student Resources</title>
+                        <link>undergraduate/resources</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>undergraduate/contact</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Graduate</title>
+                <link>graduate</link>
+                <items>
+                    <item>
+                        <title>Degree Options</title>
+                        <link>graduate</link>
+                    </item>
+                    <item>
+                        <title>Student Resources</title>
+                        <link>graduate/resources</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>graduate/contact</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>People</title>
+                <link>directory</link>
+            </item>
+            <item>
+                <title>Research</title>
+                <link>research</link>
+                <items>
+                    <item>
+                        <title>Agricultural and Food Systems</title>
+                        <link>research/areas/agriculture-and-food-systems</link>
+                    </item>
+                    <item>
+                        <title>Community Development and Engagement</title>
+                        <link>research/areas/community-development</link>
+                    </item>
+                    <item>
+                        <title>Environment and Natural Resources</title>
+                        <link>research/areas/environment-and-natural-resources</link>
+                    </item>
+                    <item>
+                        <title>Population Processes in Global Perspective</title>
+                        <link>research/areas/population-processes</link>
+                    </item>
+                    <item>
+                        <title>Centers and Institutes</title>
+                        <link>research/centers</link>
+                    </item>
+                    <item>
+                        <title>Publications</title>
+                        <link>research/publications</link>
+                    </item>
+                </items>
+            </item>
+            <item>
+                <title>Extension &amp; Outreach</title>
+                <link>outreach</link>
+            </item>
+            <item>
+                <title>About</title>
+                <link>about</link>
+                <items>
+                    <item>
+                        <title>News</title>
+                        <link>news</link>
+                    </item>
+                    <item>
+                        <title>Events</title>
+                        <link>events</link>
+                    </item>
+                    <item>
+                        <title>Alumni and Friends</title>
+                        <link>about/alumni</link>
+                    </item>
+                    <item>
+                        <title>Support the Department</title>
+                        <link>about/support</link>
+                    </item>
+                    <item>
+                        <title>Contact Us</title>
+                        <link>about/contact</link>
+                    </item>
+                </items>
+            </item>
+        </items>
+    </nav>
+</config>

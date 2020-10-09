@@ -6,7 +6,7 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 from zope.interface import implements
 
 from agsci.common.interfaces import ITagsAdapter
-from agsci.common.utilities import getDepartmentId
+from agsci.common.utilities import getNavigationViewlet
 
 class BaseVocabulary(object):
 
@@ -21,8 +21,12 @@ class BaseVocabulary(object):
         return getToolByName(self.site, 'portal_catalog')
 
     @property
+    def navigation_viewlet(self):
+        return getNavigationViewlet()
+
+    @property
     def department_id(self):
-        return getDepartmentId()
+        return self.navigation_viewlet.department_id
 
 class StaticVocabulary(BaseVocabulary):
 

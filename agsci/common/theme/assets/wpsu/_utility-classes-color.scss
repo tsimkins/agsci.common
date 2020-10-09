@@ -130,3 +130,15 @@ COLOR Utility Classes
 .bg-dark-light-teal {
     background: darken($color-ps-light-teal,15%);
 }
+
+.bg-dark-accent-1 {
+    background: darken($color-ep-accent-1,15%);
+}
+
+.bg-dark-accent-2 {
+    background: darken($color-ep-accent-2,15%);
+}
+
+.bg-dark-accent-3 {
+    background: darken($color-ep-accent-3,15%);
+}

@@ -30,6 +30,7 @@ import json
 import untangle
 
 from agsci.common.constants import ASSETS_DOMAIN
+from agsci.common.decorators import context_memoize
 from agsci.common.content.behaviors.leadimage import LeadImage
 from agsci.common.content.check import TileLinksCheck, TileImagesCheck
 from agsci.common.content.check import getValidationErrors
@@ -160,47 +161,27 @@ class ViewletBase(_ViewletBase):
                     return True
 
     @property
+    @context_memoize
     def department_id(self):
-
-        cache_key = 'department_id'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
         _ = self.registry.get('agsci.common.department_id', None)
 
         if self.is_valid_department_id(_):
-            self.cache[cache_key] = safe_unicode(_).encode('utf-8')
-        else:
-            self.cache[cache_key] = None
-
-        return self.cache[cache_key]
+            return safe_unicode(_).encode('utf-8')
 
     @property
+    @context_memoize
     def menu_type(self):
-        cache_key = 'menu_type'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
-        config = self.config
-
-        self.cache[cache_key] = self.get_config('type')
-
-        return self.cache[cache_key]
+        return self.get_config('type')
 
     @property
+    @context_memoize
+    def navigation_theme(self):
+        return self.get_config('navigation_theme')
+
+    @property
+    @context_memoize
     def header_type(self):
-        cache_key = 'header_type'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
-        config = self.config
-
-        self.cache[cache_key] = self.get_config('header')
-
-        return self.cache[cache_key]
+        return self.get_config('header')
 
     @property
     def is_department_menu(self):
@@ -215,43 +196,18 @@ class ViewletBase(_ViewletBase):
         return not not self.department_id
 
     @property
+    @context_memoize
     def use_psu_logo(self):
-        cache_key = 'use_psu_logo'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
-        config = self.config
-
-        self.cache[cache_key] = self.get_config('logo') in ('psu',)
-
-        return self.cache[cache_key]
+        return self.get_config('logo') in ('psu',)
 
     @property
+    @context_memoize
     def use_4h_footer(self):
-        cache_key = 'use_4h_footer'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
-        config = self.config
-
-        self.cache[cache_key] = self.get_config('footer_logo') in ('4-h',)
-
-        return self.cache[cache_key]
+        return self.get_config('footer_logo') in ('4-h',)
 
     @property
     def use_extension_logo(self):
-        cache_key = 'use_extension_logo'
-
-        if cache_key in self.cache:
-            return self.cache[cache_key]
-
-        config = self.config
-
-        self.cache[cache_key] = self.get_config('logo') in ('extension',)
-
-        return self.cache[cache_key]
+        return self.get_config('logo') in ('extension',)
 
     @property
     def is_edit(self):

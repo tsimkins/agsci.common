@@ -20,6 +20,8 @@ AGSCI VARIABLE CUSTOMIZATION
 /*calculated version for WCAG AA */
 /* yellow */
 /* 4-H Colors */
+/* Extension Program Site Colors */
+/* Extension Program Site Accent Colors */
 /* in this case lighten casts a better blue-ish tint */
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,600i,700,700i,900,900i");
@@ -8146,6 +8148,15 @@ COLOR Utility Classes
 .bg-dark-light-teal {
   background: #056e6b; }
 
+.bg-dark-accent-1 {
+  background: #8a351b; }
+
+.bg-dark-accent-2 {
+  background: #1e3f53; }
+
+.bg-dark-accent-3 {
+  background: #644014; }
+
 /* ----------------------------------------------------------
 
 FIGURES
@@ -8295,7 +8306,7 @@ a.card .btn-link {
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
-    font-family: 'Font Awesome 5 Free';
+    font-family: "Font Awesome 5 Free";
     line-height: 1.4; }
 
 button.btn-link:hover,
@@ -8343,6 +8354,24 @@ a.btn-link:focus {
   color: #ffffff; }
   .btn.btn-dark-teal:hover, .btn.btn-dark-teal:focus {
     background: #0d8383; }
+
+.btn.btn-ep-accent-1 {
+  background: #9f3e20;
+  color: #ffffff; }
+  .btn.btn-ep-accent-1:hover, .btn.btn-ep-accent-1:focus {
+    background: #CA4E28; }
+
+.btn.btn-ep-accent-2 {
+  background: #254e66;
+  color: #ffffff; }
+  .btn.btn-ep-accent-2:hover, .btn.btn-ep-accent-2:focus {
+    background: #336A8B; }
+
+.btn.btn-ep-accent-3 {
+  background: #7a4e18;
+  color: #ffffff; }
+  .btn.btn-ep-accent-3:hover, .btn.btn-ep-accent-3:focus {
+    background: #A46921; }
 
 .form-inline .btn.btn-creek {
   box-shadow: none; }
@@ -10930,6 +10959,24 @@ PORTABLE HIGHLIGHTS
     background: #068682; }
   .card.card-cta.bg-dark-light-teal:hover .btn, .card.card-cta.bg-dark-light-teal:focus .btn {
     color: #056966; }
+  .card.card-cta.bg-dark-ep-accent-1 .card-body {
+    background: #9f3e20; }
+  .card.card-cta.bg-dark-ep-accent-1:hover .card-body, .card.card-cta.bg-dark-ep-accent-1:focus .card-body {
+    background: #b54624; }
+  .card.card-cta.bg-dark-ep-accent-1:hover .btn, .card.card-cta.bg-dark-ep-accent-1:focus .btn {
+    color: #9f3e20; }
+  .card.card-cta.bg-dark-ep-accent-2 .card-body {
+    background: #254e66; }
+  .card.card-cta.bg-dark-ep-accent-2:hover .card-body, .card.card-cta.bg-dark-ep-accent-2:focus .card-body {
+    background: #2c5c78; }
+  .card.card-cta.bg-dark-ep-accent-2:hover .btn, .card.card-cta.bg-dark-ep-accent-2:focus .btn {
+    color: #254e66; }
+  .card.card-cta.bg-dark-ep-accent-3 .card-body {
+    background: #7a4e18; }
+  .card.card-cta.bg-dark-ep-accent-3:hover .card-body, .card.card-cta.bg-dark-ep-accent-3:focus .card-body {
+    background: #8f5b1d; }
+  .card.card-cta.bg-dark-ep-accent-3:hover .btn, .card.card-cta.bg-dark-ep-accent-3:focus .btn {
+    color: #7a4e18; }
 
 .container-text .cta-card {
   /* floated within content */
@@ -15679,5 +15726,117 @@ body.department-4-h {
         color: #ffffff; }
     body.department-4-h header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
       border-bottom-color: #8cd9b3; } }
+body.navigation-extension-program {
+  /* H2 */
+  /* Buttons */
+  /* Links */
+  /* Borders */
+    /* ----------------------------------------------------------
+
+    OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+    ---------------------------------------------------------- */
+    /* ----------------------------------------------------------
+
+    VALUE PROPOSITIONS
+
+    ---------------------------------------------------------- */
+    /* ----------------------------------------------------------
+
+    NEWS & EVENTS
+
+    ---------------------------------------------------------- */
+  /* SideNav
+  --------------------------------------------- */
+  /* dropdown level 2 */ }
+  body.navigation-extension-program header nav.department-level .navbar-collapse {
+    background-color: #54585A; }
+  body.navigation-extension-program header li.nav-item .btn.btn-primary {
+    background-color: #00132b;
+    border-color: #00132b; }
+  body.navigation-extension-program header li.nav-item .btn.btn-primary:hover, body.navigation-extension-program header li.nav-item .btn.btn-primary:focus {
+    background-color: #1E417B; }
+  body.navigation-extension-program header .department-bar a.department-brand {
+    border-left-color: #009CDE; }
+  body.navigation-extension-program h2::after, body.navigation-extension-program .h2::after {
+    border-bottom-color: #009CDE; }
+  body.navigation-extension-program .btn.btn-primary {
+    background-color: #009CDE;
+    border-color: #009CDE; }
+  body.navigation-extension-program .btn.btn-primary:hover, body.navigation-extension-program .btn.btn-primary:focus {
+    background-color: #12b9ff; }
+  body.navigation-extension-program .btn.btn-creek {
+    background: #009CDE; }
+  body.navigation-extension-program .btn.btn-creek:hover,
+  body.navigation-extension-program .btn.btn-creek:focus {
+    background: #0078ab; }
+  body.navigation-extension-program button.btn-link,
+  body.navigation-extension-program .btn-link a,
+  body.navigation-extension-program a.btn-link,
+  body.navigation-extension-program a.card .btn-link {
+    color: #0078ab; }
+  body.navigation-extension-program .border-bottom {
+    border-bottom-color: #12b9ff !important; }
+  body.navigation-extension-program .border-top {
+    border-top-color: #12b9ff !important; }
+  body.navigation-extension-program .offset-content a:not(.btn),
+  body.navigation-extension-program .offset-content a:visited:not(.btn) {
+    border-bottom: #0078ab; }
+    body.navigation-extension-program .offset-content a:not(.btn):hover, body.navigation-extension-program .offset-content a:not(.btn):focus,
+    body.navigation-extension-program .offset-content a:visited:not(.btn):hover,
+    body.navigation-extension-program .offset-content a:visited:not(.btn):focus {
+      border-bottom: 1px solid #009CDE;
+      color: #231e20; }
+  body.navigation-extension-program section.offset-previews .container-fluid:nth-of-type(even) .row,
+  body.navigation-extension-program section.offset-previews .container:nth-of-type(even) .row {
+    background: #009CDE; }
+  body.navigation-extension-program .home .jumbotron blockquote.home-quote strong {
+    color: #12b9ff; }
+  body.navigation-extension-program .home .jumbotron blockquote.home-quote .fas {
+    color: #009CDE; }
+  body.navigation-extension-program .card-deck-values .card .card-image-top {
+    background-color: #009CDE; }
+  body.navigation-extension-program .card-deck-values span {
+    color: #2cc0ff; }
+  body.navigation-extension-program .card-deck-values.card-deck-values-2 .card .hover-content strong {
+    color: #45c8ff; }
+  body.navigation-extension-program .home .card-news span,
+  body.navigation-extension-program .content-primary .card-news span {
+    color: #007DB3; }
+  body.navigation-extension-program .home .card-news:hover span, body.navigation-extension-program .home .card-news:focus span,
+  body.navigation-extension-program .content-primary .card-news:hover span,
+  body.navigation-extension-program .content-primary .card-news:focus span {
+    border-bottom: 1px solid #009CDE; }
+  body.navigation-extension-program .event-date-block {
+    background-color: #12b9ff; }
+  body.navigation-extension-program .card.card-news:hover p.h3,
+  body.navigation-extension-program .card.card-news:hover h3.h3, body.navigation-extension-program .card.card-news:focus p.h3,
+  body.navigation-extension-program .card.card-news:focus h3.h3 {
+    color: #007DB3;
+    text-decoration: underline #009CDE; }
+  body.navigation-extension-program .side-nav p a {
+    background-color: #def5ff; }
+  body.navigation-extension-program .side-nav li.section-level-1.navTreeCurrentNode > a {
+    border-left: 0.5rem solid #009CDE; }
+  body.navigation-extension-program .side-nav a:hover, body.navigation-extension-program .side-nav a:focus {
+    border-left-color: #009CDE; }
+  body.navigation-extension-program .navbar.collapsing-sidenav ul.navTreeLevel1 li a.navTreeCurrentNode::before {
+    color: #009CDE; }
+  body.navigation-extension-program .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 li a.navTreeCurrentNode {
+    border-left-color: #009CDE; }
+  body.navigation-extension-program .side-nav .dropdown [data-toggle="collapse"] i {
+    color: #009CDE; }
+  body.navigation-extension-program .side-nav .dropdown [data-toggle="collapse"]:hover i, body.navigation-extension-program .side-nav .dropdown [data-toggle="collapse"]:focus i {
+    color: #12b9ff; }
+  body.navigation-extension-program .side-nav .dropdown .dropdown-menu a:hover,
+  body.navigation-extension-program .side-nav .dropdown .dropdown-menu a:focus {
+    border-bottom: 1px solid #009CDE; }
+  body.navigation-extension-program li.li-separator::after {
+    color: #009CDE; }
+
+@media (min-width: 992px) {
+  body.navigation-extension-program .department-dropdowns .dropdown-toggle:focus,
+  body.navigation-extension-program .department-dropdowns .dropdown-toggle:hover {
+    border-top-color: #009CDE; } }
 
 /*# sourceMappingURL=agsci.common.css.map */

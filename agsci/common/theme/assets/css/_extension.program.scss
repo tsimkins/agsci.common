@@ -1,0 +1,266 @@
+body.navigation-extension-program {
+    header {
+        nav.department-level .navbar-collapse {
+            background-color: $color-ps-coaly-gray;
+        }
+        li.nav-item {
+            .btn.btn-primary {
+                background-color: $color-ps-dark-nittany-navy;
+                border-color: $color-ps-dark-nittany-navy;
+            }
+
+            .btn.btn-primary:hover, .btn.btn-primary:focus {
+                background-color: $color-ps-beaver-blue;
+            }
+        }
+        .department-bar a.department-brand {
+            border-left-color: $color-ps-sky-blue;
+        }
+    }
+
+    /* H2 */
+    h2::after, .h2::after {
+        border-bottom-color: $color-ps-sky-blue;
+    }
+
+    /* Buttons */
+
+    .btn.btn-primary {
+        background-color: $color-ps-sky-blue;
+        border-color: $color-ps-sky-blue;
+    }
+
+    .btn.btn-primary:hover, .btn.btn-primary:focus {
+        background-color: $color-ps-sky-blue-light;
+    }
+
+    .btn.btn-creek {
+        background: $color-ps-sky-blue;
+    }
+
+    .btn.btn-creek:hover,
+    .btn.btn-creek:focus {
+        background: $color-ps-sky-blue-dark;
+    }
+
+    /* Links */
+    button.btn-link,
+    .btn-link a,
+    a.btn-link,
+    a.card .btn-link {
+        color: $color-ps-sky-blue-dark;
+    }
+
+    /* Borders */
+    .border-bottom {
+        border-bottom-color: $color-ps-sky-blue-light !important;
+    }
+
+    .border-top {
+        border-top-color: $color-ps-sky-blue-light !important;
+    }
+
+    /* ----------------------------------------------------------
+
+    OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+    ---------------------------------------------------------- */
+
+    .offset-content a:not(.btn),
+    .offset-content a:visited:not(.btn) {
+        border-bottom: $color-ps-sky-blue-dark;
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $color-ps-sky-blue;
+            color: $black;
+        }
+    }
+
+    section.offset-previews {
+
+        .container-fluid:nth-of-type(even),
+        .container:nth-of-type(even) {
+
+            .row {
+                background: $color-ps-sky-blue;
+            }
+
+        }
+    }
+
+    .home .jumbotron {
+
+        blockquote.home-quote {
+
+            strong {
+                color: $color-ps-sky-blue-light10;
+            }
+
+            .fas {
+                color: $color-ps-sky-blue;
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------
+
+    VALUE PROPOSITIONS
+
+    ---------------------------------------------------------- */
+
+    .card-deck-values {
+
+        .card {
+
+            .card-image-top {
+                background-color: $color-ps-sky-blue;
+            }
+
+         }
+
+        span {
+            color: $color-ps-sky-blue-light15;
+        }
+    }
+
+    .card-deck-values.card-deck-values-2 {
+
+        .card .hover-content {
+
+            strong {
+                color: $color-ps-sky-blue-light20;
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------
+
+    NEWS & EVENTS
+
+    ---------------------------------------------------------- */
+
+    .home .card-news,
+    .content-primary .card-news {
+
+        span {
+            color: $color-ps-sky-blue-accessible;
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                border-bottom: 1px solid $color-ps-sky-blue;
+            }
+        }
+    }
+
+    .event-date-block {
+        background-color: $color-ps-sky-blue-light;
+    }
+
+    .card.card-news {
+
+        &:hover,
+        &:focus {
+            p.h3,
+            h3.h3 {
+                color: $color-ps-sky-blue-accessible;
+                text-decoration: underline $color-ps-sky-blue;
+            }
+        }
+    }
+
+    /* SideNav
+    --------------------------------------------- */
+
+    .side-nav {
+
+        p {
+
+            a {
+                background-color: $color-ps-sky-blue-light-accessible;
+            }
+        }
+
+        li.section-level-1.navTreeCurrentNode {
+            > a {
+                border-left: 0.5rem solid $color-ps-sky-blue;
+            }
+        }
+
+        a {
+
+            &:hover,
+            &:focus {
+                border-left-color: $color-ps-sky-blue;
+            }
+
+        }
+
+    }
+
+    .navbar.collapsing-sidenav ul.navTreeLevel1 {
+        li a.navTreeCurrentNode {
+
+            &::before {
+                color: $color-ps-sky-blue;
+            }
+        }
+    }
+
+    /* dropdown level 2 */
+    .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 {
+
+        li a {
+
+            &.navTreeCurrentNode {
+                border-left-color: $color-ps-sky-blue;
+            }
+        }
+    }
+
+    .side-nav .dropdown {
+
+        [data-toggle="collapse"] {
+
+            i {
+                color: $color-ps-sky-blue;
+            }
+
+            &:hover,
+            &:focus {
+                i {
+                    color: $color-ps-sky-blue-light10;
+                }
+            }
+
+        }
+
+        .dropdown-menu {
+
+            a:hover,
+            a:focus {
+                border-bottom: 1px solid $color-ps-sky-blue;
+            }
+
+        }
+    }
+
+    li.li-separator::after {
+        color: $color-ps-sky-blue;
+    }
+
+}
+
+@include media-breakpoint-up(lg) {
+    body.navigation-extension-program {
+
+        .department-dropdowns {
+            .dropdown-toggle:focus,
+            .dropdown-toggle:hover {
+                border-top-color: $color-ps-sky-blue;
+            }
+        }
+    }
+}

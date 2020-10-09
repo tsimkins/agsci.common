@@ -22,9 +22,13 @@ def context_memoize(func):
         return getCachedValue(func, key, name)
 
     def getKey(func, name):
-        uid = name.context.UID()
         method = func.__name__
-        return '-'.join([method, uid])
+
+        if hasattr(name.context, 'UID'):
+            uid = name.context.UID()
+            return '-'.join([method, uid])
+
+        return method
 
     def getCachedValue(func, key, name):
         request = getRequest()

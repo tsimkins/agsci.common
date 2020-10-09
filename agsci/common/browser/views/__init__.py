@@ -1073,7 +1073,9 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
 
         _ = _.split()
 
-        department_id = self.department_id
+        navigation_viewlet = self.navigation_viewlet
+        department_id = navigation_viewlet.department_id
+        navigation_theme = navigation_viewlet.navigation_theme
 
         if department_id:
             _.append('header-department-level')
@@ -1083,5 +1085,8 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
         else:
             _.append('header-college-level')
             _.append('footer-college-level')
+
+        if navigation_theme:
+            _.append('navigation-%s' % navigation_theme)
 
         return " ".join(_)

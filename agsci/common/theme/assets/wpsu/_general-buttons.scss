@@ -3,8 +3,8 @@ button {
 
     &.disabled {
         pointer-events: none;
-        }
     }
+}
 
 .btn {
     position: relative;
@@ -14,20 +14,20 @@ button {
     font-size: $small2-size;
     font-family: $font-family-sans-serif;
     transition: $transition-base;
-    }
+}
 
 .btn {
     white-space: normal; /* override bootstrap default so button text can break - otherwise it can fix width and add scrollbars */
-    }
+}
 
 .btn-large {
     padding: 1rem 3rem;
-    }
+}
 
 .btn.btn-sm {
     padding: 0.25rem 0.75rem;
     font-size: $small3-size;
-    }
+}
 
 .btn.btn-secondary {
     color: $white !important;
@@ -43,12 +43,12 @@ button {
     &:hover,
     &:focus {
         background-color: $color-ps-creek-light10;
-        }
     }
+}
 
 .btn.btn-college-nav {
     font-size: $small3-size;
-    }
+}
 
 button.btn-link,
 .btn-link a,
@@ -67,10 +67,10 @@ a.card .btn-link {
         font-variant: normal;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font-family: 'Font Awesome 5 Free';
+        font-family: "Font Awesome 5 Free";
         line-height: $line-height-md;
-        }
     }
+}
 
 button.btn-link:hover,
 a:hover .btn-link,
@@ -79,18 +79,18 @@ button.btn-link:focus,
 a:focus .btn-link,
 a.btn-link:focus {
     border-bottom: 1px solid $color-ps-creek-accessible;
-    }
+}
 
 .btn.btn-light-gray {
-    background: lighten($color-ps-limestone-gray,30%);
+    background: lighten($color-ps-limestone-gray, 30%);
 
     color: $black;
 
     &:hover,
     &:focus {
-        background: lighten($color-ps-limestone-gray,35%);
-        }
+        background: lighten($color-ps-limestone-gray, 35%);
     }
+}
 
 .btn.btn-light-creek-outline {
     background: $white;
@@ -101,8 +101,8 @@ a.btn-link:focus {
     &:focus {
         background: $color-ps-creek;
         color: $white;
-        }
     }
+}
 
 .btn.btn-creek {
     background: $color-ps-creek-accessible;
@@ -111,8 +111,8 @@ a.btn-link:focus {
     &:hover,
     &:focus {
         background: $color-ps-creek;
-        }
     }
+}
 
 .btn.btn-lime {
     background: $color-ps-lime-accessible;
@@ -121,8 +121,8 @@ a.btn-link:focus {
     &:hover,
     &:focus {
         background: $color-ps-lime;
-        }
     }
+}
 
 .btn.btn-light-teal {
     background: $color-ps-light-teal-accessible;
@@ -131,8 +131,8 @@ a.btn-link:focus {
     &:hover,
     &:focus {
         background: $color-ps-light-teal;
-        }
     }
+}
 
 .btn.btn-dark-teal {
     background: $color-ps-dark-teal-accessible;
@@ -141,12 +141,42 @@ a.btn-link:focus {
     &:hover,
     &:focus {
         background: $color-ps-dark-teal;
-        }
     }
+}
+
+.btn.btn-ep-accent-1 {
+    background: darken($color-ep-accent-1, 10%);
+    color: $white;
+
+    &:hover,
+    &:focus {
+        background: $color-ep-accent-1;
+    }
+}
+
+.btn.btn-ep-accent-2 {
+    background: darken($color-ep-accent-2, 10%);
+    color: $white;
+
+    &:hover,
+    &:focus {
+        background: $color-ep-accent-2;
+    }
+}
+
+.btn.btn-ep-accent-3 {
+    background: darken($color-ep-accent-3, 10%);
+    color: $white;
+
+    &:hover,
+    &:focus {
+        background: $color-ep-accent-3;
+    }
+}
 
 .form-inline .btn.btn-creek {
     box-shadow: none;
-    }
+}
 
 .btn.btn-cta {
     display: block;
@@ -155,44 +185,44 @@ a.btn-link:focus {
     margin-bottom: 0.5rem;
     margin-left: 0.5rem;
     word-break: normal;
-    }
+}
 
 .btn.btn-orange {
-    background: darken($color-ps-invent-orange,11%);
+    background: darken($color-ps-invent-orange, 11%);
     color: $white;
 
     &:hover,
     &:focus {
         background: $color-ps-invent-orange;
-        }
     }
+}
 
 .btn.btn-green {
-    background: darken($color-ps-future-green,16%);
+    background: darken($color-ps-future-green, 16%);
     color: $white;
 
     &:hover,
     &:focus {
-        background: darken($color-ps-future-green,5%)
-        }
+        background: darken($color-ps-future-green, 5%);
     }
+}
 
 .btn.btn-purple {
-    background: lighten($color-ps-perpetual-purple,10%);
+    background: lighten($color-ps-perpetual-purple, 10%);
     color: $white;
 
     &:hover,
     &:focus {
-        background: lighten($color-ps-perpetual-purple,20%);
-        }
+        background: lighten($color-ps-perpetual-purple, 20%);
     }
+}
 
 .btn.btn-slate {
-    background: lighten($color-ps-slate-gray,10%);
+    background: lighten($color-ps-slate-gray, 10%);
     color: $white;
 
     &:hover,
     &:focus {
-        background: lighten($color-ps-slate-gray,20%);
-        }
+        background: lighten($color-ps-slate-gray, 20%);
     }
+}

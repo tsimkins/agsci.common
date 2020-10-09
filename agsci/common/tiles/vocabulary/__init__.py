@@ -6,20 +6,22 @@ class ButtonColorsVocabulary(KeyValueVocabulary):
     @property
     def items(self):
 
-        department_id = self.department_id
+        navigation_viewlet = self.navigation_viewlet
+        department_id = navigation_viewlet.department_id
+        navigation_theme = navigation_viewlet.navigation_theme
 
-        if self.department_id in ('4-h', 'abe'):
+        if self.department_id in ('4-h', ):
             return [
                 ('lime', 'Lime'),
                 ('dark-teal', 'Dark Teal'),
                 ('light-teal', 'Light Teal'),
             ]
 
-        elif self.department_id in ('mg',):
+        elif navigation_theme in ('extension-program',):
             return [
-                ('red', 'Red'),
-                ('green', 'Green'),
-                ('blue', 'Blue'),
+                ('ep-accent-1', 'Red'),
+                ('ep-accent-2', 'Blue'),
+                ('ep-accent-3', 'Brown'),
             ]
 
         return [
