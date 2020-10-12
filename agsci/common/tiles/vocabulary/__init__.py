@@ -12,9 +12,9 @@ class ButtonColorsVocabulary(KeyValueVocabulary):
 
         if self.department_id in ('4-h', ):
             return [
-                ('lime', 'Lime'),
-                ('dark-teal', 'Dark Teal'),
-                ('light-teal', 'Light Teal'),
+                ('4-h-accent-1', 'Bright Blue'),
+                ('4-h-accent-2', 'Dark Teal'),
+                ('4-h-accent-3', 'Light Teal'),
             ]
 
         elif navigation_theme in ('extension-program',):

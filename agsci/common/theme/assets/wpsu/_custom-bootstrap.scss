@@ -61,22 +61,22 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-clover-light20: lighten($color-ps-clover,20%);
     $color-ps-clover-light30: lighten($color-ps-clover,30%);
 
-    $color-ps-dark-teal: #0d8383;
-    $color-ps-light-teal: #08b7b2;
-    $color-ps-lime: #c4d32e;
+    $color-4-h-accent-1: #0954b4;
+    $color-4-h-accent-2: #0d8383;
+    $color-4-h-accent-3: #08b7b2;
 
-    $color-ps-lime-light: lighten($color-ps-lime,15%);
-    $color-ps-lime-dark: darken($color-ps-lime,15%);
+    $color-4-h-accent-1-light: lighten($color-4-h-accent-1,15%);
+    $color-4-h-accent-1-dark: darken($color-4-h-accent-1,15%);
 
-    $color-ps-dark-teal-light: lighten($color-ps-dark-teal,15%);
-    $color-ps-dark-teal-dark: darken($color-ps-dark-teal,15%);
+    $color-4-h-accent-2-light: lighten($color-4-h-accent-2,15%);
+    $color-4-h-accent-2-dark: darken($color-4-h-accent-2,15%);
 
-    $color-ps-light-teal-light: lighten($color-ps-light-teal,15%);
-    $color-ps-light-teal-dark: darken($color-ps-light-teal,15%);
+    $color-4-h-accent-3-light: lighten($color-4-h-accent-3,15%);
+    $color-4-h-accent-3-dark: darken($color-4-h-accent-3,15%);
 
-    $color-ps-dark-teal-accessible: #0b7575;
-    $color-ps-light-teal-accessible: #07A6A1;
-    $color-ps-lime-accessible: #909A22;
+    $color-4-h-accent-1-accessible: #06418e;
+    $color-4-h-accent-2-accessible: #0b7575;
+    $color-4-h-accent-3-accessible: #07A6A1;
 
     /* Extension Program Site Colors */
     $color-ps-sky-blue-light: #12b9ff;

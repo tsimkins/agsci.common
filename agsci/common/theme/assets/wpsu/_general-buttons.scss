@@ -114,33 +114,33 @@ a.btn-link:focus {
     }
 }
 
-.btn.btn-lime {
-    background: $color-ps-lime-accessible;
+.btn.btn-4-h-accent-1 {
+    background: $color-4-h-accent-1-accessible;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ps-lime;
+        background: $color-4-h-accent-1;
     }
 }
 
-.btn.btn-light-teal {
-    background: $color-ps-light-teal-accessible;
+.btn.btn-4-h-accent-2 {
+    background: $color-4-h-accent-2-accessible;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ps-light-teal;
+        background: $color-4-h-accent-2;
     }
 }
 
-.btn.btn-dark-teal {
-    background: $color-ps-dark-teal-accessible;
+.btn.btn-4-h-accent-3 {
+    background: $color-4-h-accent-3-accessible;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ps-dark-teal;
+        background: $color-4-h-accent-3;
     }
 }
 

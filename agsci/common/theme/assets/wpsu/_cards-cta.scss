@@ -122,59 +122,59 @@
     }
 
 
-    &.bg-dark-lime {
+    &.bg-dark-4-h-accent-1 {
 
         .card-body {
-            background: darken($color-ps-lime,16%);
+            background: darken($color-4-h-accent-1,10%);
         }
 
         &:hover,
         &:focus {
 
             .card-body {
-                background: darken($color-ps-lime,10%);
+                background: darken($color-4-h-accent-1,5%);
             }
 
             .btn {
-                color: darken($color-ps-lime,16%);
+                color: darken($color-4-h-accent-1,10%);
             }
         }
     }
 
-    &.bg-dark-dark-teal {
+    &.bg-dark-4-h-accent-2 {
 
         .card-body {
-            background: darken($color-ps-dark-teal,16%);
+            background: darken($color-4-h-accent-2,10%);
         }
 
         &:hover,
         &:focus {
 
             .card-body {
-                background: darken($color-ps-dark-teal,10%);
+                background: darken($color-4-h-accent-2,5%);
             }
 
             .btn {
-                color: darken($color-ps-dark-teal,16%);
+                color: darken($color-4-h-accent-2,10%);
             }
         }
     }
 
-    &.bg-dark-light-teal {
+    &.bg-dark-4-h-accent-3 {
 
         .card-body {
-            background: darken($color-ps-light-teal,16%);
+            background: darken($color-4-h-accent-3,10%);
         }
 
         &:hover,
         &:focus {
 
             .card-body {
-                background: darken($color-ps-light-teal,10%);
+                background: darken($color-4-h-accent-3,5%);
             }
 
             .btn {
-                color: darken($color-ps-light-teal,16%);
+                color: darken($color-4-h-accent-3,10%);
             }
         }
     }
