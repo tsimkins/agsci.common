@@ -15750,7 +15750,9 @@ body.navigation-extension-program {
   --------------------------------------------- */
   /* dropdown level 2 */ }
   body.navigation-extension-program header nav.department-level .navbar-collapse {
-    background-color: #767676; }
+    background-color: #FFFFFF; }
+    body.navigation-extension-program header nav.department-level .navbar-collapse .department-dropdowns .dropdown-toggle {
+      color: #001E44; }
   body.navigation-extension-program header li.nav-item .btn.btn-primary {
     background-color: #00132b;
     border-color: #00132b; }

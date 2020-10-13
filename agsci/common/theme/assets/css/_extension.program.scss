@@ -1,7 +1,11 @@
 body.navigation-extension-program {
     header {
         nav.department-level .navbar-collapse {
-            background-color: #767676; // Lightest gray with enough contrast
+            background-color: #FFFFFF;
+
+            .department-dropdowns .dropdown-toggle {
+                color: $color-ps-nittany-navy;
+            }
         }
         li.nav-item {
             .btn.btn-primary {
