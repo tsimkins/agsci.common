@@ -120,25 +120,25 @@ COLOR Utility Classes
 }
 
 .bg-dark-4-h-accent-1 {
-    background: darken($color-4-h-accent-1,15%);
+    background: $color-4-h-accent-1;
 }
 
 .bg-dark-4-h-accent-2 {
-    background: darken($color-4-h-accent-2,15%);
+    background: $color-4-h-accent-2;
 }
 
 .bg-dark-4-h-accent-3 {
-    background: darken($color-4-h-accent-3,15%);
+    background: $color-4-h-accent-3;
 }
 
 .bg-dark-ep-accent-1 {
-    background: darken($color-ep-accent-1,15%);
+    background: $color-ep-accent-1;
 }
 
 .bg-dark-ep-accent-2 {
-    background: darken($color-ep-accent-2,15%);
+    background: $color-ep-accent-2;
 }
 
 .bg-dark-ep-accent-3 {
-    background: darken($color-ep-accent-3,15%);
+    background: $color-ep-accent-3;
 }

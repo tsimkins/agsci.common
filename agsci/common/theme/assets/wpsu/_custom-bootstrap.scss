@@ -61,9 +61,9 @@ AGSCI VARIABLE CUSTOMIZATION
     $color-ps-clover-light20: lighten($color-ps-clover,20%);
     $color-ps-clover-light30: lighten($color-ps-clover,30%);
 
-    $color-4-h-accent-1: #0954b4;
-    $color-4-h-accent-2: #0d8383;
-    $color-4-h-accent-3: #08b7b2;
+    $color-4-h-accent-1: #06418e;
+    $color-4-h-accent-2: #006A6A;
+    $color-4-h-accent-3: #07A6A1;
 
     $color-4-h-accent-1-light: lighten($color-4-h-accent-1,15%);
     $color-4-h-accent-1-dark: darken($color-4-h-accent-1,15%);
@@ -73,10 +73,6 @@ AGSCI VARIABLE CUSTOMIZATION
 
     $color-4-h-accent-3-light: lighten($color-4-h-accent-3,15%);
     $color-4-h-accent-3-dark: darken($color-4-h-accent-3,15%);
-
-    $color-4-h-accent-1-accessible: #06418e;
-    $color-4-h-accent-2-accessible: #0b7575;
-    $color-4-h-accent-3-accessible: #07A6A1;
 
     /* Extension Program Site Colors */
     $color-ps-sky-blue-light: #12b9ff;
@@ -91,7 +87,7 @@ AGSCI VARIABLE CUSTOMIZATION
 
     /* Extension Program Site Accent Colors */
     $color-ep-accent-1: #CA4E28; // Red
-    $color-ep-accent-2: #336A8B; // Blue
+    $color-ep-accent-2: #3D7CA4; // Blue
     $color-ep-accent-3: #A46921; // Brown
     //
     // Calculated Light Shades 5%-35% - % equal additional white

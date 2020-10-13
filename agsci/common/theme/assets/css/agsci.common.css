@@ -8140,22 +8140,22 @@ COLOR Utility Classes
   background: #206040; }
 
 .bg-dark-4-h-accent-1 {
-  background: #05326b; }
+  background: #06418e; }
 
 .bg-dark-4-h-accent-2 {
-  background: #063d3d; }
+  background: #006A6A; }
 
 .bg-dark-4-h-accent-3 {
-  background: #056e6b; }
+  background: #07A6A1; }
 
 .bg-dark-ep-accent-1 {
-  background: #8a351b; }
+  background: #CA4E28; }
 
 .bg-dark-ep-accent-2 {
-  background: #1e3f53; }
+  background: #3D7CA4; }
 
 .bg-dark-ep-accent-3 {
-  background: #644014; }
+  background: #A46921; }
 
 /* ----------------------------------------------------------
 
@@ -8341,37 +8341,37 @@ a.btn-link:focus {
   background: #06418e;
   color: #ffffff; }
   .btn.btn-4-h-accent-1:hover, .btn.btn-4-h-accent-1:focus {
-    background: #0954b4; }
+    background: #042b5d; }
 
 .btn.btn-4-h-accent-2 {
-  background: #0b7575;
+  background: #006A6A;
   color: #ffffff; }
   .btn.btn-4-h-accent-2:hover, .btn.btn-4-h-accent-2:focus {
-    background: #0d8383; }
+    background: #003737; }
 
 .btn.btn-4-h-accent-3 {
   background: #07A6A1;
   color: #ffffff; }
   .btn.btn-4-h-accent-3:hover, .btn.btn-4-h-accent-3:focus {
-    background: #08b7b2; }
+    background: #057572; }
 
 .btn.btn-ep-accent-1 {
-  background: #9f3e20;
+  background: #CA4E28;
   color: #ffffff; }
   .btn.btn-ep-accent-1:hover, .btn.btn-ep-accent-1:focus {
-    background: #CA4E28; }
+    background: #9f3e20; }
 
 .btn.btn-ep-accent-2 {
-  background: #254e66;
+  background: #3D7CA4;
   color: #ffffff; }
   .btn.btn-ep-accent-2:hover, .btn.btn-ep-accent-2:focus {
-    background: #336A8B; }
+    background: #2f607f; }
 
 .btn.btn-ep-accent-3 {
-  background: #7a4e18;
+  background: #A46921;
   color: #ffffff; }
   .btn.btn-ep-accent-3:hover, .btn.btn-ep-accent-3:focus {
-    background: #A46921; }
+    background: #7a4e18; }
 
 .form-inline .btn.btn-creek {
   box-shadow: none; }
@@ -10942,41 +10942,41 @@ PORTABLE HIGHLIGHTS
   .card.card-cta.bg-dark-green:hover .btn, .card.card-cta.bg-dark-green:focus .btn {
     color: #5c7a00; }
   .card.card-cta.bg-dark-4-h-accent-1 .card-body {
-    background: #073d83; }
+    background: #06418e; }
   .card.card-cta.bg-dark-4-h-accent-1:hover .card-body, .card.card-cta.bg-dark-4-h-accent-1:focus .card-body {
-    background: #08499c; }
+    background: #042b5d; }
   .card.card-cta.bg-dark-4-h-accent-1:hover .btn, .card.card-cta.bg-dark-4-h-accent-1:focus .btn {
-    color: #073d83; }
+    color: #06418e; }
   .card.card-cta.bg-dark-4-h-accent-2 .card-body {
-    background: #085555; }
+    background: #006A6A; }
   .card.card-cta.bg-dark-4-h-accent-2:hover .card-body, .card.card-cta.bg-dark-4-h-accent-2:focus .card-body {
-    background: #0b6c6c; }
+    background: #003737; }
   .card.card-cta.bg-dark-4-h-accent-2:hover .btn, .card.card-cta.bg-dark-4-h-accent-2:focus .btn {
-    color: #085555; }
+    color: #006A6A; }
   .card.card-cta.bg-dark-4-h-accent-3 .card-body {
-    background: #068682; }
+    background: #07A6A1; }
   .card.card-cta.bg-dark-4-h-accent-3:hover .card-body, .card.card-cta.bg-dark-4-h-accent-3:focus .card-body {
-    background: #079f9a; }
+    background: #057572; }
   .card.card-cta.bg-dark-4-h-accent-3:hover .btn, .card.card-cta.bg-dark-4-h-accent-3:focus .btn {
-    color: #068682; }
+    color: #07A6A1; }
   .card.card-cta.bg-dark-ep-accent-1 .card-body {
-    background: #9f3e20; }
+    background: #CA4E28; }
   .card.card-cta.bg-dark-ep-accent-1:hover .card-body, .card.card-cta.bg-dark-ep-accent-1:focus .card-body {
-    background: #b54624; }
+    background: #9f3e20; }
   .card.card-cta.bg-dark-ep-accent-1:hover .btn, .card.card-cta.bg-dark-ep-accent-1:focus .btn {
-    color: #9f3e20; }
+    color: #CA4E28; }
   .card.card-cta.bg-dark-ep-accent-2 .card-body {
-    background: #254e66; }
+    background: #3D7CA4; }
   .card.card-cta.bg-dark-ep-accent-2:hover .card-body, .card.card-cta.bg-dark-ep-accent-2:focus .card-body {
-    background: #2c5c78; }
+    background: #2f607f; }
   .card.card-cta.bg-dark-ep-accent-2:hover .btn, .card.card-cta.bg-dark-ep-accent-2:focus .btn {
-    color: #254e66; }
+    color: #3D7CA4; }
   .card.card-cta.bg-dark-ep-accent-3 .card-body {
-    background: #7a4e18; }
+    background: #A46921; }
   .card.card-cta.bg-dark-ep-accent-3:hover .card-body, .card.card-cta.bg-dark-ep-accent-3:focus .card-body {
-    background: #8f5b1d; }
+    background: #7a4e18; }
   .card.card-cta.bg-dark-ep-accent-3:hover .btn, .card.card-cta.bg-dark-ep-accent-3:focus .btn {
-    color: #7a4e18; }
+    color: #A46921; }
 
 .container-text .cta-card {
   /* floated within content */
@@ -15750,7 +15750,7 @@ body.navigation-extension-program {
   --------------------------------------------- */
   /* dropdown level 2 */ }
   body.navigation-extension-program header nav.department-level .navbar-collapse {
-    background-color: #54585A; }
+    background-color: #767676; }
   body.navigation-extension-program header li.nav-item .btn.btn-primary {
     background-color: #00132b;
     border-color: #00132b; }

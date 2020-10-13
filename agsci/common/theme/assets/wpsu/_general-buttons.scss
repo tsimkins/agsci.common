@@ -115,62 +115,62 @@ a.btn-link:focus {
 }
 
 .btn.btn-4-h-accent-1 {
-    background: $color-4-h-accent-1-accessible;
+    background: $color-4-h-accent-1;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-4-h-accent-1;
+        background: darken($color-4-h-accent-1, 10%);
     }
 }
 
 .btn.btn-4-h-accent-2 {
-    background: $color-4-h-accent-2-accessible;
+    background: $color-4-h-accent-2;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-4-h-accent-2;
+        background:darken($color-4-h-accent-2, 10%);
     }
 }
 
 .btn.btn-4-h-accent-3 {
-    background: $color-4-h-accent-3-accessible;
+    background: $color-4-h-accent-3;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-4-h-accent-3;
+        background: darken($color-4-h-accent-3, 10%);
     }
 }
 
 .btn.btn-ep-accent-1 {
-    background: darken($color-ep-accent-1, 10%);
+    background: $color-ep-accent-1;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ep-accent-1;
+        background: darken($color-ep-accent-1, 10%);
     }
 }
 
 .btn.btn-ep-accent-2 {
-    background: darken($color-ep-accent-2, 10%);
+    background: $color-ep-accent-2;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ep-accent-2;
+        background: darken($color-ep-accent-2, 10%);
     }
 }
 
 .btn.btn-ep-accent-3 {
-    background: darken($color-ep-accent-3, 10%);
+    background: $color-ep-accent-3;
     color: $white;
 
     &:hover,
     &:focus {
-        background: $color-ep-accent-3;
+        background: darken($color-ep-accent-3, 10%);
     }
 }
 
