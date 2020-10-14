@@ -372,6 +372,7 @@ class ExternalLinksView(JSONDumpView):
                     'title' : r.Title,
                     'type' : r.Type,
                     'links' : [dict(zip(['href', 'label'], x)) for x in links],
+                    'review_state' : r.review_state,
                 })
 
         return data
