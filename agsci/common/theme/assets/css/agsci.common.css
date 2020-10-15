@@ -13539,10 +13539,16 @@ a.alert-bar:hover {
   line-height: 1.2; }
 
 .pagination {
-  display: inline-block;
+  display: block;
   padding: 0;
   list-style: none;
-  margin: 20px 0; }
+  margin: 20px 0;
+  text-align: center; }
+
+.pagination ul {
+  padding-left: 0;
+  display: inline-block;
+  margin: 0.5rem auto; }
 
 .pagination li {
   display: block;
@@ -13564,6 +13570,11 @@ a.alert-bar:hover {
   background-color: #fff;
   border: 1px solid #e5e5e5 !important;
   margin-left: -1px; }
+
+.pagination li.previous::before,
+.pagination li.next::after {
+  content: "";
+  margin: 0; }
 
 .pagination li.previous > a {
   margin-left: 0;

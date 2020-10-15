@@ -326,6 +326,7 @@
                     <xsl:apply-templates css:select="#public-tags" />
                     <xsl:apply-templates css:select="#content-core" />
                     <xsl:apply-templates css:select="#course-policies" />
+                    <xsl:apply-templates css:select="nav.pagination" />
                 </div>
 
             </replace>
