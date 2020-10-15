@@ -3,6 +3,7 @@ from BTrees.OOBTree import OOBTree
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.browser.search import Search as _SearchView
+from Products.CMFPlone.browser.search import BAD_CHARS, quote, quote_chars
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -948,6 +949,15 @@ class TileLinksDataView(TileLinksView):
         return json.dumps(data, indent=4)
 
 class SearchView(_SearchView, BaseView):
+
+    def munge_search_term(self, q):
+        for char in BAD_CHARS:
+            q = q.replace(char, ' ')
+        r = map(quote, q.split())
+        phrase = '"%s"' % " ".join(r)
+        r = " AND ".join(r)
+        r = quote_chars(r) + '*'
+        return " OR ".join([phrase, r])
 
     def types_list(self):
 
