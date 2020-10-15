@@ -13547,7 +13547,7 @@ a.alert-bar:hover {
 
 .pagination ul {
   padding-left: 0;
-  display: inline-block;
+  display: block;
   margin: 0.5rem auto; }
 
 .pagination li {
@@ -13556,6 +13556,7 @@ a.alert-bar:hover {
   position: relative;
   padding: 0;
   font-weight: 300;
+  line-height: 2.5;
   /* wanna hide the label "next ... items"? */
   /* .label {
       display: none;
@@ -13564,7 +13565,7 @@ a.alert-bar:hover {
 .pagination li > a,
 .pagination li > span {
   padding: 6px 12px !important;
-  line-height: 1.42857143;
+  line-height: normal;
   text-decoration: none;
   color: #007bb1;
   background-color: #fff;
@@ -13573,8 +13574,7 @@ a.alert-bar:hover {
 
 .pagination li.previous::before,
 .pagination li.next::after {
-  content: "";
-  margin: 0; }
+  display: none; }
 
 .pagination li.previous > a {
   margin-left: 0;
