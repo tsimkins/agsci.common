@@ -11154,61 +11154,86 @@ BIO -- body class .template-person_view
 
 /* Individual Bio
 --------------------------------------------- */
-.bio {
+.person-profile {
   padding: 1rem 0; }
-  .bio ul.jobTitle li {
+  .person-profile h1:after {
+    content: "";
+    position: absolute;
+    bottom: -0.75rem;
+    left: 0;
+    width: 6rem;
+    height: 1px;
+    border-bottom: 4px solid #3EA39E; }
+  .person-profile ul.list-inline.list-inline-social {
+    margin-top: 0.75rem; }
+  .person-profile ul.jobTitle li {
     font-size: 1.25rem; }
-  .bio address {
+  .person-profile address {
     font-size: 0.9rem;
-    border-bottom: transparent; }
-  .bio h1 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem; }
-  .bio p {
-    font-family: "Nunito Sans", sans-serif; }
-  .bio ul {
-    margin-bottom: 0; }
-  .bio img {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem; }
-  .bio .card-deck {
-    margin-bottom: 0; }
-  .bio h2, .bio .h2 {
-    margin-top: 0.5rem; }
-    .bio h2 a:hover,
-    .bio h2 a:focus, .bio .h2 a:hover,
-    .bio .h2 a:focus {
-      color: #2f7a77; }
-  .bio address {
+    border-bottom: transparent;
     margin-bottom: 0.5rem;
     padding: 0.75rem 0;
     line-height: 1.4; }
-  .bio .expertise h3 {
+    .person-profile address ul {
+      padding-left: 0; }
+  .person-profile h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem; }
+  .person-profile .bio-contact-deets {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgba(62, 163, 158, 0.25); }
+    .person-profile .bio-contact-deets a.email,
+    .person-profile .bio-contact-deets a.phone,
+    .person-profile .bio-contact-deets a.fax,
+    .person-profile .bio-contact-deets a.pdf {
+      margin-top: 0;
+      margin-bottom: 0; }
+    .person-profile .bio-contact-deets address {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0; }
+  .person-profile p {
+    font-family: "Nunito Sans", sans-serif; }
+  .person-profile ul {
+    margin-bottom: 0;
+    padding-left: 1.125rem; }
+  .person-profile img {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .person-profile .card-deck {
+    margin-bottom: 0; }
+  .person-profile .expertise h3 {
+    margin-top: 0.5rem; }
+  .person-profile ul.jobTitle {
+    margin-top: 0.5rem;
+    padding-left: 0;
+    list-style-type: none;
+    font-style: italic;
+    font-family: "Nunito Sans", sans-serif; }
+  .person-profile .person-bio h2 {
+    margin-top: 3rem; }
+  .person-profile .person-bio > div > h2:first-child {
     margin-top: 0.5rem; }
 
 @media (min-width: 992px) {
-  .facultyStaffDirectory .bio address {
+  .facultyStaffDirectory .person-profile address {
     border: 1px solid rgba(62, 163, 158, 0.25); }
 
-  .bio h1 {
+  .person-profile h1 {
     font-size: 2.25rem; } }
-.bio ul {
-  padding-left: 1.125rem; }
-
-.bio address ul {
-  padding-left: 0; }
-
 ul.list-bio-contact li {
   margin-right: 0.625rem;
   margin-bottom: 0.5rem; }
   ul.list-bio-contact li span {
-    margin-right: .1rem;
+    margin-right: 0.1rem;
     color: #2f7a77;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 90%; }
 ul.list-bio-contact .fa-file-pdf {
-  margin-right: .1rem;
+  margin-right: 0.1rem;
   color: #2f7a77; }
 
 .card.card-short-bio ul.list-bio-contact li span {
@@ -11223,15 +11248,21 @@ ul.list-bio-contact .fa-file-pdf {
 
   .facultyStaffDirectory ul.list-bio-contact li span {
     font-size: 85%; } }
-.bio ul.jobTitle {
-  margin-top: 0.5rem;
-  padding-left: 0;
-  list-style-type: none;
-  font-style: italic;
-  font-family: "Nunito Sans", sans-serif; }
-
 /* Bio in Directory Format
 --------------------------------------------- */
+.facultyStaffDirectory .bio h2,
+.facultyStaffDirectory .bio .h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem; }
+  .facultyStaffDirectory .bio h2 a:hover,
+  .facultyStaffDirectory .bio h2 a:focus,
+  .facultyStaffDirectory .bio .h2 a:hover,
+  .facultyStaffDirectory .bio .h2 a:focus {
+    color: #2f7a77; }
+.facultyStaffDirectory .bio ul.list-inline.list-inline-social li {
+  margin-right: 0.375rem; }
+.facultyStaffDirectory .bio address {
+  margin-bottom: 0; }
 .facultyStaffDirectory .bio h3 {
   margin-top: 0.5rem;
   font-size: 1rem; }
@@ -11266,9 +11297,6 @@ ul.list-bio-contact .fa-file-pdf {
     font-size: 0.825rem; }
   .facultyStaffDirectory .bio ul li {
     font-size: 0.75rem; } }
-.facultyStaffDirectory .bio address {
-  margin-bottom: 0; }
-
 .facultyStaffDirectory .tileTitle,
 .facultyStaffDirectory .tileHeadline,
 address .tileHeadline {
@@ -11321,7 +11349,7 @@ Headers pulled out to the left
 
 ul.list-three-col {
   margin-bottom: 0;
-  text-indent: -.25rem; }
+  text-indent: -0.25rem; }
 
 @media (min-width: 768px) {
   ul.list-three-col {
@@ -11342,42 +11370,9 @@ ul.list-three-col {
     columns: 3;
     -webkit-columns: 3;
     -moz-columns: 3; } }
-.bio .bio-contact-deets {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  border: 1px solid rgba(62, 163, 158, 0.25); }
-  .bio .bio-contact-deets a.email, .bio .bio-contact-deets a.phone, .bio .bio-contact-deets a.fax, .bio .bio-contact-deets a.pdf {
-    margin-top: 0;
-    margin-bottom: 0; }
-  .bio .bio-contact-deets address {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0; }
-
-.bio h2 {
-  font-size: 1.5rem; }
-
 @media (min-width: 768px) {
-  .bio h2 {
+  .person-profile h2 {
     font-size: 1.5rem; } }
-.bio h1:after {
-  content: "";
-  position: absolute;
-  bottom: -0.75rem;
-  left: 0;
-  width: 6rem;
-  height: 1px;
-  border-bottom: 4px solid #3EA39E; }
-
-.bio ul.list-inline.list-inline-social {
-  margin-top: 0.75rem; }
-
-/* Only for bio in Directory listings
---------------------------------------------- */
-.bio ul.list-inline.list-inline-social li {
-  margin-right: 0.375rem; }
-
 .big-image img {
   object-fit: contain;
   max-width: 100%; }
