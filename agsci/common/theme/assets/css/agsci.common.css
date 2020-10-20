@@ -15759,7 +15759,7 @@ body.navigation-extension-program {
   body.navigation-extension-program header li.nav-item .btn.btn-primary:hover, body.navigation-extension-program header li.nav-item .btn.btn-primary:focus {
     background-color: #1E417B; }
   body.navigation-extension-program header .department-bar a.department-brand {
-    border-left-color: #009CDE; }
+    border-left-color: #757575; }
   body.navigation-extension-program h2::after, body.navigation-extension-program .h2::after {
     border-bottom-color: #009CDE; }
   body.navigation-extension-program .btn.btn-primary {
