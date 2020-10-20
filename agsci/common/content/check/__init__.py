@@ -965,6 +965,13 @@ class AllCapsHeadings(BodyHeadingCheck):
         for h in self.value():
             h_text = self.soup_to_text(h)
 
+            # Verify that the heading contains capital letters.
+            # Skip check if no capital letters found
+            _re = re.compile('[A-Z]', re.M)
+
+            if not _re.search(h_text):
+                continue
+
             # Skip headings that are one-word headings.  They're sometimes acronyms.
             if len(self.toWords(h_text)) > 1:
 
