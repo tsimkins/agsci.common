@@ -1189,8 +1189,6 @@
         name="plone.app.caching.moderateCaching.plone.resource.etags">
         <field ref="plone.app.caching.moderateCaching.etags" />
         <value>
-            <element>userid</element>
-            <element>roles</element>
             <element>catalogCounter</element>
             <element>resourceRegistries</element>
             <element>skin</element>
