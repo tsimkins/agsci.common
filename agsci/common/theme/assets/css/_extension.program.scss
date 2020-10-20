@@ -1,3 +1,5 @@
+$color-ps-sonic-silver: #757575;
+
 body.navigation-extension-program {
     header {
         nav.department-level .navbar-collapse {
@@ -30,21 +32,21 @@ body.navigation-extension-program {
     /* Buttons */
 
     .btn.btn-primary {
-        background-color: $color-ps-sky-blue;
-        border-color: $color-ps-sky-blue;
+        background-color: $color-ps-sonic-silver;
+        border-color: $color-ps-sonic-silver;
     }
 
     .btn.btn-primary:hover, .btn.btn-primary:focus {
-        background-color: $color-ps-sky-blue-light;
+        background-color: $color-ps-beaver-blue;
     }
 
     .btn.btn-creek {
-        background: $color-ps-sky-blue;
+        background: $color-ps-sonic-silver;
     }
 
     .btn.btn-creek:hover,
     .btn.btn-creek:focus {
-        background: $color-ps-sky-blue-dark;
+        background: $color-ps-beaver-blue;
     }
 
     /* Links */
@@ -263,7 +265,7 @@ body.navigation-extension-program {
         .department-dropdowns {
             .dropdown-toggle:focus,
             .dropdown-toggle:hover {
-                border-top-color: $color-ps-sky-blue;
+                border-top-color: $color-ps-sonic-silver;
             }
         }
     }

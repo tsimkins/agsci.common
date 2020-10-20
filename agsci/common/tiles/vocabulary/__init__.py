@@ -3,6 +3,24 @@ from agsci.common.utilities import getExtensionConfig
 
 class ButtonColorsVocabulary(KeyValueVocabulary):
 
+    set_default = [
+        ('orange', 'Orange'),
+        ('green', 'Green'),
+        ('purple', 'Purple'),
+    ]
+
+    set_4h = [
+        ('4-h-accent-1', 'Bright Blue'),
+        ('4-h-accent-2', 'Dark Teal'),
+        ('4-h-accent-3', 'Light Teal'),
+    ]
+
+    set_ep = [
+        ('ep-accent-1', 'Red'),
+        ('ep-accent-2', 'Blue'),
+        ('ep-accent-3', 'Brown'),
+    ]
+
     @property
     def items(self):
 
@@ -10,25 +28,32 @@ class ButtonColorsVocabulary(KeyValueVocabulary):
         department_id = navigation_viewlet.department_id
         navigation_theme = navigation_viewlet.navigation_theme
 
-        if self.department_id in ('4-h', ):
-            return [
-                ('4-h-accent-1', 'Bright Blue'),
-                ('4-h-accent-2', 'Dark Teal'),
-                ('4-h-accent-3', 'Light Teal'),
-            ]
+        if department_id in ('4-h', ):
+            return self.set_4h
 
         elif navigation_theme in ('extension-program',):
-            return [
-                ('ep-accent-1', 'Red'),
-                ('ep-accent-2', 'Blue'),
-                ('ep-accent-3', 'Brown'),
-            ]
+            return self.set_ep
 
-        return [
-            ('orange', 'Orange'),
-            ('green', 'Green'),
-            ('purple', 'Purple'),
-        ]
+        return self.set_default
+
+class CTABlockColorsVocabulary(ButtonColorsVocabulary):
+
+    @property
+    def items(self):
+
+        navigation_viewlet = self.navigation_viewlet
+        department_id = navigation_viewlet.department_id
+        navigation_theme = navigation_viewlet.navigation_theme
+
+        if department_id in ('4-h', ):
+            return self.set_4h
+
+        # Program Sites use 4-H CTA Colors
+        elif navigation_theme in ('extension-program',):
+            return self.set_4h
+
+        return self.set_default
+
 
 class CTABackgroundVocabulary(KeyValueVocabulary):
     items = [
@@ -194,6 +219,7 @@ class ExtensionListingDepartmentsVocabulary(KeyValueVocabulary):
     ]
 
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
+CTABlockColorsVocabularyFactory = CTABlockColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
 LRAlignVocabularyFactory = LRAlignVocabulary()
 LCAlignVocabularyFactory = LCAlignVocabulary()

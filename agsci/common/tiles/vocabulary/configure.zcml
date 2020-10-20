@@ -9,6 +9,12 @@
     />
 
     <utility
+        name="agsci.common.tiles.cta_block_colors"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".CTABlockColorsVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.cta_background"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".CTABackgroundVocabularyFactory"

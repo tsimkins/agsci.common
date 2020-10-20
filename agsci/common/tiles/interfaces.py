@@ -37,6 +37,15 @@ class IButtonTileRowSchema(Interface):
         required=False,
     )
 
+class ICTATileRowSchema(IButtonTileRowSchema):
+
+    color = schema.Choice(
+        title=_(u"Button Color"),
+        vocabulary='agsci.common.tiles.cta_block_colors',
+        default=u'orange',
+        required=False,
+    )
+
 class IPersonTileRowSchema(Interface):
 
     username = schema.Choice(
@@ -64,7 +73,7 @@ class IButtonBlockTileRowSchema(Interface):
 
     color = schema.Choice(
         title=_(u"Button Color"),
-        vocabulary='agsci.common.tiles.button_colors',
+        vocabulary='agsci.common.tiles.cta_block_colors',
         default=u'orange',
         required=False,
     )
@@ -235,7 +244,7 @@ class ICTATileBase(Interface):
     value = schema.List(
         title=u"Buttons",
         description=u"Default order: Orange, Green, Purple",
-        value_type=DictRow(title=u"Button", schema=IButtonTileRowSchema),
+        value_type=DictRow(title=u"Button", schema=ICTATileRowSchema),
         required=False
     )
 
