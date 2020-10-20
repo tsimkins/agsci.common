@@ -32,27 +32,12 @@ class ButtonColorsVocabulary(KeyValueVocabulary):
             return self.set_4h
 
         elif navigation_theme in ('extension-program',):
-            return self.set_ep
+            return self.set_4h
 
         return self.set_default
 
 class CTABlockColorsVocabulary(ButtonColorsVocabulary):
-
-    @property
-    def items(self):
-
-        navigation_viewlet = self.navigation_viewlet
-        department_id = navigation_viewlet.department_id
-        navigation_theme = navigation_viewlet.navigation_theme
-
-        if department_id in ('4-h', ):
-            return self.set_4h
-
-        # Program Sites use 4-H CTA Colors
-        elif navigation_theme in ('extension-program',):
-            return self.set_4h
-
-        return self.set_default
+    pass
 
 
 class CTABackgroundVocabulary(KeyValueVocabulary):
