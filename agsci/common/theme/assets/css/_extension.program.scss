@@ -26,7 +26,7 @@ body.navigation-extension-program {
 
     /* H2 */
     h2::after, .h2::after {
-        border-bottom-color: $color-ps-sky-blue;
+        border-bottom-color: $color-ps-sonic-silver;
     }
 
     /* Buttons */
@@ -59,11 +59,11 @@ body.navigation-extension-program {
 
     /* Borders */
     .border-bottom {
-        border-bottom-color: $color-ps-sky-blue-light !important;
+        border-bottom-color: $color-ps-sonic-silver !important;
     }
 
     .border-top {
-        border-top-color: $color-ps-sky-blue-light !important;
+        border-top-color: $color-ps-sonic-silver !important;
     }
 
     /* ----------------------------------------------------------
@@ -74,11 +74,11 @@ body.navigation-extension-program {
 
     .offset-content a:not(.btn),
     .offset-content a:visited:not(.btn) {
-        border-bottom: $color-ps-sky-blue-dark;
+        border-bottom: $color-ps-sonic-silver;
 
         &:hover,
         &:focus {
-            border-bottom: 1px solid $color-ps-sky-blue;
+            border-bottom: 1px solid $color-ps-sonic-silver;
             color: $black;
         }
     }
@@ -89,7 +89,7 @@ body.navigation-extension-program {
         .container:nth-of-type(even) {
 
             .row {
-                background: $color-ps-sky-blue;
+                background: $color-ps-sonic-silver;
             }
 
         }
@@ -120,7 +120,7 @@ body.navigation-extension-program {
         .card {
 
             .card-image-top {
-                background-color: $color-ps-sky-blue;
+                background-color: $color-ps-sonic-silver;
             }
 
          }
@@ -156,13 +156,13 @@ body.navigation-extension-program {
         &:hover,
         &:focus {
             span {
-                border-bottom: 1px solid $color-ps-sky-blue;
+                border-bottom: 1px solid $color-ps-sonic-silver;
             }
         }
     }
 
     .event-date-block {
-        background-color: $color-ps-sky-blue-light;
+        background-color: $color-ps-limestone-gray-light;
     }
 
     .card.card-news {
@@ -185,13 +185,14 @@ body.navigation-extension-program {
         p {
 
             a {
-                background-color: $color-ps-sky-blue-light-accessible;
+                background-color: $color-ps-limestone-gray-light;
+                color: #000000;
             }
         }
 
         li.section-level-1.navTreeCurrentNode {
             > a {
-                border-left: 0.5rem solid $color-ps-sky-blue;
+                border-left: 0.5rem solid $color-ps-sonic-silver;
             }
         }
 
@@ -199,7 +200,7 @@ body.navigation-extension-program {
 
             &:hover,
             &:focus {
-                border-left-color: $color-ps-sky-blue;
+                border-left-color: $color-ps-sonic-silver;
             }
 
         }
@@ -221,7 +222,7 @@ body.navigation-extension-program {
         li a {
 
             &.navTreeCurrentNode {
-                border-left-color: $color-ps-sky-blue;
+                border-left-color: $color-ps-sonic-silver;
             }
         }
     }
@@ -247,14 +248,20 @@ body.navigation-extension-program {
 
             a:hover,
             a:focus {
-                border-bottom: 1px solid $color-ps-sky-blue;
+                border-bottom: 1px solid $color-ps-sonic-silver;
             }
 
         }
     }
 
     li.li-separator::after {
-        color: $color-ps-sky-blue;
+        color: $color-ps-sonic-silver;
+    }
+
+    .card-title {
+        p::after, h3.p::after {
+            border-bottom-color: $color-ps-sonic-silver;
+        }
     }
 
 }
