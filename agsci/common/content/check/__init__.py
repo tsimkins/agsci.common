@@ -369,7 +369,12 @@ class BodyTextCheck(ContentCheck):
         if hasattr(o, 'aq_base'):
             _o = o.aq_base
 
-            if hasattr(_o, 'text') and hasattr(_o.text, 'raw'):
+            # Person has a 'bio' field, not a 'text' field.
+            if hasattr(_o, 'bio') and hasattr(_o.bio, 'raw'):
+                if _o.bio.raw:
+                    return safe_unicode(_o.bio.raw)
+
+            elif hasattr(_o, 'text') and hasattr(_o.text, 'raw'):
                 if _o.text.raw:
                     return safe_unicode(_o.text.raw)
 
