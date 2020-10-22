@@ -479,19 +479,24 @@ def get_portlet_mapping(context, manager_name):
     manager = get_portlet_manager(context, manager_name)
     return getMultiAdapter((context, manager), IPortletAssignmentMapping)
 
-def getPloneSites(app, l=0):
+def getPloneSites(app, l=0, ids=[]):
 
     sites = []
+
+    if ids:
+        ids = [x.replace('.psu.edu', '') for x in ids]
+        ids.extend(['%s.psu.edu' % x for x in ids])
 
     if l <= 1:
 
         for (_id, _) in app.ZopeFind(app):
             if isinstance(_, PloneSite):
-                sites.append(_)
+                if _.getId() in ids or not ids:
+                    sites.append(_)
             elif isinstance(_, Folder):
-                sites.extend(getPloneSites(_, l+1))
+                sites.extend(getPloneSites(_, l+1, ids=ids))
 
-    return sites
+    return sorted(sites, key=lambda x: x.getId())
 
 # This makes the 'getURL' and 'absolute_url', etc. methods return the proper
 # URL through the debug prompt.
