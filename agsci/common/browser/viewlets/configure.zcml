@@ -212,7 +212,7 @@
         name="agsci.common.history"
         manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
         class=".HistoryViewlet"
-        permission="cmf.ManagePortal"
+        permission="cmf.ModifyPortalContent"
         layer="..interfaces.IThemeSpecific"
         template="templates/history.pt"
     />
