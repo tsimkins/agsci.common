@@ -929,3 +929,31 @@ class RichTextTile(BaseTile):
 
 class PullQuoteTile(BaseTile):
     pass
+
+class SearchBoxTile(BaseTile):
+
+    __section_class__ = 'container'
+
+    @property
+    def action(self):
+        return 'get'
+
+    @property
+    def action(self):
+        return '%s/search' % self.site.absolute_url()
+
+    @property
+    def placeholder_text(self):
+        _ = self.get_valid_value('placeholder_text')
+
+        if _:
+            return _
+
+        return 'Search'
+
+    @property
+    def search_path(self):
+        _ = self.get_target_object('target_container')
+
+        if _:
+            return "/".join(_.getPhysicalPath())

@@ -331,4 +331,17 @@
         for="*"
     />
 
+    <plone:tile
+        name="agsci.common.tiles.search_box"
+        title="Search Box"
+        description=""
+        schema=".interfaces.ISearchBoxTile"
+        class=".SearchBoxTile"
+        template="templates/search_box.pt"
+        add_permission="cmf.ModifyPortalContent"
+        permission="zope2.View"
+        layer=".interfaces.IAgsciTilesLayer"
+        for="*"
+    />
+
 </configure>

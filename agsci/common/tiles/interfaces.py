@@ -873,3 +873,26 @@ class IPullQuoteTile(Interface):
         title=_(u"Speaker Title"),
         required=False
     )
+
+class ISearchBoxTile(IBorderTile):
+
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=False
+    )
+
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    target_container = RelationChoice(
+        title=_(u"Target Container"),
+        source=CatalogSource(object_provides=IDexterityContainer.__identifier__),
+        required=False,
+    )
+
+    placeholder_text = schema.TextLine(
+        title=_(u"Placeholder Text"),
+        required=False
+    )

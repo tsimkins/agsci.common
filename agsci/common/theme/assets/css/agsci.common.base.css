@@ -1850,6 +1850,10 @@ body.portaltype-agsci_directory span.anchor {
     visibility: hidden;
     pointer-events: none; }
 
+div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
+  padding: 0.625rem 1.5rem;
+  margin-bottom: 0; }
+
 .print-only-logo {
   display: none; }
 
