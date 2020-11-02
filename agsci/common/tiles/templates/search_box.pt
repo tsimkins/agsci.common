@@ -46,7 +46,7 @@
                     type="search"
                     name="SearchableText"
                     aria-label="Text to search for"
-                    placeholder="Search" />
+                    tal:attributes="placeholder view/placeholder_text|nothing" />
 
                 <span class="input-group-btn">
                     <button
