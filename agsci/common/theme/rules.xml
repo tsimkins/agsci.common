@@ -34,6 +34,14 @@
     </before>
 
     <!-- Include barceloneta's backend.xml for backend theming. -->
+    <rules css:if-content="body.section-coronavirus, body.section-smellcheck">
+
+        <!-- Not showing alert on logged-in view -->
+        <drop css:theme="body > a.alert-bar" />
+
+    </rules>
+
+    <!-- Include barceloneta's backend.xml for backend theming. -->
     <rules css:if-content=".userrole-authenticated">
 
         <!-- Not showing alert on logged-in view -->
