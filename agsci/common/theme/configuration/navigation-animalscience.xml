@@ -139,6 +139,10 @@
                         <link>events</link>
                     </item>
                     <item>
+                        <title>History of the Department</title>
+                        <link>about/history</link>
+                    </item>
+                    <item>
                         <title>Farms and Facilities</title>
                         <link>about/facilities</link>
                     </item>
