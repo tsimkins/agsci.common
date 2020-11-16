@@ -1453,6 +1453,11 @@ body.template-image_view #content-core {
 
 #content-core {
   /* Placeholder image does not need a negative top margin. */ }
+  #content-core h4, #content-core h5 {
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif; }
+  #content-core h5 {
+    font-size: 1rem; }
   #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav::before {
     content: "Table of Contents";
     font-weight: bold;

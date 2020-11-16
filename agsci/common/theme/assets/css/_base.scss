@@ -832,6 +832,15 @@ body.template-image_view #content-core {
 
 #content-core {
 
+    h4, h5 {
+        font-weight: 600;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
     #parent-fieldname-text.pat-autotoc {
 
         .autotoc-nav::before {
