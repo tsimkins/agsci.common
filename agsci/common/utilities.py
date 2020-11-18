@@ -511,7 +511,7 @@ def setSiteURL(site, domain=None, path='', https=True):
             'foodscience.psu.edu': 'foodscience.psu.edu',
             'aese.psu.edu': 'aese.psu.edu',
             'abe.psu.edu': 'abe.psu.edu',
-            'animalscience.psu.edu': 'dev.animalscience.psu.edu',
+            'animalscience.psu.edu': 'animalscience.psu.edu',
             'ecosystems.psu.edu': 'ecosystems.psu.edu',
             'plantpath.psu.edu': 'plantpath.psu.edu',
             'vbs.psu.edu': 'vbs.psu.edu'
