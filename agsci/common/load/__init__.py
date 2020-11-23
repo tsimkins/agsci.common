@@ -251,6 +251,11 @@ class ContentImporter(object):
     def product_fti(self):
 
         _type = self.data.type
+
+        # If the incoming data doesn't have a type, then grab it from the existing object
+        if not _type and self.exists and self.context:
+            _type = self.context.portal_type
+
         _type = self.types_mapping.get(_type, _type)
 
         try:
@@ -677,6 +682,55 @@ class ContentImporter(object):
 
         # Reindex
         item.reindexObject()
+
+class ExtensionContentImporter(ContentImporter):
+
+    # new : old
+    fields_mapping = {
+        'street_address' : 'address',
+        'email' : 'email_address',
+        'zip_code' : 'zip',
+        'phone_number' : 'phone',
+        'job_titles' : 'person_job_titles',
+        'areas_expertise' : 'expertise',
+    }
+
+    @property
+    def json_data(self):
+        _ = {}
+
+        data = super(ExtensionContentImporter, self).json_data
+
+        for (k,v) in data.iteritems():
+
+            if k == 'leadimage':
+                _['image'] = {
+                    'info' : {
+                        'id' : k,
+                    },
+                    'value' : {
+                        'content_type' : v.get('mimetype', ''),
+                        'data' : v.get('data', ''),
+                    }
+                }
+
+            elif k == 'person_psu_user_id':
+                _['id'] = {
+                    'info' : {
+                        'id' : k,
+                    },
+                    'value' : v
+                }
+
+            else:
+                _[k] = {
+                    'info' : {
+                        'id' : k,
+                    },
+                    'value' : v
+                }
+
+        return _
 
 class ImportContentView(BrowserView):
 

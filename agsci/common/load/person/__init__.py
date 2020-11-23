@@ -4,12 +4,12 @@ from zLOG import LOG, INFO, ERROR
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
-from agsci.common.constants import DOMAIN_CONFIG
+from agsci.common.constants import CMS_DOMAIN, DOMAIN_CONFIG
 from agsci.common.content.person import LDAPInfo
 from agsci.common.indexer import PersonSortableTitle
 from agsci.common.utilities import ploneify, md5sum
 
-from .. import ImportContentView, ContentImporter
+from .. import ImportContentView, ContentImporter, ExtensionContentImporter
 
 try:
     from urllib.parse import urlparse
@@ -20,25 +20,57 @@ import json
 
 class SyncPersonView(ImportContentView):
 
+    include_fields = [
+        u'areas_expertise',
+        u'first_name',
+        u'middle_name',
+        u'last_name',
+        u'suffix',
+        u'email',
+        u'phone_number',
+        u'job_titles',
+        u'street_address',
+        u'city',
+        u'state',
+        u'zip_code'
+    ]
+
+    @property
+    def username(self):
+        return getattr(self.context.aq_base, 'username', None)
+
     @property
     def api_domains(self):
         return sorted(set([x.lower() for x in DOMAIN_CONFIG.values()]))
 
     @property
     def primary_profile_url(self):
-        return getattr(self.context, 'primary_profile_url', None)
+        url = getattr(self.context, 'primary_profile_url', None)
+
+        if url:
+            return urlparse(url)
 
     @property
     def api_url(self):
         url = self.primary_profile_url
 
         if url:
-            parsed_url = urlparse(url)
-            domain = parsed_url.netloc
-            path = parsed_url.path
+            domain = url.netloc
+            path = url.path
 
             if domain.lower() in self.api_domains:
                 return 'https://%s%s/@@dump-json' % (domain, path)
+
+    @property
+    def extension_api_url(self):
+        url = self.primary_profile_url
+
+        if url:
+            domain = url.netloc
+            username = self.username
+
+            if domain.lower() in ('extension.psu.edu',) and username:
+                return 'http://%s/directory/%s/@@api/json' % (CMS_DOMAIN, username)
 
     def cmp(self, _1, _2):
 
@@ -63,16 +95,23 @@ class SyncPersonView(ImportContentView):
             return md5sum(blob.data)
 
     # Check for updates to person data
-    def update_person(self, o, include_fields=[]):
+    def update_person(self, o, map_fields=False):
 
         update = False
 
         # Explicitly included fields
-        for _ in include_fields:
+        for _ in self.include_fields:
+            field_name = _
+
+            if map_fields:
+                field_name = o.fields_mapping.get(field_name, field_name)
+
             _1 = getattr(self.context.aq_base, _, None)
-            _2 = getattr(o.data, _, None)
+            _2 = getattr(o.data, field_name, None)
 
             if _2 and not self.cmp(_1, _2):
+
+                update = True
 
                 LOG(
                     self.__class__.__name__, INFO,
@@ -83,8 +122,6 @@ class SyncPersonView(ImportContentView):
                         _2
                     )
                 )
-
-                update = True
 
         # Check for image differences
         image_md5sum = self.blob_md5sum(self.context.aq_base)
@@ -105,33 +142,20 @@ class SyncPersonView(ImportContentView):
         return update
 
     def import_content(self):
+
         api_url = self.api_url
+        extension_api_url = self.extension_api_url
+
+        path = "/".join(self.context.getPhysicalPath())
+        uid = self.context.UID()
 
         if api_url:
-
-            path = "/".join(self.context.getPhysicalPath())
-            uid = self.context.UID()
-
-            include_fields = [
-                u'areas_expertise',
-                u'first_name',
-                u'middle_name',
-                u'last_name',
-                u'suffix',
-                u'email',
-                u'phone_number',
-                u'job_titles',
-                u'street_address',
-                u'city',
-                u'state',
-                u'zip_code'
-            ]
 
             o = ContentImporter(
                 path,
                 UID=uid,
                 api_url=api_url,
-                include_fields=include_fields,
+                include_fields=self.include_fields,
                 debug=True,
                 map_fields=False,
             )
@@ -143,8 +167,29 @@ class SyncPersonView(ImportContentView):
                 )
             )
 
-            if self.update_person(o, include_fields):
+            if self.update_person(o):
                 o(force=True)
+
+        elif extension_api_url:
+
+            o = ExtensionContentImporter(
+                path,
+                UID=uid,
+                api_url=extension_api_url,
+                include_fields=self.include_fields,
+                debug=True,
+            )
+
+            LOG(
+                self.__class__.__name__, INFO,
+                "Checking %s for updates" % (
+                    self.context.absolute_url(),
+                )
+            )
+
+            if self.update_person(o, map_fields=True):
+                o(force=True)
+
         else:
             LOG(
                 self.__class__.__name__, INFO,
