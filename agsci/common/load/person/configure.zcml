@@ -13,6 +13,24 @@
         layer="agsci.common.browser.interfaces.IThemeSpecific"
     />
 
+    <!-- Directory Sync Person View -->
+    <browser:page
+        for="agsci.common.content.person.directory.IDirectory"
+        name="sync_person"
+        class=".SyncDirectoryView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <!-- Sync Person View -->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="sync_person"
+        class=".SyncPersonView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
     <!-- Import Classifications View -->
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"

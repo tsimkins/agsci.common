@@ -17,6 +17,7 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from plone.registry.interfaces import IRegistry
 from plone.uuid.interfaces import ATTRIBUTE_NAME
 from random import random
+from zLOG import LOG, INFO, ERROR
 from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.component.interfaces import ComponentLookupError
@@ -133,6 +134,9 @@ class ContentImporter(object):
         self.path = path
         self.UID = UID
         self.api_url = api_url
+        self.include_fields = kwargs.get('include_fields', [])
+        self.debug = not not kwargs.get('debug', False)
+        self.map_fields = not not kwargs.get('map_fields', True)
 
         self.import_path = context
 
@@ -592,7 +596,15 @@ class ContentImporter(object):
         for field_name in field_names:
 
             field = fields.get(field_name)
-            data_field = self.fields_mapping.get(field_name, field_name)
+
+            if self.map_fields:
+                data_field = self.fields_mapping.get(field_name, field_name)
+            else:
+                data_field = field_name
+
+            # Skip fields if we're only importing specific fields
+            if self.include_fields and field_name not in self.include_fields:
+                continue
 
             if field_name not in self.exclude_fields:
 
@@ -607,6 +619,16 @@ class ContentImporter(object):
                     )
 
                     setattr(item, field_name, value)
+
+                    if self.debug:
+                        LOG(
+                            self.__class__.__name__, INFO,
+                            "%s: Setting %s to %r" % (
+                                item.absolute_url(),
+                                field_name,
+                                value
+                            )
+                        )
 
         # Set collection criteria
         if self.portal_type in ('Collection', 'Newsletter'):

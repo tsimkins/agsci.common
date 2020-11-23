@@ -1,14 +1,165 @@
 from plone.dexterity.utils import createContentInContainer
+from plone.namedfile.file import NamedBlobImage
+from zLOG import LOG, INFO, ERROR
 from zope.component import getUtility
 from zope.schema.interfaces import IVocabularyFactory
 
+from agsci.common.constants import DOMAIN_CONFIG
 from agsci.common.content.person import LDAPInfo
 from agsci.common.indexer import PersonSortableTitle
-from agsci.common.utilities import ploneify
+from agsci.common.utilities import ploneify, md5sum
 
-from .. import ImportContentView
+from .. import ImportContentView, ContentImporter
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 import json
+
+class SyncPersonView(ImportContentView):
+
+    @property
+    def api_domains(self):
+        return sorted(set([x.lower() for x in DOMAIN_CONFIG.values()]))
+
+    @property
+    def primary_profile_url(self):
+        return getattr(self.context, 'primary_profile_url', None)
+
+    @property
+    def api_url(self):
+        url = self.primary_profile_url
+
+        if url:
+            parsed_url = urlparse(url)
+            domain = parsed_url.netloc
+            path = parsed_url.path
+
+            if domain.lower() in self.api_domains:
+                return 'https://%s%s/@@dump-json' % (domain, path)
+
+    def cmp(self, _1, _2):
+
+        def to_json(x):
+            try:
+                return json.dumps(x, sort_keys=True)
+            except:
+                return None
+
+        # If both are empty, they're the same, even if they're not literally the same.
+        # This prevents a None and '' mismatch.
+        if not _1 and not _2:
+            return True
+
+        return to_json(_1) == to_json(_2)
+
+    def blob_md5sum(self, context, field='image'):
+
+        blob = getattr(context, field, None)
+
+        if isinstance(blob, NamedBlobImage) and hasattr(blob, 'data') and blob.data:
+            return md5sum(blob.data)
+
+    # Check for updates to person data
+    def update_person(self, o, include_fields=[]):
+
+        update = False
+
+        # Explicitly included fields
+        for _ in include_fields:
+            _1 = getattr(self.context.aq_base, _, None)
+            _2 = getattr(o.data, _, None)
+
+            if _2 and not self.cmp(_1, _2):
+
+                LOG(
+                    self.__class__.__name__, INFO,
+                    "%s: Update %s %r to %r" % (
+                        self.context.absolute_url(),
+                        _,
+                        _1,
+                        _2
+                    )
+                )
+
+                update = True
+
+        # Check for image differences
+        image_md5sum = self.blob_md5sum(self.context.aq_base)
+        api_image_md5sum = self.blob_md5sum(o)
+
+        if api_image_md5sum and api_image_md5sum != image_md5sum:
+            update = True
+
+            LOG(
+                self.__class__.__name__, INFO,
+                "%s: Update image %r to %r" % (
+                    self.context.absolute_url(),
+                    image_md5sum,
+                    api_image_md5sum
+                )
+            )
+
+        return update
+
+    def import_content(self):
+        api_url = self.api_url
+
+        if api_url:
+
+            path = "/".join(self.context.getPhysicalPath())
+            uid = self.context.UID()
+
+            include_fields = [
+                u'areas_expertise',
+                u'first_name',
+                u'middle_name',
+                u'last_name',
+                u'suffix',
+                u'email',
+                u'phone_number',
+                u'job_titles',
+                u'street_address',
+                u'city',
+                u'state',
+                u'zip_code'
+            ]
+
+            o = ContentImporter(
+                path,
+                UID=uid,
+                api_url=api_url,
+                include_fields=include_fields,
+                debug=True,
+                map_fields=False,
+            )
+
+            LOG(
+                self.__class__.__name__, INFO,
+                "Checking %s for updates" % (
+                    self.context.absolute_url(),
+                )
+            )
+
+            if self.update_person(o, include_fields):
+                o(force=True)
+        else:
+            LOG(
+                self.__class__.__name__, INFO,
+                "Skipping %s" % (
+                    self.context.absolute_url(),
+                )
+            )
+
+class SyncDirectoryView(ImportContentView):
+
+    def import_content(self):
+
+        for o in self.context.people():
+            v = o.restrictedTraverse('@@sync_person')
+            v()
 
 class ImportPersonView(ImportContentView):
 

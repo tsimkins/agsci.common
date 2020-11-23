@@ -27,3 +27,18 @@ DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/
 AGSCI_DOMAIN = "mS5J5CtL4kuPKm7P.agsci.psu.edu"
 
 ASSETS_DOMAIN = "assets.agsci.psu.edu"
+
+# Domains for the Plone site based on site.getId()
+DOMAIN_CONFIG = {
+    'agsci' : 'agsci.psu.edu',
+    'private-internal': "agsci.psu.edu",
+    'ento.psu.edu': 'ento.psu.edu',
+    'plantscience.psu.edu': 'plantscience.psu.edu',
+    'foodscience.psu.edu': 'foodscience.psu.edu',
+    'aese.psu.edu': 'aese.psu.edu',
+    'abe.psu.edu': 'abe.psu.edu',
+    'animalscience.psu.edu': 'animalscience.psu.edu',
+    'ecosystems.psu.edu': 'ecosystems.psu.edu',
+    'plantpath.psu.edu': 'plantpath.psu.edu',
+    'vbs.psu.edu': 'vbs.psu.edu'
+}

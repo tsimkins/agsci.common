@@ -17,6 +17,7 @@ from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
 
+import hashlib
 import pytz
 import re
 import requests
@@ -32,7 +33,7 @@ try:
 except ImportError:
     import htmlentitydefs
 
-from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL
+from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL, DOMAIN_CONFIG
 
 DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
 
@@ -500,22 +501,14 @@ def getPloneSites(app, l=0, ids=[]):
 
 # This makes the 'getURL' and 'absolute_url', etc. methods return the proper
 # URL through the debug prompt.
-def setSiteURL(site, domain=None, path='', https=True):
+def setSiteURL(site, domain=None, path='', https=True, edit=False):
 
     if not domain:
-        domain = {
-            'agsci' : 'agsci.psu.edu',
-            'private-internal': "agsci.psu.edu",
-            'ento.psu.edu': 'ento.psu.edu',
-            'plantscience.psu.edu': 'plantscience.psu.edu',
-            'foodscience.psu.edu': 'foodscience.psu.edu',
-            'aese.psu.edu': 'aese.psu.edu',
-            'abe.psu.edu': 'abe.psu.edu',
-            'animalscience.psu.edu': 'animalscience.psu.edu',
-            'ecosystems.psu.edu': 'ecosystems.psu.edu',
-            'plantpath.psu.edu': 'plantpath.psu.edu',
-            'vbs.psu.edu': 'vbs.psu.edu'
-        }.get(site.getId(), 'nohost_%s_' % site.getId())
+        domain = DOMAIN_CONFIG.get(site.getId(), 'nohost_%s_' % site.getId())
+
+    if edit:
+        if not domain.startswith('edit.'):
+            domain = 'edit.%s' % domain
 
     if not path:
         path = {
@@ -587,3 +580,8 @@ def getExtensionConfig(department_id=None, category=None):
                             rv.extend(data[department_id][k])
 
     return rv
+
+def md5sum(data):
+    m = hashlib.md5()
+    m.update(data)
+    return m.hexdigest()
