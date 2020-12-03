@@ -582,17 +582,11 @@ class LeadImageViewlet(ViewletBase):
         crop_image_view = getMultiAdapter((self.context, self.request), name="crop-image")
         return crop_image_view.allowCrop()
 
-class LeadImageJumbotronViewlet(LeadImageViewlet):
+class TileViewlet(ViewletBase):
 
-    tile_name = 'agsci.common.tiles.leadimage_jumbotron'
+    tile_name = ''
 
-    @property
-    def show_image(self):
-        return self.adapted.has_image and self.adapted.image_show_jumbotron
-
-    @property
-    def img_src(self):
-        return self.adapted.img_src
+    tile_data = {}
 
     @property
     def tile(self):
@@ -602,16 +596,30 @@ class LeadImageJumbotronViewlet(LeadImageViewlet):
         tile = self.tile
 
         if tile:
-
-            tile.set_data({
-                'show_title' : True,
-                'title' : self.context.Title(),
-                'img_src'  : self.img_src,
-                'show_breadcrumbs' : True,
-            })
+            tile.set_data(self.tile_data)
 
             return tile()
 
+class LeadImageJumbotronViewlet(LeadImageViewlet, TileViewlet):
+
+    tile_name = 'agsci.common.tiles.leadimage_jumbotron'
+
+    @property
+    def tile_data(self):
+        return {
+            'show_title' : True,
+            'title' : self.context.Title(),
+            'img_src'  : self.img_src,
+            'show_breadcrumbs' : True,
+        }
+
+    @property
+    def show_image(self):
+        return self.adapted.has_image and self.adapted.image_show_jumbotron
+
+    @property
+    def img_src(self):
+        return self.adapted.img_src
 
 class DataCheckViewlet(ViewletBase):
 
@@ -917,3 +925,56 @@ class CourseSyllabusDigitalViewlet(CourseSyllabusViewlet):
 
 class HistoryViewlet(ViewletBase):
     pass
+
+class ContributorsViewlet(TileViewlet):
+    tile_name = 'agsci.common.tiles.animal'
+
+    @property
+    @memoize
+    def people(self):
+
+        contributors = self.contributors
+
+        def sort_order(_):
+            try:
+                return contributors.index(_)
+            except ValueError:
+                return 99999
+
+        if contributors:
+            _ = [x.getId for x in self.portal_catalog.searchResults({
+                'Type' : 'Person',
+                'getId' : self.contributors,
+                'expires' : {
+                    'range' : 'min',
+                    'query' : DateTime(),
+                },
+            })]
+
+            if _:
+                return sorted(
+                    _,
+                    key=sort_order
+                )
+
+    @property
+    def contributors(self):
+        if hasattr(self.context, 'Contributors'):
+            return self.context.Contributors()
+
+        return _
+
+    @property
+    def tile_data(self):
+
+        people = self.people
+
+        if people:
+            return {
+                '__parent__' : True, # Faking a portlet so we're not in a container
+                'title' : 'Contact Information',
+                'show_image' : True,
+                'count' : 2,
+                'style' : 'horizontal',
+                'value' : [{'username' : x} for x in people],
+            }

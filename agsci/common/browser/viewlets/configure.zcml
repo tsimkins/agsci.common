@@ -310,4 +310,14 @@
         for="agsci.common.interfaces.ICourseSyllabusDigital"
         />
 
+    <!-- Contributors -->
+    <browser:viewlet
+        name="agsci.common.contributors"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".ContributorsViewlet"
+        permission="zope2.View"
+        template="templates/contributors.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>

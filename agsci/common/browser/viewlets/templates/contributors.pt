@@ -1,0 +1,3 @@
+<div id="content-contributors"
+    tal:condition="view/people|nothing"
+    tal:content="structure view/render_tile|nothing" />

@@ -127,6 +127,9 @@
 
         <notheme css:if-not-content="#visual-portal-wrapper" />
 
+        <!-- Drop Contributors div since that's now a feature -->
+        <drop css:content="div.documentContributors" />
+
         <!-- Don't theme in Mosaic editor. -->
         <notheme css:if-not-content="body[class]" />
 
@@ -334,6 +337,7 @@
                     <xsl:apply-templates css:select="#public-tags" />
                     <xsl:apply-templates css:select="#content-core" />
                     <xsl:apply-templates css:select="#course-policies" />
+                    <xsl:apply-templates css:select="#content-contributors" />
                     <xsl:apply-templates css:select="#viewlet-below-content nav.pagination" />
                 </div>
 
