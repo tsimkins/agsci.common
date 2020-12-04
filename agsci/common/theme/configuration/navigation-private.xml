@@ -70,10 +70,6 @@
                 <link>knowledgebase</link>
                 <items>
                     <item>
-                        <title>Marketing and Communications</title>
-                        <link>knowledgebase/marketing-communications</link>
-                    </item>
-                    <item>
                         <title>Extension Intranet</title>
                         <link>https://edit.agsci.psu.edu/intranet/extension</link>
                     </item>
@@ -90,12 +86,16 @@
                         <link>https://agsci.psu.edu/it/how-to</link>
                     </item>
                     <item>
-                        <title>Research Support</title>
-                        <link>knowledgebase/research-support</link>
-                    </item>
-                    <item>
                         <title>International Programs Resources for Faculty</title>
                         <link>knowledgebase/international-faculty</link>
+                    </item>
+                    <item>
+                        <title>Marketing and Communications</title>
+                        <link>knowledgebase/marketing-communications</link>
+                    </item>
+                    <item>
+                        <title>Research Support</title>
+                        <link>knowledgebase/research-support</link>
                     </item>
                     <item>
                         <title>Teaching, Learning, and Curriculum</title>
@@ -122,10 +122,6 @@
                         <link>https://agsci.psu.edu/faculty-staff/admin-services</link>
                     </item>
                     <item>
-                        <title>Communications and Marketing</title>
-                        <link>https://agsci.psu.edu/communications</link>
-                    </item>
-                    <item>
                         <title>Conferences and Short Courses</title>
                         <link>https://agsci.psu.edu/faculty-staff/conferences</link>
                     </item>
@@ -148,6 +144,10 @@
                     <item>
                         <title>Information Technologies (IT)</title>
                         <link>https://agsci.psu.edu/it</link>
+                    </item>
+                    <item>
+                        <title>Marketing and Communications</title>
+                        <link>https://agsci.psu.edu/communications</link>
                     </item>
                     <item>
                         <title>Operations and Services</title>
