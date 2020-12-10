@@ -30,3 +30,8 @@ def object_factory(**kwargs):
                 self.text = 'N/A'
 
     return _(**kwargs)
+
+# Monkey patch hard-coded 2021 year in Products.Archetypes
+from DateTime import DateTime
+from Products.Archetypes.browser import datecomponents
+datecomponents.PLONE_CEILING = DateTime(2051, 0)
