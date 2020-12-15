@@ -70,10 +70,6 @@
                 <link>knowledgebase</link>
                 <items>
                     <item>
-                        <title>Extension Intranet</title>
-                        <link>https://edit.agsci.psu.edu/intranet/extension</link>
-                    </item>
-                    <item>
                         <title>HR Information for Faculty</title>
                         <link>knowledgebase/faculty</link>
                     </item>
@@ -86,7 +82,7 @@
                         <link>https://agsci.psu.edu/it/how-to</link>
                     </item>
                     <item>
-                        <title>International Programs Resources for Faculty</title>
+                        <title>International Programs</title>
                         <link>knowledgebase/international-faculty</link>
                     </item>
                     <item>
