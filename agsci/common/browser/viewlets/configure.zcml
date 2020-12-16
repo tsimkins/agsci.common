@@ -181,6 +181,18 @@
         template="templates/tags.pt"
     />
 
+    <!-- Public Tags -->
+
+    <browser:viewlet
+        for="plone.dexterity.interfaces.IDexterityContent"
+        name="agsci.common.public-tags"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".tags.PublicTagsViewlet"
+        permission="cmf.ModifyPortalContent"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/tags.pt"
+    />
+
     <!-- Lead Image -->
 
     <browser:viewlet

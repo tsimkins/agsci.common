@@ -327,6 +327,7 @@
 
                 <div class="{$central} col-12 px-0 pb-4 order-12 order-lg-1">
                     <xsl:apply-templates css:select="#effective-date" />
+                    <xsl:apply-templates css:select="#public-tags-item" />
                     <xsl:apply-templates css:select="#internal-tags" />
                     <xsl:if test="//div[@class='documentDescription description']">
                         <p class="lead">

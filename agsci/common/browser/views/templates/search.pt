@@ -80,7 +80,7 @@
         <!-- Search -->
 
         <div class="mt-3"
-            tal:condition="not: view/anonymous|nothing">
+            tal:condition="view/show_filters|nothing">
 
             <a
                 class="btn btn-secondary"
@@ -92,7 +92,28 @@
             </a>
 
             <div id="search-filter" class="collapse mt-2">
-              <fieldset class="noborder">
+              <fieldset class="noborder"
+                tal:condition="view/enhanced_public_tags|nothing">
+                <legend i18n:translate="label_item_tag">Tags</legend>
+                  <div class="field"
+                       tal:define="tags_list view/tags_list;
+                                   all_checked python:False;
+                                   toggle_select_state python:all_checked and 'true' or 'false';">
+                    <div class="search-tag-options">
+                      <div tal:repeat="tag tags_list">
+                        <input type="checkbox" name="Tags:list" value="#" class="noborder" checked="checked"
+                               tal:attributes="value tag;
+                                               id string:public_tags_${repeat/tag/number};
+                                               checked python:((tag in request.get('Tags', [])) or all_checked) and 'checked' or ''"/>
+                          <label for="" i18n:translate=""
+                                 tal:attributes="for string:public_tags_${repeat/tag/number}"
+                                 tal:content="tag" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              <fieldset class="noborder"
+                  tal:condition="not: view/anonymous|nothing">
                 <legend i18n:translate="label_item_type">Item type</legend>
                   <div class="field"
                        tal:define="portal_types portal/portal_types;
@@ -112,7 +133,8 @@
                     </div>
                   </div>
                 </fieldset>
-                <fieldset class="noborder">
+                <fieldset class="noborder"
+                    tal:condition="not: view/anonymous|nothing">
                   <legend i18n:translate="label_new_items_since">New items since</legend>
                   <div class="field">
                     <div class="search-date-options">
@@ -217,7 +239,8 @@
                       </span>
                     </nav>
                     <div id="search-results"
-                         tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;"
+                         tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                                     enhanced_public_tags view/enhanced_public_tags|nothing;"
                          tal:attributes="data-default-sort request/sort_on">
 
                       <metal:noresults tal:condition="not: batch">
@@ -233,7 +256,7 @@
                                                  image_scale portal/@@image_scale">
                         <ol class="searchResults html mt-5">
                           <tal:results repeat="item batch">
-                            <li tal:define="hasIcon item/getIcon"
+                            <li tal:define="hasIcon item/getIcon;"
                                 class="mb-5">
                               <span class="result-title">
 
@@ -295,6 +318,16 @@
                                   </span>
                                 </span>
                               </span>
+
+                            <tal:tags
+                                tal:define="item_public_tags item/public_tags|nothing;
+                                            item_public_tags python: view.format_tags(item_public_tags)"
+                                tal:condition="enhanced_public_tags">
+                                <p class="discreet mb-1 small"
+                                    tal:condition="item_public_tags"
+                                    tal:content="string: Tags: ${item_public_tags}">
+                                </p>
+                            </tal:tags>
 
                               <div class="documentLocation link-location mb-2 small"
                                     tal:define="breadcrumbs python: view.breadcrumbs(item);

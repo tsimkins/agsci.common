@@ -262,6 +262,18 @@ class BaseView(BrowserView):
     def assets_url(self):
         return u"//%s/++resource++agsci.common/assets" % ASSETS_DOMAIN
 
+    @property
+    def registry(self):
+        return getUtility(IRegistry)
+
+    @property
+    def enhanced_public_tags(self):
+        return not not self.registry.get('agsci.common.enhanced_public_tags')
+
+    def format_tags(self, tags=[]):
+        if tags:
+            return ", ".join(sorted(tags))
+
 class DegreeListingView(BaseView):
 
     image_size = None
@@ -978,6 +990,13 @@ class SearchView(_SearchView, BaseView):
         _ = [x for x in _ if allowed_types(x)]
 
         return sorted(_, key=sort_key)
+
+    def tags_list(self):
+        return self.portal_catalog.uniqueValuesFor('Tags')
+
+    @property
+    def show_filters(self):
+        return self.enhanced_public_tags or not self.anonymous
 
     @property
     def search_path_title(self):

@@ -37,7 +37,8 @@
     <metal:listingmacro define-macro="listing">
       <tal:listing condition="batch">
         <section class="entries container px-2 px-md-0" metal:define-slot="entries"
-            tal:define="normalizeString nocall: context/plone_utils/normalizeString;">
+            tal:define="normalizeString nocall: context/plone_utils/normalizeString;
+                        enhanced_public_tags view/enhanced_public_tags|nothing">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
             <tal:block tal:define="obj item/getObject;
                 item_url python:view.getItemURL(item);
@@ -51,7 +52,9 @@
                 item_wf_state item/review_state;
                 item_wf_state_class python:'state-' + normalizeString(item_wf_state);
                 item_creator item/Creator;
-                item_has_image python:item.getIcon">
+                item_has_image python:item.getIcon;
+                item_public_tags item/public_tags|nothing;
+                item_public_tags python: view.format_tags(item_public_tags)">
 
     <metal:block define-slot="entry">
 
@@ -103,6 +106,14 @@
                             tal:condition="view/show_date|nothing"
                             tal:content="python: view.item_date(item)">
                         </p>
+
+                        <tal:tags
+                            tal:condition="enhanced_public_tags">
+                            <p class="discreet mb-1"
+                                tal:condition="item_public_tags"
+                                tal:content="string: Tags: ${item_public_tags}">
+                            </p>
+                        </tal:tags>
 
                         <p class="discreet small mt-0 mb-1"
                            tal:define="item_info python:view.getItemInfo(item)"
