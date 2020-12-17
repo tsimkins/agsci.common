@@ -320,12 +320,13 @@
                               </span>
 
                             <tal:tags
-                                tal:define="item_public_tags item/public_tags|nothing;
+                                tal:define="item_public_tags item/public_tags|item/Tags|nothing;
                                             item_public_tags python: view.format_tags(item_public_tags)"
                                 tal:condition="enhanced_public_tags">
                                 <p class="discreet mb-1 small"
-                                    tal:condition="item_public_tags"
-                                    tal:content="string: Tags: ${item_public_tags}">
+                                    tal:condition="item_public_tags">
+                                    <strong>Tags:</strong>
+                                    <span tal:replace="item_public_tags" />
                                 </p>
                             </tal:tags>
 
