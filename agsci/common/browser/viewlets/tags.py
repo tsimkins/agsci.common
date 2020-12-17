@@ -8,7 +8,7 @@ class TagsViewlet(ViewletBase):
     target_view = "tags"
 
     viewlet_id = "public-tags"
-    viewlet_title = "Tags"
+    viewlet_title = "Filter by Tag"
     show_link = True
     min_tags = 2
 
