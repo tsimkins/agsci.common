@@ -18,12 +18,16 @@ class BlockTransformer(object):
         'www.google.com',
         'www.youtube.com',
         'youtube.com',
+        'psu.mediaspace.kaltura.com',
+        'cdnapisec.kaltura.com',
     ]
 
     iframe_classes = {
         'calendar.google.com' : 'aspect-4-3',
         'maps.google.com' : 'aspect-3-2',
         'www.google.com' : 'aspect-3-2',
+        'psu.mediaspace.kaltura.com' : 'aspect-kaltura',
+        'cdnapisec.kaltura.com' : 'aspect-kaltura',
     }
 
     def __init__(self, context):
