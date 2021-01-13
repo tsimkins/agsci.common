@@ -339,7 +339,7 @@
             </item>
             <!-- Extension Dropdown -->
             <item>
-                <title>About 4-H</title>
+                <title>About</title>
                 <link></link>
                 <image>
                     <link>https://extension.psu.edu/spotted-lanternfly</link>
@@ -361,6 +361,15 @@
                         </item>
                     </group>
                     <group>
+                        <item>
+                            <title>News</title>
+                            <link>news</link>
+                        </item>
+                        <item>
+                            <title>Events</title>
+                            <link>events</link>
+                        </item>
+
                         <item>
                             <title>Educational Programming</title>
                             <link>extension/programming</link>
@@ -387,82 +396,6 @@
                                     <link>https://extension.psu.edu/email-preferences</link>
                                     <title>Connect with Penn State Extension</title>
                                     <icon>fa-envelope</icon>
-                                </item>
-                            </items>
-                        </item>
-                    </group>
-                </items>
-            </item>
-            <!-- About Dropdown -->
-            <item>
-                <title>Events and News</title>
-                <link></link>
-                <image>
-                    <title>It all started with Penn State's land-grant mission.</title>
-                    <link>about/history</link>
-                    <src>++resource++agsci.common/assets/images/navigation/about.jpg</src>
-                </image>
-                <items>
-                    <group>
-                        <item>
-                            <title>Leadership</title>
-                            <link>about/leadership</link>
-                        </item>
-
-                        <item>
-                            <title>Mission and Strategic Plan</title>
-                            <link>about/strategic</link>
-                        </item>
-
-                        <item>
-                            <title>History of the College</title>
-                            <link>about/history</link>
-                        </item>
-                        <item>
-                            <title>News and Information</title>
-                            <link>news</link>
-                        </item>
-                    </group>
-                    <group>
-
-                        <item>
-                            <title>Industry Relations</title>
-                            <link>industry</link>
-                        </item>
-
-                        <item>
-                            <title>Diversity and Inclusion</title>
-                            <link>diversity</link>
-                        </item>
-
-                        <item>
-                            <title>Supporting the College</title>
-                            <link>support</link>
-                        </item>
-
-                        <item>
-                            <title>Ag Journeys</title>
-                            <link>ag-journeys</link>
-                        </item>
-
-                    </group>
-                    <group>
-                        <item type="cta">
-                            <items>
-                                <item>
-                                    <link>support</link>
-                                    <title>Support the College</title>
-                                    <icon>fa-hands-helping</icon>
-                                </item>
-                                <item>
-                                    <link>alumni</link>
-                                    <title>Join the Ag Alumni Society</title>
-                                    <icon>fa-users</icon>
-                                </item>
-                                <item>
-                                    <link>magazine</link>
-                                    <title>Read Penn State Ag Science Magazine</title>
-                                    <icon>fa-book-open</icon>
                                 </item>
                             </items>
                         </item>
