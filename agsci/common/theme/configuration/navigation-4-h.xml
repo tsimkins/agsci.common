@@ -339,7 +339,7 @@
             </item>
             <!-- Extension Dropdown -->
             <item>
-                <title>About</title>
+                <title>About 4-H</title>
                 <link></link>
                 <image>
                     <link>https://extension.psu.edu/spotted-lanternfly</link>
@@ -369,7 +369,10 @@
                             <title>Events</title>
                             <link>events</link>
                         </item>
-
+                        <item>
+                            <title>Contact Us</title>
+                            <link>contact</link>
+                        </item>
                         <item>
                             <title>Educational Programming</title>
                             <link>extension/programming</link>
@@ -398,35 +401,6 @@
                                     <icon>fa-envelope</icon>
                                 </item>
                             </items>
-                        </item>
-                    </group>
-                </items>
-            </item>
-            <!-- Resources Dropdown -->
-            <item>
-                <title>Contact Us</title>
-                <link></link>
-                <items>
-                    <group>
-                        <item>
-                            <title>Students</title>
-                            <link>students</link>
-                        </item>
-                        <item>
-                            <title>Industry</title>
-                            <link>industry</link>
-                        </item>
-                        <item>
-                            <title>Alumni</title>
-                            <link>alumni</link>
-                        </item>
-                        <item>
-                            <title>Faculty &amp; Staff</title>
-                            <link>faculty-staff</link>
-                        </item>
-                        <item>
-                            <title>Visitor &amp; Public</title>
-                            <link>visitors-and-public</link>
                         </item>
                     </group>
                 </items>
