@@ -4,6 +4,8 @@ from Products.CMFCore.DirectoryView import registerDirectory
 
 allow_module('agsci.common')
 allow_module('agsci.common.utilities')
+allow_module('Products.CMFPlone.utils')
+allow_module('plone.app.textfield.value')
 
 AgsciMessageFactory = MessageFactory('agsci.common')
 GLOBALS = globals()
