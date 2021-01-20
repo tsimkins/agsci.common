@@ -500,7 +500,9 @@ class ContentImporter(object):
 
         elif field_name in ('websites',):
             if isinstance(value, (list, tuple)):
-                return [dict(zip(('url', 'title'), x.split('|'))) for x in value]
+                # If none of the values for 'websites' is a dict, split on |
+                if not any([isinstance(x, dict) for x in value]):
+                    return [dict(zip(('url', 'title'), x.split('|'))) for x in value]
 
         elif isinstance(field, RichText):
 
