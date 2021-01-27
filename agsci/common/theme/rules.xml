@@ -180,6 +180,11 @@
             <after css:theme-children="#theme-javascript" css:content="head script" />
         </rules>
 
+        <!-- Drop Altmetric Javascript if not used -->
+        <rules css:if-not-content=".altmetric-embed">
+            <drop css:theme="#altmetric-javascript" />
+        </rules>
+
         <!-- Include extra JavaScript for table of contents -->
 
         <rules css:if-content=".pat-autotoc">
