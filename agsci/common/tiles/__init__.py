@@ -600,6 +600,24 @@ class SkeeterTile(CCCT_Tile):
         return "col-12 col-lg-4 border-top px-0"
 
     @property
+    def news_item_card_class(self):
+        if self.is_portlet:
+            return "card card-news border-bottom px-0"
+        return "card card-news border-bottom"
+
+    @property
+    def news_item_image_class(self):
+        if self.is_portlet:
+            return "col-12 profile-img order-1 px-0"
+        return "col-3 col-md-4 profile-img order-1 px-0"
+
+    @property
+    def news_item_title_class(self):
+        if self.is_portlet:
+            return "col-12 profile-copy order-12 mt-0 mb-1 px-0"
+        return "col-9 col-md-8 profile-copy order-12 mt-0"
+
+    @property
     def event_items_count(self):
         if self.is_portlet:
             return 1
