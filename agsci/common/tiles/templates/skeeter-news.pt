@@ -31,7 +31,7 @@
                        class="container-fluid jumbotron jumbotron-img-based jumbotron-full-height jumbotron-news-feed d-flex align-items-end position-relative">
 
                         <div class="jumbotron-img bg-center-center fix-img-right"
-                             tal:attributes="style string:background: #333333 url(${feature/getURL}/@@images/image/large) no-repeat center top;; background-size: cover;"></div>
+                             tal:attributes="style string:background: #333333 url(${feature/getURL}/@@images/image/large) no-repeat center center;; background-size: cover;"></div>
 
                         <div class="opacity-dimmer opacity-dimmer-bottom"></div>
 
