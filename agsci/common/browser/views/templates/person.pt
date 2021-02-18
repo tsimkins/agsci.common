@@ -172,6 +172,11 @@
                                             <span>PDF</span>
                                             <a tal:attributes="href cv_file">Curriculum Vitae</a>
                                         </li>
+                                        <li tal:define="pronouns context/pronouns|nothing"
+                                            tal:condition="pronouns">
+                                            <span>Pronouns</span>
+                                            <span tal:replace="pronouns" />
+                                        </li>
                                     </ul>
                                 </div>
 
