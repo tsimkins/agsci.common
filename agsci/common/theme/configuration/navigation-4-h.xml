@@ -66,13 +66,13 @@
 
     <nav id="primary">
         <items>
-            <!-- Programs Dropdown -->
+            <!-- Get Involved Dropdown -->
             <item>
                 <title>Get Involved</title>
-                <link></link>
+                <link>get-involved</link>
                 <image>
                     <title>4-H Programs teach young people how to put their heads, hands, and health to work in their own lives and in their communities.</title>
-                    <link></link>
+                    <link>opportunities</link>
                     <src>
                         ++resource++agsci.common/assets/images/navigation/spotlight-academics-explorer.jpg
                     </src>
@@ -80,42 +80,54 @@
                 <items>
                     <group>
                         <item>
-                            <title>Join or Volunteer</title>
-                            <link></link>
+                            <title>Youth and Parents</title>
+                            <link>get-involved/youth-parents</link>
                             <items>
                                 <item>
                                     <title>Opportunities</title>
-                                    <link></link>
+                                    <link>get-involved/youth-parents/opportunities</link>
                                 </item>
                                 <item>
                                     <title>Resources</title>
-                                    <link></link>
+                                    <link>get-involved/youth-parents/resources</link>
                                 </item>
                                 <item>
                                     <title>Guidelines and Policies</title>
-                                    <link></link>
+                                    <link>get-involved/youth-parents/guidelines-policies</link>
+                                </item>
+                            </items>
+                        </item>
+                        <item>
+                            <title>Volunteers</title>
+                            <link>get-involved/volunteers</link>
+                            <items>
+                                <item>
+                                    <title>Opportunities</title>
+                                    <link>get-involved/volunteers/opportunities</link>
                                 </item>
                                 <item>
-                                    <title>4-H Online</title>
-                                    <link></link>
+                                    <title>Resources</title>
+                                    <link>get-involved/volunteers/resources</link>
+                                </item>
+                                <item>
+                                    <title>Guidelines and Policies</title>
+                                    <link>get-involved/volunteers/guidelines-policies</link>
                                 </item>
                             </items>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Give to 4-H</title>
-                            <link></link>
-                            <items>
-                                <item>
-                                    <title>Opportunities</title>
-                                    <link></link>
-                                </item>
-                            </items>
+                            <title>Teachers</title>
+                            <link>get-involved/teachers</link>
+                        </item>
+                        <item>
+                            <title>Support 4-H</title>
+                            <link>get-involved/support</link>
                         </item>
                         <item>
                             <title>Find Your County 4-H</title>
-                            <link></link>
+                            <link>counties</link>
                         </item>
                     </group>
                     <group>
@@ -123,20 +135,20 @@
                             <title hidden="True">Links</title>
                             <items>
                                 <item>
-                                    <link></link>
+                                    <link>get-involved/join</link>
                                     <title>Join 4-H</title>
                                     <description></description>
                                     <icon>fa-info-circle</icon>
                                 </item>
                                 <item>
-                                    <link></link>
+                                    <link>get-involved/volunteers</link>
                                     <title>Volunteer</title>
                                     <description></description>
                                     <icon>fa-map-marked-alt</icon>
                                 </item>
                                 <item>
-                                    <link></link>
-                                    <title>Give to 4-H</title>
+                                    <link>get-involved/support</link>
+                                    <title>Support 4-H</title>
                                     <description></description>
                                     <icon>fa-list-alt</icon>
                                 </item>
@@ -145,264 +157,168 @@
                     </group>
                 </items>
             </item>
-            <!-- Admissions Dropdown -->
+            <!-- Programs and Opportunities Dropdown -->
             <item>
                 <title>Programs and Opportunities</title>
-                <link></link>
-                <image>
-                    <title>Interested in pursuing undergraduate education at Penn State? Learn about admission requirements, important dates, and other information to get you ready to apply.</title>
-                    <link>admissions/undergraduate</link>
-                    <src>
-                        ++resource++agsci.common/assets/images/navigation/spotlight-admissions-apply-now.jpg
-                    </src>
-                </image>
+                <link>opportunities</link>
                 <items>
                     <group>
                         <item>
-                            <title>Undergraduate</title>
-                            <link>admissions/undergraduate</link>
+                            <title>Clubs and Memberships</title>
+                            <link>opportunities/clubs</link>
+                        </item>
+                        <item>
+                            <title>Projects</title>
+                            <link>opportunities/projects</link>
                             <items>
                                 <item>
-                                    <title>Apply Now Online</title>
-                                    <link>admissions/undergraduate/apply-now-online</link>
+                                    <title>Animal Science</title>
+                                    <link>opportunities/projects/animal-science</link>
                                 </item>
                                 <item>
-                                    <title>Important Dates</title>
-                                    <link>admissions/undergraduate/importantdates</link>
+                                    <title>Civic Engagement and Leadership</title>
+                                    <link>opportunities/projects/civic-engagement-and-leadership</link>
                                 </item>
                                 <item>
-                                    <title>Schedule a Visit</title>
-                                    <link>admissions/undergraduate/visit</link>
+                                    <title>Communication and Expressive Arts</title>
+                                    <link>opportunities/projects/communication-and-expressive-arts</link>
                                 </item>
                                 <item>
-                                    <title>Request More Information</title>
-                                    <link>admissions/undergraduate/request</link>
+                                    <title>Environmental Sciences and Shooting Sports</title>
+                                    <link>opportunities/projects/environmental-sciences-and-shooting-sports</link>
                                 </item>
                                 <item>
-                                    <title>Transferring to Penn State</title>
-                                    <link>admissions/undergraduate/transfer</link>
+                                    <title>Healthy Living and Wellness</title>
+                                    <link>opportunities/projects/healthy-living-and-wellness</link>
                                 </item>
                                 <item>
-                                    <title>Tuition and Financial Aid</title>
-                                    <link>admissions/undergraduate/aid</link>
-                                </item>
-                                <item>
-                                    <title>Why Penn State?</title>
-                                    <link>admissions/undergraduate/why</link>
+                                    <title>STEM</title>
+                                    <link>opportunities/projects/stem</link>
                                 </item>
                             </items>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Graduate</title>
-                            <link>admissions/graduate</link>
+                            <title>Programs</title>
+                            <link>opportunities/programs</link>
                             <items>
                                 <item>
-                                    <title>How to Apply</title>
-                                    <link>admissions/graduate/apply</link>
+                                    <title>Animal Science</title>
+                                    <link>opportunities/programs/animal-science</link>
                                 </item>
                                 <item>
-                                    <title>Schedule a Visit</title>
-                                    <link>admissions/graduate/visit</link>
+                                    <title>At Home Activities</title>
+                                    <link>opportunities/programs/at-home-activities</link>
                                 </item>
                                 <item>
-                                    <title>Scholarship and Funding Opportunities</title>
-                                    <link>students/graduate/funding-opportunities</link>
+                                    <title>Awards and Scholarships</title>
+                                    <link>opportunities/programs/awards-and-scholarships</link>
                                 </item>
                                 <item>
-                                    <title>Student Research and Facilities</title>
-                                    <link>students/graduate/research</link>
+                                    <title>Camp</title>
+                                    <link>opportunities/programs/camp</link>
                                 </item>
                                 <item>
-                                    <title>Why Penn State?</title>
-                                    <link>admissions/graduate/why</link>
+                                    <title>Civic Engagement and Leadership</title>
+                                    <link>opportunities/programs/civic-engagement-and-leadership</link>
+                                </item>
+                                <item>
+                                    <title>Communication and Expressive Arts</title>
+                                    <link>opportunities/programs/communication-and-expressive-arts</link>
+                                </item>
+                                <item>
+                                    <title>Environmental Science</title>
+                                    <link>opportunities/programs/environmental-science</link>
+                                </item>
+                                <item>
+                                    <title>Healthy Living and Wellness</title>
+                                    <link>opportunities/programs/healthy-living-and-wellness</link>
+                                </item>
+                                <item>
+                                    <title>School Enrichment</title>
+                                    <link>opportunities/programs/school-enrichment</link>
+                                </item>
+                                <item>
+                                    <title>Shooting Sports</title>
+                                    <link>opportunities/programs/shooting-sports</link>
+                                </item>
+                                <item>
+                                    <title>State Council</title>
+                                    <link>opportunities/programs/state-council</link>
+                                </item>
+                                <item>
+                                    <title>STEM</title>
+                                    <link>opportunities/programs/stem</link>
                                 </item>
                             </items>
                         </item>
                     </group>
                     <group>
-                        <item type="cta">
-                            <title hidden="True">Links</title>
-                            <items>
-                                <item>
-                                    <link>admissions/undergraduate/request</link>
-                                    <title>Request Information</title>
-                                    <description>Explore Majors and Career Pathways</description>
-                                    <icon>fa-info-circle</icon>
-                                </item>
-                                <item>
-                                    <link>admissions/undergraduate/visit</link>
-                                    <title>Schedule a Visit</title>
-                                    <description>Come to University Park</description>
-                                    <icon>fa-map-marked-alt</icon>
-                                </item>
-                                <item>
-                                    <link>https://admissions.psu.edu/apply/</link>
-                                    <title>Application Procedures</title>
-                                    <description>Learn More about How to Apply</description>
-                                    <icon>fa-list-alt</icon>
-                                </item>
-                                <item>
-                                    <title>Compare our Undergraduate Degrees</title>
-                                    <description />
-                                    <link>academics/undergraduate/degree-explorer</link>
-                                    <icon>fa-atlas</icon>
-                                </item>
-                            </items>
+                        <item>
+                            <title>Events</title>
+                            <link>events</link>
                         </item>
                     </group>
                 </items>
             </item>
-            <!-- Research Dropdown -->
+            <!-- Volunteer Resources Dropdown -->
             <item>
                 <title>Volunteer Resources</title>
-                <link></link>
-                <image>
-                    <title>Ag Sciences Research is impacting real-world problems in Pennsylvania and around the globe.</title>
-                    <link>research/impacts</link>
-                    <src>++resource++agsci.common/assets/images/navigation/spotlight-research.jpg</src>
-                </image>
+                <link>get-involved/volunteers</link>
                 <items>
                     <group>
                         <item>
-                            <link>research/areas</link>
-                            <title>Research Areas</title>
-                            <items>
-                                <item>
-                                    <title>Advanced Agricultural and Food Systems</title>
-                                    <link>research/areas/advanced-agricultural-and-food-systems</link>
-                                </item><item>
-                                    <title>Biologically-Based Materials and Products</title>
-                                    <link>research/areas/biologically-based-materials-and-products</link>
-                                </item><item>
-                                    <title>Community Resilience and Capacity</title>
-                                    <link>research/areas/community-resilience-and-capacity</link>
-                                </item><item>
-                                    <title>Environmental Resilience</title>
-                                    <link>research/areas/environmental-resilience</link>
-                                </item><item>
-                                    <title>Integrated Health Solutions</title>
-                                    <link>research/areas/integrated-health-solutions</link>
-                                </item>
-                            </items>
+                            <title>Opportunities</title>
+                            <link>get-involved/volunteers/opportunities</link>
                         </item>
                         <item>
-                            <link>research/impacts</link>
-                            <title>Research Impacts</title>
+                            <title>Resources</title>
+                            <link>get-involved/volunteers/resources</link>
                         </item>
                         <item>
-                            <link>research/collaborative</link>
-                            <title>Collaborative Research</title>
-                        </item>
-                    </group>
-                    <group>
-                        <item>
-                            <link>research/centers</link>
-                            <title>Research Centers and Institutes</title>
-                        </item>
-                        <item>
-                            <link>research/extension-centers</link>
-                            <title>Research and Extension Centers</title>
-                        </item>
-                        <item>
-                            <link>research/commercialization</link>
-                            <title>Research Commercialization</title>
-                        </item>
-                        <item>
-                            <link>research/resources</link>
-                            <title>Faculty Funding and Resources</title>
-                        </item>
-                    </group>
-                    <group>
-                        <item type="cta">
-                            <items>
-                                <item>
-                                    <link>support</link>
-                                    <title>Support the College</title>
-                                    <icon>fa-hands-helping</icon>
-                                </item>
-                                <item>
-                                    <link>alumni</link>
-                                    <title>Join the Ag Alumni Society</title>
-                                    <icon>fa-users</icon>
-                                </item>
-                                <item>
-                                    <link>magazine</link>
-                                    <title>Read Penn State Ag Science Magazine</title>
-                                    <icon>fa-book-open</icon>
-                                </item>
-                            </items>
+                            <title>Guidelines and Policies</title>
+                            <link>get-involved/volunteers/guidelines-policies</link>
                         </item>
                     </group>
                 </items>
             </item>
-            <!-- Extension Dropdown -->
+            <!-- About 4-H Dropdown -->
             <item>
                 <title>About 4-H</title>
-                <link></link>
-                <image>
-                    <link>https://extension.psu.edu/spotted-lanternfly</link>
-                    <src>++resource++agsci.common/assets/images/navigation/slf.jpg</src>
-                    <title>
-                        Discover how we're leading the fight against the Spotted Lanternfly.
-                    </title>
-                </image>
+                <link>about</link>
                 <items>
-
-                    <group>
-                        <item type="text">
-                            As part of a top research institution, Penn State
-                            Extension delivers science-based information to
-                            citizens. We provide face-to-face and online
-                            education to our customers—when, where, and how
-                            they want it—to address problems and advance
-                            opportunities.
-                        </item>
-                    </group>
                     <group>
                         <item>
-                            <title>News</title>
-                            <link>news</link>
+                            <title>History</title>
+                            <link>about/history</link>
                         </item>
                         <item>
                             <title>Events</title>
                             <link>events</link>
                         </item>
                         <item>
-                            <title>Contact Us</title>
-                            <link>contact</link>
-                        </item>
-                        <item>
-                            <title>Educational Programming</title>
-                            <link>extension/programming</link>
-                        </item>
-                        <item>
-                            <title>Major Initiatives</title>
-                            <link>extension/initiatives</link>
+                            <title>News</title>
+                            <link>news</link>
                         </item>
                     </group>
                     <group>
-                        <item type="cta">
+                        <item>
+                            <title>Contact Us</title>
+                            <link>contact</link>
                             <items>
                                 <item>
-                                    <link>support</link>
-                                    <title>Support Penn State Extension</title>
-                                    <icon>fa-hands-helping</icon>
+                                    <title>Directory</title>
+                                    <link>directory</link>
                                 </item>
                                 <item>
-                                    <link>https://extension.psu.edu</link>
-                                    <title>Start Your Learning Journey</title>
-                                    <icon>fa-chalkboard-teacher</icon>
-                                </item>
-                                <item>
-                                    <link>https://extension.psu.edu/email-preferences</link>
-                                    <title>Connect with Penn State Extension</title>
-                                    <icon>fa-envelope</icon>
+                                    <title>Find Your County 4-H</title>
+                                    <link>counties</link>
                                 </item>
                             </items>
                         </item>
                     </group>
+
                 </items>
             </item>
         </items>
