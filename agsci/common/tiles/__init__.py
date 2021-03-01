@@ -560,6 +560,15 @@ class SkeeterTile(CCCT_Tile):
         return not not self.get_valid_value('show_event_description')
 
     @property
+    def show_more(self):
+
+        if self.no_max:
+            return False
+
+        if not self.light_version:
+            return len(self.items) > self.max_items
+
+    @property
     def filter_tags(self):
         _ = self.get_valid_value('filter_tags')
 
