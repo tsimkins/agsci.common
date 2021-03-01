@@ -587,6 +587,13 @@ class ISkeeterTile(IBorderTile):
         default=False,
     )
 
+    show_event_description = schema.Bool(
+        title=_(u"Show Event Description? (for Events)"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
 class IAnimalTile(Interface):
 
     form.widget(value=DataGridFieldFactory)

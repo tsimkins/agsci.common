@@ -556,6 +556,10 @@ class SkeeterTile(CCCT_Tile):
         return not not self.get_valid_value('light_version')
 
     @property
+    def show_event_description(self):
+        return not not self.get_valid_value('show_event_description')
+
+    @property
     def filter_tags(self):
         _ = self.get_valid_value('filter_tags')
 

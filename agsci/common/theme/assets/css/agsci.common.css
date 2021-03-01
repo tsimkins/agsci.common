@@ -13565,6 +13565,9 @@ CARD DECK - EVENTS
 .card.card-event .event-date-block {
   margin-right: 0;
 }
+.card.card-event .event-image-block {
+  flex-grow: 1;
+}
 .card.card-event img {
   object-fit: cover;
   object-position: 50% 50%;
