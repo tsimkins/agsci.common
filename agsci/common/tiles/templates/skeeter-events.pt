@@ -98,7 +98,8 @@
 
                             </p>
 
-                            <p tal:condition="view/show_event_description|nothing"
+                            <p class="mt-2"
+                               tal:condition="view/show_event_description|nothing"
                                tal:content="i/Description|nothing" />
 
                         </div>
