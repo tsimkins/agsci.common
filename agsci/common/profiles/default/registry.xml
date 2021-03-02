@@ -302,6 +302,7 @@
             <element>agsci_directory_group</element>
             <element>agsci_directory_person_listing</element>
             <element>agsci_directory_person_publication_listing</element>
+            <element>agsci_photofolder</element>
         </value>
     </record>
 
