@@ -566,7 +566,7 @@ class SkeeterTile(CCCT_Tile):
             return False
 
         if not self.light_version:
-            return len(self.items) > self.max_items
+            return len(self.all_items) > self.max_items
 
     @property
     def filter_tags(self):
@@ -693,13 +693,17 @@ class SkeeterTile(CCCT_Tile):
         return []
 
     @property
+    def all_items(self):
+        return super(SkeeterTile, self).items
+
+    @property
     def items(self):
 
         featured = self.featured
         filter_tags = self.filter_tags
         filter_public_tags = self.filter_public_tags
 
-        items = super(SkeeterTile, self).items
+        items = self.all_items
 
         # Filter by tags provided.
         if filter_tags:
