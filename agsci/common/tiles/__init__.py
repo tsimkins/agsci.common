@@ -963,7 +963,11 @@ class RichTextTile(BaseTile):
         return 'container'
 
 class PullQuoteTile(BaseTile):
-    pass
+
+    def quote_class(self):
+        if self.img_src:
+            return 'col-12 col-sm-9 order-2'
+        return 'col'
 
 class SearchBoxTile(BaseTile):
 

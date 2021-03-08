@@ -881,6 +881,17 @@ class IPullQuoteTile(Interface):
         required=False
     )
 
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u""),
+        required=False,
+    )
+
+    image_alt = schema.TextLine(
+        title=_(u'Image Alt Text'),
+        required=False,
+    )
+
 class ISearchBoxTile(IBorderTile):
 
     title = schema.TextLine(
