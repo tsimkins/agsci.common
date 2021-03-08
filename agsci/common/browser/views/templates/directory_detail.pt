@@ -79,7 +79,11 @@
                                                         <a tal:attributes="href string:tel:${phone_number}"
                                                            tal:content="phone_number" />
                                                     </li>
-
+                                                    <li tal:define="pronouns context/pronouns|nothing"
+                                                        tal:condition="pronouns">
+                                                        <span>Pronouns</span>
+                                                        <span tal:replace="pronouns" />
+                                                    </li>
                                                 </ul>
                                             </div>
                                             </address>

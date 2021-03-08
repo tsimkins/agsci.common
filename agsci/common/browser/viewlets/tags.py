@@ -8,7 +8,7 @@ class TagsViewlet(ViewletBase):
     target_view = "tags"
 
     viewlet_id = "public-tags"
-    viewlet_title = "Tags"
+    viewlet_title = "Filter by Tag"
     show_link = True
     min_tags = 2
 
@@ -61,3 +61,23 @@ class InternalTagsViewlet(TagsViewlet):
     def tags(self):
         if hasattr(self.context, 'Subject') and hasattr(self.context.Subject, '__call__'):
             return self.context.Subject()
+
+class PublicTagsViewlet(InternalTagsViewlet):
+
+    viewlet_id = "public-tags-item"
+    viewlet_title = "Tags"
+
+    @property
+    def enhanced_public_tags(self):
+        return not not self.registry.get('agsci.common.enhanced_public_tags')
+
+    @property
+    def tags(self):
+        _ = getattr(self.context.aq_base, 'public_tags', None)
+        if _ and isinstance(_, (list, tuple)):
+            return sorted(_)
+
+    @property
+    def available(self):
+        if self.enhanced_public_tags:
+            return super(PublicTagsViewlet, self).available

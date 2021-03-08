@@ -4,6 +4,8 @@ from Products.CMFCore.DirectoryView import registerDirectory
 
 allow_module('agsci.common')
 allow_module('agsci.common.utilities')
+allow_module('Products.CMFPlone.utils')
+allow_module('plone.app.textfield.value')
 
 AgsciMessageFactory = MessageFactory('agsci.common')
 GLOBALS = globals()
@@ -30,3 +32,8 @@ def object_factory(**kwargs):
                 self.text = 'N/A'
 
     return _(**kwargs)
+
+# Monkey patch hard-coded 2021 year in Products.Archetypes
+from DateTime import DateTime
+from Products.Archetypes.browser import datecomponents
+datecomponents.PLONE_CEILING = DateTime(2051, 0)

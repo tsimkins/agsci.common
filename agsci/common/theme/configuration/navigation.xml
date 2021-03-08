@@ -391,24 +391,6 @@
                         <item>
                             <link>research/areas</link>
                             <title>Research Areas</title>
-                            <items>
-                                <item>
-                                    <title>Advanced Agricultural and Food Systems</title>
-                                    <link>research/areas/advanced-agricultural-and-food-systems</link>
-                                </item><item>
-                                    <title>Biologically-Based Materials and Products</title>
-                                    <link>research/areas/biologically-based-materials-and-products</link>
-                                </item><item>
-                                    <title>Community Resilience and Capacity</title>
-                                    <link>research/areas/community-resilience-and-capacity</link>
-                                </item><item>
-                                    <title>Environmental Resilience</title>
-                                    <link>research/areas/environmental-resilience</link>
-                                </item><item>
-                                    <title>Integrated Health Solutions</title>
-                                    <link>research/areas/integrated-health-solutions</link>
-                                </item>
-                            </items>
                         </item>
                         <item>
                             <link>research/impacts</link>

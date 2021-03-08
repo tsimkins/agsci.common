@@ -29,6 +29,7 @@ contact_fields = [
     'email', 'street_address', 'city', 'state',
     'zip_code', 'phone_number',
     'fax_number', 'primary_profile_url',
+    'pronouns',
 ]
 
 professional_fields = [
@@ -274,6 +275,13 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         description=_(u"These always show on the logged-in view. Checking this box will also show them on the public view."),
         required=False,
         default=True,
+    )
+
+    pronouns = schema.TextLine(
+        title=_(u"Pronouns"),
+        description=_(u"He/Him, She/Her, They/Them"),
+        required=False,
+        max_length=20
     )
 
 # Configuring default roles with Dexterity

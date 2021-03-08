@@ -556,6 +556,19 @@ class SkeeterTile(CCCT_Tile):
         return not not self.get_valid_value('light_version')
 
     @property
+    def show_event_description(self):
+        return not not self.get_valid_value('show_event_description')
+
+    @property
+    def show_more(self):
+
+        if self.no_max:
+            return False
+
+        if not self.light_version:
+            return len(self.all_items) > self.max_items
+
+    @property
     def filter_tags(self):
         _ = self.get_valid_value('filter_tags')
 
@@ -598,6 +611,24 @@ class SkeeterTile(CCCT_Tile):
         if self.is_portlet:
             return "col-12 border-top px-0"
         return "col-12 col-lg-4 border-top px-0"
+
+    @property
+    def news_item_card_class(self):
+        if self.is_portlet:
+            return "card card-news border-bottom px-0"
+        return "card card-news border-bottom"
+
+    @property
+    def news_item_image_class(self):
+        if self.is_portlet:
+            return "col-12 profile-img order-1 px-0"
+        return "col-3 col-md-4 profile-img order-1 px-0"
+
+    @property
+    def news_item_title_class(self):
+        if self.is_portlet:
+            return "col-12 profile-copy order-12 mt-0 mb-1 px-0"
+        return "col-9 col-md-8 profile-copy order-12 mt-0"
 
     @property
     def event_items_count(self):
@@ -662,13 +693,17 @@ class SkeeterTile(CCCT_Tile):
         return []
 
     @property
+    def all_items(self):
+        return super(SkeeterTile, self).items
+
+    @property
     def items(self):
 
         featured = self.featured
         filter_tags = self.filter_tags
         filter_public_tags = self.filter_public_tags
 
-        items = super(SkeeterTile, self).items
+        items = self.all_items
 
         # Filter by tags provided.
         if filter_tags:
@@ -928,4 +963,36 @@ class RichTextTile(BaseTile):
         return 'container'
 
 class PullQuoteTile(BaseTile):
-    pass
+
+    def quote_class(self):
+        if self.img_src:
+            return 'col-12 col-sm-9 order-2'
+        return 'col'
+
+class SearchBoxTile(BaseTile):
+
+    __section_class__ = 'container'
+
+    @property
+    def action(self):
+        return 'get'
+
+    @property
+    def action(self):
+        return '%s/search' % self.site.absolute_url()
+
+    @property
+    def placeholder_text(self):
+        _ = self.get_valid_value('placeholder_text')
+
+        if _:
+            return _
+
+        return 'Search'
+
+    @property
+    def search_path(self):
+        _ = self.get_target_object('target_container')
+
+        if _:
+            return "/".join(_.getPhysicalPath())

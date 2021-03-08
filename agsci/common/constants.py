@@ -22,9 +22,25 @@ MIMETYPE_EXTENSIONS = {
     u'image/png': u'png',
 }
 
-DEPARTMENT_CONFIG_URL = 'http://r39JxvLi.cms.extension.psu.edu/extension-config/config.json'
-
 AGSCI_DOMAIN = "mS5J5CtL4kuPKm7P.agsci.psu.edu"
 
+CMS_DOMAIN = "r39JxvLi.cms.extension.psu.edu"
+
+DEPARTMENT_CONFIG_URL = 'http://%s/extension-config/config.json' % CMS_DOMAIN
+
 ASSETS_DOMAIN = "assets.agsci.psu.edu"
-#ASSETS_DOMAIN = "localhost:5051"
+
+# Domains for the Plone site based on site.getId()
+DOMAIN_CONFIG = {
+    'agsci' : 'agsci.psu.edu',
+    'private-internal': "agsci.psu.edu",
+    'ento.psu.edu': 'ento.psu.edu',
+    'plantscience.psu.edu': 'plantscience.psu.edu',
+    'foodscience.psu.edu': 'foodscience.psu.edu',
+    'aese.psu.edu': 'aese.psu.edu',
+    'abe.psu.edu': 'abe.psu.edu',
+    'animalscience.psu.edu': 'animalscience.psu.edu',
+    'ecosystems.psu.edu': 'ecosystems.psu.edu',
+    'plantpath.psu.edu': 'plantpath.psu.edu',
+    'vbs.psu.edu': 'vbs.psu.edu'
+}

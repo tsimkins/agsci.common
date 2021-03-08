@@ -81,10 +81,6 @@
                         <link>graduate</link>
                     </item>
                     <item>
-                        <title>Español</title>
-                        <link>graduate/espanol</link>
-                    </item>
-                    <item>
                         <title>Admission to the Program</title>
                         <link>graduate/admissions</link>
                     </item>
@@ -141,6 +137,10 @@
                     <item>
                         <title>Events</title>
                         <link>events</link>
+                    </item>
+                    <item>
+                        <title>History of the Department</title>
+                        <link>about/history</link>
                     </item>
                     <item>
                         <title>Farms and Facilities</title>

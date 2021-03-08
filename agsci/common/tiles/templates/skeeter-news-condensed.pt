@@ -64,7 +64,7 @@
             </a>
         </tal:items>
         <div class="container"
-            tal:condition="not:light_version">
+            tal:condition="view/show_more|nothing">
             <div class="row">
                 <div class="col text-right">
                     <a class="btn btn-sm btn-link mb-0"

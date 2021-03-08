@@ -13675,6 +13675,9 @@ CARD DECK - EVENTS
 .card.card-event .event-date-block {
   margin-right: 0;
 }
+.card.card-event .event-image-block {
+  flex-grow: 1;
+}
 .card.card-event img {
   object-fit: cover;
   object-position: 50% 50%;
@@ -14387,67 +14390,96 @@ BIO -- body class .template-person_view
 
 /* Individual Bio
 --------------------------------------------- */
-.bio {
+.person-profile {
   padding: 1rem 0;
 }
-.bio ul.jobTitle li {
+.person-profile h1:after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  width: 6rem;
+  height: 1px;
+  border-bottom: 4px solid #3EA39E;
+}
+.person-profile ul.list-inline.list-inline-social {
+  margin-top: 0.75rem;
+}
+.person-profile ul.jobTitle li {
   font-size: 1.25rem;
 }
-.bio address {
+.person-profile address {
   font-size: 0.9rem;
   border-bottom: transparent;
-}
-.bio h1 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-}
-.bio p {
-  font-family: "Nunito Sans", sans-serif;
-}
-.bio ul {
-  margin-bottom: 0;
-}
-.bio img {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.bio .card-deck {
-  margin-bottom: 0;
-}
-.bio h2, .bio .h2 {
-  margin-top: 0.5rem;
-}
-.bio h2 a:hover,
-.bio h2 a:focus, .bio .h2 a:hover,
-.bio .h2 a:focus {
-  color: #2f7a77;
-}
-.bio address {
   margin-bottom: 0.5rem;
   padding: 0.75rem 0;
   line-height: 1.4;
 }
-.bio .expertise h3 {
+.person-profile address ul {
+  padding-left: 0;
+}
+.person-profile h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.person-profile .bio-contact-deets {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid rgba(62, 163, 158, 0.25);
+}
+.person-profile .bio-contact-deets a.email,
+.person-profile .bio-contact-deets a.phone,
+.person-profile .bio-contact-deets a.fax,
+.person-profile .bio-contact-deets a.pdf {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.person-profile .bio-contact-deets address {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+.person-profile p {
+  font-family: "Nunito Sans", sans-serif;
+}
+.person-profile ul {
+  margin-bottom: 0;
+  padding-left: 1.125rem;
+}
+.person-profile img {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.person-profile .card-deck {
+  margin-bottom: 0;
+}
+.person-profile .expertise h3 {
+  margin-top: 0.5rem;
+}
+.person-profile ul.jobTitle {
+  margin-top: 0.5rem;
+  padding-left: 0;
+  list-style-type: none;
+  font-style: italic;
+  font-family: "Nunito Sans", sans-serif;
+}
+.person-profile .person-bio h2 {
+  margin-top: 3rem;
+}
+.person-profile .person-bio > div > h2:first-child {
   margin-top: 0.5rem;
 }
 
 @media (min-width: 992px) {
-  .facultyStaffDirectory .bio address {
+  .facultyStaffDirectory .person-profile address {
     border: 1px solid rgba(62, 163, 158, 0.25);
   }
 
-  .bio h1 {
+  .person-profile h1 {
     font-size: 2.25rem;
   }
 }
-.bio ul {
-  padding-left: 1.125rem;
-}
-
-.bio address ul {
-  padding-left: 0;
-}
-
 ul.list-bio-contact li {
   margin-right: 0.625rem;
   margin-bottom: 0.5rem;
@@ -14482,16 +14514,29 @@ ul.list-bio-contact .fa-file-pdf {
     font-size: 85%;
   }
 }
-.bio ul.jobTitle {
-  margin-top: 0.5rem;
-  padding-left: 0;
-  list-style-type: none;
-  font-style: italic;
-  font-family: "Nunito Sans", sans-serif;
-}
-
 /* Bio in Directory Format
 --------------------------------------------- */
+.facultyStaffDirectory .bio {
+  padding-top: 1.375rem;
+  padding-bottom: 1rem;
+}
+.facultyStaffDirectory .bio h2,
+.facultyStaffDirectory .bio .h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+.facultyStaffDirectory .bio h2 a:hover,
+.facultyStaffDirectory .bio h2 a:focus,
+.facultyStaffDirectory .bio .h2 a:hover,
+.facultyStaffDirectory .bio .h2 a:focus {
+  color: #2f7a77;
+}
+.facultyStaffDirectory .bio ul.list-inline.list-inline-social li {
+  margin-right: 0.375rem;
+}
+.facultyStaffDirectory .bio address {
+  margin-bottom: 0;
+}
 .facultyStaffDirectory .bio h3 {
   margin-top: 0.5rem;
   font-size: 1rem;
@@ -14539,10 +14584,6 @@ ul.list-bio-contact .fa-file-pdf {
     font-size: 0.75rem;
   }
 }
-.facultyStaffDirectory .bio address {
-  margin-bottom: 0;
-}
-
 .facultyStaffDirectory .tileTitle,
 .facultyStaffDirectory .tileHeadline,
 address .tileHeadline {
@@ -14630,51 +14671,11 @@ ul.list-three-col {
     -moz-columns: 3;
   }
 }
-.bio .bio-contact-deets {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  border: 1px solid rgba(62, 163, 158, 0.25);
-}
-.bio .bio-contact-deets a.email, .bio .bio-contact-deets a.phone, .bio .bio-contact-deets a.fax, .bio .bio-contact-deets a.pdf {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.bio .bio-contact-deets address {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-}
-
-.bio h2 {
-  font-size: 1.5rem;
-}
-
 @media (min-width: 768px) {
-  .bio h2 {
+  .person-profile h2 {
     font-size: 1.5rem;
   }
 }
-.bio h1:after {
-  content: "";
-  position: absolute;
-  bottom: -0.75rem;
-  left: 0;
-  width: 6rem;
-  height: 1px;
-  border-bottom: 4px solid #3EA39E;
-}
-
-.bio ul.list-inline.list-inline-social {
-  margin-top: 0.75rem;
-}
-
-/* Only for bio in Directory listings
---------------------------------------------- */
-.bio ul.list-inline.list-inline-social li {
-  margin-right: 0.375rem;
-}
-
 .big-image img {
   object-fit: contain;
   max-width: 100%;
@@ -17394,10 +17395,17 @@ a.alert-bar:hover p.alert-bar-title {
 }
 
 .pagination {
-  display: inline-block;
+  display: block;
   padding: 0;
   list-style: none;
   margin: 20px 0;
+  text-align: center;
+}
+
+.pagination ul {
+  padding-left: 0;
+  display: block;
+  margin: 0.5rem auto;
 }
 
 .pagination li {
@@ -17406,6 +17414,7 @@ a.alert-bar:hover p.alert-bar-title {
   position: relative;
   padding: 0;
   font-weight: 300;
+  line-height: 2.5;
   /* wanna hide the label "next ... items"? */
   /* .label {
       display: none;
@@ -17415,12 +17424,17 @@ a.alert-bar:hover p.alert-bar-title {
 .pagination li > a,
 .pagination li > span {
   padding: 6px 12px !important;
-  line-height: 1.42857143;
+  line-height: normal;
   text-decoration: none;
   color: #007bb1;
   background-color: #fff;
   border: 1px solid #e5e5e5 !important;
   margin-left: -1px;
+}
+
+.pagination li.previous::before,
+.pagination li.next::after {
+  display: none;
 }
 
 .pagination li.previous > a {
@@ -18064,6 +18078,9 @@ body .youtube-video-embed.aspect-4-3 {
 }
 body .youtube-video-embed.aspect-3-2 {
   padding-bottom: 66.6666666667%;
+}
+body .youtube-video-embed.aspect-kaltura {
+  padding-bottom: 60.1%;
 }
 body .youtube-video-embed.w-25 {
   width: 25%;
@@ -18914,6 +18931,13 @@ body.template-image_view #content-core a.state-published:focus {
 #content-core {
   /* Placeholder image does not need a negative top margin. */
 }
+#content-core h4, #content-core h5 {
+  font-weight: 600;
+  font-family: "Nunito Sans", sans-serif;
+}
+#content-core h5 {
+  font-size: 1rem;
+}
 #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav::before {
   content: "Table of Contents";
   font-weight: bold;
@@ -19415,6 +19439,11 @@ body.portaltype-agsci_directory span.anchor span {
   top: -125px;
   visibility: hidden;
   pointer-events: none;
+}
+
+div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
+  padding: 0.625rem 1.5rem;
+  margin-bottom: 0;
 }
 
 .alert.status,

@@ -81,6 +81,11 @@ def create_registry_keys(site, logger):
             Record(field.Tuple(title=u'Global Public Tags', value_type=field.TextLine())),
             ()
         ),
+        (
+            'agsci.common.enhanced_public_tags',
+            Record(field.Bool(title=u'Enhanced Public Tags')),
+            False
+        ),
     ]
 
     for (key, record, value) in keys:

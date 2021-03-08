@@ -73,7 +73,7 @@
                                  tal:content="python: view.date_format(start, format='%d')" />
                         </div>
 
-                        <div>
+                        <div class="event-image-block">
                             <img alt=""
                                  tal:condition="i/hasLeadImage|nothing"
                                  tal:attributes="src string:${i/getURL}/@@images/image/mini" />
@@ -95,7 +95,13 @@
                             <p>
                                 <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
                                 <span tal:replace="i/location|nothing" />
+
                             </p>
+
+                            <p class="mt-2"
+                               tal:condition="view/show_event_description|nothing"
+                               tal:content="i/Description|nothing" />
+
                         </div>
                     </div>
                 </a>
@@ -104,7 +110,7 @@
     </div>
 
     <div class="container"
-        tal:condition="not: view/no_max|nothing">
+        tal:condition="view/show_more|nothing">
         <div class="row">
             <div class="col text-right">
                 <a class="btn btn-sm btn-link mb-0"

@@ -52,6 +52,10 @@ CARD DECK - EVENTS
         margin-right: 0;
         }
 
+    .event-image-block {
+        flex-grow: 1;
+        }
+
     img {
         object-fit: cover;
         object-position: 50% 50%;

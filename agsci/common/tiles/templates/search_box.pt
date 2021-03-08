@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:define="title view/data/title|nothing;
+                description view/data/description|nothing;"
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing;">
+
+    <div
+        tal:attributes="class view/container_class|nothing">
+
+        <span
+            tal:condition="view/title_id|nothing"
+            tal:attributes="id view/title_id|nothing" />
+
+        <h2 class="mt-0"
+            tal:condition="title"
+            tal:content="title" />
+
+        <p class="lead"
+            tal:condition="description"
+            tal:content="description" />
+
+        <form
+            class="form-inline my-2 my-lg-0"
+            tal:attributes="method view/method|nothing;
+                            action view/action|nothing;" >
+
+            <div class="input-group col-12 px-0">
+
+                <input
+                    tal:define="path view/search_path|nothing"
+                    tal:condition="path"
+                    tal:attributes="value path"
+                    type="hidden"
+                    name="path" />
+
+                <input
+                    class="form-control"
+                    type="search"
+                    name="SearchableText"
+                    aria-label="Text to search for"
+                    tal:attributes="placeholder view/placeholder_text|nothing" />
+
+                <span class="input-group-btn">
+                    <button
+                        aria-label="Submit Search"
+                        class="btn btn-primary"
+                        type="submit"><i class="fa fa-search"></i></button>
+                </span>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+  </body>
+</html>

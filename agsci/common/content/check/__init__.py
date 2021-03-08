@@ -369,7 +369,12 @@ class BodyTextCheck(ContentCheck):
         if hasattr(o, 'aq_base'):
             _o = o.aq_base
 
-            if hasattr(_o, 'text') and hasattr(_o.text, 'raw'):
+            # Person has a 'bio' field, not a 'text' field.
+            if hasattr(_o, 'bio') and hasattr(_o.bio, 'raw'):
+                if _o.bio.raw:
+                    return safe_unicode(_o.bio.raw)
+
+            elif hasattr(_o, 'text') and hasattr(_o.text, 'raw'):
                 if _o.text.raw:
                     return safe_unicode(_o.text.raw)
 
@@ -964,6 +969,13 @@ class AllCapsHeadings(BodyHeadingCheck):
     def check(self):
         for h in self.value():
             h_text = self.soup_to_text(h)
+
+            # Verify that the heading contains capital letters.
+            # Skip check if no capital letters found
+            _re = re.compile('[A-Z]', re.M)
+
+            if not _re.search(h_text):
+                continue
 
             # Skip headings that are one-word headings.  They're sometimes acronyms.
             if len(self.toWords(h_text)) > 1:

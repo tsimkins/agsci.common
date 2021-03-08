@@ -9,7 +9,8 @@
 <section
     tal:condition="view/show_tile|nothing"
     tal:attributes="class view/section_class|nothing;
-                    data-tile-type view/tile_type|nothing">
+                    data-tile-type view/tile_type|nothing"
+    tal:define="is_portlet view/is_portlet|nothing">
 
     <h2 class="mt-0"
         tal:define="title view/data/title|nothing"
@@ -30,7 +31,7 @@
                        class="container-fluid jumbotron jumbotron-img-based jumbotron-full-height jumbotron-news-feed d-flex align-items-end position-relative">
 
                         <div class="jumbotron-img bg-center-center fix-img-right"
-                             tal:attributes="style string:background: #333333 url(${feature/getURL}/@@images/image/large) no-repeat center top;; background-size: cover;"></div>
+                             tal:attributes="style string:background: #333333 url(${feature/getURL}/@@images/image/large) no-repeat center center;; background-size: cover;"></div>
 
                         <div class="opacity-dimmer opacity-dimmer-bottom"></div>
 
@@ -55,14 +56,14 @@
 
                     <tal:items tal:repeat="i view/items|nothing">
 
-                        <a tal:attributes="href i/getURL|nothing"
-                           class="card card-news border-bottom">
+                        <a tal:attributes="href i/getURL|nothing;
+                                           class view/news_item_card_class|nothing">
 
                             <div class="container">
 
                                 <div class="row mt-3 align-items-center">
 
-                                    <div class="col-9 col-md-8 profile-copy order-12 mt-0">
+                                    <div tal:attributes="class view/news_item_title_class|nothing">
                                         <p class="section-crumb"
                                            tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
                                         <h3 class="h3"
@@ -70,7 +71,7 @@
 
                                     </div>
 
-                                    <div class="col-3 col-md-4 profile-img order-1 px-0">
+                                    <div tal:attributes="class view/news_item_image_class|nothing">
                                         <img tal:attributes="src string:${i/getURL}/@@images/image/large"
                                              alt=""
                                              title=""
@@ -89,7 +90,8 @@
                         </a>
                     </tal:items>
 
-                    <div class="container">
+                    <div class="container"
+                        tal:condition="not:is_portlet">
                         <div class="row">
                             <div class="col text-right">
                                 <a class="btn btn-sm btn-link mb-0"

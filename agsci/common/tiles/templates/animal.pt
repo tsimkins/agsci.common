@@ -8,44 +8,46 @@
 
 <section tal:attributes="data-tile-type view/tile_type|nothing">
 
-<div class="container"
-    tal:omit-tag="view/is_portlet">
+    <div class="container"
+        tal:omit-tag="view/is_portlet">
 
-    <h2 class="mt-0"
-        tal:define="title view/data/title|nothing"
-        tal:content="title"
-        tal:condition="title" />
+        <h2 class="mt-0"
+            tal:define="title view/data/title|nothing"
+            tal:content="title"
+            tal:condition="title" />
 
-    <div tal:attributes="class view/klass|nothing"
-         tal:define="vertical view/vertical|nothing;
-                     show_image view/show_image|nothing">
+        <div tal:attributes="class view/klass|nothing"
+             tal:define="vertical view/vertical|nothing;
+                         show_image view/show_image|nothing">
 
-        <tal:people tal:repeat="context view/people|nothing">
-            <tal:image
-                tal:condition="show_image">
+            <tal:people tal:repeat="context view/people|nothing">
+                <tal:image
+                    tal:condition="show_image">
 
-                <div tal:condition="not: vertical"
-                     tal:replace="structure context/@@card_view_image"/>
+                    <div tal:condition="not: vertical"
+                         tal:replace="structure context/@@card_view_image"/>
 
-                <div tal:condition="vertical"
-                     tal:replace="structure context/@@card_view_vertical_image" />
+                    <div tal:condition="vertical"
+                         tal:replace="structure context/@@card_view_vertical_image" />
 
-            </tal:image>
+                </tal:image>
 
-            <tal:no-image
-                tal:condition="not:show_image">
+                <tal:no-image
+                    tal:condition="not:show_image">
 
-                <div tal:condition="not: vertical"
-                     tal:replace="structure context/@@card_view"/>
+                    <div tal:condition="not: vertical"
+                         tal:replace="structure context/@@card_view"/>
 
-                <div tal:condition="vertical"
-                     tal:replace="structure context/@@card_view_vertical" />
+                    <div tal:condition="vertical"
+                         tal:replace="structure context/@@card_view_vertical" />
 
-            </tal:no-image>
+                </tal:no-image>
 
-        </tal:people>
+            </tal:people>
 
-    </div>
+        </div>
+
+</div>
 
 </section>
 

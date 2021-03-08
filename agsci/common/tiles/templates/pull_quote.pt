@@ -12,8 +12,19 @@
                     data-container-width view/container_width;">
 
     <div class="container">
-        <div class="row">
-            <div class="col">
+        <div class="row"
+            tal:define="img_src view/img_src|nothing;
+                        img_alt view/img_alt|nothing">
+
+            <div class="col-12 col-sm-3 order-1"
+                tal:condition="img_src">
+
+                <img class="w-100"
+                     tal:attributes="src img_src;
+                                     alt img_alt" />
+
+            </div>
+            <div tal:attributes="class view/quote_class|nothing">
                 <blockquote
                     tal:define="speaker view/data/speaker|nothing;
                                 speaker_title view/data/speaker_title|nothing">

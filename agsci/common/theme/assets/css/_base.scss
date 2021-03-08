@@ -443,6 +443,10 @@ body {
         padding-bottom: 100%*(2/3);
     }
 
+    .youtube-video-embed.aspect-kaltura {
+        padding-bottom: 60.1%;
+    }
+
     .youtube-video-embed.w-25 {
         width: 25%;
         padding-bottom: 25%*(9/16);
@@ -831,6 +835,15 @@ body.template-image_view #content-core {
 }
 
 #content-core {
+
+    h4, h5 {
+        font-weight: 600;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
 
     #parent-fieldname-text.pat-autotoc {
 
@@ -1487,6 +1500,15 @@ body.portaltype-agsci_directory {
             top: -125px;
             visibility: hidden;
             pointer-events: none;
+        }
+    }
+}
+
+div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
+    form {
+        .btn.btn-primary {
+            padding: 0.625rem 1.5rem;
+            margin-bottom: 0;
         }
     }
 }
