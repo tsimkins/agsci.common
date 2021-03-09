@@ -1,0 +1,28 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           i18n_domain="agsci.common">
+
+    <!-- Program County -->
+
+    <plone:behavior
+        title="Program County"
+        description="County selection field for programs where county is inherited from parent object"
+        provides=".ICounty"
+    />
+
+    <!-- Program County Container -->
+
+    <plone:behavior
+        title="Program County Container"
+        description="County selection field for container"
+        provides=".ICountyContainer"
+    />
+
+    <utility
+        name="agsci.common.programs.County"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocabulary.CountyVocabularyFactory"
+    />
+
+</configure>

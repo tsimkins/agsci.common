@@ -8,4 +8,5 @@
   <column value="ContentErrorCodes" />
   <column value="sortable_title_case" />
   <column value="exclude_from_robots" />
+  <column value="County" />
 </object>

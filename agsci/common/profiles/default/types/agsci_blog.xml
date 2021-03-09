@@ -22,7 +22,7 @@
     <property name="default_view_fallback">False</property>
     <property name="add_permission">agsci.common.restricted_types</property>
     <property name="klass">agsci.common.content.blog.Blog</property>
-    <property name="behaviors">
+    <property name="behaviors" purge="False">
         <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
         <element value="plone.app.content.interfaces.INameFromTitle" />
         <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />

@@ -20,7 +20,7 @@
     <property name="default_view_fallback">False</property>
     <property name="add_permission">plone.app.contenttypes.addEvent</property>
     <property name="klass">plone.app.contenttypes.content.Event</property>
-    <property name="behaviors">
+    <property name="behaviors" purge="False">
         <element value="plone.app.event.dx.behaviors.IEventBasic" />
         <element value="plone.app.event.dx.behaviors.IEventLocation" />
         <element value="plone.app.event.dx.behaviors.IEventContact" />

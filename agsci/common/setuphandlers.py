@@ -46,6 +46,7 @@ def add_catalog_indexes(context, logger=None):
                 ('ContentIssues', 'FieldIndex'),
                 ('ContentErrorCodes', 'KeywordIndex'),
                 ('exclude_from_robots', 'BooleanIndex'),
+                ('County', 'KeywordIndex'),
              ]
 
     indexables = []

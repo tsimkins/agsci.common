@@ -4,6 +4,7 @@ from plone.indexer import indexer
 from zope.component import provideAdapter
 
 from .content.behaviors import IAlwaysExcludeFromNavigation, ISEO
+from .content.behaviors.programs import ICounty
 from .content.behaviors.tags import ITags
 from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.check import getValidationErrors
@@ -11,6 +12,13 @@ from .content.degrees import IDegree
 from .content.person.person import IPerson
 
 from .interfaces import ITagsAdapter
+
+# County
+@indexer(ICounty)
+def County(context):
+    return getattr(context, 'county', [])
+
+provideAdapter(County, name='County')
 
 # Public Tags
 @indexer(ITags)
