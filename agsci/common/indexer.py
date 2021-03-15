@@ -1,4 +1,6 @@
 from Acquisition import aq_base
+from plone.app.contenttypes.indexers import SearchableText, \
+                                            _unicode_save_string_concat
 from plone.dexterity.interfaces import IDexterityContent
 from plone.indexer import indexer
 from zope.component import provideAdapter
@@ -9,7 +11,8 @@ from .content.behaviors.leadimage import ILeadImage, LeadImage
 from .content.check import getValidationErrors
 from .content.degrees import IDegree
 from .content.person.person import IPerson
-
+from .content.section import ISection
+from .content.subsite import ISubsite
 from .interfaces import ITagsAdapter
 
 # Public Tags
@@ -125,3 +128,16 @@ def exclude_from_robots(context):
     return not not getattr(context.aq_base, 'exclude_from_robots', False)
 
 provideAdapter(exclude_from_robots, name='exclude_from_robots')
+
+# Searchable Text for Custom Content Types
+@indexer(ISubsite)
+def SearchableText_subsite(context):
+    return _unicode_save_string_concat(SearchableText(context))
+
+provideAdapter(SearchableText_subsite, name='SearchableText')
+
+@indexer(ISection)
+def SearchableText_section(context):
+    return _unicode_save_string_concat(SearchableText(context))
+
+provideAdapter(SearchableText_section, name='SearchableText')
