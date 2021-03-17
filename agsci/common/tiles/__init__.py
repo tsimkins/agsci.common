@@ -661,7 +661,7 @@ class SkeeterTile(CCCT_Tile):
 
         # "Tiles as portlets" never have featured items
         if not self.is_portlet:
-            items = super(SkeeterTile, self).items
+            items = self.filtered_items
 
             featured_id = self.get_field('featured_id')
 
@@ -697,9 +697,8 @@ class SkeeterTile(CCCT_Tile):
         return super(SkeeterTile, self).items
 
     @property
-    def items(self):
+    def filtered_items(self):
 
-        featured = self.featured
         filter_tags = self.filter_tags
         filter_public_tags = self.filter_public_tags
 
@@ -711,6 +710,14 @@ class SkeeterTile(CCCT_Tile):
 
         if filter_public_tags:
             items = [x for x in items if any([y in self.get_public_tags(x) for y in filter_public_tags])]
+
+        return items
+
+    @property
+    def items(self):
+
+        featured = self.featured
+        items = self.filtered_items
 
         if featured:
             items = [x for x in items if x.UID != featured.UID]
