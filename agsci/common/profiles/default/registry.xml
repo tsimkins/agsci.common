@@ -314,6 +314,19 @@
         <value>False</value>
     </record>
 
+    <!-- Allowed custom attributes -->
+    <record
+        name="plone.custom_attributes"
+        interface="Products.CMFPlone.interfaces.controlpanel.IFilterSchema"
+        field="custom_attributes">
+        <value>
+            <element>data-badge-popover</element>
+            <element>data-badge-type</element>
+            <element>data-doi</element>
+            <element>data-hide-no-mentions</element>
+        </value>
+    </record>
+
     <!-- Tile Configuration -->
 
     <!-- Omitted fields -->
