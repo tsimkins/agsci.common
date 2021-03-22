@@ -19,6 +19,7 @@
     <include package=".tiles" />
     <include package=".load" />
     <include package=".facetednavigation" />
+    <include package=".patch" />
 
     <genericsetup:registerProfile
         name="default"

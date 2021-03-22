@@ -403,12 +403,8 @@
                     </group>
                     <group>
                         <item>
-                            <link>research/centers</link>
-                            <title>Research Centers and Institutes</title>
-                        </item>
-                        <item>
-                            <link>research/extension-centers</link>
-                            <title>Research and Extension Centers</title>
+                            <link>research/centers-facilities</link>
+                            <title>Research Centers and Facilities</title>
                         </item>
                         <item>
                             <link>research/commercialization</link>

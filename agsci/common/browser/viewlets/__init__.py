@@ -304,16 +304,21 @@ class NavigationViewlet(ViewletBase):
         return 'navigation.xml'
 
     def get_paths(self):
-        results = self.portal_catalog.searchResults({
-            'object_provides' : [
-                'plone.dexterity.interfaces.IDexterityContent',
-                'Products.PloneFormGen.interfaces.form.IPloneFormGenForm',
-            ]
-        })
 
-        site_path = "/".join(self.site.getPhysicalPath())
+        if self.request.get('check_nav_links'):
 
-        return dict([(self.normalize_path(x.getPath()[len(site_path):]), True) for x in results])
+            results = self.portal_catalog.searchResults({
+                'object_provides' : [
+                    'plone.dexterity.interfaces.IDexterityContent',
+                    'Products.PloneFormGen.interfaces.form.IPloneFormGenForm',
+                ]
+            })
+
+            site_path = "/".join(self.site.getPhysicalPath())
+
+            return dict([(self.normalize_path(x.getPath()[len(site_path):]), True) for x in results])
+
+        return {}
 
     def update(self):
         super(NavigationViewlet, self).update()
@@ -336,13 +341,15 @@ class NavigationViewlet(ViewletBase):
 
     def link_class(self, item):
 
-        url = self.get_link(item)
+        if self.paths:
 
-        if url:
-            if self.is_external_link(url) or self.is_valid_internal_path(url):
-                    return 'valid'
+            url = self.get_link(item)
 
-        return 'invalid'
+            if url:
+                if self.is_external_link(url) or self.is_valid_internal_path(url):
+                        return 'valid'
+
+            return 'invalid'
 
     def is_valid_internal_path(self, url):
         path = self.get_internal_path(url)
