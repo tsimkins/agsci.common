@@ -393,6 +393,10 @@
                             <title>Research Impacts</title>
                         </item>
                         <item>
+                            <link>research/aes</link>
+                            <title>Agricultural Experiment Station</title>
+                        </item>
+                        <item>
                             <link>research/collaborative</link>
                             <title>Collaborative Research</title>
                         </item>
