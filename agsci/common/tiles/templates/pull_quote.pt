@@ -16,7 +16,7 @@
             tal:define="img_src view/img_src|nothing;
                         img_alt view/img_alt|nothing">
 
-            <div class="col-12 col-sm-3 order-1"
+            <div class="col-12 col-sm-3 order-1 my-3 py-4 px-0"
                 tal:condition="img_src">
 
                 <img class="w-100"
