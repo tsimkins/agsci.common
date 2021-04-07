@@ -28,6 +28,15 @@
 
             <div class="col-12 col-lg-5 order-1 order-lg-12 mb-md-4">
 
+                <div tal:define="iframe_url view/iframe_url|nothing"
+                            tal:condition="iframe_url"
+                            tal:attributes="class view/wrapper_klass|nothing">
+
+                    <iframe
+                        tal:attributes="src iframe_url" />
+
+                </div>
+
                 <div class="row">
 
                     <div tal:attributes="class view/image_col_class"

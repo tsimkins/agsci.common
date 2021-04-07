@@ -371,6 +371,18 @@ class IMissPiggyTile(IBorderTile):
         required=False,
     )
 
+    url = schema.TextLine(
+        title=_(u"Video URL"),
+        required=True,
+    )
+
+    video_aspect_ratio = schema.Choice(
+        title=_(u"Video Aspect Ratio"),
+        vocabulary="agsci.common.tiles.video_aspect_ratio",
+        required=True,
+        default=u"16:9",
+    )
+
 class IFozzieBearTile(IBorderTile):
 
     form.widget(value=DataGridFieldFactory)
