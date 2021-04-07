@@ -373,13 +373,13 @@ class IMissPiggyTile(IBorderTile):
 
     url = schema.TextLine(
         title=_(u"Video URL"),
-        required=True,
+        required=False,
     )
 
     video_aspect_ratio = schema.Choice(
         title=_(u"Video Aspect Ratio"),
         vocabulary="agsci.common.tiles.video_aspect_ratio",
-        required=True,
+        required=False,
         default=u"16:9",
     )
 
