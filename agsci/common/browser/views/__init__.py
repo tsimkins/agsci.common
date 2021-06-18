@@ -5,6 +5,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.browser.search import Search as _SearchView
 from Products.CMFPlone.browser.search import BAD_CHARS, quote, quote_chars
 from Products.CMFPlone.interfaces import IPloneSiteRoot
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from collections import OrderedDict
@@ -1083,3 +1084,54 @@ class RobotsView(BaseView):
                 'paths' : self.exclude_paths,
             },
         )
+
+# Provides a combined JS file for all theme files
+class ThemeJSView(BaseView):
+
+    # Config
+    ASSETS_DIR = "++resource++agsci.common/assets"
+
+    FILES = [
+        'js/jquery-3.2.1.min.js',
+        'bootstrap/js/bootstrap.bundle.min.js',
+        'js/jquery.bootstrap-dropdown-hover.min.js',
+        'js/scrollreveal.min.js',
+        'featherlight/featherlight.min.js',
+        'js/jquery.mixitup.min.js',
+        'js/agsci.js',
+    ]
+
+    def __call__(self):
+
+        # Grab contents of all listed files.
+        data = []
+
+        for _ in self.FILES:
+
+            js_file  = "%s/%s" % (self.ASSETS_DIR, _)
+
+            try:
+                resource = self.site.restrictedTraverse(js_file)
+            except:
+                raise Exception("Can't find JS file %s" % js_file)
+            else:
+                try:
+                    _data = resource.GET()
+                except:
+                    pass
+                else:
+
+                    if _data and isinstance(_data, (unicode, str)):
+                        data.append(u"/* Include file: %s */" % _)
+                        data.append(safe_unicode(_data))
+
+        # Set headers for caching and content type
+        self.request.response.setHeader('Content-Type', 'text/javascript')
+        self.request.response.setHeader(
+            'Cache-Control',
+            'max-age=60, s-maxage=3600, must-revalidate, public, proxy-revalidate'
+        )
+
+        # Combine files and return
+        _ = u"\n".join(data)
+        return _.encode('utf-8')
