@@ -125,7 +125,8 @@
                                      class="headshot card-img-crop">
                                     <img tal:attributes="alt person_view/name/title|nothing;
                                                          title person_view/name/title|nothing;
-                                                         src image"
+                                                         src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                         data-src image"
                                          class="w-100 photo" />
                                 </div>
                                 <a tal:attributes="href context/absolute_url|nothing"

@@ -137,7 +137,8 @@
                       class="col-12 col-sm-6 col-md-4 col-xl-3 order-sm-2 order-1 pl-sm-3 pl-0 pr-0 mb-md-0 mb-3">
                         <img class="w-100"
                                 alt=""
-                                tal:attributes="src  string:$item_url/@@images/image/large" />
+                                tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                data-src string:$item_url/@@images/image/large" />
                     </div>
                 </div>
             </div>

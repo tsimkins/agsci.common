@@ -34,7 +34,8 @@
                             <div class="opacity-dimmer opacity-dimmer-bottom-left"></div>
 
                             <img tal:condition="i/hasLeadImage|nothing"
-                                    tal:attributes="src python: view.get_img_src(i);"
+                                    tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                    data-src python: view.get_img_src(i);"
                                     alt=""
                                     title=""
                                     class="w-100" />

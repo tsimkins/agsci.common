@@ -44,7 +44,8 @@
 
                 <img alt=""
                      class="w-100"
-                     tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                     tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                     data-src string:${i/getURL}/@@images/image/large" />
             </div>
 
         </div>
@@ -76,7 +77,8 @@
                         <div class="event-image-block">
                             <img alt=""
                                  tal:condition="i/hasLeadImage|nothing"
-                                 tal:attributes="src string:${i/getURL}/@@images/image/mini" />
+                                 tal:attributes="src string:${view/assets_url}/images/fpo-calendar.jpg;
+                                                 data-src string:${i/getURL}/@@images/image/mini" />
 
                             <img alt=""
                                 tal:condition="not:i/hasLeadImage|nothing"
