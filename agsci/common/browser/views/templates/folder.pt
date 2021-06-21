@@ -138,7 +138,7 @@
                         <img class="w-100"
                                 alt=""
                                 tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
-                                                data-src string:$item_url/@@images/image/large" />
+                                                data-src string:$item_url/@@images/image/large_listing" />
                     </div>
                 </div>
             </div>
