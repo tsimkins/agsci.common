@@ -171,10 +171,10 @@
             <!-- Bundle CSS to bottom -->
             <after
                 css:theme-children="#theme-javascript"
-                css:content="head link[data-bundle]" />
+                css:content="head link[rel='stylesheet']" />
 
             <!-- CSS -->
-            <after css:theme-children="head" css:content="head link:not([data-bundle])" />
+            <after css:theme-children="head" css:content="head link:not([rel='stylesheet'])" />
             <after css:theme-children="head" css:content="head style" />
 
 
