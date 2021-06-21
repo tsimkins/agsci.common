@@ -168,9 +168,15 @@
             <!-- No generator tag -->
             <drop css:content="head meta[name='generator']" />
 
+            <!-- Bundle CSS to bottom -->
+            <after
+                css:theme-children="#theme-javascript"
+                css:content="head link[data-bundle]" />
+
             <!-- CSS -->
-            <after css:theme-children="head" css:content="head link" />
+            <after css:theme-children="head" css:content="head link:not([data-bundle])" />
             <after css:theme-children="head" css:content="head style" />
+
 
         </rules>
 
