@@ -131,8 +131,8 @@ class ImportNewsView(ImportContentView):
             "majors-toxicology",
             "majors-veterinary-and-biomedical-sciences",
         ],
-        'apd' : [
-            "ag-progress-days",
+        'agsci/apd/news' : [
+            "news-ag-progress-days",
         ],
     }
 
@@ -169,11 +169,6 @@ class ImportNewsView(ImportContentView):
 
     @property
     def department_id(self):
-        department_id = self.request.get('department_id')
-
-        if department_id in self.department_tag_config.keys():
-            return department_id
-
         return getDepartmentId()
 
     @property
@@ -491,3 +486,23 @@ class ImportNewsView(ImportContentView):
         if response.status_code == 200:
             response.raw.decode_content = True
             return response.raw.read()
+
+# Blog-specific view
+class ImportNewsBlogView(ImportNewsView):
+
+    @property
+    def department_id(self):
+        site_id = self.site.getId().replace('.psu.edu', '')
+        path = self.context.absolute_url()[len(self.site.absolute_url()):]
+        return '%s%s' % (site_id, path)
+
+    @property
+    def news_items(self):
+        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
+
+        return self.portal_catalog.searchResults({
+            'portal_type' : 'News Item',
+            'id' : numeric_ids,
+            'SearchText' : 'news.psu.edu',
+            'path' : '/'.join(self.context.getPhysicalPath()),
+        })
