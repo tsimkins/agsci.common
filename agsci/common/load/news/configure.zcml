@@ -16,7 +16,7 @@
     <!-- Import News View -->
     <browser:page
         for="agsci.common.content.blog.IBlog"
-        name="import_news"
+        name="import_news_single"
         class=".ImportNewsBlogView"
         permission="zope2.View"
         layer="agsci.common.browser.interfaces.IThemeSpecific"
