@@ -130,7 +130,10 @@ class ImportNewsView(ImportContentView):
             "majors-immunology-and-infectious-disease",
             "majors-toxicology",
             "majors-veterinary-and-biomedical-sciences",
-        ]
+        ],
+        'apd' : [
+            "ag-progress-days",
+        ],
     }
 
     def transform_tag(self, _, tags=[]):
@@ -155,6 +158,7 @@ class ImportNewsView(ImportContentView):
             'extension',
             'pennsylvania-4-h',
             'master-gardeners',
+            'ag-progress-days',
         ]
 
         # Include the "to" values from tag_transform
@@ -165,6 +169,11 @@ class ImportNewsView(ImportContentView):
 
     @property
     def department_id(self):
+        department_id = self.request.get('department_id')
+
+        if department_id in self.department_tag_config.keys():
+            return department_id
+
         return getDepartmentId()
 
     @property
