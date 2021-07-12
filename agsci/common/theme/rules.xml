@@ -37,7 +37,7 @@
     <rules css:if-content="body.section-coronavirus, body.section-smellcheck">
 
         <!-- Not showing alert on logged-in view -->
-        <drop css:theme="body > a.alert-bar" />
+        <drop css:theme="body > .alert-bar" />
 
     </rules>
 
