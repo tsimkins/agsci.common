@@ -45,7 +45,7 @@
     <rules css:if-content=".userrole-authenticated">
 
         <!-- Not showing alert on logged-in view -->
-        <drop css:theme="body > a.alert-bar" />
+        <drop css:theme="body > .alert-bar" />
 
         <xi:include href="backend.xml"><xi:fallback /></xi:include>
 
