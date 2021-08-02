@@ -48,7 +48,7 @@
                             </item>
                             <item>
                                 <title>Study Abroad</title>
-                                <link>international/study-abroad</link>
+                                <link>global/study-abroad</link>
                             </item>
                             <item>
                                 <title>Student Life</title>
@@ -190,7 +190,7 @@
                                 </item>
                                 <item>
                                     <title>Study Abroad</title>
-                                    <link>international/study-abroad</link>
+                                    <link>global/study-abroad</link>
                                 </item>
                             </items>
                         </item>
@@ -219,8 +219,8 @@
                             </items>
                         </item>
                         <item>
-                            <title>International Programs</title>
-                            <link>international</link>
+                            <title>Ag Sciences Global</title>
+                            <link>global</link>
                         </item>
                         <item>
                             <title>Academic Departments</title>
