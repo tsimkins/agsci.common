@@ -12716,7 +12716,7 @@ CARD DECK GENERAL CONFIG
 }
 @media (min-width: 0) {
   .card-deck.card-deck-3up .card {
-    flex: 0 0 calc(50% - 2rem);
+    flex: 0 0 calc(100% - 2rem);
     /* $card-group-margin is half of $grid-gutter-width */
   }
 
