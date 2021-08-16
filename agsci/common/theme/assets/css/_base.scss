@@ -1140,6 +1140,13 @@ header {
         text-decoration-color: orange;
         text-decoration-style: wavy;
     }
+
+    /* Search box and button combined */
+    nav {
+        form.form-inline {
+            flex-flow: row;
+        }
+    }
 }
 
 body.template-link_check,
