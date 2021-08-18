@@ -317,7 +317,7 @@
         manager="plone.app.layout.viewlets.interfaces.IAboveContent"
         class=".CourseSyllabusDigitalViewlet"
         permission="zope2.View"
-        template="templates/syllabus_digital.pt"
+        template="templates/syllabus.pt"
         layer="..interfaces.IThemeSpecific"
         for="agsci.common.interfaces.ICourseSyllabusDigital"
         />

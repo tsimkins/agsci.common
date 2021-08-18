@@ -1,7 +1,7 @@
 {% for _ in data %}
 <div class="publication mb-5">
     <p>
-        {% if _.doi %}<a href="{{_.doi.strip()}}">{% endif %}<span class="publication-title">{{ _.title }}</span>{% if _.doi %}</a>{% endif %}<br />{% if _.journal_title %}<span class="journal-name">{{_.journal_title}}</span>{% endif %}{% if _.contributors %}, {{ ", ".join(_.contributors) }}{% endif %}{% if _.published_on %}, {{_.published_on.year}}{% endif %}
+        {% if _.doi %}<a href="{{_.doi.strip()}}">{% endif %}<span class="publication-title">{{ _.title }}</span>{% if _.doi %}</a>{% endif %}{% if _.journal_title %}<br /><span class="journal-name">{{_.journal_title}}</span>{% endif %}{% if _.contributors %}, {{ ", ".join(_.contributors) }}{% endif %}{% if _.published_on %}, {{_.published_on.year}}{% endif %}
     </p>
 
     {% if _.doi and _.doi.strip() %}

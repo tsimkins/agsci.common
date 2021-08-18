@@ -35,6 +35,7 @@
     <value>
       <element>gallery 1024:683</element>
       <element>large 768:768</element>
+      <element>large_listing 576:768</element>
       <element>preview 400:400</element>
       <element>mini 200:200</element>
       <element>thumb 128:128</element>

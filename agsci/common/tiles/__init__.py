@@ -448,17 +448,6 @@ class LargeCTATile(BaseTile):
 class KermitTile(BaseTile):
     pass
 
-class MissPiggyTile(BaseTile):
-    image_scale = 'large'
-
-    @property
-    def image_col_class(self):
-        images = [self.get_img_src(x) for x in range(4)]
-        image_count = len([x for x in images if x])
-
-        if image_count:
-            return "col-12 col-lg-12 col-md-%d" % (12/image_count)
-
 class FozzieBearTile(ConditionalTemplateTile):
     __full_width__ = False
 
@@ -846,6 +835,19 @@ class YouTubeTile(BaseTile):
 
         if video_id:
             return "https://www.youtube.com/embed/%s" % video_id
+
+
+class MissPiggyTile(YouTubeTile):
+    image_scale = 'large'
+
+    @property
+    def image_col_class(self):
+        images = [self.get_img_src(x) for x in range(4)]
+        image_count = len([x for x in images if x])
+
+        if image_count:
+            return "col-12 col-lg-12 col-md-%d" % (12/image_count)
+
 
 class DropdownAccordionTile(BaseTile):
 

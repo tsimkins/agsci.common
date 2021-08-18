@@ -38,7 +38,8 @@
                                  tal:condition="show_item_title"></div>
 
                             <img tal:condition="i/hasLeadImage|nothing"
-                                 tal:attributes="src python: view.get_img_src(i);
+                                 tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                 data-src python: view.get_img_src(i);
                                                  alt alt_text;"
                                  title=""
                                  class="w-100" />

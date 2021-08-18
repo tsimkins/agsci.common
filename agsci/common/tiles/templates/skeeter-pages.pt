@@ -37,7 +37,8 @@
 
                 <img alt=""
                      class="w-100"
-                     tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                     tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                     data-src string:${i/getURL}/@@images/image/large" />
             </div>
 
         </div>
@@ -62,7 +63,8 @@
                                     <img alt=""
                                          tal:condition="i/hasLeadImage|nothing"
                                          class="w-100"
-                                         tal:attributes="src string:${i/getURL}/@@images/image/large" />
+                                         tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                         data-src string:${i/getURL}/@@images/image/large" />
                                 </div>
                             </div>
                         </div>

@@ -23,6 +23,22 @@
     />
 
     <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="dump_rmd"
+        class=".DumpPersonRMDView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="dump_rmd"
+        class=".DumpPersonRMDView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
+    <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
         name="import_publications"
         class=".ImportSitePublicationsView"

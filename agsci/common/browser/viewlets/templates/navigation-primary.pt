@@ -70,7 +70,8 @@
                                                 <div>
                                                     <img tal:define="src image/src/cdata/strip|nothing"
 
-                                                        tal:attributes="src string:${view/portal_url}/${src}"
+                                                        tal:attributes="data-src string:${view/portal_url}/${src};
+                                                        src string:${view/assets_url}/images/card-placeholder.jpg"
                                                         alt=""
                                                         class="w-100" />
                                                 </div>

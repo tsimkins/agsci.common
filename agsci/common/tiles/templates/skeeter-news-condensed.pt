@@ -45,7 +45,8 @@
 
                         <div class="col-4 col-lg-3 profile-img order-1 px-0">
 
-                            <img tal:attributes="src string:${i/getURL}/@@images/image/preview"
+                            <img tal:attributes="src string:${view/assets_url}/images/fpo-newspaper.jpg;
+                                                 data-src string:${i/getURL}/@@images/image/preview"
                                     alt=""
                                     title=""
                                     class="w-100"

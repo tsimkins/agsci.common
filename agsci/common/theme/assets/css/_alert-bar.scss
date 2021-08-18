@@ -5,6 +5,7 @@ ALERT BAR - Universal Header Alert Bar - Jan 2020
 ---------------------------------------------------------- */
 
 
+div.alert-bar,
 a.alert-bar {
     background-color: #F7F9FE;
     display: block;
@@ -33,7 +34,7 @@ a.alert-bar {
     p.alert-bar-title {
         font-family: "Roboto Slab", serif;
         font-weight: 900;
-        font-size: 1.5rem;
+        font-size: 1.375rem;
         margin: 0 0 0.5rem 3.75rem;
         line-height: 1;
         position: relative;
@@ -44,10 +45,18 @@ a.alert-bar {
         font-weight: 400;
         margin: 0 0 0 3.75rem;
         line-height: 1.4;
+        font-size: 0.8125em;
+
+        a, a:link,
+        a:visited {
+            color: #205EA3;
+            text-decoration: underline;
+        }
     }
 
 }
 
+div.alert-bar:hover,
 a.alert-bar:hover {
     background-color: #F6F6F6;
 
@@ -57,17 +66,18 @@ a.alert-bar:hover {
 }
 
 @media (min-width: 56.25rem) {
-    a.alert-bar i.material-icons {
-        font-size: 4rem;
-    }
+    div.alert-bar, a.alert-bar {
+        i.material-icons {
+            font-size: 4rem;
+        }
 
-    a.alert-bar p.alert-bar-title {
-        margin: 0 0 0.5rem 3.75rem;
-        font-size: 1.75rem;
-    }
+        p.alert-bar-title {
+            margin: 0 0 0.5rem 3.75rem;
+            font-size: 1.5rem;
+        }
 
-    a.alert-bar p.alert-bar-text {
-        margin: 0 0 0 3.75rem;
+        p.alert-bar-text {
+            margin: 0 0 0 3.75rem;
+        }
     }
 }
-

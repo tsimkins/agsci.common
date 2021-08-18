@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 
-    <nav id="footer">
-        <items>
-            <item>
-                <title>Privacy and Legal Statements</title>
-                <link>https://www.psu.edu/ur/legal.html</link>
-            </item>
-            <item>
-                <title>Accessibility</title>
-                <link>https://agsci.psu.edu/accessibility</link>
-            </item>
-            <item>
-                <title>Penn State Hotlines</title>
-                <link>https://www.psu.edu/hotlines</link>
-            </item>
-        </items>
+    <nav id="links">
+        <item>
+            <title>Privacy and Legal Statements</title>
+            <link>http://www.psu.edu/ur/legal.html</link>
+        </item>
+        <item>
+            <title>Accessibility</title>
+            <link>https://agsci.psu.edu/accessibility</link>
+        </item>
+        <item>
+            <title>Penn State Hotlines</title>
+            <link>https://universityethics.psu.edu/penn-state-hotline</link>
+        </item>
     </nav>
 
     <nav id="contact">

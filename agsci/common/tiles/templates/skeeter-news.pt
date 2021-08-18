@@ -72,7 +72,8 @@
                                     </div>
 
                                     <div tal:attributes="class view/news_item_image_class|nothing">
-                                        <img tal:attributes="src string:${i/getURL}/@@images/image/large"
+                                        <img tal:attributes="src string:${view/assets_url}/images/fpo-newspaper.jpg;
+                                                             data-src string:${i/getURL}/@@images/image/large"
                                              alt=""
                                              title=""
                                              class="w-100"

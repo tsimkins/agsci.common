@@ -325,3 +325,19 @@ function desktopHover(){
 jq3('body.portaltype-formfolder .pfg-form form').submit(function(){
     jq3(this).find(':submit').attr( 'disabled','disabled' );
 });
+
+/* Lazy load images */
+jq3(document).ready(function() {
+    jq3('img').each(function () {
+
+        // If it has a data-src, set the src
+
+        var _src = jq3(this).attr('data-src');
+
+        if (_src) {
+            jq3(this).attr('src', _src);
+        }
+
+    });
+
+});

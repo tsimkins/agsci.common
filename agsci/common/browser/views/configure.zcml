@@ -584,5 +584,13 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- Robots.txt -->
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="theme.js"
+        class=".ThemeJSView"
+        permission="zope.Public"
+        layer="..interfaces.IThemeSpecific"
+        />
 
 </configure>

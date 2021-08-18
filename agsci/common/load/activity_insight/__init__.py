@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from plone.app.textfield.value import RichTextValue
 
+import json
 import requests
 import transaction
 
@@ -100,6 +101,28 @@ class ImportDirectoryPublicationsView(ImportContentView):
     def get_publications_json(self, user_id):
 
         pubs_api_url = "/v1/users/%s/publications?limit=10000"
+        data = self.get_api_data(pubs_api_url, user_id)
+
+        if isinstance(data, dict):
+
+            return data.get('data', [])
+
+        return []
+
+    def get_presentations_json(self, user_id):
+
+        pubs_api_url = "/v1/users/%s/presentations?limit=10000"
+        data = self.get_api_data(pubs_api_url, user_id)
+
+        if isinstance(data, dict):
+
+            return data.get('data', [])
+
+        return []
+
+    def get_etds_json(self, user_id):
+
+        pubs_api_url = "/v1/users/%s/etds?limit=10000"
         data = self.get_api_data(pubs_api_url, user_id)
 
         if isinstance(data, dict):
@@ -306,3 +329,55 @@ class ImportSitePublicationsView(ImportDirectoryPublicationsView):
                     context.reindexObject()
 
                     transaction.commit()
+
+class DumpPersonRMDView(ImportPersonPublicationsView):
+
+    def get_attributes(self, _):
+        if _ and isinstance(_, (tuple, list)):
+            __ = [x.get('attributes', {}) for x in _]
+            return [x for x in __ if x]
+        return []
+
+    @property
+    def username(self):
+        _ = self.request.get('username', None)
+
+        if _:
+            return _
+
+        return getattr(self.context, 'username', None)
+
+
+    def __call__(self):
+
+        data = {
+            'presentations' : [],
+            'publications' : [],
+            'etds' : [],
+        }
+
+        username = self.username
+
+        if username:
+
+            try:
+                data['publications'] = \
+                    self.get_attributes(self.get_publications_json(username))
+            except:
+                pass
+
+            try:
+                data['presentations'] = \
+                    self.get_attributes(self.get_presentations_json(username))
+            except:
+                pass
+
+            try:
+                data['etds'] = \
+                    self.get_attributes(self.get_etds_json(username))
+            except:
+                pass
+
+        self.request.response.setHeader('Content-Type', 'application/json')
+
+        return json.dumps(data, sort_keys=True, indent=4)
