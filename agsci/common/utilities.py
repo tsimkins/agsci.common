@@ -507,12 +507,15 @@ def setSiteURL(site, domain=None, path='', https=True, edit=False):
         domain = DOMAIN_CONFIG.get(site.getId(), 'nohost_%s_' % site.getId())
 
     if edit:
-        if not domain.startswith('edit.'):
+        if domain.startswith('extension.'):
+            domain = 'sites.%s' % domain
+        elif not domain.startswith('edit.'):
             domain = 'edit.%s' % domain
 
     if not path:
         path = {
             'private-internal' : '/inside',
+            '4-h' : '/plone5/4-h',
         }.get(site.getId(), path)
 
     if path and not path.startswith('/'):

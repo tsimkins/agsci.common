@@ -42,5 +42,6 @@ DOMAIN_CONFIG = {
     'animalscience.psu.edu': 'animalscience.psu.edu',
     'ecosystems.psu.edu': 'ecosystems.psu.edu',
     'plantpath.psu.edu': 'plantpath.psu.edu',
-    'vbs.psu.edu': 'vbs.psu.edu'
+    'vbs.psu.edu': 'vbs.psu.edu',
+    '4-h' : 'extension.psu.edu',
 }
