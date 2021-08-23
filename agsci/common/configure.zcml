@@ -29,6 +29,14 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
     />
 
+    <genericsetup:registerProfile
+        name="default"
+        title="agsci.common.programs"
+        directory="profiles/programs"
+        description=""
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
     <!-- Register the import step -->
     <genericsetup:importStep
         name="agsci.common"
