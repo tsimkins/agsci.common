@@ -30,7 +30,7 @@
     />
 
     <genericsetup:registerProfile
-        name="default"
+        name="programs"
         title="agsci.common.programs"
         directory="profiles/programs"
         description=""

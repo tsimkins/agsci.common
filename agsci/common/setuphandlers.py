@@ -10,7 +10,7 @@ from Products.CMFCore.utils import getToolByName
 # The profile id of your package:
 PROFILE_ID = 'profile-agsci.common:default'
 
-def add_catalog_indexes(context, logger=None):
+def add_catalog_indexes(context, logger=None, programs_profile=False):
     """Method to add our wanted indexes to the portal_catalog.
 
     @parameters:
@@ -46,8 +46,13 @@ def add_catalog_indexes(context, logger=None):
                 ('ContentIssues', 'FieldIndex'),
                 ('ContentErrorCodes', 'KeywordIndex'),
                 ('exclude_from_robots', 'BooleanIndex'),
-                ('County', 'KeywordIndex'),
              ]
+
+    # Programs site-specific indexes
+    if programs_profile:
+        wanted.append(
+            ('County', 'KeywordIndex'),
+        )
 
     indexables = []
 
@@ -101,10 +106,21 @@ def create_registry_keys(site, logger):
 def import_various(context):
     """Import step for configuration that is not handled in xml files.
     """
+
+    site = context.getSite()
+
+    # Determine if this is the 'programs profile'
+    programs_profile = not not context.readDataFile('agsci.common.programs.marker.txt')
+
+    if programs_profile:
+        logger = context.getLogger('agsci.common.programs')
+        add_catalog_indexes(site, logger, programs_profile=programs_profile)
+        return
+
     # Only run step if a flag file is present
     if context.readDataFile('agsci.common.marker.txt') is None:
         return
+
     logger = context.getLogger('agsci.common')
-    site = context.getSite()
     add_catalog_indexes(site, logger)
     create_registry_keys(site, logger)
