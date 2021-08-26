@@ -439,7 +439,7 @@ class CTATile(BaseTile):
     @property
     def button_padding_class(self):
         if self.is_portlet:
-            return 'px-0 mx-3'
+            return 'px-2 mx-3'
         return ''
 
 class LargeCTATile(BaseTile):
