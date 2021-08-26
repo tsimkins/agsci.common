@@ -57,6 +57,7 @@ class ImportNewsView(ImportContentView):
         'department-of-food-science' : 'department-food-science',
         'department-of-plant-pathology-and-environmental-microbiology' : 'department-plant-pathology-and-environmental-microbiology',
         'department-of-plant-science' : 'department-plant-science',
+        'department-of-plant-sciences' : 'department-plant-science',
         'department-of-veterinary-and-biomedical-sciences' : 'department-veterinary-and-biomedical-sciences',
         'penn-state-master-gardeners' : 'master-gardeners',
         'penn-state-extension' : 'extension',
