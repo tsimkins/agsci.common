@@ -20,6 +20,11 @@ import json
 
 class SyncPersonView(ImportContentView):
 
+    # These are in the DOMAIN_CONFIG but shouldn't be used for API calls
+    exclude_api_domains = [
+        'extension.psu.edu',
+    ]
+
     include_fields = [
         u'areas_expertise',
         u'first_name',
@@ -41,7 +46,11 @@ class SyncPersonView(ImportContentView):
 
     @property
     def api_domains(self):
-        return sorted(set([x.lower() for x in DOMAIN_CONFIG.values()]))
+        return sorted(
+            set([
+                x.lower() for x in DOMAIN_CONFIG.values() if x not in self.exclude_api_domains
+            ])
+        )
 
     @property
     def primary_profile_url(self):
