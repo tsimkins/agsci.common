@@ -8,6 +8,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.MimetypesRegistry.MimeTypesRegistry import MimeTypeException
 from collections import OrderedDict
 from collective.z3cform.datagridfield import DictRow
 from jinja2 import Environment, FileSystemLoader
@@ -510,11 +511,13 @@ class FolderView(_FolderView, BaseView):
 
         mimetypes_registry = getToolByName(self.context, 'mimetypes_registry')
 
-        _ = mimetypes_registry.lookup(item.mime_type)
-
-        if _:
-            return _[0].name()
-
+        try:
+            _ = mimetypes_registry.lookup(item.mime_type)
+        except MimeTypeException:
+            pass
+        else:
+            if _:
+                return _[0].name()
 
     def getItemInfo(self, item):
 
