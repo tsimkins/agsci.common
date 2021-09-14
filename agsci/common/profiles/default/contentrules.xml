@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<contentrules>
+ <rule name="rule-email-reviewers" title="Email Reviewers" cascading="False" description=""
+    enabled="True" event="Products.CMFCore.interfaces.IActionSucceededEvent"
+    stop-after="False">
+  <conditions>
+   <condition type="plone.conditions.WorkflowTransition">
+    <property name="wf_transitions">
+     <element>submit</element>
+    </property>
+   </condition>
+  </conditions>
+  <actions>
+   <action type="plone.actions.Mail">
+    <property name="source"/>
+    <property
+       name="message">${user_fullname} submitted content for review by the web team.
+     
+     ${type} Information:
+     
+         Title: ${title}
+         Description: ${description}
+         URL: ${url}
+     
+     Please review and either publish, or provide feedback to the owner.</property>
+    <property
+       name="subject">Plone: Content Submitted For Review (${portal_url})</property>
+    <property
+       name="recipients">trs22@psu.edu,mjw174@psu.edu,laj175@psu.edu</property>
+    <property name="exclude_actor">False</property>
+   </action>
+  </actions>
+ </rule>
+ <assignment name="rule-email-reviewers" bubbles="True" enabled="True" location=""/>
+</contentrules>
