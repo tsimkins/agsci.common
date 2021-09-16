@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-white text-center"
-                    tal:define="footer_logo_src view/logo_src|nothing">
+                    tal:define="footer_logo_src view/footer_logo_src|nothing">
 
                     <tal:logo
                         tal:condition="footer_logo_src">
