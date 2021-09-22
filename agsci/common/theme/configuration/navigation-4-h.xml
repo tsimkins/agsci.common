@@ -135,22 +135,28 @@
                             <title hidden="True">Links</title>
                             <items>
                                 <item>
+                                    <title>Find your County 4-H Program</title>
+                                    <link>counties</link>
+                                    <description></description>
+                                    <icon>fas fa-map-marked-alt</icon>
+                                </item>
+                                <item>
                                     <link>get-involved/join</link>
                                     <title>Join 4-H</title>
                                     <description></description>
-                                    <icon>fa-info-circle</icon>
+                                    <icon>fas fa-users</icon>
                                 </item>
                                 <item>
                                     <link>get-involved/volunteers</link>
-                                    <title>Volunteer</title>
+                                    <title>Volunteer with 4-H</title>
                                     <description></description>
-                                    <icon>fa-map-marked-alt</icon>
+                                    <icon>fas fa-hand-holding-heart</icon>
                                 </item>
                                 <item>
                                     <link>get-involved/support</link>
-                                    <title>Support 4-H</title>
+                                    <title>Give to 4-H</title>
                                     <description></description>
-                                    <icon>fa-list-alt</icon>
+                                    <icon>fas fa-hands-helping</icon>
                                 </item>
                             </items>
                         </item>
