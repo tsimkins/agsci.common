@@ -71,52 +71,22 @@
                 <title>Get Involved</title>
                 <link>get-involved</link>
                 <image>
-                    <title>4-H Programs teach young people how to put their heads, hands, and health to work in their own lives and in their communities.</title>
-                    <link>opportunities</link>
+                    <title>Make a positive difference in your life and the lives of others through 4-H. From youth membership to adult leadership, everyone can find their place in 4-H.</title>
+                    <link>get-involved</link>
                     <src>
-                        ++resource++agsci.common/assets/images/navigation/spotlight-academics-explorer.jpg
+                        ++resource++agsci.common/assets/images/navigation/4-h/get-involved.jpg
                     </src>
                 </image>
                 <items>
                     <group>
                         <item>
                             <title>Youth and Parents</title>
-                            <link>get-involved/youth-parents</link>
-                            <items>
-                                <item>
-                                    <title>Opportunities</title>
-                                    <link>get-involved/youth-parents/opportunities</link>
-                                </item>
-                                <item>
-                                    <title>Resources</title>
-                                    <link>get-involved/youth-parents/resources</link>
-                                </item>
-                                <item>
-                                    <title>Guidelines and Policies</title>
-                                    <link>get-involved/youth-parents/guidelines-policies</link>
-                                </item>
-                            </items>
+                            <link>get-involved/youth-and-parents</link>
                         </item>
                         <item>
                             <title>Volunteers</title>
                             <link>get-involved/volunteers</link>
-                            <items>
-                                <item>
-                                    <title>Opportunities</title>
-                                    <link>get-involved/volunteers/opportunities</link>
-                                </item>
-                                <item>
-                                    <title>Resources</title>
-                                    <link>get-involved/volunteers/resources</link>
-                                </item>
-                                <item>
-                                    <title>Guidelines and Policies</title>
-                                    <link>get-involved/volunteers/guidelines-policies</link>
-                                </item>
-                            </items>
                         </item>
-                    </group>
-                    <group>
                         <item>
                             <title>Teachers</title>
                             <link>get-involved/teachers</link>
@@ -124,6 +94,16 @@
                         <item>
                             <title>Support 4-H</title>
                             <link>get-involved/support</link>
+                        </item>
+                    </group>
+                    <group>
+                        <item>
+                            <title>Cloverlink for Current Members</title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EhwpuCNl6IJGs7LTy3jHKVkBeHQy4zF2B1X4l19SKm2VHw?e=5N4xYZ</link>
+                        </item>
+                        <item>
+                            <title>Cloverlink for Current Volunteers </title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EssaWplJCUxIl2ysm0d1_2cBTo_N3B5KL2Balasj7Rq2nw?e=OVKDRR</link>
                         </item>
                     </group>
                     <group>
@@ -163,6 +143,13 @@
             <item>
                 <title>Programs and Opportunities</title>
                 <link>opportunities</link>
+                <image>
+                    <title>Transform today's interests and hobbies into tomorrow's career. Start your 4-H journey and explore our projects, programs, and events.</title>
+                    <link>opportunities</link>
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/4-h/opportunities.jpg
+                    </src>
+                </image>
                 <items>
                     <group>
                         <item>
@@ -172,95 +159,27 @@
                         <item>
                             <title>Projects</title>
                             <link>opportunities/projects</link>
-                            <items>
-                                <item>
-                                    <title>Animal Science</title>
-                                    <link>opportunities/projects/animal-science</link>
-                                </item>
-                                <item>
-                                    <title>Civic Engagement and Leadership</title>
-                                    <link>opportunities/projects/civic-engagement-and-leadership</link>
-                                </item>
-                                <item>
-                                    <title>Communication and Expressive Arts</title>
-                                    <link>opportunities/projects/communication-and-expressive-arts</link>
-                                </item>
-                                <item>
-                                    <title>Environmental Sciences and Shooting Sports</title>
-                                    <link>opportunities/projects/environmental-sciences-and-shooting-sports</link>
-                                </item>
-                                <item>
-                                    <title>Healthy Living and Wellness</title>
-                                    <link>opportunities/projects/healthy-living-and-wellness</link>
-                                </item>
-                                <item>
-                                    <title>STEM</title>
-                                    <link>opportunities/projects/stem</link>
-                                </item>
-                            </items>
                         </item>
-                    </group>
-                    <group>
                         <item>
                             <title>Programs</title>
                             <link>opportunities/programs</link>
-                            <items>
-                                <item>
-                                    <title>Animal Science</title>
-                                    <link>opportunities/programs/animal-science</link>
-                                </item>
-                                <item>
-                                    <title>At Home Activities</title>
-                                    <link>opportunities/programs/at-home-activities</link>
-                                </item>
-                                <item>
-                                    <title>Awards and Scholarships</title>
-                                    <link>opportunities/programs/awards-and-scholarships</link>
-                                </item>
-                                <item>
-                                    <title>Camp</title>
-                                    <link>opportunities/programs/camp</link>
-                                </item>
-                                <item>
-                                    <title>Civic Engagement and Leadership</title>
-                                    <link>opportunities/programs/civic-engagement-and-leadership</link>
-                                </item>
-                                <item>
-                                    <title>Communication and Expressive Arts</title>
-                                    <link>opportunities/programs/communication-and-expressive-arts</link>
-                                </item>
-                                <item>
-                                    <title>Environmental Science</title>
-                                    <link>opportunities/programs/environmental-science</link>
-                                </item>
-                                <item>
-                                    <title>Healthy Living and Wellness</title>
-                                    <link>opportunities/programs/healthy-living-and-wellness</link>
-                                </item>
-                                <item>
-                                    <title>School Enrichment</title>
-                                    <link>opportunities/programs/school-enrichment</link>
-                                </item>
-                                <item>
-                                    <title>Shooting Sports</title>
-                                    <link>opportunities/programs/shooting-sports</link>
-                                </item>
-                                <item>
-                                    <title>State Council</title>
-                                    <link>opportunities/programs/state-council</link>
-                                </item>
-                                <item>
-                                    <title>STEM</title>
-                                    <link>opportunities/programs/stem</link>
-                                </item>
-                            </items>
                         </item>
-                    </group>
-                    <group>
                        <item>
                             <title>Events</title>
                             <link>events</link>
                         </item>
+                    </group>
+                    <group>
+                        <item>
+                            <title>Cloverlink for Current Members</title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EhwpuCNl6IJGs7LTy3jHKVkBeHQy4zF2B1X4l19SKm2VHw?e=5N4xYZ</link>
+                        </item>
+                        <item>
+                            <title>Cloverlink for Current Volunteers </title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EssaWplJCUxIl2ysm0d1_2cBTo_N3B5KL2Balasj7Rq2nw?e=OVKDRR</link>
+                        </item>
+                    </group>
+                    <group>
                         <item type="cta">
                             <title hidden="True">Links</title>
                             <items>
@@ -297,19 +216,25 @@
             <item>
                 <title>Volunteer Resources</title>
                 <link>get-involved/volunteers</link>
+                <image>
+                    <title>Give your Hands to larger service by volunteering with 4-H.</title>
+                    <link>get-involved/volunteers</link>
+
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/4-h/volunteers.jpg
+                    </src>
+                </image>
                 <items>
                     <group>
+                    </group>
+                    <group>
                         <item>
-                            <title>Opportunities</title>
-                            <link>get-involved/volunteers/opportunities</link>
+                            <title>Cloverlink for Current Members</title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EhwpuCNl6IJGs7LTy3jHKVkBeHQy4zF2B1X4l19SKm2VHw?e=5N4xYZ</link>
                         </item>
                         <item>
-                            <title>Resources</title>
-                            <link>get-involved/volunteers/resources</link>
-                        </item>
-                        <item>
-                            <title>Guidelines and Policies</title>
-                            <link>get-involved/volunteers/guidelines-policies</link>
+                            <title>Cloverlink for Current Volunteers </title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EssaWplJCUxIl2ysm0d1_2cBTo_N3B5KL2Balasj7Rq2nw?e=OVKDRR</link>
                         </item>
                     </group>
                     <group>
@@ -349,6 +274,14 @@
             <item>
                 <title>About 4-H</title>
                 <link>about</link>
+                <image>
+                    <title>4-H is a community of young people across America who are learning leadership, citizenship, and life skills.</title>
+                    <link>about</link>
+
+                    <src>
+                        ++resource++agsci.common/assets/images/navigation/4-h/about.jpg
+                    </src>
+                </image>
                 <items>
                     <group>
                         <item>
@@ -363,21 +296,23 @@
                             <title>News</title>
                             <link>news</link>
                         </item>
-                    </group>
-                    <group>
                         <item>
                             <title>Contact Us</title>
                             <link>contact</link>
-                            <items>
-                                <item>
-                                    <title>Directory</title>
-                                    <link>directory</link>
-                                </item>
-                                <item>
-                                    <title>Find Your County 4-H</title>
-                                    <link>counties</link>
-                                </item>
-                            </items>
+                        </item>
+                        <item>
+                            <title>Directory</title>
+                            <link>directory</link>
+                        </item>
+                    </group>
+                    <group>
+                        <item>
+                            <title>Cloverlink for Current Members</title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EhwpuCNl6IJGs7LTy3jHKVkBeHQy4zF2B1X4l19SKm2VHw?e=5N4xYZ</link>
+                        </item>
+                        <item>
+                            <title>Cloverlink for Current Volunteers </title>
+                            <link>https://pennstateoffice365.sharepoint.com/:f:/s/AgSci/coext/PA4H/PA4HCloverlink/EssaWplJCUxIl2ysm0d1_2cBTo_N3B5KL2Balasj7Rq2nw?e=OVKDRR</link>
                         </item>
                     </group>
                     <group>
