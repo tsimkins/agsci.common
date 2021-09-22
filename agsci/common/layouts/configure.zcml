@@ -22,4 +22,10 @@
         type="contentlayout"
         />
 
+    <plone:static
+        directory="homepage_4-h"
+        name="homepage_4-h"
+        type="contentlayout"
+        />
+
 </configure>
