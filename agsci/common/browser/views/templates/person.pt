@@ -177,6 +177,11 @@
                                             <span>Pronouns</span>
                                             <span tal:replace="pronouns" />
                                         </li>
+                                        <li tal:define="name_pronunciation context/name_pronunciation|nothing"
+                                            tal:condition="name_pronunciation">
+                                            <span>Name Pronunciation</span>
+                                            <span tal:replace="name_pronunciation" />
+                                        </li>
                                     </ul>
                                 </div>
 

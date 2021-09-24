@@ -29,7 +29,7 @@ contact_fields = [
     'email', 'street_address', 'city', 'state',
     'zip_code', 'phone_number',
     'fax_number', 'primary_profile_url',
-    'pronouns',
+    'pronouns', 'name_pronunciation'
 ]
 
 professional_fields = [
@@ -282,6 +282,12 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         description=_(u"He/Him, She/Her, They/Them"),
         required=False,
         max_length=20
+    )
+
+    name_pronunciation = schema.TextLine(
+        title=_(u"Name Pronunciation"),
+        description=_(u"Examples: 'John Barowski (John Ba-ROFF-skee)', 'Emily Nguyen (Emily WIN)'"),
+        required=False,
     )
 
 # Configuring default roles with Dexterity
