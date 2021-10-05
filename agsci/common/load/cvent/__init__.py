@@ -37,7 +37,12 @@ class ImportCventView(ImportContentView):
                 _title = _['title']
                 _start = fmt_date(_['startDate'])
                 _end = fmt_date(_['endDate'])
-                _url = self.cvent_summary_url(_id)
+
+                if 'url' in _:
+                    _url = _['url']
+                else:
+                    _url = self.cvent_summary_url(_id)
+
                 _location = _.get('location', '')
 
                 yield {
@@ -107,9 +112,10 @@ class ImportCventView(ImportContentView):
             if not cvent_ids.count(_id):
                 events.append("<li><a href=\"%s/%s\">%s</a></li>" % (self.conference_url, _id, _title))
 
-                self.create_cvent_event(**_)
+                item = self.create_cvent_event(**_)
 
                 status.append("Created event %s (id %s)" % (_title, _id))
+                status.append("URL: %s" % (item.absolute_url(),))
 
             else:
                 status.append("Skipped event %s (id %s)" % (_title, _id))
