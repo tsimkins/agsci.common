@@ -160,7 +160,7 @@ class PersonListing(Container):
 
             query['getId'] = people_ids
 
-        else:
+        elif self.Type() not in ('Directory',):
 
             return []
 
