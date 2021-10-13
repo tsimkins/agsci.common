@@ -39,6 +39,77 @@
 
     </rules>
 
+    <!-- Google Analytics (College vs. Extension) -->
+    <rules css:if-content="body.ga-college">
+
+        <replace css:theme="#google-analytics-tagmanager">
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-4037316-1"></script>
+
+            <script>
+            //<![CDATA[
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-4037316-1');
+
+              // agsci.psu.edu Google Analytics 4 Tag
+              gtag('config', 'G-S57E9B2H3F');
+            //]]>
+            </script>
+
+            <!-- Google Tag Manager -->
+            <script>
+            //<![CDATA[
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TPFCFW');
+            //]]>
+            </script>
+            <!-- End Google Tag Manager -->
+
+        </replace>
+    </rules>
+
+    <rules css:if-content="body.ga-extension">
+
+        <replace css:theme="#google-analytics-tagmanager">
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-PEXHTKWVFE"></script>
+
+            <!-- BEGIN GOOGLE UNIVERSAL ANALYTICS CODE -->
+            <script type="text/javascript">
+            //<![CDATA[
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-100524345-2', 'auto');
+
+            ga('send', 'pageview');
+
+            //]]>
+            </script>
+            <!-- END GOOGLE UNIVERSAL ANALYTICS CODE -->
+
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-PEXHTKWVFE');
+            </script>
+
+        </replace>
+
+    </rules>
+
     <!-- Include barceloneta's backend.xml for backend theming. -->
     <rules css:if-content=".userrole-authenticated">
 

@@ -175,6 +175,17 @@ class ViewletBase(_ViewletBase):
 
     @property
     @context_memoize
+    def google_analytics(self):
+
+        _ = self.get_config('google_analytics')
+
+        if _:
+            return _
+
+        return 'college'
+
+    @property
+    @context_memoize
     def navigation_theme(self):
         return self.get_config('navigation_theme')
 

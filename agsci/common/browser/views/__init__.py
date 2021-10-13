@@ -1108,6 +1108,7 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
         navigation_viewlet = self.navigation_viewlet
         department_id = navigation_viewlet.department_id
         navigation_theme = navigation_viewlet.navigation_theme
+        google_analytics = navigation_viewlet.google_analytics
 
         if department_id:
             _.append('header-department-level')
@@ -1120,6 +1121,8 @@ class LayoutPolicy(_LayoutPolicy, BaseView):
 
         if navigation_theme:
             _.append('navigation-%s' % navigation_theme)
+
+        _.append('ga-%s' % google_analytics)
 
         return " ".join(_)
 

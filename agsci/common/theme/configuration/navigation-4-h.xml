@@ -17,6 +17,10 @@
         4-h
     </footer-logo>
 
+    <google-analytics>
+        extension
+    </google-analytics>
+
     <nav id="social">
         <items>
             <item>
