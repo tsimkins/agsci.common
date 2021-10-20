@@ -535,7 +535,7 @@ class FooterLinksViewlet(NavigationViewlet):
 
     xml_file = 'footer.xml'
 
-    nav_id = 'footer'
+    nav_id = 'links'
 
 class FooterContactViewlet(FooterLinksViewlet):
 
