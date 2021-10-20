@@ -1,11 +1,13 @@
-from plone.portlets.constants import CONTEXT_CATEGORY
-from plone.app.portlets.portlets import navigation
 from DateTime import DateTime
-from plone.dexterity.utils import createContentInContainer
-from plone.app.textfield.value import RichTextValue
-from plone.event.interfaces import IEventAccessor
-from plone.app.dexterity.behaviors import constrains
 from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
+from plone.app.dexterity.behaviors import constrains
+from plone.app.portlets.portlets import navigation
+from plone.app.textfield.value import RichTextValue
+from plone.dexterity.utils import createContentInContainer
+from plone.event.interfaces import IEventAccessor
+from plone.portlets.constants import CONTEXT_CATEGORY
+from plone.registry.interfaces import IRegistry
+from zope.component import getUtility
 
 from ..utilities import localize, add_editors_group, get_portlet_assignment_manager, \
     get_portlet_mapping
@@ -25,13 +27,24 @@ def setPersonUsername(context, event):
             if username not in parent.objectIds():
                 parent.manage_renameObjects(ids=[context.getId()], new_ids=[username])
 
-        # Set owner roles
-        context.manage_setLocalRoles(username, ('Owner',))
+        registry = getUtility(IRegistry)
+        restricted_profile = registry.get('agsci.common.person_restricted_profile', False)
 
-        # Remove local Owner roles for non-owners
-        for (user, roles) in context.get_local_roles():
-            if roles == ('Owner',) and user != username:
+        # Set permissions
+        if restricted_profile:
+
+            # Remove local Owner roles for all users
+            for (user, roles) in context.get_local_roles():
                 context.manage_delLocalRoles([user])
+
+        else:
+            # Set owner role for user
+            context.manage_setLocalRoles(username, ('Owner',))
+
+            # Remove local Owner roles for non-owners
+            for (user, roles) in context.get_local_roles():
+                if roles == ('Owner',) and user != username:
+                    context.manage_delLocalRoles([user])
 
         # Reindex the object and the object security
         context.reindexObjectSecurity()

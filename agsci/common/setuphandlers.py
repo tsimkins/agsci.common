@@ -92,6 +92,11 @@ def create_registry_keys(site, logger):
             Record(field.Bool(title=u'Enhanced Public Tags')),
             False
         ),
+        (
+            'agsci.common.person_restricted_profile',
+            Record(field.Bool(title=u'Editing of profiles is restricted to administrators?')),
+            False
+        ),
     ]
 
     for (key, record, value) in keys:
