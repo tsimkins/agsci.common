@@ -19475,6 +19475,11 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
   margin-bottom: 0;
 }
 
+#content-core .form_container label, #content-core .form_container form, #content-core .form_container .form_label, #content-core .form_container select, #content-core .form_container input, #content-core .form_container textarea, #content-core .form_container button, #content-core .form_action label, #content-core .form_action form, #content-core .form_action .form_label, #content-core .form_action select, #content-core .form_action input, #content-core .form_action textarea, #content-core .form_action button {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

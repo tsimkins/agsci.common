@@ -1531,3 +1531,11 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
         }
     }
 }
+
+#content-core {
+    .form_container, .form_action {
+        label, form, .form_label, select, input, textarea, button {
+            @include body_font();
+        }
+    }
+}

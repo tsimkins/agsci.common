@@ -475,6 +475,14 @@
 
         <after css:theme="#main" css:content="#tile-links" />
         <after css:theme="#main" css:content="#tile-images" />
+
+        <!-- Add arbitrary Javascript code for RFI form -->
+        <after css:content="div#form_135a86e1-4c5d-47fe-8c33-14059a90fb71">
+
+            <script async="async" src="https://apply.psu.edu/register/?id=135a86e1-4c5d-47fe-8c33-14059a90fb71&amp;output=embed&amp;div=form_135a86e1-4c5d-47fe-8c33-14059a90fb71">/**/</script>
+
+        </after>
+
     </rules>
 
 </rules>
