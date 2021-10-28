@@ -195,6 +195,10 @@ class ViewletBase(_ViewletBase):
         return self.get_config('header')
 
     @property
+    def is_mega_menu(self):
+        return self.menu_type in ('mega',)
+
+    @property
     def is_department_menu(self):
         return self.menu_type in ('department',)
 
