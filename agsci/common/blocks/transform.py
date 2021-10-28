@@ -20,6 +20,7 @@ class BlockTransformer(object):
         'youtube.com',
         'psu.mediaspace.kaltura.com',
         'cdnapisec.kaltura.com',
+        'videoplayer.telvue.com',
     ]
 
     iframe_classes = {
@@ -28,6 +29,7 @@ class BlockTransformer(object):
         'www.google.com' : 'aspect-3-2',
         'psu.mediaspace.kaltura.com' : 'aspect-kaltura',
         'cdnapisec.kaltura.com' : 'aspect-kaltura',
+        'videoplayer.telvue.com' : 'aspect-16-9',
     }
 
     def __init__(self, context):
