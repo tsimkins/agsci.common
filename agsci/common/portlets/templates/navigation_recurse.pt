@@ -61,7 +61,7 @@
                     data-toggle="collapse"
                     aria-expanded="false"
                     aria-haspopup="true" >
-                    <span class="d-block d-lg-none"
+                    <span class="d-block d-lg-none text-left"
                         tal:content="string:${node/Title}" />
                     <i class="fa fa-angle-down"></i>
                 </button>

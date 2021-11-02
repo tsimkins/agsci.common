@@ -261,6 +261,24 @@ jq3(document).ready(function() {
             jq3(this).addClass('mr-lg-5').removeClass('container');
         }
     );
+
+    // Move navigation portlet on homepage into its own row above.
+    jq3('.mosaic-grid-row .navigation-wrapper').each(
+        function() {
+
+            var nav_wrapper = jq3(this);
+
+            jq3(this).parents('.mosaic-grid-row').each(
+                function () {
+
+                    var new_cell = jq3('<div class="mosaic-grid-cell mosaic-navigation"></div>')
+                    nav_wrapper.addClass('mt-3');
+                    nav_wrapper.appendTo(new_cell);
+                    new_cell.prependTo(jq3(this));
+                }
+            );
+        }
+    );
 });
 
 

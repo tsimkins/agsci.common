@@ -19480,6 +19480,17 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
   font-size: 0.9rem;
 }
 
+/* Special case for handling nav portlet inside Mosaic homepage */
+.mosaic-navigation {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .mosaic-navigation {
+    width: 25%;
+    float: right;
+  }
+}
 .alert.status,
 .portalMessage {
   padding: 15px;
