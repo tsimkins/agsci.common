@@ -26,9 +26,9 @@ from .. import ImportContentView
 
 class ImportNewsView(ImportContentView):
 
-    url = 'https://news.psu.edu/rss/college/agricultural-sciences'
+    url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
 
-    user_agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0"
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 
     # Transform from news tag to Plone tag
     tag_transforms = {
@@ -323,10 +323,13 @@ class ImportNewsView(ImportContentView):
 
         news_ids = [x.getId for x in self.news_items]
 
+        import pdb; pdb.set_trace()
+
         for item in self.feed:
 
             _link = item.get('link', '')
-            _id = str(_link.split("/")[4]).split('#')[0]
+            import pdb; pdb.set_trace()
+            _id = str(_link.split("/")[-1]
 
             if _id not in news_ids:
 
