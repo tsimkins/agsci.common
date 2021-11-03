@@ -4,3 +4,16 @@
 @import 'alerts.plone';
 @import '4-h';
 @import 'extension.program';
+
+/* Special case for handling nav portlet inside Mosaic homepage */
+
+.mosaic-navigation {
+    width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+    .mosaic-navigation {
+        width: 25%;
+        float: right;
+    }
+}
