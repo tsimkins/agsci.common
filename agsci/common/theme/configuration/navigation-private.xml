@@ -118,10 +118,6 @@
                 <link>areas</link>
                 <items>
                     <item>
-                        <title>Administrative Services</title>
-                        <link>https://agsci.psu.edu/faculty-staff/admin-services</link>
-                    </item>
-                    <item>
                         <title>Conferences and Short Courses</title>
                         <link>https://agsci.psu.edu/faculty-staff/conferences</link>
                     </item>
@@ -132,6 +128,10 @@
                     <item>
                         <title>Facilities and Safety</title>
                         <link>https://agsci.psu.edu/faculty-staff/safety</link>
+                    </item>
+                    <item>
+                        <title>Finance and Business Operations</title>
+                        <link>https://agsci.psu.edu/faculty-staff/finance</link>
                     </item>
                     <item>
                         <title>Grants and Contracts</title>
