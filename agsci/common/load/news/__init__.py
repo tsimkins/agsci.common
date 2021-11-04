@@ -26,9 +26,15 @@ from .. import ImportContentView
 
 class ImportNewsView(ImportContentView):
 
-    url = 'https://news.psu.edu/rss/college/agricultural-sciences'
+    _initial_date = '2021-10-27'
 
-    user_agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:32.0) Gecko/20100101 Firefox/32.0"
+    @property
+    def initial_date(self):
+        return localize(datetime.strptime(self._initial_date, '%Y-%m-%d'))
+
+    url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
+
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 
     # Transform from news tag to Plone tag
     tag_transforms = {
@@ -189,6 +195,12 @@ class ImportNewsView(ImportContentView):
             checkConstraints=False
         )
 
+        # Set image
+        image = kwargs['image']
+
+        if image:
+            item.image = image
+
         # Grab article image and set it as contentleadimage
         html = self.get_html(kwargs['url'])
 
@@ -199,25 +211,6 @@ class ImportNewsView(ImportContentView):
                 mimeType=u'text/html',
                 outputMimeType='text/x-html-safe'
             )
-
-            # Set Lead Image or Image field
-            (image, image_caption) = self.get_image_and_caption(html)
-
-            if image:
-                item.image = image
-
-                # Unset full width field if image is too small, or is portrait.
-                try:
-                    (w,h) = image.getImageSize()
-                except:
-                    pass
-                else:
-                    if w < h or w < 600:
-                        item.image_full_width = False
-
-                if image_caption:
-                    item.image_caption = image_caption
-
 
         dateStamp = DateTime(kwargs['date'])
 
@@ -265,12 +258,16 @@ class ImportNewsView(ImportContentView):
 
     @property
     def news_items(self):
-        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
+        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit() or x[:8].isdigit()]
 
         return self.portal_catalog.searchResults({
             'portal_type' : 'News Item',
             'id' : numeric_ids,
-            'SearchText' : 'news.psu.edu'
+            'path' : '/'.join(self.context.getPhysicalPath()),
+            'created' : {
+                'range' : 'min',
+                'query' : DateTime() - 365,
+            }
         })
 
     @property
@@ -317,6 +314,14 @@ class ImportNewsView(ImportContentView):
 
         return self.news_feed
 
+    def get_item_id(self, item):
+        _date = self.get_entry_date(item)
+        _title = item.get('title', '')
+
+        if _date and _title:
+            _datestamp = _date.strftime('%Y%m%d')
+            return '%s-%s' % (_datestamp, ploneify(_title))
+
     def import_content(self):
 
         rv = ["Syncing RSS feeds from %s" % self.url]
@@ -325,20 +330,34 @@ class ImportNewsView(ImportContentView):
 
         for item in self.feed:
 
-            _link = item.get('link', '')
-            _id = str(_link.split("/")[4]).split('#')[0]
+            # Only import items after hardcoded date
+            _date = self.get_entry_date(item)
 
-            if _id not in news_ids:
+            if _date < self.initial_date:
+                continue
 
+            _id = self.get_item_id(item)
+
+            if _id and _id not in news_ids:
+
+                _link = item.get('link', '')
                 _title = item.get('title', None)
                 _description = item.get('summary_detail', {}).get('value')
+
+                # Convert HTML description to plain text
+                if _description and '<' in _description:
+                    _description = BeautifulSoup(_description, features="lxml").text
+
+                # Get Image URL
+                image = self.get_image(item)
 
                 item = self.create_news_item(
                     id=_id,
                     title=_title,
                     description=_description,
                     url=_link,
-                    date=self.get_entry_date(item)
+                    date=_date,
+                    image=image,
                 )
 
                 rv.append("Created %s" % _id)
@@ -352,8 +371,7 @@ class ImportNewsView(ImportContentView):
         soup = BeautifulSoup(html, features='lxml')
 
         try:
-            body = soup.find("div", {'class' : re.compile('field-name-body')})
-            item = body.find("div", {'class' : re.compile('field-item($|\s+)')})
+            item = soup.find("div", {'class' : re.compile('text-content-module--textContent.*?')})
         except:
             return ""
 
@@ -364,8 +382,8 @@ class ImportNewsView(ImportContentView):
 
         tags = []
 
-        for tags_div in soup.findAll("div", {'class' : re.compile('article-related-terms')}):
-            items = tags_div.findAll("a")
+        for tags_div in soup.findAll("ul", {'class' : re.compile('^article-tags-module--list')}):
+            items = tags_div.findAll("li")
             tags.extend([ploneify(x.text).strip() for x in items])
 
         # Transform tags
@@ -396,73 +414,16 @@ class ImportNewsView(ImportContentView):
         if response.status_code == 200:
             return response.text
 
-    def get_image_and_caption(self, html=None, url=None):
+    def get_image(self, item):
 
-        if not (html or url):
-            return (None, None)
-        elif not html:
-            html = self.get_html(url)
+        links = item.get('links', [])
+        image_links = [x.get('href', '') for x in links if x.get('rel', None) in ('enclosure',)]
 
-        soup = BeautifulSoup(html, features='lxml')
-
-        image_url = ""
-        img_caption = ""
-        image_src = ""
-
-        # Remove related nodes
-        for _ in soup.findAll("div", {'class' : 'related-nodes'}):
-            undef = _.extract()
-
-        for div in soup.findAll("div", attrs={'class' : re.compile('image')}):
-
-            for img in div.findAll("img"):
-
-                image_url = img.get('src')
-
-                if image_url:
-
-                    parent = div.parent
-
-                    for caption in parent.findAll("div", attrs={'class' : re.compile('short-caption')}):
-                        img_caption = caption.text
-
-                        if img_caption:
-                            break
-
-                    if not img_caption:
-
-                        for span in div.findAll("span", {'property' : 'dc:title'}):
-
-                            img_caption = span.get('content')
-
-                            if img_caption:
-                                break
+        if image_links:
+            image_url = image_links[0]
 
             if image_url:
-                break
-
-        if not image_url:
-
-            img_caption = ""
-
-            for ul in soup.findAll("ul", {'class' : 'slides'}):
-
-                for li in ul.findAll('li'):
-
-                    try:
-                        image_url = li.find("div", {'class' : re.compile('field-name-field-image')}).find("img").get('src')
-                        img_caption = li.find("div", {'class' : re.compile('field-name-field-flickr-description')}).text
-                    except:
-                        pass
-
-                    if image_url:
-                        break
-
-        if image_url:
-            image_src = urljoin(url, image_url)
-
-            if image_src:
-                image_data = self.download_image(image_src)
+                image_data = self.download_image(image_url)
 
                 filename = image_url.split('/')[-1].split('?')[0]
 
@@ -471,15 +432,11 @@ class ImportNewsView(ImportContentView):
                 else:
                     filename = u'image'
 
-                image_field = NamedBlobImage(
-                    filename=filename,
-                    data=image_data
-                )
-
-                return (image_field, img_caption)
-
-        else:
-            return (None, None)
+                if image_data:
+                    return NamedBlobImage(
+                        filename=filename,
+                        data=image_data
+                    )
 
     def download_image(self, url):
         response = requests.get(url, headers={ 'User-Agent': self.user_agent }, stream=True)
@@ -497,13 +454,3 @@ class ImportNewsBlogView(ImportNewsView):
         path = self.context.absolute_url()[len(self.site.absolute_url()):]
         return '%s%s' % (site_id, path)
 
-    @property
-    def news_items(self):
-        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
-
-        return self.portal_catalog.searchResults({
-            'portal_type' : 'News Item',
-            'id' : numeric_ids,
-            'SearchText' : 'news.psu.edu',
-            'path' : '/'.join(self.context.getPhysicalPath()),
-        })
