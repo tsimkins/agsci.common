@@ -1,3 +1,5 @@
+from DateTime import DateTime
+
 from agsci.common.constants import DEFAULT_TIMEZONE
 
 from . import JSONDumpView
@@ -6,14 +8,18 @@ class TaggedNewsFeedView(JSONDumpView):
 
     @property
     def news_items(self):
-        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit()]
+        numeric_ids = [x for x in self.portal_catalog.uniqueValuesFor('id') if x.isdigit() or x[:8].isdigit()]
 
         return self.portal_catalog.searchResults({
             'portal_type' : 'News Item',
             'id' : numeric_ids,
-            'SearchText' : 'news.psu.edu',
+            'SearchText' : 'psu.edu',
             'sort_on' : 'effective',
             'sort_order' : 'descending',
+            'created' : {
+                'range' : 'min',
+                'query' : DateTime() - 365,
+            }
         })
 
     @property
