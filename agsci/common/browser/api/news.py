@@ -49,6 +49,7 @@ class TaggedNewsFeedView(JSONDumpView):
                         'value' : r.Description,
                     },
                     'effective' : r.effective.ISO8601(),
+                    'has_lead_image' : not not r.hasLeadImage,
                 })
 
         return data

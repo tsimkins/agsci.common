@@ -416,30 +416,36 @@ class ImportNewsView(ImportContentView):
 
     def get_image(self, item):
 
-        links = item.get('links', [])
-        image_links = [x.get('href', '') for x in links if x.get('rel', None) in ('enclosure',)]
+        image_url = None
 
-        if image_links:
-            image_url = image_links[0]
+        if 'has_lead_image' in item:
+            if item['has_lead_image']:
+                image_url = 'https://%s%s/@@images/image' % (AGSCI_DOMAIN, item.get('path'))
+        else:
+            links = item.get('links', [])
+            image_links = [x.get('href', '') for x in links if x.get('rel', None) in ('enclosure',)]
 
-            if image_url:
-                image_data = self.download_image(image_url)
+            if image_links:
+                image_url = image_links[0]
 
-                filename = image_url.split('/')[-1].split('?')[0]
+        if image_url:
+            image_data = self.download_image(image_url)
 
-                if filename:
-                    filename = safe_unicode(filename)
-                else:
-                    filename = u'image'
+            filename = image_url.split('/')[-1].split('?')[0]
 
-                if image_data:
-                    return NamedBlobImage(
-                        filename=filename,
-                        data=image_data
-                    )
+            if filename:
+                filename = safe_unicode(filename)
+            else:
+                filename = u'image'
+
+            if image_data:
+                return NamedBlobImage(
+                    filename=filename,
+                    data=image_data
+                )
 
     def download_image(self, url):
-        response = requests.get(url, headers={ 'User-Agent': self.user_agent }, stream=True)
+        response = requests.get(url, headers={ 'User-Agent': self.user_agent }, stream=True, verify=False)
 
         if response.status_code == 200:
             response.raw.decode_content = True
