@@ -65,6 +65,22 @@ a.alert-bar:hover p.alert-bar-title {
   color: #205EA3;
 }
 
+div.alert-bar.mini .alert-bar-content-wrap,
+a.alert-bar.mini .alert-bar-content-wrap {
+  padding: 1rem 1.75rem;
+}
+div.alert-bar.mini i.fas,
+a.alert-bar.mini i.fas {
+  font-size: 1.25rem;
+  top: 0.9375rem;
+}
+div.alert-bar.mini p.alert-bar-title,
+div.alert-bar.mini p.alert-bar-text,
+a.alert-bar.mini p.alert-bar-title,
+a.alert-bar.mini p.alert-bar-text {
+  margin-left: 1.5rem;
+}
+
 @media (min-width: 56.25rem) {
   div.alert-bar i.material-icons, a.alert-bar i.material-icons {
     font-size: 4rem;

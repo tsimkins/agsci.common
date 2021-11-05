@@ -4,7 +4,6 @@ ALERT BAR - Universal Header Alert Bar - Jan 2020
 
 ---------------------------------------------------------- */
 
-
 div.alert-bar,
 a.alert-bar {
     background-color: #F7F9FE;
@@ -62,6 +61,24 @@ a.alert-bar:hover {
 
     p.alert-bar-title {
         color: #205EA3;
+    }
+}
+
+div.alert-bar.mini,
+a.alert-bar.mini {
+
+    .alert-bar-content-wrap {
+        padding: 1rem 1.75rem;
+    }
+
+    i.fas {
+        font-size: 1.25rem;
+        top: 0.9375rem;
+    }
+
+    p.alert-bar-title,
+    p.alert-bar-text {
+        margin-left: 1.5rem;
     }
 }
 
