@@ -84,11 +84,6 @@
                             <xsl:apply-templates css:select="#content" />
                         </div>
                     </div>
-                    <footer class="row">
-                        <div class="col-xs-12 col-sm-12">
-                            <xsl:copy-of css:select="#viewlet-below-content" />
-                        </div>
-                    </footer>
                 </div>
                 <!--/row-->
             </replace>
