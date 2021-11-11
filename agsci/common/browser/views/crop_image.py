@@ -1,13 +1,19 @@
 from PIL import Image, ImageDraw
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from StringIO import StringIO
 from plone.memoize.instance import memoize
-from zope.interface import implements
+from plone.namedfile.file import NamedBlobImage
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides, implements
 from zope.publisher.interfaces import IPublishTraverse
 
 import base64
+import json
+import requests
 
+from agsci.common import object_factory
 from agsci.common.permissions import CROP_IMAGE
 from agsci.common.interfaces import ILeadImageMarker
 
@@ -225,3 +231,59 @@ class CropImageView(BrowserView):
             return img_value
 
         return ''
+
+class CropImageReactView(CropImageView):
+
+    API_URL = 'https://tools.agsci.psu.edu/crop-image'
+
+    @property
+    def upload_image(self):
+
+        response = requests.put(
+            "%s/api/upload" % self.API_URL,
+            headers={
+                'Content-Type': self.getContentType()
+            },
+            data=self.image.data
+        )
+        
+        if response.status_code in (200,):
+            return object_factory(**response.json())
+
+        return object_factory(error="HTTP Error %d" % response.status_code)
+
+class CropImageReactApplyView(CropImageReactView):
+
+    @property
+    def token(self):
+        return self.request.form.get('token')
+
+    def __call__(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+    
+        image = self.image
+
+        if image:
+            original_image = self.getOriginalImage()
+            filename = original_image.filename
+            self.context.image = NamedBlobImage(filename=filename, data=image)
+
+        self.request.response.setHeader('Content-Type', 'application/json')
+
+        return json.dumps({
+            'url' : "%s?%s" % (self.context.absolute_url(), self.token)
+        })
+
+    @property
+    def image(self):
+
+        token = self.token
+
+        response = requests.get(
+            "%s/final/%s" % (self.API_URL, token)
+        )
+
+        if response.status_code in (200,):
+            data = response.content
+            if data:
+                return data

@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+  <body>
+
+    <metal:fill fill-slot="content">
+
+           
+        <div id="content"
+             tal:define="allow_crop view/allowCrop|nothing;
+                         image_base64 view/image_base64|nothing">
+
+            <h1 class="documentFirstHeading noBreadcrumbs">Crop Image</h1>
+
+            <p><a tal:attributes="href context/absolute_url">Back to <strong tal:content="context/Title" /></a></p>
+
+            <p class="discreet html">
+                <a tal:attributes="href string:${context/absolute_url}/@@crop-image">Old Crop Image</a>
+            </p>
+
+            <tal:crop
+                tal:define="API_URL view/API_URL|nothing"
+                tal:condition="python: allow_crop and image_base64">
+
+                <div id="root"
+                     tal:define="upload_image view/upload_image|nothing;
+                                 token upload_image/token|nothing;
+                                 error upload_image/error|nothing"
+                     tal:attributes="data-token token;
+                                     data-callback string:${context/absolute_url}/@@crop-image-apply"></div>
+
+                <script
+                    tal:attributes="src string:${API_URL}/static/react/react.production.min.js"></script>
+
+                <script
+                    tal:attributes="src string:${API_URL}/static/react/react-dom.production.min.js"></script>
+
+                <script
+                    tal:attributes="src string:${API_URL}/static/react/babel.min.js"></script>
+
+                <script type="text/babel"
+                    tal:attributes="src string:${API_URL}/static/react/crop-image.js"></script>
+            
+                <script type="text/babel">
+                    let el = document.getElementById('root');
+                    
+                    if (el) {
+                        let token = el.getAttribute('data-token');
+                        let callback = el.getAttribute('data-callback');
+
+                        if (token) {
+                            ReactDOM.render(
+                                <PloneImageCropWidget
+                                    token={token}
+                                    callback={callback} />,
+                                el
+                            );
+                        }
+                    }
+                </script>
+                
+            </tal:crop>
+            
+            <p tal:condition="not:allow_crop">
+                This image is already cropped to appropriate dimensions.
+            </p>
+
+            <p tal:condition="not:image_base64">
+                No valid image data found.
+            </p>
+
+        </div>
+    </metal:fill>
+
+  </body>
+</html>

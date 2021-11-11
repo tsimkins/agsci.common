@@ -555,6 +555,21 @@
         class=".crop_image.CropImageView"
         permission="agsci.common.crop_image"
     />
+    
+    <browser:page
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+        name="crop-image-react"
+        template="templates/crop-image-react.pt"
+        class=".crop_image.CropImageReactView"
+        permission="agsci.common.crop_image"
+    />
+    
+    <browser:page
+        for="agsci.common.content.behaviors.leadimage.ILeadImage"
+        name="crop-image-apply"
+        class=".crop_image.CropImageReactApplyView"
+        permission="agsci.common.crop_image"
+    />
 
     <!-- Hide Children From Nav -->
     <browser:page
