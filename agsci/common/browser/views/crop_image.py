@@ -246,7 +246,7 @@ class CropImageReactView(CropImageView):
             },
             data=self.image.data
         )
-        
+
         if response.status_code in (200,):
             return object_factory(**response.json())
 
@@ -260,7 +260,7 @@ class CropImageReactApplyView(CropImageReactView):
 
     def __call__(self):
         alsoProvides(self.request, IDisableCSRFProtection)
-    
+
         image = self.image
 
         if image:
@@ -270,8 +270,13 @@ class CropImageReactApplyView(CropImageReactView):
 
         self.request.response.setHeader('Content-Type', 'application/json')
 
+        url = self.context.absolute_url()
+
+        if self.context.Type() in ('Image',):
+            url = "%s/view" % url
+
         return json.dumps({
-            'url' : "%s?%s" % (self.context.absolute_url(), self.token)
+            'url' : "%s?%s" % (url, self.token)
         })
 
     @property
