@@ -633,4 +633,14 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <!-- RSS Customizations -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.syndication.ISyndicatable"
+        class="Products.CMFPlone.browser.syndication.views.FeedView"
+        name="RSS"
+        permission="zope2.View"
+        template="templates/RSS.pt"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>

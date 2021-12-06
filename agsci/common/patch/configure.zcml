@@ -15,6 +15,33 @@
         original="__init__"
         />
 
+    <!--
+        Monkey Patch Dexterity adapter for syndication so RSS feed
+        can have a start date.
+     -->
 
+    <monkey:patch
+        description="Adds start date to Dexterity adapter for syndication RSS feed."
+        class="Products.CMFPlone.browser.syndication.adapters.BaseFeedData"
+        replacement=".syndication_start"
+        original="start_date"
+        ignoreOriginal="True"
+        />
+
+    <monkey:patch
+        description="Adds public_tags to Dexterity adapter for syndication RSS feed."
+        class="Products.CMFPlone.browser.syndication.adapters.BaseFeedData"
+        replacement=".syndication_public_tags"
+        original="public_tags"
+        ignoreOriginal="True"
+        />
+
+    <monkey:patch
+        description="Adds image_url to Dexterity adapter for syndication RSS feed."
+        class="Products.CMFPlone.browser.syndication.adapters.BaseFeedData"
+        replacement=".syndication_enclosure"
+        original="enclosure"
+        ignoreOriginal="True"
+        />
 
 </configure>
