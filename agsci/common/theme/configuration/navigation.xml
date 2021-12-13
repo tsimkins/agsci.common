@@ -498,6 +498,77 @@
                     </group>
                 </items>
             </item>
+            <!-- DEI Dropdown -->
+            <item>
+                <title>Diversity, Equity, &amp; Inclusion</title>
+                <link>diversity</link>
+                <image>
+                    <link>diversity</link>
+                    <src>++resource++agsci.common/assets/images/navigation/dei.jpg</src>
+                    <title>
+                        Our aim is to create an environment where differences are considered assets that make us better learners, educators, scholars, researchers, employees, and students.
+                    </title>
+                </image>
+                <items>
+                    <group>
+                        <item>
+                            <title>Mission and Strategic Plan</title>
+                            <link>diversity/framework</link>
+                        </item>
+                        <item>
+                            <title>Articles of Interest</title>
+                            <link>diversity/news</link>
+                        </item>
+                        <item>
+                            <title>Events and Activities</title>
+                            <link>diversity/events</link>
+                        </item>
+                        <item>
+                            <title>Student Information</title>
+                            <link>diversity/students</link>
+                        </item>
+                    </group>
+                    <group>
+                        <item>
+                            <title>Diversity Resources</title>
+                            <link>diversity/awareness</link>
+                        </item>
+                        <item>
+                            <title>Civil Rights</title>
+                            <link>diversity/civil-rights</link>
+                        </item>
+                        <item>
+                            <title>Latinx Agricultural Network</title>
+                            <link>diversity/latinx-agricultural-network</link>
+                        </item>
+                        <item>
+                            <title>Diversity Coordinating Council</title>
+                            <link>diversity/coordinating-council</link>
+                        </item>
+                    </group>
+                    <group>
+                        <item type="cta">
+                            <items>
+                                <item>
+                                    <link>support</link>
+                                    <title>Support the College</title>
+                                    <icon>fa-hands-helping</icon>
+                                </item>
+                                <item>
+                                    <link>alumni</link>
+                                    <title>Join the Ag Alumni Society</title>
+                                    <icon>fa-users</icon>
+                                </item>
+                                <item>
+                                    <link>magazine</link>
+                                    <title>Read Penn State Ag Science Magazine</title>
+                                    <icon>fa-book-open</icon>
+                                </item>
+                            </items>
+                        </item>
+                    </group>
+                </items>
+            </item>
             <!-- About Dropdown -->
             <item>
                 <title>About</title>
@@ -533,11 +604,6 @@
                         <item>
                             <title>Industry Relations</title>
                             <link>industry</link>
-                        </item>
-
-                        <item>
-                            <title>Diversity and Inclusion</title>
-                            <link>diversity</link>
                         </item>
 
                         <item>
