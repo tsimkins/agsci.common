@@ -5,6 +5,7 @@ from plone.app.layout.navigation.interfaces import INavtreeStrategy
 from plone.app.layout.navigation.navtree import buildFolderTree
 from plone.app.portlets.portlets.navigation import Renderer as _Renderer
 from zope.component import getMultiAdapter
+from zope.component.hooks import getSite
 
 class Renderer(_Renderer):
 
@@ -48,7 +49,7 @@ class Renderer(_Renderer):
         context = aq_inner(self.context)
 
         # Full nav query, not just the tree for 'this' item
-        queryBuilder = SitemapQueryBuilder(self.data.navigation_root())
+        queryBuilder = SitemapQueryBuilder(getSite())
         query = queryBuilder()
 
         strategy = getMultiAdapter((context, self.data), INavtreeStrategy)
