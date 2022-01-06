@@ -3,12 +3,16 @@ from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
-from StringIO import StringIO
 from datetime import datetime
 from plone import api
-from zope.interface import implements, Interface
+from zope.interface import implementer, Interface
 
-import HTMLParser
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
+import html
 import csv
 
 from agsci.common.utilities import localize, toLocalizedTime
@@ -44,9 +48,8 @@ class IRegistrationView(Interface):
     def unescapeHTML(self, e):
         pass
 
+@implementer(IRegistrationView)
 class RegistrationView(BrowserView):
-
-    implements(IRegistrationView)
 
     @property
     def anonymous(self):
@@ -171,8 +174,7 @@ class RegistrationView(BrowserView):
         return data
 
     def unescapeHTML(self, e):
-        h = HTMLParser.HTMLParser()
-        return h.unescape(safe_unicode(e))
+        return html.unescape(safe_unicode(e))
 
 
 class DownloadCSVView(RegistrationView):

@@ -97,7 +97,7 @@ class PersonListing(Container):
 
             if _username and _order:
 
-                if not order.has_key(_username):
+                if _username not in order:
                     order[_username] = _order
 
         return order

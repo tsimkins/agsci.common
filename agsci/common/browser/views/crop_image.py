@@ -2,12 +2,16 @@ from PIL import Image, ImageDraw
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
-from StringIO import StringIO
 from plone.memoize.instance import memoize
 from plone.namedfile.file import NamedBlobImage
 from plone.protect.interfaces import IDisableCSRFProtection
-from zope.interface import alsoProvides, implements
+from zope.interface import alsoProvides, implementer
 from zope.publisher.interfaces import IPublishTraverse
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 import base64
 import json
@@ -17,9 +21,8 @@ from agsci.common import object_factory
 from agsci.common.permissions import CROP_IMAGE
 from agsci.common.interfaces import ILeadImageMarker
 
+@implementer(IPublishTraverse)
 class CropImageView(BrowserView):
-
-    implements(IPublishTraverse)
 
     def __init__(self, context, request):
         self.context = context

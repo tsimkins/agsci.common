@@ -4,16 +4,16 @@ from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 from bs4 import BeautifulSoup
 from plone.app.contenttypes.interfaces import INewsItem, ILink, ICollection
-from urllib import quote, urlencode
 from z3c.relationfield.relation import RelationValue
 from zope.component import getUtility
 from zope.intid.interfaces import IIntIds
 from zope.security import checkPermission
 
 try:
-    from urllib.parse import urlparse, urlunparse
+    from urllib.parse import urlparse, urlunparse, quote, urlencode
 except ImportError:
     from urlparse import urlparse, urlunparse
+    from urllib import quote, urlencode
 
 import premailer
 import re

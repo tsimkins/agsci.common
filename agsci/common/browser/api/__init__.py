@@ -5,7 +5,6 @@ from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from datetime import datetime
-from plone.app.blob.field import BlobWrapper
 from plone.app.textfield.value import RichTextValue
 from plone.namedfile.file import NamedBlobImage, NamedBlobFile
 from z3c.relationfield.relation import RelationValue
@@ -50,7 +49,7 @@ class CustomEncoder(JSONEncoder):
 
         # If blob field type, encode binary data and
         # include mime type
-        if isinstance(o, (BlobWrapper, NamedBlobImage, NamedBlobFile)):
+        if isinstance(o, (NamedBlobImage, NamedBlobFile)):
 
             # Skip if we're not providing binary info
             if self.bin:
@@ -180,7 +179,7 @@ class JSONDumpView(BrowserView):
         }
 
         # Because something weird happens with subjects field.
-        if fields.has_key('subjects'):
+        if 'subjects' in fields:
             fields['subject'] = fields['subjects']
 
         for (_name, _field) in fields.iteritems():

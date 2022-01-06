@@ -17,6 +17,5 @@
     <dependency>profile-eea.facetednavigation:universal</dependency>
     <dependency>profile-dexterity.membrane:default</dependency>
     <dependency>profile-Products.membrane:default</dependency>
-    <dependency>profile-Products.PloneFormGen:default</dependency>
   </dependencies>
 </metadata>

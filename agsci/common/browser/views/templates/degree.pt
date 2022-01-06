@@ -27,7 +27,7 @@
                                             <li tal:repeat="j v" tal:content="j" />
                                         </ul>
 
-                                        <p tal:condition="python: isinstance(v, (str, unicode))"
+                                        <p tal:condition="python: isinstance(v, str)"
                                             tal:content="v" />
 
                                         <tal:html

@@ -47,8 +47,8 @@ setup(name='agsci.common',
         'python-ldap',
         'beautifulsoup4',
         'Jinja2',
-        'Products.PloneFormGen',
         'premailer',
+        'zLOG',
     ],
     entry_points="""
       # -*- Entry points: -*-

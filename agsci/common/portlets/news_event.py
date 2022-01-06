@@ -3,7 +3,7 @@ from plone.autoform import directives as form
 from plone.app.contenttypes.interfaces import ICollection
 from plone.app.portlets.portlets import base
 from plone.app.vocabularies.catalog import CatalogSource
-from zope.interface import implements
+from zope.interface import implementer
 from zope import schema
 
 from ..tiles.interfaces import ISkeeterTile
@@ -20,8 +20,9 @@ class ITileInterface(ISkeeterTile):
         required=False,
     )
 
+@implementer(ITileInterface)
 class Assignment(TilePortletAssignment):
-    implements(ITileInterface)
+    pass
 
 class Renderer(TilePortletRenderer):
     tile_name = 'agsci.common.tiles.skeeter'

@@ -35,5 +35,10 @@ def object_factory(**kwargs):
 
 # Monkey patch hard-coded 2021 year in Products.Archetypes
 from DateTime import DateTime
-from Products.Archetypes.browser import datecomponents
-datecomponents.PLONE_CEILING = DateTime(2051, 0)
+
+try:
+    from Products.Archetypes.browser import datecomponents
+except ImportError:
+    pass
+else:
+    datecomponents.PLONE_CEILING = DateTime(2051, 0)

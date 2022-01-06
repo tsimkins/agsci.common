@@ -90,7 +90,7 @@ class LDAPInfo(object):
         if not phone_number:
             _ = ldap_data.get('telephoneNumber', '')
 
-            if _ and isinstance(_, (str, unicode)):
+            if _ and isinstance(_, str):
 
                 _re = re.compile('^\s*\+1\s*(\d{3})[\s\-\.]*(\d{3})[\s\-\.]*(\d{4})\s*$')
 

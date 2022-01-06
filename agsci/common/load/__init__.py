@@ -53,11 +53,11 @@ class json_data_object(object):
             return object.__getattribute__(self, name)
 
         # Otherwise, return the value of the key in the data dict
-        if self.data.has_key(name):
+        if name in self.data:
             value = self.data.get(name, '')
 
             if value:
-                if isinstance(value, dict) and value.has_key('value'):
+                if isinstance(value, dict) and 'value' in value:
                     return value['value']
                 return value
 
@@ -498,7 +498,7 @@ class ContentImporter(object):
 
         if field_name in ('office_address',):
 
-            if isinstance(value, (str, unicode)):
+            if isinstance(value, str):
                 return [x for x in value.replace("\r", "\n").split("\n") if x]
 
         elif field_name in ('websites',):

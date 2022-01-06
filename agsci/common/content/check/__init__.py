@@ -2,7 +2,6 @@ from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.CMFPlone.utils import safe_unicode
-from Queue import Queue
 from bs4 import BeautifulSoup, Tag, NavigableString
 from datetime import datetime
 from plone.app.linkintegrity.utils import getIncomingLinks
@@ -15,6 +14,11 @@ from zope.component import subscribers, getUtility, queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.interface import Interface
+
+try:
+    from Queue import Queue
+except ImportError:
+    from queue import Queue
 
 try:
     from urllib.parse import urlparse
@@ -298,7 +302,7 @@ class DescriptionLength(ContentCheck):
 
     def value(self):
         if hasattr(self.context, 'description'):
-            if isinstance(self.context.description, (str, unicode)):
+            if isinstance(self.context.description, str):
                 return len(self.context.description)
 
         return 0
@@ -556,7 +560,7 @@ class ValidInternalLinkCheck(BodyLinkCheck):
             text = a.text
             if not text:
                 text = '[N/A]'
-            if href and isinstance(href, (str, unicode)):
+            if href and isinstance(href, str):
                 if self.is_bad_url(href):
                     yield ContentCheckError(
                         self,

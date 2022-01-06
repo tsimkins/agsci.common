@@ -537,15 +537,6 @@
         permission="zope2.View"
     />
 
-    <!-- Download registrations -->
-    <browser:page
-        for="Products.PloneFormGen.interfaces.form.IPloneFormGenForm"
-        name="download_csv"
-        class=".registration.DownloadCSVView"
-        layer="..interfaces.IThemeSpecific"
-        permission="zope2.View"
-    />
-
     <!-- Cropped Image Views -->
 
     <browser:page

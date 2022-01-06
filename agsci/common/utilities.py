@@ -250,7 +250,7 @@ def get_fields_by_type(portal_type):
 def toBool(_):
     if isinstance(_, bool):
         return _
-    if isinstance(_, (str, unicode)):
+    if isinstance(_, str):
         return _.lower().strip() in ('true', '1')
     if isinstance(_, int):
         return bool(_)
@@ -258,7 +258,7 @@ def toBool(_):
 
 def truncate_text(v, max_chars=200, el='...'):
 
-    if v and isinstance(v, (str, unicode)):
+    if v and isinstance(v, str):
 
         v = " ".join(v.strip().split())
 

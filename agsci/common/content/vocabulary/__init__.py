@@ -3,14 +3,13 @@ from Products.CMFCore.utils import getToolByName
 from zope.component.hooks import getSite
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-from zope.interface import implements
+from zope.interface import implementer
 
 from agsci.common.interfaces import ITagsAdapter
 from agsci.common.utilities import getNavigationViewlet
 
+@implementer(IVocabularyFactory)
 class BaseVocabulary(object):
-
-    implements(IVocabularyFactory)
 
     @property
     def site(self):

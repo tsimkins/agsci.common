@@ -1,10 +1,9 @@
-from zope.interface import implements
+from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
+@implementer(IVocabularyFactory)
 class StaticVocabulary(object):
-
-    implements(IVocabularyFactory)
 
     preserve_order = False
 
@@ -22,9 +21,8 @@ class StaticVocabulary(object):
 
         return SimpleVocabulary(terms)
 
+@implementer(IVocabularyFactory)
 class KeyValueVocabulary(object):
-
-    implements(IVocabularyFactory)
 
     items = [
         ('N/A', 'N/A'),

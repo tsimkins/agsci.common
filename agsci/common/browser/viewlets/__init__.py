@@ -144,7 +144,7 @@ class ViewletBase(_ViewletBase):
 
         if department_id:
 
-            if isinstance(department_id, (str, unicode)):
+            if isinstance(department_id, str):
 
                 xml_file = u"%s/navigation-%s.xml" % (
                     safe_unicode(self.XML_CONFIG_DIR),
@@ -329,7 +329,6 @@ class NavigationViewlet(ViewletBase):
             results = self.portal_catalog.searchResults({
                 'object_provides' : [
                     'plone.dexterity.interfaces.IDexterityContent',
-                    'Products.PloneFormGen.interfaces.form.IPloneFormGenForm',
                 ]
             })
 
@@ -348,12 +347,12 @@ class NavigationViewlet(ViewletBase):
 
     def hidden(self, item):
         _ = item['hidden']
-        return _ and isinstance(_, (str, unicode)) and _.lower().strip() == 'true'
+        return _ and isinstance(_, str) and _.lower().strip() == 'true'
 
     def type(self, item):
         _ = item['type']
 
-        if _ and isinstance(_, (str, unicode)):
+        if _ and isinstance(_, str):
             return _.lower().strip()
 
         return 'nav'
@@ -372,7 +371,7 @@ class NavigationViewlet(ViewletBase):
 
     def is_valid_internal_path(self, url):
         path = self.get_internal_path(url)
-        return self.paths.has_key(path)
+        return path in self.paths
 
     def get_link(self, item):
 
@@ -439,7 +438,7 @@ class NavigationViewlet(ViewletBase):
             config = self.config
 
         if hasattr(config, v) and \
-           isinstance(config.__dict__[v].cdata, (str, unicode)):
+           isinstance(config.__dict__[v].cdata, str):
             return config.__dict__[v].cdata.strip()
 
     def get_xml_config(self, xml_file):

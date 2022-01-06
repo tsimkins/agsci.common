@@ -1,12 +1,13 @@
 from Products.CMFPlone import PloneMessageFactory as _
 from plone.app.portlets.portlets import base
-from zope.interface import implements
+from zope.interface import implementer
 
 from ..tiles.interfaces import IRizzoTheRatTile as ITileInterface
 from . import TilePortletAssignment, TilePortletRenderer
 
+@implementer(ITileInterface)
 class Assignment(TilePortletAssignment):
-    implements(ITileInterface)
+    pass
 
 class Renderer(TilePortletRenderer):
     tile_name = 'agsci.common.tiles.rizzo_the_rat'

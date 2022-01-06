@@ -79,7 +79,7 @@ class DegreeContainerCriteria(_Criteria):
         cache = IAnnotations(self.request)
         key = 'eea.facetednav.%s' % self.context.UID()
 
-        if not cache.has_key(key):
+        if key not in cache:
             cache[key] = self.__criteria()
 
         return cache[key]

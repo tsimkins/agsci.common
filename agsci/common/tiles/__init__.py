@@ -121,7 +121,7 @@ class BaseTile(PersistentTile):
 
         _ = []
 
-        if isinstance(self.__section_class__, (str, unicode)):
+        if isinstance(self.__section_class__, str):
             _.extend(self.__section_class__.split())
 
         if self.is_border:
@@ -190,7 +190,7 @@ class BaseTile(PersistentTile):
 
         v = self.get_field(field, None)
 
-        if v and isinstance(v, (str, unicode)):
+        if v and isinstance(v, str):
             return v
 
         return ''
@@ -324,7 +324,7 @@ class BaseTile(PersistentTile):
 
     @property
     def is_portlet(self):
-        return self.data and isinstance(self.data, dict) and self.data.has_key('__parent__')
+        return self.data and isinstance(self.data, dict) and '__parent__' in self.data
 
     @property
     def links(self):
@@ -944,7 +944,7 @@ class SocialMediaTile(BaseTile):
 
     def get_label(self, _):
 
-        if isinstance(_.label, (str, unicode)) and _.label.strip():
+        if isinstance(_.label, str) and _.label.strip():
             return _.label.strip()
 
         # Lookup platform name
