@@ -9,7 +9,7 @@ class TilePortletAssignment(base.Assignment):
         base.Assignment.__init__(self, title=title, *args, **kwargs)
         self.title=title
         if kwargs:
-            for (k,v) in kwargs.iteritems():
+            for (k,v) in kwargs.items():
                 setattr(self, k, v)
 
 class TilePortletRenderer(base.Renderer):

@@ -343,7 +343,7 @@ def scrub_html(html):
         html = html.replace(ent[0], ent[1])
 
     # Replace unicode characters (u'\u1234') with html entity ('&abcd;')
-    for (k,v) in htmlentitydefs.codepoint2name.iteritems():
+    for (k,v) in htmlentitydefs.codepoint2name.items():
 
         if v in ["gt", "lt", "amp", "bull", "quot"]:
             continue

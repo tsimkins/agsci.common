@@ -71,7 +71,7 @@ class BaseView(BrowserView):
 
         fields = self.object_fields
 
-        for (i,f) in fields.iteritems():
+        for (i,f) in fields.items():
 
             if f:
 

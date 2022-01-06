@@ -66,7 +66,7 @@ class LDAPInfo(object):
                     for r in results:
                         (_id, data) = r
 
-                        for (k,v) in data.iteritems():
+                        for (k,v) in data.items():
 
                             if isinstance(v, (tuple, list)):
                                 if len(v) == 1:

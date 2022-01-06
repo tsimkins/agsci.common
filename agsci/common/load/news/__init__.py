@@ -146,7 +146,7 @@ class ImportNewsView(ImportContentView):
     def transform_tag(self, _, tags=[]):
         _ = self.tag_transforms.get(_, _)
 
-        for (k, v) in self.conditional_transforms.iteritems():
+        for (k, v) in self.conditional_transforms.items():
 
             if any([x in tags for x in k]):
                 _ = v.get(_, _)

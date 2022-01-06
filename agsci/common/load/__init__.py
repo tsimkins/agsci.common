@@ -63,7 +63,7 @@ class json_data_object(object):
 
         else:
             # Get based on original ID rather than JSON key
-            for (k,v) in self.data.iteritems():
+            for (k,v) in self.data.items():
                 if isinstance(v, dict):
                     _id = v.get('info', {}).get('id', None)
                     if _id == name:
@@ -706,7 +706,7 @@ class ExtensionContentImporter(ContentImporter):
 
         data = super(ExtensionContentImporter, self).json_data
 
-        for (k,v) in data.iteritems():
+        for (k,v) in data.items():
 
             if k == 'leadimage':
                 _['image'] = {

@@ -182,7 +182,7 @@ class JSONDumpView(BrowserView):
         if 'subjects' in fields:
             fields['subject'] = fields['subjects']
 
-        for (_name, _field) in fields.iteritems():
+        for (_name, _field) in fields.items():
 
             # Don't provide explicitly excluded fields
             if _name in self.exclude_fields:

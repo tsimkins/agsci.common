@@ -1042,7 +1042,7 @@ class ProhibitedAttributes(BodyTextCheck):
 
         _re = re.compile('\S+')
 
-        for (_attr, ok_values) in self.attribute_config.iteritems():
+        for (_attr, ok_values) in self.attribute_config.items():
 
             for i in self.soup.findAll(attrs={_attr : _re}):
 
@@ -1590,7 +1590,7 @@ class TileLinksCheck(BodyTextCheck):
 
     @property
     def config(self):
-        return sorted(self.config_data.iteritems(), key=lambda x: len(x[0]), reverse=True)
+        return sorted(self.config_data.items(), key=lambda x: len(x[0]), reverse=True)
 
     @property
     def mosaic_layout(self):
