@@ -1055,7 +1055,7 @@ class ProhibitedAttributes(BodyTextCheck):
                     is_ok = True
 
                 # If we're a string
-                elif isinstance(_attr_value, (unicode, str)):
+                elif isinstance(_attr_value, str):
 
                     # Remove whitespace
                     _attr_value = _attr_value.strip()

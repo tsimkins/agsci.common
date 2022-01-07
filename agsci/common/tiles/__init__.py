@@ -260,7 +260,7 @@ class BaseTile(PersistentTile):
 
         if target and hasattr(target, 'to_object'):
             return target.to_object
-        elif isinstance(target, (unicode, str)):
+        elif isinstance(target, str):
             if uid_re.match(target):
                 return uuidToObject(target)
 
@@ -367,7 +367,7 @@ class BaseTile(PersistentTile):
     def title_id(self):
         _ = self.get_valid_value('title')
 
-        if _ and isinstance(_, (unicode, str)):
+        if _ and isinstance(_, str):
             return "tile-%s" % ploneify(_)
 
         return ''

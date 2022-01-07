@@ -145,9 +145,6 @@ class ContentImporter(object):
         except:
             self.data = json_data_object({})
 
-        if isinstance(self.path, unicode):
-            self.path = self.path.encode('utf-8')
-
     @property
     def json_data(self):
         parsed_url = urlparse(self.api_url)

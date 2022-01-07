@@ -1162,7 +1162,7 @@ class ThemeJSView(BaseView):
                     pass
                 else:
 
-                    if _data and isinstance(_data, (unicode, str)):
+                    if _data and isinstance(_data, str):
                         data.append(u"/* Include file: %s */" % _)
                         data.append(safe_unicode(_data))
 
