@@ -232,7 +232,7 @@ def get_fields_by_type(portal_type):
 
     fti = getUtility(IDexterityFTI, name=portal_type)
     schema = fti.lookupSchema()
-    fields = schema.namesAndDescriptions()
+    fields = list(schema.namesAndDescriptions())
 
     for _schema in getBases(schema):
         fields += _schema.namesAndDescriptions()
