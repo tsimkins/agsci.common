@@ -19496,6 +19496,14 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
   font-size: 0.9rem;
 }
 
+/* Related items in Mosaic Tiles */
+.pattern-relateditems-item .pattern-relateditems-item-title[class*=contenttype-]::before,
+.pattern-relateditems-item .pattern-relateditems-result-title[class*=contenttype-]::before,
+.pattern-relateditems-item .pattern-relateditems-item-title,
+.pattern-relateditems-item .pattern-relateditems-result-title {
+  font-size: 1rem;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

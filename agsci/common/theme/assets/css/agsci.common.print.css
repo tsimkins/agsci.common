@@ -9,17 +9,20 @@ PRINT ONLY
   left: 1rem;
   width: 360px;
   height: auto;
-  display: block; }
+  display: block;
+}
 
 html {
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+}
 
 header,
 nav,
 .navbar,
 a.navbar-brand,
 .collapse:not(.show) {
-  display: block; }
+  display: block;
+}
 
 img.agsci-logo,
 img.psu-logo,
@@ -47,7 +50,8 @@ p.learn-more,
 .big-bold-cta,
 .cta-bar,
 .list-inline-social {
-  display: none !important; }
+  display: none !important;
+}
 
 .jumbotron,
 .jumbotron.jumbotron-short-header,
@@ -57,28 +61,33 @@ p.learn-more,
 .jumbotron.jumbotron-full-height,
 .jumbotron .jumbotron-img,
 .jumbotron .jumbotron-header {
-  height: auto; }
+  height: auto;
+}
 
 .big-image img,
 .col-12 img,
 .col-9 img,
 .offset-image img,
 .offset-full-image img {
-  max-width: 600px; }
+  max-width: 600px;
+}
 
 #portal-breadcrumbs {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+}
 
 .container,
 .container-fluid {
   /* remove margins so container fills printable width */
-  margin: 0; }
+  margin: 0;
+}
 
 a,
 a:link,
 a:visited {
   text-decoration: none;
-  border-bottom: transparent; }
+  border-bottom: transparent;
+}
 
 body h1, body h2, body h3, body h4, body h5, body h6, body ul, body li, body p, body .jumbotron p.program-type span, body .btn,
 body #portal-breadcrumbs a, body .jumbotron h1, body .card.card-portable-highlight .card-body p,
@@ -103,46 +112,58 @@ body a:link, body a:visited,
 .text-white a:link,
 .text-white a:visited {
   color: #000000;
-  text-shadow: none; }
+  text-shadow: none;
+}
 
 .text-white {
-  color: #000000; }
+  color: #000000;
+}
 
 .reveal,
 .slide-down,
 .fade-up {
   opacity: 1 !important;
-  transform: none !important; }
+  transform: none !important;
+}
 
 .collapse {
   display: block !important;
-  height: auto !important; }
+  height: auto !important;
+}
 
 .big-image + .container h2 {
-  top: 0; }
+  top: 0;
+}
 
 .offset-top {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 .container {
-  max-width: none; }
+  max-width: none;
+}
 
 .col {
-  padding: 1rem; }
+  padding: 1rem;
+}
 
 .card-cta {
-  border: 1px solid #333 !important; }
-  .card-cta p, .card-cta .btn {
-    color: #000; }
+  border: 1px solid #333 !important;
+}
+.card-cta p, .card-cta .btn {
+  color: #000;
+}
 
 .card.card-cta .card-body .btn {
   color: #000 !important;
-  border: 1px solid #333 !important; }
+  border: 1px solid #333 !important;
+}
 
 .col-12,
 p,
 .card {
-  page-break-inside: avoid; }
+  page-break-inside: avoid;
+}
 
 .col-md-4,
 .col-lg-5,
@@ -150,87 +171,112 @@ p,
 .col-lg-7,
 .col-lg-8 {
   flex: 0 0 100%;
-  max-width: 100%; }
+  max-width: 100%;
+}
 
 .offset-md-1,
 .offset-lg-2 {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .card.card-portable-highlight {
   border: 1px solid #333;
   padding: 1rem;
-  min-height: 0; }
+  min-height: 0;
+}
 
 .card-deck.card-deck-3up .card.card-short-bio {
   flex: none;
   width: 33.33%;
-  /* not respecting print media query */ }
+  /* not respecting print media query */
+}
 
 @media (min-width: 768px) {
   .card-deck.card-deck-4up .card,
-  .card-deck.card-deck-3up .card {
-    flex: 0 0 calc(33.33333% - 2rem); } }
+.card-deck.card-deck-3up .card {
+    flex: 0 0 calc(33.33333% - 2rem);
+  }
+}
 .card-deck.card-deck-3up .card.card-short-bio {
-  flex: 0 0 calc(25%-2rem); }
+  flex: 0 0 calc(25%-2rem);
+}
 
 .card-visual {
-  border: 1px solid #333 !important; }
+  border: 1px solid #333 !important;
+}
 
 .card-img-overlay {
-  position: relative; }
+  position: relative;
+}
 
 .card.card-visual .card-body {
   background: transparent;
-  position: relative; }
+  position: relative;
+}
 
 .visual-cards-imgs-cropped .card-image-top {
-  height: auto; }
+  height: auto;
+}
 
 .card.card-visual h3.card-title::after {
-  border-bottom: 2px solid #3EA39E; }
+  border-bottom: 2px solid #3EA39E;
+}
 
 .card-deck.card-deck-4up .card.card-short-bio,
 .card-deck.card-deck-4up .card.card-portable-highlight {
-  flex: 0 0 28%; }
+  flex: 0 0 28%;
+}
 
 .card-news .profile-img {
   flex: 0 0 15%;
-  max-width: 15%; }
+  max-width: 15%;
+}
 .card-news .profile-copy {
   flex: 0 0 85%;
-  max-width: 85%; }
+  max-width: 85%;
+}
 
 .section-highlight img {
   object-fit: unset;
   width: 100%;
-  height: auto; }
+  height: auto;
+}
 
 p.agsci-journeys-intro-quote {
-  display: none; }
+  display: none;
+}
 
 .col-12 p.quote-angle-script {
-  left: 0; }
+  left: 0;
+}
 
 /* trs22 updates */
 .portletWrapper,
-[data-component="portlets"] {
-  display: none !important; }
+[data-component=portlets] {
+  display: none !important;
+}
 
 footer {
-  display: none; }
+  display: none;
+}
 
 #section-content .row {
-  display: block; }
+  display: block;
+}
 
 #page-header {
-  padding: 0 !important; }
-  #page-header > div.container {
-    padding: 0 !important; }
+  padding: 0 !important;
+}
+#page-header > div.container {
+  padding: 0 !important;
+}
 
 .print-only-logo {
-  left: 0 !important; }
+  left: 0 !important;
+}
 
 #portal-breadcrumbs {
-  margin-top: 1rem !important; }
+  margin-top: 1rem !important;
+}
 
 /*# sourceMappingURL=agsci.common.print.css.map */

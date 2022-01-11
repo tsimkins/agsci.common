@@ -1539,3 +1539,13 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
         }
     }
 }
+
+/* Related items in Mosaic Tiles */
+.pattern-relateditems-item {
+    .pattern-relateditems-item-title[class*="contenttype-"]::before,
+    .pattern-relateditems-result-title[class*="contenttype-"]::before,
+    .pattern-relateditems-item-title,
+    .pattern-relateditems-result-title {
+        font-size: 1rem;
+    }
+}
