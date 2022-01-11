@@ -151,8 +151,6 @@ class ViewletBase(_ViewletBase):
                     safe_unicode(department_id)
                 )
 
-                xml_file = xml_file.encode('utf-8')
-
                 try:
                     config = self.get_xml_config(xml_file)
                 except:
@@ -166,7 +164,7 @@ class ViewletBase(_ViewletBase):
         _ = self.registry.get('agsci.common.department_id', None)
 
         if self.is_valid_department_id(_):
-            return safe_unicode(_).encode('utf-8')
+            return safe_unicode(_)
 
     @property
     @context_memoize

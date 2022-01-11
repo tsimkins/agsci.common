@@ -18,8 +18,6 @@ def setPersonUsername(context, event):
 
     if username:
 
-        username = username.encode('utf-8')
-
         if username != context.getId():
 
             parent = context.aq_parent

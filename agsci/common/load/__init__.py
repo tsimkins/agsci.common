@@ -363,7 +363,7 @@ class ContentImporter(object):
 
     def get_img_url(self, src):
         if src:
-            src = safe_unicode(src).encode('utf-8')
+
             if src.startswith('/'):
                 src = src[1:]
             if '@@' in src:
@@ -389,7 +389,6 @@ class ContentImporter(object):
                     return 'resolveuid/%s' % _
 
     def get_resource_uid(self, path):
-        path = safe_unicode(path).encode('utf-8')
 
         if 'portal_factory' in path:
             return
@@ -489,7 +488,7 @@ class ContentImporter(object):
                 _id = _
                 break
 
-        return safe_unicode(_id).encode('utf-8')
+        return safe_unicode(_id)
 
     def transform_value(self, field=None, field_name=None, value=None):
 
@@ -650,7 +649,7 @@ class ContentImporter(object):
 
         # Set default page
         if self.data.default_page:
-            default_page_id = safe_unicode(self.data.default_page).encode('utf-8')
+            default_page_id = safe_unicode(self.data.default_page)
             self.context.setDefaultPage(default_page_id)
         else:
 

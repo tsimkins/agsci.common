@@ -11,7 +11,7 @@ class Error(object):
         return 'error-check'
 
     def __repr__(self):
-        return safe_unicode(self.msg).encode('utf-8')
+        return safe_unicode(self.msg)
 
     def render(self):
 

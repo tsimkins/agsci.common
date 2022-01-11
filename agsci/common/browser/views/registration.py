@@ -192,7 +192,7 @@ class DownloadCSVView(RegistrationView):
             filename = "%s.csv" % event.getId()
             for r in registrations:
                 # Encode fields for CSV writer as utf-8
-                r = map(lambda x: safe_unicode(x).encode('utf-8'), r)
+                r = map(lambda x: safe_unicode(x), r)
                 writer.writerow(r)
         else:
            filename = "error.csv"

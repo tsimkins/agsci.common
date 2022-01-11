@@ -1175,4 +1175,4 @@ class ThemeJSView(BaseView):
 
         # Combine files and return
         _ = u"\n".join(data)
-        return _.encode('utf-8')
+        return _
