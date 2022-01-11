@@ -8,10 +8,7 @@ from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides, implementer
 from zope.publisher.interfaces import IPublishTraverse
 
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
+from io import BytesIO
 
 import base64
 import json
@@ -165,7 +162,7 @@ class CropImageView(BrowserView):
         except IndexError: # Error triggered by PIL and GIF
             return None
         else:
-            b64_image_data = base64.b64encode(cropped_image_data)
+            b64_image_data = base64.b64encode(cropped_image_data).decode()
             uri = "data:%s;base64,%s" % (content_type, b64_image_data)
             return uri
 
@@ -209,7 +206,7 @@ class CropImageView(BrowserView):
             x1 = x1 - 1
             y1 = y1 - 1
 
-            pil_image = Image.open(StringIO(image.data))
+            pil_image = Image.open(BytesIO(image.data))
 
             if self.preview or self.commit:
                 pil_image = pil_image.crop(new_coords)
@@ -220,7 +217,7 @@ class CropImageView(BrowserView):
                 preview.line([(x1,y1), (x0,y1)], fill="#FF8A00", width=3)
                 preview.line([(x0,y0), (x0,y1)], fill="#FF8A00", width=3)
 
-            img_buffer = StringIO()
+            img_buffer = BytesIO()
             image_format =  ILeadImageMarker(self.context).image_format
             pil_image.save(img_buffer, image_format, quality=90)
 
