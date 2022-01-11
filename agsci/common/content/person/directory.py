@@ -164,9 +164,9 @@ class PersonListing(Container):
 
             return []
 
-        _ = map(lambda x: x.getObject(), portal_catalog.searchResults(query))
-
-        return self.sort(_)
+        return self.sort(
+            [x.getObject() for x in portal_catalog.searchResults(query)]
+        )
 
 class PersonPublicationListing(PersonListing):
     pass
