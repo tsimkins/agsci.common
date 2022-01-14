@@ -73,9 +73,9 @@ for (_idx, _field) in degree_index_field:
 @indexer(IPerson)
 def PersonSortableTitle(context):
     try:
-        return context.getSortableName()
+        return ' '.join(context.getSortableName())
     except:
-        return ('Z', 'Z')
+        return ' '.join(('Z', 'Z'))
 
 provideAdapter(PersonSortableTitle, name='sortable_title')
 
@@ -83,7 +83,7 @@ provideAdapter(PersonSortableTitle, name='sortable_title')
 @indexer(IPerson)
 def PersonLastFirst(context):
     try:
-        return context.getLastFirstName()
+        return ' '.join(context.getLastFirstName())
     except:
         return ''
 
