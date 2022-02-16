@@ -33,6 +33,15 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Untagged News Feed -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="untagged-news-feed"
+        class=".news.UntaggedNewsFeedView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Site External Links -->
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
