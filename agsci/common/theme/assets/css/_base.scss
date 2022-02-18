@@ -1538,4 +1538,20 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
             @include body_font();
         }
     }
+
+    .form_container {
+        .form_question {
+
+            > label,
+            > fieldset > .form_label,
+            > fieldset > div > .form_label,
+            > fieldset > .form_label > p:first-child {
+                font-weight: bold;
+            }
+        }
+
+        .form_responses .form_response {
+            margin-left: 1.5rem;
+        }
+    }
 }

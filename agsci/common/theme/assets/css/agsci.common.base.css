@@ -2175,6 +2175,15 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
+#content-core .form_container .form_question > label,
+#content-core .form_container .form_question > fieldset > .form_label,
+#content-core .form_container .form_question > fieldset > div > .form_label,
+#content-core .form_container .form_question > fieldset > .form_label > p:first-child {
+  font-weight: bold;
+}
+#content-core .form_container .form_responses .form_response {
+  margin-left: 1.5rem;
+}
 
 .print-only-logo {
   display: none;
