@@ -37,13 +37,16 @@
                 <div class="col text-center">
 
                     <ul class="list-inline list-inline-contact mt-2"
-                        tal:define="first_line_contact_links view/first_line_contact_links|nothing"
+                        tal:define="first_line_contact_links view/first_line_contact_links|nothing;
+                        first_line_contact_links_items first_line_contact_links/items/item|nothing"
                         tal:condition="first_line_contact_links">
-                        <li class="li-separator">
+
+                        <li
+                            tal:attributes="class python: first_line_contact_links_items and 'li-separator' or ''">
                             University Park, PA 16802
                         </li>
 
-                        <tal:links tal:repeat="i first_line_contact_links/items/item|nothing">
+                        <tal:links tal:repeat="i first_line_contact_links_items">
                             <li tal:define="end repeat/i/end;
                                             klass python: (not end) and 'li-separator' or ''"
                                 tal:attributes="class klass">
