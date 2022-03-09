@@ -43,27 +43,9 @@
     </nav>
 
     <nav id="social">
-        <items>
-            <item>
-                <icon>fa-twitter-square</icon>
-                <title>Twitter</title>
-                <link>https://twitter.com/psuextension</link>
-            </item>
-            <item>
-                <icon>fa-youtube-square</icon>
-                <title>YouTube</title>
-                <link>https://www.youtube.com/channel/UCJBLYNMZSQQrotFPzrv6I7A</link>
-            </item>
-        </items>
     </nav>
 
     <nav id="links">
-        <items>
-            <item>
-                <title>Directory</title>
-                <link>https://extension.psu.edu/extension-directory</link>
-            </item>
-        </items>
     </nav>
 
     <nav id="footer">
