@@ -28,12 +28,37 @@
     </google-analytics>
 
     <nav id="contact">
+        <items>
+            <item>
+                <title>RULE1@psu.edu</title>
+                <link>mailto:RULE1@psu.edu</link>
+                <label>Email</label>
+            </item>
+            <item>
+                <title>814-863-4679</title>
+                <link>tel:+814-863-4679</link>
+                <label>Telephone</label>
+            </item>
+        </items>
     </nav>
 
     <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/theruleprogram/</link>
+            </item>
+        </items>
     </nav>
 
     <nav id="links">
+        <items>
+            <item>
+                <title>Contact Us</title>
+                <link>/programs/rule/contact</link>
+            </item>
+        </items>
     </nav>
 
     <nav id="footer">
