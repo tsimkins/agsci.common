@@ -19856,7 +19856,6 @@ body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.d
   }
 }
 body.navigation-extension-program {
-  /* H2 */
   /* Buttons */
   /* Links */
   /* Borders */
@@ -19894,9 +19893,6 @@ body.navigation-extension-program header li.nav-item .btn.btn-primary:hover, bod
 }
 body.navigation-extension-program header .department-bar a.department-brand {
   border-left-color: #757575;
-}
-body.navigation-extension-program h2::after, body.navigation-extension-program .h2::after {
-  border-bottom-color: #757575;
 }
 body.navigation-extension-program .btn.btn-primary {
   background-color: #757575;
