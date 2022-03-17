@@ -38,15 +38,16 @@ $display-line-height: 1.2 !default;
 }
 
 @mixin link_color() {
-    a, a:visited,
-    a:active,
+    a:not([class*="btn"]),
+    a:visited:not([class*="btn"]),
+    a:active:not([class*="btn"]),
     .a {
         @include link_style();
     }
 
-    a:hover,
+    a:hover:not([class*="btn"]),
     .a:hover,
-    a:focus,
+    a:focus:not([class*="btn"]),
     .a:focus {
         @include link_hover_style();
     }

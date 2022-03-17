@@ -1280,64 +1280,65 @@ body.template-image_view #content-core h5 .a:focus {
   color: #231e20 !important;
   border-bottom: none !important;
 }
-#parent-fieldname-text a, #parent-fieldname-text a:visited,
-#parent-fieldname-text a:active,
+#parent-fieldname-text a:not([class*=btn]),
+#parent-fieldname-text a:visited:not([class*=btn]),
+#parent-fieldname-text a:active:not([class*=btn]),
 #parent-fieldname-text .a,
-.html a,
-.html a:visited,
-.html a:active,
+.html a:not([class*=btn]),
+.html a:visited:not([class*=btn]),
+.html a:active:not([class*=btn]),
 .html .a,
-body.template-default_error_message #content-core a,
-body.template-default_error_message #content-core a:visited,
-body.template-default_error_message #content-core a:active,
+body.template-default_error_message #content-core a:not([class*=btn]),
+body.template-default_error_message #content-core a:visited:not([class*=btn]),
+body.template-default_error_message #content-core a:active:not([class*=btn]),
 body.template-default_error_message #content-core .a,
-body.template-fg_thankspage_view_p3 #content-core a,
-body.template-fg_thankspage_view_p3 #content-core a:visited,
-body.template-fg_thankspage_view_p3 #content-core a:active,
+body.template-fg_thankspage_view_p3 #content-core a:not([class*=btn]),
+body.template-fg_thankspage_view_p3 #content-core a:visited:not([class*=btn]),
+body.template-fg_thankspage_view_p3 #content-core a:active:not([class*=btn]),
 body.template-fg_thankspage_view_p3 #content-core .a,
-body.template-fg_base_view_p3 #content-core a,
-body.template-fg_base_view_p3 #content-core a:visited,
-body.template-fg_base_view_p3 #content-core a:active,
+body.template-fg_base_view_p3 #content-core a:not([class*=btn]),
+body.template-fg_base_view_p3 #content-core a:visited:not([class*=btn]),
+body.template-fg_base_view_p3 #content-core a:active:not([class*=btn]),
 body.template-fg_base_view_p3 #content-core .a,
-body.template-file_view #content-core a,
-body.template-file_view #content-core a:visited,
-body.template-file_view #content-core a:active,
+body.template-file_view #content-core a:not([class*=btn]),
+body.template-file_view #content-core a:visited:not([class*=btn]),
+body.template-file_view #content-core a:active:not([class*=btn]),
 body.template-file_view #content-core .a,
-body.template-image_view #content-core a,
-body.template-image_view #content-core a:visited,
-body.template-image_view #content-core a:active,
+body.template-image_view #content-core a:not([class*=btn]),
+body.template-image_view #content-core a:visited:not([class*=btn]),
+body.template-image_view #content-core a:active:not([class*=btn]),
 body.template-image_view #content-core .a {
   color: #4373B6 !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
-#parent-fieldname-text a:hover,
+#parent-fieldname-text a:hover:not([class*=btn]),
 #parent-fieldname-text .a:hover,
-#parent-fieldname-text a:focus,
+#parent-fieldname-text a:focus:not([class*=btn]),
 #parent-fieldname-text .a:focus,
-.html a:hover,
+.html a:hover:not([class*=btn]),
 .html .a:hover,
-.html a:focus,
+.html a:focus:not([class*=btn]),
 .html .a:focus,
-body.template-default_error_message #content-core a:hover,
+body.template-default_error_message #content-core a:hover:not([class*=btn]),
 body.template-default_error_message #content-core .a:hover,
-body.template-default_error_message #content-core a:focus,
+body.template-default_error_message #content-core a:focus:not([class*=btn]),
 body.template-default_error_message #content-core .a:focus,
-body.template-fg_thankspage_view_p3 #content-core a:hover,
+body.template-fg_thankspage_view_p3 #content-core a:hover:not([class*=btn]),
 body.template-fg_thankspage_view_p3 #content-core .a:hover,
-body.template-fg_thankspage_view_p3 #content-core a:focus,
+body.template-fg_thankspage_view_p3 #content-core a:focus:not([class*=btn]),
 body.template-fg_thankspage_view_p3 #content-core .a:focus,
-body.template-fg_base_view_p3 #content-core a:hover,
+body.template-fg_base_view_p3 #content-core a:hover:not([class*=btn]),
 body.template-fg_base_view_p3 #content-core .a:hover,
-body.template-fg_base_view_p3 #content-core a:focus,
+body.template-fg_base_view_p3 #content-core a:focus:not([class*=btn]),
 body.template-fg_base_view_p3 #content-core .a:focus,
-body.template-file_view #content-core a:hover,
+body.template-file_view #content-core a:hover:not([class*=btn]),
 body.template-file_view #content-core .a:hover,
-body.template-file_view #content-core a:focus,
+body.template-file_view #content-core a:focus:not([class*=btn]),
 body.template-file_view #content-core .a:focus,
-body.template-image_view #content-core a:hover,
+body.template-image_view #content-core a:hover:not([class*=btn]),
 body.template-image_view #content-core .a:hover,
-body.template-image_view #content-core a:focus,
+body.template-image_view #content-core a:focus:not([class*=btn]),
 body.template-image_view #content-core .a:focus {
   color: #093c79 !important;
   border-bottom: 1px solid #0078ab !important;
@@ -1741,16 +1742,17 @@ body.template-image_view #content-core a.state-published:focus {
   font-size: 1.25em;
   display: inline-block;
 }
-#content-core .entries .entry a, #content-core .entries .entry a:visited,
-#content-core .entries .entry a:active,
+#content-core .entries .entry a:not([class*=btn]),
+#content-core .entries .entry a:visited:not([class*=btn]),
+#content-core .entries .entry a:active:not([class*=btn]),
 #content-core .entries .entry .a {
   color: #4373B6 !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
-#content-core .entries .entry a:hover,
+#content-core .entries .entry a:hover:not([class*=btn]),
 #content-core .entries .entry .a:hover,
-#content-core .entries .entry a:focus,
+#content-core .entries .entry a:focus:not([class*=btn]),
 #content-core .entries .entry .a:focus {
   color: #093c79 !important;
   border-bottom: 1px solid #0078ab !important;
