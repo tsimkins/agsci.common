@@ -49,6 +49,14 @@
                     tal:condition="python:show_description and item_description"
                     tal:content="item_description" />
 
+                <tal:text
+                    tal:condition="context/aq_base/show_subfolder_text|nothing">
+                    <div
+                        tal:define="text obj/aq_base/text|nothing"
+                        tal:condition="text"
+                        tal:replace="structure python:obj.aq_base.text.output_relative_to(view.context)" />
+                </tal:text>
+
                 <tal:contents
                     tal:define="view nocall: obj/@@view;
                                 batch view/batch;">
