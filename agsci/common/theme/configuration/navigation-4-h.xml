@@ -142,6 +142,11 @@
                                     <description></description>
                                     <icon>fas fa-hands-helping</icon>
                                 </item>
+                                <item>
+                                    <title>Request information about 4-H</title>
+                                    <link>https://pennstate.qualtrics.com/jfe/form/SV_eVPJOPewb7ci4Jg</link>
+                                    <icon>fa-info-circle</icon>
+                                </item>
                             </items>
                         </item>
                     </group>
@@ -215,6 +220,11 @@
                                     <description></description>
                                     <icon>fas fa-hands-helping</icon>
                                 </item>
+                                <item>
+                                    <title>Request information about 4-H</title>
+                                    <link>https://pennstate.qualtrics.com/jfe/form/SV_eVPJOPewb7ci4Jg</link>
+                                    <icon>fa-info-circle</icon>
+                                </item>
                             </items>
                         </item>
                     </group>
@@ -276,6 +286,11 @@
                                     <title>Give to 4-H</title>
                                     <description></description>
                                     <icon>fas fa-hands-helping</icon>
+                                </item>
+                                <item>
+                                    <title>Request information about 4-H</title>
+                                    <link>https://pennstate.qualtrics.com/jfe/form/SV_eVPJOPewb7ci4Jg</link>
+                                    <icon>fa-info-circle</icon>
                                 </item>
                             </items>
                         </item>
@@ -350,6 +365,11 @@
                                     <title>Give to 4-H</title>
                                     <description></description>
                                     <icon>fas fa-hands-helping</icon>
+                                </item>
+                                <item>
+                                    <title>Request information about 4-H</title>
+                                    <link>https://pennstate.qualtrics.com/jfe/form/SV_eVPJOPewb7ci4Jg</link>
+                                    <icon>fa-info-circle</icon>
                                 </item>
                             </items>
                         </item>
