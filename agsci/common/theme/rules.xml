@@ -80,7 +80,7 @@
         <replace css:theme="#google-analytics-tagmanager">
 
             <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524345-2"></script>
+            <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-100524345-2"></script>
             <script>
             //<![CDATA[
               window.dataLayer = window.dataLayer || [];
