@@ -79,6 +79,21 @@
 
         <replace css:theme="#google-analytics-tagmanager">
 
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524345-2"></script>
+            <script>
+            //<![CDATA[
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'UA-100524345-2');
+
+              // extension.psu.edu Google Analytics 4 Tag
+              gtag('config', 'G-PEXHTKWVFE');
+            //]]>
+            </script>
+
             <script>
             //<![CDATA[
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
