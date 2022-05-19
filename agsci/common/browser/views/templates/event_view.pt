@@ -31,6 +31,20 @@
 
     </tal:redirect>
 
+    <tal:canceled
+        tal:define="event_canceled context/event_canceled|nothing;
+                    event_canceled_info context/event_canceled_info|nothing;"
+        tal:condition="event_canceled">
+        <div class="portalMessage warning mx-5 my-4">
+            <strong>Event Canceled</strong>
+
+            <div class="html"
+                tal:condition="event_canceled_info/output|nothing"
+                tal:content="structure event_canceled_info/output|nothing" />
+
+        </div>
+    </tal:canceled>
+
 </metal:status>
 
 <metal:content-core fill-slot="content-core">
