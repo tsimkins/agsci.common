@@ -15,7 +15,7 @@
     class="col-12 px-0 col-lg-12 col-xl-12 px-lg-3 pb-4 order-12 order-lg-1 facultyStaffDirectory">
 
     <div id="parent-fieldname-text"
-        tal:define="text context/text|nothing"
+        tal:define="text context/aq_base/text|nothing"
         tal:condition="text"
         tal:content="structure python:context.text.output_relative_to(view.context)" />
 

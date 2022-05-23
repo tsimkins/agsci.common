@@ -11,7 +11,7 @@
 <metal:block define-macro="content-core">
 
   <div id="parent-fieldname-text"
-       tal:define="text context/text|nothing"
+       tal:define="text context/aq_base/text|nothing"
        tal:condition="text"
        tal:content="structure python:context.text.output_relative_to(view.context)" />
 
