@@ -49,11 +49,15 @@
             <dc:date tal:content="item/published/HTML4|item/modified/HTML4">Published or last modified date if no published date</dc:date>
         </tal:notEvent>
         <tal:event
-            condition="python:item_type in ['Event',]">
+            tal:condition="python:item_type in ['Event',]">
             <dc:date
                 tal:define="start_date item/start_date|nothing"
                 tal:condition="start_date"
                 tal:content="start_date/HTML4">Event Start Date</dc:date>
+            <dc:location
+                tal:define="location item/context/location|nothing"
+                tal:condition="location"
+                tal:content="location" />
         </tal:event>
     </tal:date>
     <dc:type tal:content="item/context/portal_type">Type</dc:type>
