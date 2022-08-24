@@ -101,11 +101,18 @@
 
                                         </div>
 
-                                        <div class="col-12 pl-0 html mt-3"
-                                             tal:define="short_bio context/short_bio/output|nothing;
-                                                         show_short_bio view/show_short_bio|nothing;"
-                                             tal:condition="python: show_short_bio and short_bio"
-                                             tal:content="structure short_bio" />
+                                        <tal:short-bio
+                                            tal:define="show_short_bio view/show_short_bio|nothing;"
+                                            tal:condition="show_short_bio">
+
+                                            <div class="col-12 pl-0 html mt-3"
+                                                 tal:define="short_bio context/short_bio/output|nothing;"
+                                                 tal:condition="short_bio"
+                                                 tal:content="structure short_bio" />
+
+                                        </tal:short-bio>
+
+
 
                                     </div>
                                 </div>
