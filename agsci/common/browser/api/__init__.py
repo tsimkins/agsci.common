@@ -94,7 +94,8 @@ class CustomEncoder(JSONEncoder):
 
                 return {
                     'html' : repr(soup),
-                    'text' : self.html_to_text(html).strip()
+                    'text' : self.html_to_text(html).strip(),
+                    'output' : o.output
                 }
 
         return json.JSONEncoder.default(self, o)
