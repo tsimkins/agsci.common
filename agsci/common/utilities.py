@@ -515,7 +515,11 @@ def setSiteURL(site, domain=None, path='', https=True, edit=False):
     if not path:
         path = {
             'private-internal' : '/inside',
-            '4-h' : '/plone5/4-h',
+            '4-h' : '/programs/4-h',
+            'nutrient-management' : '/programs/nutrient-management',
+            'rule' : '/programs/rule',
+            'mwon' : '/programs/mwon',
+            'watershed-stewards' : '/programs/watershed-stewards',
         }.get(site.getId(), path)
 
     if path and not path.startswith('/'):

@@ -1,6 +1,14 @@
 <div class="event summary details html">
 {% set obj = item.getObject() %}
 {% set location = obj.location %}
+{% set event_canceled = obj.event_canceled %}
+
+{% if event_canceled %}
+    <div class="portalMessage warning mx-1 my-3">
+        <strong>Event Canceled</strong>
+    </div>
+{% endif %}
+
 <p><strong>When</strong>
 {{ view.get_event_date_range(obj) }}
 

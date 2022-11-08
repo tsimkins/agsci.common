@@ -31,6 +31,10 @@
                                 <link>students/careers</link>
                             </item>
                             <item>
+                                <title>Commencement Ceremonies</title>
+                                <link>students/commencement</link>
+                            </item>
+                            <item>
                                 <title>Clubs and Organizations</title>
                                 <link>students/clubs</link>
                             </item>
@@ -397,6 +401,10 @@
                             <title>Research Impacts</title>
                         </item>
                         <item>
+                            <link>research/awards</link>
+                            <title>Research Awards</title>
+                        </item>
+                        <item>
                             <link>research/aes</link>
                             <title>Agricultural Experiment Station</title>
                         </item>
@@ -514,6 +522,10 @@
                         <item>
                             <title>Mission and Strategic Plan</title>
                             <link>diversity/framework</link>
+                        </item>
+                        <item>
+                            <title>Rainbow Ag Network</title>
+                            <link>diversity/rainbow-ag-network</link>
                         </item>
                         <item>
                             <title>Articles of Interest</title>

@@ -91,6 +91,7 @@ class IFolderFields(model.Schema):
             'show_description',
             'show_image',
             'search_section',
+            'show_subfolder_text',
         ],
     )
 
@@ -118,6 +119,13 @@ class IFolderFields(model.Schema):
     search_section = schema.Bool(
         title=_(u"Search section"),
         description=_(u"This defaults the search to searching this section rather than site-wide."),
+        required=False,
+        default=False,
+    )
+
+    show_subfolder_text = schema.Bool(
+        title=_(u"Show text of folders in Subfolder View"),
+        description=_(u""),
         required=False,
         default=False,
     )

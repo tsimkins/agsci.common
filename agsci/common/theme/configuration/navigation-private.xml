@@ -74,6 +74,14 @@
                 <link>knowledgebase</link>
                 <items>
                     <item>
+                        <title>Ag Sciences Global</title>
+                        <link>knowledgebase/global</link>
+                    </item>
+                    <item>
+                        <title>Civil Rights Compliance</title>
+                        <link>knowledgebase/civil-rights-compliance</link>
+                    </item>
+                    <item>
                         <title>HR Information for Faculty</title>
                         <link>knowledgebase/faculty</link>
                     </item>
@@ -84,10 +92,6 @@
                     <item>
                         <title>Information Technologies</title>
                         <link>https://agsci.psu.edu/it/how-to</link>
-                    </item>
-                    <item>
-                        <title>International Programs</title>
-                        <link>knowledgebase/international-faculty</link>
                     </item>
                     <item>
                         <title>Marketing and Communications</title>

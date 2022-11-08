@@ -56,7 +56,8 @@
                                                 facebook_url context/facebook_url|nothing;
                                                 youtube_url context/youtube_url|nothing;
                                                 instagram_url context/instagram_url|nothing;
-                                                linkedin_url context/linkedin_url|nothing;">
+                                                linkedin_url context/linkedin_url|nothing;
+                                                newsletter_url context/newsletter_url|nothing;">
 
                                     <metal:social-media
                                         metal:use-macro="context/social-media/macros/social-media" />

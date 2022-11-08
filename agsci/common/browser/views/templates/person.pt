@@ -244,8 +244,14 @@
 
                 <ul tal:condition="i/value">
                     <li tal:repeat="j i/value">
-                        <a tal:attributes="href j/url|nothing"
-                            tal:content="j/title|j/url|nothing" />
+                        <a tal:attributes="href j/url|nothing">
+
+                            <span tal:replace="j/title|nothing"
+                                tal:condition="j/title|nothing" />
+
+                            <span tal:replace="j/url|nothing"
+                                tal:condition="not: j/title|nothing" />
+                        </a>
                     </li>
                 </ul>
 

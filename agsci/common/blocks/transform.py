@@ -21,6 +21,7 @@ class BlockTransformer(object):
         'psu.mediaspace.kaltura.com',
         'cdnapisec.kaltura.com',
         'videoplayer.telvue.com',
+        'app.powerbi.com',
     ]
 
     iframe_classes = {
@@ -30,6 +31,7 @@ class BlockTransformer(object):
         'psu.mediaspace.kaltura.com' : 'aspect-kaltura',
         'cdnapisec.kaltura.com' : 'aspect-kaltura',
         'videoplayer.telvue.com' : 'aspect-16-9',
+        'app.powerbi.com' : 'aspect-4-3',
     }
 
     def __init__(self, context):

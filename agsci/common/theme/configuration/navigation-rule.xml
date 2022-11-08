@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RULE Navigation -->
+
+<config>
+
+    <type>
+        none
+    </type>
+
+    <header>
+        department
+    </header>
+
+    <navigation-theme>
+        extension-program
+    </navigation-theme>
+
+    <logo>
+        extension
+    </logo>
+
+    <footer-logo>
+        extension
+    </footer-logo>
+
+    <google-analytics>
+        extension
+    </google-analytics>
+
+    <nav id="contact">
+        <items>
+            <item>
+                <title>RULE1@psu.edu</title>
+                <link>mailto:RULE1@psu.edu</link>
+                <label>Email</label>
+            </item>
+            <item>
+                <title>814-863-4679</title>
+                <link>tel:+814-863-4679</link>
+                <label>Telephone</label>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/theruleprogram/</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="links">
+        <items>
+            <item>
+                <title>Contact Us</title>
+                <link>/programs/rule/contact</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="footer">
+        <items>
+            <item>
+                <title>Privacy and Legal Statements</title>
+                <link>//www.psu.edu/legal-statements</link>
+            </item>
+            <item>
+                <title>Accessibility</title>
+                <link>//agsci.psu.edu/accessibility</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="primary">
+    </nav>
+
+</config>

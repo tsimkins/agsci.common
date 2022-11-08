@@ -38,15 +38,16 @@ $display-line-height: 1.2 !default;
 }
 
 @mixin link_color() {
-    a, a:visited,
-    a:active,
+    a:not([class*="btn"]),
+    a:visited:not([class*="btn"]),
+    a:active:not([class*="btn"]),
     .a {
         @include link_style();
     }
 
-    a:hover,
+    a:hover:not([class*="btn"]),
     .a:hover,
-    a:focus,
+    a:focus:not([class*="btn"]),
     .a:focus {
         @include link_hover_style();
     }
@@ -1578,4 +1579,21 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
 .contenttype-easyform.contenttype-easyform::before {
     content: "";
     top: 0;
+=======
+
+    .form_container {
+        .form_question {
+
+            > label,
+            > fieldset > .form_label,
+            > fieldset > div > .form_label,
+            > fieldset > .form_label > p:first-child {
+                font-weight: bold;
+            }
+        }
+
+        .form_responses .form_response {
+            margin-left: 1.5rem;
+        }
+    }
 }

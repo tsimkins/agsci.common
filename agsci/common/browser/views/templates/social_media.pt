@@ -11,14 +11,15 @@
                     facebook_url string:https://www.facebook.com;
                     youtube_url string:https://www.youtube.com;
                     instagram_url string:https://www.instagram.com;
-                    linkedin_url string:https://www.linkedin.com;">
+                    linkedin_url string:https://www.linkedin.com;
+                    newsletter_url string:https://www.psu.edu/news;">
 
 
             <metal:social-media
                 metal:define-macro="social-media">
 
                 <ul class="list-inline list-inline-social"
-                    tal:define="social_media python: any([twitter_url, facebook_url, youtube_url, instagram_url, linkedin_url]);"
+                    tal:define="social_media python: any([twitter_url, facebook_url, youtube_url, instagram_url, linkedin_url, newsletter_url]);"
                     tal:condition="social_media">
 
                     <li tal:condition="facebook_url">
