@@ -1948,16 +1948,31 @@ body.template-content_check_items .contenttype-event .event.summary {
   margin-bottom: 0.375em;
 }
 
-body.portaltype-formfolder .pfg-form {
+body.portaltype-formfolder .pfg-form, body.portaltype-formfolder .easyformForm,
+body.portaltype-easyform .pfg-form,
+body.portaltype-easyform .easyformForm {
   width: 100%;
   padding: 0;
   background: transparent;
 }
-body.portaltype-formfolder .pfg-form fieldset {
+body.portaltype-formfolder .pfg-form fieldset, body.portaltype-formfolder .easyformForm fieldset,
+body.portaltype-easyform .pfg-form fieldset,
+body.portaltype-easyform .easyformForm fieldset {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
   background-color: #F9F9F9;
   padding: 0.5rem 1rem 1rem;
+  border: 1px solid #CCCCCC;
+  margin: 1rem 0;
 }
-body.portaltype-formfolder .pfg-form legend {
+body.portaltype-formfolder .pfg-form fieldset li, body.portaltype-formfolder .easyformForm fieldset li,
+body.portaltype-easyform .pfg-form fieldset li,
+body.portaltype-easyform .easyformForm fieldset li {
+  margin: 0.375rem 0;
+}
+body.portaltype-formfolder .pfg-form legend, body.portaltype-formfolder .easyformForm legend,
+body.portaltype-easyform .pfg-form legend,
+body.portaltype-easyform .easyformForm legend {
   margin: 0;
   float: none;
   background: #EEEEEE;
@@ -1965,27 +1980,42 @@ body.portaltype-formfolder .pfg-form legend {
   padding: 0.25rem;
   width: auto;
 }
-body.portaltype-formfolder .pfg-form .field {
+body.portaltype-formfolder .pfg-form .field, body.portaltype-formfolder .easyformForm .field,
+body.portaltype-easyform .pfg-form .field,
+body.portaltype-easyform .easyformForm .field {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+  width: 100%;
   padding: 0 1rem;
   margin: 1rem 0;
 }
-body.portaltype-formfolder .pfg-form .field label {
+body.portaltype-formfolder .pfg-form .field label, body.portaltype-formfolder .easyformForm .field label,
+body.portaltype-easyform .pfg-form .field label,
+body.portaltype-easyform .easyformForm .field label {
   margin-top: 0;
 }
-body.portaltype-formfolder .pfg-form .field.error {
+body.portaltype-formfolder .pfg-form .field.error, body.portaltype-formfolder .easyformForm .field.error,
+body.portaltype-easyform .pfg-form .field.error,
+body.portaltype-easyform .easyformForm .field.error {
   padding: 1rem;
   background-color: #ffddcc;
   border: 1px #ff0000 solid;
 }
-body.portaltype-formfolder .pfg-form .field.error .formHelp {
+body.portaltype-formfolder .pfg-form .field.error .formHelp, body.portaltype-formfolder .easyformForm .field.error .formHelp,
+body.portaltype-easyform .pfg-form .field.error .formHelp,
+body.portaltype-easyform .easyformForm .field.error .formHelp {
   color: #3B3B3B;
 }
-body.portaltype-formfolder .pfg-form .fieldErrorBox {
+body.portaltype-formfolder .pfg-form .fieldErrorBox, body.portaltype-formfolder .easyformForm .fieldErrorBox,
+body.portaltype-easyform .pfg-form .fieldErrorBox,
+body.portaltype-easyform .easyformForm .fieldErrorBox {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   margin: 0.375em 0;
 }
-body.portaltype-formfolder .pfg-form .formHelp {
+body.portaltype-formfolder .pfg-form .formHelp, body.portaltype-formfolder .easyformForm .formHelp,
+body.portaltype-easyform .pfg-form .formHelp,
+body.portaltype-easyform .easyformForm .formHelp {
   font-style: normal;
   display: block;
   font-size: 0.875em;
@@ -1993,46 +2023,97 @@ body.portaltype-formfolder .pfg-form .formHelp {
   color: #525252;
   margin-top: 0.25rem;
 }
-body.portaltype-formfolder .pfg-form label, body.portaltype-formfolder .pfg-form .label, body.portaltype-formfolder .pfg-form label.formQuestion {
+body.portaltype-formfolder .pfg-form label, body.portaltype-formfolder .pfg-form .label, body.portaltype-formfolder .pfg-form label.formQuestion, body.portaltype-formfolder .easyformForm label, body.portaltype-formfolder .easyformForm .label, body.portaltype-formfolder .easyformForm label.formQuestion,
+body.portaltype-easyform .pfg-form label,
+body.portaltype-easyform .pfg-form .label,
+body.portaltype-easyform .pfg-form label.formQuestion,
+body.portaltype-easyform .easyformForm label,
+body.portaltype-easyform .easyformForm .label,
+body.portaltype-easyform .easyformForm label.formQuestion {
   display: block;
   color: #000000;
   font-weight: 600;
   line-height: 1.25;
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
-  font-size: 1rem;
+}
+body.portaltype-formfolder .pfg-form label li, body.portaltype-formfolder .pfg-form .label li, body.portaltype-formfolder .pfg-form label.formQuestion li, body.portaltype-formfolder .easyformForm label li, body.portaltype-formfolder .easyformForm .label li, body.portaltype-formfolder .easyformForm label.formQuestion li,
+body.portaltype-easyform .pfg-form label li,
+body.portaltype-easyform .pfg-form .label li,
+body.portaltype-easyform .pfg-form label.formQuestion li,
+body.portaltype-easyform .easyformForm label li,
+body.portaltype-easyform .easyformForm .label li,
+body.portaltype-easyform .easyformForm label.formQuestion li {
+  line-height: 1.5rem;
+}
+body.portaltype-formfolder .pfg-form span.option, body.portaltype-formfolder .easyformForm span.option,
+body.portaltype-easyform .pfg-form span.option,
+body.portaltype-easyform .easyformForm span.option {
+  display: block;
+  margin: 1rem 0;
+}
+body.portaltype-formfolder .pfg-form span.option label,
+body.portaltype-formfolder .pfg-form span.option .label, body.portaltype-formfolder .easyformForm span.option label,
+body.portaltype-formfolder .easyformForm span.option .label,
+body.portaltype-easyform .pfg-form span.option label,
+body.portaltype-easyform .pfg-form span.option .label,
+body.portaltype-easyform .easyformForm span.option label,
+body.portaltype-easyform .easyformForm span.option .label {
+  display: inline;
 }
 body.portaltype-formfolder .pfg-form input[type=text],
-body.portaltype-formfolder .pfg-form textarea {
+body.portaltype-formfolder .pfg-form textarea, body.portaltype-formfolder .easyformForm input[type=text],
+body.portaltype-formfolder .easyformForm textarea,
+body.portaltype-easyform .pfg-form input[type=text],
+body.portaltype-easyform .pfg-form textarea,
+body.portaltype-easyform .easyformForm input[type=text],
+body.portaltype-easyform .easyformForm textarea {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
-body.portaltype-formfolder .pfg-form .field {
+body.portaltype-formfolder .pfg-form textarea.textarea-widget, body.portaltype-formfolder .easyformForm textarea.textarea-widget,
+body.portaltype-easyform .pfg-form textarea.textarea-widget,
+body.portaltype-easyform .easyformForm textarea.textarea-widget {
   width: 100%;
+  min-height: 8em;
 }
-body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue {
+body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue, body.portaltype-formfolder .easyformForm .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue,
+body.portaltype-easyform .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue,
+body.portaltype-easyform .easyformForm .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue {
   margin-bottom: 0.375rem;
 }
-body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label {
+body.portaltype-formfolder .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label, body.portaltype-formfolder .easyformForm .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label,
+body.portaltype-easyform .pfg-form .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label,
+body.portaltype-easyform .easyformForm .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue label {
   font-weight: normal;
   display: inline;
   font-size: 0.9rem;
 }
-body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget span > label {
+body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget span > label, body.portaltype-formfolder .easyformForm .field.ArchetypesSelectionWidget span > label,
+body.portaltype-easyform .pfg-form .field.ArchetypesSelectionWidget span > label,
+body.portaltype-easyform .easyformForm .field.ArchetypesSelectionWidget span > label {
   font-weight: normal;
   display: inline;
 }
-body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget input[type=radio] {
+body.portaltype-formfolder .pfg-form .field.ArchetypesSelectionWidget input[type=radio], body.portaltype-formfolder .easyformForm .field.ArchetypesSelectionWidget input[type=radio],
+body.portaltype-easyform .pfg-form .field.ArchetypesSelectionWidget input[type=radio],
+body.portaltype-easyform .easyformForm .field.ArchetypesSelectionWidget input[type=radio] {
   margin: 0 0.25rem 0 1rem;
 }
-body.portaltype-formfolder .pfg-form .field.ArchetypesBooleanWidget label {
+body.portaltype-formfolder .pfg-form .field.ArchetypesBooleanWidget label, body.portaltype-formfolder .easyformForm .field.ArchetypesBooleanWidget label,
+body.portaltype-easyform .pfg-form .field.ArchetypesBooleanWidget label,
+body.portaltype-easyform .easyformForm .field.ArchetypesBooleanWidget label {
   display: inline;
   font-size: 0.9375rem;
 }
-body.portaltype-formfolder .pfg-form .formControls {
+body.portaltype-formfolder .pfg-form .formControls, body.portaltype-formfolder .easyformForm .formControls,
+body.portaltype-easyform .pfg-form .formControls,
+body.portaltype-easyform .easyformForm .formControls {
   margin: 1em 0;
 }
-body.portaltype-formfolder .pfg-form .formControls input[type=submit] {
+body.portaltype-formfolder .pfg-form .formControls input[type=submit], body.portaltype-formfolder .easyformForm .formControls input[type=submit],
+body.portaltype-easyform .pfg-form .formControls input[type=submit],
+body.portaltype-easyform .easyformForm .formControls input[type=submit] {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
@@ -2182,6 +2263,12 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
 .pattern-relateditems-item .pattern-relateditems-item-title,
 .pattern-relateditems-item .pattern-relateditems-result-title {
   font-size: 1rem;
+}
+
+/* Remove icon from easyform */
+.contenttype-easyform.contenttype-easyform::before {
+  content: "";
+  top: 0;
 }
 
 .print-only-logo {

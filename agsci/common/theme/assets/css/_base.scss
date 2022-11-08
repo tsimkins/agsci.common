@@ -1224,15 +1224,23 @@ body.template-content_check_items {
     }
 }
 
-body.portaltype-formfolder {
-    .pfg-form {
+body.portaltype-formfolder,
+body.portaltype-easyform {
+    .pfg-form, .easyformForm {
         width: 100%;
         padding: 0;
         background: transparent;
 
         fieldset {
+            @include body_font();
             background-color: #F9F9F9;
             padding: 0.5rem 1rem 1rem;
+            border: 1px solid #CCCCCC;
+            margin: 1rem 0;
+            
+            li {
+                margin: 0.375rem 0;
+            }
         }
 
         legend {
@@ -1245,6 +1253,8 @@ body.portaltype-formfolder {
         }
 
         .field {
+            @include body_font();
+            width: 100%;
             padding: 0 1rem;
             margin: 1rem 0;
 
@@ -1283,16 +1293,30 @@ body.portaltype-formfolder {
             font-weight: 600;
             line-height: 1.25;
             @include body_font();
-            font-size: 1rem;
+
+            li {
+                line-height: 1.5rem;
+            }
+        }
+
+        span.option {
+            display: block;
+            margin: 1rem 0;
+
+            label,
+            .label {
+                display: inline;
+            }
         }
 
         input[type="text"],
         textarea {
             @include body_font();
         }
-
-        .field {
+        
+        textarea.textarea-widget {
             width: 100%;
+            min-height: 8em;
         }
 
         .field.ArchetypesMultiSelectionWidget .ArchetypesMultiSelectionValue {
@@ -1548,4 +1572,10 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
     .pattern-relateditems-result-title {
         font-size: 1rem;
     }
+}
+
+/* Remove icon from easyform */
+.contenttype-easyform.contenttype-easyform::before {
+    content: "";
+    top: 0;
 }
