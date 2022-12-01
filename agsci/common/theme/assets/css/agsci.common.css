@@ -11033,11 +11033,6 @@ body.header-college-level header {
   position: fixed;
   background-color: #001E44;
 }
-@media (min-width: 992px) {
-  body.header-college-level header {
-    position: relative;
-  }
-}
 
 header.affix {
   position: fixed;
