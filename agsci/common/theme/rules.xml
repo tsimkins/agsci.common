@@ -185,6 +185,9 @@
 
         <theme href="theme.html" />
 
+        <!-- Drop alert bar -->
+        <drop css:theme="body > .alert-bar" />
+
         <notheme css:if-not-content="#visual-portal-wrapper" />
 
         <!-- Drop Contributors div since that's now a feature -->
