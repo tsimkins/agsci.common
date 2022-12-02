@@ -324,6 +324,14 @@
                             <link>news</link>
                         </item>
                         <item>
+                            <title>Careers</title>
+                            <link>https://extension.psu.edu/careers</link>
+                        </item>
+                        <item>
+                            <title>County Programs</title>
+                            <link>counties</link>
+                        </item>
+                        <item>
                             <title>Contact Us</title>
                             <link>contact</link>
                         </item>
