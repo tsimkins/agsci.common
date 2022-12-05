@@ -221,7 +221,8 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                                 DateTime("%s 00:00:00 US/Eastern" % _['published_on'])
                             )
                         except:
-                            published_on = None
+                            # Skip pubs with date errors
+                            continue
 
                         abstract = _.get('abstract', None)
 
