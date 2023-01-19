@@ -42,6 +42,20 @@
     <!-- Google Analytics (College vs. Extension) -->
     <rules css:if-content="body.ga-college">
 
+        <replace css:theme="#inspectlet">
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                window.__insp = window.__insp || [];
+                __insp.push(['wid', 36844640]);
+                var ldinsp = function(){
+                if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=36844640&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+                setTimeout(ldinsp, 0);
+                })();
+            //]]>
+            </script>
+        </replace>
+
         <replace css:theme="#google-analytics-tagmanager">
 
             <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -76,6 +90,20 @@
     </rules>
 
     <rules css:if-content="body.ga-extension">
+
+        <replace css:theme="#inspectlet">
+            <script type="text/javascript">
+            //<![CDATA[
+                (function() {
+                window.__insp = window.__insp || [];
+                __insp.push(['wid', 2107669892]);
+                var ldinsp = function(){
+                if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=2107669892&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+                setTimeout(ldinsp, 0);
+                })();
+            //]]>
+            </script>
+        </replace>
 
         <replace css:theme="#google-analytics-tagmanager">
 
