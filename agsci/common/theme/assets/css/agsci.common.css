@@ -20002,11 +20002,6 @@ body.navigation-extension-program .department-dropdowns .dropdown-toggle:hover {
     border-top-color: #757575;
   }
 }
-/*
-Header #1e407c
-Menu #007DB3
-Menu Highlights #009cde
-*/
 body.department-private {
   /* H2 */
   /* Buttons */
@@ -20130,39 +20125,44 @@ body.department-private li.li-separator::after {
 }
 
 @media (min-width: 992px) {
-  body.department-4-h .department-bar a.department-brand {
+  body.department-private .department-bar a.department-brand {
     border-left-color: #007db3;
   }
-  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
+  body.department-private .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
     color: #ffffff;
   }
-  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
+  body.department-private .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
     color: #ffffff;
   }
-  body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
-body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
+  body.department-private .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
+body.department-private .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
     border-bottom-color: #2855a5;
     background-color: #007db3;
   }
 }
 @media (max-width: 991.98px) {
-  body.department-4-h header .navbar.college-level .cta i {
+  body.department-private header .navbar.college-level .cta i {
     color: #ffffff;
   }
-  body.department-4-h header .navbar.college-level .navbar-collapse {
+  body.department-private header .navbar.college-level .navbar-collapse {
     margin-top: 0;
   }
-  body.department-4-h header .navbar.college-level .navbar-collapse .dropdown > .nav-link.dropdown-toggle {
+  body.department-private header .navbar.college-level .navbar-collapse .dropdown > .nav-link.dropdown-toggle {
     color: #ffffff;
   }
-  body.department-4-h header .navbar.college-level .dropdown-menu {
+  body.department-private header .navbar.college-level .dropdown-menu {
     background-color: transparent !important;
   }
-  body.department-4-h header .navbar.college-level .dropdown-menu a {
+  body.department-private header .navbar.college-level .dropdown-menu a {
     color: #ffffff;
   }
-  body.department-4-h header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
+  body.department-private header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
     border-bottom-color: #2855a5;
+  }
+  body.department-private .navbar .department-dropdowns a,
+body.department-private .navbar .department-dropdowns a.nav-link:hover,
+body.department-private .navbar .department-dropdowns a.nav-link:focus {
+    color: #ffffff;
   }
 }
 /* Special case for handling nav portlet inside Mosaic homepage */
