@@ -20002,6 +20002,169 @@ body.navigation-extension-program .department-dropdowns .dropdown-toggle:hover {
     border-top-color: #757575;
   }
 }
+/*
+Header #1e407c
+Menu #007DB3
+Menu Highlights #009cde
+*/
+body.department-private {
+  /* H2 */
+  /* Buttons */
+  /* Links */
+  /* Borders */
+  /* ----------------------------------------------------------
+
+  OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+  ---------------------------------------------------------- */
+  /* SideNav
+  --------------------------------------------- */
+  /* dropdown level 2 */
+}
+body.department-private ul.dept-level-college-options {
+  background-color: #1e407c;
+}
+body.department-private .department-bar a.department-brand {
+  border-left-color: #009cde;
+}
+body.department-private .department-dropdowns .dropdown-toggle:focus,
+body.department-private .department-dropdowns .dropdown-toggle:hover {
+  border-top-color: #009cde;
+}
+body.department-private header {
+  background-color: #1e407c;
+}
+body.department-private header .navbar {
+  background-color: #007db3;
+}
+body.department-private header .navbar .navbar-collapse {
+  background-color: #007db3;
+}
+body.department-private header .navbar .cta i {
+  color: #007db3;
+}
+body.department-private header li.nav-item .btn.btn-primary {
+  background-color: #009cde;
+  border-color: #009cde;
+}
+body.department-private header li.nav-item .btn.btn-primary:hover, body.department-private header li.nav-item .btn.btn-primary:focus {
+  background-color: #009cde;
+}
+body.department-private h2::after, body.department-private .h2::after {
+  border-bottom-color: #007db3;
+}
+body.department-private .btn.btn-primary {
+  background-color: #007db3;
+  border-color: #007db3;
+}
+body.department-private .btn.btn-primary:hover, body.department-private .btn.btn-primary:focus {
+  background-color: #2855a5;
+}
+body.department-private .btn.btn-creek {
+  background: #007db3;
+}
+body.department-private .btn.btn-creek:hover,
+body.department-private .btn.btn-creek:focus {
+  background: #142b53;
+}
+body.department-private button.btn-link,
+body.department-private .btn-link a,
+body.department-private a.btn-link,
+body.department-private a.card .btn-link {
+  color: #142b53;
+}
+body.department-private .border-bottom {
+  border-bottom-color: #2855a5 !important;
+}
+body.department-private .border-top {
+  border-top-color: #2855a5 !important;
+}
+body.department-private .offset-content a:not(.btn),
+body.department-private .offset-content a:visited:not(.btn) {
+  border-bottom: #142b53;
+}
+body.department-private .offset-content a:not(.btn):hover, body.department-private .offset-content a:not(.btn):focus,
+body.department-private .offset-content a:visited:not(.btn):hover,
+body.department-private .offset-content a:visited:not(.btn):focus {
+  border-bottom: 1px solid #007db3;
+  color: #231e20;
+}
+body.department-private section.offset-previews .container-fluid:nth-of-type(even) .row,
+body.department-private section.offset-previews .container:nth-of-type(even) .row {
+  background: #007db3;
+}
+body.department-private .home .jumbotron blockquote.home-quote strong {
+  color: #2855a5;
+}
+body.department-private .home .jumbotron blockquote.home-quote .fas {
+  color: #007db3;
+}
+body.department-private .side-nav p a {
+  color: #ffffff;
+  background-color: #2855a5;
+}
+body.department-private .side-nav li.section-level-1.navTreeCurrentNode > a {
+  border-left: 0.5rem solid #007db3;
+}
+body.department-private .side-nav a:hover, body.department-private .side-nav a:focus {
+  border-left-color: #007db3;
+}
+body.department-private .navbar.collapsing-sidenav ul.navTreeLevel1 li a.navTreeCurrentNode::before {
+  color: #007db3;
+}
+body.department-private .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 li a.navTreeCurrentNode {
+  border-left-color: #007db3;
+}
+body.department-private .side-nav .dropdown [data-toggle=collapse] i {
+  color: #007db3;
+}
+body.department-private .side-nav .dropdown [data-toggle=collapse]:hover i, body.department-private .side-nav .dropdown [data-toggle=collapse]:focus i {
+  color: #2855a5;
+}
+body.department-private .side-nav .dropdown .dropdown-menu a:hover,
+body.department-private .side-nav .dropdown .dropdown-menu a:focus {
+  border-bottom: 1px solid #007db3;
+}
+body.department-private li.li-separator::after {
+  color: #007db3;
+}
+
+@media (min-width: 992px) {
+  body.department-4-h .department-bar a.department-brand {
+    border-left-color: #007db3;
+  }
+  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown > .nav-link.dropdown-toggle {
+    color: #ffffff;
+  }
+  body.department-4-h .navbar-expand-lg .navbar-nav > .dropdown.show > .nav-link.dropdown-toggle {
+    color: #ffffff;
+  }
+  body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link[aria-expanded=true],
+body.department-4-h .navbar-expand-lg .navbar-nav.dropdown-selectors .nav-link.dropdown-toggle:focus {
+    border-bottom-color: #2855a5;
+    background-color: #007db3;
+  }
+}
+@media (max-width: 991.98px) {
+  body.department-4-h header .navbar.college-level .cta i {
+    color: #ffffff;
+  }
+  body.department-4-h header .navbar.college-level .navbar-collapse {
+    margin-top: 0;
+  }
+  body.department-4-h header .navbar.college-level .navbar-collapse .dropdown > .nav-link.dropdown-toggle {
+    color: #ffffff;
+  }
+  body.department-4-h header .navbar.college-level .dropdown-menu {
+    background-color: transparent !important;
+  }
+  body.department-4-h header .navbar.college-level .dropdown-menu a {
+    color: #ffffff;
+  }
+  body.department-4-h header .navbar.college-level .navbar-nav.dropdown-selectors li.dropdown {
+    border-bottom-color: #2855a5;
+  }
+}
 /* Special case for handling nav portlet inside Mosaic homepage */
 .mosaic-navigation {
   width: 100%;
