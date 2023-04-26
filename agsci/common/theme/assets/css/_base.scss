@@ -1555,4 +1555,13 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
             margin-left: 1.5rem;
         }
     }
+
+    .entries.inline-items {
+        .card {
+            .description {
+                color: #212529 !important;
+            }
+            border-bottom: none !important;
+        }
+    }
 }

@@ -19500,6 +19500,12 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
 #content-core .form_container .form_responses .form_response {
   margin-left: 1.5rem;
 }
+#content-core .entries.inline-items .card {
+  border-bottom: none !important;
+}
+#content-core .entries.inline-items .card .description {
+  color: #212529 !important;
+}
 
 .alert.status,
 .portalMessage {

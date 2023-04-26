@@ -1,0 +1,48 @@
+<div class="entries container inline-items my-3 px-2 px-md-0">
+
+    {% for o in view.items(uid=uid) %}
+        <a
+            href="{{ o.absolute_url() }}"
+            class="card border-0">
+
+            <div class="entry container mx-0 mb-4">
+
+                <div class="row align-items-stretch">
+
+                    <div class="col-12 order-sm-1 order-2 mt-0 px-0 col-sm-6  col-md-8 col-xl-9">
+
+                        <div class="a px-0 pb-1 mb-1 summary">
+                            {{ o.Title() }}
+                        </div>
+
+                        {% if o.Type() in ('News Item',) %}
+
+                            <p class="discreet mb-1">
+                                {{ o.effective().strftime('%B %d, %Y') }}
+                            </p>
+
+                        {% endif %}
+
+                        {% if o.Description() %}
+
+                            <p class="description mb-1">
+                                {{ o.Description() }}
+                            </p>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div
+                        class="col-12 col-sm-6 col-md-4 col-xl-3 order-sm-2 order-1 pl-sm-3 pl-0 pr-0 mb-md-0 mb-3">
+                        {% if view.hasLeadImage(o) %}
+                        <img class="w-100"
+                                alt=""
+                                src="{{ o.absolute_url() }}/@@images/image/large_listing" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>

@@ -59,4 +59,11 @@
         for="*"
     />
 
+    <adapter
+        name="inline-items"
+        factory=".InlineItemsBlock"
+        provides=".interfaces.IBlock"
+        for="*"
+    />
+
 </configure>
