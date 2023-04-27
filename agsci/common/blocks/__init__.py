@@ -33,6 +33,12 @@ class BaseBlock(object):
         _.update(kwargs)
         return _
 
+    def safe_unicode(self, _):
+        if _:
+            return safe_unicode(_)
+        else:
+            return ""
+
     def __call__(self, el, **kwargs):
         rendered = self.render(el, **kwargs)
 
