@@ -7,7 +7,10 @@ try:
 except ImportError:
     from urlparse import urlparse
 
+from ..constants import RESOLVEUID_RE
+
 from .interfaces import IBlock
+from . import InlineItemsBlock
 
 class BlockTransformer(object):
 
@@ -113,6 +116,40 @@ class BlockTransformer(object):
                     undef = _el.extract()
 
                     found = True
+
+        # Handle special classes of links (card, etc.)
+
+        for _el in soup.findAll('a'):
+
+            _href = _el.get('href', None)
+            _class = _el.get('class', None)
+
+            if isinstance(_class, (str, unicode)):
+                _class = _class.split()
+            elif isinstance(_class, (list, tuple)):
+                _class = list(_class)
+            else:
+                _class = []
+
+            if _href and 'card' in _class:
+                m = RESOLVEUID_RE.match(_href)
+
+                if m:
+                    uid = m.group(1)
+
+                    if uid:
+                        block = InlineItemsBlock(self.context)
+
+                        try:
+                            _rendered = block.render(_el, uid=uid)
+                        except:
+                            pass
+                        else:
+                            new_a = BeautifulSoup(_rendered, features="lxml").html.body.contents[0]
+
+                            _el.replaceWith(new_a)
+
+                            found = True
 
         # Handle Youtube iframes
         for _el in soup.findAll('iframe'):
