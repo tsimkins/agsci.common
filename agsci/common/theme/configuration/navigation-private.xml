@@ -108,14 +108,8 @@
                 </items>
             </item>
             <item>
-                <title>Training and Professional Development</title>
+                <title>Training and Events</title>
                 <link>professional-development</link>
-                <items>
-                    <item>
-                        <title>Training Opportunities</title>
-                        <link>professional-development/events</link>
-                    </item>
-                </items>
             </item>
             <item>
                 <title>Administrative and Service Units</title>
@@ -128,6 +122,10 @@
                     <item>
                         <title>Digital Education Group</title>
                         <link>https://agsci.psu.edu/digital-education</link>
+                    </item>
+                    <item>
+                        <title>Extension Finance and Business Operations</title>
+                        <link>https://agsci.psu.edu/faculty-staff/extension-finance</link>
                     </item>
                     <item>
                         <title>Facilities and Safety</title>

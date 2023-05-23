@@ -46,6 +46,8 @@ class IResearchAreas(model.Schema):
 @provider(IFormFieldProvider)
 class ISEO(model.Schema):
 
+    form.write_permission(exclude_from_robots="cmf.ManagePortal")
+
     model.fieldset(
         'settings',
         label=_(u'Settings'),
@@ -92,6 +94,7 @@ class IFolderFields(model.Schema):
             'show_image',
             'search_section',
             'show_subfolder_text',
+            'browser_title',
         ],
     )
 
@@ -121,6 +124,12 @@ class IFolderFields(model.Schema):
         description=_(u"This defaults the search to searching this section rather than site-wide."),
         required=False,
         default=False,
+    )
+
+    browser_title = schema.Bool(
+        title=_(u"Include in browser title?"),
+        description=_(u"Use this folder as an intermediate level in the \"title\" attribute."),
+        required=False,
     )
 
     show_subfolder_text = schema.Bool(

@@ -55,7 +55,7 @@
         <items>
             <item>
                 <title>Youth Safety</title>
-                <link>//extension.psu.edu/youth-safety</link>
+                <link>//extension.psu.edu/youth-safety-information</link>
             </item>
             <item>
                 <title>Privacy and Legal Statements</title>
@@ -322,6 +322,18 @@
                         <item>
                             <title>News</title>
                             <link>news</link>
+                        </item>
+                        <item>
+                            <title>Careers</title>
+                            <link>https://extension.psu.edu/careers</link>
+                        </item>
+                        <item>
+                            <title>State Leadership Team</title>
+                            <link>about/state-leadership-team</link>
+                        </item>
+                        <item>
+                            <title>County Programs</title>
+                            <link>counties</link>
                         </item>
                         <item>
                             <title>Contact Us</title>

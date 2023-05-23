@@ -1,6 +1,7 @@
 <nav id="portal-breadcrumbs"
          i18n:domain="plone"
-         tal:define="breadcrumbs view/breadcrumbs">
+         tal:define="breadcrumbs view/breadcrumbs"
+         tal:condition="breadcrumbs">
   <div class="container">
     <span id="breadcrumbs-you-are-here" class="hiddenStructure"
             i18n:translate="you_are_here">You are here:</span>

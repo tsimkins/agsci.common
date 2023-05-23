@@ -43,13 +43,7 @@ header {
 }
 
 body.header-college-level header {
-    position: fixed;
     background-color: $color-ps-nittany-navy;
-
-    @include media-breakpoint-up(lg) {
-        position: relative;
-    }
-
 }
 
 header.affix {

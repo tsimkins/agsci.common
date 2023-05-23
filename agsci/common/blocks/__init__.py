@@ -2,11 +2,13 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
+from plone.app.uuid.utils import uuidToObject
 from zope.component import queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 
 from ..utilities import toBool
+from ..indexer import hasLeadImage
 
 class BaseBlock(object):
 
@@ -30,6 +32,12 @@ class BaseBlock(object):
         _ = dict(self.defaults)
         _.update(kwargs)
         return _
+
+    def safe_unicode(self, _):
+        if _:
+            return safe_unicode(_)
+        else:
+            return ""
 
     def __call__(self, el, **kwargs):
         rendered = self.render(el, **kwargs)
@@ -168,3 +176,25 @@ class BorderedCalloutBlock(BaseBlock):
     defaults = {
         'reveal' : 'reveal',
     }
+
+class InlineItemsBlock(BaseBlock):
+    template = 'inline-items.j2'
+
+    def hasLeadImage(self, o):
+        return hasLeadImage(o)()
+
+    def items(self, uid=[]):
+
+        # if uid provided, go with that
+        if uid:
+            objects = [uuidToObject(x.strip()) for x in uid.split(',')]
+            return [x for x in objects if x]
+
+        # Get related items
+        context = self.context
+        if context and isinstance(context, (tuple, list)):
+            context = context[0].context
+        if hasattr(context, 'relatedItems'):
+            related_items = context.relatedItems
+            if related_items:
+                return [x.to_object for x in related_items if not x.isBroken()]

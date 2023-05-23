@@ -850,7 +850,39 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
         pass
 
     @property
+    @memoize
+    def custom_portal_title(self):
+        for _ in self.context.aq_chain:
+
+            browser_title = getattr(_.aq_base, 'browser_title', False)
+
+            if browser_title:
+                return _.Title()
+
+            if IPloneSiteRoot.providedBy(_.aq_parent):
+                return _.Title()
+
+            if IPloneSiteRoot.providedBy(_):
+                break
+
+    @property
+    def actual_portal_title(self):
+        return super(TitleViewlet, self).portal_title
+
+    @property
+    def portal_title(self):
+        custom_portal_title = self.custom_portal_title
+
+        if custom_portal_title:
+            return custom_portal_title
+
+        return self.actual_portal_title
+
+    @property
     def org_title(self):
+        if self.custom_portal_title:
+            return self.actual_portal_title
+
         for _ in self.context.aq_chain:
 
             org_title = _.getProperty('org_title', None)
@@ -880,6 +912,9 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
             return {
                 'search' : 'Search'
             }.get(self.template, u'')
+
+        if self.is_default_page:
+            return self.context.aq_parent.Title()
 
         return super(TitleViewlet, self).page_title
 

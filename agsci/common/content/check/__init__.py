@@ -25,7 +25,7 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-from agsci.common.constants import DEFAULT_TIMEZONE
+from agsci.common.constants import DEFAULT_TIMEZONE, RESOLVEUID_RE
 from agsci.common.decorators import context_memoize
 from agsci.common.utilities import ploneify, truncate_text, localize
 
@@ -39,7 +39,6 @@ import re
 import requests
 
 alphanumeric_re = re.compile("[^A-Za-z0-9]+", re.I|re.M)
-resolveuid_re = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
 uid_re = re.compile("^([abcdef0-9]{32})$", re.I|re.M)
 
 # Cached version of _getIgnoreChecks
@@ -345,7 +344,7 @@ class BodyTextCheck(ContentCheck):
 
             if href:
 
-                m = resolveuid_re.match(href)
+                m = RESOLVEUID_RE.match(href)
 
                 if m:
                     _.append(m.group(1))
@@ -362,7 +361,7 @@ class BodyTextCheck(ContentCheck):
 
             if href:
 
-                m = resolveuid_re.match(href)
+                m = RESOLVEUID_RE.match(href)
 
                 if m:
                     _.append(m.group(1))
@@ -523,7 +522,7 @@ class BodyLinkCheck(BodyTextCheck):
                     return True
 
                 # URLs with 'resolveuid' are OK
-                if resolveuid_re.match(path):
+                if RESOLVEUID_RE.match(path):
                     return False
 
                 # Otherwise, URLs should have a domain
@@ -882,7 +881,7 @@ class ExternalAbsoluteImage(BodyImageCheck):
     def check(self):
         for img in self.value():
             src = img.get('src', '')
-            if not resolveuid_re.match(src):
+            if not RESOLVEUID_RE.match(src):
                 yield ContentCheckError(self, 'Image source of "%s" references an external/absolute image.' % src)
 
 
@@ -1115,7 +1114,7 @@ class InternalLinkByUID(BodyLinkCheck):
                 if href:
 
                     # Check for a regex match
-                    m = resolveuid_re.search(href)
+                    m = RESOLVEUID_RE.search(href)
 
                     if m:
                         # Grab the contents of the href to use in an error message

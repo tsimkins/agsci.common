@@ -1,0 +1,285 @@
+$inside-header: #1e407c;
+$inside-header-light: #2855a5;
+$inside-header-dark: #142b53;
+$inside-menu: #007db3;
+$inside-menu-highlights: #009cde;
+
+body.department-private {
+
+    ul.dept-level-college-options {
+        background-color: $inside-header;
+    }
+
+    .department-bar a.department-brand {
+        border-left-color: $inside-menu-highlights;
+    }
+
+    .department-dropdowns .dropdown-toggle:focus,
+    .department-dropdowns .dropdown-toggle:hover {
+      border-top-color: $inside-menu-highlights;
+    }
+
+    header {
+
+        background-color: $inside-header;
+
+        .navbar {
+            background-color: $inside-menu;
+
+            .navbar-collapse {
+                background-color: $inside-menu;
+            }
+            .cta i {
+                color: $inside-menu;
+            }
+        }
+
+        li.nav-item {
+            .btn.btn-primary {
+                background-color: $inside-menu-highlights;
+                border-color: $inside-menu-highlights;
+            }
+
+            .btn.btn-primary:hover, .btn.btn-primary:focus {
+                background-color: $inside-menu-highlights;
+            }
+        }
+    }
+
+    /* H2 */
+    h2::after, .h2::after {
+        border-bottom-color: $inside-menu;
+    }
+
+    /* Buttons */
+
+    .btn.btn-primary {
+        background-color: $inside-menu;
+        border-color: $inside-menu;
+    }
+
+    .btn.btn-primary:hover, .btn.btn-primary:focus {
+        background-color: $inside-header-light;
+    }
+
+    .btn.btn-creek {
+        background: $inside-menu;
+    }
+
+    .btn.btn-creek:hover,
+    .btn.btn-creek:focus {
+        background: $inside-header-dark;
+    }
+
+    /* Links */
+    button.btn-link,
+    .btn-link a,
+    a.btn-link,
+    a.card .btn-link {
+        color: $inside-header-dark;
+    }
+
+    /* Borders */
+    .border-bottom {
+        border-bottom-color: $inside-header-light !important;
+    }
+
+    .border-top {
+        border-top-color: $inside-header-light !important;
+    }
+
+    /* ----------------------------------------------------------
+
+    OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
+
+    ---------------------------------------------------------- */
+
+    .offset-content a:not(.btn),
+    .offset-content a:visited:not(.btn) {
+        border-bottom: $inside-header-dark;
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $inside-menu;
+            color: $black;
+        }
+    }
+
+    section.offset-previews {
+
+        .container-fluid:nth-of-type(even),
+        .container:nth-of-type(even) {
+
+            .row {
+                background: $inside-menu;
+            }
+
+        }
+    }
+
+    .home .jumbotron {
+
+        blockquote.home-quote {
+
+            strong {
+                color: $inside-header-light;
+            }
+
+            .fas {
+                color: $inside-menu;
+            }
+        }
+    }
+
+    /* SideNav
+    --------------------------------------------- */
+
+    .side-nav {
+
+        p {
+
+            a {
+                color: $white;
+                background-color: $inside-header-light;
+            }
+        }
+
+        li.section-level-1.navTreeCurrentNode {
+            > a {
+                border-left: 0.5rem solid $inside-menu;
+            }
+        }
+
+        a {
+
+            &:hover,
+            &:focus {
+                border-left-color: $inside-menu;
+            }
+
+        }
+
+    }
+
+    .navbar.collapsing-sidenav ul.navTreeLevel1 {
+        li a.navTreeCurrentNode {
+
+            &::before {
+                color: $inside-menu;
+            }
+        }
+    }
+
+    /* dropdown level 2 */
+    .navbar.collapsing-sidenav ul.navTreeLevel1 ul.navTreeLevel2 {
+
+        li a {
+
+            &.navTreeCurrentNode {
+                border-left-color: $inside-menu;
+            }
+        }
+    }
+
+    .side-nav .dropdown {
+
+        [data-toggle="collapse"] {
+
+            i {
+                color: $inside-menu;
+            }
+
+            &:hover,
+            &:focus {
+                i {
+                    color: $inside-header-light;
+                }
+            }
+
+        }
+
+        .dropdown-menu {
+
+            a:hover,
+            a:focus {
+                border-bottom: 1px solid $inside-menu;
+            }
+
+        }
+    }
+
+    li.li-separator::after {
+        color: $inside-menu;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    body.department-private {
+
+        .department-bar a.department-brand {
+            border-left-color: $inside-menu;
+        }
+        .navbar-expand-lg .navbar-nav > {
+            .dropdown > .nav-link.dropdown-toggle {
+                color: $white;
+            }
+
+            .dropdown.show > .nav-link.dropdown-toggle {
+                color: $white;
+            }
+        }
+
+        .navbar-expand-lg .navbar-nav.dropdown-selectors {
+            .nav-link[aria-expanded=true],
+            .nav-link.dropdown-toggle:focus {
+                border-bottom-color: $inside-header-light;
+                background-color: $inside-menu;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+
+    body.department-private {
+
+        header {
+
+            .navbar.college-level {
+
+
+                .cta i {
+                    color: $white;
+                }
+
+                .navbar-collapse {
+                    margin-top: 0;
+                    .dropdown > .nav-link.dropdown-toggle {
+                        color: $white;
+                    }
+                }
+                .dropdown-menu {
+                    background-color: transparent !important;
+
+                    a {
+                        color: $white;
+                    }
+                }
+                .navbar-nav.dropdown-selectors {
+
+                    li.dropdown {
+                        border-bottom-color: $inside-header-light;
+                    }
+                }
+            }
+        }
+
+        .navbar .department-dropdowns {
+            a,
+            a.nav-link:hover,
+            a.nav-link:focus {
+                color: $white;
+            }
+        }
+    }
+}

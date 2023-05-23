@@ -1,3 +1,5 @@
+import re
+
 # Naively assume that all dates are in Eastern time
 DEFAULT_TIMEZONE = 'US/Eastern'
 
@@ -45,3 +47,5 @@ DOMAIN_CONFIG = {
     'vbs.psu.edu': 'vbs.psu.edu',
     '4-h' : 'extension.psu.edu',
 }
+
+RESOLVEUID_RE = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
