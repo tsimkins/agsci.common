@@ -46,6 +46,12 @@ DOMAIN_CONFIG = {
     'plantpath.psu.edu': 'plantpath.psu.edu',
     'vbs.psu.edu': 'vbs.psu.edu',
     '4-h' : 'extension.psu.edu',
+    'nutrient-management' : 'extension.psu.edu',
+    'rule' : 'extension.psu.edu',
+    'mwon' : 'extension.psu.edu',
+    'watershed-stewards' : 'extension.psu.edu',
+    'master-gardener' : 'extension.psu.edu',
+    'betterkidcare' : 'extension.psu.edu',
 }
 
 RESOLVEUID_RE = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)

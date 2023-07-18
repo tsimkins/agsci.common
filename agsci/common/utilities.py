@@ -520,6 +520,8 @@ def setSiteURL(site, domain=None, path='', https=True, edit=False):
             'rule' : '/programs/rule',
             'mwon' : '/programs/mwon',
             'watershed-stewards' : '/programs/watershed-stewards',
+            'master-gardener' : '/programs/master-gardener',
+            'betterkidcare' : '/programs/betterkidcare',
         }.get(site.getId(), path)
 
     if path and not path.startswith('/'):

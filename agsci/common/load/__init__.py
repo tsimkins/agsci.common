@@ -392,6 +392,7 @@ class ContentImporter(object):
                     return 'resolveuid/%s' % _
 
     def get_resource_uid(self, path):
+        orig_path = path
         path = safe_unicode(path).encode('utf-8')
 
         if 'portal_factory' in path:
@@ -406,6 +407,8 @@ class ContentImporter(object):
             undef = segments.pop()
             path = "/".join(segments)
 
+        paths = [path,]
+
         if path.startswith('..'):
 
             context = self.context
@@ -415,16 +418,25 @@ class ContentImporter(object):
             else:
                 base_url = '%s/%s' % (self.parent.absolute_url(), self.getId())
 
-            path = urljoin(base_url, path)[len(getSite().absolute_url())+1:]
+            paths = [
+                urljoin(base_url, path)[len(getSite().absolute_url())+1:],
+                urljoin('%s/' % base_url, path)[len(getSite().absolute_url())+1:]
+            ]
+
 
         for site in (self.site, getSite()):
 
-            try:
-                _ = site.restrictedTraverse(path)
-            except:
-                continue
-            else:
-                return _.UID()
+            for p in paths:
+
+                try:
+                    _ = site.restrictedTraverse(p)
+                except:
+                    continue
+                else:
+                    try:
+                        return _.UID()
+                    except AttributeError:
+                        continue
 
     def data_to_image_field(self, data, contentType='', filename=None):
 
