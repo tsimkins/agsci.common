@@ -218,6 +218,12 @@ body.template-edit.mosaic-enabled {
     color: #575757;
 }
 
+.discreet {
+    strong, b {
+        font-weight: bold;
+    }
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
 

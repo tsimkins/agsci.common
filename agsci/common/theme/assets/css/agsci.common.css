@@ -17632,6 +17632,10 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   color: #575757;
 }
 
+.discreet strong, .discreet b {
+  font-weight: bold;
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
   padding-top: 25px;
