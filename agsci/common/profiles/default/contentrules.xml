@@ -26,7 +26,7 @@
     <property
        name="subject">Plone: Content Submitted For Review (${portal_url})</property>
     <property
-       name="recipients">trs22@psu.edu,mjw174@psu.edu</property>
+       name="recipients">trs22@psu.edu,mjw174@psu.edu,jkf5757@psu.edu</property>
     <property name="exclude_actor">False</property>
    </action>
   </actions>
