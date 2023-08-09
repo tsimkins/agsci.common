@@ -24,6 +24,16 @@
     <nav id="social">
         <items>
             <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/pennstextension/</link>
+            </item>
+            <item>
+                <icon>fa-linkedin</icon>
+                <title>LinkedIn</title>
+                <link>https://www.linkedin.com/company/penn-state-extension/</link>
+            </item>
+            <item>
                 <icon>fa-twitter-square</icon>
                 <title>Twitter</title>
                 <link>https://twitter.com/psuextension</link>
@@ -32,6 +42,12 @@
                 <icon>fa-youtube-square</icon>
                 <title>YouTube</title>
                 <link>https://www.youtube.com/channel/UCJBLYNMZSQQrotFPzrv6I7A</link>
+            </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>https://www.instagram.com/psuextension/</link>
             </item>
         </items>
     </nav>
