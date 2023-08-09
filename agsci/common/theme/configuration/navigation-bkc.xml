@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <type>
+        none
+    </type>
+
+    <header>
+        department
+    </header>
+
+    <logo>
+        extension
+    </logo>
+
+    <footer-logo>
+        extension
+    </footer-logo>
+
+    <google-analytics>
+        extension
+    </google-analytics>
+
+    <nav id="social">
+        <items>
+            <item>
+                <icon>fa-facebook-square</icon>
+                <title>Facebook</title>
+                <link>https://www.facebook.com/Better-Kid-Care-183381285023909/</link>
+            </item>
+            <item>
+                <icon>fa-twitter-square</icon>
+                <title>Twitter</title>
+                <link>https://twitter.com/BetterKidCare</link>
+            </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-instagram</icon>
+                <title>Instagram</title>
+                <link>https://www.instagram.com/betterkidcare/</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="links">
+        <items>
+            <item>
+                <title>Directory</title>
+                <link>https://extension.psu.edu/programs/betterkidcare/directory</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="footer">
+        <items>
+            <item>
+                <title>Privacy and Legal Statements</title>
+                <link>//www.psu.edu/legal-statements</link>
+            </item>
+            <item>
+                <title>Accessibility</title>
+                <link>//agsci.psu.edu/accessibility</link>
+            </item>
+        </items>
+    </nav>
+
+    <nav id="primary">
+    </nav>
+
+</config>
