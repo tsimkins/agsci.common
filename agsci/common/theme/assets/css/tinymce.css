@@ -1,12 +1,14 @@
-img.mce-object[data-mce-p-type="block"] {
+img.mce-object[data-mce-p-type=block] {
   background-color: #3EA39E;
-  background: #3EA39E url(../images/content-block.png) no-repeat center; }
+  background: #3EA39E url(../images/content-block.png) no-repeat center;
+}
 
 .callout {
   background: #EEEEEE;
   padding: 1em;
   border-left: 1em solid #CCCCCC;
   clear: both;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 /*# sourceMappingURL=tinymce.css.map */

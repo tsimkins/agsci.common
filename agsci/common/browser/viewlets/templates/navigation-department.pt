@@ -1,13 +1,15 @@
 <div id="primary-nav-viewlet"
-    tal:define="nav view/nav|nothing"
-    tal:condition="view/is_department_menu|nothing">
+    tal:define="nav view/nav|nothing;
+                is_department_menu view/is_department_menu|nothing;
+                is_search_menu view/is_search_menu|nothing"
+    tal:condition="python: is_department_menu or is_search_menu">
 
     <nav class="navbar navbar-expand-lg pb-0 department-level">
 
         <div id="navbarSupportedContent"
            class="collapse navbar-collapse py-0">
 
-            <ul class="department-dropdowns dropdown-selectors justify-content-center">
+            <ul tal:attributes="class view/ul_klass">
 
                 <tal:li tal:repeat="l1 nav/items/item|nothing">
 
@@ -87,7 +89,7 @@
 
                 <!-- Search Dropdown -->
 
-                <li class="nav-item dropdown d-flex align-items-center">
+                <li tal:attributes="class view/search_li_klass">
 
                     <form class="form-inline my-2 my-lg-0"
                           method="get"

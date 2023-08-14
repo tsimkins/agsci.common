@@ -896,6 +896,23 @@ header .form-inline .form-control {
     margin-left: 0.75rem; /* match toggle margin in mobile */
 }
 
+header .department-search {
+
+    margin: 0.75rem 0;
+    padding: 0 1rem;
+
+    .form-inline {
+
+        width: 100%;
+        
+        .form-control {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}
+
+
 @include media-breakpoint-up(lg) {
 
     header .form-inline .form-control {
@@ -916,4 +933,5 @@ header .form-inline .form-control {
         width: auto;
         margin-left: 1.75rem;
     }
+
 }

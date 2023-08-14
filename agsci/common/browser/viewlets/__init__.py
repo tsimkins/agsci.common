@@ -196,7 +196,7 @@ class ViewletBase(_ViewletBase):
 
     @property
     def has_menu(self):
-        return any([self.is_mega_menu, self.is_department_menu])
+        return any([self.is_mega_menu, self.is_department_menu, self.is_search_menu])
 
     @property
     def is_mega_menu(self):
@@ -205,6 +205,10 @@ class ViewletBase(_ViewletBase):
     @property
     def is_department_menu(self):
         return self.menu_type in ('department',)
+
+    @property
+    def is_search_menu(self):
+        return self.menu_type in ('search',)
 
     @property
     def is_department_header(self):
@@ -528,6 +532,22 @@ class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
     def nav(self):
         nav = super(PrimaryDepartmentNavigationViewlet, self).nav
         return nav
+
+    @property
+    def ul_klass(self):
+        if self.is_search_menu:
+
+            return "department-search justify-content-center"
+
+        return "department-dropdowns dropdown-selectors justify-content-center"
+
+    @property
+    def search_li_klass(self):
+        if self.is_search_menu:
+
+            return "nav-item dropdown align-items-center"
+
+        return "nav-item dropdown d-flex align-items-center"
 
 class AudienceDepartmentNavigationViewlet(DepartmentNavigationViewlet):
 

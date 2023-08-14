@@ -11777,6 +11777,18 @@ header .form-inline .form-control {
   /* match toggle margin in mobile */
 }
 
+header .department-search {
+  margin: 0.75rem 0;
+  padding: 0 1rem;
+}
+header .department-search .form-inline {
+  width: 100%;
+}
+header .department-search .form-inline .form-control {
+  width: 100%;
+  margin-left: 0;
+}
+
 @media (min-width: 992px) {
   header .form-inline .form-control {
     width: 8rem;
