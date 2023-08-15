@@ -39,6 +39,12 @@
                 <title>Instagram</title>
                 <link>https://www.instagram.com/betterkidcare/</link>
             </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-pinterest-square</icon>
+                <title>Pinterest</title>
+                <link>https://www.pinterest.com/betterkidcare</link>
+            </item>
         </items>
     </nav>
 
