@@ -290,7 +290,8 @@ body.userrole-authenticated {
 
     #faceted-top-column,
     #center-content-area,
-    #left-area {
+    #left-area,
+    #top-area {
 
         .faceted-criteria {
             dl, .faceted-criteria-hide-show, .faceted-criteria-reset {
@@ -310,6 +311,7 @@ body.userrole-authenticated {
             }
         }
 
+        .faceted-top-widgets,
         .faceted-left-widgets {
 
             .faceted-widget {
@@ -341,6 +343,27 @@ body.userrole-authenticated {
             padding: 0;
             margin: 0;
             overflow: auto;
+        }
+
+        .faceted-top-widgets {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -1rem;
+            margin-left: -1rem;
+
+            .faceted-widget {
+                margin-bottom: 1.5rem;
+                border: none;
+
+                legend {
+                    font-family: "Nunito Sans", sans-serif;
+                    font-size: 1.25rem;
+                }
+                select {
+                    font-family: "Nunito Sans", sans-serif;
+                    font-size: 1rem;
+                }
+            }
         }
 
     }

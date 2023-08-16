@@ -434,7 +434,9 @@
                     </xsl:if>
                     <xsl:apply-templates css:select="#leadimage" />
                     <xsl:apply-templates css:select="#public-tags" />
+                    <xsl:apply-templates css:select="#career-day-text" />
                     <xsl:apply-templates css:select="#content-core" />
+                    <xsl:apply-templates css:select="#career-day-updated" />
                     <xsl:apply-templates css:select="#course-policies" />
                     <xsl:apply-templates css:select="#content-contributors" />
                     <xsl:apply-templates css:select="#viewlet-below-content nav.pagination" />

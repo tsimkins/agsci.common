@@ -404,51 +404,107 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:focus:b
 #faceted-form #center-content-area .faceted-criteria .faceted-criteria-reset,
 #faceted-form #left-area .faceted-criteria dl,
 #faceted-form #left-area .faceted-criteria .faceted-criteria-hide-show,
-#faceted-form #left-area .faceted-criteria .faceted-criteria-reset {
+#faceted-form #left-area .faceted-criteria .faceted-criteria-reset,
+#faceted-form #top-area .faceted-criteria dl,
+#faceted-form #top-area .faceted-criteria .faceted-criteria-hide-show,
+#faceted-form #top-area .faceted-criteria .faceted-criteria-reset {
   font-size: 0.875em;
   margin-left: 1em;
 }
 #faceted-form #faceted-top-column .faceted-criteria dl dt span,
 #faceted-form #center-content-area .faceted-criteria dl dt span,
-#faceted-form #left-area .faceted-criteria dl dt span {
+#faceted-form #left-area .faceted-criteria dl dt span,
+#faceted-form #top-area .faceted-criteria dl dt span {
   font-weight: 600;
 }
 #faceted-form #faceted-top-column .faceted-criteria dl dd,
 #faceted-form #center-content-area .faceted-criteria dl dd,
-#faceted-form #left-area .faceted-criteria dl dd {
+#faceted-form #left-area .faceted-criteria dl dd,
+#faceted-form #top-area .faceted-criteria dl dd {
   margin-left: 1em;
 }
+#faceted-form #faceted-top-column .faceted-top-widgets .faceted-widget,
 #faceted-form #faceted-top-column .faceted-left-widgets .faceted-widget,
+#faceted-form #center-content-area .faceted-top-widgets .faceted-widget,
 #faceted-form #center-content-area .faceted-left-widgets .faceted-widget,
-#faceted-form #left-area .faceted-left-widgets .faceted-widget {
+#faceted-form #left-area .faceted-top-widgets .faceted-widget,
+#faceted-form #left-area .faceted-left-widgets .faceted-widget,
+#faceted-form #top-area .faceted-top-widgets .faceted-widget,
+#faceted-form #top-area .faceted-left-widgets .faceted-widget {
   margin-bottom: 1.5rem;
   border: 1px solid #CCCCCC;
 }
+#faceted-form #faceted-top-column .faceted-top-widgets .faceted-widget p.discreet,
 #faceted-form #faceted-top-column .faceted-left-widgets .faceted-widget p.discreet,
+#faceted-form #center-content-area .faceted-top-widgets .faceted-widget p.discreet,
 #faceted-form #center-content-area .faceted-left-widgets .faceted-widget p.discreet,
-#faceted-form #left-area .faceted-left-widgets .faceted-widget p.discreet {
+#faceted-form #left-area .faceted-top-widgets .faceted-widget p.discreet,
+#faceted-form #left-area .faceted-left-widgets .faceted-widget p.discreet,
+#faceted-form #top-area .faceted-top-widgets .faceted-widget p.discreet,
+#faceted-form #top-area .faceted-left-widgets .faceted-widget p.discreet {
   margin: 0 0.5rem 1em;
   font-size: 0.75rem;
   line-height: 1.3;
 }
+#faceted-form #faceted-top-column .faceted-top-widgets .widget-fieldset,
 #faceted-form #faceted-top-column .faceted-left-widgets .widget-fieldset,
+#faceted-form #center-content-area .faceted-top-widgets .widget-fieldset,
 #faceted-form #center-content-area .faceted-left-widgets .widget-fieldset,
-#faceted-form #left-area .faceted-left-widgets .widget-fieldset {
+#faceted-form #left-area .faceted-top-widgets .widget-fieldset,
+#faceted-form #left-area .faceted-left-widgets .widget-fieldset,
+#faceted-form #top-area .faceted-top-widgets .widget-fieldset,
+#faceted-form #top-area .faceted-left-widgets .widget-fieldset {
   max-height: 13rem;
   border-width: 0;
   border-style: none;
 }
+#faceted-form #faceted-top-column .faceted-top-widgets #interestarea_widget .widget-fieldset,
 #faceted-form #faceted-top-column .faceted-left-widgets #interestarea_widget .widget-fieldset,
+#faceted-form #center-content-area .faceted-top-widgets #interestarea_widget .widget-fieldset,
 #faceted-form #center-content-area .faceted-left-widgets #interestarea_widget .widget-fieldset,
-#faceted-form #left-area .faceted-left-widgets #interestarea_widget .widget-fieldset {
+#faceted-form #left-area .faceted-top-widgets #interestarea_widget .widget-fieldset,
+#faceted-form #left-area .faceted-left-widgets #interestarea_widget .widget-fieldset,
+#faceted-form #top-area .faceted-top-widgets #interestarea_widget .widget-fieldset,
+#faceted-form #top-area .faceted-left-widgets #interestarea_widget .widget-fieldset {
   max-height: 25rem;
 }
 #faceted-form #faceted-top-column .widget-fieldset,
 #faceted-form #center-content-area .widget-fieldset,
-#faceted-form #left-area .widget-fieldset {
+#faceted-form #left-area .widget-fieldset,
+#faceted-form #top-area .widget-fieldset {
   padding: 0;
   margin: 0;
   overflow: auto;
+}
+#faceted-form #faceted-top-column .faceted-top-widgets,
+#faceted-form #center-content-area .faceted-top-widgets,
+#faceted-form #left-area .faceted-top-widgets,
+#faceted-form #top-area .faceted-top-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
+#faceted-form #faceted-top-column .faceted-top-widgets .faceted-widget,
+#faceted-form #center-content-area .faceted-top-widgets .faceted-widget,
+#faceted-form #left-area .faceted-top-widgets .faceted-widget,
+#faceted-form #top-area .faceted-top-widgets .faceted-widget {
+  margin-bottom: 1.5rem;
+  border: none;
+}
+#faceted-form #faceted-top-column .faceted-top-widgets .faceted-widget legend,
+#faceted-form #center-content-area .faceted-top-widgets .faceted-widget legend,
+#faceted-form #left-area .faceted-top-widgets .faceted-widget legend,
+#faceted-form #top-area .faceted-top-widgets .faceted-widget legend {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.25rem;
+}
+#faceted-form #faceted-top-column .faceted-top-widgets .faceted-widget select,
+#faceted-form #center-content-area .faceted-top-widgets .faceted-widget select,
+#faceted-form #left-area .faceted-top-widgets .faceted-widget select,
+#faceted-form #top-area .faceted-top-widgets .faceted-widget select {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
 }
 
 body.viewpermission-manage-portal #content,
