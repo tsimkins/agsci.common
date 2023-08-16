@@ -898,13 +898,11 @@ header .form-inline .form-control {
 
 header .department-search {
 
-    margin: 0.75rem 0;
-    padding: 0 1rem;
+    margin: 0.75rem auto;
+    padding: 0 0.75rem;
 
     .form-inline {
 
-        width: 100%;
-        
         .form-control {
             width: 100%;
             margin-left: 0;
@@ -916,15 +914,16 @@ header .department-search {
 @include media-breakpoint-up(lg) {
 
     header .form-inline .form-control {
-    width: 8rem;
-    margin-left: 1rem;
-}
+        width: 8rem;
+        margin-left: 1rem;
+    }
 
     header .form-control,
     header form .btn.btn-primary {
         padding: 0.25rem 0.5rem;
         font-size: $small3-size;
     }
+
 }
 
 @include media-breakpoint-up(xl) {
@@ -932,6 +931,10 @@ header .department-search {
     header .form-inline .form-control {
         width: auto;
         margin-left: 1.75rem;
+    }
+
+    header .department-search {
+        padding: 0;
     }
 
 }

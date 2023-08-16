@@ -537,7 +537,7 @@ class PrimaryDepartmentNavigationViewlet(DepartmentNavigationViewlet):
     def ul_klass(self):
         if self.is_search_menu:
 
-            return "department-search justify-content-center"
+            return "department-search container justify-content-center"
 
         return "department-dropdowns dropdown-selectors justify-content-center"
 
