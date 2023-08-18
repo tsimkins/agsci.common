@@ -23,52 +23,12 @@
                         <link>students</link>
                         <items>
                             <item>
-                                <title>Academic Advising</title>
-                                <link>students/advising</link>
+                                <title>Undergraduate Students</title>
+                                <link>students/undergraduate</link>
                             </item>
                             <item>
-                                <title>Career Services and Internships</title>
-                                <link>students/careers</link>
-                            </item>
-                            <item>
-                                <title>Commencement Ceremonies</title>
-                                <link>students/commencement</link>
-                            </item>
-                            <item>
-                                <title>Clubs and Organizations</title>
-                                <link>students/clubs</link>
-                            </item>
-                            <item>
-                                <title>Entrepreneurship and Innovation</title>
-                                <link>entrepreneur</link>
-                            </item>
-                            <item>
-                                <title>Graduate Student Resources</title>
+                                <title>Graduate Students</title>
                                 <link>students/graduate</link>
-                            </item>
-                            <item>
-                                <title>Research Opportunities</title>
-                                <link>students/research</link>
-                            </item>
-                            <item>
-                                <title>Scholarships and Financial Aid</title>
-                                <link>students/scholarships</link>
-                            </item>
-                            <item>
-                                <title>Study Abroad</title>
-                                <link>global/study-abroad</link>
-                            </item>
-                            <item>
-                                <title>Student Life</title>
-                                <link>students/life</link>
-                            </item>
-                            <item>
-                                <title>Contact Undergraduate Education</title>
-                                <link>students/contact</link>
-                            </item>
-                            <item>
-                                <title>Contact Graduate Education</title>
-                                <link>students/graduate/contact</link>
                             </item>
                         </items>
                     </item>
@@ -421,6 +381,10 @@
                         <item>
                             <link>research/commercialization</link>
                             <title>Research Commercialization</title>
+                        </item>
+                        <item>
+                            <link>students/graduate</link>
+                            <title>Graduate Education</title>
                         </item>
                         <item>
                             <link>research/resources</link>
