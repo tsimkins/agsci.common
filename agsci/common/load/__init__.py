@@ -360,7 +360,11 @@ class ContentImporter(object):
         ]:
 
             if _:
-                return self.fix_html(_)
+                if isinstance(_, dict):
+                    if 'html' in _:
+                        return self.fix_html(_['html'])
+                else:
+                    return self.fix_html(_)
 
         return ''
 
@@ -687,8 +691,15 @@ class ContentImporter(object):
 
         # If event, set start and end
         if self.portal_type in ('Event',):
-            start_date = localize(DateTime(self.data.start_date))
-            end_date = localize(DateTime(self.data.end_date))
+            if self.data.start:
+                start_date = localize(DateTime(self.data.start))
+            else:
+                start_date = localize(DateTime(self.data.start_date))
+
+            if self.data.end:
+                end_date = localize(DateTime(self.data.end))
+            else:
+                end_date = localize(DateTime(self.data.end_date))
 
             acc = IEventAccessor(item)
             acc.start = start_date
