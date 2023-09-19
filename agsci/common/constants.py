@@ -52,6 +52,11 @@ DOMAIN_CONFIG = {
     'watershed-stewards' : 'extension.psu.edu',
     'master-gardener' : 'extension.psu.edu',
     'betterkidcare' : 'extension.psu.edu',
+    'associations' : 'extension.psu.edu',
+    'career-day' : 'agsci.psu.edu',
+    'paonestop' : 'extension.psu.edu',
+    'snap-ed' : 'extension.psu.edu',
+    'web' : 'agsci.psu.edu',
 }
 
 RESOLVEUID_RE = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
