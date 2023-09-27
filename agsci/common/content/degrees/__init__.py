@@ -51,7 +51,8 @@ class IDegree(model.Schema):
     club = schema.List(
         title=_(u"Student Clubs and Organizations"),
         description=_(u""),
-        value_type=schema.Choice(vocabulary="agsci.common.degree.club"),
+        value_type=schema.TextLine(required=True),
+        required=False,
     )
 
     facility = RichText(
