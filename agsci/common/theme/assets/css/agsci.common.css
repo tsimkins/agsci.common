@@ -17534,6 +17534,16 @@ a.alert-bar.mini p.alert-bar-text {
   background-color: transparent;
 }
 
+/* Placeholder image does not need a negative top margin. */
+.headshot.card-img-crop.placeholder img {
+  top: 0;
+  opacity: 0.25;
+  /* // for IE8 */
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+  /* //for IE5-7 */
+  filter: alpha(opacity=25);
+}
+
 .mosaic-grid-row {
   margin-left: auto;
   margin-right: auto;
