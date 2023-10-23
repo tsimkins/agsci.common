@@ -1,4 +1,5 @@
 from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone.utils import safe_unicode
 from Products.membrane.interfaces import IMembraneUserRoles
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from dexterity.membrane.behavior.user import DxUserObject
@@ -13,6 +14,8 @@ from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
 from zope.interface import provider, implementer, Interface
+
+import unicodedata
 
 from ..behaviors import IContact, ISocialMediaBase
 
@@ -352,7 +355,7 @@ class Person(Item):
     def getSortableName(self):
         fields = ['last_name', 'first_name', 'middle_name', ]
         values = [getattr(self, x, '') for x in fields]
-        return tuple([x.lower() for x in values if isinstance(x, (str, unicode))])
+        return tuple([unicodedata.normalize('NFD', safe_unicode(x)).encode('ascii', 'ignore').lower() for x in values if isinstance(x, (str, unicode))])
 
     def getLastFirstName(self):
         fields = ['last_name', 'first_name']
