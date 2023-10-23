@@ -290,17 +290,18 @@
                                     <link>admissions/graduate/apply</link>
                                 </item>
                                 <item>
-                                    <title>Schedule a Visit</title>
-                                    <link>admissions/graduate/visit</link>
-                                </item>
-                                <item>
                                     <title>Scholarship and Funding Opportunities</title>
                                     <link>students/graduate/funding-opportunities</link>
                                 </item>
                                 <item>
-                                    <title>Student Research and Facilities</title>
-                                    <link>students/graduate/research</link>
+                                    <title>Academic Resources</title>
+                                    <link>students/graduate/academic-resources</link>
                                 </item>
+                                <item>
+                                    <title>Student Resources</title>
+                                    <link>students/graduate/student-resources</link>
+                                </item>
+
                                 <item>
                                     <title>Why Penn State?</title>
                                     <link>admissions/graduate/why</link>
