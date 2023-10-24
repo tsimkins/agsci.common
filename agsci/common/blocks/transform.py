@@ -75,7 +75,7 @@ class BlockTransformer(object):
 
     def add_blocks(self, html):
 
-        # Just return value if we're not string or unicode.
+        # Just return value if we're not string
         if not isinstance(html, str):
             return html
 
@@ -124,7 +124,7 @@ class BlockTransformer(object):
             _href = _el.get('href', None)
             _class = _el.get('class', None)
 
-            if isinstance(_class, (str, unicode)):
+            if isinstance(_class, (str, )):
                 _class = _class.split()
             elif isinstance(_class, (list, tuple)):
                 _class = list(_class)
