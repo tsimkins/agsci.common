@@ -84,6 +84,21 @@ $display-line-height: 1.2 !default;
     }
 }
 
+/* Placeholder image does not need a negative top margin. */
+.headshot.card-img-crop.placeholder {
+    img {
+        top: 0;
+        opacity: 0.25;
+
+        /* // for IE8 */
+        -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+
+        /* //for IE5-7 */
+        filter: alpha(opacity= 25);
+    }
+}
+
+
 .mosaic-grid-row {
 
     margin-left: auto;
@@ -218,6 +233,12 @@ body.template-edit.mosaic-enabled {
     color: #575757;
 }
 
+.discreet {
+    strong, b {
+        font-weight: bold;
+    }
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
 
@@ -284,7 +305,8 @@ body.userrole-authenticated {
 
     #faceted-top-column,
     #center-content-area,
-    #left-area {
+    #left-area,
+    #top-area {
 
         .faceted-criteria {
             dl, .faceted-criteria-hide-show, .faceted-criteria-reset {
@@ -304,6 +326,7 @@ body.userrole-authenticated {
             }
         }
 
+        .faceted-top-widgets,
         .faceted-left-widgets {
 
             .faceted-widget {
@@ -335,6 +358,27 @@ body.userrole-authenticated {
             padding: 0;
             margin: 0;
             overflow: auto;
+        }
+
+        .faceted-top-widgets {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -1rem;
+            margin-left: -1rem;
+
+            .faceted-widget {
+                margin-bottom: 1.5rem;
+                border: none;
+
+                legend {
+                    font-family: "Nunito Sans", sans-serif;
+                    font-size: 1.25rem;
+                }
+                select {
+                    font-family: "Nunito Sans", sans-serif;
+                    font-size: 1rem;
+                }
+            }
         }
 
     }

@@ -3,5 +3,7 @@
 
     <include package=".checkbox" />
     <include package=".criteria" />
+    <include package=".select" />
+    <include package=".text" />
 
 </configure>

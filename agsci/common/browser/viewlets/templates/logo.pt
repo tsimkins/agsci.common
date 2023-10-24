@@ -16,7 +16,9 @@
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
-            aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            aria-label="Toggle navigation"><i 
+                tal:condition="view/is_search_menu|nothing" class="fa fa-search"></i><i 
+                tal:condition="not:view/is_search_menu|nothing" class="fas fa-bars"></i></button>
 		
 			<div class="d-lg-inline-flex pr-3 college-logo-block"
 			     tal:omit-tag="not:is_department">

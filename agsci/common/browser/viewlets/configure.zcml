@@ -301,23 +301,24 @@
         layer="..interfaces.IThemeSpecific"
         />
 
-    <!-- Digital Learning Course Syllabus Viewlet -->
+    <!-- World Campus Course Syllabus Viewlet -->
     <browser:viewlet
         name="agsci.common.syllabus"
         manager="plone.app.layout.viewlets.interfaces.IAboveContent"
         class=".CourseSyllabusViewlet"
         permission="zope2.View"
-        template="templates/syllabus.pt"
+        template="templates/syllabus-wc.pt"
         layer="..interfaces.IThemeSpecific"
         for="agsci.common.interfaces.ICourseSyllabus"
         />
 
+    <!-- Digital Learning Course Syllabus Viewlet -->
     <browser:viewlet
         name="agsci.common.syllabus_digital"
         manager="plone.app.layout.viewlets.interfaces.IAboveContent"
         class=".CourseSyllabusDigitalViewlet"
         permission="zope2.View"
-        template="templates/syllabus.pt"
+        template="templates/syllabus-dlc.pt"
         layer="..interfaces.IThemeSpecific"
         for="agsci.common.interfaces.ICourseSyllabusDigital"
         />

@@ -152,6 +152,7 @@ class SocialMediaPlatformVocabulary(KeyValueVocabulary):
         ('instagram', 'Instagram'),
         ('linkedin', 'LinkedIn'),
         ('youtube', 'YouTube'),
+        ('pinterest', 'Pinterest'),
         ('newsletter', 'Newsletter'),
     ]
 

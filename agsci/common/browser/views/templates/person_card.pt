@@ -5,11 +5,19 @@
 
         <div class="row mx-0">
             <div tal:attributes="class view/card_image_class"
-                 tal:condition="view/show_image|nothing">
-                <div class="card-img-crop">
+                 tal:condition="view/show_image|nothing"
+                 tal:define="has_image view/item_has_image|nothing">
+                <div class="card-img-crop"
+                     tal:condition="has_image">
                     <img tal:attributes="alt view/name/title|nothing;
                                             title view/name/title|nothing;
                                             src image"
+                         class="w-100 photo" />
+                </div>
+                <div class="card-img-crop headshot placeholder"
+                     tal:condition="not: has_image">
+                    <img alt=""
+                         tal:attributes="src string:${view/assets_url}/images/user-image.jpg"
                          class="w-100 photo" />
                 </div>
             </div>

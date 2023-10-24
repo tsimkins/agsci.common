@@ -23,52 +23,12 @@
                         <link>students</link>
                         <items>
                             <item>
-                                <title>Academic Advising</title>
-                                <link>students/advising</link>
+                                <title>Undergraduate Students</title>
+                                <link>students/undergraduate</link>
                             </item>
                             <item>
-                                <title>Career Services and Internships</title>
-                                <link>students/careers</link>
-                            </item>
-                            <item>
-                                <title>Commencement Ceremonies</title>
-                                <link>students/commencement</link>
-                            </item>
-                            <item>
-                                <title>Clubs and Organizations</title>
-                                <link>students/clubs</link>
-                            </item>
-                            <item>
-                                <title>Entrepreneurship and Innovation</title>
-                                <link>entrepreneur</link>
-                            </item>
-                            <item>
-                                <title>Graduate Student Resources</title>
+                                <title>Graduate Students</title>
                                 <link>students/graduate</link>
-                            </item>
-                            <item>
-                                <title>Research Opportunities</title>
-                                <link>students/research</link>
-                            </item>
-                            <item>
-                                <title>Scholarships and Financial Aid</title>
-                                <link>students/scholarships</link>
-                            </item>
-                            <item>
-                                <title>Study Abroad</title>
-                                <link>global/study-abroad</link>
-                            </item>
-                            <item>
-                                <title>Student Life</title>
-                                <link>students/life</link>
-                            </item>
-                            <item>
-                                <title>Contact Undergraduate Education</title>
-                                <link>students/contact</link>
-                            </item>
-                            <item>
-                                <title>Contact Graduate Education</title>
-                                <link>students/graduate/contact</link>
                             </item>
                         </items>
                     </item>
@@ -236,7 +196,7 @@
                         </item>
                         <item>
                             <title>Student Resources</title>
-                            <link>academics/student-resources</link>
+                            <link>students</link>
                         </item>
                     </group>
                     <group>
@@ -330,17 +290,18 @@
                                     <link>admissions/graduate/apply</link>
                                 </item>
                                 <item>
-                                    <title>Schedule a Visit</title>
-                                    <link>admissions/graduate/visit</link>
-                                </item>
-                                <item>
                                     <title>Scholarship and Funding Opportunities</title>
                                     <link>students/graduate/funding-opportunities</link>
                                 </item>
                                 <item>
-                                    <title>Student Research and Facilities</title>
-                                    <link>students/graduate/research</link>
+                                    <title>Academic Resources</title>
+                                    <link>students/graduate/academic-resources</link>
                                 </item>
+                                <item>
+                                    <title>Student Resources</title>
+                                    <link>students/graduate/student-resources</link>
+                                </item>
+
                                 <item>
                                     <title>Why Penn State?</title>
                                     <link>admissions/graduate/why</link>
@@ -421,6 +382,10 @@
                         <item>
                             <link>research/commercialization</link>
                             <title>Research Commercialization</title>
+                        </item>
+                        <item>
+                            <link>students/graduate</link>
+                            <title>Graduate Education</title>
                         </item>
                         <item>
                             <link>research/resources</link>

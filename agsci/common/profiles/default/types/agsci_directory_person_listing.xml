@@ -26,6 +26,7 @@
     <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
     <element value="plone.app.content.interfaces.INameFromTitle" />
     <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
+    <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
  </property>
 

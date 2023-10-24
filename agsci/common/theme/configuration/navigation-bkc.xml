@@ -2,7 +2,7 @@
 <config>
 
     <type>
-        none
+        search
     </type>
 
     <header>
@@ -26,28 +26,24 @@
             <item>
                 <icon>fa-facebook-square</icon>
                 <title>Facebook</title>
-                <link>https://www.facebook.com/pennstextension/</link>
-            </item>
-            <item>
-                <icon>fa-linkedin</icon>
-                <title>LinkedIn</title>
-                <link>https://www.linkedin.com/company/penn-state-extension/</link>
+                <link>https://www.facebook.com/Better-Kid-Care-183381285023909/</link>
             </item>
             <item>
                 <icon>fa-twitter-square</icon>
                 <title>Twitter</title>
-                <link>https://twitter.com/psuextension</link>
-            </item>
-            <item>
-                <icon>fa-youtube-square</icon>
-                <title>YouTube</title>
-                <link>https://www.youtube.com/channel/UCJBLYNMZSQQrotFPzrv6I7A</link>
+                <link>https://twitter.com/BetterKidCare</link>
             </item>
             <item>
                 <inverse>true</inverse>
                 <icon>fa-instagram</icon>
                 <title>Instagram</title>
-                <link>https://www.instagram.com/psuextension/</link>
+                <link>https://www.instagram.com/betterkidcare/</link>
+            </item>
+            <item>
+                <inverse>true</inverse>
+                <icon>fa-pinterest-square</icon>
+                <title>Pinterest</title>
+                <link>https://www.pinterest.com/betterkidcare</link>
             </item>
         </items>
     </nav>
@@ -55,8 +51,8 @@
     <nav id="links">
         <items>
             <item>
-                <title>Directory</title>
-                <link>https://extension.psu.edu/extension-directory</link>
+                <title>Contact Us</title>
+                <link>https://extension.psu.edu/programs/betterkidcare/contact</link>
             </item>
         </items>
     </nav>

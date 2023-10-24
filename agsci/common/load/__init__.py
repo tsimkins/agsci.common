@@ -357,7 +357,11 @@ class ContentImporter(object):
         ]:
 
             if _:
-                return self.fix_html(_)
+                if isinstance(_, dict):
+                    if 'html' in _:
+                        return self.fix_html(_['html'])
+                else:
+                    return self.fix_html(_)
 
         return ''
 
@@ -390,6 +394,8 @@ class ContentImporter(object):
 
     def get_resource_uid(self, path):
 
+        path = safe_unicode(path).encode('utf-8')
+
         if 'portal_factory' in path:
             return
 
@@ -402,6 +408,8 @@ class ContentImporter(object):
             undef = segments.pop()
             path = "/".join(segments)
 
+        paths = [path,]
+
         if path.startswith('..'):
 
             context = self.context
@@ -411,16 +419,25 @@ class ContentImporter(object):
             else:
                 base_url = '%s/%s' % (self.parent.absolute_url(), self.getId())
 
-            path = urljoin(base_url, path)[len(getSite().absolute_url())+1:]
+            paths = [
+                urljoin(base_url, path)[len(getSite().absolute_url())+1:],
+                urljoin('%s/' % base_url, path)[len(getSite().absolute_url())+1:]
+            ]
+
 
         for site in (self.site, getSite()):
 
-            try:
-                _ = site.restrictedTraverse(path)
-            except:
-                continue
-            else:
-                return _.UID()
+            for p in paths:
+
+                try:
+                    _ = site.restrictedTraverse(p)
+                except:
+                    continue
+                else:
+                    try:
+                        return _.UID()
+                    except AttributeError:
+                        continue
 
     def data_to_image_field(self, data, contentType='', filename=None):
 
@@ -671,8 +688,15 @@ class ContentImporter(object):
 
         # If event, set start and end
         if self.portal_type in ('Event',):
-            start_date = localize(DateTime(self.data.start_date))
-            end_date = localize(DateTime(self.data.end_date))
+            if self.data.start:
+                start_date = localize(DateTime(self.data.start))
+            else:
+                start_date = localize(DateTime(self.data.start_date))
+
+            if self.data.end:
+                end_date = localize(DateTime(self.data.end))
+            else:
+                end_date = localize(DateTime(self.data.end_date))
 
             acc = IEventAccessor(item)
             acc.start = start_date
