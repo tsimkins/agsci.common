@@ -55,5 +55,7 @@ setup(name='agsci.common',
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
       target = plone
+      [zodbupdate]
+      renames = agsci.common:zodbupdate_renames
       """,
     )
