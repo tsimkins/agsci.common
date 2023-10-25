@@ -6,7 +6,7 @@ from eea.facetednavigation.widgets.select.interfaces import LayoutSchemata
 from eea.facetednavigation.widgets.select.interfaces import CountableSchemata
 from eea.facetednavigation.widgets.select.interfaces import DisplaySchemata
 from eea.facetednavigation.widgets.widget import CountableWidget
-from eea.facetednavigation import EEAMessageFactory as _
+from eea.facetednavigation import _
 
 import six
 

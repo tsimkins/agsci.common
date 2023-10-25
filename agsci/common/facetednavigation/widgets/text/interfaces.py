@@ -6,7 +6,7 @@ from eea.facetednavigation.widgets.interfaces import ISchema
 from eea.facetednavigation.widgets.interfaces import FacetedSchemata
 from eea.facetednavigation.widgets.interfaces import DefaultSchemata as DS
 from eea.facetednavigation.widgets.interfaces import LayoutSchemata
-from eea.facetednavigation import EEAMessageFactory as _
+from eea.facetednavigation import _
 
 
 class ITextSchema(ISchema):
