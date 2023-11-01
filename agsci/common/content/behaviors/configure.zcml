@@ -74,6 +74,7 @@
     <!-- Behaviors per content-type -->
 
     <plone:behavior
+        name="agsci.common.collectionFields"
         title="Collection Behaviors (AgSci)"
         description=""
         provides=".collection.ICollectionFields"
