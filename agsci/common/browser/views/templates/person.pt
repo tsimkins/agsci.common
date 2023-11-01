@@ -204,7 +204,7 @@
          tal:define="data view/data"
          tal:condition="data">
 
-        <-- Areas of Expertise -->
+        <!-- Areas of Expertise -->
         <div class="row align-items-start"
                 tal:define="i data/areas_expertise|nothing"
                 tal:condition="i/value|nothing">
@@ -223,7 +223,7 @@
 
         </div>
 
-        <-- Websites/Social Media -->
+        <!-- Websites/Social Media -->
 
         <div class="row align-items-start"
                 tal:define="i data/websites|nothing;
