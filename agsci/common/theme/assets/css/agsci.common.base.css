@@ -1465,6 +1465,35 @@ body.template-image_view #content-core li {
   font-size: 0.9rem;
   line-height: 1.8;
 }
+#parent-fieldname-text dl,
+.html dl,
+body.template-default_error_message #content-core dl,
+body.template-fg_thankspage_view_p3 #content-core dl,
+body.template-fg_base_view_p3 #content-core dl,
+body.template-file_view #content-core dl,
+body.template-image_view #content-core dl {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+#parent-fieldname-text dl dt,
+.html dl dt,
+body.template-default_error_message #content-core dl dt,
+body.template-fg_thankspage_view_p3 #content-core dl dt,
+body.template-fg_base_view_p3 #content-core dl dt,
+body.template-file_view #content-core dl dt,
+body.template-image_view #content-core dl dt {
+  margin-top: 1rem;
+}
+#parent-fieldname-text dl dt strong,
+.html dl dt strong,
+body.template-default_error_message #content-core dl dt strong,
+body.template-fg_thankspage_view_p3 #content-core dl dt strong,
+body.template-fg_base_view_p3 #content-core dl dt strong,
+body.template-file_view #content-core dl dt strong,
+body.template-image_view #content-core dl dt strong {
+  font-weight: bold;
+}
 #parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
 .html input,
 .html td,
@@ -2036,6 +2065,7 @@ body.portaltype-easyform .easyformForm fieldset {
   padding: 0.5rem 1rem 1rem;
   border: 1px solid #CCCCCC;
   margin: 1rem 0;
+  display: block;
 }
 body.portaltype-formfolder .pfg-form fieldset li, body.portaltype-formfolder .easyformForm fieldset li,
 body.portaltype-easyform .pfg-form fieldset li,
@@ -2351,10 +2381,10 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
 .contenttype-easyform.contenttype-easyform::before .form_container .form_responses .form_response {
   margin-left: 1.5rem;
 }
-#content-core .entries.inline-items .card {
+.contenttype-easyform.contenttype-easyform::before .entries.inline-items .card {
   border-bottom: none !important;
 }
-#content-core .entries.inline-items .card .description {
+.contenttype-easyform.contenttype-easyform::before .entries.inline-items .card .description {
   color: #212529 !important;
 }
 

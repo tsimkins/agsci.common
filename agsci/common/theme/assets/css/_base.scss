@@ -803,6 +803,18 @@ body.template-image_view #content-core {
         line-height: 1.8;
     }
 
+    dl {
+        @include body_font();
+        line-height: 1.5;
+        dt {
+            margin-top: 1rem;
+
+            strong {
+                font-weight: bold;
+            }
+        }
+    }
+
     input, td, th {
         @include body_font();
     }
@@ -1282,7 +1294,7 @@ body.portaltype-easyform {
             padding: 0.5rem 1rem 1rem;
             border: 1px solid #CCCCCC;
             margin: 1rem 0;
-            
+            display: block;    
             li {
                 margin: 0.375rem 0;
             }
