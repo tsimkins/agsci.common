@@ -23,9 +23,9 @@
  <property name="behaviors">
   <element value="agsci.common.content.behaviors.IAlwaysExcludeFromNavigation" />
   <element value="agsci.common.content.behaviors.leadimage.ILeadImageNoCaption" />
-  <element value="dexterity.membrane.behavior.user.IMembraneUser" />
-  <element value="plone.app.dexterity.behaviors.metadata.IPublication"/>
-  <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
+  <element value="dexterity.membrane.user" />
+  <element value="plone.publication"/>
+  <element value="plone.versioning" />
  </property>
 
   <property name="schema">agsci.common.content.person.person.IPerson</property>

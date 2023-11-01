@@ -21,11 +21,11 @@
     <property name="add_permission">agsci.common.restricted_types</property>
     <property name="klass">agsci.common.content.homepage.ExtensionHomepage</property>
     <property name="behaviors">
-        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
-        <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
+        <element value="plone.dublincore" />
+        <element value="plone.richtext" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.shortname" />
         <element value="agsci.common.content.behaviors.IHomepageFields" />
         <element value="plone.layoutaware"/>
     </property>

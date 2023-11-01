@@ -23,10 +23,10 @@
  <property name="add_permission">cmf.ManagePortal</property>
  <property name="klass">agsci.common.content.person.directory.DirectoryGroup</property>
  <property name="behaviors">
-    <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
-    <element value="plone.app.content.interfaces.INameFromTitle" />
-    <element value="dexterity.membrane.behavior.group.IMembraneGroup" />
-    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
+    <element value="plone.basic"/>
+    <element value="plone.namefromtitle" />
+    <element value="dexterity.membrane.group" />
+    <element value="plone.excludefromnavigation" />
  </property>
 
   <property name="schema">agsci.common.content.person.directory.IDirectoryGroup</property>

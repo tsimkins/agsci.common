@@ -22,12 +22,12 @@
  <property name="add_permission">cmf.ManagePortal</property>
  <property name="klass">agsci.common.content.person.directory.PersonListing</property>
  <property name="behaviors">
-    <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
-    <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
-    <element value="plone.app.content.interfaces.INameFromTitle" />
-    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
+    <element value="plone.basic"/>
+    <element value="plone.categorization" />
+    <element value="plone.namefromtitle" />
+    <element value="plone.excludefromnavigation" />
     <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
-    <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
+    <element value="plone.richtext" />
  </property>
 
   <property name="schema">agsci.common.content.person.directory.IPersonListing</property>

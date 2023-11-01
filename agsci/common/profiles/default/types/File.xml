@@ -19,13 +19,13 @@
     <property name="add_permission">plone.app.contenttypes.addFile</property>
     <property name="klass">plone.app.contenttypes.content.File</property>
     <property name="behaviors">
-        <element value="plone.app.dexterity.behaviors.metadata.ICategorization" />
-        <element value="plone.app.dexterity.behaviors.metadata.IPublication" />
-        <element value="plone.app.dexterity.behaviors.metadata.IOwnership" />
-        <element value="plone.app.dexterity.behaviors.filename.INameFromFileName" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.relationfield.behavior.IRelatedItems" />
+        <element value="plone.categorization" />
+        <element value="plone.publication" />
+        <element value="plone.ownership" />
+        <element value="plone.namefromfilename" />
+        <element value="plone.shortname" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.relateditems" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
     </property>
     <property name="schema" />

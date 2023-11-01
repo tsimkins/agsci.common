@@ -23,11 +23,11 @@
     <property name="add_permission">agsci.common.restricted_types</property>
     <property name="klass">agsci.common.content.blog.Blog</property>
     <property name="behaviors" purge="False">
-        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
+        <element value="plone.dublincore" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.shortname" />
+        <element value="plone.constraintypes" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.tags.ITagsRoot" />
     </property>

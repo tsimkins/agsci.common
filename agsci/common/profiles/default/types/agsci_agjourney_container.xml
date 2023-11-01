@@ -22,11 +22,11 @@
     <property name="add_permission">agsci.common.restricted_types</property>
     <property name="klass">agsci.common.content.agjourney.AgJourneyContainer</property>
     <property name="behaviors">
-        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
+        <element value="plone.dublincore" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.shortname" />
+        <element value="plone.constraintypes" />
     </property>
     <property name="schema">agsci.common.content.agjourney.IAgJourneyContainer</property>
     <property name="schema_policy">dexterity</property>

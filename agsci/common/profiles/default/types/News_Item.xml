@@ -20,15 +20,15 @@
     <property name="add_permission">plone.app.contenttypes.addNewsItem</property>
     <property name="klass">plone.app.contenttypes.content.NewsItem</property>
     <property name="behaviors" purge="False">
-        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
-        <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.relationfield.behavior.IRelatedItems" />
+        <element value="plone.dublincore" />
+        <element value="plone.richtext" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.shortname" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.relateditems" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
-        <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
-        <element value="plone.app.lockingbehavior.behaviors.ILocking" />
+        <element value="plone.versioning" />
+        <element value="plone.locking" />
         <element value="agsci.common.content.behaviors.INewsItemFields" />
         <element value="agsci.common.content.behaviors.tags.ITags" />
         <element value="plone.layoutaware"/>

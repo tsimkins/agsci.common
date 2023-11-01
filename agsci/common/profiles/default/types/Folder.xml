@@ -40,19 +40,19 @@
     <property name="add_permission">plone.app.contenttypes.addFolder</property>
     <property name="klass">plone.app.contenttypes.content.Folder</property>
     <property name="behaviors" purge="False">
-        <element value="plone.app.dexterity.behaviors.metadata.IDublinCore" />
-        <element value="plone.app.content.interfaces.INameFromTitle" />
-        <element value="plone.app.contenttypes.behaviors.richtext.IRichTextBehavior" />
-        <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-        <element value="plone.app.dexterity.behaviors.id.IShortName" />
-        <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes" />
-        <element value="plone.app.relationfield.behavior.IRelatedItems" />
-        <element value="plone.app.dexterity.behaviors.nextprevious.INextPreviousToggle" />
+        <element value="plone.dublincore" />
+        <element value="plone.namefromtitle" />
+        <element value="plone.richtext" />
+        <element value="plone.excludefromnavigation" />
+        <element value="plone.shortname" />
+        <element value="plone.constraintypes" />
+        <element value="plone.relateditems" />
+        <element value="plone.nextprevioustoggle" />
         <element value="agsci.common.content.behaviors.IFolderFields" />
         <element value="agsci.common.content.behaviors.tags.IFolderTagsRoot" />
         <element value="agsci.common.content.behaviors.ISEO" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
-        <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
+        <element value="plone.versioning" />
         <element value="plone.layoutaware"/>
         <element value="plone.draftable"/>
     </property>
