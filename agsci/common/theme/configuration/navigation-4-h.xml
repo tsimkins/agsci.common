@@ -29,11 +29,6 @@
                 <link>https://www.facebook.com/Pennsylvania4H/</link>
             </item>
             <item>
-                <icon>fa-twitter-square</icon>
-                <title>Twitter</title>
-                <link>http://twitter.com/pa4h</link>
-            </item>
-            <item>
                 <inverse>true</inverse>
                 <icon>fa-instagram</icon>
                 <title>Instagram</title>
