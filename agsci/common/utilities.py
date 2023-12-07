@@ -41,7 +41,7 @@ DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
 def ploneify(toPlone, filename=False):
 
     if not toPlone:
-        return u''
+        return ''
 
     # Start with Unicode
     ploneString = safe_unicode(toPlone)
@@ -60,7 +60,7 @@ def ploneify(toPlone, filename=False):
 
     # Convert accented characters to ASCII
     # Ref: https://stackoverflow.com/questions/14118352/how-to-convert-unicode-accented-characters-to-pure-ascii-without-accents
-    ploneString = unicodedata.normalize('NFD', ploneString).encode('ascii', 'ignore')
+    ploneString = safe_unicode(unicodedata.normalize('NFD', ploneString).encode('ascii', 'ignore'))
 
     # Normalize using the system utility
     if filename:
