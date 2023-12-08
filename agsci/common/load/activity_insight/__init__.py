@@ -233,10 +233,18 @@ class ImportPersonPublicationsView(ImportDirectoryPublicationsView):
                                 outputMimeType='text/x-html-safe'
                             )
 
+                        # Set the publication link to either the DOI (if it exists) or the new 'supplementary_url' field.
+                        _['publication_url'] = _.get('doi', None)
+
+                        if not _['publication_url']:
+                            _['publication_url'] = _.get('supplementary_url', None)
+
                         publications.append({
                             'ai_id' : __.get('id', None),
                             'title' : _.get('title', None),
                             'doi' : _.get('doi', None),
+                            'supplementary_url' : _.get('supplementary_url', None),
+                            'publication_url' : _['publication_url'],
                             'journal_title' : _.get('journal_title', None),
                             'published_on' : published_on,
                             'abstract' : abstract,
