@@ -355,11 +355,12 @@ class Person(Item):
     def getSortableName(self):
         fields = ['last_name', 'first_name', 'middle_name', ]
         values = [getattr(self, x, '') for x in fields]
-        return tuple([unicodedata.normalize('NFD', safe_unicode(x)).encode('ascii', 'ignore').lower() for x in values if isinstance(x, (str, unicode))])
+        return tuple([safe_unicode(unicodedata.normalize('NFD', safe_unicode(x)).encode('ascii', 'ignore').strip().lower()) for x in values if isinstance(x, (str, ))])
 
     def getLastFirstName(self):
         fields = ['last_name', 'first_name']
-        return ", ".join(tuple([getattr(self, x, '') for x in fields]))
+        values = [getattr(self, x, '') for x in fields]
+        return tuple([safe_unicode(unicodedata.normalize('NFD', safe_unicode(x)).encode('ascii', 'ignore').strip()) for x in values if isinstance(x, (str, ))])
 
 class ITitleFromPersonUserId(INameFromTitle):
     def title():
