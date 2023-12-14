@@ -47,19 +47,19 @@
 
                                 <!-- ROW -->
                                 <div class="row option-block mx-0 border-top py-5 html"
-                                     tal:define="_title i/title|nothing;
-                                                 _description i/description|nothing;
-                                                 _text i/text/output|nothing;
-                                                 _serial repeat/i/index;
-                                                 _img_src python:view.get_img_src(_serial);
-                                                 _img_alt python:view.get_img_alt(_serial);">
+                                     tal:define="tile_title i/title|nothing;
+                                                 tile_description i/description|nothing;
+                                                 tile_text i/text/output|nothing;
+                                                 tile_serial repeat/i/index;
+                                                 tile_img_src python:view.get_img_src(_serial);
+                                                 tile_img_alt python:view.get_img_alt(_serial);">
 
                                     <div class="col-6 col-md-3 offset-xl-1 mb-3 mb-md-0"
                                          tal:condition="show_images">
 
-                                        <img tal:attributes="src _img_src;
-                                                             alt _img_alt;"
-                                             tal:condition="_img_src"
+                                        <img tal:attributes="src tile_img_src;
+                                                             alt tile_img_alt;"
+                                             tal:condition="tile_img_src"
                                              class="w-100" />
 
                                     </div>
@@ -67,16 +67,16 @@
                                     <div tal:attributes="class view/row_class|nothing">
 
                                         <h3 class="mt-0"
-                                            tal:content="_title" />
+                                            tal:content="tile_title" />
 
-                                        <p tal:condition="_description"
-                                           tal:content="_description" />
+                                        <p tal:condition="tile_description"
+                                           tal:content="tile_description" />
 
                                         <div class="container">
                                             <div class="row">
 
                                                 <div class="mb-3"
-                                                     tal:content="structure _text" />
+                                                     tal:content="structure tile_text" />
 
                                             </div>
 

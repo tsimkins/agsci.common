@@ -22,21 +22,21 @@
                 <tal:col tal:repeat="i view/values|nothing">
 
                     <div class="col-12 col-sm-6 col-lg-4 mt-4 more-block"
-                         tal:define="_title i/title|nothing;
-                                     _description i/description|nothing;
-                                     _text i/text/output|nothing;">
+                         tal:define="tile_title i/title|nothing;
+                                     tile_description i/description|nothing;
+                                     tile_text i/text/output|nothing;">
 
 
                         <div class="more-block-content agsci-box-shadow html">
 
                             <h3 class="more-header"
-                               tal:condition="_title"
-                               tal:content="_title">
+                               tal:condition="tile_title"
+                               tal:content="tile_title">
 
-                            <p tal:condition="_description"
-                               tal:content="_description">
+                            <p tal:condition="tile_description"
+                               tal:content="tile_description">
 
-                            <div tal:replace="structure _text" />
+                            <div tal:replace="structure tile_text" />
 
                         </div>
 
