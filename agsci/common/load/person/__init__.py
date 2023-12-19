@@ -17,6 +17,9 @@ except ImportError:
     from urlparse import urlparse
 
 import json
+import requests
+
+PHOTO_API_URL = 'https://tools.agsci.psu.edu/download-portraits-api/user/%s/json'
 
 class SyncPersonView(ImportContentView):
 
@@ -423,3 +426,50 @@ class ImportClassificationsView(ImportPersonView):
             return "Created %s" % json.dumps(rv, indent=4)
 
         return "No missing classifications"
+
+class SyncPersonPhotoView(SyncPersonView):
+
+    @property
+    def download_image_url(self):
+        URL = PHOTO_API_URL % self.username
+
+        response = requests.get(URL)
+
+        if response.status_code in (200,):
+
+            data = response.json()
+
+            if data:
+                return data.get('image_url',  None)
+
+    @property
+    def api_image(self):
+        image_url = self.download_image_url
+
+        if image_url:
+            response = requests.get(image_url)
+
+            if response.status_code in (200,):
+
+                image_data = response.content
+
+                if image_data:
+                    return image_data
+
+    @property
+    def has_image(self):
+        return hasattr(self.context.aq_base, 'image') and isinstance(self.context.image, NamedBlobImage) and self.context.image.data
+
+    def import_content(self):
+        image_data = self.api_image
+
+        if image_data:
+
+            image_field = NamedBlobImage(filename="%s.jpg" % self.username, data=image_data)
+
+            if image_field.contentType in ('image/jpeg',):
+                self.context.image = image_field
+
+                return "Synced photo for %s" % self.username
+
+        return "Did not sync photo for %s" % self.username

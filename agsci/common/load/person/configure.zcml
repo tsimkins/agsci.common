@@ -31,6 +31,15 @@
         layer="agsci.common.browser.interfaces.IThemeSpecific"
     />
 
+    <!-- Sync Person Photo View -->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="sync_person_photo"
+        class=".SyncPersonPhotoView"
+        permission="zope2.View"
+        layer="agsci.common.browser.interfaces.IThemeSpecific"
+    />
+
     <!-- Import Classifications View -->
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
