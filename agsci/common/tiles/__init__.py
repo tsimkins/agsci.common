@@ -494,6 +494,39 @@ class CCCT_Tile(ConditionalTemplateTile):
 
         return super(CCCT_Tile, self).get_items('target_container')
 
+    @property
+    def filter_tags(self):
+        _ = self.get_valid_value('filter_tags')
+
+        if _ and isinstance(_, (list, tuple)):
+            return _
+
+    @property
+    def filter_public_tags(self):
+        _ = self.get_valid_value('filter_public_tags')
+
+        if _ and isinstance(_, (list, tuple)):
+            return _
+
+    @property
+    def filtered_items(self):
+
+        filter_tags = self.filter_tags
+        filter_public_tags = self.filter_public_tags
+
+        items = self.all_items
+
+        # Filter by tags provided.
+        if filter_tags:
+            items = [x for x in items if any([y in x.Subject() for y in filter_tags])]
+
+        if filter_public_tags:
+            items = [x for x in items if any([y in self.get_public_tags(x) for y in filter_public_tags])]
+
+        return items
+
+
+
 class ScooterTile(CCCT_Tile):
 
     show_image_wrapper = False
@@ -506,6 +539,15 @@ class ScooterTile(CCCT_Tile):
 
     def get_img_src(self, brain, field='image', image_scale='large', **kwargs):
         return u"%s/@@images/%s/%s" % (brain.getURL(), field, image_scale)
+
+    @property
+    def all_items(self):
+        return super(ScooterTile, self).items
+
+    @property
+    def items(self):
+        return self.filtered_items
+
 
 class SkeeterTile(CCCT_Tile):
 
@@ -556,20 +598,6 @@ class SkeeterTile(CCCT_Tile):
 
         if not self.light_version:
             return len(self.all_items) > self.max_items
-
-    @property
-    def filter_tags(self):
-        _ = self.get_valid_value('filter_tags')
-
-        if _ and isinstance(_, (list, tuple)):
-            return _
-
-    @property
-    def filter_public_tags(self):
-        _ = self.get_valid_value('filter_public_tags')
-
-        if _ and isinstance(_, (list, tuple)):
-            return _
 
     @property
     def show_tile(self):
@@ -685,22 +713,6 @@ class SkeeterTile(CCCT_Tile):
     def all_items(self):
         return super(SkeeterTile, self).items
 
-    @property
-    def filtered_items(self):
-
-        filter_tags = self.filter_tags
-        filter_public_tags = self.filter_public_tags
-
-        items = self.all_items
-
-        # Filter by tags provided.
-        if filter_tags:
-            items = [x for x in items if any([y in x.Subject() for y in filter_tags])]
-
-        if filter_public_tags:
-            items = [x for x in items if any([y in self.get_public_tags(x) for y in filter_public_tags])]
-
-        return items
 
     @property
     def items(self):
