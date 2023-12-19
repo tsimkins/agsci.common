@@ -1,3 +1,4 @@
+from Products.CMFPlone.utils import safe_unicode
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
 from zLOG import LOG, INFO, ERROR
@@ -465,7 +466,7 @@ class SyncPersonPhotoView(SyncPersonView):
 
         if image_data:
 
-            image_field = NamedBlobImage(filename="%s.jpg" % self.username, data=image_data)
+            image_field = NamedBlobImage(filename="%s.jpg" % safe_unicode(self.username), data=image_data)
 
             if image_field.contentType in ('image/jpeg',):
                 self.context.image = image_field
