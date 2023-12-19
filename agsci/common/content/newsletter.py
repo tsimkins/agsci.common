@@ -1,4 +1,5 @@
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.row import DictRow
 from plone.supermodel import model
 from plone.dexterity.content import Item
 from plone.autoform import directives as form

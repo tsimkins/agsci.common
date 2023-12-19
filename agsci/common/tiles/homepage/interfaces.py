@@ -1,4 +1,5 @@
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.row import DictRow
 from plone.app.contenttypes.interfaces import ICollection
 from plone.app.textfield import RichText
 from plone.app.vocabularies.catalog import CatalogSource

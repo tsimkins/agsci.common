@@ -1,6 +1,7 @@
 from Products.CMFCore.utils import getToolByName
 from Products.membrane.interfaces import IGroup
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.row import DictRow
 from dexterity.membrane.behavior.group import IMembraneGroup, MembraneGroup
 from plone.autoform import directives as form
 from plone.dexterity.content import Container

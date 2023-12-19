@@ -1,7 +1,8 @@
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.membrane.interfaces import IMembraneUserRoles
-from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield.row import DictRow
 from dexterity.membrane.behavior.user import DxUserObject
 from dexterity.membrane.content.member import IMember
 from plone.app.content.interfaces import INameFromTitle

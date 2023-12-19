@@ -10,7 +10,7 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.MimetypesRegistry.MimeTypesRegistry import MimeTypeException
 from collections import OrderedDict
-from collective.z3cform.datagridfield import DictRow
+from collective.z3cform.datagridfield.row import DictRow
 from jinja2 import Environment, FileSystemLoader
 from plone import api
 from plone.app.contenttypes.behaviors.collection import ICollection
