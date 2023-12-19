@@ -8,6 +8,8 @@
 
 <section
     tal:define="title view/data/title|nothing;
+                description view/data/description|nothing;
+                text view/data/text/output|nothing;
                 show_item_title view/data/show_item_title|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
@@ -18,6 +20,14 @@
         <h2 class="mt-0"
             tal:condition="title"
             tal:content="title" />
+
+        <p class="lead"
+            tal:condition="description"
+            tal:content="description" />
+
+        <div class="mb-3 html"
+            tal:condition="text"
+            tal:content="structure text" />
 
         <div tal:attributes="class string:card-deck card-deck-image-plain card-deck-${view/data/count}up agsci-visual-cards">
 

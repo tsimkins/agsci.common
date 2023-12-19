@@ -514,6 +514,16 @@ class IScooterTile(IBorderTile):
         required=False
     )
 
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
     target = RelationChoice(
         title=_(u"Target Collection"),
         source=CatalogSource(object_provides=ICollection.__identifier__),
@@ -530,6 +540,18 @@ class IScooterTile(IBorderTile):
         title=_(u"Hide items excluded from navigation"),
         required=False,
         default=False,
+    )
+
+    filter_tags = schema.List(
+        title=_(u"Filter By Tag(s)"),
+        value_type=schema.Choice(vocabulary="agsci.common.tiles.tags"),
+        required=False,
+    )
+
+    filter_public_tags = schema.List(
+        title=_(u"Filter By Public Tag(s)"),
+        value_type=schema.Choice(vocabulary="agsci.common.tiles.public_tags"),
+        required=False,
     )
 
     count = schema.Choice(
