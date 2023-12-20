@@ -459,7 +459,7 @@ class SyncPersonPhotoView(SyncPersonView):
 
     @property
     def has_image(self):
-        return hasattr(self.context.aq_base, 'image') and isinstance(self.context.image, NamedBlobImage) and self.context.image.data
+        return not not (hasattr(self.context.aq_base, 'image') and isinstance(self.context.image, NamedBlobImage) and self.context.image.data)
 
     def import_content(self):
         image_data = self.api_image

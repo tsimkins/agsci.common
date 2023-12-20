@@ -548,6 +548,19 @@ class ScooterTile(CCCT_Tile):
     def items(self):
         return self.filtered_items
 
+    @property
+    def show_more(self):
+        show_more_link = not not self.data.get('show_more_items_link', False)
+        more_items_link_text = self.more_items_link_text
+
+        return not not (show_more_link and more_items_link_text)
+
+    @property
+    def more_items_link_text(self):
+        _ = self.data.get('more_items_link_text', None)
+
+        if _:
+            return _.strip()
 
 class SkeeterTile(CCCT_Tile):
 
