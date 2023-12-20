@@ -122,6 +122,7 @@ class TagsVocabulary(StaticVocabulary):
         'majors',
         'news',
         'workshop',
+        'interest-areas',
     ]
 
     @property
