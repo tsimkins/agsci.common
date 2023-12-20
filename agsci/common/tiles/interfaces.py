@@ -574,6 +574,18 @@ class IScooterTile(IBorderTile):
         default=True,
     )
 
+    show_more_items_link = schema.Bool(
+        title=_(u"Show More Link"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+    more_items_link_text = schema.TextLine(
+        title=_(u'"More" Link Text'),
+        required=False,
+    )
+
 class ISkeeterTile(IBorderTile):
 
     title = schema.TextLine(
