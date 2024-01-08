@@ -24,6 +24,15 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Events Feed -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="tagged-events-feed"
+        class=".events.TaggedEventsFeedView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- News Feed -->
     <browser:page
         for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
