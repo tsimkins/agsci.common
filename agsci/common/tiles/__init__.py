@@ -593,7 +593,7 @@ class SkeeterTile(CCCT_Tile):
         ]:
             return 'container-fluid section-highlight py-5'
 
-        return 'container-fluid'
+        return 'container px-0'
 
     @property
     def light_version(self):
