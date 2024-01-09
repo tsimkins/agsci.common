@@ -792,7 +792,7 @@ class ImportContentView(BrowserView):
                 self.import_content()
 
         except Exception as e:
-            return '%s: %s' % (type(e).__name__, e.message)
+            return '%s: %s' % (type(e).__name__, str(e))
 
     def import_content(self):
         pass
