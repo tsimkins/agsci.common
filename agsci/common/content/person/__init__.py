@@ -72,6 +72,10 @@ class LDAPInfo(object):
                                 if len(v) == 1:
                                     data[k] = v[0]
 
+                            if isinstance(data[k], bytes):
+                                data[k] = data[k].decode('utf-8')
+
+
                         data['ldap_host'] = self.ldap_host(host)
 
                         return data
