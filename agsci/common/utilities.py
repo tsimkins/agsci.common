@@ -547,9 +547,25 @@ def setSiteURL(site, domain=None, path='', https=True, edit=False):
     if site.REQUEST.get('_ec_cache', None):
         site.REQUEST['_ec_cache'] = {}
 
-def toISO(_):
-    _date = localize(_)
-    return _date.isoformat()
+def toISO(v):
+
+    if isinstance(v, DateTime):
+        try:
+            tz = pytz.timezone(v.timezone())
+        except pytz.UnknownTimeZoneError:
+            # Because that's where we are.
+            tz = pytz.timezone(DEFAULT_TIMEZONE)
+
+        tmp_date = datetime(v.year(), v.month(), v.day(), v.hour(),
+                            v.minute(), int(v.second()))
+
+        if tmp_date.year not in [2499, 1000]:
+            return tz.localize(tmp_date).isoformat()
+
+    elif isinstance(v,datetime):
+        return v.isoformat()
+
+    return None
 
 def getNavigationViewlet():
     # Avoid circular import
