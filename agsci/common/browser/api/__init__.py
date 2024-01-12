@@ -63,7 +63,7 @@ class CustomEncoder(JSONEncoder):
 
                     return {
                         'content_type' : o.contentType,
-                        'data' : base64.b64encode(blob_data),
+                        'data' : base64.b64encode(blob_data).decode('utf-8'),
                         'filename' : o.filename,
                     }
 
