@@ -4,8 +4,10 @@ from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 from bs4 import BeautifulSoup
 from plone.app.contenttypes.interfaces import INewsItem, ILink, ICollection
+from plone.protect.interfaces import IDisableCSRFProtection
 from z3c.relationfield.relation import RelationValue
 from zope.component import getUtility
+from zope.interface import alsoProvides
 from zope.intid.interfaces import IIntIds
 from zope.security import checkPermission
 
@@ -316,6 +318,8 @@ class NewsletterModify(NewsletterView):
     security.declareProtected(permissions.ModifyPortalContent, '__call__')
 
     def __call__(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+
         enabled_items = self.request.form.get('enabled_items', [])
         spotlight_items = self.request.form.get('spotlight_items', [])
         show_summary = self.request.form.get('show_summary', 'auto')
@@ -384,7 +388,7 @@ class NewsletterEmail(NewsletterView):
                 else:
                     a['href'] = '%s?%s' % (a['href'], utm)
 
-        html = premailer.transform(unicode(soup), 'utf-8')
+        html = premailer.transform(str(soup), 'utf-8')
 
         tags = ['dl', 'dt', 'dd']
 
