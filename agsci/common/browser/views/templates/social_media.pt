@@ -32,7 +32,7 @@
                     <li tal:condition="twitter_url">
                         <a class="no-border"
                            tal:attributes="href twitter_url">
-                            <em class="title fab fa-2x fa-fw fa-twitter-square"><span class="hiddenStructure">Twitter</span></em>
+                            <em class="title fab fa-2x fa-fw fa-x-twitter"><span class="hiddenStructure">X (Twitter)</span></em>
                         </a>
                     </li>
 

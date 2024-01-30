@@ -2022,7 +2022,7 @@ body.template-content_check_items .contenttype-event .event.summary {
   font-size: 0.825rem;
   line-height: 1.4;
 }
-.address .list-inline-social a .fa-envelope, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:active .fa-envelope {
+.address .list-inline-social a .fa-envelope, .address .list-inline-social a .fa-twitter-x, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:hover .fa-twitter-x, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:focus .fa-twitter-x, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:visited .fa-twitter-x, .address .list-inline-social a:active .fa-envelope, .address .list-inline-social a:active .fa-twitter-x {
   color: black !important;
 }
 
