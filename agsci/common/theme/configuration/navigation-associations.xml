@@ -34,8 +34,9 @@
                 <link>https://www.linkedin.com/company/penn-state-extension/</link>
             </item>
             <item>
-                <icon>fa-twitter-square</icon>
-                <title>Twitter</title>
+                <icon>fa-x-twitter</icon>
+                <title>X (Twitter)</title>
+                <inverse>True</title>
                 <link>https://twitter.com/psuextension</link>
             </item>
             <item>

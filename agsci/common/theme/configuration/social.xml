@@ -8,14 +8,15 @@
             <link>https://www.facebook.com/agsciences</link>
         </item>
         <item>
-            <title>Twitter</title>
-            <icon>fa-twitter-square</icon>
-            <link>http://twitter.com/agsciences</link>
+            <title>X (Twitter)</title>
+            <icon>fa-x-twitter</icon>
+            <link>https://twitter.com/agsciences</link>
+            <inverse>True</inverse>
         </item>
         <item>
             <title>Instagram</title>
             <icon>fa-instagram</icon>
-            <link>http://instagram.com/agsciences</link>
+            <link>https://instagram.com/agsciences</link>
             <inverse>True</inverse>
         </item>
         <item>
@@ -26,7 +27,7 @@
         <item>
             <title>YouTube</title>
             <icon>fa-youtube-square</icon>
-            <link>http://www.youtube.com/c/PennStateAgSciences</link>
+            <link>https://www.youtube.com/c/PennStateAgSciences</link>
         </item>
     </nav>
 

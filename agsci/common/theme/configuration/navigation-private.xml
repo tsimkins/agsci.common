@@ -40,8 +40,9 @@
                 <link>https://www.linkedin.com/company/penn-state-college-of-agricultural-sciences</link>
             </item>
             <item>
-                <icon>fa-twitter-square</icon>
-                <title>Twitter</title>
+                <icon>fa-x-twitter</icon>
+                <title>X (Twitter)</title>
+                <inverse>True</title>
                 <link>http://twitter.com/agsciences</link>
             </item>
             <item>

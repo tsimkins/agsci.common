@@ -149,7 +149,7 @@ class SocialMediaPlatformVocabulary(KeyValueVocabulary):
 
     items = [
         ('facebook', 'Facebook'),
-        ('twitter', 'Twitter'),
+        ('twitter', 'X (Twitter)'),
         ('instagram', 'Instagram'),
         ('linkedin', 'LinkedIn'),
         ('youtube', 'YouTube'),
