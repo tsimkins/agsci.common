@@ -51,7 +51,7 @@
             <item>
                 <icon>fa-x-twitter</icon>
                 <title>X (Twitter)</title>
-                <inverse>True</title>
+                <inverse>True</inverse>
                 <link>https://twitter.com/PSUPPEM</link>
             </item>
             <item>
