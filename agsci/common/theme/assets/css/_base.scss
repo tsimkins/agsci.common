@@ -284,6 +284,25 @@ body.userrole-authenticated {
     }
 }
 
+body.portaltype-agsci_degree_container {
+    #faceted-form {
+        #center-area {
+            float: right;
+            margin-left: -25em;
+            width: 100%;
+        }
+
+        #left-area {
+            width: 15rem;
+        }
+
+        .left-area-js {
+            margin-left: 15em;
+        }
+
+    }
+}
+
 #faceted-form {
 
     padding-top: 0;
@@ -293,20 +312,6 @@ body.userrole-authenticated {
             margin-top: 0;
             padding-top: 0;
         }
-    }
-
-    #center-area {
-        float: right;
-        margin-left: -25em;
-        width: 100%;
-    }
-
-    #left-area {
-        width: 15rem;
-    }
-
-    .left-area-js {
-        margin-left: 15em;
     }
 
     #faceted-top-column,
@@ -662,6 +667,28 @@ body {
     }
 }
 
+@media (max-width: 992px) {
+
+    body.portaltype-agsci_degree_container {
+        #faceted-form {
+            .degree-explorer {
+                margin: 0;
+            }
+            #center-area {
+                margin: 0;
+            }
+            #center-and-left-area {
+                margin: 0;
+            }
+            .left-area-js {
+                margin: 0;
+            }
+
+        }
+    }
+
+}
+
 @media (max-width: 768px) {
 
     /* Ignore iframe widths if mobile */
@@ -713,22 +740,6 @@ body {
 
     }
 
-    body.portaltype-agsci_degree_container {
-        #faceted-form {
-            .degree-explorer {
-                margin: 0;
-            }
-            #center-area {
-                margin: 0;
-            }
-            #center-and-left-area {
-                margin: 0;
-            }
-            .left-area-js {
-                margin: 0;
-            }
-        }
-    }
 }
 
 #leadimage img.w-100 {

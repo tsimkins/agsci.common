@@ -8,6 +8,7 @@ footer { /* relative and high z-index to mask any affixed nav */
     position: relative;
     background-color: $color-ps-nittany-navy;
     z-index: 9;
+    clear: both;
 
     img.agsci-logo {
         width: 300px;
