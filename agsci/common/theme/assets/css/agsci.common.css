@@ -19350,11 +19350,11 @@ body.template-content_check_items .contenttype-event .event.summary {
   display: none;
 }
 
-.address p, .address li {
+address p, address li, .address p, .address li {
   font-size: 0.825rem;
   line-height: 1.4;
 }
-.address .list-inline-social a .fa-envelope, .address .list-inline-social a .fa-x-twitter, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:hover .fa-x-twitter, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:focus .fa-x-twitter, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:visited .fa-x-twitter, .address .list-inline-social a:active .fa-envelope, .address .list-inline-social a:active .fa-x-twitter {
+address .list-inline-social a .fa-envelope, address .list-inline-social a .fa-x-twitter, address .list-inline-social a:hover .fa-envelope, address .list-inline-social a:hover .fa-x-twitter, address .list-inline-social a:focus .fa-envelope, address .list-inline-social a:focus .fa-x-twitter, address .list-inline-social a:visited .fa-envelope, address .list-inline-social a:visited .fa-x-twitter, address .list-inline-social a:active .fa-envelope, address .list-inline-social a:active .fa-x-twitter, .address .list-inline-social a .fa-envelope, .address .list-inline-social a .fa-x-twitter, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:hover .fa-x-twitter, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:focus .fa-x-twitter, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:visited .fa-x-twitter, .address .list-inline-social a:active .fa-envelope, .address .list-inline-social a:active .fa-x-twitter {
   color: black !important;
 }
 
