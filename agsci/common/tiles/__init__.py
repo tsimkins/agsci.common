@@ -963,6 +963,7 @@ class SocialMediaTile(BaseTile):
             'instagram' : 'fa-instagram',
             'linkedin' : 'fa-linkedin',
             'newsletter' : 'fa-envelope',
+            'twitter' : 'fa-x-twitter',
         }.get(platform, 'fa-%s-square' % platform)
 
         return " ".join([s_icon, p_icon])
