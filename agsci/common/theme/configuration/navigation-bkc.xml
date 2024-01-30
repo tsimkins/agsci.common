@@ -29,8 +29,9 @@
                 <link>https://www.facebook.com/Better-Kid-Care-183381285023909/</link>
             </item>
             <item>
-                <icon>fa-twitter-square</icon>
-                <title>Twitter</title>
+                <icon>fa-x-twitter</icon>
+                <title>X (Twitter)</title>
+                <inverse>True</title>
                 <link>https://twitter.com/BetterKidCare</link>
             </item>
             <item>

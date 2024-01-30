@@ -220,7 +220,7 @@ class ISocialMediaBase(model.Schema):
     )
 
     twitter_url = schema.TextLine(
-        title=_(u"Twitter URL"),
+        title=_(u"X (Twitter) URL"),
         required=False,
     )
 
