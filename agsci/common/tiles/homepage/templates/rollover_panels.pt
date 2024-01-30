@@ -19,31 +19,31 @@
     class="card card-visual hoverable reveal"
     aria-haspopup="true"
     type="button"
-    tal:define="_title i/title|nothing;
-                _description i/description|nothing;
-                _text i/text/output|nothing;
-                _serial repeat/i/index;
-                _img_src python:view.get_img_src(_serial);
-                _img_alt python:view.get_img_alt(_serial);">
+    tal:define="tile_title i/title|nothing;
+                tile_description i/description|nothing;
+                tile_text i/text/output|nothing;
+                tile_serial repeat/i/index;
+                tile_img_src python:view.get_img_src(tile_serial);
+                tile_img_alt python:view.get_img_alt(tile_serial);">
 
     <div class="card-image-top">
         <div class="opacity-dimmer opacity-dimmer-bottom-left-short">
             &nbsp;
         </div>
-        <img tal:attributes="src _img_src;
-                             alt _img_alt;"
-                tal:condition="_img_src"
+        <img tal:attributes="src tile_img_src;
+                             alt tile_img_alt;"
+                tal:condition="tile_img_src"
                 class="w-100" />
         <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
             <h3 class="card-title">
-                <span tal:content="_title" />
-                <span tal:replace="_description" />
+                <span tal:content="tile_title" />
+                <span tal:replace="tile_description" />
             </h3>
         </div>
     </div>
 
     <div class="hover-content d-flex align-items-center">
-        <p tal:replace="structure _text|nothing" />
+        <p tal:replace="structure tile_text|nothing" />
     </div>
 </button>
 </tal:item>

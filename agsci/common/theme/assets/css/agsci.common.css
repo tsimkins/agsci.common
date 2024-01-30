@@ -17729,6 +17729,11 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:focus:b
   margin-top: 0;
   padding-top: 0;
 }
+#faceted-form #center-area {
+  float: right;
+  margin-left: -25em;
+  width: 100%;
+}
 #faceted-form #left-area {
   width: 15rem;
 }
