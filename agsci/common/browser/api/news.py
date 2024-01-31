@@ -77,15 +77,26 @@ class UntaggedNewsFeedView(TaggedNewsFeedView):
 
         for r in results:
 
+            flagged = False
+
             if r.Subject:
-                if any([x.startswith('department-') for x in r.Subject]):
-                    continue
+
+                # Skip Extension news
                 if any([x.startswith('news-extension') for x in r.Subject]):
                     continue
 
-            o = r.getObject()
+                # Flag student news without a major
+                if 'news-students' in r.Subject and not any([x.startswith('majors-') for x in r.Subject]):
+                    flagged = True
 
-            article_link = getattr(o.aq_base, 'article_link', None)
+                # Flag no department tag
+                if not any([x.startswith('department-') for x in r.Subject]):
+                    flagged = True
 
-            if article_link and 'www.psu.edu/news' in article_link:
-                yield r
+            if flagged:
+                o = r.getObject()
+
+                article_link = getattr(o.aq_base, 'article_link', None)
+
+                if article_link and 'www.psu.edu/news' in article_link:
+                    yield r
