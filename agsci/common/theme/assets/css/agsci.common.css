@@ -15039,6 +15039,7 @@ footer {
   position: relative;
   background-color: #001E44;
   z-index: 9;
+  clear: both;
 }
 footer img.agsci-logo {
   width: 300px;
@@ -17722,23 +17723,24 @@ body.userrole-authenticated .mosaic-tile-content section[data-tile-type]:focus:b
   z-index: 1;
 }
 
+body.portaltype-agsci_degree_container #faceted-form #center-area {
+  float: right;
+  margin-left: -25em;
+  width: 100%;
+}
+body.portaltype-agsci_degree_container #faceted-form #left-area {
+  width: 15rem;
+}
+body.portaltype-agsci_degree_container #faceted-form .left-area-js {
+  margin-left: 15em;
+}
+
 #faceted-form {
   padding-top: 0;
 }
 #faceted-form #faceted-results .tileItem:first-child {
   margin-top: 0;
   padding-top: 0;
-}
-#faceted-form #center-area {
-  float: right;
-  margin-left: -25em;
-  width: 100%;
-}
-#faceted-form #left-area {
-  width: 15rem;
-}
-#faceted-form .left-area-js {
-  margin-left: 15em;
 }
 #faceted-form #faceted-top-column .faceted-criteria dl, #faceted-form #faceted-top-column .faceted-criteria .faceted-criteria-hide-show, #faceted-form #faceted-top-column .faceted-criteria .faceted-criteria-reset,
 #faceted-form #center-content-area .faceted-criteria dl,
@@ -18318,6 +18320,20 @@ body .youtube-video-embed.aspect-3-2.w-75 {
   border-color: #CCCCCC;
 }
 
+@media (max-width: 992px) {
+  body.portaltype-agsci_degree_container #faceted-form .degree-explorer {
+    margin: 0;
+  }
+  body.portaltype-agsci_degree_container #faceted-form #center-area {
+    margin: 0;
+  }
+  body.portaltype-agsci_degree_container #faceted-form #center-and-left-area {
+    margin: 0;
+  }
+  body.portaltype-agsci_degree_container #faceted-form .left-area-js {
+    margin: 0;
+  }
+}
 @media (max-width: 768px) {
   /* Ignore iframe widths if mobile */
   body #content-core #parent-fieldname-text .youtube-video-embed {
@@ -18347,19 +18363,6 @@ body .youtube-video-embed.aspect-3-2.w-75 {
 
   .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
     position: static !important;
-  }
-
-  body.portaltype-agsci_degree_container #faceted-form .degree-explorer {
-    margin: 0;
-  }
-  body.portaltype-agsci_degree_container #faceted-form #center-area {
-    margin: 0;
-  }
-  body.portaltype-agsci_degree_container #faceted-form #center-and-left-area {
-    margin: 0;
-  }
-  body.portaltype-agsci_degree_container #faceted-form .left-area-js {
-    margin: 0;
   }
 }
 #leadimage img.w-100 {
