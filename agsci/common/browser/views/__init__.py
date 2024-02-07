@@ -1148,7 +1148,6 @@ class ThemeJSView(BaseView):
         data = []
 
         for _ in self.FILES:
-
             js_file  = "%s/%s" % (self.ASSETS_DIR, _)
 
             try:
@@ -1162,7 +1161,7 @@ class ThemeJSView(BaseView):
                     pass
                 else:
 
-                    if _data and isinstance(_data, str):
+                    if _data and isinstance(_data, (str, bytes)):
                         data.append(u"/* Include file: %s */" % _)
                         data.append(safe_unicode(_data))
 
