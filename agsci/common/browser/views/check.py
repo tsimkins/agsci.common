@@ -2,7 +2,10 @@ from plone.batching import Batch
 from plone.memoize.view import memoize
 from zope.component import subscribers
 
-import urllib
+try:
+    from urllib.parse import urlencode
+except ImportError:
+    from urllib import urlencode
 
 from agsci.common.content.check import IContentCheck
 from . import FolderView
@@ -43,7 +46,7 @@ class EnumerateErrorChecksView(FolderView):
         for pt in sorted(product_types):
 
             # Get a list of all objects of that product type
-            products = filter(lambda x: x.Type == pt, results)
+            products = [x for x in results if x.Type == pt]
 
             # Grab the first element (brain) in that list
             r = products[0]
@@ -89,7 +92,7 @@ class EnumerateErrorChecksView(FolderView):
     def getErrorListingURL(self, ptc, c):
         product_type = ptc.product_type
         error_code = c.error_code
-        params = urllib.urlencode({'Type' : product_type, 'ContentErrorCodes' : error_code})
+        params = urlencode({'Type' : product_type, 'ContentErrorCodes' : error_code})
         return '%s/@@content_check_items?%s' % (self.context.absolute_url(), params)
 
     def getIssueCount(self, ptc, c):
