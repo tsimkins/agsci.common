@@ -27,6 +27,7 @@
         <element value="plone.excludefromnavigation" />
         <element value="plone.shortname" />
         <element value="agsci.common.content.behaviors.IHomepageFields" />
+        <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
         <element value="plone.layoutaware"/>
     </property>
     <property name="schema">agsci.common.content.homepage.IHomepage</property>
