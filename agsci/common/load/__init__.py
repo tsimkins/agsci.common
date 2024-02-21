@@ -394,7 +394,7 @@ class ContentImporter(object):
 
     def get_resource_uid(self, path):
 
-        path = safe_unicode(path).encode('utf-8')
+        path = safe_unicode(path)
 
         if 'portal_factory' in path:
             return
