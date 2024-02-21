@@ -321,13 +321,13 @@ def scrub_html(html):
         ["&#148;", "\""],
         ["&quot;", "\""],
         ["&quot;", "\""],
-        [unichr(186), "&deg;"],
-        [unichr(176), "&deg;"],
-        [unichr(215), "x"],
+        [chr(186), "&deg;"],
+        [chr(176), "&deg;"],
+        [chr(215), "x"],
         ["`", "'"],
-        [unichr(181), "&micro;"],
-        [unichr(8776), "&asymp;"],
-        [unichr(160), " "],
+        [chr(181), "&micro;"],
+        [chr(8776), "&asymp;"],
+        [chr(160), " "],
         ["\t", " "],
         [u"\u201c", '"'],
         [u"\u201d", '"'],
@@ -348,7 +348,7 @@ def scrub_html(html):
         if v in ["gt", "lt", "amp", "bull", "quot"]:
             continue
 
-        html = html.replace(unichr(k), "&%s;" % v)
+        html = html.replace(chr(k), "&%s;" % v)
 
     # Replace <br /> inside table th/td with nothing.
     replaceEmptyBR = re.compile(r'(<(td|th).*?>)\s*(<br */*>\s*)+\s*(</\2>)', re.I|re.M)
