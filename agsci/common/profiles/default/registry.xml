@@ -980,7 +980,7 @@
             <element key="Collection">plone.content.folderView</element>
             <element key="Document">plone.content.itemView</element>
             <element key="Event">plone.content.itemView</element>
-            <element key="File">plone.content.file</element>
+            <element key="File">plone.content.feed</element>
             <element key="Folder">plone.content.folderView</element>
             <element key="Image">plone.content.file</element>
             <element key="Link">plone.content.itemView</element>

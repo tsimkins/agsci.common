@@ -5,6 +5,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:cache="http://namespaces.zope.org/cache"
     i18n_domain="agsci.common">
 
     <adapter
@@ -16,5 +17,12 @@
         file="blocks/transform.zcml"
     />
 
+    <include package="z3c.caching" file="meta.zcml" />
+
+    <!-- Remove caching for file -->
+    <cache:ruleset
+        ruleset="plone.content.feed"
+        for="plone.namedfile.browser.Download"
+     />
 
 </configure>
