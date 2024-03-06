@@ -215,6 +215,6 @@ class BlockTransformer(object):
 
 
         if found:
-            return soup.prettify()
+            return str(soup)
 
         return html
