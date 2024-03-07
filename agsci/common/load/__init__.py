@@ -20,7 +20,7 @@ from random import random
 from zLOG import LOG, INFO, ERROR
 from zope.component import getUtility
 from zope.component.hooks import getSite
-from zope.component.interfaces import ComponentLookupError
+from zope.interface.interfaces import ComponentLookupError
 from zope.interface import alsoProvides
 from zope.schema import getFieldsInOrder
 
