@@ -8,12 +8,20 @@
 
 <metal:jsslot fill-slot="javascript_head_slot">
   <script type="text/javascript"
-    defer="defer"
-    tal:content="string:jQuery(document).ready(function(evt){
-        Faceted.Load(evt, '${context/absolute_url}/');
-    });"></script>
+        tal:content="string:var FACETED_BASEURL = '${context/absolute_url}/';" />
+
+    <script type="text/javascript">
+        function readyStateChanged() {
+            if (document.readyState == 'complete') {
+                Faceted.Load(null, FACETED_BASEURL);
+            }
+        }
+
+        jQuery(document).on('readystatechange', readyStateChanged);
+
+    </script>
+
   <script type="text/javascript"
-    defer="defer"
     tal:content="string:jQuery(window).on('unload', function(){
         Faceted.Unload();
     });"></script>
