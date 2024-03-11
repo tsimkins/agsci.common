@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing;
+                    data-container-width view/container_width;">
+
+        <section class="smaller-script-quote mt-0 pb-3 pt-5">
+            <div class="container px-0 pb-5">
+                <div class="row align-items-center mx-0">
+                    <div class="col-12 px-0 pt-5">
+                        <p class="quote-angle-script quote-left">
+                            <tal:quote tal:condition="view/data/quote_title|nothing">&ldquo;</tal:quote><span tal:replace="view/data/title|nothing" /><tal:quote tal:condition="view/data/quote_title|nothing">&rdquo;</tal:quote>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+  </body>
+</html>
