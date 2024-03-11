@@ -164,6 +164,7 @@ class AgJourneyQuoteStyleVocabulary(KeyValueVocabulary):
         ('plain_image_none', 'Plain (No Image)'),
         ('image_large', 'Large Image'),
         ('handwriting_small', 'Handwriting (Small)'),
+        ('handwriting_small_no_image', 'Handwriting (No Image)'),
         ('handwriting_large', 'Handwriting (Large)'),
     ]
 
