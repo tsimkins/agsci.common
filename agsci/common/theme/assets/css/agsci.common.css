@@ -15373,6 +15373,13 @@ p.quote-angle-script-sm {
   p.quote-angle-script.quote-left {
     text-align: right;
   }
+
+  p.quote-angle-script.quote-none {
+    text-align: left;
+    left: 0;
+    margin-left: 3rem;
+    text-indent: -3rem;
+  }
 }
 p.journey-quote-cite {
   margin-right: 1rem;
