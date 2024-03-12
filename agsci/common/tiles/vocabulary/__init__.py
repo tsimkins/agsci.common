@@ -162,6 +162,8 @@ class AgJourneyQuoteStyleVocabulary(KeyValueVocabulary):
         ('plain_image_left', 'Plain (Image Left)'),
         ('plain_image_right', 'Plain (Image Right)'),
         ('plain_image_none', 'Plain (No Image)'),
+        ('feature_image_left', 'Feature Card (Image Left)'),
+        ('feature_image_right', 'Feature Card (Image Right)'),
         ('image_large', 'Large Image'),
         ('handwriting_small', 'Handwriting (Small)'),
         ('handwriting_small_no_image', 'Handwriting (No Image)'),
