@@ -24,6 +24,20 @@ class IAgJourneyJumbotronTile(Interface):
         required=False,
     )
 
+    vertical_align = schema.Choice(
+        title=_(u"Vertical Align"),
+        vocabulary='agsci.common.tiles.ctb_align',
+        default=u'center',
+        required=False,
+    )
+
+    horizontal_align = schema.Choice(
+        title=_(u"Horizontal Align"),
+        vocabulary='agsci.common.tiles.clr_align',
+        default=u'center',
+        required=False,
+    )
+
 
 class IAgJourneyBioTile(Interface):
 

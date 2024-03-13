@@ -1,7 +1,7 @@
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-from .. import BaseTile, ConditionalTemplateTile, YouTubeTile
+from .. import BaseTile, ConditionalTemplateTile, YouTubeTile, JumbotronTile
 
-class AgJourneyJumbotronTile(BaseTile):
+class AgJourneyJumbotronTile(JumbotronTile):
 
     __full_width__ = True
 

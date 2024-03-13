@@ -12,7 +12,7 @@
                     data-container-width view/container_width;">
 
     <div tal:attributes="style string:background-image: url(${view/img_src|nothing});"
-            class="jumbotron-img bg-center-center fix-img-right"></div>
+         class="jumbotron-img bg-center-center ${view/align_class|nothing}"></div>
 
     <div class="opacity-dimmer opacity-dimmer-top-right">
         &nbsp;
