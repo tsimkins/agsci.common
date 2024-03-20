@@ -26,7 +26,10 @@ class ILeadImageNoCaption(ILeadImage):
 @provider(IFormFieldProvider)
 class ILeadImageExtra(ILeadImage):
 
-    form.write_permission(image_show_jumbotron="cmf.ManagePortal")
+    form.write_permission(
+        image_show_jumbotron="cmf.ManagePortal",
+        image_quarter_width="cmf.ManagePortal"
+    )
 
     model.fieldset(
         'settings',
