@@ -664,10 +664,14 @@ class LeadImageViewlet(ViewletBase):
 
     @property
     def klass(self):
+
+        if self.adapted.image_quarter_width:
+            return 'mb-4 ml-md-5 float-md-right col-md-6 col-lg-3 px-0 ml-0'
+
         if self.adapted.image_full_width:
             return 'mb-4 px-0'
 
-        return 'mb-4 ml-lg-3 float-lg-right col-lg-6 px-0'
+        return 'mb-4 ml-lg-5 float-lg-right col-lg-6 px-0 ml-0'
 
     def crop_image(self):
         crop_image_view = getMultiAdapter((self.context, self.request), name="crop-image")

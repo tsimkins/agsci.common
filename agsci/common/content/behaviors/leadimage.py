@@ -33,6 +33,7 @@ class ILeadImageExtra(ILeadImage):
         label=_(u'Settings'),
         fields=(
             'image_full_width',
+            'image_quarter_width',
             'image_show',
             'image_show_jumbotron',
         ),
@@ -42,6 +43,13 @@ class ILeadImageExtra(ILeadImage):
         title=_(u"Full width lead image"),
         description=_(u"This will show a large lead image on the object display."),
         default=True,
+        required=False,
+    )
+
+    image_quarter_width = schema.Bool(
+        title=_(u"Quarter width lead image"),
+        description=_(u"This will show a small lead image on the object display."),
+        default=False,
         required=False,
     )
 
@@ -76,7 +84,12 @@ class LeadImage(object):
 
     @property
     def image_full_width(self):
-        return getattr(self.context, "image_full_width", False)
+        if not self.image_quarter_width:
+            return getattr(self.context, "image_full_width", False)
+
+    @property
+    def image_quarter_width(self):
+        return getattr(self.context, "image_quarter_width", False)
 
     @property
     def image_show(self):
