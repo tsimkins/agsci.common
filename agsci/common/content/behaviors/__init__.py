@@ -95,6 +95,7 @@ class IFolderFields(model.Schema):
             'search_section',
             'show_subfolder_text',
             'browser_title',
+            'browser_org_title',
         ],
     )
 
@@ -130,6 +131,14 @@ class IFolderFields(model.Schema):
         title=_(u"Include in browser title?"),
         description=_(u"Use this folder as an intermediate level in the \"title\" attribute."),
         required=False,
+        default=False,
+    )
+
+    browser_org_title = schema.Bool(
+        title=_(u"Use this as 'site' title?"),
+        description=_(u"Use this folder to display the 'site' portion of the title, rather than the actual site title. Caution: This overrides the college/department."),
+        required=False,
+        default=False,
     )
 
     show_subfolder_text = schema.Bool(

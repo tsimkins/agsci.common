@@ -890,7 +890,21 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
                 break
 
     @property
+    @memoize
     def actual_portal_title(self):
+
+        if self.custom_portal_title:
+
+            for _ in self.context.aq_chain:
+
+                browser_title = getattr(_.aq_base, 'browser_org_title', False)
+
+                if browser_title:
+                    return _.Title()
+
+                if IPloneSiteRoot.providedBy(_):
+                    break
+
         return super(TitleViewlet, self).portal_title
 
     @property
