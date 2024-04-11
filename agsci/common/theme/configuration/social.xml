@@ -4,8 +4,9 @@
     <nav id="social">
         <item>
             <title>Facebook</title>
-            <icon>fa-facebook-square</icon>
+            <icon>fa-brands fa-facebook</icon>
             <link>https://www.facebook.com/agsciences</link>
+            <inverse>True</inverse>
         </item>
         <item>
             <title>X (Twitter)</title>

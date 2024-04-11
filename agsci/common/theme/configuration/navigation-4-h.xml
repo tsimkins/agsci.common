@@ -24,7 +24,8 @@
     <nav id="social">
         <items>
             <item>
-                <icon>fa-facebook-square</icon>
+                <icon>fa-brands fa-facebook</icon>
+                <inverse>True</inverse>
                 <title>Facebook</title>
                 <link>https://www.facebook.com/Pennsylvania4H/</link>
             </item>

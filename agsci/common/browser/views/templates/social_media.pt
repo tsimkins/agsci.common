@@ -25,7 +25,7 @@
                     <li tal:condition="facebook_url">
                         <a class="no-border"
                            tal:attributes="href facebook_url">
-                            <em class="title fab fa-2x fa-fw fa-facebook-square"><span class="hiddenStructure">Facebook</span></em>
+                            <em class="title fa-2x fa-fw fa-brands fa-facebook"><span class="hiddenStructure">Facebook</span></em>
                         </a>
                     </li>
 

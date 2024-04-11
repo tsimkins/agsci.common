@@ -6,7 +6,7 @@ class TilePortletAssignment(base.Assignment):
     title = ''
 
     def __init__(self, title=title, *args, **kwargs):
-        base.Assignment.__init__(self, title=title, *args, **kwargs)
+        base.Assignment.__init__(self)
         self.title=title
         if kwargs:
             for (k,v) in kwargs.items():
