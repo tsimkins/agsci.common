@@ -15346,6 +15346,7 @@ p.quote-angle-script-polaroid {
   text-shadow: 1px 1px 3px rgba(35, 30, 32, 0.75);
   transform: rotate(-4deg);
   z-index: 9;
+  word-spacing: 0.25em;
 }
 
 p.quote-angle-script-polaroid {
