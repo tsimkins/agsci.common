@@ -131,7 +131,10 @@ class PersonBlock(BaseBlock):
     def card_view(self, r, style=None, border=True):
         o = r.getObject()
 
-        if style == 'vertical':
+        if style == 'compact':
+            return o.restrictedTraverse('@@card_view_compact')()
+
+        elif style == 'vertical':
 
             if not border:
                 return o.restrictedTraverse('@@card_view_vertical_no_border')()
@@ -140,7 +143,7 @@ class PersonBlock(BaseBlock):
 
         return o.restrictedTraverse('@@card_view_image')()
 
-    def people(self, usernames, style=None, border=True):
+    def people(self, usernames, style=None, border=True, preserve_order=False, order=None):
 
         _ids = [x.strip() for x in usernames.split(',')]
 
@@ -151,6 +154,19 @@ class PersonBlock(BaseBlock):
                 'getId' : _ids,
                 'sort_on' : 'sortable_title',
             })
+
+            results = [x for x in results]
+
+            if preserve_order:
+                results.sort(key=lambda x: _ids.index(x.getId))
+            elif order and isinstance(order, str):
+                order = [x.strip() for x in order.strip().split(',')]
+                def sort_key(_):
+                    try:
+                        return order.index(_.getId)
+                    except ValueError:
+                        return 9999
+                results.sort(key=sort_key)
 
             return [self.card_view(x, style, toBool(border)) for x in results]
 

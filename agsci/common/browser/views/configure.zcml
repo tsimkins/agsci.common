@@ -283,6 +283,16 @@
         template="templates/person_card.pt"
     />
 
+    <!-- Person Card View (Compact)-->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="card_view_compact"
+        class=".PersonCardCompactView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/person_card.pt"
+    />
+
     <!-- Person Publication Listing View -->
     <browser:page
         for="agsci.common.content.person.directory.IPersonPublicationListing"

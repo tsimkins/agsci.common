@@ -419,6 +419,7 @@ class PersonCardView(PersonView):
     card_format = 'horizontal'
     border = True
     show_image = False
+    show_social = True
 
     @property
     def card_image_class(self):
@@ -459,6 +460,11 @@ class PersonCardVerticalImageView(PersonCardVerticalView):
 class PersonCardVerticalNoBorderView(PersonCardVerticalView):
     border = False
     show_image = True
+
+class PersonCardCompactView(PersonCardView):
+    card_format = 'vertical'
+    show_image = False
+    show_social = False
 
 class FolderView(_FolderView, BaseView):
 
