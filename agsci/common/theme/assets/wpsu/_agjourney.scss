@@ -18,6 +18,17 @@ AgSci Journeys
         width: auto;
         height: 70vh;
         }
+
+    .opacity-dimmer-top-right {
+        background:
+        linear-gradient(to top right, rgba(0,0,0,0) 50%,rgba(0,0,0,0.5) 100%);
+        }
+
+    .opacity-dimmer-bottom-right {
+        background:
+        linear-gradient(135deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.75) 100%);
+        }
+
     }
 
 @media screen and (min-aspect-ratio: 1800/1714) { /* desired height 70vh (70%) = 100/70 times height of image = 1800/1714 */
