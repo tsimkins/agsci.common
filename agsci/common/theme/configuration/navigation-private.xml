@@ -96,8 +96,8 @@
                         <link>https://agsci.psu.edu/it/how-to</link>
                     </item>
                     <item>
-                        <title>Marketing and Communications</title>
-                        <link>knowledgebase/marketing-communications</link>
+                        <title>Marketing</title>
+                        <link>knowledgebase/marketing</link>
                     </item>
                     <item>
                         <title>Research Support</title>
@@ -117,6 +117,10 @@
                 <title>Administrative Units</title>
                 <link>areas</link>
                 <items>
+                    <item>
+                        <title>College Relations and Communications</title>
+                        <link>https://agsci.psu.edu/communications</link>
+                    </item>
                     <item>
                         <title>Conferences and Short Courses</title>
                         <link>https://agsci.psu.edu/faculty-staff/conferences</link>
@@ -150,8 +154,8 @@
                         <link>https://agsci.psu.edu/it</link>
                     </item>
                     <item>
-                        <title>Marketing and Communications</title>
-                        <link>https://agsci.psu.edu/communications</link>
+                        <title>Marketing Unit</title>
+                        <link>https://agsci.psu.edu/marketing</link>
                     </item>
                     <item>
                         <title>Operations and Services</title>
