@@ -2,6 +2,7 @@ from AccessControl import getSecurityManager
 from AccessControl.SecurityManagement import newSecurityManager, setSecurityManager
 from DateTime import DateTime
 from OFS.Folder import Folder
+from PIL import Image
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.Portal import PloneSite
 from Products.CMFPlone.utils import safe_unicode
@@ -9,6 +10,7 @@ from datetime import datetime
 from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
 from plone.i18n.normalizer import idnormalizer, filenamenormalizer
+from plone.namedfile.file import NamedBlobImage
 from plone.portlets.interfaces import ILocalPortletAssignmentManager
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
@@ -33,7 +35,13 @@ try:
 except ImportError:
     import htmlentitydefs
 
-from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL, DOMAIN_CONFIG
+try:
+    from StringIO import StringIO ## for Python 2
+    from BytesIO import BytesIO
+except ImportError:
+    from io import BytesIO, StringIO ## for Python 3
+
+from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL, DOMAIN_CONFIG, IMAGE_FORMATS
 
 DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
 
@@ -618,3 +626,49 @@ def md5sum(data):
     m = hashlib.md5()
     m.update(data)
     return m.hexdigest()
+
+# Resize image to new dimensions.  This takes the 'blob' field for the image,
+# checks to see if it falls within the dimensions, and scales it accordingly.
+# (from agsci.atlas.utilities)
+
+def rescaleImage(image, max_width=1200.0, max_height=1200.0, quality=100):
+
+    img_value = scaleImage(image, max_width=max_width, max_height=max_height, quality=quality)
+
+    if img_value:
+        image._setData(img_value)
+        return True
+
+def scaleImage(image, max_width=1200.0, max_height=1200.0, quality=100):
+
+    # Test the field to make sure it's a blob image
+    if not isinstance(image, NamedBlobImage):
+        raise TypeError(u'%r is not a NamedBlobImage field.' % image)
+
+    (w,h) = image.getImageSize()
+
+    image_format = IMAGE_FORMATS.get(image.contentType, [None, None])[0]
+
+    ratio = min([float(max_width)/w, float(max_height)/h])
+
+    if ratio < 1.0 or quality < 100:
+
+        if ratio < 1.0:
+            new_w = w * ratio
+            new_h = h * ratio
+        else:
+            new_w = w
+            new_h = h
+
+        try:
+            pil_image = Image.open(BytesIO(image.data))
+        except IOError:
+            pass
+        else:
+            pil_image.thumbnail([new_w, new_h], Image.ANTIALIAS)
+
+            img_buffer = BytesIO()
+
+            pil_image.save(img_buffer, image_format, quality=quality)
+
+            return img_buffer.getvalue()
