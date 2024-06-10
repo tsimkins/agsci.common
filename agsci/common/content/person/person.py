@@ -31,7 +31,7 @@ social_media_fields = [
 
 contact_fields = [
     'email', 'street_address', 'city', 'state',
-    'zip_code', 'phone_number',
+    'zip_code', 'phone_number', 'teams_call',
     'fax_number', 'primary_profile_url',
     'pronouns', 'name_pronunciation'
 ]

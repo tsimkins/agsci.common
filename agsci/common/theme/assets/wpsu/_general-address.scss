@@ -17,8 +17,12 @@ address {
     }
 
 address {
+    a {
+        border-bottom: 1px solid $color-ps-creek;
+    }
     a:hover,
     a:focus {
+        color: $color-ps-creek;
         border-bottom: 1px solid $color-ps-creek;
         }
     }

@@ -162,6 +162,13 @@
                                             <a tal:attributes="href string:tel:${phone_number}"
                                                tal:content="phone_number" />
                                         </li>
+                                        <li tal:define="teams_call context/teams_call|nothing;
+                                                        username context/username|nothing"
+                                            tal:condition="teams_call">
+                                            <span>Teams</span>
+                                            <a class="html"
+                                               tal:attributes="href string:https://teams.microsoft.com/l/call/0/0?users=${username}@psu.edu">Call me on Teams</a>
+                                        </li>
                                         <li tal:define="fax_number context/fax_number|nothing"
                                             tal:condition="fax_number">
                                             <span>Fax</span>

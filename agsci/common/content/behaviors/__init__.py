@@ -291,6 +291,12 @@ class IContact(ILocation):
         required=False,
     )
 
+    teams_call = schema.Bool(
+        title=_(u"Show 'Call me on Teams' link on profile."),
+        default=False,
+        required=False,
+    )
+
     fax_number = schema.TextLine(
         title=_(u"Fax Number"),
         required=False,

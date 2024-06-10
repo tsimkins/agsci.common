@@ -10449,8 +10449,12 @@ address a {
     font-size: 0.825rem;
   }
 }
+address a {
+  border-bottom: 1px solid #3EA39E;
+}
 address a:hover,
 address a:focus {
+  color: #3EA39E;
   border-bottom: 1px solid #3EA39E;
 }
 
