@@ -1,12 +1,16 @@
 from PIL import Image, ImageDraw
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from plone.memoize.instance import memoize
 from plone.namedfile.file import NamedBlobImage
 from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides, implementer
 from zope.publisher.interfaces import IPublishTraverse
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 from io import BytesIO
 

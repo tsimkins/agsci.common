@@ -1,10 +1,14 @@
-from Products.CMFPlone import PloneMessageFactory as _
 from plone.autoform import directives as form
 from plone.app.contenttypes.interfaces import ICollection
 from plone.app.portlets.portlets import base
 from plone.app.vocabularies.catalog import CatalogSource
 from zope.interface import implementer
 from zope import schema
+
+try:
+    from plone.base import PloneMessageFactory as _
+except ImportError:
+    from Products.CMFPlone import PloneMessageFactory as _
 
 from ..tiles.interfaces import ISkeeterTile
 from . import TilePortletAssignment, TilePortletRenderer

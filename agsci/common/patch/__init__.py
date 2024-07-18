@@ -1,4 +1,8 @@
-from plone.app.widgets.base import TextareaWidget
+try:
+    from plone.app.z3cform.widgets.patterns import TextareaWidget
+except:
+    from plone.app.widgets.base import TextareaWidget
+
 from DateTime import DateTime
 
 from agsci.common.content.behaviors.leadimage import ILeadImage

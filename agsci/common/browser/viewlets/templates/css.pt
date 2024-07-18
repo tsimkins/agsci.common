@@ -9,10 +9,6 @@
                         data-editing_mosaic editing_mosaic;" />
 
     <link rel="stylesheet"
-        tal:condition="editing"
-        tal:attributes="href string:${portal_url}/++theme++barceloneta/less/barceloneta-compiled.css" />
-
-    <link rel="stylesheet"
         tal:condition="python: editing and not editing_mosaic"
         tal:attributes="href string:${portal_url}/++resource++agsci.common/assets/css/agsci.common.base.css" />
 

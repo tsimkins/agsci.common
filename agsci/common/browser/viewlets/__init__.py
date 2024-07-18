@@ -1,8 +1,6 @@
 from Acquisition import aq_base
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from datetime import datetime
 from eea.facetednavigation.subtypes.interfaces import IFacetedNavigable
@@ -20,6 +18,16 @@ from plone.registry.interfaces import IRegistry
 from zope.annotation.interfaces import IAnnotations
 from zope.component import getUtility, queryUtility, getMultiAdapter, queryMultiAdapter
 from zope.component.hooks import getSite
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
+
+try:
+    from plone.base.interfaces.siteroot import ISiteRoot
+except ImportError:
+    from Products.CMFPlone.interfaces.siteroot import ISiteRoot
 
 try:
     from urllib.parse import urlparse
@@ -116,7 +124,7 @@ class ViewletBase(_ViewletBase):
 
             for o in self.context.aq_chain:
 
-                if IPloneSiteRoot.providedBy(o):
+                if ISiteRoot.providedBy(o):
                     break
 
                 _ = getattr(o.aq_base, 'search_section', False)
@@ -883,10 +891,10 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
             if browser_title:
                 return _.Title()
 
-            if IPloneSiteRoot.providedBy(_.aq_parent):
+            if ISiteRoot.providedBy(_.aq_parent):
                 return _.Title()
 
-            if IPloneSiteRoot.providedBy(_):
+            if ISiteRoot.providedBy(_):
                 break
 
     @property
@@ -902,7 +910,7 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
                 if browser_title:
                     return _.Title()
 
-                if IPloneSiteRoot.providedBy(_):
+                if ISiteRoot.providedBy(_):
                     break
 
         return super(TitleViewlet, self).portal_title
@@ -928,7 +936,7 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
             if org_title:
                 return org_title
 
-            if IPloneSiteRoot.providedBy(_):
+            if ISiteRoot.providedBy(_):
                 break
 
     @property
@@ -946,7 +954,7 @@ class TitleViewlet(ViewletBase, _TitleViewlet):
     @property
     @memoize
     def page_title(self):
-        if IPloneSiteRoot.providedBy(self.context):
+        if ISiteRoot.providedBy(self.context):
             return {
                 'search' : 'Search'
             }.get(self.template, u'')
@@ -995,7 +1003,7 @@ class OpenGraphViewlet(TitleViewlet):
 
         # Look up through the acquisition chain until we hit a Plone site
         for _ in self.context.aq_chain:
-            if IPloneSiteRoot.providedBy(_):
+            if ISiteRoot.providedBy(_):
                 break
 
             (image_url, image_mime_type) = self.get_image_info(_)

@@ -1,12 +1,16 @@
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from calendar import timegm
 from datetime import datetime
 from plone.app.textfield.value import RichTextValue
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 try:
     from urllib.parse import urljoin

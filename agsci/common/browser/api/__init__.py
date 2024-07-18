@@ -1,7 +1,6 @@
 from Acquisition import ImplicitAcquisitionWrapper
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from Products.Five import BrowserView
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -11,6 +10,11 @@ from z3c.relationfield.relation import RelationValue
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.interface.interface import Method
+
+try:
+    from plone.base.interfaces.siteroot import ISiteRoot
+except ImportError:
+    from Products.CMFPlone.interfaces.siteroot import ISiteRoot
 
 try:
     from urllib.parse import urljoin
@@ -321,7 +325,7 @@ class PloneSiteJSONDumpView(JSONDumpView):
 
         # If the object on which the view is called is not a Plone site, include
         # it as well.
-        if not IPloneSiteRoot.providedBy(self.context):
+        if not ISiteRoot.providedBy(self.context):
             paths.append(self.context_path)
 
         # Find everything inside these paths

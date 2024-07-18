@@ -1,11 +1,15 @@
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from datetime import datetime
 from plone import api
 from zope.interface import implementer, Interface
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 try:
     from StringIO import StringIO

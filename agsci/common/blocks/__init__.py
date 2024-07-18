@@ -1,11 +1,15 @@
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 from plone.app.uuid.utils import uuidToObject
 from zope.component import queryMultiAdapter
 from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 from ..utilities import toBool
 from ..indexer import hasLeadImage

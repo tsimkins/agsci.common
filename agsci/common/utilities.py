@@ -5,7 +5,6 @@ from OFS.Folder import Folder
 from PIL import Image
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.Portal import PloneSite
-from Products.CMFPlone.utils import safe_unicode
 from datetime import datetime
 from plone.behavior.interfaces import IBehavior
 from plone.dexterity.interfaces import IDexterityFTI
@@ -19,6 +18,11 @@ from zope.component.hooks import getSite
 from zope.globalrequest import getRequest
 from zope.schema.interfaces import IVocabularyFactory
 
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
+
 import hashlib
 import pytz
 import re
@@ -26,9 +30,12 @@ import requests
 import unicodedata
 
 try:
-    from AccessControl.User import Super as BaseUnrestrictedUser
+    from AccessControl.users import UnrestrictedUser as BaseUnrestrictedUser
 except ImportError:
-    from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+    try:
+        from AccessControl.User import UnrestrictedUser as BaseUnrestrictedUser
+    except ImportError:
+        from AccessControl.User import Super as BaseUnrestrictedUser
 
 try:
     import html.entities as htmlentitydefs

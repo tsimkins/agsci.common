@@ -1,5 +1,4 @@
 from DateTime import DateTime
-from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 from plone.app.dexterity.behaviors import constrains
 from plone.app.portlets.portlets import navigation
 from plone.app.textfield.value import RichTextValue
@@ -8,6 +7,11 @@ from plone.event.interfaces import IEventAccessor
 from plone.portlets.constants import CONTEXT_CATEGORY
 from plone.registry.interfaces import IRegistry
 from zope.component import getUtility
+
+try:
+    from plone.base.interfaces.constrains import ISelectableConstrainTypes
+except ImportError:
+    from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
 from ..utilities import localize, add_editors_group, get_portlet_assignment_manager, \
     get_portlet_mapping

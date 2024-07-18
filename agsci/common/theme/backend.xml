@@ -22,6 +22,12 @@
 
     <rules css:if-content=".userrole-authenticated">
 
+    <after css:theme-children="head">
+      <link href="++theme++barceloneta/css/barceloneta.css"
+            rel="stylesheet"
+      />
+    </after>
+
         <!-- Script -->
         <after css:theme-children="body" css:content="head script" />
 

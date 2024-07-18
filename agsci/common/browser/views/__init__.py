@@ -5,7 +5,6 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.browser.search import Search as _SearchView
 from Products.CMFPlone.browser.search import BAD_CHARS, quote, quote_chars
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.MimetypesRegistry.MimeTypesRegistry import MimeTypeException
@@ -29,7 +28,16 @@ from zope import schema
 from zope.component import getMultiAdapter, getUtility
 from zope.interface import implementer, alsoProvides
 from zope.publisher.interfaces import IPublishTraverse
-from Products.CMFPlone.interfaces.controlpanel import ISiteSchema
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
+
+try:
+    from plone.base.interfaces.controlpanel import ISiteSchema
+except ImportError:
+    from Products.CMFPlone.interfaces.controlpanel import ISiteSchema
 
 from agsci.common import object_factory
 from agsci.common.constants import ASSETS_DOMAIN

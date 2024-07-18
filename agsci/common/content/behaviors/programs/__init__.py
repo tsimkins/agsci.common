@@ -1,10 +1,14 @@
 from Acquisition import aq_chain
-from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
 from zope import schema
 from zope.interface import provider
 from zope.schema.interfaces import IContextAwareDefaultFactory
+
+try:
+    from plone.base.interfaces.siteroot import ISiteRoot
+except ImportError:
+    from Products.CMFPlone.interfaces.siteroot import ISiteRoot
 
 from agsci.common import AgsciMessageFactory as _
 
@@ -12,7 +16,7 @@ from agsci.common import AgsciMessageFactory as _
 def defaultCounty(context):
 
     for o in aq_chain(context):
-        if IPloneSiteRoot.providedBy(o):
+        if ISiteRoot.providedBy(o):
             break
 
         _ = getattr(o.aq_base, 'county', [])

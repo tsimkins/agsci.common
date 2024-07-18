@@ -1,4 +1,3 @@
-from Products.CMFPlone.utils import safe_unicode
 from plone.dexterity.utils import createContentInContainer
 from plone.namedfile.file import NamedBlobImage
 from zLOG import LOG, INFO, ERROR
@@ -11,6 +10,11 @@ from agsci.common.indexer import PersonSortableTitle
 from agsci.common.utilities import ploneify, md5sum
 
 from .. import ImportContentView, ContentImporter, ExtensionContentImporter
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 try:
     from urllib.parse import urlparse

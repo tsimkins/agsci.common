@@ -1,5 +1,4 @@
 from DateTime import DateTime
-from Products.CMFPlone.utils import safe_unicode
 from email.mime.text import MIMEText
 from plone.dexterity.utils import createContentInContainer
 from plone.event.interfaces import IEventAccessor
@@ -9,6 +8,11 @@ import requests
 from agsci.common.constants import AGSCI_DOMAIN
 from agsci.common.utilities import localize
 from .. import ImportContentView
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 # For Cvent URL http://guest.cvent.com/EVENTS/Calendar/Calendar.aspx?cal=9d9ed7b8-dd56-46d5-b5b3-8fb79e05acaf
 

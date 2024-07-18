@@ -1,7 +1,6 @@
 from DateTime import DateTime
 from Products.CMFCore.WorkflowCore import WorkflowException
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from Products.Five import BrowserView
 from zLOG import LOG, INFO, ERROR
 from bs4 import BeautifulSoup
@@ -23,6 +22,11 @@ from zope.component.hooks import getSite
 from zope.interface.interfaces import ComponentLookupError
 from zope.interface import alsoProvides
 from zope.schema import getFieldsInOrder
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 try:
     from urllib.parse import urljoin, urlparse

@@ -1,6 +1,10 @@
-from Products.CMFPlone import PloneMessageFactory as _
 from plone.app.portlets.portlets import base
 from zope.interface import implementer
+
+try:
+    from plone.base import PloneMessageFactory as _
+except ImportError:
+    from Products.CMFPlone import PloneMessageFactory as _
 
 from ..tiles.interfaces import IAnimalTile as ITileInterface
 from . import TilePortletAssignment, TilePortletRenderer

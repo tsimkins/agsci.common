@@ -10,7 +10,7 @@
 
     <monkey:patch
         description="Add 'autocomplete=off' to textarea widget"
-        class="plone.app.widgets.base.TextareaWidget"
+        class="plone.app.z3cform.widgets.patterns.TextareaWidget"
         replacement=".textarea_autocomplete"
         original="__init__"
         />

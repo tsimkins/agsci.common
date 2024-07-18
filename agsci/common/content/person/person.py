@@ -1,5 +1,4 @@
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.utils import safe_unicode
 from Products.membrane.interfaces import IMembraneUserRoles
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.row import DictRow
@@ -15,6 +14,11 @@ from plone.supermodel import model
 from zope import schema
 from zope.component import adapter
 from zope.interface import provider, implementer, Interface
+
+try:
+    from plone.base.utils import safe_text as safe_unicode
+except ImportError:
+    from Products.CMFPlone.utils import safe_unicode
 
 import unicodedata
 
