@@ -10,12 +10,22 @@
     tal:condition="view/show_tile|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing"
-    tal:define="is_portlet view/is_portlet|nothing">
+    tal:define="is_portlet view/is_portlet|nothing;
+                description view/data/description|nothing;
+                text view/data/text/output|nothing">
 
     <h2 class="mt-0"
         tal:define="title view/data/title|nothing"
         tal:condition="title"
         tal:content="title" />
+
+    <p class="lead"
+        tal:condition="description"
+        tal:content="description" />
+            
+    <div class="mb-3 html"
+        tal:condition="text"
+        tal:content="structure text" />
 
     <div class="position-relative m-0"
          tal:define="feature view/featured|nothing">

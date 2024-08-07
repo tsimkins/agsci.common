@@ -593,6 +593,16 @@ class ISkeeterTile(IBorderTile):
         required=False
     )
 
+    description = schema.TextLine(
+        title=_(u"Description"),
+        required=False
+    )
+
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
     target = RelationChoice(
         title=_(u"Target Collection"),
         source=CatalogSource(object_provides=ICollection.__identifier__),

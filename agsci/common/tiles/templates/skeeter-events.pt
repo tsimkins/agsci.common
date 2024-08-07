@@ -8,7 +8,9 @@
 
 <section
     tal:condition="view/show_tile|nothing"
-    tal:define="light_version view/light_version|nothing"
+    tal:define="light_version view/light_version|nothing
+                description view/data/description|nothing;
+                text view/data/text/output|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
@@ -16,6 +18,14 @@
         tal:define="title view/data/title|nothing"
         tal:condition="title"
         tal:content="title" />
+
+    <p class="lead"
+        tal:condition="description"
+        tal:content="description" />
+            
+    <div class="mb-3 html"
+        tal:condition="text"
+        tal:content="structure text" />
 
     <div class="pb-5"
          tal:define="i view/featured|nothing"
