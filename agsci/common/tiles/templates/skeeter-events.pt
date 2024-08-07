@@ -8,7 +8,7 @@
 
 <section
     tal:condition="view/show_tile|nothing"
-    tal:define="light_version view/light_version|nothing
+    tal:define="light_version view/light_version|nothing;
                 description view/data/description|nothing;
                 text view/data/text/output|nothing"
     tal:attributes="class view/section_class|nothing;
