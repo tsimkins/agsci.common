@@ -332,6 +332,15 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   font-weight: bold;
 }
 
+#content-core span[id^=section] {
+  position: absolute;
+  display: block;
+  content: " ";
+  top: -150px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
   padding-top: 25px;

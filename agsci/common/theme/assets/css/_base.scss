@@ -239,6 +239,17 @@ body.template-edit.mosaic-enabled {
     }
 }
 
+#content-core {
+    span[id^=section] {
+        position: absolute;
+        display: block;
+        content: " ";
+        top: -150px;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
 
