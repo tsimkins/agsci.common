@@ -810,7 +810,29 @@ body.template-default_error_message #content-core,
 body.template-fg_thankspage_view_p3 #content-core,
 body.template-fg_base_view_p3 #content-core,
 body.template-file_view #content-core,
-body.template-image_view #content-core {
+body.template-image_view #content-core,
+body.viewpermission-plone-app-event-import-ical #content-core{
+
+    form.view-name-ical_import_settings {
+
+        @include body_font();
+
+        label {
+            display: block;
+            font-weight: bold;
+
+            .formHelp {
+                display: block;
+                font-weight: normal;
+                margin-top: 0.375em;
+            }
+
+        }
+
+        div.field {
+            margin: 1rem 0;
+        }
+    }
 
     h2, h3, h4, h5, h5 {
         a, a:visited,

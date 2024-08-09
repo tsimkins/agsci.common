@@ -1090,8 +1090,57 @@ body.template-default_error_message #content-core,
 body.template-fg_thankspage_view_p3 #content-core,
 body.template-fg_base_view_p3 #content-core,
 body.template-file_view #content-core,
-body.template-image_view #content-core {
+body.template-image_view #content-core,
+body.viewpermission-plone-app-event-import-ical #content-core {
   /* No centering! */
+}
+#parent-fieldname-text form.view-name-ical_import_settings,
+.html form.view-name-ical_import_settings,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings,
+body.template-default_error_message #content-core form.view-name-ical_import_settings,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings,
+body.template-file_view #content-core form.view-name-ical_import_settings,
+body.template-image_view #content-core form.view-name-ical_import_settings,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+#parent-fieldname-text form.view-name-ical_import_settings label,
+.html form.view-name-ical_import_settings label,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings label,
+body.template-default_error_message #content-core form.view-name-ical_import_settings label,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings label,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings label,
+body.template-file_view #content-core form.view-name-ical_import_settings label,
+body.template-image_view #content-core form.view-name-ical_import_settings label,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings label {
+  display: block;
+  font-weight: bold;
+}
+#parent-fieldname-text form.view-name-ical_import_settings label .formHelp,
+.html form.view-name-ical_import_settings label .formHelp,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-default_error_message #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-file_view #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-image_view #content-core form.view-name-ical_import_settings label .formHelp,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings label .formHelp {
+  display: block;
+  font-weight: normal;
+  margin-top: 0.375em;
+}
+#parent-fieldname-text form.view-name-ical_import_settings div.field,
+.html form.view-name-ical_import_settings div.field,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings div.field,
+body.template-default_error_message #content-core form.view-name-ical_import_settings div.field,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings div.field,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings div.field,
+body.template-file_view #content-core form.view-name-ical_import_settings div.field,
+body.template-image_view #content-core form.view-name-ical_import_settings div.field,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings div.field {
+  margin: 1rem 0;
 }
 #parent-fieldname-text h2 a, #parent-fieldname-text h2 a:visited,
 #parent-fieldname-text h2 a:active,
@@ -1403,7 +1452,47 @@ body.template-image_view #content-core h5 .a,
 body.template-image_view #content-core h5 a:hover,
 body.template-image_view #content-core h5 .a:hover,
 body.template-image_view #content-core h5 a:focus,
-body.template-image_view #content-core h5 .a:focus {
+body.template-image_view #content-core h5 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:focus {
   color: #231e20 !important;
   border-bottom: none !important;
 }
@@ -1438,7 +1527,11 @@ body.template-file_view #content-core .a,
 body.template-image_view #content-core a:not([class*=btn]),
 body.template-image_view #content-core a:visited:not([class*=btn]),
 body.template-image_view #content-core a:active:not([class*=btn]),
-body.template-image_view #content-core .a {
+body.template-image_view #content-core .a,
+body.viewpermission-plone-app-event-import-ical #content-core a:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core a:visited:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core a:active:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a {
   color: #4373B6 !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
@@ -1474,7 +1567,11 @@ body.template-file_view #content-core .a:focus,
 body.template-image_view #content-core a:hover:not([class*=btn]),
 body.template-image_view #content-core .a:hover,
 body.template-image_view #content-core a:focus:not([class*=btn]),
-body.template-image_view #content-core .a:focus {
+body.template-image_view #content-core .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a:hover:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a:focus:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a:focus {
   color: #093c79 !important;
   border-bottom: 1px solid #0078ab !important;
 }
@@ -1522,7 +1619,13 @@ body.template-image_view #content-core a.no-border:visited,
 body.template-image_view #content-core a.no-border:active,
 body.template-image_view #content-core a.no-border:hover,
 body.template-image_view #content-core a.no-border:focus,
-body.template-image_view #content-core .a.no-border {
+body.template-image_view #content-core .a.no-border,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:active,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:focus,
+body.viewpermission-plone-app-event-import-ical #content-core .a.no-border {
   border-bottom: none !important;
   padding-bottom: 0 !important;
 }
@@ -1533,7 +1636,8 @@ body.template-default_error_message #content-core li,
 body.template-fg_thankspage_view_p3 #content-core li,
 body.template-fg_base_view_p3 #content-core li,
 body.template-file_view #content-core li,
-body.template-image_view #content-core li {
+body.template-image_view #content-core li,
+body.viewpermission-plone-app-event-import-ical #content-core li {
   font-size: 0.9rem;
   line-height: 1.8;
 }
@@ -1544,7 +1648,8 @@ body.template-default_error_message #content-core dl,
 body.template-fg_thankspage_view_p3 #content-core dl,
 body.template-fg_base_view_p3 #content-core dl,
 body.template-file_view #content-core dl,
-body.template-image_view #content-core dl {
+body.template-image_view #content-core dl,
+body.viewpermission-plone-app-event-import-ical #content-core dl {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   line-height: 1.5;
@@ -1556,7 +1661,8 @@ body.template-default_error_message #content-core dl dt,
 body.template-fg_thankspage_view_p3 #content-core dl dt,
 body.template-fg_base_view_p3 #content-core dl dt,
 body.template-file_view #content-core dl dt,
-body.template-image_view #content-core dl dt {
+body.template-image_view #content-core dl dt,
+body.viewpermission-plone-app-event-import-ical #content-core dl dt {
   margin-top: 1rem;
 }
 #parent-fieldname-text dl dt strong,
@@ -1566,7 +1672,8 @@ body.template-default_error_message #content-core dl dt strong,
 body.template-fg_thankspage_view_p3 #content-core dl dt strong,
 body.template-fg_base_view_p3 #content-core dl dt strong,
 body.template-file_view #content-core dl dt strong,
-body.template-image_view #content-core dl dt strong {
+body.template-image_view #content-core dl dt strong,
+body.viewpermission-plone-app-event-import-ical #content-core dl dt strong {
   font-weight: bold;
 }
 #parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
@@ -1590,7 +1697,10 @@ body.template-file_view #content-core td,
 body.template-file_view #content-core th,
 body.template-image_view #content-core input,
 body.template-image_view #content-core td,
-body.template-image_view #content-core th {
+body.template-image_view #content-core th,
+body.viewpermission-plone-app-event-import-ical #content-core input,
+body.viewpermission-plone-app-event-import-ical #content-core td,
+body.viewpermission-plone-app-event-import-ical #content-core th {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
@@ -1608,7 +1718,9 @@ body.template-fg_base_view_p3 #content-core th,
 body.template-file_view #content-core td,
 body.template-file_view #content-core th,
 body.template-image_view #content-core td,
-body.template-image_view #content-core th {
+body.template-image_view #content-core th,
+body.viewpermission-plone-app-event-import-ical #content-core td,
+body.viewpermission-plone-app-event-import-ical #content-core th {
   line-height: 1.4;
 }
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
@@ -1625,7 +1737,9 @@ body.template-fg_base_view_p3 #content-core table.table-sm th,
 body.template-file_view #content-core table.table-sm td,
 body.template-file_view #content-core table.table-sm th,
 body.template-image_view #content-core table.table-sm td,
-body.template-image_view #content-core table.table-sm th {
+body.template-image_view #content-core table.table-sm th,
+body.viewpermission-plone-app-event-import-ical #content-core table.table-sm td,
+body.viewpermission-plone-app-event-import-ical #content-core table.table-sm th {
   font-size: 0.875rem;
   line-height: 1.25;
 }
@@ -1636,7 +1750,8 @@ body.template-default_error_message #content-core table caption,
 body.template-fg_thankspage_view_p3 #content-core table caption,
 body.template-fg_base_view_p3 #content-core table caption,
 body.template-file_view #content-core table caption,
-body.template-image_view #content-core table caption {
+body.template-image_view #content-core table caption,
+body.viewpermission-plone-app-event-import-ical #content-core table caption {
   caption-side: top;
 }
 #parent-fieldname-text table[align=center] th, #parent-fieldname-text table[align=center] td,
@@ -1669,7 +1784,11 @@ body.template-file_view #content-core tr[align=center] td,
 body.template-image_view #content-core table[align=center] th,
 body.template-image_view #content-core table[align=center] td,
 body.template-image_view #content-core tr[align=center] th,
-body.template-image_view #content-core tr[align=center] td {
+body.template-image_view #content-core tr[align=center] td,
+body.viewpermission-plone-app-event-import-ical #content-core table[align=center] th,
+body.viewpermission-plone-app-event-import-ical #content-core table[align=center] td,
+body.viewpermission-plone-app-event-import-ical #content-core tr[align=center] th,
+body.viewpermission-plone-app-event-import-ical #content-core tr[align=center] td {
   text-align: left !important;
 }
 #parent-fieldname-text [align=center],
@@ -1679,7 +1798,8 @@ body.template-default_error_message #content-core [align=center],
 body.template-fg_thankspage_view_p3 #content-core [align=center],
 body.template-fg_base_view_p3 #content-core [align=center],
 body.template-file_view #content-core [align=center],
-body.template-image_view #content-core [align=center] {
+body.template-image_view #content-core [align=center],
+body.viewpermission-plone-app-event-import-ical #content-core [align=center] {
   text-align: left !important;
 }
 #parent-fieldname-text .callout,
@@ -1689,7 +1809,8 @@ body.template-default_error_message #content-core .callout,
 body.template-fg_thankspage_view_p3 #content-core .callout,
 body.template-fg_base_view_p3 #content-core .callout,
 body.template-file_view #content-core .callout,
-body.template-image_view #content-core .callout {
+body.template-image_view #content-core .callout,
+body.viewpermission-plone-app-event-import-ical #content-core .callout {
   background: #EEEEEE;
   padding: 1em;
   border-left: 1em solid #CCCCCC;
@@ -1711,7 +1832,9 @@ body.template-fg_base_view_p3 #content-core b.lead,
 body.template-file_view #content-core strong.lead,
 body.template-file_view #content-core b.lead,
 body.template-image_view #content-core strong.lead,
-body.template-image_view #content-core b.lead {
+body.template-image_view #content-core b.lead,
+body.viewpermission-plone-app-event-import-ical #content-core strong.lead,
+body.viewpermission-plone-app-event-import-ical #content-core b.lead {
   font-weight: bolder !important;
 }
 #parent-fieldname-text a.state-private,
@@ -1753,7 +1876,12 @@ body.template-image_view #content-core a.state-private,
 body.template-image_view #content-core a.state-private:hover,
 body.template-image_view #content-core a.state-private:focus,
 body.template-image_view #content-core a.state-private:visited,
-body.template-image_view #content-core a.state-private:link {
+body.template-image_view #content-core a.state-private:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:link {
   color: #FF0000 !important;
 }
 #parent-fieldname-text a.state-pending,
@@ -1795,7 +1923,12 @@ body.template-image_view #content-core a.state-pending,
 body.template-image_view #content-core a.state-pending:hover,
 body.template-image_view #content-core a.state-pending:focus,
 body.template-image_view #content-core a.state-pending:visited,
-body.template-image_view #content-core a.state-pending:link {
+body.template-image_view #content-core a.state-pending:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:link {
   color: #FFA500 !important;
 }
 #parent-fieldname-text a.state-published,
@@ -1837,7 +1970,12 @@ body.template-image_view #content-core a.state-published,
 body.template-image_view #content-core a.state-published:visited,
 body.template-image_view #content-core a.state-published:link,
 body.template-image_view #content-core a.state-published:hover,
-body.template-image_view #content-core a.state-published:focus {
+body.template-image_view #content-core a.state-published:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:focus {
   color: #4373B6 !important;
 }
 
