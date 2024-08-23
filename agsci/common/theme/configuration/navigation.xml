@@ -473,11 +473,11 @@
             </item>
             <!-- DEI Dropdown -->
             <item>
-                <title>Diversity, Equity, &amp; Inclusion</title>
-                <link>diversity</link>
+                <title>Access &amp; Equity</title>
+                <link>access-equity</link>
                 <image>
-                    <link>diversity</link>
-                    <src>++resource++agsci.common/assets/images/navigation/dei.jpg</src>
+                    <link>access-equity</link>
+                    <src>++resource++agsci.common/assets/images/navigation/oae.jpg</src>
                     <title>
                         Our aim is to create an environment where differences are considered assets that make us better learners, educators, scholars, researchers, employees, and students.
                     </title>
@@ -485,34 +485,30 @@
                 <items>
                     <group>
                         <item>
-                            <title>Mission and Strategic Plan</title>
-                            <link>diversity/framework</link>
+                            <title>Undergraduate Students</title>
+                            <link>access-equity/undergraduate</link>
                         </item>
                         <item>
-                            <title>Rainbow Ag Network</title>
-                            <link>diversity/rainbow-ag-network</link>
+                            <title>Graduate Students </title>
+                            <link>access-equity/graduate</link>
                         </item>
                         <item>
-                            <title>Student Information</title>
-                            <link>diversity/students</link>
+                            <title>Faculty and Staff</title>
+                            <link>access-equity/faculty-staff</link>
                         </item>
                     </group>
                     <group>
                         <item>
-                            <title>Diversity Resources</title>
-                            <link>diversity/awareness</link>
-                        </item>
-                        <item>
                             <title>Civil Rights</title>
-                            <link>diversity/civil-rights</link>
+                            <link>access-equity/civil-rights</link>
                         </item>
                         <item>
                             <title>Latinx Agricultural Network</title>
-                            <link>diversity/latinx-agricultural-network</link>
+                            <link>access-equity/latinx-agricultural-network</link>
                         </item>
                         <item>
-                            <title>Diversity Coordinating Council</title>
-                            <link>diversity/coordinating-council</link>
+                            <title>Rainbow Ag Network</title>
+                            <link>access-equity/rainbow-ag-network</link>
                         </item>
                     </group>
                     <group>
