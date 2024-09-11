@@ -33,17 +33,20 @@ jq3(document).ready(function() {
     };
 
     jq3('body.userrole-anonymous [data-toggle="affix"]').each(function() {
-        var ele = jq3(this),
-            wrapper = jq3('<div class="affix-placeholder"></div>');
 
-        ele.before(wrapper);
-
-        jq3(window).on('scroll resize', function() {
-            toggleAffix(ele, jq3(this), wrapper);
-        });
-
-        // init
-        toggleAffix(ele, jq3(window), wrapper);
+        if (! jq3('body.portaltype-agsci_accordion_folder, #parent-fieldname-text.pat-autotoc').length) {
+            var ele = jq3(this),
+                wrapper = jq3('<div class="affix-placeholder"></div>');
+    
+            ele.before(wrapper);
+    
+            jq3(window).on('scroll resize', function() {
+                toggleAffix(ele, jq3(this), wrapper);
+            });
+    
+            // init
+            toggleAffix(ele, jq3(window), wrapper);
+        }
     });
 
 });

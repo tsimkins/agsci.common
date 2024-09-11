@@ -571,6 +571,13 @@ class SubfolderView(FolderView):
         results = super(SubfolderView, self).results()
         return [x for x in results if self.include_item(x)]
 
+class AccordionFolderView(SubfolderView):
+
+    def include_item(self, _):
+
+        if _.Type() in ('Accordion Page',):
+            return True
+
 class CollectionView(FolderView):
 
     batch_size = 99999
@@ -756,6 +763,7 @@ class SiteMapView(_SiteMapView):
     exclude_types = [
         'Image',
         'Event',
+        'Accordion Page',
     ]
 
     @property

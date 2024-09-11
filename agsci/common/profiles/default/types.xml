@@ -22,6 +22,8 @@
     <object name="agsci_person" meta_type="Dexterity FTI" />
     <object name="agsci_agjourney_container" meta_type="Dexterity FTI" />
     <object name="agsci_agjourney" meta_type="Dexterity FTI" />
+    <object name="agsci_accordion_folder" meta_type="Dexterity FTI" />
+    <object name="agsci_accordion_page" meta_type="Dexterity FTI" />
     <object name="Collection" meta_type="Dexterity FTI" />
     <object name="Document" meta_type="Dexterity FTI" />
     <object name="Event" meta_type="Dexterity FTI" />

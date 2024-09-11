@@ -1712,3 +1712,39 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
         }
     }
 }
+
+body.portaltype-agsci_accordion_folder {
+    #content-core .accordion {
+        .card {
+            h2 {
+                padding-top: 150px;
+                margin-top: -150px;
+                
+                button {
+                    font-size: 1rem;
+                    width: 100%;
+                    text-align: left;
+                }
+                button:before {
+                    content: "\2304";
+                    display: inline-block;
+                    margin-left: 0.25rem;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-family: "Font Awesome 5 Free";
+                    line-height: 1.4;
+                    float: right;
+                }
+                button[aria-expanded="true"]:before {
+                    content: "\2303";
+                }
+            }
+            h2:after {
+                border: 0px !important;
+            }
+        }
+    }
+}

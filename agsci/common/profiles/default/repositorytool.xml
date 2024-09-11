@@ -7,6 +7,14 @@
         <policy name="version_on_revert" title="Create version on version revert" />
     </policies>
     <policymap>
+        <type name="agsci_accordion_folder">
+            <policy name="at_edit_autoversion"/>
+            <policy name="version_on_revert"/>
+        </type>
+        <type name="agsci_accordion_page">
+            <policy name="at_edit_autoversion"/>
+            <policy name="version_on_revert"/>
+        </type>
         <type name="agsci_degree">
             <policy name="at_edit_autoversion"/>
             <policy name="version_on_revert"/>

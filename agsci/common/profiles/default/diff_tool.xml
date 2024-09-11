@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <object>
   <difftypes>
+        <type portal_type="agsci_accordion_folder">
+            <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
+        <type portal_type="agsci_accordion_page">
+            <field name="any" difftype="Compound Diff for Dexterity types"/>
+        </type>
         <type portal_type="agsci_degree">
             <field name="any" difftype="Compound Diff for Dexterity types"/>
         </type>
