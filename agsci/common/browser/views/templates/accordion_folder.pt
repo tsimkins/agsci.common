@@ -61,12 +61,12 @@
                                     arai-labelledby string:button-${item_id};"
                     class="accordion-collapse collapse hide">
 
-                    <div class="card-body">
-                        <div class="html small"
+                    <div class="card-body html">
+                        <div class="small mb-3"
                              tal:condition="not: view/anonymous"><a tal:attributes="href string:${item_url}/edit"
                             tal:content="string:Edit ${item_title}" /></div>
 
-                        <p class="lead my-1"
+                        <p class="lead mt-1 mb-3"
                             tal:condition="item_description"
                             tal:content="item_description" />
         
