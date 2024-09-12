@@ -18376,17 +18376,6 @@ body .youtube-video-embed.aspect-3-2.w-75 {
     padding-bottom: 66.6666666667% !important;
   }
 
-  #content-core #parent-fieldname-text.pat-autotoc nav.autotoc-nav {
-    float: none;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    border-left: none;
-    border-right: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
     position: static !important;
   }
@@ -19346,8 +19335,12 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
-  max-width: 33%;
-  padding: 1rem;
+  float: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  padding: 0.5rem 0;
 }
 #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav a {
   border-bottom: none !important;
