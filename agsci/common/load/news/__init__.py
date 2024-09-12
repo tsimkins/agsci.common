@@ -382,7 +382,7 @@ class ImportNewsView(ImportContentView):
 
         tags = []
 
-        for tags_div in soup.findAll("ul", {'class' : re.compile('^article-tags-module--list')}):
+        for tags_div in soup.findAll("ul", {'class' : re.compile('^article-tags_list')}):
             items = tags_div.findAll("li")
             tags.extend([ploneify(x.text).strip() for x in items])
 
