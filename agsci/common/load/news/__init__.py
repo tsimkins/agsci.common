@@ -224,7 +224,7 @@ class ImportNewsView(ImportContentView):
             item.setSubject(tags)
 
         # Publish
-        if self.wftool.getInfoFor(item, 'review_state') != 'Published':
+        if self.wftool.getInfoFor(item, 'review_state').lower() != 'published':
             self.wftool.doActionFor(item, 'publish')
 
         item.reindexObject()
@@ -371,9 +371,9 @@ class ImportNewsView(ImportContentView):
         soup = BeautifulSoup(html, features='lxml')
 
         try:
-            item = soup.find("div", {'class' : re.compile('text-content-module--textContent.*?')})
+            item = soup.find("div", {'id' : re.compile('text-content-container')})
         except:
-            return ""
+            return "<p></p>"
 
         return u"<p>%s</p>" % safe_unicode(item.text)
 
