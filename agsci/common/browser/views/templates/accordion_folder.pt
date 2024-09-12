@@ -19,9 +19,7 @@
                        normalizeString nocall: context/plone_utils/normalizeString;">
       <tal:listing condition="batch">
 
-        <section class="entries container mt-3 px-2 px-md-0">
-
-        <div class="accordion" 
+        <div class="accordion mt-3 px-2 px-md-0" 
             tal:attributes="id accordion_id"
             tal:define="accordion_id string:accordion-${context/getId}">
 
@@ -43,48 +41,48 @@
 
                 <div class="card">
 
-                <h2 class="mt-2 card-header border-0 p-0">
-                  <button
-                    tal:attributes="data-target string:#collapse-${item_id};
-                                    aria-controls string:collapse-${item_id};
-                                    id string:button-${item_id}"
-                    class="btn btn-large px-4" 
-                    type="button" 
-                    data-toggle="collapse" 
-                    aria-expanded="false" 
-                    tal:content="item_title" />
-                </h2>
+                    <h2 class="mt-2 card-header border-0 p-0">
+                      <button
+                        tal:attributes="data-target string:#collapse-${item_id};
+                                        aria-controls string:collapse-${item_id};
+                                        id string:button-${item_id}"
+                        class="btn btn-large px-4" 
+                        type="button" 
+                        data-toggle="collapse" 
+                        aria-expanded="false" 
+                        tal:content="item_title" />
+                    </h2>
 
-                <div
-                    tal:attributes="id string:collapse-${item_id};
-                                    data-parent string:#${accordion_id};
-                                    arai-labelledby string:button-${item_id};"
-                    class="accordion-collapse collapse hide">
+                    <div
+                        tal:attributes="id string:collapse-${item_id};
+                                        data-parent string:#${accordion_id};
+                                        arai-labelledby string:button-${item_id};"
+                        class="accordion-collapse collapse hide">
 
-                    <div class="card-body html">
-                        <div class="small mb-3"
-                             tal:condition="not: view/anonymous"><a tal:attributes="href string:${item_url}/edit"
-                            tal:content="string:Edit ${item_title}" /></div>
+                        <div class="card-body html">
+                            <div class="small mb-3"
+                                 tal:condition="not: view/anonymous"><a tal:attributes="href string:${item_url}/edit"
+                                tal:content="string:Edit ${item_title}" /></div>
 
-                        <p class="lead mt-1 mb-3"
-                            tal:condition="item_description"
-                            tal:content="item_description" />
-        
-                        <div
-                            tal:define="text obj/aq_base/text|nothing"
-                            tal:condition="text"
-                            tal:replace="structure python:obj.aq_base.text.output_relative_to(view.context)" />
+                            <p class="lead mt-1 mb-3"
+                                tal:condition="item_description"
+                                tal:content="item_description" />
+            
+                            <div
+                                tal:define="text obj/aq_base/text|nothing"
+                                tal:condition="text"
+                                tal:replace="structure python:obj.aq_base.text.output_relative_to(view.context)" />
 
+                        </div>
                     </div>
-                </div>
+
+            </div>
 
             </tal:block>
 
           </tal:repeat>
 
         </div>
-
-        </section>
 
       </tal:listing>
 
