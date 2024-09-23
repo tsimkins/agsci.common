@@ -20,7 +20,7 @@ class ImportCventView(ImportContentView):
 
     calendar_url = "https://%s/cvent.json" % AGSCI_DOMAIN
 
-    email_users = ['trs22', 'buh22', 'nmk107', 'ekm5113', 'mlr5128', 'bal5628', 'qus72']
+    email_users = ['trs22', 'buh22', 'nmk107', 'ekm5113', 'mlr5128', 'bal5628', 'qus72', 'tqh5579']
 
     @property
     def cvent_events(self):
