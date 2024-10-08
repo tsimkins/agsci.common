@@ -47,6 +47,11 @@ try:
 except ImportError:
     from zope.component.hooks import getSite
 
+try:
+    from urllib.parse import urlparse, urlunparse
+except ImportError:
+    from urlparse import urlparse, urlunparse
+
 import json
 
 class BaseView(BrowserView):
@@ -284,6 +289,43 @@ class BaseView(BrowserView):
     def format_tags(self, tags=[]):
         if tags:
             return ", ".join(sorted(tags))
+
+    @property
+    def public_url(self):
+
+        prefixes = ('sites.', 'edit.')
+
+        # Calculated URL
+        url = self.context.absolute_url()
+        parsed_url = urlparse(url)
+
+        for prefix in prefixes:
+
+            if parsed_url.netloc.startswith(prefix):
+                return urlunparse(
+                    [
+                        parsed_url.scheme,
+                        parsed_url.netloc[len(prefix):],
+                        parsed_url.path,
+                        '',
+                        '',
+                        ''
+                    ]
+                )
+
+        # Return the http version of the URL
+        return urlunparse(
+            [
+                'http',
+                parsed_url.netloc,
+                parsed_url.path,
+                '',
+                '',
+                ''
+            ]
+        )
+
+
 
 class DegreeListingView(BaseView):
 

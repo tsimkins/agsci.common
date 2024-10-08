@@ -39,7 +39,7 @@
                 item_creator item/Creator;
                 item_has_image python:item.getIcon;">
 
-                <div class="card">
+                <div class="card" tal:attributes="id string:section-${item_id}">
 
                     <h2 class="mt-2 card-header border-0 p-0">
                       <button
@@ -51,6 +51,7 @@
                         data-toggle="collapse" 
                         aria-expanded="false" 
                         tal:content="item_title" />
+
                     </h2>
 
                     <div
@@ -60,9 +61,15 @@
                         class="accordion-collapse collapse hide">
 
                         <div class="card-body html">
-                            <div class="small mb-3"
+                            <div class="small mb-2"
                                  tal:condition="not: view/anonymous"><a tal:attributes="href string:${item_url}/edit"
                                 tal:content="string:Edit ${item_title}" /></div>
+
+                            <div class="small mb-3"
+                                tal:condition="not:view/anonymous|nothing">
+                                <a tal:attributes="href string:${view/public_url}#section-${item_id}"
+                                   tal:content="string:${item_title} anchor" />
+                            </div>
 
                             <p class="lead mt-1 mb-3"
                                 tal:condition="item_description"

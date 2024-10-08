@@ -279,39 +279,6 @@ class NewsletterView(BaseView):
         else:
             return None
 
-    @property
-    def public_url(self):
-
-        prefix = 'edit.'
-
-        # Calculated URL
-        url = self.context.absolute_url()
-        parsed_url = urlparse(url)
-
-        if parsed_url.netloc.startswith(prefix):
-            return urlunparse(
-                [
-                    parsed_url.scheme,
-                    parsed_url.netloc[len(prefix):],
-                    parsed_url.path,
-                    '',
-                    '',
-                    ''
-                ]
-            )
-
-        # Return the http version of the URL
-        return urlunparse(
-            [
-                'http',
-                parsed_url.netloc,
-                parsed_url.path,
-                '',
-                '',
-                ''
-            ]
-        )
-
 class NewsletterModify(NewsletterView):
 
     security = ClassSecurityInfo()
