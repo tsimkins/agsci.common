@@ -32,7 +32,18 @@ class ImportNewsView(ImportContentView):
     def initial_date(self):
         return localize(datetime.strptime(self._initial_date, '%Y-%m-%d'))
 
-    url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
+
+    feed_url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
+
+    @property
+    def token(self):
+        return '%d' % time.time()
+
+    @property
+    def url(self):
+        if '?'  in self.feed_url:
+            return '%s&%s' % (self.feed_url, self.token)
+        return '%s?%s' % (self.feed_url, self.token)
 
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 
