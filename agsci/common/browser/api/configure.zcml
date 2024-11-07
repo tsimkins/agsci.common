@@ -60,4 +60,22 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Updated Published Feed -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="updated-published"
+        class=".review.UpdatedPublishedFeedView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
+    <!-- Pending Review Feed -->
+    <browser:page
+        for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+        name="pending-review"
+        class=".review.PendingReviewFeedView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
 </configure>
