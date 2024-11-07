@@ -52,6 +52,7 @@ class UpdatedPublishedFeedView(JSONDumpView):
             data.append({
                 'type' : r.Type,
                 'getId' : r.getId,
+                'site_id' : site_id,
                 'url' : r.getURL(),
                 'title' : r.Title,
                 'path' : r.getPath()[len(site_path):],
