@@ -1,7 +1,7 @@
 from DateTime import DateTime
 
 from agsci.common.constants import DEFAULT_TIMEZONE
-
+from agsci.common.utilities import execute_under_special_role
 from . import JSONDumpView
 
 class UpdatedPublishedFeedView(JSONDumpView):
@@ -17,6 +17,9 @@ class UpdatedPublishedFeedView(JSONDumpView):
     @property
     def items(self):
 
+        return execute_under_special_role(['Reader'], self.get_items)
+
+    def get_items(self):
         results = self.portal_catalog.searchResults({
             'path' : self.path,
             'sort_on' : 'modified',
@@ -62,8 +65,7 @@ class UpdatedPublishedFeedView(JSONDumpView):
 
 class PendingReviewFeedView(UpdatedPublishedFeedView):
 
-    @property
-    def items(self):
+    def get_items(self):
 
         results = self.portal_catalog.searchResults({
             'path' : self.path,
