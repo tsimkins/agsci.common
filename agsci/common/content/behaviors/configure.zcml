@@ -114,5 +114,10 @@
         provides=".IEventFields"
     />
 
+    <plone:behavior
+        title="UBR Code"
+        description=""
+        provides=".IUBRCode"
+    />
 
 </configure>
