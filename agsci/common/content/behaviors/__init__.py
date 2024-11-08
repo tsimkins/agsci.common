@@ -153,6 +153,26 @@ class IHomepageFields(model.Schema):
     pass
 
 
+
+@provider(IFormFieldProvider)
+class IUBRCode(model.Schema):
+
+    model.fieldset(
+        'settings',
+        label=_(u'Settings'),
+        fields=[
+            'ubr_code',
+        ],
+    )
+
+    form.write_permission(ubr_code="cmf.ManagePortal")
+
+    ubr_code = schema.TextLine(
+        title=_(u"UBR Code"),
+        description=_(u""),
+        required=False,
+    )
+
 @provider(IFormFieldProvider)
 class IEventFields(model.Schema):
 
