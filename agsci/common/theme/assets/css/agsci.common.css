@@ -19999,6 +19999,24 @@ body.portaltype-agsci_accordion_folder #content-core .accordion .card h2:after {
   border: 0px !important;
 }
 
+.chicago-title:before {
+  content: "Chicago Title: ";
+  font-weight: bold;
+}
+
+.chicago-title {
+  margin: 1rem 0;
+  padding: 0.5em;
+  background-color: #f0f0f0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+.chicago-title span.u {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

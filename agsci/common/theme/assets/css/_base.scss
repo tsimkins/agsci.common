@@ -1735,3 +1735,23 @@ body.portaltype-agsci_accordion_folder {
         }
     }
 }
+
+.chicago-title:before {
+    content: "Chicago Title: ";
+    font-weight: bold;
+}
+
+.chicago-title {
+    
+    margin: 1rem 0;
+    padding: 0.5em;
+    background-color: #f0f0f0;
+    
+    @include body_font();
+   
+    span.u {
+        color: red;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
