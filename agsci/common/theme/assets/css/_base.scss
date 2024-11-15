@@ -1766,7 +1766,7 @@ body.userrole-authenticated {
         padding: 0.375rem;
     }
 
-    p.discreet.no-br br {
+    p.discreet.no-br br:first-of-type {
         display: none;
     }
 }

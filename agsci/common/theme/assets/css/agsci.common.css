@@ -20022,7 +20022,7 @@ body.userrole-authenticated span.auto-image-caption[data-alt]:after {
   background-color: #FFF9C4;
   padding: 0.375rem;
 }
-body.userrole-authenticated p.discreet.no-br br {
+body.userrole-authenticated p.discreet.no-br br:first-of-type {
   display: none;
 }
 
