@@ -406,9 +406,12 @@ jq3(document).ready(function() {
 });
 
 jq3(document).ready(function() {
+    
+    var post_data = [];
+    
     jq3('body.userrole-manager #parent-fieldname-text').children('h2, h3, h4, h5, h6').each(
         function () {
-            var post_data = [];
+
             var title = jq3(this).text();
             var uuid = crypto.randomUUID();
 
@@ -419,31 +422,32 @@ jq3(document).ready(function() {
                 identifier: uuid
             })
 
-            jq3.ajax(
-                'https://tools.agsci.psu.edu/chicago-title/',
-                {
-                    method: "POST",
-                    data: JSON.stringify(post_data),
-                    success: function(data, textStatus, jqXHR) {
-                        if (jqXHR.status == 200) {
-                            for (el of data) {
-                                if (el.updated) {
-                                    var diff_div = jq3('<div class="chicago-title"></div>');
-                                    diff_div.html(el.diff.html)
-                                    selector = 'body.userrole-manager #parent-fieldname-text [data-chicago="' +  el.identifier +'"]';
-                                    jq3(selector).after(diff_div);
-                                }
-                            }
-                        }
-                        else {
-                            console.log("Chicago Title Status: " + jqXHR.status);
-                        }
-                    },
-                    dataType: 'json',
-                    contentType: 'application/json'
-                }
-            );
-
         }
     );
+
+    jq3.ajax(
+        'https://tools.agsci.psu.edu/chicago-title/',
+        {
+            method: "POST",
+            data: JSON.stringify(post_data),
+            success: function(data, textStatus, jqXHR) {
+                if (jqXHR.status == 200) {
+                    for (el of data) {
+                        if (el.updated) {
+                            var diff_div = jq3('<div class="chicago-title"></div>');
+                            diff_div.html(el.diff.html)
+                            selector = 'body.userrole-manager #parent-fieldname-text [data-chicago="' +  el.identifier +'"]';
+                            jq3(selector).after(diff_div);
+                        }
+                    }
+                }
+                else {
+                    console.log("Chicago Title Status: " + jqXHR.status);
+                }
+            },
+            dataType: 'json',
+            contentType: 'application/json'
+        }
+    );
+
 });
