@@ -451,3 +451,22 @@ jq3(document).ready(function() {
     );
 
 });
+
+jq3('document').ready(
+    function () {
+
+    jq3('body.userrole-authenticated #parent-fieldname-text img, body.userrole-authenticated #content-core img').each(function() {
+
+        var data = jq3(this).attr('alt');
+
+        jq3(this)
+            .wrap("<span class='auto-image-caption'></span>")
+            .parent('.auto-image-caption')
+            .attr('data-alt', data)
+        ;
+
+        jq3(this).parents('p.discreet').addClass('no-br');
+
+    });
+
+});
