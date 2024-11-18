@@ -499,6 +499,10 @@
 
         </rules>
 
+        <replace
+            css:theme="#structured-data"
+            css:content="#structured-data" />
+
         <after css:theme="#main" css:content="#tile-links" />
         <after css:theme="#main" css:content="#tile-images" />
 
