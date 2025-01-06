@@ -49,7 +49,7 @@ setup(name='agsci.common',
         'Jinja2',
         'premailer',
         'zLOG',
-        'collective.easyform',
+        'collective.easyform [recaptcha]',
     ],
     entry_points="""
       # -*- Entry points: -*-
