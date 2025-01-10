@@ -69,5 +69,5 @@ def setNewsExpirationDate(context, event):
         _expiration_date = getNewsExpirationDate(context)
 
         if _expiration_date:
-            context.setExpirationDate(max_expires)
+            context.setExpirationDate(_expiration_date)
             context.reindexObject()
