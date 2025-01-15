@@ -39,6 +39,13 @@
 
     </rules>
 
+    <!-- Drop Dean's List JS include if outside that section -->
+    <rules css:if-not-content="body.section-deans-list">
+
+        <drop css:theme="body > #deans-list-js" />
+
+    </rules>
+
     <!-- Google Analytics (College vs. Extension) -->
     <rules css:if-content="body.ga-college">
 

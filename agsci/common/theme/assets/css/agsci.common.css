@@ -20690,6 +20690,66 @@ body.department-private .navbar .department-dropdowns a.nav-link:focus {
     color: #ffffff;
   }
 }
+body.section-deans-list .names-list li {
+  cursor: pointer;
+}
+body.section-deans-list .names-list li:hover {
+  color: #1E407C;
+}
+body.section-deans-list #deansListCanvas {
+  display: none;
+  width: 1080px;
+  height: 1080px;
+}
+body.section-deans-list #downloadLink {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 100% !important;
+}
+body.section-deans-list #downloadLink img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+body.section-deans-list #downloadLink.disabled {
+  pointer-events: none;
+}
+body.section-deans-list #downloadLink.glowing::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  border-radius: 20%;
+  filter: blur(50px);
+  bbackground-image: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  background-image: linear-gradient(0deg, #FFD100, #F2665E);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 5.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body.section-deans-list .image-cta {
+  display: none;
+}
 /* Special case for handling nav portlet inside Mosaic homepage */
 .mosaic-navigation {
   width: 100%;
