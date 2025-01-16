@@ -34,7 +34,7 @@ jq3(document).ready(function() {
 
     jq3('body.userrole-anonymous [data-toggle="affix"]').each(function() {
 
-        if (! jq3('body.portaltype-agsci_accordion_folder, #parent-fieldname-text.pat-autotoc').length) {
+        if (! jq3('body.portaltype-agsci_accordion_folder, #parent-fieldname-text.pat-autotoc, body.section-deans-list').length) {
             var ele = jq3(this),
                 wrapper = jq3('<div class="affix-placeholder"></div>');
     

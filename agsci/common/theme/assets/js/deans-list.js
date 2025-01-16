@@ -1,4 +1,63 @@
-    jq3(document).ready(function($) {
+    /*
+     * jQuery.liveFilter
+     *
+     * Copyright (c) 2009 Mike Merritt
+     *
+     * Forked by Lim Chee Aun (cheeaun.com)
+     *
+     * https://github.com/cheeaun/jquery.livefilter
+    */
+
+    (function(jq3){
+        jq3.fn.liveFilter = function(inputEl, filterEl, options){
+            var defaults = {
+                filterChildSelector: null,
+                filter: function(el, val){
+                    return jq3(el).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
+                },
+                before: function(){},
+                after: function(){}
+            };
+            var options = jq3.extend(defaults, options);
+
+            var el = jq3(this).find(filterEl);
+            if (options.filterChildSelector) el = el.find(options.filterChildSelector);
+
+            var filter = options.filter;
+            jq3(inputEl).keyup(function(){
+                var val = jq3(this).val();
+                var contains = el.filter(function(){
+                    return filter(this, val);
+                });
+                var containsNot = el.not(contains);
+                if (options.filterChildSelector){
+                    contains = contains.parents(filterEl);
+                    containsNot = containsNot.parents(filterEl).hide();
+                }
+
+                options.before.call(this, contains, containsNot);
+
+                contains.show();
+                containsNot.hide();
+
+                if (val === '') {
+                    contains.show();
+                    containsNot.show();
+                }
+
+                options.after.call(this, contains, containsNot);
+            });
+        }
+    })(jq3);
+
+
+    jq3(document).ready(function(jq3) {
+        console.log("Starting");
+
+
+        /* Implement live filtering */
+        jq3('<fieldset> <legend class="hiddenStructure"><label for="livefilter-input">Search for name</label></legend> <p><input id="livefilter-input" class="filter" type="text" placeholder="Search for a name" label="Search for a name"></p> </fieldset>').insertBefore(jq3('#livefilter-list'));
+        jq3('#livefilter-list').liveFilter('#livefilter-input', 'li');
 
         const canvas = jq3('#deansListCanvas')[0];
         const ctx = canvas.getContext('2d');
@@ -39,7 +98,7 @@
             if (backgroundImageURL) {
                 const background = new Image();
                 background.src = backgroundImageURL;
-                
+
                 background.onload = function() {
                     drawCanvas(background, name);
                     setImageSource(name);
@@ -65,20 +124,20 @@
 
             let fontSize = 80;
             ctx.font = `900 ${fontSize}px proxima-nova, sans-serif`;
-            
+
             // text overflow
             while (ctx.measureText(name).width > canvas.width - 40) { // 20px padding
                 fontSize--;
                 ctx.font = `900 ${fontSize}px proxima-nova, sans-serif`;
             }
-            
+
             ctx.fillText(name, canvas.width / 2, 785);
         }
 
         function setImageSource(name) {
             canvas.toBlob(function(blob) {
                 const url = URL.createObjectURL(blob);
-                
+
                 deansListImage.attr('src', url);
                 const altText = `${name} Deans List Badge`;
                 deansListImage.attr('alt', altText);
