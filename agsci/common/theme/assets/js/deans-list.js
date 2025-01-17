@@ -66,6 +66,7 @@
         const callToActionLink = jq3('.cta-download-link');
         const downloadLink = jq3('#downloadLink');
         const backgroundImageURL = jq3('#deansListImage').attr('src');
+        const semester = jq3('#deansListImage').attr('data-semester');
 
         generateImage("Your Name Here");
 
@@ -101,10 +102,12 @@
 
                 background.onload = function() {
                     drawCanvas(background, name);
+                    drawSemester(background, semester);
                     setImageSource(name);
                 };
             } else {
                 drawCanvas(null, name);
+                drawSemester(null, semester);
                 setImageSource(name);
             }
         }
@@ -121,6 +124,7 @@
             ctx.fillStyle = '#ffffff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
+            ctx.letterSpacing = "2px";
 
             let fontSize = 80;
             ctx.font = `900 ${fontSize}px proxima-nova, sans-serif`;
@@ -131,7 +135,25 @@
                 ctx.font = `900 ${fontSize}px proxima-nova, sans-serif`;
             }
 
-            ctx.fillText(name, canvas.width / 2, 785);
+            ctx.fillText(name, canvas.width / 2, 790);
+        }
+
+        function drawSemester(background, name) {
+
+            ctx.fillStyle = '#ffffff';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            ctx.shadowColor = "black";
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsetY = 4;
+            ctx.shadowBlur = 4;
+            ctx.letterSpacing = "12px";
+
+            let fontSize = 60;
+            ctx.font = `200 ${fontSize}px Arial, proxima-nova, sans-serif`;
+
+            ctx.fillText(name, canvas.width / 2, 540);
         }
 
         function setImageSource(name) {
@@ -143,7 +165,7 @@
                 deansListImage.attr('alt', altText);
 
                 // Set the download attribute of the image's link wrapper
-                const filename = `${name.replace(/ /g, '_')}_Deans_List.jpg`; 
+                const filename = `${name.replace(/ /g, '_')}_Deans_List.jpg`;
                 downloadLink.attr('href', url);
                 downloadLink.attr('download', filename);
 
