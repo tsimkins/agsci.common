@@ -169,6 +169,7 @@ class ImportNewsView(ImportContentView):
 
         # Tags (excluding news-)
         tags = [
+            'global',
             'research',
             'student-stories',
             'students',
