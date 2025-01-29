@@ -39,6 +39,13 @@
 
     </rules>
 
+    <!-- Drop Dean's List JS include if outside that section -->
+    <rules css:if-not-content="body.section-deans-list">
+
+        <drop css:theme="body > #deans-list-js" />
+
+    </rules>
+
     <!-- Google Analytics (College vs. Extension) -->
     <rules css:if-content="body.ga-college">
 
@@ -499,6 +506,10 @@
                 css:content-children="#footer-department-viewlet" />
 
         </rules>
+
+        <replace
+            css:theme="#structured-data"
+            css:content="#structured-data" />
 
         <after css:theme="#main" css:content="#tile-links" />
         <after css:theme="#main" css:content="#tile-images" />

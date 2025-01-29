@@ -248,6 +248,17 @@ body.template-edit.mosaic-enabled {
     }
 }
 
+#content-core {
+    span[id^=section] {
+        position: absolute;
+        display: block;
+        content: " ";
+        top: -150px;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
 
@@ -723,22 +734,6 @@ body {
         }
     }
 
-    #content-core {
-
-        #parent-fieldname-text.pat-autotoc {
-            nav.autotoc-nav {
-                float: none;
-                margin: 0;
-                width: 100%;
-                max-width: 100%;
-                border-left: none;
-                border-right: none;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-    }
-
     .comparison-container {
 
         .rtable.rtable-mobile-labels {
@@ -805,11 +800,34 @@ body.template-default_error_message #content-core p {
 
 #parent-fieldname-text,
 .html,
+body.portaltype-easyform #content-core,
 body.template-default_error_message #content-core,
 body.template-fg_thankspage_view_p3 #content-core,
 body.template-fg_base_view_p3 #content-core,
 body.template-file_view #content-core,
-body.template-image_view #content-core {
+body.template-image_view #content-core,
+body.viewpermission-plone-app-event-import-ical #content-core{
+
+    form.view-name-ical_import_settings {
+
+        @include body_font();
+
+        label {
+            display: block;
+            font-weight: bold;
+
+            .formHelp {
+                display: block;
+                font-weight: normal;
+                margin-top: 0.375em;
+            }
+
+        }
+
+        div.field {
+            margin: 1rem 0;
+        }
+    }
 
     h2, h3, h4, h5, h5 {
         a, a:visited,
@@ -942,9 +960,12 @@ body.template-image_view #content-core {
 
             @include body_font();
 
-            max-width: 33%;
-
-            padding: 1rem;
+            float: none;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            padding: 0.5rem 0;
 
             a {
                 border-bottom: none !important;
@@ -1720,5 +1741,76 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
             }
             border-bottom: none !important;
         }
+    }
+}
+
+body.portaltype-agsci_accordion_folder {
+    #content-core .accordion {
+        .card {
+            h2 {
+                padding-top: 150px;
+                margin-top: -150px;
+                
+                button {
+                    font-size: 1rem;
+                    width: 100%;
+                    text-align: left;
+                }
+                button:before {
+                    content: "\2304";
+                    display: inline-block;
+                    margin-left: 0.25rem;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    -moz-osx-font-smoothing: grayscale;
+                    font-family: "Font Awesome 5 Free";
+                    line-height: 1.4;
+                    float: right;
+                }
+                button[aria-expanded="true"]:before {
+                    content: "\2303";
+                }
+            }
+            h2:after {
+                border: 0px !important;
+            }
+        }
+    }
+}
+
+body.userrole-authenticated {
+
+    .chicago-title:before {
+        content: "Chicago Title: ";
+        font-weight: bold;
+    }
+
+    .chicago-title {
+        
+        margin: 1rem 0;
+        padding: 0.5em;
+        background-color: #f0f0f0;
+        
+        @include body_font();
+       
+        span.u {
+            color: red;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+
+    span.auto-image-caption[data-alt]:after {
+        content: "[Alt Text: " attr(data-alt) " ]";
+        display: block;
+        font-size: 0.875rem;
+        background-color: #FFF9C4;
+        padding: 0.375rem;
+    }
+
+    p.discreet.no-br br:first-of-type {
+        display: none;
     }
 }

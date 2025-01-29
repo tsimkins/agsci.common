@@ -254,7 +254,7 @@
     <!-- Structured Data metadata -->
     <browser:viewlet
         name="agsci.common.htmlhead.structured_data"
-        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContent"
         class=".StructuredDataViewlet"
         permission="zope2.View"
         template="templates/structured-data.pt"

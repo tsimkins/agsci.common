@@ -17684,6 +17684,15 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   font-weight: bold;
 }
 
+#content-core span[id^=section] {
+  position: absolute;
+  display: block;
+  content: " ";
+  top: -150px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 body.mosaic-layout-customized,
 body.template-edit.mosaic-enabled {
   padding-top: 25px;
@@ -18374,17 +18383,6 @@ body .youtube-video-embed.aspect-3-2.w-75 {
     padding-bottom: 66.6666666667% !important;
   }
 
-  #content-core #parent-fieldname-text.pat-autotoc nav.autotoc-nav {
-    float: none;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    border-left: none;
-    border-right: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .comparison-container .rtable.rtable-mobile-labels .visual-cards-imgs-cropped {
     position: static !important;
   }
@@ -18431,12 +18429,62 @@ body.template-default_error_message #content-core p {
 
 #parent-fieldname-text,
 .html,
+body.portaltype-easyform #content-core,
 body.template-default_error_message #content-core,
 body.template-fg_thankspage_view_p3 #content-core,
 body.template-fg_base_view_p3 #content-core,
 body.template-file_view #content-core,
-body.template-image_view #content-core {
+body.template-image_view #content-core,
+body.viewpermission-plone-app-event-import-ical #content-core {
   /* No centering! */
+}
+#parent-fieldname-text form.view-name-ical_import_settings,
+.html form.view-name-ical_import_settings,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings,
+body.template-default_error_message #content-core form.view-name-ical_import_settings,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings,
+body.template-file_view #content-core form.view-name-ical_import_settings,
+body.template-image_view #content-core form.view-name-ical_import_settings,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+#parent-fieldname-text form.view-name-ical_import_settings label,
+.html form.view-name-ical_import_settings label,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings label,
+body.template-default_error_message #content-core form.view-name-ical_import_settings label,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings label,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings label,
+body.template-file_view #content-core form.view-name-ical_import_settings label,
+body.template-image_view #content-core form.view-name-ical_import_settings label,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings label {
+  display: block;
+  font-weight: bold;
+}
+#parent-fieldname-text form.view-name-ical_import_settings label .formHelp,
+.html form.view-name-ical_import_settings label .formHelp,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-default_error_message #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-file_view #content-core form.view-name-ical_import_settings label .formHelp,
+body.template-image_view #content-core form.view-name-ical_import_settings label .formHelp,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings label .formHelp {
+  display: block;
+  font-weight: normal;
+  margin-top: 0.375em;
+}
+#parent-fieldname-text form.view-name-ical_import_settings div.field,
+.html form.view-name-ical_import_settings div.field,
+body.portaltype-easyform #content-core form.view-name-ical_import_settings div.field,
+body.template-default_error_message #content-core form.view-name-ical_import_settings div.field,
+body.template-fg_thankspage_view_p3 #content-core form.view-name-ical_import_settings div.field,
+body.template-fg_base_view_p3 #content-core form.view-name-ical_import_settings div.field,
+body.template-file_view #content-core form.view-name-ical_import_settings div.field,
+body.template-image_view #content-core form.view-name-ical_import_settings div.field,
+body.viewpermission-plone-app-event-import-ical #content-core form.view-name-ical_import_settings div.field {
+  margin: 1rem 0;
 }
 #parent-fieldname-text h2 a, #parent-fieldname-text h2 a:visited,
 #parent-fieldname-text h2 a:active,
@@ -18509,6 +18557,46 @@ body.template-image_view #content-core {
 .html h5 .a:hover,
 .html h5 a:focus,
 .html h5 .a:focus,
+body.portaltype-easyform #content-core h2 a,
+body.portaltype-easyform #content-core h2 a:visited,
+body.portaltype-easyform #content-core h2 a:active,
+body.portaltype-easyform #content-core h2 .a,
+body.portaltype-easyform #content-core h2 a:hover,
+body.portaltype-easyform #content-core h2 .a:hover,
+body.portaltype-easyform #content-core h2 a:focus,
+body.portaltype-easyform #content-core h2 .a:focus,
+body.portaltype-easyform #content-core h3 a,
+body.portaltype-easyform #content-core h3 a:visited,
+body.portaltype-easyform #content-core h3 a:active,
+body.portaltype-easyform #content-core h3 .a,
+body.portaltype-easyform #content-core h3 a:hover,
+body.portaltype-easyform #content-core h3 .a:hover,
+body.portaltype-easyform #content-core h3 a:focus,
+body.portaltype-easyform #content-core h3 .a:focus,
+body.portaltype-easyform #content-core h4 a,
+body.portaltype-easyform #content-core h4 a:visited,
+body.portaltype-easyform #content-core h4 a:active,
+body.portaltype-easyform #content-core h4 .a,
+body.portaltype-easyform #content-core h4 a:hover,
+body.portaltype-easyform #content-core h4 .a:hover,
+body.portaltype-easyform #content-core h4 a:focus,
+body.portaltype-easyform #content-core h4 .a:focus,
+body.portaltype-easyform #content-core h5 a,
+body.portaltype-easyform #content-core h5 a:visited,
+body.portaltype-easyform #content-core h5 a:active,
+body.portaltype-easyform #content-core h5 .a,
+body.portaltype-easyform #content-core h5 a:hover,
+body.portaltype-easyform #content-core h5 .a:hover,
+body.portaltype-easyform #content-core h5 a:focus,
+body.portaltype-easyform #content-core h5 .a:focus,
+body.portaltype-easyform #content-core h5 a,
+body.portaltype-easyform #content-core h5 a:visited,
+body.portaltype-easyform #content-core h5 a:active,
+body.portaltype-easyform #content-core h5 .a,
+body.portaltype-easyform #content-core h5 a:hover,
+body.portaltype-easyform #content-core h5 .a:hover,
+body.portaltype-easyform #content-core h5 a:focus,
+body.portaltype-easyform #content-core h5 .a:focus,
 body.template-default_error_message #content-core h2 a,
 body.template-default_error_message #content-core h2 a:visited,
 body.template-default_error_message #content-core h2 a:active,
@@ -18708,7 +18796,47 @@ body.template-image_view #content-core h5 .a,
 body.template-image_view #content-core h5 a:hover,
 body.template-image_view #content-core h5 .a:hover,
 body.template-image_view #content-core h5 a:focus,
-body.template-image_view #content-core h5 .a:focus {
+body.template-image_view #content-core h5 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h2 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h2 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h3 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h3 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h4 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h4 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:active,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core h5 a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core h5 .a:focus {
   color: #231e20 !important;
   border-bottom: none !important;
 }
@@ -18720,6 +18848,10 @@ body.template-image_view #content-core h5 .a:focus {
 .html a:visited:not([class*=btn]),
 .html a:active:not([class*=btn]),
 .html .a,
+body.portaltype-easyform #content-core a:not([class*=btn]),
+body.portaltype-easyform #content-core a:visited:not([class*=btn]),
+body.portaltype-easyform #content-core a:active:not([class*=btn]),
+body.portaltype-easyform #content-core .a,
 body.template-default_error_message #content-core a:not([class*=btn]),
 body.template-default_error_message #content-core a:visited:not([class*=btn]),
 body.template-default_error_message #content-core a:active:not([class*=btn]),
@@ -18739,7 +18871,11 @@ body.template-file_view #content-core .a,
 body.template-image_view #content-core a:not([class*=btn]),
 body.template-image_view #content-core a:visited:not([class*=btn]),
 body.template-image_view #content-core a:active:not([class*=btn]),
-body.template-image_view #content-core .a {
+body.template-image_view #content-core .a,
+body.viewpermission-plone-app-event-import-ical #content-core a:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core a:visited:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core a:active:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a {
   color: #4373B6 !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
@@ -18752,6 +18888,10 @@ body.template-image_view #content-core .a {
 .html .a:hover,
 .html a:focus:not([class*=btn]),
 .html .a:focus,
+body.portaltype-easyform #content-core a:hover:not([class*=btn]),
+body.portaltype-easyform #content-core .a:hover,
+body.portaltype-easyform #content-core a:focus:not([class*=btn]),
+body.portaltype-easyform #content-core .a:focus,
 body.template-default_error_message #content-core a:hover:not([class*=btn]),
 body.template-default_error_message #content-core .a:hover,
 body.template-default_error_message #content-core a:focus:not([class*=btn]),
@@ -18771,7 +18911,11 @@ body.template-file_view #content-core .a:focus,
 body.template-image_view #content-core a:hover:not([class*=btn]),
 body.template-image_view #content-core .a:hover,
 body.template-image_view #content-core a:focus:not([class*=btn]),
-body.template-image_view #content-core .a:focus {
+body.template-image_view #content-core .a:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a:hover:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a:focus:not([class*=btn]),
+body.viewpermission-plone-app-event-import-ical #content-core .a:focus {
   color: #093c79 !important;
   border-bottom: 1px solid #0078ab !important;
 }
@@ -18784,6 +18928,12 @@ body.template-image_view #content-core .a:focus {
 .html a.no-border:hover,
 .html a.no-border:focus,
 .html .a.no-border,
+body.portaltype-easyform #content-core a.no-border,
+body.portaltype-easyform #content-core a.no-border:visited,
+body.portaltype-easyform #content-core a.no-border:active,
+body.portaltype-easyform #content-core a.no-border:hover,
+body.portaltype-easyform #content-core a.no-border:focus,
+body.portaltype-easyform #content-core .a.no-border,
 body.template-default_error_message #content-core a.no-border,
 body.template-default_error_message #content-core a.no-border:visited,
 body.template-default_error_message #content-core a.no-border:active,
@@ -18813,53 +18963,70 @@ body.template-image_view #content-core a.no-border:visited,
 body.template-image_view #content-core a.no-border:active,
 body.template-image_view #content-core a.no-border:hover,
 body.template-image_view #content-core a.no-border:focus,
-body.template-image_view #content-core .a.no-border {
+body.template-image_view #content-core .a.no-border,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:active,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.no-border:focus,
+body.viewpermission-plone-app-event-import-ical #content-core .a.no-border {
   border-bottom: none !important;
   padding-bottom: 0 !important;
 }
 #parent-fieldname-text li,
 .html li,
+body.portaltype-easyform #content-core li,
 body.template-default_error_message #content-core li,
 body.template-fg_thankspage_view_p3 #content-core li,
 body.template-fg_base_view_p3 #content-core li,
 body.template-file_view #content-core li,
-body.template-image_view #content-core li {
+body.template-image_view #content-core li,
+body.viewpermission-plone-app-event-import-ical #content-core li {
   font-size: 0.9rem;
   line-height: 1.8;
 }
 #parent-fieldname-text dl,
 .html dl,
+body.portaltype-easyform #content-core dl,
 body.template-default_error_message #content-core dl,
 body.template-fg_thankspage_view_p3 #content-core dl,
 body.template-fg_base_view_p3 #content-core dl,
 body.template-file_view #content-core dl,
-body.template-image_view #content-core dl {
+body.template-image_view #content-core dl,
+body.viewpermission-plone-app-event-import-ical #content-core dl {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 #parent-fieldname-text dl dt,
 .html dl dt,
+body.portaltype-easyform #content-core dl dt,
 body.template-default_error_message #content-core dl dt,
 body.template-fg_thankspage_view_p3 #content-core dl dt,
 body.template-fg_base_view_p3 #content-core dl dt,
 body.template-file_view #content-core dl dt,
-body.template-image_view #content-core dl dt {
+body.template-image_view #content-core dl dt,
+body.viewpermission-plone-app-event-import-ical #content-core dl dt {
   margin-top: 1rem;
 }
 #parent-fieldname-text dl dt strong,
 .html dl dt strong,
+body.portaltype-easyform #content-core dl dt strong,
 body.template-default_error_message #content-core dl dt strong,
 body.template-fg_thankspage_view_p3 #content-core dl dt strong,
 body.template-fg_base_view_p3 #content-core dl dt strong,
 body.template-file_view #content-core dl dt strong,
-body.template-image_view #content-core dl dt strong {
+body.template-image_view #content-core dl dt strong,
+body.viewpermission-plone-app-event-import-ical #content-core dl dt strong {
   font-weight: bold;
 }
 #parent-fieldname-text input, #parent-fieldname-text td, #parent-fieldname-text th,
 .html input,
 .html td,
 .html th,
+body.portaltype-easyform #content-core input,
+body.portaltype-easyform #content-core td,
+body.portaltype-easyform #content-core th,
 body.template-default_error_message #content-core input,
 body.template-default_error_message #content-core td,
 body.template-default_error_message #content-core th,
@@ -18874,13 +19041,18 @@ body.template-file_view #content-core td,
 body.template-file_view #content-core th,
 body.template-image_view #content-core input,
 body.template-image_view #content-core td,
-body.template-image_view #content-core th {
+body.template-image_view #content-core th,
+body.viewpermission-plone-app-event-import-ical #content-core input,
+body.viewpermission-plone-app-event-import-ical #content-core td,
+body.viewpermission-plone-app-event-import-ical #content-core th {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
 #parent-fieldname-text td, #parent-fieldname-text th,
 .html td,
 .html th,
+body.portaltype-easyform #content-core td,
+body.portaltype-easyform #content-core th,
 body.template-default_error_message #content-core td,
 body.template-default_error_message #content-core th,
 body.template-fg_thankspage_view_p3 #content-core td,
@@ -18890,12 +19062,16 @@ body.template-fg_base_view_p3 #content-core th,
 body.template-file_view #content-core td,
 body.template-file_view #content-core th,
 body.template-image_view #content-core td,
-body.template-image_view #content-core th {
+body.template-image_view #content-core th,
+body.viewpermission-plone-app-event-import-ical #content-core td,
+body.viewpermission-plone-app-event-import-ical #content-core th {
   line-height: 1.4;
 }
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
 .html table.table-sm td,
 .html table.table-sm th,
+body.portaltype-easyform #content-core table.table-sm td,
+body.portaltype-easyform #content-core table.table-sm th,
 body.template-default_error_message #content-core table.table-sm td,
 body.template-default_error_message #content-core table.table-sm th,
 body.template-fg_thankspage_view_p3 #content-core table.table-sm td,
@@ -18905,17 +19081,21 @@ body.template-fg_base_view_p3 #content-core table.table-sm th,
 body.template-file_view #content-core table.table-sm td,
 body.template-file_view #content-core table.table-sm th,
 body.template-image_view #content-core table.table-sm td,
-body.template-image_view #content-core table.table-sm th {
+body.template-image_view #content-core table.table-sm th,
+body.viewpermission-plone-app-event-import-ical #content-core table.table-sm td,
+body.viewpermission-plone-app-event-import-ical #content-core table.table-sm th {
   font-size: 0.875rem;
   line-height: 1.25;
 }
 #parent-fieldname-text table caption,
 .html table caption,
+body.portaltype-easyform #content-core table caption,
 body.template-default_error_message #content-core table caption,
 body.template-fg_thankspage_view_p3 #content-core table caption,
 body.template-fg_base_view_p3 #content-core table caption,
 body.template-file_view #content-core table caption,
-body.template-image_view #content-core table caption {
+body.template-image_view #content-core table caption,
+body.viewpermission-plone-app-event-import-ical #content-core table caption {
   caption-side: top;
 }
 #parent-fieldname-text table[align=center] th, #parent-fieldname-text table[align=center] td,
@@ -18925,6 +19105,10 @@ body.template-image_view #content-core table caption {
 .html table[align=center] td,
 .html tr[align=center] th,
 .html tr[align=center] td,
+body.portaltype-easyform #content-core table[align=center] th,
+body.portaltype-easyform #content-core table[align=center] td,
+body.portaltype-easyform #content-core tr[align=center] th,
+body.portaltype-easyform #content-core tr[align=center] td,
 body.template-default_error_message #content-core table[align=center] th,
 body.template-default_error_message #content-core table[align=center] td,
 body.template-default_error_message #content-core tr[align=center] th,
@@ -18944,25 +19128,33 @@ body.template-file_view #content-core tr[align=center] td,
 body.template-image_view #content-core table[align=center] th,
 body.template-image_view #content-core table[align=center] td,
 body.template-image_view #content-core tr[align=center] th,
-body.template-image_view #content-core tr[align=center] td {
+body.template-image_view #content-core tr[align=center] td,
+body.viewpermission-plone-app-event-import-ical #content-core table[align=center] th,
+body.viewpermission-plone-app-event-import-ical #content-core table[align=center] td,
+body.viewpermission-plone-app-event-import-ical #content-core tr[align=center] th,
+body.viewpermission-plone-app-event-import-ical #content-core tr[align=center] td {
   text-align: left !important;
 }
 #parent-fieldname-text [align=center],
 .html [align=center],
+body.portaltype-easyform #content-core [align=center],
 body.template-default_error_message #content-core [align=center],
 body.template-fg_thankspage_view_p3 #content-core [align=center],
 body.template-fg_base_view_p3 #content-core [align=center],
 body.template-file_view #content-core [align=center],
-body.template-image_view #content-core [align=center] {
+body.template-image_view #content-core [align=center],
+body.viewpermission-plone-app-event-import-ical #content-core [align=center] {
   text-align: left !important;
 }
 #parent-fieldname-text .callout,
 .html .callout,
+body.portaltype-easyform #content-core .callout,
 body.template-default_error_message #content-core .callout,
 body.template-fg_thankspage_view_p3 #content-core .callout,
 body.template-fg_base_view_p3 #content-core .callout,
 body.template-file_view #content-core .callout,
-body.template-image_view #content-core .callout {
+body.template-image_view #content-core .callout,
+body.viewpermission-plone-app-event-import-ical #content-core .callout {
   background: #EEEEEE;
   padding: 1em;
   border-left: 1em solid #CCCCCC;
@@ -18973,6 +19165,8 @@ body.template-image_view #content-core .callout {
 #parent-fieldname-text b.lead,
 .html strong.lead,
 .html b.lead,
+body.portaltype-easyform #content-core strong.lead,
+body.portaltype-easyform #content-core b.lead,
 body.template-default_error_message #content-core strong.lead,
 body.template-default_error_message #content-core b.lead,
 body.template-fg_thankspage_view_p3 #content-core strong.lead,
@@ -18982,7 +19176,9 @@ body.template-fg_base_view_p3 #content-core b.lead,
 body.template-file_view #content-core strong.lead,
 body.template-file_view #content-core b.lead,
 body.template-image_view #content-core strong.lead,
-body.template-image_view #content-core b.lead {
+body.template-image_view #content-core b.lead,
+body.viewpermission-plone-app-event-import-ical #content-core strong.lead,
+body.viewpermission-plone-app-event-import-ical #content-core b.lead {
   font-weight: bolder !important;
 }
 #parent-fieldname-text a.state-private,
@@ -18995,6 +19191,11 @@ body.template-image_view #content-core b.lead {
 .html a.state-private:focus,
 .html a.state-private:visited,
 .html a.state-private:link,
+body.portaltype-easyform #content-core a.state-private,
+body.portaltype-easyform #content-core a.state-private:hover,
+body.portaltype-easyform #content-core a.state-private:focus,
+body.portaltype-easyform #content-core a.state-private:visited,
+body.portaltype-easyform #content-core a.state-private:link,
 body.template-default_error_message #content-core a.state-private,
 body.template-default_error_message #content-core a.state-private:hover,
 body.template-default_error_message #content-core a.state-private:focus,
@@ -19019,7 +19220,12 @@ body.template-image_view #content-core a.state-private,
 body.template-image_view #content-core a.state-private:hover,
 body.template-image_view #content-core a.state-private:focus,
 body.template-image_view #content-core a.state-private:visited,
-body.template-image_view #content-core a.state-private:link {
+body.template-image_view #content-core a.state-private:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-private:link {
   color: #FF0000 !important;
 }
 #parent-fieldname-text a.state-pending,
@@ -19032,6 +19238,11 @@ body.template-image_view #content-core a.state-private:link {
 .html a.state-pending:focus,
 .html a.state-pending:visited,
 .html a.state-pending:link,
+body.portaltype-easyform #content-core a.state-pending,
+body.portaltype-easyform #content-core a.state-pending:hover,
+body.portaltype-easyform #content-core a.state-pending:focus,
+body.portaltype-easyform #content-core a.state-pending:visited,
+body.portaltype-easyform #content-core a.state-pending:link,
 body.template-default_error_message #content-core a.state-pending,
 body.template-default_error_message #content-core a.state-pending:hover,
 body.template-default_error_message #content-core a.state-pending:focus,
@@ -19056,7 +19267,12 @@ body.template-image_view #content-core a.state-pending,
 body.template-image_view #content-core a.state-pending:hover,
 body.template-image_view #content-core a.state-pending:focus,
 body.template-image_view #content-core a.state-pending:visited,
-body.template-image_view #content-core a.state-pending:link {
+body.template-image_view #content-core a.state-pending:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-pending:link {
   color: #FFA500 !important;
 }
 #parent-fieldname-text a.state-published,
@@ -19069,6 +19285,11 @@ body.template-image_view #content-core a.state-pending:link {
 .html a.state-published:link,
 .html a.state-published:hover,
 .html a.state-published:focus,
+body.portaltype-easyform #content-core a.state-published,
+body.portaltype-easyform #content-core a.state-published:visited,
+body.portaltype-easyform #content-core a.state-published:link,
+body.portaltype-easyform #content-core a.state-published:hover,
+body.portaltype-easyform #content-core a.state-published:focus,
 body.template-default_error_message #content-core a.state-published,
 body.template-default_error_message #content-core a.state-published:visited,
 body.template-default_error_message #content-core a.state-published:link,
@@ -19093,7 +19314,12 @@ body.template-image_view #content-core a.state-published,
 body.template-image_view #content-core a.state-published:visited,
 body.template-image_view #content-core a.state-published:link,
 body.template-image_view #content-core a.state-published:hover,
-body.template-image_view #content-core a.state-published:focus {
+body.template-image_view #content-core a.state-published:focus,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:visited,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:link,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:hover,
+body.viewpermission-plone-app-event-import-ical #content-core a.state-published:focus {
   color: #4373B6 !important;
 }
 
@@ -19119,8 +19345,12 @@ body.template-image_view #content-core a.state-published:focus {
 #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
-  max-width: 33%;
-  padding: 1rem;
+  float: none;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  border: none;
+  padding: 0.5rem 0;
 }
 #content-core #parent-fieldname-text.pat-autotoc .autotoc-nav a {
   border-bottom: none !important;
@@ -19770,6 +20000,62 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
 }
 .contenttype-easyform.contenttype-easyform::before .entries.inline-items .card .description {
   color: #212529 !important;
+}
+
+body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 {
+  padding-top: 150px;
+  margin-top: -150px;
+}
+body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 button {
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+}
+body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 button:before {
+  content: "⌄";
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.4;
+  float: right;
+}
+body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 button[aria-expanded=true]:before {
+  content: "⌃";
+}
+body.portaltype-agsci_accordion_folder #content-core .accordion .card h2:after {
+  border: 0px !important;
+}
+
+body.userrole-authenticated .chicago-title:before {
+  content: "Chicago Title: ";
+  font-weight: bold;
+}
+body.userrole-authenticated .chicago-title {
+  margin: 1rem 0;
+  padding: 0.5em;
+  background-color: #f0f0f0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+body.userrole-authenticated .chicago-title span.u {
+  color: red;
+  text-decoration: underline;
+  font-weight: bold;
+}
+body.userrole-authenticated span.auto-image-caption[data-alt]:after {
+  content: "[Alt Text: " attr(data-alt) " ]";
+  display: block;
+  font-size: 0.875rem;
+  background-color: #FFF9C4;
+  padding: 0.375rem;
+}
+body.userrole-authenticated p.discreet.no-br br:first-of-type {
+  display: none;
 }
 
 .alert.status,
@@ -20435,6 +20721,66 @@ body.department-private .navbar .department-dropdowns a.nav-link:hover,
 body.department-private .navbar .department-dropdowns a.nav-link:focus {
     color: #ffffff;
   }
+}
+body.section-deans-list .names-list li {
+  cursor: pointer;
+}
+body.section-deans-list .names-list li:hover {
+  color: #1E407C;
+}
+body.section-deans-list #deansListCanvas {
+  display: none;
+  width: 1080px;
+  height: 1080px;
+}
+body.section-deans-list #downloadLink {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: 100% !important;
+}
+body.section-deans-list #downloadLink img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+body.section-deans-list #downloadLink.disabled {
+  pointer-events: none;
+}
+body.section-deans-list #downloadLink.glowing::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  border-radius: 20%;
+  filter: blur(50px);
+  bbackground-image: linear-gradient(0deg, #5ddcff, #3c67e3 43%, #4e00c2);
+  background-image: linear-gradient(0deg, #FFD100, #F2665E);
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 5.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body.section-deans-list .image-cta {
+  display: none;
 }
 /* Special case for handling nav portlet inside Mosaic homepage */
 .mosaic-navigation {

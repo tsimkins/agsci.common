@@ -47,7 +47,7 @@ setup(name='agsci.common',
         'Jinja2',
         'premailer',
         'zLOG',
-        'collective.easyform',
+        'collective.easyform [recaptcha]',
         'plone.app.widgets',
     ],
     entry_points="""

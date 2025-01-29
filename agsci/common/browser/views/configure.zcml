@@ -174,6 +174,18 @@
         title="Subfolder View"
     />
 
+    <!-- Default Accordion Folder View -->
+    <browser:page
+        for="agsci.common.content.accordion.IAccordionFolder"
+        name="view"
+        class=".AccordionFolderView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/accordion_folder.pt"
+        menu="plone_displayviews"
+        title="View"
+    />
+
     <!-- Collection View -->
     <browser:page
         for="plone.app.contenttypes.interfaces.ICollection"

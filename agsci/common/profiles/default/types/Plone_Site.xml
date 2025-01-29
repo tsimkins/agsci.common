@@ -27,6 +27,7 @@
         <element value="agsci_homepage_college" />
         <element value="agsci_section" />
         <element value="agsci_subsite" />
+        <element value="agsci_accordion_folder" />
     </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">folder_contents</property>

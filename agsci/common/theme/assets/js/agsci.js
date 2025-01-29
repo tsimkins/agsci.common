@@ -33,17 +33,20 @@ jq3(document).ready(function() {
     };
 
     jq3('body.userrole-anonymous [data-toggle="affix"]').each(function() {
-        var ele = jq3(this),
-            wrapper = jq3('<div class="affix-placeholder"></div>');
 
-        ele.before(wrapper);
-
-        jq3(window).on('scroll resize', function() {
-            toggleAffix(ele, jq3(this), wrapper);
-        });
-
-        // init
-        toggleAffix(ele, jq3(window), wrapper);
+        if (! jq3('body.portaltype-agsci_accordion_folder, #parent-fieldname-text.pat-autotoc, body.section-deans-list').length) {
+            var ele = jq3(this),
+                wrapper = jq3('<div class="affix-placeholder"></div>');
+    
+            ele.before(wrapper);
+    
+            jq3(window).on('scroll resize', function() {
+                toggleAffix(ele, jq3(this), wrapper);
+            });
+    
+            // init
+            toggleAffix(ele, jq3(window), wrapper);
+        }
     });
 
 });
@@ -355,6 +358,118 @@ jq3(document).ready(function() {
         if (_src) {
             jq3(this).attr('src', _src);
         }
+
+    });
+
+});
+
+/* Scroll to anchor in accordion */
+jq3(document).ready(function() {
+    if (window.location.hash) {
+        jq3("body.portaltype-agsci_accordion_folder " + window.location.hash + " div.accordion-collapse").each(function () {
+            jq3(this).addClass("show");
+            jq3(this).removeClass("hide");
+        })
+
+        jq3('html, body').scrollTop(jq3(window.location.hash).offset().top);
+    }
+
+    console.log(window.location);
+});
+
+
+jq3(document).ready(function() {
+    jq3('body.userrole-manager h1.documentFirstHeading').each(
+        function () {
+            var h1_title = jq3(this).text();
+
+            jq3.ajax(
+                'https://tools.agsci.psu.edu/chicago-title/',
+                {
+                    method: "POST",
+                    data: JSON.stringify({title: h1_title}),
+                    success: function(data, textStatus, jqXHR) {
+                        if (jqXHR.status == 200) {
+                            if (data.updated) {
+                                var diff_div = jq3('<div class="chicago-title"></div>');
+                                diff_div.html(data.diff.html)
+                                jq3('body.userrole-manager h1.documentFirstHeading').after(diff_div);
+                            }
+                        }
+                    },
+                    dataType: 'json',
+                    contentType: 'application/json'
+                }
+            );
+        }
+    );
+});
+
+jq3(document).ready(function() {
+    
+    var post_data = [];
+    
+    jq3('body.userrole-manager #parent-fieldname-text').children('h2, h3, h4, h5, h6').each(
+        function () {
+
+            var title = jq3(this).text();
+            var uuid = crypto.randomUUID();
+
+            jq3(this).attr('data-chicago', uuid);
+
+            post_data.push({
+                title: title,
+                identifier: uuid
+            })
+
+        }
+    );
+
+    if (post_data) {
+
+        jq3.ajax(
+            'https://tools.agsci.psu.edu/chicago-title/',
+            {
+                method: "POST",
+                data: JSON.stringify(post_data),
+                success: function(data, textStatus, jqXHR) {
+                    if (jqXHR.status == 200) {
+                        for (el of data) {
+                            if (el.updated) {
+                                var diff_div = jq3('<div class="chicago-title"></div>');
+                                diff_div.html(el.diff.html)
+                                selector = 'body.userrole-manager #parent-fieldname-text [data-chicago="' +  el.identifier +'"]';
+                                jq3(selector).after(diff_div);
+                            }
+                        }
+                    }
+                    else {
+                        console.log("Chicago Title Status: " + jqXHR.status);
+                    }
+                },
+                dataType: 'json',
+                contentType: 'application/json'
+            }
+        );
+
+    }
+
+});
+
+jq3('document').ready(
+    function () {
+
+    jq3('body.userrole-authenticated #parent-fieldname-text img, body.userrole-authenticated #content-core img').each(function() {
+
+        var data = jq3(this).attr('alt');
+
+        jq3(this)
+            .wrap("<span class='auto-image-caption'></span>")
+            .parent('.auto-image-caption')
+            .attr('data-alt', data)
+        ;
+
+        jq3(this).parents('p.discreet').addClass('no-br');
 
     });
 

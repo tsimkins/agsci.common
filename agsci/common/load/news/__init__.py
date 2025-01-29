@@ -36,7 +36,18 @@ class ImportNewsView(ImportContentView):
     def initial_date(self):
         return localize(datetime.strptime(self._initial_date, '%Y-%m-%d'))
 
-    url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
+
+    feed_url = 'https://www.psu.edu/news/rss/agricultural-sciences/rss.xml'
+
+    @property
+    def token(self):
+        return '%d' % time.time()
+
+    @property
+    def url(self):
+        if '?'  in self.feed_url:
+            return '%s&%s' % (self.feed_url, self.token)
+        return '%s?%s' % (self.feed_url, self.token)
 
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36"
 
@@ -162,6 +173,7 @@ class ImportNewsView(ImportContentView):
 
         # Tags (excluding news-)
         tags = [
+            'global',
             'research',
             'student-stories',
             'students',
@@ -228,7 +240,7 @@ class ImportNewsView(ImportContentView):
             item.setSubject(tags)
 
         # Publish
-        if self.wftool.getInfoFor(item, 'review_state') != 'Published':
+        if self.wftool.getInfoFor(item, 'review_state').lower() != 'published':
             self.wftool.doActionFor(item, 'publish')
 
         item.reindexObject()
@@ -375,9 +387,9 @@ class ImportNewsView(ImportContentView):
         soup = BeautifulSoup(html, features='lxml')
 
         try:
-            item = soup.find("div", {'class' : re.compile('text-content-module--textContent.*?')})
+            item = soup.find("div", {'id' : re.compile('text-content-container')})
         except:
-            return ""
+            return "<p></p>"
 
         return u"<p>%s</p>" % safe_unicode(item.text)
 
@@ -386,7 +398,7 @@ class ImportNewsView(ImportContentView):
 
         tags = []
 
-        for tags_div in soup.findAll("ul", {'class' : re.compile('^article-tags-module--list')}):
+        for tags_div in soup.findAll("ul", {'class' : re.compile('^article-tags_list')}):
             items = tags_div.findAll("li")
             tags.extend([ploneify(x.text).strip() for x in items])
 

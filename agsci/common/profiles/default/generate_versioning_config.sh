@@ -18,7 +18,7 @@ function generate_repositorytool() {
     echo "    </policies>"
     echo "    <policymap>"
 
-    for FOO in `grep -i plone.app.versioningbehavior.behaviors.IVersionable types/* | \
+    for FOO in `grep -i plone.versioning types/* | \
                 awk -F: '{print $1}' | awk -F/ '{print $2}' | sort | uniq`
     do
         BAR=`echo $FOO  |sed 's/.xml//'`
@@ -40,7 +40,7 @@ function generate_diff_tool() {
     echo "<object>"
     echo "  <difftypes>"
 
-    for FOO in `grep -i plone.app.versioningbehavior.behaviors.IVersionable types/* | \
+    for FOO in `grep -i plone.versioning types/* | \
                 awk -F: '{print $1}' | awk -F/ '{print $2}' | sort | uniq`
         do
             BAR=`echo $FOO  |sed 's/.xml//'`

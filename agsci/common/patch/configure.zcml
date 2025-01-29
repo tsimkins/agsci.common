@@ -44,4 +44,11 @@
         ignoreOriginal="True"
         />
 
+    <monkey:patch
+        description="Customizes ical import method"
+        module="plone.app.event.ical.importer"
+        replacement=".ical.ical_import"
+        original="ical_import"
+        />
+
 </configure>

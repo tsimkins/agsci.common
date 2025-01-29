@@ -29,6 +29,7 @@
         <element value="plone.richtext" />
         <element value="plone.excludefromnavigation" />
         <element value="plone.shortname" />
+        <element value="agsci.common.content.behaviors.IUBRCode" />
         <element value="plone.relateditems" />
         <element value="plone.versioning" />
         <element value="plone.locking" />

@@ -10,8 +10,8 @@
 
         </tal:links>
 
-        <abbr title="Copyright">&copy;</abbr>
-        <tal:year tal:replace="view/year|nothing" /> <a href="https://www.psu.edu">The Pennsylvania State University</a>
+        <a href="https://www.psu.edu/copyright-information"><abbr title="Copyright">&copy;</abbr>
+        <tal:year tal:replace="view/year|nothing" /> The Pennsylvania State University</a>
 
     </p>
 

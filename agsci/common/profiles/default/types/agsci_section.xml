@@ -24,6 +24,7 @@
         <element value="agsci_homepage_extension" />
         <element value="agsci_section" />
         <element value="agsci_subsite" />
+        <element value="agsci_accordion_folder" />
     </property>
     <property name="allow_discussion">False</property>
     <property name="default_view">view</property>

@@ -25,4 +25,9 @@
         handler=".content.onPersonCreateEdit"
         />
 
+    <subscriber
+        for="plone.app.contenttypes.interfaces.INewsItem Products.CMFCore.interfaces.IActionSucceededEvent"
+        handler=".news.setNewsExpirationDate"
+        />
+
 </configure>
