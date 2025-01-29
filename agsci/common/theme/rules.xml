@@ -225,6 +225,7 @@
         <notheme css:if-not-content="body[class]" />
 
         <rules css:if-content="textarea.pat-layout">
+            <drop css:content="#edit-zone" />
             <drop css:content="header" />
             <drop css:theme="#page-header" />
             <drop css:content="#viewlet-above-content" />
@@ -410,7 +411,7 @@
 
             <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />
-                <xsl:apply-templates css:select="h1.documentFirstHeading" />
+                <xsl:apply-templates css:select="header > h1" />
                 <xsl:apply-templates css:select="#viewlet-below-content-title" />
             </replace>
 

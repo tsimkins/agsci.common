@@ -17571,6 +17571,13 @@ a.alert-bar.mini p.alert-bar-text {
 .mosaic-grid-row .mosaic-grid-cell {
   padding: 0;
 }
+.mosaic-grid-row .mosaic-tile-buttons {
+  bottom: 0.25rem;
+  right: 0.25rem;
+}
+.mosaic-grid-row .mosaic-tile-buttons .btn {
+  border: 1px solid #CCCCCC;
+}
 .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
   margin-top: 0.5rem !important;
 }
@@ -17667,7 +17674,7 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   margin-left: -10000px !important;
 }
 
-#plone-document-byline {
+#section-byline {
   font-size: 0.75em;
   margin: 1em 0;
   color: #575757;
@@ -18386,6 +18393,9 @@ body .youtube-video-embed.aspect-3-2.w-75 {
   height: auto;
 }
 
+#portal-breadcrumbs {
+  background-color: transparent;
+}
 #portal-breadcrumbs > .container {
   padding-left: 0;
 }
@@ -19347,6 +19357,9 @@ header a.invalid {
   text-decoration-color: orange;
   text-decoration-style: wavy;
 }
+header nav .dropdown-toggle {
+  white-space: normal;
+}
 header nav form.form-inline {
   flex-flow: row;
 }
@@ -19677,11 +19690,30 @@ div.publication .journal-name {
     height: 100%;
   }
 }
-#edit-zone nav > ul #plone-contentmenu-display ul li > a.actionMenuSelected {
+body.plone-toolbar-left #edit-zone {
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+body.plone-toolbar-left #edit-zone .nav-link {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+body.plone-toolbar-left #edit-zone .nav-link .plone-icon {
+  margin-top: 0.125em;
+}
+body.plone-toolbar-left #edit-zone .nav ul .dropdown-header, body.plone-toolbar-left #edit-zone .nav ul .nav-link {
+  padding: 0.25rem 0.5rem;
+}
+body.plone-toolbar-left #edit-zone .nav ul .dropdown-header {
+  font-size: 0.75rem;
+  font-weight: 400;
+  border-bottom: 1px solid #CCCCCC;
+}
+body.plone-toolbar-left #edit-zone .nav ul #plone-contentmenu-display ul li > a.actionMenuSelected {
   color: #FFFFFF;
   font-weight: bold;
 }
-#edit-zone nav > ul #plone-contentmenu-display ul li > a.actionMenuSelected:after {
+body.plone-toolbar-left #edit-zone .nav ul #plone-contentmenu-display ul li > a.actionMenuSelected:after {
   font-size: 20px;
   position: absolute;
   right: 15px;
