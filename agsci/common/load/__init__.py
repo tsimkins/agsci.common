@@ -342,8 +342,9 @@ class ContentImporter(object):
                     updated = True
 
         if updated:
+            soup.html.hidden = True
             soup.body.hidden = True
-            return unicode(soup.body)
+            return str(soup.body)
 
         return html
 
