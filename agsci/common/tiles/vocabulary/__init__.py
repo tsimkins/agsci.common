@@ -206,6 +206,8 @@ class ExtensionListingDepartmentsVocabulary(KeyValueVocabulary):
         ('plantscience', 'Plant Science'),
         ('vbs', 'Veterinary and Biomedical Sciences'),
         ('apd', 'Ag Progess Days'),
+        ('cacat', 'Center for Agricultural Conservation Assistance Training'),
+
     ]
 
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
