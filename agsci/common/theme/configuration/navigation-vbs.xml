@@ -136,21 +136,11 @@
             </item>
             <item>
                 <title>Extension &amp; Outreach</title>
-                <link>outreach</link>
-                <items>
-                    <item>
-                        <title>Extension Programs</title>
-                        <link>outreach/programs</link>
-                    </item>
-                    <item>
-                        <title>Youth Programs</title>
-                        <link>outreach/youth</link>
-                    </item>
-                </items>
+                <link>outreach/programs</link>
             </item>
             <item>
-                <title>Diversity, Equity, &amp; Inclusion</title>
-                <link>diversity</link>
+                <title>Access &amp; Equity</title>
+                <link>access-equity</link>
             </item>
             <item>
                 <title>About</title>

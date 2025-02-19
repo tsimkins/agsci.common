@@ -96,7 +96,7 @@ class ImportDirectoryPublicationsView(ImportContentView):
         soup = BeautifulSoup(publications, features="lxml")
         soup.html.hidden = True
         soup.body.hidden = True
-        return unicode(soup.find('ul'))
+        return str(soup.find('ul'))
 
     def get_publications_json(self, user_id):
 

@@ -61,6 +61,7 @@ except ImportError:
     from urlparse import urlparse, urlunparse
 
 import json
+import re
 
 class BaseView(BrowserView):
 
@@ -1039,14 +1040,28 @@ class TileLinksDataView(TileLinksView):
 
 class SearchView(_SearchView, BaseView):
 
-    def munge_search_term(self, q):
+    def munge_search_term(self, query):
+        original_query = query
         for char in BAD_CHARS:
-            q = q.replace(char, ' ')
-        r = map(quote, q.split())
-        phrase = '"%s"' % " ".join(r)
+            query = query.replace(char, " ")
+
+        # extract quoted phrases first
+        quoted_phrases = re.findall(r'"([^"]*)"', query)
+        r = []
+        for qp in quoted_phrases:
+            # remove from original query
+            query = query.replace(f'"{qp}"', "")
+            # replace with cleaned leading/trailing whitespaces
+            # and skip empty phrases
+            clean_qp = qp.strip()
+            if not clean_qp:
+                continue
+            r.append(f'"{clean_qp}"')
+
+        r += map(quote, query.strip().split())
         r = " AND ".join(r)
-        r = quote_chars(r) + '*'
-        return " OR ".join([phrase, r])
+        r = r + ("*" if r and not original_query.endswith('"') else "")
+        return r
 
     def types_list(self):
 

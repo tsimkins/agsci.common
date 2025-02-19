@@ -1,9 +1,11 @@
+from base64 import b64decode
 from plone.app.event import base
 from plone.event.interfaces import IEventAccessor
 from plone.event.utils import date_to_datetime
 from plone.event.utils import is_date
 from plone.event.utils import is_datetime
 from plone.event.utils import utc
+from plone.namedfile.file import NamedBlobImage
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from zope.container.interfaces import INameChooser
@@ -13,8 +15,11 @@ from zope.lifecycleevent import ObjectModifiedEvent
 import datetime
 import icalendar
 import random
+import requests
 import six
 import transaction
+
+from agsci.common.constants import CMS_DOMAIN, IMAGE_FORMATS
 
 
 def ical_import(container, ics_resource, event_type,
@@ -186,6 +191,42 @@ def ical_import(container, ics_resource, event_type,
         event.attendees = attendees
         event.contact_name = contact
         event.public_tags = categories
+
+        # Get image from CMS
+        if sync_uid and ':' in sync_uid:
+
+            (plone_id, sku) = sync_uid.split(':')[:2]
+
+            if sku:
+
+                api_url = "http://%s/@@product-image?SKU=%s&width=1200" % (CMS_DOMAIN, sku)
+                response = requests.get(api_url)
+
+                if response.status_code == 200:
+
+                    _ = response.json()
+
+                    if 'contents' in _ and _['contents']:
+
+                        leadimage = _['contents'][0].get('leadimage', {})
+
+                        if leadimage:
+
+                            _data = b64decode(leadimage['data'])
+                            _mimetype = leadimage['mimetype']
+                            _caption = leadimage['caption']
+
+                            if _data:
+
+                                _ext = IMAGE_FORMATS.get(_mimetype, ('data', 'data'))[1]
+
+                                content.image = NamedBlobImage(
+                                    filename=u'%s.%s' % (sku, _ext),
+                                    data=_data
+                                )
+
+                            if _caption:
+                                content.image_caption = _caption
 
         if url:
             content.setLayout('event_redirect_view')
