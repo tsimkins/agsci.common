@@ -19,7 +19,7 @@ class IAgsciTilesLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 # Row Schemas
-class IButtonTileRowSchema(Interface):
+class ICTATileRowSchema(Interface):
 
     title = schema.TextLine(
         title=_(u"Title"),
@@ -30,15 +30,6 @@ class IButtonTileRowSchema(Interface):
         title=_(u"URL"),
         required=False
     )
-
-    color = schema.Choice(
-        title=_(u"Button Color"),
-        vocabulary='agsci.common.tiles.button_colors',
-        default=u'orange',
-        required=False,
-    )
-
-class ICTATileRowSchema(IButtonTileRowSchema):
 
     color = schema.Choice(
         title=_(u"Button Color"),
