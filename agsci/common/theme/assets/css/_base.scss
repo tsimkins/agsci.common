@@ -119,6 +119,10 @@ $display-line-height: 1.2 !default;
 
     .mosaic-tile-content {
 
+        .btn {
+            width: auto;
+        }
+
         .btn-link a, a.btn-link {
             margin-top: 0.5rem !important;
         }
@@ -792,6 +796,17 @@ body.mosaic-editor {
 
 body.mosaic-editor.plone-toolbar-left-expanded {
     padding: 25px 0 0 !important;
+}
+
+body.mosaic-editor .mosaic-toolbar {
+
+    @include body_font();
+
+    button.btn {
+        margin-bottom: 0 !important;
+        line-height: 1 !important;
+        padding: 0.25rem 0.75rem !important;
+    }
 }
 
 body.template-default_error_message #content-core p {

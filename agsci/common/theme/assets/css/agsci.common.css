@@ -17578,6 +17578,9 @@ a.alert-bar.mini p.alert-bar-text {
 .mosaic-grid-row .mosaic-tile-buttons .btn {
   border: 1px solid #CCCCCC;
 }
+.mosaic-grid-row .mosaic-tile-content .btn {
+  width: auto;
+}
 .mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
   margin-top: 0.5rem !important;
 }
@@ -18421,6 +18424,16 @@ body.mosaic-editor .datagridwidget-cell {
 
 body.mosaic-editor.plone-toolbar-left-expanded {
   padding: 25px 0 0 !important;
+}
+
+body.mosaic-editor .mosaic-toolbar {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.9rem;
+}
+body.mosaic-editor .mosaic-toolbar button.btn {
+  margin-bottom: 0 !important;
+  line-height: 1 !important;
+  padding: 0.25rem 0.75rem !important;
 }
 
 body.template-default_error_message #content-core p {
