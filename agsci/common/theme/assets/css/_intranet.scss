@@ -219,7 +219,7 @@ body.department-private {
         .department-bar a.department-brand {
             border-left-color: $inside-menu;
         }
-        .navbar-expand-lg .navbar-nav > {
+        header .navbar-expand-lg .navbar-nav > {
             .dropdown > .nav-link.dropdown-toggle {
                 color: $white;
             }
@@ -229,7 +229,7 @@ body.department-private {
             }
         }
 
-        .navbar-expand-lg .navbar-nav.dropdown-selectors {
+        header .navbar-expand-lg .navbar-nav.dropdown-selectors {
             .nav-link[aria-expanded=true],
             .nav-link.dropdown-toggle:focus {
                 border-bottom-color: $inside-header-light;

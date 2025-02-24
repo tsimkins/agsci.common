@@ -271,7 +271,8 @@ body.department-4-h {
         .department-bar a.department-brand {
             border-left-color: $color-ps-clover;
         }
-        .navbar-expand-lg .navbar-nav > {
+
+        header .navbar-expand-lg .navbar-nav > {
             .dropdown > .nav-link.dropdown-toggle {
                 color: $white;
             }
@@ -281,7 +282,7 @@ body.department-4-h {
             }
         }
 
-        .navbar-expand-lg .navbar-nav.dropdown-selectors {
+        header .navbar-expand-lg .navbar-nav.dropdown-selectors {
             .nav-link[aria-expanded=true],
             .nav-link.dropdown-toggle:focus {
                 border-bottom-color: $color-ps-clover-light;

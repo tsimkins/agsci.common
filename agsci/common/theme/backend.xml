@@ -23,7 +23,7 @@
     <rules css:if-content=".userrole-authenticated">
 
     <after css:theme-children="head">
-      <link href="++theme++barceloneta/css/barceloneta.css"
+      <link href="++resource++agsci.common/assets/barceloneta/barceloneta.css"
             rel="stylesheet"
       />
     </after>

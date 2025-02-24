@@ -104,7 +104,8 @@
             interface="Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema"
             field="content_css">
         <value>
-            <element>++plone++static/components/tinymce-builded/js/tinymce/skins/lightgray/content.min.css</element>
+            <element>++theme++barceloneta/tinymce/tinymce-ui-content.css</element>
+            <element>++theme++barceloneta/css/barceloneta.min.css</element>
             <element>++resource++agsci.common/assets/css/tinymce.css</element>
         </value>
     </record>

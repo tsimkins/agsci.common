@@ -217,54 +217,54 @@ a.alert-bar.mini p.alert-bar-text {
   filter: alpha(opacity=25);
 }
 
-.mosaic-grid-row {
+#main .mosaic-grid-row {
   margin-left: auto;
   margin-right: auto;
   /* Puts a span withn invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
   /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 }
-.mosaic-grid-row .mosaic-grid-cell {
+#main .mosaic-grid-row .mosaic-grid-cell {
   padding: 0;
 }
-.mosaic-grid-row .mosaic-tile-buttons {
+#main .mosaic-grid-row .mosaic-tile-buttons {
   bottom: 0.25rem;
   right: 0.25rem;
 }
-.mosaic-grid-row .mosaic-tile-buttons .btn {
+#main .mosaic-grid-row .mosaic-tile-buttons .btn {
   border: 1px solid #CCCCCC;
 }
-.mosaic-grid-row .mosaic-tile-content .btn {
+#main .mosaic-grid-row .mosaic-tile-content .btn {
   width: auto;
 }
-.mosaic-grid-row .mosaic-tile-content .btn-link a, .mosaic-grid-row .mosaic-tile-content a.btn-link {
+#main .mosaic-grid-row .mosaic-tile-content .btn-link a, #main .mosaic-grid-row .mosaic-tile-content a.btn-link {
   margin-top: 0.5rem !important;
 }
-.mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
+#main .mosaic-grid-row .mosaic-tile-content .jumbotron-standard #portal-breadcrumbs, #main .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title #portal-breadcrumbs {
   color: #ffffff;
   background-color: transparent;
 }
-.mosaic-grid-row .mosaic-tile-content .jumbotron-standard p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
+#main .mosaic-grid-row .mosaic-tile-content .jumbotron-standard p, #main .mosaic-grid-row .mosaic-tile-content .jumbotron-short-title p {
   color: #ffffff;
   font-size: 1.25em;
 }
-.mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
+#main .mosaic-grid-row .mosaic-tile-content .jumbotron-short #portal-breadcrumbs, #main .mosaic-grid-row .mosaic-tile-content .jumbotron-short p, #main .mosaic-grid-row .mosaic-tile-content .jumbotron-short span {
   color: #4D565B;
 }
-.mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
+#main .mosaic-grid-row .mosaic-tile-content .cta-bar .btn {
   margin-top: 0.5rem;
 }
-.mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
+#main .mosaic-grid-row .mosaic-tile-content h1.documentFirstHeading {
   border-bottom: none;
   font-size: 64px;
 }
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] section > .container,
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container {
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] section > .container,
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container {
   position: relative;
 }
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=tile],
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=heading],
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=tile],
-.mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=heading] {
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=tile],
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=heading],
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=tile],
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=heading] {
   position: absolute;
   display: block;
   content: " ";
@@ -338,6 +338,10 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   color: #575757;
 }
 
+.discreet {
+  color: #777777;
+  font-weight: 300;
+}
 .discreet strong, .discreet b {
   font-weight: bold;
 }
@@ -2589,11 +2593,11 @@ div.publication .journal-name {
   }
 }
 body.plone-toolbar-left #edit-zone {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.25;
 }
 body.plone-toolbar-left #edit-zone .nav-link {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   padding: 0.375rem 0.75rem;
 }
 body.plone-toolbar-left #edit-zone .nav-link .plone-icon {
@@ -2724,6 +2728,10 @@ body.userrole-authenticated span.auto-image-caption[data-alt]:after {
 }
 body.userrole-authenticated p.discreet.no-br br:first-of-type {
   display: none;
+}
+
+.tox .tox-textarea {
+  font-family: monospace !important;
 }
 
 .print-only-logo {
