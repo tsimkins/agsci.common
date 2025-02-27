@@ -12,7 +12,7 @@
     <div class="container"
         tal:omit-tag="view/is_portlet">
 
-        <div class="row d-flex justify-content-center overflow-hidden">
+        <div class="row d-flex justify-content-center overflow-hidden mx-0">
 
         <tal:buttons tal:repeat="button view/values|nothing">
             <a tal:attributes="href button/url;

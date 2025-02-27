@@ -44,6 +44,11 @@
         .col#{$infix}-#{$i} {
           @include make-col($i, $columns);
         }
+
+        .mosaic-grid-row > .col#{$infix}-#{$i} {
+          @include make-col($i, $columns);
+        }
+
       }
 
       .order#{$infix}-first { order: -1; }

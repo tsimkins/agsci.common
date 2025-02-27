@@ -241,29 +241,46 @@ jq3(document).ready(function() {
 
 // Mosaic fixes
 
+function moveMosaicNav() {
+
+  var screenWidth = jq3(window).width();
+  var element = jq3('.navigation-wrapper');
+
+  if (screenWidth < 992) {
+    // Move element to position A for small screens
+    element.appendTo('.mosaic-navigation-mobile');
+  } else {
+    // Move element to position B for larger screens
+    element.appendTo('.mosaic-navigation');
+  }
+
+  console.log("Resizy: Width " + screenWidth);
+
+}
+
+jq3(window).on('resize', function() {
+    moveMosaicNav();
+}).resize();
+
+
+
 jq3(document).ready(function() {
 
     // Add a class of .container to any mosiac-tile-row that has a child of .container
     // This fixes multi-column mosaic layout issues
 
-    jq3('.mosaic-grid-row:not(:has(section[data-container-width="full"]))').each(
+    jq3('.mosaic-grid-row:has(section[data-container-width="full"])').each(
         function () {
-            jq3(this).addClass('container');
+           jq3(this).removeClass('container');
         }
     );
 
-    jq3('.mosaic-grid-row:has(section[data-container-width="not-full"])').each(
+    jq3('.mosaic-grid-row:not(:has(section[data-container-width="full"])), .mosaic-grid-row:has(section[data-container-width="not-full"])').each(
         function () {
-            jq3(this).addClass('container');
+           jq3(this).addClass('container');
         }
     );
 
-    // Add margin class for sections that are inside a first 3/4 width cell
-    jq3('.mosaic-grid-cell.mosaic-position-leftmost.mosaic-width-three-quarters section').each(
-        function() {
-            jq3(this).addClass('mr-lg-5').removeClass('container');
-        }
-    );
 
     // Move navigation portlet on homepage into its own row above.
     jq3('.mosaic-grid-row .navigation-wrapper').each(
@@ -274,16 +291,18 @@ jq3(document).ready(function() {
             jq3(this).parents('.mosaic-grid-row').each(
                 function () {
 
-                    var new_cell = jq3('<div class="mosaic-grid-cell mosaic-navigation"></div>')
-                    nav_wrapper.addClass('mt-3');
-                    nav_wrapper.appendTo(new_cell);
-                    new_cell.prependTo(jq3(this));
+                    var new_nav_cell = jq3('<div class="mosaic-navigation px-3"></div>')
+                    var new_nav_cell_mobile = jq3('<div class="mosaic-navigation-mobile mt-3 px-3"></div>')
+                    new_nav_cell.insertBefore(nav_wrapper);
+                    new_nav_cell_mobile.insertBefore(jq3(this));
+
+                    moveMosaicNav();
+
                 }
             );
         }
     );
 });
-
 
 // Expand the nav portlet on page load.
 
