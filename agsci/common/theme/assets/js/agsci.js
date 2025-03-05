@@ -385,12 +385,16 @@ jq3(document).ready(function() {
 /* Scroll to anchor in accordion */
 jq3(document).ready(function() {
     if (window.location.hash) {
-        jq3("body.portaltype-agsci_accordion_folder " + window.location.hash + " div.accordion-collapse").each(function () {
-            jq3(this).addClass("show");
-            jq3(this).removeClass("hide");
-        })
+        try {
+            jq3("body.portaltype-agsci_accordion_folder " + window.location.hash + " div.accordion-collapse").each(function () {
+                jq3(this).addClass("show");
+                jq3(this).removeClass("hide");
+            })
 
-        jq3('html, body').scrollTop(jq3(window.location.hash).offset().top);
+            jq3('html, body').scrollTop(jq3(window.location.hash).offset().top);
+        } catch(error) {
+            // do nothing
+        }
     }
 
     console.log(window.location);
