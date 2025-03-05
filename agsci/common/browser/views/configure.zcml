@@ -550,15 +550,6 @@
         layer="..interfaces.IThemeSpecific"
     />
 
-    <!-- Download registrations -->
-    <browser:page
-        for="*"
-        name="event_registration_view"
-        class=".registration.RegistrationView"
-        layer="..interfaces.IThemeSpecific"
-        permission="zope2.View"
-    />
-
     <!-- Cropped Image Views -->
 
     <browser:page

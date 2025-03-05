@@ -176,18 +176,6 @@ class IUBRCode(model.Schema):
 @provider(IFormFieldProvider)
 class IEventFields(model.Schema):
 
-    model.fieldset(
-        'registration',
-        label=_(u'Registration'),
-        fields=[
-            'free_registration',
-            'free_registration_attendee_limit',
-            'free_registration_confirmation_message',
-            'free_registration_deadline',
-            'free_registration_email',
-        ],
-    )
-
     event_canceled = schema.Bool(
         title=_(u"This event has been canceled"),
         description=_(u"Check this box if an event has been canceled, and provide any addition information under 'Event Cancellation Information'"),
@@ -197,36 +185,6 @@ class IEventFields(model.Schema):
     event_canceled_info = RichText(
         title=_(u"Event Cancellation Information"),
         description=_(u""),
-        required=False,
-    )
-
-    free_registration = schema.Bool(
-        title=_(u"Enable online event registration (for no-fee events only)."),
-        description=_(u""),
-        required=False,
-    )
-
-    free_registration_attendee_limit = schema.Int(
-        title=_(u"Maximum Attendees"),
-        description=_(u"Additional registrations not be permitted after this number of registrations."),
-        required=False,
-    )
-
-    free_registration_confirmation_message = RichText(
-        title=_(u"Email Confirmation Message"),
-        description=_(u"Additional text sent as part of confirmation email."),
-        required=False,
-    )
-
-    free_registration_deadline = schema.Datetime(
-        title=_(u"Registration deadline."),
-        description=_(u"Registrations will not be permitted after this date."),
-        required=False,
-    )
-
-    free_registration_email = schema.TextLine(
-        title=_(u"Email address for registration responses."),
-        description=_(u"Use this field if you would like to receive an email for each registration."),
         required=False,
     )
 
