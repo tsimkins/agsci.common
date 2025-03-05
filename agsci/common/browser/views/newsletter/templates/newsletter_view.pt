@@ -635,8 +635,7 @@ table td.footer .email-footer h2 {
                     batch python:notEditor and view.enabled_items or view.all_items;
                     normalizeString nocall: context/plone_utils/normalizeString;
                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;
-                    navigation_root_url context/@@plone_portal_state/navigation_root_url;
-                    pas_member context/@@pas_member;">
+                    navigation_root_url context/@@plone_portal_state/navigation_root_url;">
 
         <table id="newsletter-config" tal:omit-tag="notEditor">
             <tr tal:condition="not:notEditor">
