@@ -48,6 +48,7 @@ setup(name='agsci.common',
         'premailer',
         'zLOG',
         'collective.easyform [recaptcha]',
+        'plone.formwidget.recaptcha',
         'plone.app.widgets',
     ],
     entry_points="""
