@@ -125,7 +125,7 @@ class LeadImage(object):
     def images(self):
         return self.context.restrictedTraverse('@@images')
 
-    def tag(self, css_class='w-100', scale='large'):
+    def tag(self, css_class='w-100', scale='larger'):
 
         if self.has_image:
 

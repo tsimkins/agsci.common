@@ -33,15 +33,19 @@
           interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
           field="allowed_sizes">
     <value>
-      <element>gallery 1024:683</element>
-      <element>large 768:768</element>
-      <element>large_listing 576:768</element>
-      <element>preview 400:400</element>
-      <element>mini 200:200</element>
-      <element>thumb 128:128</element>
-      <element>tile 64:64</element>
-      <element>icon 32:32</element>
-      <element>listing 16:16</element>
+        <element>huge 1600:2240</element>
+        <element>great 1200:1680</element>
+        <element>larger 1000:1400</element>
+        <element>large 800:1120</element>
+        <element>gallery 1024:683</element>
+        <element>large_listing 576:768</element>
+        <element>teaser 600:840</element>
+        <element>preview 400:560</element>
+        <element>mini 200:280</element>
+        <element>thumb 128:128</element>
+        <element>tile 64:64</element>
+        <element>icon 32:32</element>
+        <element>listing 16:16</element>
     </value>
 
   </record>

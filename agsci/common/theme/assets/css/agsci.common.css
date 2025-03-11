@@ -10972,18 +10972,23 @@ figcaption {
   width: 100%;
 }
 
+.image-left,
+.image-inline,
+.image-right,
 .float-left,
 .float-right {
   float: none;
 }
 
 @media (min-width: 576px) {
-  .float-left {
+  .image-left,
+.float-left {
     float: left;
     margin-right: 1.5rem;
   }
 
-  .float-right {
+  .image-right,
+.float-right {
     float: right;
     margin-left: 1.5rem;
   }
@@ -18141,6 +18146,7 @@ a.alert-bar.mini p.alert-bar-text {
 }
 
 #main .mosaic-grid-row {
+  --bs-gutter-x: 0;
   /* Puts a span withn invisible margin so the anchor tags on tiles don't conflict with the fixed header. */
   /* Ref: https://css-tricks.com/hash-tag-links-padding/ */
 }
@@ -19915,6 +19921,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 
 #parent-fieldname-text img {
   max-width: 100%;
+  height: auto;
 }
 
 #content-core {

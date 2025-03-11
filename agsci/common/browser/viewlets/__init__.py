@@ -664,7 +664,7 @@ class LeadImageViewlet(ViewletBase):
 
     @property
     def lightbox_url(self):
-        return '%s/@@images/image/large' % self.context.absolute_url()
+        return '%s/@@images/image/great' % self.context.absolute_url()
 
     @property
     def show_image(self):

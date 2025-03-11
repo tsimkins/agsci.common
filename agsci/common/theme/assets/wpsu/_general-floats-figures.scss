@@ -21,6 +21,9 @@ figcaption {
     width: 100%;
     }
 
+.image-left,
+.image-inline,
+.image-right,
 .float-left,
 .float-right {
     float: none;
@@ -28,11 +31,13 @@ figcaption {
 
 @include media-breakpoint-up(sm) {
 
+    .image-left,
     .float-left {
         float: left;
         margin-right: 1.5rem;
         }
 
+    .image-right,
     .float-right {
         float: right;
         margin-left: 1.5rem;

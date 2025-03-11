@@ -106,6 +106,8 @@ $display-line-height: 1.2 !default;
 
 #main .mosaic-grid-row {
 
+    --bs-gutter-x: 0;
+
     .mosaic-tile-buttons {
         bottom: 0.25rem;
         right: 0.25rem;
@@ -950,6 +952,7 @@ body.viewpermission-plone-app-event-import-ical #content-core{
 #parent-fieldname-text {
     img {
         max-width: 100%;
+        height: auto;
     }
 }
 
