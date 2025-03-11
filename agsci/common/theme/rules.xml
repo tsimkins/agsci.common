@@ -282,6 +282,12 @@
             <after css:theme-children="#theme-javascript" css:content="head script" />
         </rules>
 
+        <rules css:if-not-content=".template-facetednavigation_view">
+            <drop css:content="link[data-bundle='faceted.jquery']" />
+            <drop css:content="link[data-bundle='faceted.edit']" />
+            <drop css:content="link[data-bundle='faceted.view']" />
+        </rules>
+
         <!-- Drop Altmetric Javascript if not used -->
         <rules css:if-not-content=".altmetric-embed">
             <drop css:theme="#altmetric-javascript" />
