@@ -291,7 +291,7 @@ jq3(document).ready(function() {
             jq3(this).parents('.mosaic-grid-row').each(
                 function () {
 
-                    var new_nav_cell = jq3('<div class="mosaic-navigation px-3"></div>')
+                    var new_nav_cell = jq3('<div class="mosaic-navigation px-2"></div>')
                     var new_nav_cell_mobile = jq3('<div class="mosaic-navigation-mobile mt-3 px-3"></div>')
                     new_nav_cell.insertBefore(nav_wrapper);
                     new_nav_cell_mobile.insertBefore(jq3(this));
