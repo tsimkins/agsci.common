@@ -20659,6 +20659,11 @@ body.userrole-authenticated p.discreet.no-br br:first-of-type {
   font-family: monospace !important;
 }
 
+footer > section.container-fluid .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

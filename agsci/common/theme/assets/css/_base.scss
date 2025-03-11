@@ -1837,3 +1837,8 @@ body.userrole-authenticated {
 .tox .tox-textarea {
     font-family: monospace !important;
 }
+
+footer > section.container-fluid .row {
+    margin-left: 0;
+    margin-right: 0;
+}
