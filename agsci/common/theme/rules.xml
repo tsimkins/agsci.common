@@ -39,6 +39,9 @@
 
     </rules>
 
+    <!-- Drop jqueryui bundle -->
+    <drop css:content="link[data-bundle='jqueryui']" />
+
     <!-- Drop Dean's List JS include if outside that section -->
     <rules css:if-not-content="body.section-deans-list">
 
