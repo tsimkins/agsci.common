@@ -18470,6 +18470,35 @@ body.portaltype-agsci_degree_container #faceted-form .left-area-js {
   font-size: 1rem;
 }
 
+body.viewpermission-manage-portal main section article header,
+body.viewpermission-add-portal-content main section article header,
+body.viewpermission-manage-schemata main section article header,
+body.viewpermission-modify-portal-content main section article header,
+body.viewpermission-portlets-manage-portlets main section article header,
+body.viewpermission-list-folder-contents main section article header,
+body.viewpermission-delete-objects main section article header,
+body.viewpermission-plone-site-setup-editing main section article header,
+body.viewpermission-plone-site-setup-filtering main section article header,
+body.viewpermission-plone-site-setup-imaging main section article header,
+body.viewpermission-plone-site-setup-language main section article header,
+body.viewpermission-plone-site-setup-mail main section article header,
+body.viewpermission-plone-site-setup-markup main section article header,
+body.viewpermission-plone-site-setup-navigation main section article header,
+body.viewpermission-plone-site-setup-overview main section article header,
+body.viewpermission-plone-site-setup-search main section article header,
+body.viewpermission-plone-site-setup-security main section article header,
+body.viewpermission-plone-site-setup-site main section article header,
+body.viewpermission-plone-site-setup-themes main section article header,
+body.viewpermission-plone-site-setup-tinymce main section article header,
+body.viewpermission-plone-site-setup-types main section article header,
+body.viewpermission-plone-site-setup-users-and-groups main section article header,
+body.viewpermission-sharing-page-delegate-roles main section article header,
+body.viewpermission-cmfeditions-access-previous-versions main section article header,
+body.viewpermission-modify-constrain-types main section article header,
+body.template-confirm-action main section article header,
+body.template-historyview main section article header {
+  background: transparent;
+}
 body.viewpermission-manage-portal #content,
 body.viewpermission-add-portal-content #content,
 body.viewpermission-manage-schemata #content,

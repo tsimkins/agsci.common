@@ -451,6 +451,10 @@ body.viewpermission-modify-constrain-types,
 body.template-confirm-action,
 body.template-historyview {
 
+    main section article header {
+        background: transparent;
+    }
+
     #content {
         margin-top: 2em;
     }
