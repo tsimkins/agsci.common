@@ -19009,6 +19009,10 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   padding: 25px 0 0 !important;
 }
 
+body.plone-toolbar-left #edit-zone .plonetoolbar-contenttype ul .nav-link .plone-icon {
+  display: none !important;
+}
+
 body.mosaic-editor .mosaic-toolbar {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
