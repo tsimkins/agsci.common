@@ -44,7 +44,7 @@
 
     </p>
 
-    <div class="documentDescription description"
+    <p class="documentDescription description lead"
         tal:define="description context/Description|nothing"
         tal:content="description"
         tal:condition="description" />
