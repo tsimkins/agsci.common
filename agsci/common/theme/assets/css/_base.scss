@@ -1868,3 +1868,17 @@ footer > section.container-fluid .row {
     margin-left: 0;
     margin-right: 0;
 }
+
+.modal-body {
+    #viewlet-below-content, #data-check {
+        display: none;
+    }
+}
+
+.modal-footer {
+    .btn.btn-primary {
+        margin-bottom: 0;
+        padding: 0.5rem 1rem;
+        border: 0;
+    }
+}

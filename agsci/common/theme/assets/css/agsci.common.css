@@ -20707,6 +20707,16 @@ footer > section.container-fluid .row {
   margin-right: 0;
 }
 
+.modal-body #viewlet-below-content, .modal-body #data-check {
+  display: none;
+}
+
+.modal-footer .btn.btn-primary {
+  margin-bottom: 0;
+  padding: 0.5rem 1rem;
+  border: 0;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;
