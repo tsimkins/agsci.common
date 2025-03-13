@@ -738,8 +738,7 @@ table td.footer .email-footer h2 {
                                     normalizeString nocall: context/plone_utils/normalizeString;
                                     toLocalizedTime nocall: context/@@plone/toLocalizedTime;
                                     show_date context/show_date|nothing;
-                                    navigation_root_url context/@@plone_portal_state/navigation_root_url;
-                                    pas_member context/@@pas_member;"
+                                    navigation_root_url context/@@plone_portal_state/navigation_root_url;"
                                     condition="notEditor">
                     <tal:listing condition="batch">
 
