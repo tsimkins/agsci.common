@@ -547,6 +547,13 @@ body.portaltype-agsci_degree_container #faceted-form .left-area-js {
   font-size: 1rem;
 }
 
+body.template-folder_contents span.plone-item-exclude-from-nav {
+  color: #cc3333;
+}
+body.template-folder_contents section#section-byline {
+  display: none;
+}
+
 body.viewpermission-manage-portal main section article header,
 body.viewpermission-add-portal-content main section article header,
 body.viewpermission-manage-schemata main section article header,

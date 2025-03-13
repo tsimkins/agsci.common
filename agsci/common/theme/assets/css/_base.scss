@@ -423,6 +423,17 @@ body.portaltype-agsci_degree_container {
 
 }
 
+body.template-folder_contents {
+
+    span.plone-item-exclude-from-nav {
+        color: #cc3333;
+    }
+
+    section#section-byline {
+        display: none;
+    }
+}
+
 body.viewpermission-manage-portal,
 body.viewpermission-add-portal-content,
 body.viewpermission-manage-schemata,
