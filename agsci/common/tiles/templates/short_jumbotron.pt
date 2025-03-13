@@ -21,7 +21,7 @@
     class="container-fluid jumbotron jumbotron-short jumbotron-variable-height jumbotron-new-overlay d-flex align-items-end position-relative"
     tal:attributes="data-tile-type view/tile_type|nothing;
                     data-container-width view/container_width;">
-    <div class="container px-0 py-3 py-lg-5 border-bottom">
+    <div class="container px-0 pt-3 pb-5 border-bottom">
 
         <div id="portal-breadcrumbs"
                 tal:condition="view/data/show_breadcrumbs|nothing"
@@ -30,7 +30,7 @@
         <h1 tal:condition="view/data/show_title|nothing"
             tal:content="view/data/title|context/Title|nothing">
 
-        <p tal:condition="view/data/show_description|nothing"
+        <p class="lead" tal:condition="view/data/show_description|nothing"
             tal:content="view/data/description|context/Description|nothing">
 
     </div>
