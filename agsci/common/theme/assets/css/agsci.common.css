@@ -10512,7 +10512,7 @@ h4, .h5 {
 
 /* Paragraphs
 --------------------------------------------- */
-p {
+p, div {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
@@ -10524,7 +10524,7 @@ p {
     font-size: 0.9rem;
   }
 }
-p.lead {
+.lead {
   line-height: 1.6;
   margin-top: 1.5rem;
   font-size: 1rem;
@@ -10532,7 +10532,7 @@ p.lead {
 }
 
 @media (min-width: 992px) {
-  p.lead {
+  .lead {
     font-size: 1.1rem;
   }
 }

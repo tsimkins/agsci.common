@@ -636,7 +636,7 @@ h4, .h5 {
 /* Paragraphs
 --------------------------------------------- */
 
-p {
+p, div {
     font-family: $font-family-sans-serif;
     font-size: $small1-size;
     font-weight: $font-weight-base;
@@ -650,7 +650,7 @@ p {
         }
     }
 
-p.lead {
+.lead {
     line-height: $line-height-base;
     margin-top: 1.5rem;
     font-size: $font-size-base;
@@ -659,7 +659,7 @@ p.lead {
 
 @include media-breakpoint-up(lg) {
 
-    p.lead {
+    .lead {
         font-size: $h4-font-size;
         }
     }
