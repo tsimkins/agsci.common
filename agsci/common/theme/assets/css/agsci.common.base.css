@@ -2681,6 +2681,9 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form .btn.btn-primary {
   padding: 0.625rem 1.5rem;
   margin-bottom: 0;
 }
+div[class~="mosaic-agsci.common.tiles.search_box-tile"] form.form-inline {
+  display: block;
+}
 
 #content-core .form_container label, #content-core .form_container form, #content-core .form_container .form_label, #content-core .form_container select, #content-core .form_container input, #content-core .form_container textarea, #content-core .form_container button, #content-core .form_action label, #content-core .form_action form, #content-core .form_action .form_label, #content-core .form_action select, #content-core .form_action input, #content-core .form_action textarea, #content-core .form_action button {
   font-family: "Nunito Sans", sans-serif;

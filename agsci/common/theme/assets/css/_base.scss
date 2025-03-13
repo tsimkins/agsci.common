@@ -1735,6 +1735,9 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] {
             margin-bottom: 0;
         }
     }
+    form.form-inline {
+        display: block;
+    }
 }
 
 #content-core {
