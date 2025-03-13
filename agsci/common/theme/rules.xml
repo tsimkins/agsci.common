@@ -444,9 +444,9 @@
                     <xsl:apply-templates css:select="#effective-date" />
                     <xsl:apply-templates css:select="#public-tags-item" />
                     <xsl:apply-templates css:select="#internal-tags" />
-                    <xsl:if test="//div[@class='documentDescription description']">
+                    <xsl:if test="//p[@class='documentDescription description lead']">
                         <p class="lead">
-                            <xsl:value-of css:select="div.documentDescription" />
+                            <xsl:value-of css:select="p.documentDescription" />
                         </p>
                     </xsl:if>
                     <xsl:apply-templates css:select="#leadimage" />

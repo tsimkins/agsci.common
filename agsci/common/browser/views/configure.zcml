@@ -647,4 +647,13 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    
+    <browser:page
+        name="description"
+        for="*"
+        template="templates/description.pt"
+        permission="zope.Public"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>
