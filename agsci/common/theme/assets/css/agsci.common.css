@@ -10512,7 +10512,7 @@ h4, .h5 {
 
 /* Paragraphs
 --------------------------------------------- */
-p, div {
+p, #parent-fieldname-text > div, div.lead {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;

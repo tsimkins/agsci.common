@@ -636,7 +636,7 @@ h4, .h5 {
 /* Paragraphs
 --------------------------------------------- */
 
-p, div {
+p, #parent-fieldname-text > div, div.lead {
     font-family: $font-family-sans-serif;
     font-size: $small1-size;
     font-weight: $font-weight-base;
