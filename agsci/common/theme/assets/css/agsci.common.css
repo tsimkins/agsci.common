@@ -18470,6 +18470,19 @@ body.portaltype-agsci_degree_container #faceted-form .left-area-js {
   font-size: 1rem;
 }
 
+body.template-folder_contents #select2-drop {
+  background: #FFFFFF;
+}
+body.template-folder_contents .pat-structure .navbar {
+  display: block;
+}
+body.template-folder_contents .pat-structure .navbar > a {
+  font-size: 0.875rem;
+}
+body.template-folder_contents .pat-structure .navbar > a svg {
+  width: 25px;
+  height: 25px;
+}
 body.template-folder_contents span.plone-item-exclude-from-nav {
   color: #cc3333;
 }

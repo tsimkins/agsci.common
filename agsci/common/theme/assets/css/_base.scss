@@ -425,6 +425,23 @@ body.portaltype-agsci_degree_container {
 
 body.template-folder_contents {
 
+    #select2-drop {
+        background: #FFFFFF;
+    }
+
+    .pat-structure .navbar {
+        display: block;
+
+        > a {
+            font-size: 0.875rem;
+
+            svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+
     span.plone-item-exclude-from-nav {
         color: #cc3333;
     }
