@@ -1,0 +1,54 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    >
+
+  <!-- Usergroup Control Panel -->
+
+  <browser:page
+      name="usergroup-userprefs"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class="Products.CMFPlone.controlpanel.browser.usergroups_usersoverview.UsersOverviewControlPanel"
+      template="usergroups_usersoverview.pt"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="agsci.common.browser.interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="usergroup-groupprefs"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class="Products.CMFPlone.controlpanel.browser.usergroups_groupsoverview.GroupsOverviewControlPanel"
+      template="usergroups_groupsoverview.pt"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="agsci.common.browser.interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="usergroup-groupmembership"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class="Products.CMFPlone.controlpanel.browser.usergroups_groupmembership.GroupMembershipControlPanel"
+      template="usergroups_groupmembership.pt"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="agsci.common.browser.interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="usergroup-usermembership"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class="Products.CMFPlone.controlpanel.browser.usergroups_usermembership.UserMembershipControlPanel"
+      template="usergroups_usermembership.pt"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="agsci.common.browser.interfaces.IThemeSpecific"
+      />
+
+  <browser:page
+      name="usergroup-groupdetails"
+      for="plone.base.interfaces.IPloneSiteRoot"
+      class="Products.CMFPlone.controlpanel.browser.usergroups_groupdetails.GroupDetailsControlPanel"
+      template="usergroups_groupdetails.pt"
+      permission="plone.app.controlpanel.UsersAndGroups"
+      layer="agsci.common.browser.interfaces.IThemeSpecific"
+      />
+
+</configure>
