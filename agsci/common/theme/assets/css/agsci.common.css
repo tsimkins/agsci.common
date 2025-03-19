@@ -19058,6 +19058,10 @@ body.mosaic-editor.plone-toolbar-left-expanded {
   padding: 25px 0 0 !important;
 }
 
+body.plone-toolbar-left #edit-zone {
+  z-index: 1030 !important;
+  /* under the modal */
+}
 body.plone-toolbar-left #edit-zone .plonetoolbar-contenttype ul .nav-link .plone-icon {
   display: none !important;
 }

@@ -834,6 +834,9 @@ body.mosaic-editor.plone-toolbar-left-expanded {
 }
 
 body.plone-toolbar-left #edit-zone {
+
+    z-index: 1030 !important; /* under the modal */
+
     .plonetoolbar-contenttype ul .nav-link {
         .plone-icon {
             display: none !important;
