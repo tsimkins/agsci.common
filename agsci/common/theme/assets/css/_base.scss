@@ -1324,26 +1324,63 @@ header {
 
 body.template-link_check,
 body.template-content_checks {
+
+    #viewlet-below-content-title {
+        display: none;
+    }
+
     #data-check {
         display: none;
     }
 
     td, th {
-        font-size: 1.5rem;
+        font-size: 0.875rem;
     }
 }
 
 body.template-content_check_items {
 
-    .px-0,
-    .entry.container.mx-0 {
-        padding-left: 0;
-        padding-right: 0;
+    #viewlet-below-content-title {
+        display: none;
     }
 
-    .contenttype-event {
-        .event.summary {
+    section.entries {
+
+        #viewlet-below-content-title {
             display: none;
+        }
+
+        a.card {
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-width: 0 0 1px 0;
+            border-bottom: 1px solid #E9E9E9 !important;
+            border-radius: 0;
+        }
+
+        img {
+            display: none !important;
+        }
+
+        .px-0,
+        .entry.container.mx-0 {
+            padding-left: 0;
+            padding-right: 0;
+
+            .row {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .description {
+                color: #333333;
+            }
+        }
+
+        .contenttype-event {
+            .event.summary {
+                display: none;
+            }
         }
     }
 }

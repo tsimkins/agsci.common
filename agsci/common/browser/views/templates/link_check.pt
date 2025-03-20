@@ -34,7 +34,7 @@
 
     <h3>Key</h3>
 
-    <table class="listing" >
+    <table>
         <thead>
             <tr>
                 <th>
@@ -69,7 +69,7 @@
         tal:define="link_check view/link_check"
         condition="link_check">
 
-        <table class="listing">
+        <table>
             <thead>
                 <tr>
                     <th>
