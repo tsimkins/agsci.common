@@ -343,6 +343,11 @@ class BaseTile(PersistentTile):
                 field = self.get_field(field_name, None)
 
                 if field:
+
+                    field_name_alt = field_name.replace('image', 'image_alt')
+
+                    field_alt = self.get_field(field_name_alt, None)
+
                     dimensions = size = None
 
                     if hasattr(field, 'getImageSize'):
@@ -360,7 +365,8 @@ class BaseTile(PersistentTile):
                         filename=self.get_img_filename(field=field_name),
                         id=self.id,
                         dimensions=dimensions,
-                        size=size
+                        size=size,
+                        alt=field_alt,
                     )
 
     @property

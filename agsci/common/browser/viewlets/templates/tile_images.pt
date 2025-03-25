@@ -10,6 +10,7 @@
             <tr>
                 <th>Tile Type</th>
                 <th>Thumbnail</th>
+                <th>Image Alt Text</th>
                 <th>Errors</th>
             </tr>
         </thead>
@@ -23,12 +24,14 @@
                                 filename i/filename|nothing;
                                 dimensions i/dimensions|nothing;
                                 dimensions python: view.getDimensions(dimensions);
+                                img_alt i/alt|nothing;
                                 size i/size|nothing;
                                 size python: view.getSize(size)">
 
                     <a tal:attributes="href url">
-                        <img alt=""
-                             tal:attributes="src src" />
+                        <img 
+                             tal:attributes="src src;
+                                             alt img_alt" />
                         <br />
                         <span
                             tal:condition="filename"
@@ -45,6 +48,10 @@
 
                     </p>
 
+                </td>
+                <td
+                    tal:define="img_alt i/alt|nothing">
+                    <span tal:replace="img_alt" tal:condition="img_alt" />
                 </td>
                 <td>
                     <p tal:repeat="j python: view.check_image(i)"
