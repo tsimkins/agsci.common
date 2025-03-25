@@ -51,4 +51,11 @@
         original="ical_import"
         />
 
+    <monkey:patch
+        description="Image tag generation"
+        module="plone.namedfile.scaling"
+        replacement=".image_tag_from_values"
+        original="_image_tag_from_values"
+        />
+
 </configure>

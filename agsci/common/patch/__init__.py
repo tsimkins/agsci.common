@@ -4,6 +4,7 @@ except:
     from plone.app.widgets.base import TextareaWidget
 
 from DateTime import DateTime
+from xml.sax.saxutils import quoteattr
 
 from agsci.common.content.behaviors.leadimage import ILeadImage
 
@@ -48,3 +49,32 @@ def syndication_enclosure(self):
                 lead.image.getSize(),
                 lead.image.contentType,
             )
+
+def image_tag_from_values(*values):
+    """Turn list of tuples into an img tag.
+
+    Naturally, this should at least contain ("src", "some url").
+    """
+    parts = ["<img"]
+    for k, v in values:
+        # Skip width/height
+        if k in ('width', 'height'):
+            continue
+
+        # Include alt text as blank string
+        if k in ('alt',):
+            if not v:
+                v = ''
+
+        if v is None:
+            continue
+
+        if isinstance(v, int):
+            v = str(v)
+        elif isinstance(v, bytes):
+            v = str(v, "utf8")
+        parts.append(f"{k}={quoteattr(v)}")
+
+    parts.append("/>")
+
+    return " ".join(parts)
