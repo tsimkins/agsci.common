@@ -477,7 +477,8 @@ body.viewpermission-sharing-page-delegate-roles,
 body.viewpermission-cmfeditions-access-previous-versions,
 body.viewpermission-modify-constrain-types,
 body.template-confirm-action,
-body.template-historyview {
+body.template-historyview,
+body.template-manage-aliases {
 
     main section article header {
         background: transparent;
@@ -1914,6 +1915,14 @@ body.userrole-authenticated {
 
     p.discreet.no-br br:first-of-type {
         display: none;
+    }
+}
+
+body.userrole-authenticated {
+    .container .entries, .headshot {
+        span.auto-image-caption:after {
+            display: none;
+        }
     }
 }
 

@@ -593,7 +593,8 @@ body.viewpermission-sharing-page-delegate-roles main section article header,
 body.viewpermission-cmfeditions-access-previous-versions main section article header,
 body.viewpermission-modify-constrain-types main section article header,
 body.template-confirm-action main section article header,
-body.template-historyview main section article header {
+body.template-historyview main section article header,
+body.template-manage-aliases main section article header {
   background: transparent;
 }
 body.viewpermission-manage-portal #content,
@@ -622,7 +623,8 @@ body.viewpermission-sharing-page-delegate-roles #content,
 body.viewpermission-cmfeditions-access-previous-versions #content,
 body.viewpermission-modify-constrain-types #content,
 body.template-confirm-action #content,
-body.template-historyview #content {
+body.template-historyview #content,
+body.template-manage-aliases #content {
   margin-top: 2em;
 }
 body.viewpermission-manage-portal .element-invisible,
@@ -759,7 +761,12 @@ body.template-historyview .element-invisible,
 body.template-historyview #portal-breadcrumbs,
 body.template-historyview #viewlet-below-content,
 body.template-historyview #page-header h1.documentFirstHeading,
-body.template-historyview #data-check {
+body.template-historyview #data-check,
+body.template-manage-aliases .element-invisible,
+body.template-manage-aliases #portal-breadcrumbs,
+body.template-manage-aliases #viewlet-below-content,
+body.template-manage-aliases #page-header h1.documentFirstHeading,
+body.template-manage-aliases #data-check {
   display: none;
 }
 body.viewpermission-manage-portal section.entries div.container,
@@ -788,7 +795,8 @@ body.viewpermission-sharing-page-delegate-roles section.entries div.container,
 body.viewpermission-cmfeditions-access-previous-versions section.entries div.container,
 body.viewpermission-modify-constrain-types section.entries div.container,
 body.template-confirm-action section.entries div.container,
-body.template-historyview section.entries div.container {
+body.template-historyview section.entries div.container,
+body.template-manage-aliases section.entries div.container {
   margin-bottom: 1em;
 }
 body.viewpermission-manage-portal section.entries a,
@@ -871,7 +879,10 @@ body.template-confirm-action section.entries a:hover,
 body.template-confirm-action section.entries a:focus,
 body.template-historyview section.entries a,
 body.template-historyview section.entries a:hover,
-body.template-historyview section.entries a:focus {
+body.template-historyview section.entries a:focus,
+body.template-manage-aliases section.entries a,
+body.template-manage-aliases section.entries a:hover,
+body.template-manage-aliases section.entries a:focus {
   border-bottom: none !important;
   text-decoration: none;
 }
@@ -901,7 +912,8 @@ body.viewpermission-sharing-page-delegate-roles section.entries a:before,
 body.viewpermission-cmfeditions-access-previous-versions section.entries a:before,
 body.viewpermission-modify-constrain-types section.entries a:before,
 body.template-confirm-action section.entries a:before,
-body.template-historyview section.entries a:before {
+body.template-historyview section.entries a:before,
+body.template-manage-aliases section.entries a:before {
   content: "" !important;
 }
 
@@ -2818,6 +2830,10 @@ body.userrole-authenticated span.auto-image-caption[data-alt]:after {
   padding: 0.375rem;
 }
 body.userrole-authenticated p.discreet.no-br br:first-of-type {
+  display: none;
+}
+
+body.userrole-authenticated .container .entries span.auto-image-caption:after, body.userrole-authenticated .headshot span.auto-image-caption:after {
   display: none;
 }
 
