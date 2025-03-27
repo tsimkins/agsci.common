@@ -20122,6 +20122,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 }
 #content-core .entries .entry .description {
   line-height: 1.8;
+  color: #231e20;
 }
 #content-core .bio .headshot.card-img-crop.placeholder img {
   top: 0;
@@ -20569,7 +20570,8 @@ body:not(.portaltype-agsci_homepage_extension) .mosaic-option-group-homepage-ext
 }
 
 #select2-drop {
-  font-size: 14px;
+  font-size: 12px;
+  background-color: #FFFFFF;
 }
 
 #public-tags-filter {
