@@ -58,4 +58,11 @@
         original="_image_tag_from_values"
         />
 
+    <monkey:patch
+        description="Enable toolbar for move or copy permission"
+        class="Products.CMFPlone.browser.ploneview.Plone"
+        replacement=".ploneview_showToolbar"
+        original="showToolbar"
+        />
+
 </configure>
