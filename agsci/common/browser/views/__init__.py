@@ -685,6 +685,16 @@ class PhotoFolderView(FolderView):
 
         return (0,0)
 
+    def image_alt(self, _):
+
+        if _.Description() and _.Description().strip():
+            return _.Description()
+
+        if _.Title() and _.Title().strip():
+            return _.Title()
+
+        return ''
+
     def image_class(self, _):
 
         (w,h) = self.image_size(_)

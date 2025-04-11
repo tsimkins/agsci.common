@@ -20758,7 +20758,7 @@ body.userrole-authenticated p.discreet.no-br br:first-of-type {
   display: none;
 }
 
-body.userrole-authenticated .container .entries span.auto-image-caption:after, body.userrole-authenticated .headshot span.auto-image-caption:after {
+body.userrole-authenticated .container .entries span.auto-image-caption:after, body.userrole-authenticated .headshot span.auto-image-caption:after, body.userrole-authenticated #carousel span.auto-image-caption:after {
   display: none;
 }
 

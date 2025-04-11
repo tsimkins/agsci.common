@@ -1921,7 +1921,7 @@ body.userrole-authenticated {
 }
 
 body.userrole-authenticated {
-    .container .entries, .headshot {
+    .container .entries, .headshot, #carousel {
         span.auto-image-caption:after {
             display: none;
         }

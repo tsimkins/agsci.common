@@ -44,6 +44,7 @@
                     <img tal:define="src item/getURL|item/absolute_url|nothing;
                                      src string:${src}/@@images/image/gallery"
                          tal:attributes="src src;
+                                         alt python:view.image_alt(item);
                                          class python:view.image_class(item)"
                          class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block px-3">
