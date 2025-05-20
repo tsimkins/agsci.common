@@ -50,7 +50,7 @@ except ImportError:
 
 from .constants import DEFAULT_TIMEZONE, DEPARTMENT_CONFIG_URL, DOMAIN_CONFIG, IMAGE_FORMATS
 
-DEFAULT_ROLES = ['Contributor', 'Reviewer', 'Editor', 'Reader']
+DEFAULT_ROLES = ['Contributor', 'Editor', 'Reader']
 
 #Ploneify
 def ploneify(toPlone, filename=False):
