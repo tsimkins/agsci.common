@@ -15,6 +15,7 @@
                 tal:define="title view/data/title|nothing"
                 tal:content="title"
                 tal:condition="title" />
+
             <section class="facultyStaffDirectory">
                 <metal:listing use-macro="context/@@person_listing/macros/person-listing" />
             </section>

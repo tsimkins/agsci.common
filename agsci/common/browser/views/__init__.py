@@ -463,6 +463,10 @@ class PersonView(BaseView):
         if _ and hasattr(_, 'contentType') and _.contentType in ('application/pdf'):
                 return "%s/@@download/cv_file" % self.context.absolute_url()
 
+class PersonListingView(PersonView):
+
+    index = ViewPageTemplateFile("templates/person_listing_view.pt")
+
 
 class PersonCardView(PersonView):
 
@@ -711,6 +715,10 @@ class DirectoryView(FolderView):
 
     def results(self):
         return self.context.people()
+
+    def person_listing_view(self, o):
+        v = o.restrictedTraverse('@@person_listing_view')
+        return v()
 
     def person_view(self, o):
         return o.restrictedTraverse('view')

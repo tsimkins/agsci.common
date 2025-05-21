@@ -246,6 +246,15 @@
         layer="..interfaces.IThemeSpecific"
     />
 
+    <!-- Person View -->
+    <browser:page
+        for="agsci.common.content.person.person.IPerson"
+        name="person_listing_view"
+        class=".PersonListingView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+    />
+
     <!-- Person Card View -->
     <browser:page
         for="agsci.common.content.person.person.IPerson"

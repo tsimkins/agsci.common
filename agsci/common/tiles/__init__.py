@@ -807,8 +807,9 @@ class AnimalTile(BaseTile):
     def people(self):
         return self.results
     
-    def person_view(self, o):
-        return o.restrictedTraverse('view')
+    def person_listing_view(self, o):
+        v = o.restrictedTraverse('person_listing_view')
+        return v()
 
 class PepeTheKingPrawnTile(GonzoTile):
 
