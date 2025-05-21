@@ -667,8 +667,16 @@ class IAnimalTile(Interface):
         required=False
     )
 
+    format = schema.Choice(
+        title=_(u"Format"),
+        vocabulary='agsci.common.tiles.person_format',
+        default='card',
+        required=False,
+    )
+
     style = schema.Choice(
         title=_(u"Style"),
+        description=_(u"Card only"),
         vocabulary='agsci.common.tiles.hv_orientation',
         default=u'horizontal',
         required=False,
@@ -676,13 +684,14 @@ class IAnimalTile(Interface):
 
     show_image = schema.Bool(
         title=_(u"Show Person Image?"),
-        description=_(u""),
+        description=_(u"Card only"),
         required=False,
         default=True,
     )
 
     count = schema.Choice(
         title=_(u"Count"),
+        description=_(u"Card only"),
         values=[1,2,3,4],
         default=1,
         required=True,

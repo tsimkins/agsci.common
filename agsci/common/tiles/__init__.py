@@ -751,6 +751,18 @@ class SkeeterTile(CCCT_Tile):
 class AnimalTile(BaseTile):
 
     @property
+    def is_card(self):
+        return self.format in ('card',) or not self.format
+
+    @property
+    def is_listing(self):
+        return self.format in ('listing',)
+
+    @property
+    def format(self):
+        return self.get_valid_value('format')
+
+    @property
     def show_image(self):
         return self.get_valid_value('show_image')
 
@@ -765,8 +777,7 @@ class AnimalTile(BaseTile):
         return self.get_field('style') in ('vertical',)
 
     @property
-    def people(self):
-
+    def results(self):
         _ids = [x.get('username', None) for x in self.value]
 
         results = self.portal_catalog.searchResults({
@@ -785,6 +796,13 @@ class AnimalTile(BaseTile):
             [x.getObject() for x in results],
             key=sort_order
         )
+        
+    @property
+    def people(self):
+        return self.results
+    
+    def person_view(self, o):
+        return o.restrictedTraverse('view')
 
 class PepeTheKingPrawnTile(GonzoTile):
 

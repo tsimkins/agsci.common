@@ -5,51 +5,65 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="agsci.common">
   <body>
+    
+    <section tal:attributes="data-tile-type view/tile_type|nothing">
 
-<section tal:attributes="data-tile-type view/tile_type|nothing">
+        <div class="container"
+            tal:condition="view/is_listing|nothing">
 
-    <div class="container"
-        tal:omit-tag="view/is_portlet">
-
-        <h2 class="mt-0"
-            tal:define="title view/data/title|nothing"
-            tal:content="title"
-            tal:condition="title" />
-
-        <div tal:attributes="class view/klass|nothing"
-             tal:define="vertical view/vertical|nothing;
-                         show_image view/show_image|nothing">
-
-            <tal:people tal:repeat="context view/people|nothing">
-                <tal:image
-                    tal:condition="show_image">
-
-                    <div tal:condition="not: vertical"
-                         tal:replace="structure context/@@card_view_image"/>
-
-                    <div tal:condition="vertical"
-                         tal:replace="structure context/@@card_view_vertical_image" />
-
-                </tal:image>
-
-                <tal:no-image
-                    tal:condition="not:show_image">
-
-                    <div tal:condition="not: vertical"
-                         tal:replace="structure context/@@card_view"/>
-
-                    <div tal:condition="vertical"
-                         tal:replace="structure context/@@card_view_vertical" />
-
-                </tal:no-image>
-
-            </tal:people>
+            <h2 class="mt-0"
+                tal:define="title view/data/title|nothing"
+                tal:content="title"
+                tal:condition="title" />
+            <section class="facultyStaffDirectory">
+                <metal:listing use-macro="context/@@person_listing/macros/person-listing" />
+            </section>
 
         </div>
-
-</div>
-
-</section>
+    
+        <div class="container"
+            tal:condition="view/is_card|nothing"
+            tal:omit-tag="view/is_portlet">
+    
+            <h2 class="mt-0"
+                tal:define="title view/data/title|nothing"
+                tal:content="title"
+                tal:condition="title" />
+    
+            <div tal:attributes="class view/klass|nothing"
+                 tal:define="vertical view/vertical|nothing;
+                             show_image view/show_image|nothing">
+    
+                <tal:people tal:repeat="context view/people|nothing">
+                    <tal:image
+                        tal:condition="show_image">
+    
+                        <div tal:condition="not: vertical"
+                             tal:replace="structure context/@@card_view_image"/>
+    
+                        <div tal:condition="vertical"
+                             tal:replace="structure context/@@card_view_vertical_image" />
+    
+                    </tal:image>
+    
+                    <tal:no-image
+                        tal:condition="not:show_image">
+    
+                        <div tal:condition="not: vertical"
+                             tal:replace="structure context/@@card_view"/>
+    
+                        <div tal:condition="vertical"
+                             tal:replace="structure context/@@card_view_vertical" />
+    
+                    </tal:no-image>
+    
+                </tal:people>
+    
+            </div>
+    
+    </div>
+    
+    </section>
 
   </body>
 </html>

@@ -45,6 +45,12 @@
     />
 
     <utility
+        name="agsci.common.tiles.person_format"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".PersonFormatVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.tiles.hv_orientation"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".HVOrientationVocabularyFactory"

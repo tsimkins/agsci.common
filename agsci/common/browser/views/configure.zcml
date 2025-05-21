@@ -336,6 +336,16 @@
         template="templates/directory_detail.pt"
     />
 
+    <!-- Person Listing View (Homepage)-->
+    <browser:page
+        for="agsci.common.content.homepage.IHomepage"
+        name="person_listing"
+        class=".DirectoryView"
+        permission="zope2.View"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/directory_detail.pt"
+    />
+
     <!-- Directory View -->
     <browser:page
         for="agsci.common.content.person.directory.IDirectory"

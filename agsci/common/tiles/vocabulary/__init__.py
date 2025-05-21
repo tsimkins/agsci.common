@@ -82,6 +82,12 @@ class HVOrientationVocabulary(KeyValueVocabulary):
         ('horizontal', 'Horizontal'),
     ]
 
+class PersonFormatVocabulary(KeyValueVocabulary):
+    items = [
+        ('card', 'Card'),
+        ('listing', 'Listing'),
+    ]
+
 class CardStyleVocabulary(KeyValueVocabulary):
     items = [
         ('image', 'Image'),
@@ -224,6 +230,7 @@ TagsVocabularyFactory = TagsVocabulary()
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
 VideoAspectRatioVocabularyFactory = VideoAspectRatioVocabulary()
 HVOrientationVocabularyFactory = HVOrientationVocabulary()
+PersonFormatVocabularyFactory = PersonFormatVocabulary()
 SocialMediaPlatformVocabularyFactory = SocialMediaPlatformVocabulary()
 AgJourneyQuoteStyleVocabularyFactory = AgJourneyQuoteStyleVocabulary()
 ExtensionListingProductTypesVocabularyFactory = ExtensionListingProductTypesVocabulary()

@@ -18,6 +18,8 @@
 
     <section class="col-12 px-0 col-lg-12 col-xl-12 px-lg-3 pb-4 order-12 order-lg-1 facultyStaffDirectory">
 
+        <metal:person-listing define-macro="person-listing">
+
         <tal:people
             tal:repeat="context view/results">
 
@@ -150,6 +152,8 @@
             </tal:person>
 
         </tal:people>
+
+    </metal:person-listing>
 
     </section>
 
