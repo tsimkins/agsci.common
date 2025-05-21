@@ -11,7 +11,7 @@
         <div class="container"
             tal:condition="view/is_listing|nothing">
 
-            <h2 class="mt-0"
+            <h2 class="mt-3"
                 tal:define="title view/data/title|nothing"
                 tal:content="title"
                 tal:condition="title" />

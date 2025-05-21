@@ -116,7 +116,7 @@ BIO -- body class .template-person_view
 }
 
 @include media-breakpoint-up(lg) {
-    .facultyStaffDirectory .person-profile address {
+    #content-core .facultyStaffDirectory > .bio .person-profile address {
         border: $border-base;
     }
 
@@ -158,15 +158,14 @@ ul.list-bio-contact {
         font-size: 75%;
     }
 
-    .facultyStaffDirectory ul.list-bio-contact li span {
+    #content-core .facultyStaffDirectory > .bio ul.list-bio-contact li span {
         font-size: 85%;
     }
 }
 
-/* Bio in Directory Format
+/* Bio in Directory Formatz
 --------------------------------------------- */
-
-.facultyStaffDirectory .bio {
+#content-core .facultyStaffDirectory > .bio {
 
     padding-top: 1.375rem;
     padding-bottom: 1rem;
@@ -176,9 +175,13 @@ ul.list-bio-contact {
         font-size: 1.5rem;
         margin-top: 0.5rem;
 
+        a {
+            color: $black !important;
+        }
+
         a:hover,
         a:focus {
-            color: $color-ps-creek-accessible;
+            color: $color-ps-creek-accessible !important;;
         }
     }
 
@@ -228,7 +231,7 @@ ul.list-bio-contact {
 }
 
 @include media-breakpoint-up(lg) {
-    .facultyStaffDirectory .bio {
+    #content-core .facultyStaffDirectory > .bio {
         address {
             margin-top: 0.75rem;
 
@@ -250,23 +253,6 @@ ul.list-bio-contact {
         ul li {
             font-size: $small3-size;
         }
-    }
-}
-
-.facultyStaffDirectory .tileTitle,
-.facultyStaffDirectory .tileHeadline,
-address .tileHeadline {
-    margin-bottom: 1rem;
-    font-size: $h5-font-size;
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -0.5rem;
-        left: 0;
-        width: 25%;
-        height: 1px;
-        border-bottom: 2px solid $color-ps-creek;
     }
 }
 

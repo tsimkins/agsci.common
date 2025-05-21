@@ -467,6 +467,12 @@ class PersonListingView(PersonView):
 
     index = ViewPageTemplateFile("templates/person_listing_view.pt")
 
+    def __init__(self, context, request, **kwargs):
+        super(PersonListingView, self).__init__(context, request)
+
+        for (k,v) in kwargs.items():
+            if k in ('show_short_bio',):
+                setattr(self, k, v)
 
 class PersonCardView(PersonView):
 
@@ -717,7 +723,7 @@ class DirectoryView(FolderView):
         return self.context.people()
 
     def person_listing_view(self, o):
-        v = o.restrictedTraverse('@@person_listing_view')
+        v = PersonListingView(o, self.request, show_short_bio=self.show_short_bio)
         return v()
 
     def person_view(self, o):

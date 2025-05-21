@@ -132,8 +132,10 @@ class PersonBlock(BaseBlock):
     def toBool(self, _):
         return toBool(_)
 
-    def card_view(self, r, style=None, border=True):
+    def card_view(self, r, style=None, format=None, border=True):
         o = r.getObject()
+        if format and format in ('listing',):
+            return o.restrictedTraverse('@@person_listing_view')()
 
         if style == 'compact':
             return o.restrictedTraverse('@@card_view_compact')()
@@ -147,7 +149,7 @@ class PersonBlock(BaseBlock):
 
         return o.restrictedTraverse('@@card_view_image')()
 
-    def people(self, usernames, style=None, border=True, preserve_order=False, order=None):
+    def people(self, usernames, style=None, format=None, border=True, preserve_order=False, order=None):
 
         _ids = [x.strip() for x in usernames.split(',')]
 
@@ -172,7 +174,7 @@ class PersonBlock(BaseBlock):
                         return 9999
                 results.sort(key=sort_key)
 
-            return [self.card_view(x, style, toBool(border)) for x in results]
+            return [self.card_view(x, style=style, format=format, border=toBool(border)) for x in results]
 
         return []
 

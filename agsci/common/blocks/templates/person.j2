@@ -1,8 +1,18 @@
 {% set border = view.toBool(border) %}
 {% set preserve_order = view.toBool(preserve_order) %}
 
-<div class="card-deck card-deck-{{count}}up mb-1 {% if border %}mt-2{% endif %} {% if style == 'vertical' %}mx-1{% endif %}">
-    {% for _ in view.people(usernames=usernames, style=style, border=border, preserve_order=preserve_order, order=order) %}
-        {{ _|safe }}
-    {% endfor %}
-</div>
+{% if format == 'listing' %}
+    <section class="facultyStaffDirectory">
+        {% for _ in view.people(usernames=usernames, format=format, preserve_order=preserve_order, order=order) %}
+            {{ _|safe }}
+        {% endfor %}
+    </section>
+{% else %}
+    <div class="card-deck card-deck-{{count}}up mb-1 {% if border %}mt-2{% endif %} {% if style == 'vertical' %}mx-1{% endif %}">
+        {% for _ in view.people(usernames=usernames, style=style, format=format, border=border, preserve_order=preserve_order, order=order) %}
+            {{ _|safe }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+

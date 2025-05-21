@@ -21,15 +21,16 @@
         <metal:person-listing define-macro="person-listing">
 
         <tal:people
+            tal:define="show_short_bio view/show_short_bio|nothing"
             tal:repeat="context view/results">
 
             <tal:person
-                tal:define="person_listing_view python:view.person_listing_view(context)"
+                tal:define="person_listing_view python:view.person_listing_view(context);"
                 tal:replace="structure person_listing_view" />
 
         </tal:people>
 
-    </metal:person-listing>
+        </metal:person-listing>
 
     </section>
 

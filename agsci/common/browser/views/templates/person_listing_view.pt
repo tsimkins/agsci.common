@@ -10,7 +10,7 @@
     <div class="container border-bottom bio"
         tal:define="data view/data">
         <div class="row"
-                tal:define="image view/item_image|nothing">
+                tal:define="image view/image|nothing">
 
             <div class="col-12 col-sm-8 col-lg-10 order-2">
                 <div id="hcard" class="vcard personView">
@@ -111,10 +111,11 @@
 
                 <div tal:condition="image"
                         class="headshot card-img-crop">
+
                     <img tal:attributes="alt view/name/title|nothing;
                                             title view/name/title|nothing;
                                             src string:${view/assets_url}/images/card-placeholder.jpg;
-                                            data-src image"
+                                            data-src image;"
                             class="w-100 photo" />
                 </div>
                 <a tal:attributes="href context/absolute_url|nothing"

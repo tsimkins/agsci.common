@@ -330,6 +330,7 @@
             <element>data-badge-type</element>
             <element>data-doi</element>
             <element>data-hide-no-mentions</element>
+            <element>data-src</element>
         </value>
     </record>
 
