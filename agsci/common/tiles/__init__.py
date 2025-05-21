@@ -752,10 +752,16 @@ class AnimalTile(BaseTile):
 
     @property
     def is_card(self):
+        if self.is_portlet:
+            return True
+
         return self.format in ('card',) or not self.format
 
     @property
     def is_listing(self):
+        if self.is_portlet:
+            return False
+
         return self.format in ('listing',)
 
     @property

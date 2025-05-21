@@ -6,7 +6,7 @@ try:
 except ImportError:
     from Products.CMFPlone import PloneMessageFactory as _
 
-from ..tiles.interfaces import IAnimalTile as ITileInterface
+from ..tiles.interfaces import IAnimalPortletTile as ITileInterface
 from . import TilePortletAssignment, TilePortletRenderer
 
 @implementer(ITileInterface)

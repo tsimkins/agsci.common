@@ -24,7 +24,7 @@
 
     <plone:portlet
         name="agsci.common.person"
-        interface="..tiles.interfaces.IAnimalTile"
+        interface="..tiles.interfaces.IAnimalPortletTile"
         assignment=".person.Assignment"
         renderer=".person.Renderer"
         addview=".person.AddForm"

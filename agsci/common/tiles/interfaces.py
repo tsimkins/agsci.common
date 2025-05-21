@@ -697,6 +697,11 @@ class IAnimalTile(Interface):
         required=True,
     )
 
+class IAnimalPortletTile(IAnimalTile):
+    form.omitted(
+        'format', 'count'
+    )
+
 class IPepeTheKingPrawnTile(IGonzoTile):
     pass
 
