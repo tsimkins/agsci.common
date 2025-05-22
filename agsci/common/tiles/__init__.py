@@ -515,10 +515,18 @@ class CCCT_Tile(ConditionalTemplateTile):
             return _
 
     @property
+    def filter_ids(self):
+        _ = self.get_valid_value('filter_ids')
+
+        if _ and isinstance(_, (list, tuple)):
+            return [x.strip() for x in _]
+
+    @property
     def filtered_items(self):
 
         filter_tags = self.filter_tags
         filter_public_tags = self.filter_public_tags
+        filter_ids = self.filter_ids
 
         items = self.all_items
 
@@ -528,6 +536,9 @@ class CCCT_Tile(ConditionalTemplateTile):
 
         if filter_public_tags:
             items = [x for x in items if any([y in self.get_public_tags(x) for y in filter_public_tags])]
+
+        if filter_ids:
+            items = [x for x in items if x.getId() in filter_ids]
 
         return items
 

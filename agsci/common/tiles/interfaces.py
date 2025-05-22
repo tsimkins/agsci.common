@@ -545,6 +545,12 @@ class IScooterTile(IBorderTile):
         required=False,
     )
 
+    filter_ids = schema.List(
+        title=_(u"Filter By Id(s)"),
+        value_type=schema.TextLine(required=True),
+        required=False,
+    )
+
     count = schema.Choice(
         title=_(u"Count"),
         values=[1,2,3,4],
