@@ -474,6 +474,9 @@ class PersonListingView(PersonView):
             if k in ('show_short_bio',):
                 setattr(self, k, v)
 
+    def __call__(self):
+        return self.index()
+
 class PersonCardView(PersonView):
 
     card = True
