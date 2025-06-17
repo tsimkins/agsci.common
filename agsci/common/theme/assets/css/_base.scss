@@ -1443,6 +1443,8 @@ body.portaltype-easyform {
     .formControls {
         padding-left: 0;
         padding-right: 0;
+        display: block;
+        width: 100%;
     }
 
     .pfg-form, .easyformForm {
@@ -1462,6 +1464,7 @@ body.portaltype-easyform {
             li {
                 margin: 0.375rem 0;
             }
+            width: 100%;
         }
 
         legend {

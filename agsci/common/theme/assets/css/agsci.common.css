@@ -20334,6 +20334,8 @@ body.portaltype-easyform #formEpilogue,
 body.portaltype-easyform .formControls {
   padding-left: 0;
   padding-right: 0;
+  display: block;
+  width: 100%;
 }
 body.portaltype-formfolder .pfg-form, body.portaltype-formfolder .easyformForm,
 body.portaltype-easyform .pfg-form,
@@ -20354,6 +20356,7 @@ body.portaltype-easyform .easyformForm fieldset {
   border: 1px solid #CCCCCC;
   margin: 1rem 0;
   display: block;
+  width: 100%;
 }
 body.portaltype-formfolder .pfg-form fieldset li, body.portaltype-formfolder .easyformForm fieldset li,
 body.portaltype-easyform .pfg-form fieldset li,
