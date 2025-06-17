@@ -9,6 +9,7 @@ from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.MimetypesRegistry.MimeTypesRegistry import MimeTypeException
 from collections import OrderedDict
+from collective.easyform.browser.view import EasyFormFormWrapper as _EasyFormFormWrapper
 from collective.z3cform.datagridfield.row import DictRow
 from jinja2 import Environment, FileSystemLoader
 from plone import api
@@ -1281,3 +1282,9 @@ class ThemeJSView(BaseView):
         # Combine files and return
         _ = u"\n".join(data)
         return _
+
+
+class EasyFormFormWrapper(_EasyFormFormWrapper):
+    index = ViewPageTemplateFile("templates/easyform_layout.pt")
+
+EasyFormView = EasyFormFormWrapper

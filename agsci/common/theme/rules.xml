@@ -428,6 +428,7 @@
             <replace css:theme="#page-header-content" method="raw">
                 <xsl:apply-templates css:select="#portal-breadcrumbs" />
                 <xsl:apply-templates css:select="header > h1" />
+                <xsl:apply-templates css:select="article > h1" />
                 <xsl:apply-templates css:select="#viewlet-below-content-title" />
             </replace>
 

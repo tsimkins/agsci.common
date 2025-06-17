@@ -676,4 +676,12 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+    <browser:page
+        name="view"
+        for="collective.easyform.interfaces.IEasyForm"
+        permission="zope2.View"
+        class=".EasyFormView"
+        layer="..interfaces.IThemeSpecific"
+        />
+
 </configure>

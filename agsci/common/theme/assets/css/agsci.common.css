@@ -20326,12 +20326,23 @@ address .list-inline-social a .fa-envelope, address .list-inline-social a .fa-x-
   margin-bottom: 0.375em;
 }
 
+body.portaltype-formfolder #formPrologue,
+body.portaltype-formfolder #formEpilogue,
+body.portaltype-formfolder .formControls,
+body.portaltype-easyform #formPrologue,
+body.portaltype-easyform #formEpilogue,
+body.portaltype-easyform .formControls {
+  padding-left: 0;
+  padding-right: 0;
+}
 body.portaltype-formfolder .pfg-form, body.portaltype-formfolder .easyformForm,
 body.portaltype-easyform .pfg-form,
 body.portaltype-easyform .easyformForm {
   width: 100%;
   padding: 0;
   background: transparent;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 body.portaltype-formfolder .pfg-form fieldset, body.portaltype-formfolder .easyformForm fieldset,
 body.portaltype-easyform .pfg-form fieldset,

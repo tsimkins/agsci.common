@@ -1438,10 +1438,19 @@ address, .address {
 
 body.portaltype-formfolder,
 body.portaltype-easyform {
+    #formPrologue,
+    #formEpilogue,
+    .formControls {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .pfg-form, .easyformForm {
         width: 100%;
         padding: 0;
         background: transparent;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
 
         fieldset {
             @include body_font();
