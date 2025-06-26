@@ -68,8 +68,8 @@ $plone-font-size-h1:            floor(($plone-font-size-base * 2.6)); // ~36px
 $plone-font-size-h2:            floor(($plone-font-size-base * 2.15)); // ~30px
 $plone-font-size-h3:            ceil(($plone-font-size-base * 1.7)); // ~24px
 $plone-font-size-h4:            ceil(($plone-font-size-base * 1.25)); // ~18px
-$plone-font-size-h5:            $plone-font-size-base;
-$plone-font-size-h6:            ceil(($plone-font-size-base * 0.85)); // ~12px
+$plone-font-size-h5:            ceil(($plone-font-size-base * 1.125)); // ~16px
+$plone-font-size-h6:            ceil(($plone-font-size-base * 1.0625)); // ~15px
 
 //** Unit-less `line-height` for use in components like buttons.
 $plone-line-height-base:        1.428571429; // 20/14
