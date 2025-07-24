@@ -43,14 +43,6 @@
     </nav>
 
     <nav id="social">
-        <items>
-            <item>
-                <icon>fa-brands fa-facebook</icon>
-                <inverse>True</inverse>
-                <title>Facebook</title>
-                <link>https://www.facebook.com/psudas/</link>
-            </item>
-        </items>
     </nav>
 
     <nav id="primary">
