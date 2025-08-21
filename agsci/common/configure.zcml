@@ -66,5 +66,10 @@
         interface=".interfaces.ICourseSyllabusDigital"
         />
 
+    <!-- Define marker interface for inclusivity statement -->
+    <interface
+        interface=".interfaces.IOAEStatement"
+        />
+
 
 </configure>

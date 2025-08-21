@@ -333,4 +333,16 @@
         layer="..interfaces.IThemeSpecific"
         />
 
+
+    <!-- OAE Statement Viewlet -->
+    <browser:viewlet
+        name="agsci.common.oae_statement"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+        class=".OAEStatementViewlet"
+        permission="zope2.View"
+        template="templates/oae-statement.pt"
+        layer="..interfaces.IThemeSpecific"
+        for="agsci.common.interfaces.IOAEStatement"
+        />
+
 </configure>

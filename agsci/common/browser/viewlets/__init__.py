@@ -1075,6 +1075,9 @@ class CourseSyllabusViewlet(ViewletBase):
 class CourseSyllabusDigitalViewlet(CourseSyllabusViewlet):
     pass
 
+class OAEStatementViewlet(ViewletBase):
+    pass
+
 class HistoryViewlet(ViewletBase):
     pass
 
