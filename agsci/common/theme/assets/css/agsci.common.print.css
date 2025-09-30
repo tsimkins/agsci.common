@@ -279,7 +279,7 @@ footer {
   margin-top: 3rem !important;
 }
 
-body.dept-level-college-options.list-inline {
+body > ul.dept-level-college-options.list-inline {
   display: none !important;
 }
 
