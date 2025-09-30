@@ -279,4 +279,8 @@ footer {
   margin-top: 3rem !important;
 }
 
+body.dept-level-college-options.list-inline {
+  display: none !important;
+}
+
 /*# sourceMappingURL=agsci.common.print.css.map */
