@@ -283,4 +283,8 @@ body > ul.dept-level-college-options.list-inline {
   display: none !important;
 }
 
+#section-content .col-12 {
+  page-break-inside: initial;
+}
+
 /*# sourceMappingURL=agsci.common.print.css.map */
