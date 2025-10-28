@@ -45,6 +45,10 @@
                                 <link>industry/ag-action-network</link>
                             </item>
                             <item>
+                                <title>CARET</title>
+                                <link>industry/caret</link>
+                            </item>
+                            <item>
                                 <title>Recruitment and Employer Relations</title>
                                 <link>students/careers/information-for-employers</link>
                             </item>
@@ -55,10 +59,6 @@
                             <item>
                                 <title>Labs and Services</title>
                                 <link>industry/services</link>
-                            </item>
-                            <item>
-                                <title>CARET</title>
-                                <link>industry/caret</link>
                             </item>
                         </items>
                     </item>
