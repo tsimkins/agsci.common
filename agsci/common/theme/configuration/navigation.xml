@@ -56,6 +56,10 @@
                                 <title>Labs and Services</title>
                                 <link>industry/services</link>
                             </item>
+                            <item>
+                                <title>CARET</title>
+                                <link>industry/caret</link>
+                            </item>
                         </items>
                     </item>
                     <item>
@@ -579,6 +583,11 @@
                         <item>
                             <title>Industry Relations</title>
                             <link>industry</link>
+                        </item>
+
+                        <item>
+                            <title>Dean’s Leadership Council</title>
+                            <link>about/deans-leadership-council</link>
                         </item>
 
                         <item>
