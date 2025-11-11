@@ -39,6 +39,12 @@
     />
 
     <utility
+        name="agsci.common.talis.research_focus_areas"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ResearchFocusAreasVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.person.directory_table_columns"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".DirectoryTableColumnsVocabularyFactory"

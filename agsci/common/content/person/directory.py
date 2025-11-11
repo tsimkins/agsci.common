@@ -66,6 +66,24 @@ class IPersonListing(model.Schema):
         required=False,
     )
 
+    enable_filtering = schema.Bool(
+        title=_(u"Enable Filtering"),
+        description=_(u"Only works on table view, not detail view."),
+        required=False,
+    )
+
+    filter_label = schema.TextLine(
+        title=_(u"Label for table filter"),
+        description=_(u""),
+        required=False,
+    )
+
+    filter_text = schema.TextLine(
+        title=_(u"Table filter input text"),
+        description=_(u""),
+        required=False,
+    )
+
     show_columns = schema.List(
         title=_(u"Show Columns"),
         description=_(u"Only show these columns in the table view. If none are selected, the default ones will be shown."),
@@ -193,6 +211,12 @@ class IDirectory(model.Schema):
         title=_(u"Show Jump Links"),
         description=_(u"Only works on table view, not detail view."),
         default=True,
+        required=False,
+    )
+
+    enable_filtering = schema.Bool(
+        title=_(u"Enable Filtering"),
+        description=_(u"Only works on table view, not detail view."),
         required=False,
     )
 

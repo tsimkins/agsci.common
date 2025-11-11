@@ -271,6 +271,26 @@ class ResearchAreasVocabulary(StaticVocabulary):
         u"Integrated Health Solutions",
     ]
 
+# TALiS
+class ResearchFocusAreasVocabulary(StaticVocabulary):
+
+    items = [
+        "Bioenergy and Bioprocessing Systems",
+        "Bioproducts and Sustainable Materials",
+        "Controlled Environment Agriculture",
+        "Decision Support Tool Development",
+        "Digital Agriculture and Smart Systems",
+        "Genetic Improvement and Genomics",
+        "Habitat Quality Monitoring",
+        "Insect Population and Community Monitoring",
+        "Livestock and Wildlife Monitoring",
+        "Modeling for Crop Management",
+        "Plant Disease Monitoring",
+        "Precision Agriculture",
+        "Robotics for Management and Harvesting",
+        "Soils and Microbiomes",
+    ]
+
 # Directory Table Fields
 class DirectoryTableColumnsVocabulary(KeyValueVocabulary):
 
@@ -279,7 +299,7 @@ class DirectoryTableColumnsVocabulary(KeyValueVocabulary):
         ('email', 'Email Address'),
         ('phone_number', 'Phone Number'),
         ('areas_expertise', 'Areas of Expertise'),
-        ('technology_focus_areas', 'Technology Focus Areas'),
+        ('research_focus_areas', 'Research Focus Areas'),
         ('short_bio', 'Short Bio'),
     ]
 
@@ -291,4 +311,5 @@ PersonGroupsVocabularyFactory = PersonGroupsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()
 ShortNameVocabularyFactory = ShortNameVocabulary()
 ResearchAreasVocabularyFactory = ResearchAreasVocabulary()
+ResearchFocusAreasVocabularyFactory = ResearchFocusAreasVocabulary()
 DirectoryTableColumnsVocabularyFactory = DirectoryTableColumnsVocabulary()

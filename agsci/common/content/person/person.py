@@ -44,7 +44,7 @@ professional_fields = [
     'classifications', 'job_titles', 'hr_job_title', 'hr_admin_area',
     'hr_department', 'all_emails', 'sso_principal_name', 'bio', 'short_bio',
     'education', 'cv_file', 'websites', 'areas_expertise', 'research_areas',
-    'groups', 'show_publications', 'technology_focus_areas',
+    'groups', 'show_publications', 'research_focus_areas',
 ]
 
 class IPublicationRowSchema(Interface):
@@ -259,10 +259,10 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         value_type=schema.Choice(vocabulary="agsci.common.research_areas"),
     )
     
-    technology_focus_areas = schema.List(
-        title=_(u"TALIS Technology Focus Areas"),
-        value_type=schema.TextLine(required=True),
+    research_focus_areas = schema.List(
+        title=_(u"TALIS Research Focus Areas"),
         required=False,
+        value_type=schema.Choice(vocabulary="agsci.common.talis.research_focus_areas"),
     )
 
     primary_profile_url = schema.TextLine(

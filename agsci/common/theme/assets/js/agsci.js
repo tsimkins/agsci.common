@@ -497,3 +497,88 @@ jq3('document').ready(
     });
 
 });
+
+/*
+    * jQuery.liveFilter
+    *
+    * Copyright (c) 2009 Mike Merritt
+    *
+    * Forked by Lim Chee Aun (cheeaun.com)
+    *
+    * https://github.com/cheeaun/jquery.livefilter
+*/
+
+(function(jq3){
+    jq3.fn.liveFilter = function(inputEl, filterEl, options){
+        var defaults = {
+            filterChildSelector: null,
+            filter: function(el, val){
+                return jq3(el).text().toUpperCase().indexOf(val.toUpperCase()) >= 0;
+            },
+            before: function(){},
+            after: function(){}
+        };
+        var options = jq3.extend(defaults, options);
+
+        var el = jq3(this).find(filterEl);
+        if (options.filterChildSelector) el = el.find(options.filterChildSelector);
+
+        var filter = options.filter;
+        jq3(inputEl).keyup(function(){
+            var val = jq3(this).val();
+            var contains = el.filter(function(){
+                return filter(this, val);
+            });
+            var containsNot = el.not(contains);
+            if (options.filterChildSelector){
+                contains = contains.parents(filterEl);
+                containsNot = containsNot.parents(filterEl).hide();
+            }
+
+            options.before.call(this, contains, containsNot);
+
+            contains.show();
+            containsNot.hide();
+
+            if (val === '') {
+                contains.show();
+                containsNot.show();
+            }
+
+            options.after.call(this, contains, containsNot);
+        });
+    }
+})(jq3);
+
+
+/* Implement live filtering */
+jq3(document).ready(function(jq3) {
+    console.log("Starting livefilter");
+
+    jq3('table[data-livefilter="True"]').each(
+        function () {
+            var table_id = jq3(this).attr('id');
+            var input_id = table_id + '-input';
+            var input_label = jq3(this).attr('data-input-label');
+            var input_text = jq3(this).attr('data-input-text');
+
+            var fieldset_html = `
+                <fieldset class="my-3">
+                    <label for="` + input_id + `">` + input_label + `</label>
+                    <input
+                        id="` + input_id + `"
+                        class="filter"
+                        type="text"
+                        placeholder="` + input_text + `"
+                        label="` + input_text + `">
+
+                </fieldset>`;
+            
+            jq3(fieldset_html).insertBefore(jq3(this));
+            jq3('#' + table_id).liveFilter('#' + input_id, 'tbody tr');
+        }
+    );
+});
+
+
+

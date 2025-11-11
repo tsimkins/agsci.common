@@ -49,7 +49,7 @@ from agsci.common.indexer import degree_index_field
 from agsci.common.interfaces import ILocationAdapter
 from agsci.common.interfaces import ITagsAdapter
 from agsci.common.utilities import get_fields_by_type, toLocalizedTime, \
-    getNavigationViewlet
+    getNavigationViewlet, ploneify
 
 try:
     from zope.app.component.hooks import getSite
@@ -729,6 +729,9 @@ class DirectoryView(FolderView):
         'phone_number' : True,
     }
 
+    default_filter_label = 'Search People'
+    default_filter_text = 'Search...'
+
     @property
     def column_config(self):
         show_columns = getattr(self.context, 'show_columns', None)
@@ -744,6 +747,30 @@ class DirectoryView(FolderView):
             return self.context.getLayout() in ('table_view',)
         except:
             return False
+
+    @property
+    def table_id(self):
+        return 'table-%s' % ploneify(self.context.Title())
+
+    @property
+    def enable_filtering(self):
+        return not not getattr(self.context, 'enable_filtering', False)
+
+    @property
+    def filter_label(self):
+        if self.enable_filtering:
+            _ = getattr(self.context, 'filter_label', None)
+            if _:
+                return _
+            return self.default_filter_label
+
+    @property
+    def filter_text(self):
+        if self.enable_filtering:
+            _ = getattr(self.context, 'filter_text', None)
+            if _:
+                return _
+            return self.default_filter_text
 
     def results(self):
         return self.context.people()

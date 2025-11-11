@@ -33,6 +33,10 @@
         </div>
     <metal:listing define-macro="listing">
     <table
+        tal:attributes="id view/table_id|nothing;
+                        data-livefilter view/enable_filtering|nothing;
+                        data-input-text view/filter_text|nothing;
+                        data-input-label view/filter_label|nothing;"
         tal:define="results results|view/results|nothing;
                     jump_links jump_links|python: [];
                     show_column nocall:view/show_column;
@@ -40,7 +44,7 @@
                     show_email python:show_column('email');
                     show_phone_number python:show_column('phone_number');
                     show_areas_expertise python:show_column('areas_expertise');
-                    show_technology_focus_areas python:show_column('technology_focus_areas');
+                    show_research_focus_areas python:show_column('research_focus_areas');
                     show_short_bio python:show_column('short_bio');
                     ">
         <thead>
@@ -50,7 +54,7 @@
                 <th tal:condition="show_email">Email</th>
                 <th tal:condition="show_phone_number">Phone</th>
                 <th tal:condition="show_areas_expertise">Areas of Expertise</th>
-                <th tal:condition="show_technology_focus_areas">Technology Focus Areas</th>
+                <th tal:condition="show_research_focus_areas">Research Focus Areas</th>
                 <th tal:condition="show_short_bio">Short Bio</th>
             </tr>
         </thead>
@@ -104,10 +108,10 @@
                         <li tal:repeat="i areas_expertise" tal:content="i"/>
                     </ul>
                 </td>
-                <td tal:condition="show_technology_focus_areas">
-                    <ul tal:define="technology_focus_areas context/technology_focus_areas|nothing"
-                        tal:condition="technology_focus_areas">
-                        <li tal:repeat="i technology_focus_areas" tal:content="i"/>
+                <td tal:condition="show_research_focus_areas">
+                    <ul tal:define="research_focus_areas context/research_focus_areas|nothing"
+                        tal:condition="research_focus_areas">
+                        <li tal:repeat="i research_focus_areas" tal:content="i"/>
                     </ul>
                 </td>
                 <td tal:condition="show_short_bio">
