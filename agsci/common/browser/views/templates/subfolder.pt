@@ -59,10 +59,16 @@
 
                 <tal:contents
                     tal:define="view nocall: obj/@@view;
-                                batch view/batch;">
+                                batch view/batch;
+                                is_table_view view/is_table_view|nothing">
 
-                    <div class="mt-2">
+                    <!-- Handle alternate person table view -->
+                    <div class="mt-2" tal:condition="not: is_table_view|nothing">
                         <metal:listing use-macro="obj/@@folder_base/macros/listing" />
+                    </div>
+
+                    <div class="mt-2" tal:condition="is_table_view|nothing">
+                        <metal:listing use-macro="obj/@@table_view/macros/listing" />
                     </div>
 
                 </tal:contents>

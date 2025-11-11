@@ -723,6 +723,12 @@ class DirectoryView(FolderView):
 
     batch_size = 99999
 
+    def is_table_view(self):
+        try:
+            return self.context.getLayout() in ('table_view',)
+        except:
+            return False
+
     def results(self):
         return self.context.people()
 

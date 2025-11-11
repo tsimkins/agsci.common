@@ -31,8 +31,9 @@
                 </li>
             </ol>
         </div>
-
-    <table>
+    <metal:listing define-macro="listing">
+    <table tal:define="results results|view/results|nothing;
+                       jump_links jump_links|python: []">
         <thead>
             <tr>
                 <th>Name</th>
@@ -92,6 +93,8 @@
     </tal:people>
         </tbody>
     </table>
+
+    </metal:listing>
 
 </section>
 
