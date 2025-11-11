@@ -723,6 +723,22 @@ class DirectoryView(FolderView):
 
     batch_size = 99999
 
+    column_defaults = {
+        'job_title' : True,
+        'email' : True,
+        'phone_number' : True,
+    }
+
+    @property
+    def column_config(self):
+        show_columns = getattr(self.context, 'show_columns', None)
+        if not show_columns:
+            return self.column_defaults
+        return dict([(x, True) for x in show_columns])
+
+    def show_column(self, column_id):
+        return self.column_config.get(column_id, False)
+
     def is_table_view(self):
         try:
             return self.context.getLayout() in ('table_view',)

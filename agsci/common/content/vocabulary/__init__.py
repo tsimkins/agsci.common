@@ -271,6 +271,18 @@ class ResearchAreasVocabulary(StaticVocabulary):
         u"Integrated Health Solutions",
     ]
 
+# Directory Table Fields
+class DirectoryTableColumnsVocabulary(KeyValueVocabulary):
+
+    items = [
+        ('job_title', 'Job Title'),
+        ('email', 'Email Address'),
+        ('phone_number', 'Phone Number'),
+        ('areas_expertise', 'Areas of Expertise'),
+        ('technology_focus_areas', 'Technology Focus Areas'),
+        ('short_bio', 'Short Bio'),
+    ]
+
 # Factories
 PublicTagsVocabularyFactory = PublicTagsVocabulary()
 AllPublicTagsVocabularyFactory = AllPublicTagsVocabulary()
@@ -279,3 +291,4 @@ PersonGroupsVocabularyFactory = PersonGroupsVocabulary()
 StatesVocabularyFactory = StatesVocabulary()
 ShortNameVocabularyFactory = ShortNameVocabulary()
 ResearchAreasVocabularyFactory = ResearchAreasVocabulary()
+DirectoryTableColumnsVocabularyFactory = DirectoryTableColumnsVocabulary()

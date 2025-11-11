@@ -39,6 +39,12 @@
     />
 
     <utility
+        name="agsci.common.person.directory_table_columns"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".DirectoryTableColumnsVocabularyFactory"
+    />
+
+    <utility
         name="agsci.common.getId"
         provides="zope.schema.interfaces.IVocabularyFactory"
         component=".ShortNameVocabularyFactory"

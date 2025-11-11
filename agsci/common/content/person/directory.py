@@ -66,6 +66,14 @@ class IPersonListing(model.Schema):
         required=False,
     )
 
+    show_columns = schema.List(
+        title=_(u"Show Columns"),
+        description=_(u"Only show these columns in the table view. If none are selected, the default ones will be shown."),
+        required=False,
+        value_type=schema.Choice(
+            vocabulary="agsci.common.person.directory_table_columns"),
+    )
+
 class IPersonPublicationListing(IPersonListing):
 
     form.omitted(

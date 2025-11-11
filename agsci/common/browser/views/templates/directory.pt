@@ -32,14 +32,26 @@
             </ol>
         </div>
     <metal:listing define-macro="listing">
-    <table tal:define="results results|view/results|nothing;
-                       jump_links jump_links|python: []">
+    <table
+        tal:define="results results|view/results|nothing;
+                    jump_links jump_links|python: [];
+                    show_column nocall:view/show_column;
+                    show_job_title python:show_column('job_title');
+                    show_email python:show_column('email');
+                    show_phone_number python:show_column('phone_number');
+                    show_areas_expertise python:show_column('areas_expertise');
+                    show_technology_focus_areas python:show_column('technology_focus_areas');
+                    show_short_bio python:show_column('short_bio');
+                    ">
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Title</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th tal:condition="show_job_title">Title</th>
+                <th tal:condition="show_email">Email</th>
+                <th tal:condition="show_phone_number">Phone</th>
+                <th tal:condition="show_areas_expertise">Areas of Expertise</th>
+                <th tal:condition="show_technology_focus_areas">Technology Focus Areas</th>
+                <th tal:condition="show_short_bio">Short Bio</th>
             </tr>
         </thead>
         <tbody>
@@ -68,24 +80,42 @@
                         tal:attributes="href context/absolute_url|nothing;"
                         tal:content="person_view/name/title" />
                 </td>
-                <td>
+                <td tal:condition="show_job_title">
                     <span class="title jobTitle"
                         tal:define="job_titles context/job_titles|nothing"
                         tal:condition="job_titles"
                         tal:replace="python: job_titles[0]" />
                 </td>
-                <td>
+                <td tal:condition="show_email">
                     <a tal:define="email context/email|nothing"
                        tal:condition="email"
                        tal:attributes="href string:mailto:${email}"
                        tal:content="email" />
                 </td>
-                <td>
+                <td tal:condition="show_phone_number">
                     <a tal:define="phone_number context/phone_number|nothing"
                        tal:condition="phone_number"
                        tal:attributes="href string:tel:${phone_number}"
                        tal:content="phone_number" />
                 </td>
+                <td tal:condition="show_areas_expertise">
+                    <ul tal:define="areas_expertise context/areas_expertise|nothing"
+                        tal:condition="areas_expertise">
+                        <li tal:repeat="i areas_expertise" tal:content="i"/>
+                    </ul>
+                </td>
+                <td tal:condition="show_technology_focus_areas">
+                    <ul tal:define="technology_focus_areas context/technology_focus_areas|nothing"
+                        tal:condition="technology_focus_areas">
+                        <li tal:repeat="i technology_focus_areas" tal:content="i"/>
+                    </ul>
+                </td>
+                <td tal:condition="show_short_bio">
+                    <div tal:define="short_bio context/short_bio/output|nothing;"
+                         tal:condition="short_bio"
+                         tal:replace="structure short_bio" />
+                </td>
+
             </tr>
 
         </tal:person>
