@@ -19718,6 +19718,25 @@ body.viewpermission-plone-app-event-import-ical #content-core td,
 body.viewpermission-plone-app-event-import-ical #content-core th {
   line-height: 1.4;
 }
+#parent-fieldname-text td li, #parent-fieldname-text th li,
+.html td li,
+.html th li,
+body.portaltype-easyform #content-core td li,
+body.portaltype-easyform #content-core th li,
+body.template-default_error_message #content-core td li,
+body.template-default_error_message #content-core th li,
+body.template-fg_thankspage_view_p3 #content-core td li,
+body.template-fg_thankspage_view_p3 #content-core th li,
+body.template-fg_base_view_p3 #content-core td li,
+body.template-fg_base_view_p3 #content-core th li,
+body.template-file_view #content-core td li,
+body.template-file_view #content-core th li,
+body.template-image_view #content-core td li,
+body.template-image_view #content-core th li,
+body.viewpermission-plone-app-event-import-ical #content-core td li,
+body.viewpermission-plone-app-event-import-ical #content-core th li {
+  line-height: 1.4;
+}
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
 .html table.table-sm td,
 .html table.table-sm th,
