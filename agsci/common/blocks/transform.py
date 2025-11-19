@@ -1,5 +1,8 @@
+from AccessControl.unauthorized import Unauthorized
+from DateTime import DateTime
 from bs4 import BeautifulSoup
 from plone.app.textfield.value import RichTextValue
+from plone.app.uuid.utils import uuidToObject
 from zope.component import getAdapter
 
 try:
@@ -10,7 +13,7 @@ except ImportError:
 from ..constants import RESOLVEUID_RE
 
 from .interfaces import IBlock
-from . import InlineItemsBlock
+from . import InlineItemsBlock, PersonBlock
 
 class BlockTransformer(object):
 
@@ -140,17 +143,46 @@ class BlockTransformer(object):
                     uid = m.group(1)
 
                     if uid:
-                        block = InlineItemsBlock(self.context)
 
+                        _rendered = None
+
+                        # Skip objects with no permissions
                         try:
-                            _rendered = block.render(_el, uid=uid)
-                        except:
-                            pass
-                        else:
+                            o = uuidToObject(uid)
+                        except Unauthorized:
+                            o = None
+
+                        if o:
+
+                            # Skip expired objects
+                            if o.expires() > DateTime():
+
+                                if o.Type() in ('Person',):
+                                    block = PersonBlock(self.context)
+                                    try:
+                                        _rendered = block.render(
+                                            _el,
+                                            usernames=o.username,
+                                            format="listing"
+                                        )
+                                    except:
+                                        pass
+                                else:
+                                    block = InlineItemsBlock(self.context)
+                                    try:
+                                        _rendered = block.render(_el, uid=uid)
+                                    except:
+                                        pass
+
+                        if _rendered:
                             new_a = BeautifulSoup(_rendered, features="lxml").html.body.contents[0]
 
                             _el.replaceWith(new_a)
 
+                            found = True
+                        else:
+                            # Remove links to expired or non-existant objects
+                            _el = _el.extract()
                             found = True
 
         # Handle Youtube iframes
