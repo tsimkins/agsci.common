@@ -129,6 +129,7 @@ class TagsVocabulary(StaticVocabulary):
         'news',
         'workshop',
         'interest-areas',
+        'minors',
     ]
 
     @property
