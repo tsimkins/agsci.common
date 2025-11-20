@@ -17,8 +17,8 @@
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"><i 
-                tal:condition="view/is_search_menu|nothing" class="fa fa-search"></i><i 
-                tal:condition="not:view/is_search_menu|nothing" class="fas fa-bars"></i></button>
+                tal:condition="view/is_search_menu|nothing" class="fa fa-search"><span class="hiddenStructure">Submit Search</span></i><i 
+                tal:condition="not:view/is_search_menu|nothing" class="fas fa-bars"><span class="hiddenStructure">Toggle navigation</span></i></button>
 		
 			<div class="d-lg-inline-flex pr-3 college-logo-block"
 			     tal:omit-tag="not:is_department">

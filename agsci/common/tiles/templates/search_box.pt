@@ -52,7 +52,7 @@
                     <button
                         aria-label="Submit Search"
                         class="btn btn-primary"
-                        type="submit"><i class="fa fa-search"></i></button>
+                        type="submit"><i class="fa fa-search"><span class="hiddenStructure">Submit Search</span></i></button>
                 </span>
 
             </div>
