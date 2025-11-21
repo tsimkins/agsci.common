@@ -20854,6 +20854,21 @@ footer > section.container-fluid .row {
   clear: both;
 }
 
+body.userrole-authenticated .side-nav a.state-private,
+body.userrole-authenticated .side-nav a.state-private:hover,
+body.userrole-authenticated .side-nav a.state-private:focus,
+body.userrole-authenticated .side-nav a.state-private:visited,
+body.userrole-authenticated .side-nav a.state-private:link {
+  color: #FF0000 !important;
+}
+body.userrole-authenticated .side-nav a.state-pending,
+body.userrole-authenticated .side-nav a.state-pending:hover,
+body.userrole-authenticated .side-nav a.state-pending:focus,
+body.userrole-authenticated .side-nav a.state-pending:visited,
+body.userrole-authenticated .side-nav a.state-pending:link {
+  color: #FFA500 !important;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

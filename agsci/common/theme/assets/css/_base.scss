@@ -1996,3 +1996,21 @@ footer > section.container-fluid .row {
 #content-contributors {
     clear: both;
 }
+
+body.userrole-authenticated .side-nav {
+    a.state-private,
+    a.state-private:hover,
+    a.state-private:focus,
+    a.state-private:visited,
+    a.state-private:link {
+        color: #FF0000 !important;
+    }
+
+    a.state-pending,
+    a.state-pending:hover,
+    a.state-pending:focus,
+    a.state-pending:visited,
+    a.state-pending:link {
+        color: #FFA500 !important;
+    }
+}
