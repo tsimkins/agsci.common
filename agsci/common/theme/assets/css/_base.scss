@@ -965,6 +965,13 @@ body.viewpermission-plone-app-event-import-ical #content-core{
         border-left: 1em solid #CCCCCC;
         clear: both;
         margin-bottom: 1rem;
+
+        a,
+        a:visited,
+        a:link {
+            color: #3F6CAC !important;
+        }
+
     }
 
     strong.lead,

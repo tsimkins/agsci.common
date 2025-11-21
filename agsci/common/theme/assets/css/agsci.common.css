@@ -19831,6 +19831,35 @@ body.viewpermission-plone-app-event-import-ical #content-core .callout {
   clear: both;
   margin-bottom: 1rem;
 }
+#parent-fieldname-text .callout a,
+#parent-fieldname-text .callout a:visited,
+#parent-fieldname-text .callout a:link,
+.html .callout a,
+.html .callout a:visited,
+.html .callout a:link,
+body.portaltype-easyform #content-core .callout a,
+body.portaltype-easyform #content-core .callout a:visited,
+body.portaltype-easyform #content-core .callout a:link,
+body.template-default_error_message #content-core .callout a,
+body.template-default_error_message #content-core .callout a:visited,
+body.template-default_error_message #content-core .callout a:link,
+body.template-fg_thankspage_view_p3 #content-core .callout a,
+body.template-fg_thankspage_view_p3 #content-core .callout a:visited,
+body.template-fg_thankspage_view_p3 #content-core .callout a:link,
+body.template-fg_base_view_p3 #content-core .callout a,
+body.template-fg_base_view_p3 #content-core .callout a:visited,
+body.template-fg_base_view_p3 #content-core .callout a:link,
+body.template-file_view #content-core .callout a,
+body.template-file_view #content-core .callout a:visited,
+body.template-file_view #content-core .callout a:link,
+body.template-image_view #content-core .callout a,
+body.template-image_view #content-core .callout a:visited,
+body.template-image_view #content-core .callout a:link,
+body.viewpermission-plone-app-event-import-ical #content-core .callout a,
+body.viewpermission-plone-app-event-import-ical #content-core .callout a:visited,
+body.viewpermission-plone-app-event-import-ical #content-core .callout a:link {
+  color: #3F6CAC !important;
+}
 #parent-fieldname-text strong.lead,
 #parent-fieldname-text b.lead,
 .html strong.lead,
