@@ -68,18 +68,21 @@
                     </address>
 
                     <div class="address"
+                         tal:condition="python: has_contact_info or hours"
                          tal:define="hours view/data/hours|nothing;
                                      email view/data/email|nothing;
                                      phone_number view/data/phone_number|nothing;
-                                     fax_number view/data/fax_number|nothing;">
+                                     fax_number view/data/fax_number|nothing;
+                                     has_contact_info view/has_contact_info|nothing;">
 
                         <p class="mb-2"
-                             tal:condition="hours">
+                           tal:condition="hours">
                             Hours: <span tal:replace="hours" />
                         </p>
 
 
-                        <ul class="list-inline list-inline-not-mobile list-bio-contact">
+                        <ul class="list-inline list-inline-not-mobile list-bio-contact"
+                            tal:condition="has_contact_info">
                             <li tal:condition="email">
                                 <span>Email</span>
                                 <a tal:attributes="href string:mailto:${email}"

@@ -844,6 +844,13 @@ class RizzoTheRatTile(BaseTile):
     def has_address(self):
         return self.adapted.has_address
 
+    @property
+    def has_contact_info(self):
+        return (
+            self.data.get('email', None) or
+            self.data.get('phone_number', None) or
+            self.data.get('fax_number', None)
+        )
 
 class StatlerTile(CTATile):
     __full__width = False
