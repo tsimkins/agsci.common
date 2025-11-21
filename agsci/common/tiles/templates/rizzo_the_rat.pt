@@ -21,7 +21,7 @@
                          tal:define="title view/data/title|nothing"
                          tal:condition="title">
 
-                        <p tal:content="title" />
+                        <h2 class="p" tal:content="title" />
 
                     </div>
 

@@ -11059,7 +11059,7 @@ address a:focus {
   font-size: 0.875rem;
   line-height: 1.4;
 }
-.address-generic .card-title p {
+.address-generic .card-title h2.p, .address-generic .card-title h3.p, .address-generic .card-title p {
   font-size: 1.25rem;
 }
 .address-generic address {
@@ -14179,6 +14179,7 @@ CARD DECK GENERAL CONFIG
 }
 
 .card-title p,
+.card-title h2.p,
 .card-title h3.p {
   position: relative;
   margin-bottom: 0.75rem;
@@ -14189,6 +14190,7 @@ CARD DECK GENERAL CONFIG
   letter-spacing: normal;
 }
 .card-title p::after,
+.card-title h2.p::after,
 .card-title h3.p::after {
   content: "";
   position: absolute;
@@ -14199,7 +14201,11 @@ CARD DECK GENERAL CONFIG
   border-bottom: 2px solid rgba(62, 163, 158, 0.25);
 }
 
+.card:hover .card-title h2.p::after,
+.card:hover .card-title h3.p:after,
 .card:hover .card-title p::after,
+.card:focus .card-title h2.p::after,
+.card:focus .card-title h3.p:after,
 .card:focus .card-title p::after {
   border-bottom: 2px solid #3EA39E;
 }

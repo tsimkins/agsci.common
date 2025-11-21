@@ -35,9 +35,11 @@ address {
     font-size: $font-size-sm;
     line-height: $line-height-md;
 
-    .card-title p {
-        font-size: $font-size-lg;
+    .card-title {
+		h2.p, h3.p, p {
+        	font-size: $font-size-lg;
         }
+	}
 
     address {
         padding-top: 0;

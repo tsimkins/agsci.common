@@ -58,6 +58,7 @@
 
 .card-title {
     p,
+	h2.p,
     h3.p {
         position: relative;
         margin-bottom: 0.75rem;
@@ -81,9 +82,13 @@
 
 .card:hover,
 .card:focus {
-    .card-title p::after {
-        border-bottom: 2px solid $color-ps-creek;
-        }
+    .card-title {
+		h2.p::after,
+        h3.p:after,
+		p::after {
+        	border-bottom: 2px solid $color-ps-creek;
+	       	}
+       	}
     }
 
 .card-text p {
