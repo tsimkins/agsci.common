@@ -14188,6 +14188,7 @@ CARD DECK GENERAL CONFIG
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.2;
   letter-spacing: normal;
+  margin-top: 0;
 }
 .card-title p::after,
 .card-title h2.p::after,
