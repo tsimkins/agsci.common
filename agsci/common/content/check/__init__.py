@@ -575,6 +575,26 @@ class ValidInternalLinkCheck(BodyLinkCheck):
                         data = self.object_factory(url=href, text=text),
                     )
 
+# Checks for empty headings
+class EmptyHeadings(BodyHeadingCheck):
+
+    # Title for the check
+    title = "HTML: Empty Headings"
+
+    # Description for the check
+    description = "Validates that there are no empty heading tags."
+
+    # Remedial Action
+    action = "Remove empty heading (e.g. <h2></h2>) tags."
+
+    def check(self):
+
+        headings = self.value()
+        
+        for _ in headings:
+            if not _.text.strip():
+                yield ContentCheckError(self, "Empty <%s> heading." % _.name)
+
 # Checks for appropriate heading level hierarchy, e.g. h2 -> h3 -> h4
 class HeadingLevels(BodyHeadingCheck):
 

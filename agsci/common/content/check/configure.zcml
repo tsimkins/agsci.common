@@ -69,6 +69,13 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
+    <!-- Body Text: Empty Headings -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".EmptyHeadings"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
 
     <!-- Body Text: Appropriate Link Text -->
 
