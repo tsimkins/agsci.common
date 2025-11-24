@@ -18247,6 +18247,8 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
   padding: 0 !important;
   position: absolute;
   margin-left: -10000px !important;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 #section-byline {
