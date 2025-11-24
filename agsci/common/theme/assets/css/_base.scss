@@ -84,6 +84,10 @@ $display-line-height: 1.2 !default;
     }
 }
 
+.jumbotron-variable-height.jumbotron {
+    background-color: transparent;
+}
+
 /* Placeholder image does not need a negative top margin. */
 .headshot.card-img-crop.placeholder {
     img {

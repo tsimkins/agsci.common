@@ -18124,6 +18124,10 @@ a.alert-bar.mini p.alert-bar-text {
   background-color: transparent;
 }
 
+.jumbotron-variable-height.jumbotron {
+  background-color: transparent;
+}
+
 /* Placeholder image does not need a negative top margin. */
 .headshot.card-img-crop.placeholder img {
   top: 0;
