@@ -13134,6 +13134,7 @@ JUMBOTRON HOME STYLE
   /* override bs default */
   padding: 0;
   border-radius: 0;
+  background-color: #000000;
 }
 .jumbotron h1, .jumbotron h2 {
   margin-bottom: 0;
