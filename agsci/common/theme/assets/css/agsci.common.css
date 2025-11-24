@@ -20877,6 +20877,10 @@ body.userrole-authenticated .side-nav a.state-pending:link {
   color: #FFA500 !important;
 }
 
+body.header-department-level > header {
+  padding-top: 0.5em;
+}
+
 .alert.status,
 .portalMessage {
   padding: 15px;

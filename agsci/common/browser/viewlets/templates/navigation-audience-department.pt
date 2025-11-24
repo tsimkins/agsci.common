@@ -30,12 +30,4 @@
 
     </ul>
 
-    <ul class="text-white dept-level-college-options list-inline"
-        tal:condition="not: show">
-        <!--
-            This is an empty list where we have a 'department'
-            template that shouldn't have the department links
-            above the header. It adds visual padding.
-        -->
-    </ul>
 </div>
