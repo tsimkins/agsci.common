@@ -190,6 +190,18 @@ class ViewletBase(_ViewletBase):
 
         return 'college'
 
+    def resolveLink(self, href):
+
+        if href.startswith(('http', 'mailto', 'tel')):
+            return href
+
+        try:
+            obj = self.site.restrictedTraverse(href)
+        except KeyError:
+            return href
+        else:
+            return obj.absolute_url()
+
     @property
     @context_memoize
     def navigation_theme(self):

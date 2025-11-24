@@ -64,8 +64,9 @@
 
                             <li class="li-separator">
 
-                                <a tal:attributes="href i/link/cdata|nothing"
-                                   tal:omit-tag="not: i/link/cdata|nothing">
+                                <a tal:define="link i/link/cdata|nothing"
+                                   tal:attributes="href python:view.resolveLink(link)"
+                                   tal:omit-tag="not: link">
 
                                     <span
                                         class="element-invisible"
