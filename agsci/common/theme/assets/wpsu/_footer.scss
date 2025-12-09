@@ -109,6 +109,11 @@ li.li-separator::after {
         font-size: $font-size-base;
 }
 
+li.li-separator a {
+    padding: 0.75rem 0;
+    display: inline-block;
+}
+
 /* Footer - Department Level
 --------------------------------------------- */
 
@@ -162,13 +167,17 @@ footer .footer-department-level {
     p.department-name {
         display: inline-block;
         margin-bottom: 0.25rem;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.25rem;
         border-bottom: $border-base;
         color: $white;
         font-size: $h4-font-size;
         font-family: $font-family-base;
         line-height: $line-height-sm;
 
+        a {
+            display: inline-block;
+            padding: 0.5rem 0;
+        }
     }
 
     ul li {

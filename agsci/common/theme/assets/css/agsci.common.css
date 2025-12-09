@@ -15702,6 +15702,11 @@ li.li-separator::after {
   font-size: 1rem;
 }
 
+li.li-separator a {
+  padding: 0.75rem 0;
+  display: inline-block;
+}
+
 /* Footer - Department Level
 --------------------------------------------- */
 .department-level footer {
@@ -15741,12 +15746,16 @@ footer .footer-department-level {
 footer .footer-department-level p.department-name {
   display: inline-block;
   margin-bottom: 0.25rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
   border-bottom: 1px solid rgba(62, 163, 158, 0.25);
   color: #ffffff;
   font-size: 1.1rem;
   font-family: "Roboto Slab", serif;
   line-height: 1.2;
+}
+footer .footer-department-level p.department-name a {
+  display: inline-block;
+  padding: 0.5rem 0;
 }
 footer .footer-department-level ul li {
   padding-top: 0;

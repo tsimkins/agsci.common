@@ -36,7 +36,7 @@
 
                 <div class="col text-center">
 
-                    <ul class="list-inline list-inline-contact mt-2"
+                    <ul class="list-inline list-inline-contact"
                         tal:define="first_line_contact_links view/first_line_contact_links|nothing;
                         first_line_contact_links_items first_line_contact_links/items/item|nothing"
                         tal:condition="first_line_contact_links">
@@ -58,7 +58,7 @@
 
                     </ul>
 
-                    <ul class="list-inline list-inline-dept-links text-center mt-2">
+                    <ul class="list-inline list-inline-dept-links text-center">
 
                         <tal:contact tal:repeat="i view/contact_links/items/item|nothing">
 
