@@ -1624,7 +1624,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a:not([class*=btn]
 body.viewpermission-plone-app-event-import-ical #content-core a:visited:not([class*=btn]),
 body.viewpermission-plone-app-event-import-ical #content-core a:active:not([class*=btn]),
 body.viewpermission-plone-app-event-import-ical #content-core .a {
-  color: #4373B6 !important;
+  color: #406EAE !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
@@ -2116,7 +2116,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 body.viewpermission-plone-app-event-import-ical #content-core a.state-published:link,
 body.viewpermission-plone-app-event-import-ical #content-core a.state-published:hover,
 body.viewpermission-plone-app-event-import-ical #content-core a.state-published:focus {
-  color: #4373B6 !important;
+  color: #406EAE !important;
 }
 
 #parent-fieldname-text img {
@@ -2212,7 +2212,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 #content-core .entries a.card.state-published .summary,
 #content-core .entries a.card.state-published:visited .summary,
 #content-core .entries a.card.state-published:link .summary {
-  color: #4373B6 !important;
+  color: #406EAE !important;
 }
 #content-core .entries a.card.state-published:hover .summary,
 #content-core .entries a.card.state-published:focus .summary {
@@ -2237,7 +2237,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 #content-core .entries .entry a:visited:not([class*=btn]),
 #content-core .entries .entry a:active:not([class*=btn]),
 #content-core .entries .entry .a {
-  color: #4373B6 !important;
+  color: #406EAE !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
@@ -2306,7 +2306,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 }
 .card-deck-link.card-deck-1up > a span {
   display: inline-block;
-  color: #4373B6 !important;
+  color: #406EAE !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
@@ -2321,7 +2321,7 @@ body.viewpermission-plone-app-event-import-ical #content-core a.state-published:
 }
 .card-deck-link.html > a span {
   display: inline-block;
-  color: #4373B6 !important;
+  color: #406EAE !important;
   border-bottom: 1px solid #E9E9E9 !important;
   padding-bottom: 0.0625em !important;
 }
