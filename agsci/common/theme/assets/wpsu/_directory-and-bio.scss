@@ -228,6 +228,10 @@ ul.list-bio-contact {
             }
         }
     }
+
+    a.btn.bsn-sm {
+        padding: 0.625rem 0;
+    }
 }
 
 @include media-breakpoint-up(lg) {

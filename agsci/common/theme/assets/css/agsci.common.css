@@ -15166,6 +15166,9 @@ ul.list-bio-contact .fa-file-pdf {
   padding-bottom: 0;
   border-bottom: none;
 }
+#main .facultyStaffDirectory > .bio a.btn.bsn-sm {
+  padding: 0.625rem 0;
+}
 
 @media (min-width: 992px) {
   #main .facultyStaffDirectory > .bio address {
