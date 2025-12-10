@@ -44,7 +44,7 @@ div.alert-bar p.alert-bar-text,
 a.alert-bar p.alert-bar-text {
   font-weight: 400;
   margin: 0 0 0 3.75rem;
-  line-height: 1.4;
+  line-height: 1.5;
   font-size: 0.8125em;
 }
 div.alert-bar p.alert-bar-text a, div.alert-bar p.alert-bar-text a:link,
@@ -1813,7 +1813,7 @@ body.template-image_view #content-core td,
 body.template-image_view #content-core th,
 body.viewpermission-plone-app-event-import-ical #content-core td,
 body.viewpermission-plone-app-event-import-ical #content-core th {
-  line-height: 1.4;
+  line-height: 1.5;
 }
 #parent-fieldname-text td li, #parent-fieldname-text th li,
 .html td li,
@@ -1832,7 +1832,7 @@ body.template-image_view #content-core td li,
 body.template-image_view #content-core th li,
 body.viewpermission-plone-app-event-import-ical #content-core td li,
 body.viewpermission-plone-app-event-import-ical #content-core th li {
-  line-height: 1.4;
+  line-height: 1.5;
 }
 #parent-fieldname-text table.table-sm td, #parent-fieldname-text table.table-sm th,
 .html table.table-sm td,
@@ -2445,7 +2445,7 @@ body.template-content_check_items section.entries .contenttype-event .event.summ
 
 address p, address li, .address p, .address li {
   font-size: 0.825rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 address .list-inline-social a .fa-envelope, address .list-inline-social a .fa-x-twitter, address .list-inline-social a:hover .fa-envelope, address .list-inline-social a:hover .fa-x-twitter, address .list-inline-social a:focus .fa-envelope, address .list-inline-social a:focus .fa-x-twitter, address .list-inline-social a:visited .fa-envelope, address .list-inline-social a:visited .fa-x-twitter, address .list-inline-social a:active .fa-envelope, address .list-inline-social a:active .fa-x-twitter, .address .list-inline-social a .fa-envelope, .address .list-inline-social a .fa-x-twitter, .address .list-inline-social a:hover .fa-envelope, .address .list-inline-social a:hover .fa-x-twitter, .address .list-inline-social a:focus .fa-envelope, .address .list-inline-social a:focus .fa-x-twitter, .address .list-inline-social a:visited .fa-envelope, .address .list-inline-social a:visited .fa-x-twitter, .address .list-inline-social a:active .fa-envelope, .address .list-inline-social a:active .fa-x-twitter {
   color: black !important;
@@ -2869,7 +2869,7 @@ body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 button:
   text-rendering: auto;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Font Awesome 5 Free";
-  line-height: 1.4;
+  line-height: 1.5;
   float: right;
 }
 body.portaltype-agsci_accordion_folder #content-core .accordion .card h2 button[aria-expanded=true]:before {
