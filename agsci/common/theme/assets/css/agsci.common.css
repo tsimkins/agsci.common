@@ -5189,7 +5189,7 @@ tbody.collapse.show {
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .pagination-lg .page-item:first-child .page-link {
   border-top-left-radius: 0.3rem;
@@ -10516,7 +10516,7 @@ p, #parent-fieldname-text > div:not([class=callout]), div.lead {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.9;
 }
 
 @media (min-width: 992px) {
@@ -10537,7 +10537,7 @@ p, #parent-fieldname-text > div:not([class=callout]), div.lead {
   }
 }
 p.small {
-  line-height: 1.4;
+  line-height: 1.5;
   margin-top: 0.25rem;
 }
 
@@ -11030,7 +11030,7 @@ address {
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 address a {
   border-bottom: 1px solid transparent;
@@ -11057,7 +11057,7 @@ address a:focus {
   margin-bottom: 1rem;
   padding: 1.5rem 1rem;
   font-size: 0.875rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .address-generic .card-title h2.p, .address-generic .card-title h3.p, .address-generic .card-title p {
   font-size: 1.25rem;
@@ -11147,7 +11147,7 @@ a.card .btn-link::after {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font-family: "Font Awesome 5 Free";
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 button.btn-link:hover,
@@ -11491,7 +11491,7 @@ OFFSET BIG PREVIEW CARDS - SEE DEGREES & PROGRAMS
   z-index: 9;
 }
 .offset-content p {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .offset-content p:last-child {
   margin-bottom: 0;
@@ -11966,7 +11966,7 @@ button.dropdown-toggle i {
   font-weight: 400;
   font-size: 0.825rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .navbar .dropdown-menu {
@@ -12935,7 +12935,7 @@ ul, ol {
 .container-text ol li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .container-text ul li a,
 .container-text ol li a {
@@ -13179,7 +13179,7 @@ JUMBOTRON HOME STYLE
 }
 .jumbotron.jumbotron-variable-height p.lead {
   margin-left: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .jumbotron.jumbotron-variable-height p.lead span {
   padding: 0;
@@ -13235,7 +13235,7 @@ JUMBOTRON HOME STYLE
 }
 
 #portal-breadcrumbs {
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .jumbotron-img-based #portal-breadcrumbs a {
@@ -14331,7 +14331,7 @@ CARD DECK - EVENTS
 .event-details p {
   margin-bottom: 0;
   font-size: 0.75rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .events-new .card.card-event {
@@ -15011,7 +15011,7 @@ BIO -- body class .template-person_view
   border-bottom: transparent;
   margin-bottom: 0.5rem;
   padding: 0.75rem 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .person-profile address ul {
   padding-left: 0;
@@ -15156,7 +15156,7 @@ ul.list-bio-contact .fa-file-pdf {
 }
 #main .facultyStaffDirectory > .bio address ul li {
   margin-bottom: 0.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 #main .facultyStaffDirectory > .bio address ul li span {
   font-weight: 700;
@@ -15522,7 +15522,7 @@ h3.more-header {
 .more-block-content ul li {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .more-block-content ul li a {
   border-bottom: 1px solid #3EA39E;
@@ -15545,7 +15545,7 @@ h3.more-header {
 }
 
 .explore-more-link {
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .explore-more-link a {
   border-bottom: 1px solid transparent;
@@ -15647,7 +15647,7 @@ footer p.footerLinks {
   margin-bottom: 0.25rem;
   font-size: 0.675rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 footer ul {
   margin-bottom: 0;
@@ -15982,7 +15982,7 @@ p.journey-quote-cite {
   text-transform: uppercase;
   font-weight: 900;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* journey preview w/ inset image */
@@ -16189,7 +16189,7 @@ h1.journey-name span {
   color: #3EA39E;
   font-weight: 600;
   font-size: 120%;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .aj-offset {
@@ -16537,7 +16537,7 @@ button.filter {
 }
 .comparison-container ul li {
   margin: 0.25rem 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* standard table with scroll
@@ -16575,7 +16575,7 @@ button.filter {
   border: 1px solid #e9eaea;
   font-size: 0.825rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 @media (min-width: 576px) {
   .rtable th,
@@ -16643,7 +16643,7 @@ button.filter {
 .rtable.rtable-mobile-labels td p {
   margin-top: 0.5rem;
   font-size: 0.825rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 @media (min-width: 576px) {
   .rtable.rtable-mobile-labels td p {
@@ -17637,7 +17637,7 @@ VALUE PROPOSITIONS
   font-size: 1.375rem;
   color: #ffffff;
   margin-bottom: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
   text-align: left;
   font-weight: 400;
 }
@@ -17741,7 +17741,7 @@ SUPPORTING TEXT
 .home p.lead {
   margin-top: 0.5rem;
   font-size: 1.25rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .home p.lead cite {
   position: relative;
@@ -17879,7 +17879,7 @@ NEWS & EVENTS
   display: inline;
   margin-bottom: 0;
   font-size: 0.75rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .home .card-news p.section-crumb,
 .content-primary .card-news p.section-crumb {
