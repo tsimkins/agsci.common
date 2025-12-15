@@ -36,13 +36,13 @@ button {
 .btn.btn-primary {
     margin-bottom: 1rem;
     padding: 1rem 2rem;
-    border: 1px solid $color-ps-creek;
-    background-color: $color-ps-creek;
+    border: 1px solid $color-ps-creek-accessible;
+    background-color: $color-ps-creek-accessible;
     color: $white;
 
     &:hover,
     &:focus {
-        background-color: $color-ps-creek-light10;
+        background-color: $color-ps-creek;
     }
 }
 
