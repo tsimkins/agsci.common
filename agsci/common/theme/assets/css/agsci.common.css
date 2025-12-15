@@ -11114,12 +11114,12 @@ button.disabled {
 .btn.btn-primary {
   margin-bottom: 1rem;
   padding: 1rem 2rem;
-  border: 1px solid #3EA39E;
-  background-color: #3EA39E;
+  border: 1px solid #2f7a77;
+  background-color: #2f7a77;
   color: #ffffff;
 }
 .btn.btn-primary:hover, .btn.btn-primary:focus {
-  background-color: #6ebab6;
+  background-color: #3EA39E;
 }
 
 .btn.btn-college-nav {
