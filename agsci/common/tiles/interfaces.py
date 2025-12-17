@@ -783,6 +783,13 @@ class IYouTubeTile(IBorderTile):
         required=True,
     )
 
+    iframe_alt = schema.TextLine(
+        title=_(u"Alternative text for video"),
+        description=_(u"Used as iframe title"),
+        default="YouTube Video",
+        required=True,
+    )
+
     video_aspect_ratio = schema.Choice(
         title=_(u"Video Aspect Ratio"),
         vocabulary="agsci.common.tiles.video_aspect_ratio",

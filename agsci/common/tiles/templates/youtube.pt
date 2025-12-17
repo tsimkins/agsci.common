@@ -17,7 +17,8 @@
 
 </section>
 
-<section tal:define="iframe_url view/iframe_url|nothing"
+<section tal:define="iframe_url view/iframe_url|nothing;
+                     iframe_alt view/data/iframe_alt|nothing"
          tal:condition="iframe_url"
          tal:attributes="class view/section_class|nothing;
                          data-tile-type view/tile_type|nothing">
@@ -43,7 +44,8 @@
                 tal:attributes="class view/wrapper_klass|nothing">
 
                 <iframe
-                    tal:attributes="src iframe_url" />
+                    tal:attributes="src iframe_url;
+                                    title iframe_alt|nothing" />
             </div>
         </div>
 
