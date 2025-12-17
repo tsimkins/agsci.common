@@ -460,6 +460,31 @@ class BodyImageCheck(BodyTextCheck):
     def value(self):
         return self.soup.findAll('img')
 
+# Generic Iframe check that returns all <iframe> tags as the value()
+class BodyIframeCheck(BodyTextCheck):
+
+    def value(self):
+        return self.soup.findAll('iframe')
+
+# Checks for iframe title (alt text)
+class BodyIframeTitleCheck(BodyIframeCheck):
+
+    # Title for the check
+    title = "HTML: Iframe alt text"
+
+    # Description for the check
+    description = "Checks for 'title' attribute in iframe"
+
+    def check(self):
+        for _ in self.value():
+            _title = _.get('title', None)
+            _src = _.get('src', None)
+            if not _title:
+                yield ContentCheckError(
+                    self,
+                    "Iframe for %s missing title attribute." % _src,
+                    data=self.object_factory(title=_title, src=_src),
+                )
 
 # Generic Body Link Check
 class BodyLinkCheck(BodyTextCheck):
@@ -590,7 +615,7 @@ class EmptyHeadings(BodyHeadingCheck):
     def check(self):
 
         headings = self.value()
-        
+
         for _ in headings:
             if not _.text.strip():
                 yield ContentCheckError(self, "Empty <%s> heading." % _.name)
