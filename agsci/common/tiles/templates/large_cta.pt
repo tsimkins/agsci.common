@@ -18,6 +18,7 @@
                 <div class="html"
                      tal:content="structure view/data/text/output|nothing" />
                 <a class="btn btn-creek point-at-me"
+                   tal:condition="view/data/url|nothing"
                    tal:attributes="href view/data/url;"
                    tal:content="view/data/label|nothing" />
             </div>
