@@ -66,6 +66,10 @@ class BaseTile(PersistentTile):
     def is_border(self):
         return IBorderTile in self.schema.getBases()
 
+    @property
+    def hide_tile(self):
+        return not not self.get_field('hide_tile')
+
     def get_valid_value(self, field_name):
 
         schema = self.schema

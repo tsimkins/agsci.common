@@ -6,6 +6,7 @@
       i18n:domain="agsci.common">
   <body>
 <section class="cta-bar cta-bar-${view/data/background|nothing}"
+    tal:condition="not: view/hide_tile|nothing"
     tal:attributes="data-tile-type view/tile_type|nothing;
                     data-container-width view/container_width;">
 

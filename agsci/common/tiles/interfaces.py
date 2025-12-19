@@ -247,6 +247,13 @@ class ICTATileBase(Interface):
         default=True,
     )
 
+    hide_tile = schema.Bool(
+        title=_(u"Hide tile"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
 class ICTATile(ICTATileBase):
 
     form.omitted('title')
@@ -760,6 +767,12 @@ class IStatlerTile(Interface):
         required=True,
     )
 
+    hide_tile = schema.Bool(
+        title=_(u"Hide tile"),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
 
 class IYouTubeTile(IBorderTile):
 
