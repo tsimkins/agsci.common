@@ -276,16 +276,17 @@ class ResearchFocusAreasVocabulary(StaticVocabulary):
 
     items = [
         "Bioenergy and Bioprocessing Systems",
-        "Bioproducts and Sustainable Materials",
         "Controlled Environment Agriculture",
         "Decision Support Tool Development",
         "Digital Agriculture and Smart Systems",
+        "Food, Bioproducts, and Sustainable Materials",
         "Genetic Improvement and Genomics",
         "Habitat Quality Monitoring",
         "Insect Population and Community Monitoring",
         "Livestock and Wildlife Monitoring",
         "Modeling for Crop Management",
         "Plant Disease Monitoring",
+        "Plant Monitoring and Phenotyping",
         "Precision Agriculture",
         "Robotics for Management and Harvesting",
         "Soils and Microbiomes",
