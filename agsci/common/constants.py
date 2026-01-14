@@ -60,6 +60,7 @@ DOMAIN_CONFIG = {
     'cacat' : 'extension.psu.edu',
     'files' : 'extension.psu.edu',
     'plant-excellence' : 'extension.psu.edu',
+    'meat-goat' : 'extension.psu.edu',
 }
 
 RESOLVEUID_RE = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)

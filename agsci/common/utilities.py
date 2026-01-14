@@ -545,6 +545,7 @@ def setSiteURL(site, domain=None, path='', https=True, edit=False):
             'cacat' : '/centers/cacat',
             'files' : '/files',
             'plant-excellence' : '/centers/plant-excellence',
+            'meat-goat' : '/courses/meat-goat',
         }.get(site.getId(), path)
 
     if path and not path.startswith('/'):
