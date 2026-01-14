@@ -68,6 +68,10 @@ class SyncPersonView(ImportContentView):
             return urlparse(url)
 
     @property
+    def no_sync(self):
+        return not not getattr(self.context, 'no_sync', False)
+
+    @property
     def api_url(self):
         url = self.primary_profile_url
 
@@ -113,6 +117,10 @@ class SyncPersonView(ImportContentView):
 
     # Check for updates to person data
     def update_person(self, o, map_fields=False):
+
+        # Bail out if person is set not to sync
+        if self.no_sync:
+            return False
 
         update = False
 

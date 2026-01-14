@@ -37,7 +37,7 @@ contact_fields = [
     'email', 'street_address', 'city', 'state',
     'zip_code', 'phone_number', 'teams_call',
     'fax_number', 'primary_profile_url',
-    'pronouns', 'name_pronunciation'
+    'no_sync', 'pronouns', 'name_pronunciation'
 ]
 
 professional_fields = [
@@ -157,6 +157,7 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
     form.write_permission(classifications=DIRECTORY_EDITOR)
     form.write_permission(groups=DIRECTORY_EDITOR)
     form.write_permission(primary_profile_url=DIRECTORY_EDITOR)
+    form.write_permission(no_sync=DIRECTORY_EDITOR)
 
     # Fields
     username = schema.TextLine(
@@ -258,7 +259,7 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
         required=False,
         value_type=schema.Choice(vocabulary="agsci.common.research_areas"),
     )
-    
+
     research_focus_areas = schema.List(
         title=_(u"TALIS Research Focus Areas"),
         required=False,
@@ -267,8 +268,15 @@ class IPerson(model.Schema, IMember, IContact, ISocialMediaBase):
 
     primary_profile_url = schema.TextLine(
         title=_(u"Primary Profile URL"),
-        description=_(u"URL of primary profile (if not Extension site)"),
+        description=_(u"Public views of this profile will redirect to the primary profile URL."),
         required=False,
+    )
+
+    no_sync = schema.Bool(
+        title=_(u"Do not sync with primary profile."),
+        description=_(u"Excludes this person's profile from the automatic sync"),
+        required=False,
+        default=False,
     )
 
     short_bio = RichText(
