@@ -57,6 +57,9 @@ DOMAIN_CONFIG = {
     'paonestop' : 'extension.psu.edu',
     'snap-ed' : 'extension.psu.edu',
     'web' : 'agsci.psu.edu',
+    'cacat' : 'extension.psu.edu',
+    'files' : 'extension.psu.edu',
+    'plant-excellence' : 'extension.psu.edu',
 }
 
 RESOLVEUID_RE = re.compile("(?:\.\./)*resolveuid/([abcdef0-9]{32})", re.I|re.M)
