@@ -176,8 +176,8 @@
                                         </li>
                                         <li tal:define="cv_file view/cv_file|nothing"
                                             tal:condition="cv_file">
-                                            <span>PDF</span>
-                                            <a tal:attributes="href cv_file">Curriculum Vitae</a>
+                                            <span>Curriculum Vitae</span>
+                                            <a tal:attributes="href cv_file">Download CV</a>
                                         </li>
                                         <li tal:define="pronouns context/pronouns|nothing"
                                             tal:condition="pronouns">

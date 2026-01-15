@@ -398,6 +398,12 @@ class PersonView(BaseView):
 
     card = False
 
+    valid_cv_types = [
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'application/pdf',
+        'application/msword',
+    ]
+
     @property
     def primary_profile_url(self):
         return getattr(self.context, 'primary_profile_url', None)
@@ -461,7 +467,7 @@ class PersonView(BaseView):
     def cv_file(self):
         _ = getattr(self.context, 'cv_file', None)
 
-        if _ and hasattr(_, 'contentType') and _.contentType in ('application/pdf'):
+        if _ and hasattr(_, 'contentType') and _.contentType in self.valid_cv_types:
                 return "%s/@@download/cv_file" % self.context.absolute_url()
 
 class PersonListingView(PersonView):
