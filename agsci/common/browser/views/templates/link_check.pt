@@ -75,11 +75,18 @@
                     <th>
                         Message
                     </th>
+                    <th>
+                        Remote Page Title
+                    </th>
                 </tr>
             </thead>
             <tr tal:repeat="i link_check">
                 <td tal:content="i/msg" tal:condition="not: i/render" />
                 <td tal:content="structure i/msg" tal:condition="i/render" />
+                <td>
+                    <p tal:repeat="j python: view.get_remote_page_titles(i.data.html)"
+                        tal:content="j" />
+                </td>
             </tr>
 
         </table>

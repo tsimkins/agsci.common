@@ -1325,41 +1325,41 @@ class ExternalLinkCheck(BodyLinkCheck):
 
         # Set Firefox UA
         headers = requests.utils.default_headers()
-        headers['User-Agent'] = u"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0"
+        headers['User-Agent'] = u"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:147.0) Gecko/20100101 Firefox/147.0"
 
         try:
 
             if head:
-                data = requests.head(url, timeout=self.TIMEOUT, verify=False, headers=headers)
+                response = requests.head(url, timeout=self.TIMEOUT, verify=False, headers=headers)
 
             else:
-                data = requests.get(url, timeout=self.TIMEOUT, verify=False, headers=headers)
+                response = requests.get(url, timeout=self.TIMEOUT, verify=False, headers=headers)
 
         except requests.exceptions.HTTPError:
-            return (404, url)
+            return (404, url, None)
 
         except:
-            return (999, url)
+            return (999, url, None)
 
         else:
 
-            return_code = data.status_code
-            return_url = data.url
+            return_code = response.status_code
+            return_url = response.url
 
             if return_code == 200:
 
                 if self.url_equivalent(url, return_url):
-                    return(200, url)
+                    return(200, url, response.text)
                 else:
-                    return(302, return_url)
+                    return(302, return_url, response.text)
 
             else:
 
                 if return_code in [301,302]:
-                    return(302, return_url)
+                    return(302, return_url, response.text)
 
                 else:
-                    return (return_code, return_url)
+                    return (return_code, return_url, response.text)
 
     def check(self):
 
@@ -1379,7 +1379,7 @@ class ExternalLinkCheck(BodyLinkCheck):
             (return_code, return_url) = (999, 'ERROR')
 
             if url in results:
-                (return_code, return_url) = results.get(url)
+                (return_code, return_url, html) = results.get(url)
 
             if not link_text:
                 link_text = url
@@ -1389,6 +1389,7 @@ class ExternalLinkCheck(BodyLinkCheck):
                 url=url,
                 status=return_code,
                 redirect_url=return_url,
+                html=html
             )
 
             if return_code in (200,):

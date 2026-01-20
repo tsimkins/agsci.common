@@ -8,6 +8,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.MimetypesRegistry.MimeTypesRegistry import MimeTypeException
+from bs4 import BeautifulSoup
 from collections import OrderedDict
 from collective.easyform.browser.view import EasyFormFormWrapper as _EasyFormFormWrapper
 from collective.z3cform.datagridfield.row import DictRow
@@ -861,6 +862,13 @@ class ReindexObjectView(BaseView):
         return self.request.response.redirect('%s?rescanned=1' % self.context.absolute_url())
 
 class ExternalLinkCheckView(BaseView):
+
+    def get_remote_page_titles(self, html=None):
+        if html and isinstance(html, str):
+            soup = BeautifulSoup(html, features='lxml')
+            for tag in soup.findAll(['title', 'h1']):
+                if tag.text:
+                    yield('%s: %s' % (tag.name, tag.text))
 
     def link_check(self):
         results = [x for x in ExternalLinkCheck(self.context).manual_check()]
