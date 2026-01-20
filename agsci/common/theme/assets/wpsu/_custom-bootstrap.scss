@@ -720,11 +720,8 @@ ol a {
 .container-text p a:visited:not(.btn) {
     text-decoration: none;
     color:     $color-ps-creek-accessible;
+    border-bottom: 1px solid $color-ps-creek;
     border-bottom: 1px solid transparent;
-
-    &:hover {
-        border-bottom: 1px solid $color-ps-creek;
-        }
     }
 
 /* ----------------------------------------------------------

@@ -10588,11 +10588,8 @@ ol a {
 .container-text p a:visited:not(.btn) {
   text-decoration: none;
   color: #32807D;
-  border-bottom: 1px solid transparent;
-}
-.container-text p a:link:not(.btn):hover,
-.container-text p a:visited:not(.btn):hover {
   border-bottom: 1px solid #3EA39E;
+  border-bottom: 1px solid transparent;
 }
 
 /* ----------------------------------------------------------
