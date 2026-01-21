@@ -91,8 +91,10 @@ BIO -- body class .template-person_view
         margin-bottom: 0;
     }
 
-    .expertise h3 {
-        margin-top: 0.5rem;
+    .expertise {
+        h3, h2.h3 {
+            margin-top: 0.5rem;
+        }
     }
 
     ul.jobTitle {
@@ -104,11 +106,11 @@ BIO -- body class .template-person_view
     }
 
     .person-bio {
-        h2 {
+        h2:not(.h3) {
             margin-top: 3rem;
         }
 
-        > div > h2:first-child {
+        > div > h2:not(.h3):first-child {
             margin-top: 0.5rem;
         }
     }
@@ -160,7 +162,7 @@ ul.list-bio-contact {
     padding-top: 1.375rem;
     padding-bottom: 1rem;
 
-    h2,
+    h2:not(.h3),
     .h2 {
         font-size: 1.5rem;
         margin-top: 0.5rem;
@@ -183,7 +185,7 @@ ul.list-bio-contact {
         margin-bottom: 0;
     }
 
-    h3 {
+    h3, h2.h3 {
         margin-top: 0.5rem;
         font-size: $font-size-base;
     }
@@ -284,7 +286,7 @@ Headers pulled out to the left
         border-bottom: $border-base;
     }
 
-    h3 {
+    h3, h2.h3 {
         margin-top: 0;
         color: $color-ps-slate-gray;
         font-weight: $font-weight-bolder;
@@ -325,7 +327,7 @@ ul.list-three-col {
 
 
 @include media-breakpoint-up(md) {
-    .person-profile h2 {
+    .person-profile h2:not(.h3) {
         font-size: $font-size-xl;
     }
 }

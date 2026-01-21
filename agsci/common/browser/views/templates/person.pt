@@ -217,7 +217,7 @@
                 tal:condition="i/value|nothing">
 
             <div class="col-12 col-md-3">
-                    <h3 tal:content="i/title" />
+                    <h2 class="h3" tal:content="i/title" />
             </div>
 
             <div class="col-12 col-md-9">
@@ -244,7 +244,7 @@
                 tal:condition="websites|social_media|nothing">
 
             <div class="col-12 col-md-3">
-                    <h3 tal:content="i/title" />
+                    <h2 class="h3" tal:content="i/title" />
             </div>
 
             <div class="col-12 col-md-9">
@@ -275,7 +275,7 @@
                 tal:condition="i/value|nothing">
 
             <div class="col-12 col-md-3">
-                    <h3 tal:content="i/title" />
+                    <h2 class="h3" tal:content="i/title" />
             </div>
 
             <div class="col-12 col-md-9">
@@ -307,7 +307,7 @@
                 tal:condition="publications">
 
                 <div class="col-12 col-md-3">
-                    <h3>Publications</h3>
+                    <h2 class="h3">Publications</h2>
                     <p tal:condition="not: view/show_publications|nothing"
                        class="discreet">Only visible to logged-in users.</p>
                 </div>
