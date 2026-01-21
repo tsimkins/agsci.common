@@ -32,9 +32,18 @@
                                        class string:card card-cta bg-dark-${button/color|nothing} px-0 reveal text-center my-3">
 
                         <div class="d-flex flex-column card-body text-white align-items-center justify-content-center">
-                            <h3 class="h4 mt-0"
-                                tal:condition="button/title|nothing"
-                                tal:content="button/title|nothing" />
+                            <tal:button
+                                tal:condition="not:view/data/show_title|nothing">
+                                <h2 class="h4 mt-0"
+                                    tal:condition="button/title|nothing"
+                                    tal:content="button/title|nothing" />
+                            </tal:button>
+                            <tal:button
+                                tal:condition="view/data/show_title|nothing">
+                                <h3 class="h4 mt-0"
+                                    tal:condition="button/title|nothing"
+                                    tal:content="button/title|nothing" />
+                            </tal:button>
                             <div class="btn" tal:content="button/label|nothing" />
                         </div>
                     </a>
