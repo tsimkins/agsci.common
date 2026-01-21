@@ -99,9 +99,8 @@ CARD DECK - EVENTS
 
 .event-month {
     width: 100%;
-    text-transform: uppercase;
-    font-size: $small1-size;
-    line-height: 1;
+    line-height: 1.2;
+    font-weight: $font-weight-bold;
     }
 
 .event-date {

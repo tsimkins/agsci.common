@@ -133,9 +133,8 @@ ul.list-bio-contact {
         span {
             margin-right: 0.1rem;
             color: $color-ps-creek-accessible;
-            text-transform: uppercase;
             font-weight: $font-weight-bolder;
-            font-size: 90%;
+            font-size: 100%;
         }
     }
 
@@ -153,15 +152,6 @@ ul.list-bio-contact {
     }
 }
 
-@include media-breakpoint-up(md) {
-    ul.list-bio-contact li span {
-        font-size: 75%;
-    }
-
-    #main .facultyStaffDirectory > .bio ul.list-bio-contact li span {
-        font-size: 85%;
-    }
-}
 
 /* Bio in Directory Formatz
 --------------------------------------------- */
@@ -217,7 +207,7 @@ ul.list-bio-contact {
                 line-height: $line-height-md;
 
                 span {
-                    font-weight: $font-weight-bolder;
+                    font-weight: $font-weight-bold;
                 }
 
                 &:last-of-type {

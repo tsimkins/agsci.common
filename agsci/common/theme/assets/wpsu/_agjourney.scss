@@ -238,8 +238,7 @@ p.journey-quote-cite {
     margin-right: 1rem;
     color: $color-ps-slate-gray;
     text-align: right;
-    text-transform: uppercase;
-    font-weight: $font-weight-boldest;
+    font-weight: $font-weight-bold;
     font-family: $font-family-sans-serif;
     line-height: $line-height-md;
     }
@@ -272,7 +271,7 @@ p.journey-quote-cite {
 
     p.journey-quote-cite {
         margin-right: 0;
-        font-size: $small3-size;
+        font-size: $small2-size;
         line-height: $line-height-sm;
 
         em {

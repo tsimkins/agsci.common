@@ -679,12 +679,11 @@ p.section-crumb {
     display: inline-block;
     position: relative;
     margin-top: 0;
-    text-transform: uppercase;
     color: $color-ps-slate-gray;
     font-family: $font-family-sans-serif;
     font-weight: $font-weight-bold;
     line-height: $line-height-sm;
-    font-size: $small3-size;
+    font-size: $small2-size;
 
     &::after {
         content: "";

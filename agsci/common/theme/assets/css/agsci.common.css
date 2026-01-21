@@ -10551,12 +10551,11 @@ p.section-crumb {
   display: inline-block;
   position: relative;
   margin-top: 0;
-  text-transform: uppercase;
   color: #314D64;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   line-height: 1.2;
-  font-size: 0.75rem;
+  font-size: 0.825rem;
 }
 p.section-crumb::after {
   content: "";
@@ -14312,9 +14311,8 @@ CARD DECK - EVENTS
 
 .event-month {
   width: 100%;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  line-height: 1;
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .event-date {
@@ -14403,10 +14401,9 @@ PORTABLE HIGHLIGHTS
   margin-bottom: 0;
 }
 .card.card-portable-highlight .card-body p span {
-  font-size: 3.2rem;
+  font-size: 3.25rem;
   display: block;
-  text-transform: uppercase;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   margin-top: 0;
   font-weight: 700;
   line-height: 1;
@@ -15081,9 +15078,8 @@ ul.list-bio-contact li {
 ul.list-bio-contact li span {
   margin-right: 0.1rem;
   color: #32807D;
-  text-transform: uppercase;
   font-weight: 700;
-  font-size: 90%;
+  font-size: 100%;
 }
 ul.list-bio-contact .fa-file-pdf {
   margin-right: 0.1rem;
@@ -15099,15 +15095,6 @@ ul.list-bio-contact .fa-file-pdf {
   }
 }
 
-@media (min-width: 768px) {
-  ul.list-bio-contact li span {
-    font-size: 75%;
-  }
-
-  #main .facultyStaffDirectory > .bio ul.list-bio-contact li span {
-    font-size: 85%;
-  }
-}
 /* Bio in Directory Formatz
 --------------------------------------------- */
 #main .facultyStaffDirectory > .bio {
@@ -15155,7 +15142,7 @@ ul.list-bio-contact .fa-file-pdf {
   line-height: 1.5;
 }
 #main .facultyStaffDirectory > .bio address ul li span {
-  font-weight: 700;
+  font-weight: 600;
 }
 #main .facultyStaffDirectory > .bio address ul li:last-of-type {
   margin-bottom: 0;
@@ -15975,8 +15962,7 @@ p.journey-quote-cite {
   margin-right: 1rem;
   color: #314D64;
   text-align: right;
-  text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 600;
   font-family: "Nunito Sans", sans-serif;
   line-height: 1.5;
 }
@@ -16001,7 +15987,7 @@ p.journey-quote-cite {
 }
 .journey-preview p.journey-quote-cite {
   margin-right: 0;
-  font-size: 0.75rem;
+  font-size: 0.825rem;
   line-height: 1.2;
 }
 .journey-preview p.journey-quote-cite em {
