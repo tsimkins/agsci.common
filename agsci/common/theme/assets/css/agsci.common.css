@@ -14757,6 +14757,7 @@ NEWS EVENTS NEW
 .card.card-visual:hover .opacity-dimmer-bottom, .card.card-visual:focus .opacity-dimmer-bottom {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
 }
+.card.card-visual h2.card-title::after,
 .card.card-visual h3.card-title::after {
   content: "";
   position: absolute;
@@ -14767,6 +14768,7 @@ NEWS EVENTS NEW
   border-bottom: 2px solid transparent;
   z-index: 1;
 }
+.card.card-visual h2.text-center.card-title::after,
 .card.card-visual h3.text-center.card-title::after {
   content: "";
   position: absolute;
@@ -14788,11 +14790,15 @@ NEWS EVENTS NEW
   border-bottom: 1px solid rgba(62, 163, 158, 0.25);
 }
 
+a.card.card-visual:hover h2.card-title::after,
 a.card.card-visual:hover h3.card-title::after,
+a.card.card-visual:focus h2.card-title::after,
 a.card.card-visual:focus h3.card-title::after {
   border-bottom: 2px solid #3EA39E;
 }
+a.card.card-visual:hover h2.text-center.card-title::after,
 a.card.card-visual:hover h3.text-center.card-title::after,
+a.card.card-visual:focus h2.text-center.card-title::after,
 a.card.card-visual:focus h3.text-center.card-title::after {
   border-bottom: 2px solid #3EA39E;
 }
@@ -14848,16 +14854,20 @@ div.card .card-text ul li li {
   z-index: 2;
   padding: 0.5rem 1rem;
 }
+.card .card-img-overlay h2.card-title,
 .card .card-img-overlay h3.card-title {
   position: relative;
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 6px rgba(35, 30, 32, 0.875);
   font-size: 1.25rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
   line-height: 1;
 }
 
 @media (min-width: 768px) {
-  .card-deck-2up .card .card-img-overlay h3.card-title {
+  .card-deck-2up .card .card-img-overlay h2.card-title,
+.card-deck-2up .card .card-img-overlay h3.card-title {
     font-size: 1.75rem;
   }
 }
@@ -14867,15 +14877,18 @@ div.card .card-text ul li li {
 .card.card-visual.card-horizontal:hover .row, .card.card-visual.card-horizontal:focus .row {
   background-color: #ffffff;
 }
+.card.card-visual.card-horizontal h2.card-title,
 .card.card-visual.card-horizontal h3.card-title {
   position: relative;
   font-size: 1.1rem;
 }
 @media (min-width: 768px) {
-  .card.card-visual.card-horizontal h3.card-title {
+  .card.card-visual.card-horizontal h2.card-title,
+.card.card-visual.card-horizontal h3.card-title {
     font-size: 0.9rem;
   }
 }
+.card.card-visual.card-horizontal h2.card-title::after,
 .card.card-visual.card-horizontal h3.card-title::after {
   border-bottom-color: #3EA39E;
 }

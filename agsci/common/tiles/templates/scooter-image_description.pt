@@ -59,8 +59,14 @@
                         </div>
 
                         <div class="card-img-overlay d-flex align-items-end justify-content-start text-white">
+
+                            <h2 class="card-title"
+                                tal:condition="not:title|nothing"
+                                tal:content="i/Title|nothing" />
+
                             <h3 class="card-title"
-                                tal:content="i/Title|nothing">
+                                tal:condition="title|nothing"
+                                tal:content="i/Title|nothing" />
 
                         </div>
 

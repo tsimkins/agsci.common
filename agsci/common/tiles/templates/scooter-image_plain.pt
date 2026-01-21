@@ -65,8 +65,13 @@
                         <div class="card-img-overlay d-flex align-items-center justify-content-center text-white"
                              tal:condition="show_item_title">
 
+                            <h2 class="card-title text-center"
+                                tal:condition="not:title|nothing"
+                                tal:content="item_title" />
+
                             <h3 class="card-title text-center"
-                                tal:content="item_title">
+                                tal:condition="title|nothing"
+                                tal:content="item_title" />
 
                         </div>
 

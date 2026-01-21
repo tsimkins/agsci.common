@@ -51,6 +51,7 @@
             }
         }
 
+    h2.card-title::after,
     h3.card-title::after {
         content: "";
         position: absolute;
@@ -62,6 +63,7 @@
         z-index: 1;
         }
 
+    h2.text-center.card-title::after,
     h3.text-center.card-title::after {
         content: "";
         position: absolute;
@@ -92,10 +94,12 @@
 a.card.card-visual:hover,
 a.card.card-visual:focus {
 
+    h2.card-title::after,
     h3.card-title::after {
         border-bottom: 2px solid $color-ps-creek;
         }
 
+    h2.text-center.card-title::after,
     h3.text-center.card-title::after {
         border-bottom: 2px solid $color-ps-creek;
         }
@@ -160,19 +164,25 @@ div.card .card-text {
     z-index: 2;
     padding: 0.5rem 1rem;
 
+    h2.card-title,
     h3.card-title {
         position: relative;
         margin-bottom: 0.5rem;
         text-shadow: 2px 2px 6px rgba($black,0.875);
         font-size: $font-size-lg;
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-bold;
         line-height: $line-height-xs;
         }
     }
 
 @include media-breakpoint-up(md) {
 
-    .card-deck-2up .card .card-img-overlay h3.card-title {
-        font-size: $h2-font-size;
+    .card-deck-2up .card .card-img-overlay {
+        h2.card-title,
+        h3.card-title {
+            font-size: $h2-font-size;
+            }
         }
     }
 
@@ -189,6 +199,7 @@ div.card .card-text {
             }
         }
 
+    h2.card-title,
     h3.card-title {
         position: relative;
         font-size: $h4-font-size;
