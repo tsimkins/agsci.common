@@ -15640,6 +15640,8 @@ footer img.fourh-logo {
 }
 footer .fa-stack {
   text-align: center;
+  padding: 0.5em 0;
+  height: 3em;
 }
 footer .fa-stack em.title {
   line-height: 1.5;
