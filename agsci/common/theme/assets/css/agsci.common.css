@@ -15641,6 +15641,9 @@ footer img.fourh-logo {
 footer .fa-stack {
   text-align: center;
 }
+footer .fa-stack em.title {
+  line-height: 1.5;
+}
 footer li.footer-list-head {
   display: block;
   font-weight: 400;

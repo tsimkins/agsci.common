@@ -27,6 +27,9 @@ footer { /* relative and high z-index to mask any affixed nav */
 
     .fa-stack {
         text-align: center;
+        em.title {
+            line-height: 1.5;
+        }
     }
 
     li.footer-list-head {
