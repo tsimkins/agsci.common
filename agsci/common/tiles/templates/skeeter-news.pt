@@ -12,10 +12,10 @@
                     data-tile-type view/tile_type|nothing"
     tal:define="is_portlet view/is_portlet|nothing;
                 description view/data/description|nothing;
-                text view/data/text/output|nothing">
+                text view/data/text/output|nothing;
+                title view/data/title|nothing">
 
     <h2 class="mt-0"
-        tal:define="title view/data/title|nothing"
         tal:condition="title"
         tal:content="title" />
 
@@ -54,7 +54,13 @@
                                     <p class="section-crumb"
                                        tal:content="python: view.date_format(feature.effective, format='%B %d, %Y')" />
 
-                                    <h3 class="h1 no-underline" tal:content="feature/Title|nothing" />
+                                    <h2 class="h1 no-underline" 
+                                        tal:condition="not:title|nothing"
+                                        tal:content="feature/Title|nothing" />
+
+                                    <h3 class="h1 no-underline" 
+                                        tal:condition="title|nothing"
+                                        tal:content="feature/Title|nothing" />
 
                                 </div>
                             </div>
@@ -76,7 +82,13 @@
                                     <div tal:attributes="class view/news_item_title_class|nothing">
                                         <p class="section-crumb"
                                            tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
+
+                                        <h2 class="h3"
+                                           tal:condition="not:title|nothing"
+                                           tal:content="i/Title|nothing" />
+
                                         <h3 class="h3"
+                                           tal:condition="title|nothing"
                                            tal:content="i/Title|nothing" />
 
                                     </div>

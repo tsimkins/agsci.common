@@ -14242,12 +14242,14 @@ CARD DECK - EVENTS
   background-color: #f6f6f7;
 }
 .card.card-event .card-title p,
+.card.card-event .card-title h2.p,
 .card.card-event .card-title h3.p {
   font-weight: 600;
   font-size: 1rem;
 }
 @media (min-width: 992px) {
   .card.card-event .card-title p,
+.card.card-event .card-title h2.p,
 .card.card-event .card-title h3.p {
     font-size: 0.9rem;
   }
@@ -14647,11 +14649,14 @@ CARDS
   padding-bottom: 1rem;
 }
 .card.card-news p.h3,
+.card.card-news h2.h3,
 .card.card-news h3.h3 {
   font-size: 0.875rem;
 }
 .card.card-news:hover p.h3,
+.card.card-news:hover h2.h3,
 .card.card-news:hover h3.h3, .card.card-news:focus p.h3,
+.card.card-news:focus h2.h3,
 .card.card-news:focus h3.h3 {
   color: #32807D;
   text-decoration: underline #3EA39E;
@@ -14667,12 +14672,14 @@ CARDS
     flex-direction: column;
   }
   .card.card-news p.h3,
+.card.card-news h2.h3,
 .card.card-news h3.h3 {
     font-size: 1rem;
   }
 }
 @media (min-width: 992px) {
   .card.card-news p.h3,
+.card.card-news h2.h3,
 .card.card-news h3.h3 {
     font-size: 0.875rem;
   }
@@ -14880,7 +14887,9 @@ div.card .card-text ul li li {
 .card.card-visual.card-horizontal h2.card-title,
 .card.card-visual.card-horizontal h3.card-title {
   position: relative;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.1rem;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .card.card-visual.card-horizontal h2.card-title,
@@ -15327,7 +15336,7 @@ ul.list-three-col {
   object-fit: cover;
 }
 
-.section-highlight-text h2 {
+.section-highlight-text h2, .section-highlight-text h3.h2 {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
@@ -17851,8 +17860,10 @@ NEWS & EVENTS
   object-position: 50% 50%;
 }
 .home .card-news p.h3,
+.home .card-news h2.h3,
 .home .card-news h3.h3,
 .content-primary .card-news p.h3,
+.content-primary .card-news h2.h3,
 .content-primary .card-news h3.h3 {
   display: block;
   margin-bottom: 0.25rem;
@@ -17861,8 +17872,10 @@ NEWS & EVENTS
 }
 @media (min-width: 768px) {
   .home .card-news p.h3,
+.home .card-news h2.h3,
 .home .card-news h3.h3,
 .content-primary .card-news p.h3,
+.content-primary .card-news h2.h3,
 .content-primary .card-news h3.h3 {
     font-size: 1rem;
   }

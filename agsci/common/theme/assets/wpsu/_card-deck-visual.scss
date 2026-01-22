@@ -202,7 +202,9 @@ div.card .card-text {
     h2.card-title,
     h3.card-title {
         position: relative;
+        font-family: $font-family-sans-serif;
         font-size: $h4-font-size;
+        font-weight: $font-weight-bold;
 
         @include media-breakpoint-up(md) {
             font-size: $h5-font-size;

@@ -13,10 +13,10 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
-    <div class="container px-0">
+    <div class="container px-0"
+        tal:define="title view/data/title|nothing">
 
         <h2 class="mt-0"
-            tal:define="title view/data/title|nothing"
             tal:condition="title"
             tal:content="title" />
 
@@ -34,7 +34,8 @@
 
                 <div class="col-12 col-lg-6 order-12 p-4 section-highlight-text">
 
-                    <h2 tal:content="i/Title|nothing" />
+                    <h2 tal:content="i/Title|nothing" tal:condition="not:title|nothing" />
+                    <h3 class="h2" tal:content="i/Title|nothing" tal:condition="title|nothing"/>
 
                     <p tal:content="i/Description|nothing" />
 

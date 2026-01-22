@@ -10,12 +10,12 @@
     tal:condition="view/show_tile|nothing"
     tal:define="light_version view/light_version|nothing;
                 description view/data/description|nothing;
-                text view/data/text/output|nothing"
+                text view/data/text/output|nothing;
+                title view/data/title|nothing"
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
     <h2 class="mt-0"
-        tal:define="title view/data/title|nothing"
         tal:condition="title"
         tal:content="title" />
 
@@ -36,11 +36,17 @@
             <div class="col-12 col-md-6 order-12"
                  tal:define="start i/start|nothing;
                              end i/end|nothing">
+
                 <h3 class="h2"
-                   tal:content="i/Title|nothing" />
+                   tal:content="i/Title|nothing"
+                   tal:condition="title|nothing" />
+
+                <h2
+                   tal:content="i/Title|nothing"
+                   tal:condition="not:title|nothing" />
 
                 <p>
-                    <span tal:replace="python: view.date_format(start, end_time=end)" /><br />
+                    <span tal:replace="python: view.date_format(start, end_time=end)" /><br tal:condition="i/location|nothing" />
                     <span tal:replace="i/location|nothing" />
                 </p>
 
@@ -100,7 +106,14 @@
 
                     <div class="card-body">
                         <div class="card-title">
-                            <h3 class="p" tal:content="i/Title|nothing" />
+
+                            <h2 class="p" 
+                                tal:content="i/Title|nothing" 
+                                tal:condition="not:title|nothing" />
+
+                            <h3 class="p" 
+                                tal:content="i/Title|nothing" 
+                                tal:condition="title|nothing"/>
                         </div>
 
                         <div class="card-text">
