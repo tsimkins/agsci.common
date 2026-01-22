@@ -134,7 +134,7 @@ a.alert-bar.mini p.alert-bar-text {
 
 .pagination li > a,
 .pagination li > span {
-  padding: 6px 12px !important;
+  padding: 0.4375rem 0.875rem !important;
   line-height: normal;
   text-decoration: none;
   color: #007bb1;
