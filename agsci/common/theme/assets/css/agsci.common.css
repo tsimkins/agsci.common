@@ -10554,7 +10554,7 @@ p.section-crumb {
   color: #314D64;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.5;
   font-size: 0.825rem;
 }
 p.section-crumb::after {
@@ -14256,7 +14256,7 @@ CARD DECK - EVENTS
 }
 .card.card-event .card-text p {
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 .card.card-event:hover, .card.card-event:focus {
   background: none;
