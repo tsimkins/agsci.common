@@ -43,6 +43,8 @@
     <tal:expired
         tal:condition="view/is_expired|nothing">
 
+        <h1 tal:content="context/Title|nothing" class="hiddenStructure" />
+
         <div class="portalMessage info">
 
             <strong>Note</strong>
