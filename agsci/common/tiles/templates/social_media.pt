@@ -14,8 +14,9 @@
          tal:omit-tag="view/is_portlet">
 
         <h2 class="mt-0"
-            tal:condition="view/data/title|nothing"
-            tal:content="view/data/title" />
+            tal:define="title view/data/title|nothing"
+            tal:content="title"
+            tal:condition="title" />
 
         <div class="social py-2">
             <ul class="list-social">

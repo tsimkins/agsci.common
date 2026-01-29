@@ -27,7 +27,9 @@
             <div class="col-12 col-lg-5 col-xl-4 px-0 mt-0">
                 <div class="agsci-box-shadow offset-content">
                     <h2 class="h2-no-divider mt-0"
-                        tal:content="view/data/title|nothing" />
+                        tal:define="title view/data/title|nothing"
+                        tal:content="title"
+                        tal:condition="title" />
 
                     <div class="html mb-3"
                          tal:condition="view/data/text/output|nothing"

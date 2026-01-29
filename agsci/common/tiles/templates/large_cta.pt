@@ -13,8 +13,9 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h2 class="mt-0"
-                    tal:condition="view/data/title|nothing"
-                    tal:content="view/data/title|nothing" />
+                    tal:define="title view/data/title|nothing"
+                    tal:content="title"
+                    tal:condition="title" />
                 <div class="html"
                      tal:content="structure view/data/text/output|nothing" />
                 <a class="btn btn-creek point-at-me"

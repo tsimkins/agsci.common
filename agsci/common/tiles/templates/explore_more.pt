@@ -15,7 +15,9 @@
         <div class="container explore-options pt-5 pb-3 px-0">
 
         <h2 class="centered-callout-header slide-down text-center mt-0"
-            tal:content="view/data/title|noting">
+            tal:define="title view/data/title|nothing"
+            tal:content="title"
+            tal:condition="title" />
 
             <div class="row align-items-stretch row-more-block justify-content-center">
 

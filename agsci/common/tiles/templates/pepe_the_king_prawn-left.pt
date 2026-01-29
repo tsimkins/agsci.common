@@ -16,8 +16,10 @@
 
                 <div class="col-12 col-lg-6 order-12 p-4 section-highlight-text">
 
-                    <h2 class="mt-0">
-                       <a tal:content="view/data/title|nothing"
+                    <h2 class="mt-0"
+                        tal:define="title view/data/title|nothing"
+                        tal:condition="title">
+                       <a tal:content="title"
                           tal:attributes="href view/data/url|nothing" />
                     </h2>
 

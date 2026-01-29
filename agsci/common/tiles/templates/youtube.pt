@@ -30,12 +30,14 @@
             tal:attributes="id view/title_id|nothing" />
 
         <h2 class="mt-0"
-            tal:condition="view/data/title|nothing"
-            tal:content="view/data/title" />
+            tal:define="title view/data/title|nothing"
+            tal:content="title"
+            tal:condition="title" />
 
         <p class="lead"
-            tal:condition="view/data/description|nothing"
-            tal:content="view/data/description|nothing" />
+            tal:define="description view/data/description|nothing"
+            tal:content="description"
+            tal:condition="description" />
 
         <div class="col-12 col-lg-10 offset-lg-1"
             tal:omit-tag="view/data/full_width|nothing">

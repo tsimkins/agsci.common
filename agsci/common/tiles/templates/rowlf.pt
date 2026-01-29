@@ -17,13 +17,19 @@
             <div class="col-11 offset-1 col-md-5 pl-0 order-12">
 
                 <p class="agsci-journeys ag-journeys-preview"
-                   tal:content="view/data/title|nothing" />
+                    tal:define="title view/data/title|nothing"
+                    tal:content="title"
+                    tal:condition="title" />
 
                 <h2 class="mt-0"
-                    tal:content="view/data/description|nothing" />
+                    tal:define="description view/data/description|nothing"
+                    tal:content="description"
+                    tal:condition="description" />
 
                 <p class="journey-quote-cite"
-                   tal:content="view/data/caption|nothing" />
+                    tal:define="caption view/data/caption|nothing"
+                    tal:content="caption"
+                    tal:condition="caption" />
 
                 <div class="mx-auto w-100 text-center">
                     <a class="btn btn-large btn-creek mx-auto"
