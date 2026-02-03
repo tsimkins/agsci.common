@@ -636,12 +636,18 @@ h4, .h5 {
 /* Paragraphs
 --------------------------------------------- */
 
-p, #parent-fieldname-text > div:not([class="callout"], [class="summary"]), div.lead {
+p, #parent-fieldname-text > div:not(.callout, .summary), div.lead {
     font-family: $font-family-sans-serif;
     font-size: $small1-size;
     font-weight: $font-weight-base;
     line-height: $line-height-xl;
     }
+
+#parent-fieldname-text {
+    p.summary, p.callout {
+        line-height: $line-height-md;
+    }
+}
 
 @include media-breakpoint-up(lg) {
 

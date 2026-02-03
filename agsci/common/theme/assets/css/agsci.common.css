@@ -10512,11 +10512,15 @@ h4, .h5 {
 
 /* Paragraphs
 --------------------------------------------- */
-p, #parent-fieldname-text > div:not([class=callout], [class=summary]), div.lead {
+p, #parent-fieldname-text > div:not(.callout, .summary), div.lead {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.9;
+}
+
+#parent-fieldname-text p.summary, #parent-fieldname-text p.callout {
+  line-height: 1.5;
 }
 
 @media (min-width: 992px) {
