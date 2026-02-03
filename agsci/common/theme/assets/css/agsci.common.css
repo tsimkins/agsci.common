@@ -10519,7 +10519,7 @@ p, #parent-fieldname-text > div:not(.callout, .summary), div.lead {
   line-height: 1.9;
 }
 
-#parent-fieldname-text p.summary, #parent-fieldname-text p.callout {
+#parent-fieldname-text div.summary, #parent-fieldname-text p.summary, #parent-fieldname-text p.callout {
   line-height: 1.5;
 }
 

@@ -644,7 +644,7 @@ p, #parent-fieldname-text > div:not(.callout, .summary), div.lead {
     }
 
 #parent-fieldname-text {
-    p.summary, p.callout {
+    div.summary, p.summary, p.callout {
         line-height: $line-height-md;
     }
 }
