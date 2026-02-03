@@ -636,7 +636,7 @@ h4, .h5 {
 /* Paragraphs
 --------------------------------------------- */
 
-p, #parent-fieldname-text > div:not([class="callout"]), div.lead {
+p, #parent-fieldname-text > div:not([class="callout"], [class="summary"]), div.lead {
     font-family: $font-family-sans-serif;
     font-size: $small1-size;
     font-weight: $font-weight-base;
