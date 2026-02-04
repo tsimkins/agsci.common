@@ -996,7 +996,7 @@ class OpenGraphViewlet(TitleViewlet):
         adapted = LeadImage(context)
 
         if adapted.has_image:
-            return ('%s/@@images/image' % self.context.absolute_url(), adapted.image_format)
+            return ('%s/@@images/image' % adapted.context.absolute_url(), adapted.image_format)
 
         return (None, None)
 
