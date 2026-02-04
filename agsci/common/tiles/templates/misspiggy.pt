@@ -30,12 +30,14 @@
 
             <div class="col-12 col-lg-5 order-1 order-lg-12 mb-md-4">
 
-                <div tal:define="iframe_url view/iframe_url|nothing"
+                <div tal:define="iframe_url view/iframe_url|nothing;
+                                 iframe_alt view/data/iframe_alt|nothing"
                             tal:condition="iframe_url"
                             tal:attributes="class view/wrapper_klass|nothing">
 
                     <iframe
-                        tal:attributes="src iframe_url" />
+                        tal:attributes="src iframe_url;
+                                        title iframe_alt|nothing" />
 
                 </div>
 
