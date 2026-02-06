@@ -15859,7 +15859,7 @@ AgSci Journeys
 
 p.agsci-journeys {
   display: inline-block;
-  color: #3EA39E;
+  color: #32807D;
   font-weight: 100;
   font-size: 12vw;
   font-family: "BornReady-Regular";
@@ -18299,6 +18299,10 @@ body.template-edit.mosaic-enabled .mosaic-grid-row .mosaic-width-two-thirds:befo
 }
 .discreet strong, .discreet b {
   font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) td .discreet {
+  color: #6E6E6E;
 }
 
 #content-core span[id^=section] {

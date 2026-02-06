@@ -261,6 +261,10 @@ body.template-edit.mosaic-enabled {
     }
 }
 
+.table-striped tbody tr:nth-of-type(2n+1) td .discreet {
+    color: #6E6E6E;
+}
+
 #content-core {
     span[id^=section] {
         position: absolute;
