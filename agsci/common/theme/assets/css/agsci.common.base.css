@@ -262,10 +262,15 @@ a.alert-bar.mini p.alert-bar-text {
   border-bottom: none;
   font-size: 64px;
 }
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.skeeter-tile"] section > .container, #main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.skeeter-tile"] section > .container-text,
 #main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] section > .container,
-#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container {
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] section > .container-text,
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container,
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] section > .container-text {
   position: relative;
 }
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.skeeter-tile"] span[id^=tile],
+#main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.skeeter-tile"] span[id^=heading],
 #main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=tile],
 #main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.youtube-tile"] span[id^=heading],
 #main .mosaic-grid-row div[class~="mosaic-agsci.common.tiles.richtext-tile"] span[id^=tile],

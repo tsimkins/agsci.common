@@ -16,6 +16,10 @@
     <div class="container px-0"
         tal:define="title view/data/title|nothing">
 
+        <span
+            tal:condition="view/title_id|nothing"
+            tal:attributes="id view/title_id|nothing" />
+
         <h2 class="mt-0"
             tal:condition="title"
             tal:content="title" />
