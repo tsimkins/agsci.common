@@ -179,6 +179,10 @@
                         <title>Committees</title>
                         <link>awards-committees/committees</link>
                     </item>
+                    <item>
+                        <title> Faculty Organization</title>
+                        <link>awards-committees/faculty-organization</link>
+                    </item>
                 </items>
             </item>
         </items>
