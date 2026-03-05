@@ -29,6 +29,7 @@ class BlockTransformer(object):
         'videoplayer.telvue.com',
         'app.powerbi.com',
         'www.agconservation.psu.edu',
+        'bienc.com',
     ]
 
     iframe_classes = {
