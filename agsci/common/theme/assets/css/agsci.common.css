@@ -10425,8 +10425,8 @@ h2, .h2 {
   margin-bottom: 1.75rem;
 }
 
-h2:not(.h3)::after,
-.h2:not(.h3)::after {
+h2:not(.h3, .h4)::after,
+.h2:not(.h3, .h4)::after {
   content: "";
   position: absolute;
   bottom: -0.875rem;
@@ -10504,6 +10504,7 @@ h3.border-top {
 
 h4, .h4 {
   font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
 }
 
 h4, .h5 {
