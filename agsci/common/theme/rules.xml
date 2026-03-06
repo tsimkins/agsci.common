@@ -305,9 +305,14 @@
                 css:theme-children="#theme-javascript"
                 css:content="head script[data-bundle='basic']" />
 
-            <after
-                css:theme-children="#theme-javascript"
-                css:content="head script[data-bundle='plone']" />
+            <!-- Enables TOC for logged out view, while not causing errors on logged in view. -->
+            <rules css:if-not-content=".userrole-authenticated">
+
+                <after
+                    css:theme-children="#theme-javascript"
+                    css:content="head script[data-bundle='plone']" />
+
+            </rules>
 
         </rules>
 
