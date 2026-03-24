@@ -424,6 +424,8 @@
                                 body.template-crop-image,
                                 body.template-crop-image-react">
 
+            <append css:theme="#section-content" css:content="#pdf-report" />
+
             <append css:theme="#section-content" css:content="#data-check" />
 
             <replace css:theme="#page-header-content" method="raw">

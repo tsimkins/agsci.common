@@ -229,6 +229,18 @@
         template="templates/history.pt"
     />
 
+    <!-- PDF Report -->
+
+    <browser:viewlet
+        for="plone.app.contenttypes.interfaces.IFile"
+        name="agsci.common.pdf_report"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+        class=".PDFReportViewlet"
+        permission="cmf.ManagePortal"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/pdf-report.pt"
+    />
+
     <!-- Data Check -->
 
     <browser:viewlet

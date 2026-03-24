@@ -163,6 +163,16 @@
         title="View"
     />
 
+    <!-- PDF Report View -->
+    <browser:page
+        for="plone.app.contenttypes.interfaces.IFile"
+        name="pdf-report"
+        class=".PDFReport"
+        permission="cmf.ManagePortal"
+        layer="..interfaces.IThemeSpecific"
+        template="templates/pdf-report.pt"
+    />
+
     <!-- Default Subfolder View -->
     <browser:page
         for="plone.app.contenttypes.interfaces.IFolder"

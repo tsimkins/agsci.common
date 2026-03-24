@@ -32,6 +32,8 @@ DEPARTMENT_CONFIG_URL = 'http://%s/extension-config/config.json' % CMS_DOMAIN
 
 ASSETS_DOMAIN = "assets.agsci.psu.edu"
 
+TOOLS_DOMAIN = "tools.agsci.psu.edu"
+
 # Domains for the Plone site based on site.getId()
 DOMAIN_CONFIG = {
     'agsci' : 'agsci.psu.edu',

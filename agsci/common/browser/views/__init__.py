@@ -42,7 +42,7 @@ except ImportError:
     from Products.CMFPlone.interfaces.controlpanel import ISiteSchema
 
 from agsci.common import object_factory
-from agsci.common.constants import ASSETS_DOMAIN
+from agsci.common.constants import ASSETS_DOMAIN, TOOLS_DOMAIN
 from agsci.common.content.check import ExternalLinkCheck, TileLinksCheck
 from agsci.common.content.degrees import IDegree
 from agsci.common.content.major import IMajor
@@ -63,6 +63,7 @@ except ImportError:
     from urlparse import urlparse, urlunparse
 
 import json
+import requests
 import re
 
 class BaseView(BrowserView):
@@ -627,6 +628,19 @@ class FolderView(_FolderView, BaseView):
         if item.portal_type in ['Event',]:
             return self.render_j2(template='event_listing.j2', item=item)
 
+class PDFReport(BaseView):
+
+    def report_html(self):
+        site_id = self.site.getId()
+        uid = self.context.UID()
+        url = f'https://{TOOLS_DOMAIN}/pdf-report/html/site/{site_id}/uid/{uid}'
+        response = requests.get(url)
+        if response.status_code in (200,):
+            html = response.text
+            soup = BeautifulSoup(html, features='lxml')
+            report = soup.find('div', attrs={'id' : 'report'})
+            if report:
+                return "".join([str(x) for x in report.children])
 
 class SubfolderView(FolderView):
 
