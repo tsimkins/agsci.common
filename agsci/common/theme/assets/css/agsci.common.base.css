@@ -93,6 +93,132 @@ a.alert-bar.mini p.alert-bar-text {
     margin: 0 0 0 3.75rem;
   }
 }
+/* Notable Bar - Entire thing link w/ statement
+--------------------------------------------- */
+a.notable-bar {
+  display: block;
+}
+
+a.notable-bar p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+a.notable-bar p span {
+  text-decoration: solid underline #FFFFFF 1px;
+  text-underline-offset: 3px;
+}
+
+a.notable-bar p span.emphasis {
+  font-weight: 600;
+  font-style: italic;
+}
+
+a.notable-bar p span.emphasis::after {
+  content: none;
+  margin-left: 0;
+}
+
+a.notable-bar p span::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-weight: 900;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  line-height: 1.4;
+  color: #FFFFFF;
+}
+
+a.notable-bar:hover {
+  background-color: #dbe8f6;
+}
+
+a.notable-bar:hover p span {
+  text-decoration: solid underline #3EA39E 1px;
+}
+
+a.notable-bar:hover p span::after {
+  color: #3EA39E;
+}
+
+/* Notable Bar
+--------------------------------------------- */
+.notable-bar {
+  background: #1E417B;
+  color: #FFFFFF;
+}
+
+.notable-bar.notable-bar-reverse {
+  background: #00132B;
+}
+
+.notable-bar.notable-bar-reverse li a {
+  text-decoration: none;
+}
+
+.notable-bar.notable-bar-reverse li a:hover {
+  text-decoration: none;
+}
+
+.notable-bar .notable-hider {
+  height: 30px;
+  /* fixed height so then when ul wraps, items get hidden */
+  display: flex;
+}
+
+.notable-bar ul {
+  list-style-type: none;
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .notable-bar ul {
+    font-size: 0.675rem;
+  }
+}
+.notable-bar ul i.fas {
+  font-size: 1rem;
+  color: #b16300;
+  line-height: 0;
+}
+
+@media (min-width: 1440px) {
+  .notable-bar ul {
+    font-size: 0.75rem;
+  }
+}
+.notable-bar li {
+  height: 100%;
+  margin: 0 0.625rem;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.notable-bar li a:link {
+  display: inline-block;
+  padding: 0.1rem 0;
+  background: transparent;
+}
+
+.notable-bar li a:hover {
+  color: #231e20;
+  text-decoration: solid underline #3EA39E 1px;
+  text-underline-offset: 3px;
+}
+
 .display-5 {
   font-size: 1.875rem;
   font-weight: 300;
