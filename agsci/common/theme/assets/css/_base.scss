@@ -570,6 +570,18 @@ body {
         padding-bottom: 100%*(2/3);
     }
 
+    .youtube-video-embed.aspect-1-1 {
+        padding-bottom: 100%;
+    }
+
+    .youtube-video-embed.aspect-5-7 {
+        padding-bottom: 100%*(7/5);
+    }
+
+    .youtube-video-embed.aspect-2-3 {
+        padding-bottom: 100%*(3/2);
+    }
+
     .youtube-video-embed.aspect-kaltura {
         padding-bottom: 60.1%;
     }

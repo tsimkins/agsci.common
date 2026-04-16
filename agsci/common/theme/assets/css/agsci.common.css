@@ -18914,6 +18914,15 @@ body .youtube-video-embed.aspect-4-3 {
 body .youtube-video-embed.aspect-3-2 {
   padding-bottom: 66.6666666667%;
 }
+body .youtube-video-embed.aspect-1-1 {
+  padding-bottom: 100%;
+}
+body .youtube-video-embed.aspect-5-7 {
+  padding-bottom: 140%;
+}
+body .youtube-video-embed.aspect-2-3 {
+  padding-bottom: 150%;
+}
 body .youtube-video-embed.aspect-kaltura {
   padding-bottom: 60.1%;
 }
