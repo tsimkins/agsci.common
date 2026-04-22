@@ -400,9 +400,9 @@
                         <item type="cta">
                             <items>
                                 <item>
-                                    <link>support</link>
-                                    <title>Support the College</title>
-                                    <icon>fa-hands-helping</icon>
+                                    <link>invest</link>
+                                    <title>Invest in the College</title>
+                                    <icon>fa-seedling</icon>
                                 </item>
                                 <item>
                                     <link>alumni</link>
@@ -456,9 +456,9 @@
                         <item type="cta">
                             <items>
                                 <item>
-                                    <link>support</link>
-                                    <title>Support Penn State Extension</title>
-                                    <icon>fa-hands-helping</icon>
+                                    <link>invest</link>
+                                    <title>Invest in Penn State Extension</title>
+                                    <icon>fa-seedling</icon>
                                 </item>
                                 <item>
                                     <link>https://extension.psu.edu</link>
@@ -529,9 +529,9 @@
                         <item type="cta">
                             <items>
                                 <item>
-                                    <link>support</link>
-                                    <title>Support the College</title>
-                                    <icon>fa-hands-helping</icon>
+                                    <link>invest</link>
+                                    <title>Invest in the College</title>
+                                    <icon>fa-seedling</icon>
                                 </item>
                                 <item>
                                     <link>alumni</link>
@@ -591,8 +591,8 @@
                         </item>
 
                         <item>
-                            <title>Supporting the College</title>
-                            <link>support</link>
+                            <title>Invest in the College</title>
+                            <link>invest</link>
                         </item>
 
                         <item>
@@ -605,9 +605,9 @@
                         <item type="cta">
                             <items>
                                 <item>
-                                    <link>support</link>
-                                    <title>Support the College</title>
-                                    <icon>fa-hands-helping</icon>
+                                    <link>invest</link>
+                                    <title>Invest in the College</title>
+                                    <icon>fa-seedling</icon>
                                 </item>
                                 <item>
                                     <link>alumni</link>
