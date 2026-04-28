@@ -27,6 +27,7 @@
         <element value="plone.excludefromnavigation" />
         <element value="plone.relateditems" />
         <element value="agsci.common.content.behaviors.leadimage.ILeadImageExtra" />
+        <element value="agsci.common.content.behaviors.IFileAccessibility" />
     </property>
     <property name="schema" />
     <property name="model_source" />

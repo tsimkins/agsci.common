@@ -120,4 +120,10 @@
         provides=".IUBRCode"
     />
 
+    <plone:behavior
+        title="File Accessibility"
+        description=""
+        provides=".IFileAccessibility"
+    />
+
 </configure>

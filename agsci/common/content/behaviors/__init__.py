@@ -174,6 +174,27 @@ class IUBRCode(model.Schema):
     )
 
 @provider(IFormFieldProvider)
+class IFileAccessibility(model.Schema):
+
+    model.fieldset(
+        'settings',
+        label=_(u'Settings'),
+        fields=[
+            'file_accessible',
+        ],
+    )
+
+    form.write_permission(file_accessible="cmf.ManagePortal")
+
+    file_accessible = schema.Bool(
+        title=_(u"File passes accessibility checks."),
+        description=_(u""),
+        required=False,
+        default=False,
+    )
+
+
+@provider(IFormFieldProvider)
 class IEventFields(model.Schema):
 
     event_canceled = schema.Bool(
