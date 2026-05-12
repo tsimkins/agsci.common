@@ -172,6 +172,14 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
+    <!-- Body Text: Check for Microsoft Outlook Safelinks -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".SafelinksCheck"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
+
     <!-- Body Text: Iframe Alt Text/Title -->
 
     <subscriber

@@ -29,7 +29,7 @@ except ImportError:
     from queue import Queue
 
 try:
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, parse_qs
 except ImportError:
     from urlparse import urlparse
 
@@ -575,6 +575,39 @@ class BodyLinkCheck(BodyTextCheck):
             # Shouldn't link within site to a FQDN URL
             elif domain in self.site_domains:
                 return True
+
+
+# Check for Microsoft Outlook Safelinks
+class SafelinksCheck(BodyLinkCheck):
+
+    title = "HTML: Outlook Safelinks"
+    description = "URLs pasted from Microsoft Outlook often use a 'safelinks' intermediate service."
+    action = "Use the actual URL of the content for this link."
+
+    bad_domains = ['safelinks.protection.outlook.com']
+
+    def get_safelinks_url(self, _):
+        parsed = urlparse(_)
+        qs = parsed.query
+        url = parse_qs(qs).get('url', '')
+        if url and isinstance(url, (list, tuple)):
+            url = url[0]
+        if url and url.startswith('http'):
+            return url
+        return 'N/A'
+
+    def check(self):
+
+        for a in self.value():
+            href = a.get('href', '')
+            if href and any([x in href.lower() for x in self.bad_domains]):
+                url = self.get_safelinks_url(href)
+                yield ContentCheckError(
+                    self,
+                    'Safelinks URL found for link "%s". Correct URL is %s' % (
+                        self.soup_to_text(a), url
+                    )
+                )
 
 # Ensures any internal links are using the resolveuid functionality
 class ValidInternalLinkCheck(BodyLinkCheck):
