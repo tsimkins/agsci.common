@@ -11129,8 +11129,7 @@ button.disabled {
 button.btn-link,
 .btn-link a,
 a.btn-link,
-a.card .btn-link,
-span.btn-link {
+a.card .btn-link {
   padding: 0;
   border: 1px solid transparent;
   color: #32807D;
@@ -11138,8 +11137,7 @@ span.btn-link {
 button.btn-link::after,
 .btn-link a::after,
 a.btn-link::after,
-a.card .btn-link::after,
-span.btn-link::after {
+a.card .btn-link::after {
   content: "";
   display: inline-block;
   margin-left: 0.25rem;
@@ -21056,6 +21054,12 @@ body.userrole-authenticated .side-nav a.state-pending:link {
 
 body.header-department-level > header {
   padding-top: 0.5em;
+}
+
+/* Fix btn-primary color on adding new content */
+#content-core form .formControls #form-buttons-save.btn-secondary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
 }
 
 .alert.status,

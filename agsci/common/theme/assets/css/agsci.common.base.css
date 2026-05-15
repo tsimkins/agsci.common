@@ -3108,6 +3108,12 @@ body.header-department-level > header {
   padding-top: 0.5em;
 }
 
+/* Fix btn-primary color on adding new content */
+#content-core form .formControls #form-buttons-save.btn-secondary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
 .print-only-logo {
   display: none;
 }
