@@ -18276,6 +18276,25 @@ a.notable-bar:hover p span::after {
     display: inline;
   }
 }
+nav.pagination a.previous:before,
+nav.pagination a.next:after {
+  content: "";
+}
+nav.pagination a.btn {
+  border: 1px solid #EEE !important;
+  color: #575757;
+}
+nav.pagination a.btn:hover {
+  border: 1px solid #575757 !important;
+  color: #FFFFFF;
+}
+nav.pagination a.previous .arrow:before {
+  content: "←";
+}
+nav.pagination a.next .arrow:after {
+  content: "→";
+}
+
 .banner .jumbotron-standard #portal-breadcrumbs {
   color: #ffffff;
   background-color: transparent;

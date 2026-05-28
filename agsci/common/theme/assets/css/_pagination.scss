@@ -83,3 +83,28 @@
     display: inline;
   }
 }
+
+nav.pagination {
+
+    a.previous:before,
+    a.next:after {
+        content: "";
+    }
+
+    a.btn {
+        border: 1px solid #EEE !important;
+        color: #575757;
+    }
+
+    a.btn:hover {
+        border: 1px solid #575757 !important;
+        color: #FFFFFF;
+    }
+
+    a.previous .arrow:before {
+        content: "\2190";
+    }
+    a.next .arrow:after {
+        content: "\2192";
+    }
+}
