@@ -77,6 +77,14 @@
         for="plone.dexterity.interfaces.IDexterityContent"
     />
 
+    <!-- Body Text: Empty Lists/List Items -->
+
+    <subscriber
+        provides=".IContentCheck"
+        factory=".EmptyLists"
+        for="plone.dexterity.interfaces.IDexterityContent"
+    />
+
     <!-- Body Text: Appropriate Link Text -->
 
     <subscriber

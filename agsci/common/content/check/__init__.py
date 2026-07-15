@@ -653,6 +653,27 @@ class EmptyHeadings(BodyHeadingCheck):
             if not _.text.strip():
                 yield ContentCheckError(self, "Empty <%s> heading." % _.name)
 
+# Checks for empty Lists/List Items
+class EmptyLists(BodyTextCheck):
+
+    # Title for the check
+    title = "HTML: Empty List/List Item"
+
+    # Description for the check
+    description = "Validates that there are no empty list/list item tags."
+
+    # Remedial Action
+    action = "Remove list/list item (e.g. <ul></ul> or <li></li>) tags."
+
+    def value(self):
+        return self.soup.findAll(['ul', 'ol', 'li'])
+
+    def check(self):
+
+        for _ in self.value():
+            if not _.text.strip():
+                yield ContentCheckError(self, "Empty list <%s> tag." % _.name)
+
 # Checks for appropriate heading level hierarchy, e.g. h2 -> h3 -> h4
 class HeadingLevels(BodyHeadingCheck):
 
