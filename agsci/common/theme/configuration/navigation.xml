@@ -124,8 +124,8 @@
                 <title>Academics</title>
                 <link>academics</link>
                 <image>
-                    <title>Compare our 17 diverse majors and find the best fit for you!</title>
-                    <link>academics/undergraduate/degree-explorer</link>
+                    <title>Explore Majors by Your Interests</title>
+                    <link>admissions/undergraduate/interest-areas</link>
                     <src>
                         ++resource++agsci.common/assets/images/navigation/spotlight-academics-explorer.jpg
                     </src>
@@ -222,10 +222,10 @@
                                     <icon>fa-list-alt</icon>
                                 </item>
                                 <item>
-                                    <title>Compare our Undergraduate Degrees</title>
+                                    <title>Explore Majors by Your Interests</title>
                                     <description />
-                                    <link>academics/undergraduate/degree-explorer</link>
-                                    <icon>fa-atlas</icon>
+                                    <link>admissions/undergraduate/interest-areas</link>
+                                    <icon>fa-binoculars</icon>
                                 </item>
                             </items>
                         </item>
@@ -332,10 +332,10 @@
                                     <icon>fa-list-alt</icon>
                                 </item>
                                 <item>
-                                    <title>Compare our Undergraduate Degrees</title>
+                                    <title>Explore Majors by Your Interests</title>
                                     <description />
-                                    <link>academics/undergraduate/degree-explorer</link>
-                                    <icon>fa-atlas</icon>
+                                    <link>admissions/undergraduate/interest-areas</link>
+                                    <icon>fa-binoculars</icon>
                                 </item>
                             </items>
                         </item>
