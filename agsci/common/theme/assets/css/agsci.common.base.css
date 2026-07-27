@@ -2983,6 +2983,14 @@ div[class~="mosaic-agsci.common.tiles.search_box-tile"] form.form-inline {
   font-family: "Nunito Sans", sans-serif;
   font-size: 0.9rem;
 }
+#content-core .form_container table a.button_link, #content-core .form_action table a.button_link {
+  color: #ffffff !important;
+  margin: 0.75em 0 !important;
+  border-bottom-width: 0 !important;
+  padding: 0 0.5em !important;
+  font-size: 0.75rem !important;
+  line-height: 1.375 !important;
+}
 
 /* Related items in Mosaic Tiles */
 .pattern-relateditems-item .pattern-relateditems-item-title[class*=contenttype-]::before,
