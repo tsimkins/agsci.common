@@ -50,6 +50,7 @@ class UpdatedPublishedFeedView(JSONDumpView):
         for r in self.items:
 
             data.append({
+                'uid' : r.UID,
                 'type' : r.Type,
                 'getId' : r.getId,
                 'site_id' : site_id,
