@@ -555,6 +555,10 @@ class ScooterTile(CCCT_Tile):
     pb = 3
 
     @property
+    def show_tile(self):
+        return not not self.items
+
+    @property
     def template(self):
         return 'scooter-%s.pt' % self.style
 
