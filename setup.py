@@ -50,6 +50,7 @@ setup(name='agsci.common',
         'collective.easyform [recaptcha]',
         'plone.formwidget.recaptcha',
         'plone.app.widgets',
+        'collective.revisionmanager',
     ],
     entry_points="""
       # -*- Entry points: -*-
