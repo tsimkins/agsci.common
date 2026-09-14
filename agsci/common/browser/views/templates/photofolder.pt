@@ -48,7 +48,8 @@
                                          class python:view.image_class(item)"
                          class="d-block w-100" alt="">
                     <div class="carousel-caption d-none d-md-block px-3">
-                      <h2 class="h3 mt-0" tal:content="item_title" />
+                      <span class="float-right float-end small">[${repeat/item/number|nothing}/${repeat/item/length|nothing}]</span>
+                      <h2 class="h3 mt-0 mr-1" tal:content="item_title" />
                       <p tal:content="item_description"
                          tal:condition="item_description" />
                     </div>
