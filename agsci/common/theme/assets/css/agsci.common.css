@@ -21106,7 +21106,7 @@ body.header-department-level > header {
 .portalMessage > dt {
   font-weight: 700;
   padding-right: 5px;
-  color: rgba(0, 0, 0, 0.5);
+  color: #2f2f2f;
 }
 .alert.status a,
 .portalMessage a {
@@ -21149,14 +21149,14 @@ body.header-department-level > header {
 .portalMessage.info {
   background-color: #aad6ea;
   border: 1px solid #9acee6;
-  color: rgba(0, 0, 0, 0.5);
+  color: #484848;
 }
 .alert.status.alert-success > strong, .alert.status.alert-success > dt, .alert.status.info > strong, .alert.status.info > dt,
 .portalMessage.alert-success > strong,
 .portalMessage.alert-success > dt,
 .portalMessage.info > strong,
 .portalMessage.info > dt {
-  color: fade(rgba(0, 0, 0, 0.5), 67%);
+  color: fade(#484848, 67%);
 }
 .alert.status.alert-success > strong::before, .alert.status.alert-success > dt::before, .alert.status.info > strong::before, .alert.status.info > dt::before,
 .portalMessage.alert-success > strong::before,
@@ -21171,14 +21171,14 @@ body.header-department-level > header {
 .portalMessage.warning {
   background-color: #ebd380;
   border: 1px solid #e7ca66;
-  color: rgba(0, 0, 0, 0.5);
+  color: #484848;
 }
 .alert.status.alert-warning > strong, .alert.status.alert-warning > dt, .alert.status.warning > strong, .alert.status.warning > dt,
 .portalMessage.alert-warning > strong,
 .portalMessage.alert-warning > dt,
 .portalMessage.warning > strong,
 .portalMessage.warning > dt {
-  color: fade(rgba(0, 0, 0, 0.5), 67%);
+  color: fade(#484848, 67%);
 }
 .alert.status.alert-warning > strong::before, .alert.status.alert-warning > dt::before, .alert.status.warning > strong::before, .alert.status.warning > dt::before,
 .portalMessage.alert-warning > strong::before,
@@ -21193,14 +21193,14 @@ body.header-department-level > header {
 .portalMessage.error {
   background-color: #EC9C8D;
   border: 1px solid #eb9484;
-  color: rgba(0, 0, 0, 0.5);
+  color: #484848;
 }
 .alert.status.alert-error > strong, .alert.status.alert-error > dt, .alert.status.error > strong, .alert.status.error > dt,
 .portalMessage.alert-error > strong,
 .portalMessage.alert-error > dt,
 .portalMessage.error > strong,
 .portalMessage.error > dt {
-  color: fade(rgba(0, 0, 0, 0.5), 67%);
+  color: fade(#484848, 67%);
 }
 .alert.status.alert-error > strong::before, .alert.status.alert-error > dt::before, .alert.status.error > strong::before, .alert.status.error > dt::before,
 .portalMessage.alert-error > strong::before,
