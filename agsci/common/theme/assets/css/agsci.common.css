@@ -11371,7 +11371,7 @@ blockquote {
   font-weight: 400;
   font-size: 1.25rem;
   font-family: "Roboto Slab", serif;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 blockquote .fas {
   vertical-align: sub;
@@ -11387,7 +11387,7 @@ blockquote cite {
   font-style: normal;
   font-size: 0.875rem;
   font-family: "Nunito Sans", sans-serif;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 blockquote cite span {
   font-style: italic;
