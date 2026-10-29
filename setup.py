@@ -47,10 +47,11 @@ setup(name='agsci.common',
         'Jinja2',
         'premailer',
         'zLOG',
-        'collective.easyform [recaptcha]',
+        'collective.easyform [recaptcha] < 4.4',
         'plone.formwidget.recaptcha',
         'plone.app.widgets',
         'collective.revisionmanager',
+        'Products.membrane < 7.0',
     ],
     entry_points="""
       # -*- Entry points: -*-
