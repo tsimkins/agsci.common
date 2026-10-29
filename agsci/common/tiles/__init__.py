@@ -1059,7 +1059,7 @@ class PullQuoteTile(BaseTile):
 
     def quote_class(self):
         if self.img_src:
-            return 'col-12 col-sm-9 order-2'
+            return 'col-12 col-sm-8 order-2'
         return 'col'
 
 class SearchBoxTile(BaseTile):

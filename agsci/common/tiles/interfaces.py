@@ -985,6 +985,11 @@ class IPullQuoteTile(Interface):
         required=False
     )
 
+    text = RichText(
+        title=_(u'Text'),
+        required=False,
+    )
+
     image = NamedBlobImage(
         title=_(u"Image"),
         description=_(u""),
