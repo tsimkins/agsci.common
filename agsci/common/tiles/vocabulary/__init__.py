@@ -1,5 +1,5 @@
 from agsci.common.content.vocabulary import StaticVocabulary, KeyValueVocabulary
-from agsci.common.utilities import getExtensionConfig
+from agsci.common.utilities import getExtensionConfig, getHomepageTopics
 
 class ButtonColorsVocabulary(KeyValueVocabulary):
 
@@ -217,6 +217,12 @@ class ExtensionListingDepartmentsVocabulary(KeyValueVocabulary):
         ('plant-excellence', 'Center for Plant Excellence'),
     ]
 
+class ExtensionListingHomepageTopicsVocabulary(StaticVocabulary):
+
+    @property
+    def items(self):
+        return sorted(getHomepageTopics())
+
 ButtonColorsVocabularyFactory = ButtonColorsVocabulary()
 CTABlockColorsVocabularyFactory = CTABlockColorsVocabulary()
 CTABackgroundVocabularyFactory = CTABackgroundVocabulary()
@@ -237,3 +243,4 @@ AgJourneyQuoteStyleVocabularyFactory = AgJourneyQuoteStyleVocabulary()
 ExtensionListingProductTypesVocabularyFactory = ExtensionListingProductTypesVocabulary()
 ExtensionListingL1CategoriesVocabularyFactory = ExtensionListingL1CategoriesVocabulary()
 ExtensionListingDepartmentsVocabularyFactory = ExtensionListingDepartmentsVocabulary()
+ExtensionListingHomepageTopicsVocabularyFactory = ExtensionListingHomepageTopicsVocabulary()

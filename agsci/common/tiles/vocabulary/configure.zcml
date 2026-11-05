@@ -122,4 +122,10 @@
         component=".ExtensionListingDepartmentsVocabularyFactory"
     />
 
+    <utility
+        name="agsci.common.tiles.extension_homepage.homepage_topics"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".ExtensionListingHomepageTopicsVocabularyFactory"
+    />
+
 </configure>

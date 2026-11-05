@@ -111,11 +111,17 @@ class ExtensionFilteredListingTile(ExtensionListingTile):
     def category(self):
         return self.get_valid_value('category')
 
+
+    @property
+    def homepage_topic(self):
+        return self.get_valid_value('homepage_topic')
+
     @property
     def config(self):
         return getExtensionConfig(
             department_id=self.department_id,
-            category=self.category
+            category=self.category,
+            homepage_topic=self.homepage_topic,
         )
 
 class ExtensionSKUFilteredListingTile(ExtensionFilteredListingTile):

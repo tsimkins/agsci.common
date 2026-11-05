@@ -179,6 +179,13 @@ class IExtensionFilteredListingTile(IExtensionListingTile):
         required=False,
     )
 
+    homepage_topic = schema.Choice(
+        title=_(u"Homepage Topic"),
+        vocabulary='agsci.common.tiles.extension_homepage.homepage_topics',
+        required=False,
+    )
+
+
 class IExtensionSKUFilteredListingTile(IExtensionListingTile):
 
     department_id = schema.Choice(

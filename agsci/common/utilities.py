@@ -598,9 +598,33 @@ def getDepartmentId():
     viewlet = getNavigationViewlet()
     return viewlet.department_id
 
-def getExtensionConfig(department_id=None, category=None):
+def getHomepageTopicJSON():
+
+    try:
+        data = requests.get(DEPARTMENT_CONFIG_URL).json()
+
+    except:
+        pass
+
+    else:
+        return data.get('homepage_topics', {})
+
+    return {}
+
+def getHomepageTopics():
+    return getHomepageTopicJSON().keys()
+
+def getHomepageTopicProducts(homepage_topic=None):
+    if homepage_topic:
+        return getHomepageTopicJSON().get(homepage_topic, [])
+    return []
+
+def getExtensionConfig(department_id=None, category=None, homepage_topic=None):
 
     rv = []
+
+    if homepage_topic:
+        return getHomepageTopicProducts(homepage_topic)
 
     if not department_id:
         department_id = getDepartmentId()
