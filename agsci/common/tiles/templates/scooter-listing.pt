@@ -15,7 +15,7 @@
     tal:attributes="class view/section_class|nothing;
                     data-tile-type view/tile_type|nothing">
 
-    <div class="container container-text content-primary"
+    <div class="container container-text content-primary my-5"
          tal:omit-tag="view/is_portlet">
 
         <h2 class="mt-0"
