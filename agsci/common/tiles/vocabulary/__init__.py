@@ -95,6 +95,7 @@ class CardStyleVocabulary(KeyValueVocabulary):
         ('image_plain', 'Image (Plain)'),
         ('links', 'Links'),
         ('plain', 'Plain'),
+        ('listing', 'Folder Listing'),
     ]
 
 class FeatureCardStyleVocabulary(KeyValueVocabulary):

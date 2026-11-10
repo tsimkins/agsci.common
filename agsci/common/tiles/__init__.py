@@ -546,6 +546,9 @@ class CCCT_Tile(ConditionalTemplateTile):
 
         return items
 
+    @property
+    def light_version(self):
+        return not not self.get_valid_value('light_version')
 
 
 class ScooterTile(CCCT_Tile):
@@ -619,10 +622,6 @@ class SkeeterTile(CCCT_Tile):
             return 'container-fluid section-highlight py-5'
 
         return 'container'
-
-    @property
-    def light_version(self):
-        return not not self.get_valid_value('light_version')
 
     @property
     def show_event_description(self):

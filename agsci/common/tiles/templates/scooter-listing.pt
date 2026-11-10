@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="agsci.common">
+  <body>
+
+<section
+    tal:condition="view/show_tile|nothing"
+    tal:define="title view/data/title|nothing;
+                description view/data/description|nothing;
+                text view/data/text/output|nothing;
+                light_version view/light_version|nothing;"
+    tal:attributes="class view/section_class|nothing;
+                    data-tile-type view/tile_type|nothing">
+
+    <div class="container container-text content-primary"
+         tal:omit-tag="view/is_portlet">
+
+        <h2 class="mt-0"
+            tal:condition="title"
+            tal:content="title" />
+
+        <p class="lead"
+            tal:condition="description"
+            tal:content="description" />
+
+        <div class="mb-3 html"
+            tal:condition="text"
+            tal:content="structure text" />
+
+        <tal:items tal:repeat="i view/items|nothing">
+
+            <a tal:attributes="href i/getURL|nothing"
+                class="card card-news">
+
+                <div class="container">
+
+                    <div class="row align-items-stretch">
+
+                        <div class="col-8 col-lg-9 news-story-copy order-12 mt-0">
+
+                            <p class="section-crumb"
+                                tal:condition="not:light_version"
+                                tal:content="python: view.date_format(i.effective, format='%B %d, %Y')" />
+
+                            <h2 class="h3 mt-0 mb-1"
+                                tal:condition="not:title|nothing"
+                                tal:content="i/Title|nothing" />
+
+                            <h3 class="h3 mt-0 mb-1"
+                                tal:condition="title|nothing"
+                                tal:content="i/Title|nothing" />
+
+                            <p class="d-none d-md-block"
+                               tal:define="description i/Description|nothing"
+                               tal:condition="description"
+                               tal:content="description" />
+
+                            <span tal:condition="not:light_version">Read More</span>
+
+                        </div>
+
+                        <div class="col-4 col-lg-3 profile-img order-1 px-0">
+
+
+                            <img tal:condition="i/hasLeadImage|nothing"
+                                    tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg;
+                                                    data-src python: view.get_img_src(i);"
+                                    alt=""
+                                    title=""
+                                    class="w-100" />
+
+                            <img tal:condition="not: i/hasLeadImage|nothing"
+                                    tal:attributes="src string:${view/assets_url}/images/card-placeholder.jpg"
+                                    alt=""
+                                    title=""
+                                    class="w-100" />
+
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </tal:items>
+
+
+    </div>
+
+</section>
+
+  </body>
+</html>

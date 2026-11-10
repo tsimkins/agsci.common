@@ -167,6 +167,14 @@ class IExtensionListingTile(Interface):
 
 class IExtensionFilteredListingTile(IExtensionListingTile):
 
+
+    light_version = schema.Bool(
+        title=_(u"Light Version?"),
+        description=_(u"Light Version does not show date or read more."),
+        required=False,
+        default=True,
+    )
+
     department_id = schema.Choice(
         title=_(u"Department"),
         vocabulary='agsci.common.tiles.extension_homepage.departments',
